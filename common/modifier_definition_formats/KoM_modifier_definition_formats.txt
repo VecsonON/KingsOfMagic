@@ -1,0 +1,14 @@
+﻿KoM_terrain_type_grimoire_advantage = {
+	decimals = 0
+	color = good
+}
+KoM_terrain_type_grimoire_min_combat_roll = {
+	decimals = 0
+	no_difference_sign = yes
+	color = neutral
+}
+KoM_terrain_type_grimoire_max_combat_roll = {
+	decimals = 0
+	no_difference_sign = yes
+	color = neutral
+}

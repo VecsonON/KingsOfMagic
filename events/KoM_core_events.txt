@@ -1,0 +1,142 @@
+﻿namespace = KoM_core_events
+KoM_core_events.0001 = { # Spawn Artifacts
+	hidden = yes
+
+	immediate = {
+		random_ruler = {
+			KoM_create_grimoire_effect = { # Ars Goetia
+				OWNER = THIS
+				RARITY = illustrious
+				NAME = ars_goetia
+				SCHOOL = goetia
+				MAX_MASTERY = 100
+				MIN_MASTERY = 20
+				MASTERY_GAIN = 20
+			}
+		}
+		random_ruler = {
+			KoM_create_grimoire_effect = { # Ars Theurgia Goetia
+				OWNER = THIS
+				RARITY = famed
+				NAME = ars_theurgia_goetia
+				SCHOOL = goetia
+				MAX_MASTERY = 80
+				MIN_MASTERY = 10
+				MASTERY_GAIN = 10
+			}
+		}
+		random_ruler = {
+			KoM_create_grimoire_effect = { # Magical Treatise
+				OWNER = THIS
+				RARITY = masterwork
+				NAME = magical_treatise
+				SCHOOL = goetia
+				MAX_MASTERY = 40
+				MIN_MASTERY = 0
+				MASTERY_GAIN = 5
+			}
+		}
+
+		random_ruler = {
+			KoM_create_grimoire_effect = { # Cyranides
+				OWNER = THIS
+				RARITY = illustrious
+				NAME = corpus_hermeticum
+				SCHOOL = thaumaturgy
+				MAX_MASTERY = 100
+				MIN_MASTERY = 20
+				MASTERY_GAIN = 10
+			}
+		}
+		random_ruler = {
+			KoM_create_grimoire_effect = { # Liber Hermetis
+				OWNER = THIS
+				RARITY = famed
+				NAME = liber_hermetis
+				SCHOOL = thaumaturgy
+				MAX_MASTERY = 60
+				MIN_MASTERY = 15
+				MASTERY_GAIN = 6
+			}
+		}
+		random_ruler = {
+			KoM_create_grimoire_effect = { # Asclepius
+				OWNER = THIS
+				RARITY = masterwork
+				NAME = asclepius
+				SCHOOL = thaumaturgy
+				MAX_MASTERY = 30
+				MIN_MASTERY = 0
+				MASTERY_GAIN = 4
+			}
+		}
+		
+		random_ruler = {
+			KoM_create_grimoire_effect = { # Theurgia 
+				OWNER = THIS
+				RARITY = illustrious
+				NAME = theurgia
+				SCHOOL = theurgy
+				MAX_MASTERY = 1
+				MIN_MASTERY = 0
+				MASTERY_GAIN = 15
+			}
+		}
+		random_ruler = {
+			KoM_create_grimoire_effect = { # Liber de causis
+				OWNER = THIS
+				RARITY = famed
+				NAME = liber_de_causis
+				SCHOOL = theurgy
+				MAX_MASTERY = 1
+				MIN_MASTERY = 0
+				MASTERY_GAIN = 10
+			}
+		}
+		random_ruler = {
+			KoM_create_grimoire_effect = { # Chaldean Oracles
+				OWNER = THIS
+				RARITY = masterwork
+				NAME = chaldean_oracles
+				SCHOOL = theurgy
+				MAX_MASTERY = 1
+				MIN_MASTERY = 0
+				MASTERY_GAIN = 5
+			}
+		}
+		
+		random_ruler = {
+			KoM_create_grimoire_effect = { # Tabula Smaragdina
+				OWNER = THIS
+				RARITY = illustrious
+				NAME = tabula_smaragdina
+				SCHOOL = alchemy
+				MAX_MASTERY = 100
+				MIN_MASTERY = 30
+				MASTERY_GAIN = 15
+			}
+		}
+		random_ruler = {
+			KoM_create_grimoire_effect = { # Isis the Prophetess to Her Son Horus
+				OWNER = THIS
+				RARITY = famed
+				NAME = isis_the_prophetess_to_her_son_horus
+				SCHOOL = alchemy
+				MAX_MASTERY = 60
+				MIN_MASTERY = 20
+				MASTERY_GAIN = 10
+			}
+		}
+		random_ruler = {
+			KoM_create_grimoire_effect = { # The Book of Causes
+				OWNER = THIS
+				RARITY = masterwork
+				NAME = the_book_of_causes
+				SCHOOL = alchemy
+				MAX_MASTERY = 30
+				MIN_MASTERY = 0
+				MASTERY_GAIN = 5
+			}
+		}
+	}
+}

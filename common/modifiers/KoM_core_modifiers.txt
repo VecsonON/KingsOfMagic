@@ -1,0 +1,20 @@
+﻿KoM_max_mastery_modifier = {
+	KoM_terrain_type_grimoire_min_combat_roll = 1
+}
+KoM_max_mastery_null_modifier = {
+	KoM_terrain_type_grimoire_min_combat_roll = 0.00001
+}
+
+KoM_min_mastery_modifier = {
+	KoM_terrain_type_grimoire_max_combat_roll = 1
+}
+KoM_min_mastery_null_modifier = {
+	KoM_terrain_type_grimoire_max_combat_roll = 0.00001
+}
+
+KoM_mastery_gain_modifier = {
+	KoM_terrain_type_grimoire_advantage = 1
+}
+KoM_mastery_gain_null_modifier = {
+	KoM_terrain_type_grimoire_advantage = 0.00001
+}

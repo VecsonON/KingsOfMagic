@@ -1,0 +1,31 @@
+﻿KingsOfMagic = {
+	alias = { KoM }
+}
+KoM_magick = {
+	parent = KingsOfMagic
+	alias = { KoM_mage }
+}
+KoM_goetia = {
+	parent = KoM_magick
+	alias = { KoM_magus }
+}
+KoM_thaumaturgy = {
+	parent = KoM_magick
+	alias = { KoM_thaumaturge }
+}
+KoM_theurgy = {
+	parent = KoM_magick
+	alias = { KoM_theurgist }
+}
+KoM_alchemy = {
+	parent = KoM_magick
+	alias = { KoM_alchemist }
+}
+KoM_taoism = {
+	parent = KoM_magick
+	alias = { KoM_daoshi }
+}
+KoM_onmyodo = {
+	parent = KoM_magick
+	alias = { KoM_onmyoji }
+}

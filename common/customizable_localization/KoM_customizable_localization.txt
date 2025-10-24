@@ -1,0 +1,26 @@
+﻿KoMMagicSchoolNameArtifact = {
+	type = artifact
+	text = {
+		trigger = { var:KoM_grimoire ?= flag:goetia }
+		localization_key = KoM_goetia
+	}
+	text = {
+		trigger = { var:KoM_grimoire ?= flag:thaumaturgy }
+		localization_key = KoM_thaumaturgy
+	}
+	text = {
+		trigger = { var:KoM_grimoire ?= flag:theurgy }
+		localization_key = KoM_theurgy
+	}
+	text = {
+		trigger = { var:KoM_grimoire ?= flag:alchemy }
+		localization_key = KoM_alchemy
+	}
+	text = {
+		trigger = { var:KoM_grimoire ?= flag:taoism }
+		localization_key = KoM_taoism
+	}
+	text = { # Default
+		localization_key = KoM_onmyodo
+	}
+}

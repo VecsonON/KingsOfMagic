@@ -1,0 +1,34 @@
+﻿l_english:
+ trait_KoM_witch_desc: "What ever they call themselves, they are still witch at the core and should be burned the same!"
+ trait_track_KoM: "Mastery"
+ trait_track_KoM_desc: "Mastery is a measure of much this [character|E] understands their [KoM_magick|E] school"
+
+ trait_KoM_magus: "Magus"
+ trait_KoM_magus_desc: "Practitioner of [KoM_goetia|E] school of [KoM_magick|E]"
+ trait_track_KoM_magus: "[KoM_goetia|E] $trait_track_KoM$"
+ trait_track_KoM_magus_desc: "$trait_track_KoM_desc$"
+
+ trait_KoM_thaumaturge: "Thaumaturge"
+ trait_KoM_thaumaturge_desc: "Practitioner of [KoM_thaumaturgy|E] school of [KoM_magick|E]"
+ trait_track_KoM_thaumaturge: "[KoM_thaumaturgy|E] $trait_track_KoM$"
+ trait_track_KoM_thaumaturge_desc: "$trait_track_KoM_desc$"
+
+ trait_KoM_theurgist: "Theurgist"
+ trait_KoM_theurgist_desc: "Practitioner of [KoM_theurgy|E] school of [KoM_magick|E]"
+ trait_track_KoM_theurgist: "[KoM_theurgy|E] $trait_track_KoM$"
+ trait_track_KoM_theurgist_desc: "$trait_track_KoM_desc$"
+
+ trait_KoM_alchemist: "Alchemist"
+ trait_KoM_alchemist_desc: "Practitioner of [KoM_alchemy|E] school of [KoM_magick|E]"
+ trait_track_KoM_alchemist: "[KoM_alchemy|E] $trait_track_KoM$"
+ trait_track_KoM_alchemist_desc: "$trait_track_KoM_desc$"
+
+ trait_KoM_daoshi: "Daoshi"
+ trait_KoM_daoshi_desc: "Practitioner of [KoM_taoism|E] school of [KoM_magick|E]"
+ trait_track_KoM_daoshi: "[KoM_taoism|E] $trait_track_KoM$"
+ trait_track_KoM_daoshi_desc: "$trait_track_KoM_desc$"
+
+ trait_KoM_onmyoji: "Onmyoji"
+ trait_KoM_onmyoji_desc: "Practitioner of [KoM_onmyodo|E] school of [KoM_magick|E]"
+ trait_track_KoM_onmyoji: "[KoM_onmyodo|E] $trait_track_KoM$"
+ trait_track_KoM_onmyoji_desc: "$trait_track_KoM_desc$"

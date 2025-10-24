@@ -1,0 +1,11 @@
+﻿l_english:
+ KoM_terrain_type_grimoire_advantage: "[Artifact.Custom('KoMMagicSchoolNameArtifact')] Mastery Gained"
+ KoM_terrain_type_grimoire_min_combat_roll: "Maximal [Artifact.Custom('KoMMagicSchoolNameArtifact')] Mastery"
+ KoM_terrain_type_grimoire_max_combat_roll: "Minimal [Artifact.Custom('KoMMagicSchoolNameArtifact')] Mastery"
+
+ KoM_goetia: "[KoM_goetia|E]"
+ KoM_thaumaturgy: "[KoM_thaumaturgy|E]"
+ KoM_theurgy: "[KoM_theurgy|E]"
+ KoM_alchemy: "[KoM_alchemy|E]"
+ KoM_taoism: "[KoM_taoism|E]"
+ KoM_onmyodo: "[KoM_onmyodo|E]"

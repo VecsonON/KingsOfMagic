@@ -1,0 +1,33 @@
+﻿l_english:
+ game_concept_KingsOfMagic: "Kings of Magic"
+ game_concept_KoM: "KoM"
+ game_concept_KingsOfMagic_desc: "#bold Kings of Magic#! is another mod made by #P me! VecsonON#!, also known for creating series of mods names #italic Arcane Legacy#!\n\nThis time, when I got burned our from current Iteration of AL namely Arcane Legacy 4, I decided against making another Arcane Legacy mod, It seems that I will always get stuck doing nothing productive, and instead make another mod not connected to Arcane Legacy. Even though at core they both are about magic in Crusader Kings 3, they differ in many way. Most obviously, this time I decided to go with historical magical systems instead of making one myself! Hopefully this will make my burnout problem less problematic.\n\nWhere in Arcane Legacy there was a single magic system that was designed to include in itself all historical magic systems, this time there isn't a single magic system but a set of them!"
+
+ game_concept_KoM_magick: "Magick"
+ game_concept_KoM_mage: "Mage"
+ game_concept_KoM_magick_desc: "#bold Magick#! is an umbrella term encompassing everything occult, magical or otherwise supernatural arts.\n\nThere isn't a single magic system shared across the world, but a set of them. Each different from other in usage, philosophy and goal; as well learning and advancing your proficiency in them.\n\nCurrently there are #bold 0#! magick schools in [KingsOfMagic|E] mod:\n$game_concept_KoM_magick_list$"
+ game_concept_KoM_magick_list: "$BULLET_WITH_TAB$[KoM_goetia|E] - Magick of summoning and controlling spirits\n$BULLET_WITH_TAB$[KoM_thaumaturgy|E] - Magick of wonder-working\n$BULLET_WITH_TAB$[KoM_theurgy|E] - Magick of Divine\n$BULLET_WITH_TAB$[KoM_alchemy|E] - Magick of Mattery\n$BULLET_WITH_TAB$[KoM_taoism|E] - Magic of Harmony\n$BULLET_WITH_TAB$[KoM_onmyodo|E] - Magic of Yin and Yang"
+
+ game_concept_KoM_goetia: "Goetia"
+ game_concept_KoM_magus: "Magus"
+ game_concept_KoM_goetia_desc: "#bold Goetia#! is an [KoM_magick|E] school of summoning and controlling spirits.\n\nWorld is full of spirits and other powerful in-material beings, and Magus know that. They conduct rituals to summon and control spirits to their will, forcing them to enact change upon world."
+
+ game_concept_KoM_thaumaturgy: "Thaumaturgy"
+ game_concept_KoM_thaumaturge: "Thaumaturge"
+ game_concept_KoM_thaumaturgy_desc: "#bold Thaumaturgy#! is an [KoM_magick|E] school of wonder-working.\n\nBeyond material world, there exist something larger, something primordial. Thaumaturge's want to influence it to change world around them as they fit. They cast spells and conduct rituals to manipulate it to do their biding."
+
+ game_concept_KoM_theurgy: "Theurgy"
+ game_concept_KoM_theurgist: "Theurgist"
+ game_concept_KoM_theurgy_desc: "#bold Theurgy#! is an [KoM_magick|E] school of divine.\n\nThere is God, and they are all-powerful. Normally God watches over creation without interfering, but especially faithful can prey for their glance, and even beg for world to change. Theurgists call upon God and their Angels to hopefully get change they want."
+
+ game_concept_KoM_alchemy: "Alchemy"
+ game_concept_KoM_alchemist: "Alchemist"
+ game_concept_KoM_alchemy_desc: "#bold Alchemy#! is an [KoM_magick|E] school of mattery.\n\nWhatever god exists, or not. One that we can be sure exist is our material world and it is full of tools of power, one just has to know where to look. Alchemists seek to understand material world to perfection, and to use it's power to achieve what they want."
+
+ game_concept_KoM_taoism: "Taoism"
+ game_concept_KoM_daoshi: "Daoshi"
+ game_concept_KoM_taoism_desc: "#bold Taoism#! is an [KoM_magick|E] school of Harmony.\n\nDao is everything, from rivers and mountains to humans and animals, And everything is connected by it. Daoshi seek to align themselves to Great Dao by balancing themselves to Yin and Yang, all in goal to achieve great wisdom and longevity."
+
+ game_concept_KoM_onmyodo: "Onmyodo"
+ game_concept_KoM_onmyoji: "Onmyoji"
+ game_concept_KoM_onmyodo_desc: "#bold Onmyodo#! is an [KoM_magick|E] school of Yin and Yang.\n\nWorld is governed by Yin and Yang as well as Elements, and that is truth. Onmyoji understand that achieving Harmony with Yin and Yang one protects themselves from misfortune and disease, as they come from disharmony."

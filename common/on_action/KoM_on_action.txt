@@ -1,0 +1,47 @@
+﻿on_game_start = {
+	on_actions = { KoM_on_game_start }
+}
+
+yearly_global_pulse = {
+	on_actions = { KoM_yearly_global_pulse }
+}
+
+KoM_on_game_start = {
+	
+	effect = {
+		set_global_variable = {
+			name = KoM_loaded
+			value = yes
+		}
+		trigger_event = KoM_core_events.0001
+	}
+}
+
+KoM_yearly_global_pulse = {
+	effect = {
+		every_living_character = {
+			limit = { has_variable = KoM_goetia_xp NOT = { any_secret = { secret_type = KoM_secret_magus } } }
+			add_secret = { TYPE = KoM_secret_magus }
+		}
+		every_living_character = {
+			limit = { has_variable = KoM_thaumaturgy_xp NOT = { any_secret = { secret_type = KoM_secret_thaumaturge } } }
+			add_secret = { TYPE = KoM_secret_thaumaturge }
+		}
+		every_living_character = {
+			limit = { has_variable = KoM_theurgy_xp NOT = { any_secret = { secret_type = KoM_secret_theurgist } } }
+			add_secret = { TYPE = KoM_secret_theurgist }
+		}
+		every_living_character = {
+			limit = { has_variable = KoM_alchemy_xp NOT = { any_secret = { secret_type = KoM_secret_alchemist } } }
+			add_secret = { TYPE = KoM_secret_alchemist }
+		}
+		every_living_character = {
+			limit = { has_variable = KoM_taoism_xp NOT = { any_secret = { secret_type = KoM_secret_daoshi } } }
+			add_secret = { TYPE = KoM_secret_daoshi }
+		}
+		every_living_character = {
+			limit = { has_variable = KoM_onmyodo_xp NOT = { any_secret = { secret_type = KoM_secret_onmyoji } } }
+			add_secret = { TYPE = KoM_secret_onmyoji }
+		}
+	}
+}

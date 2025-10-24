@@ -1,0 +1,162 @@
+﻿KoM_create_grimoire_dev_effect = { #DEV
+	KoM_create_grimoire_effect = {
+		OWNER = THIS
+		RARITY = common
+		NAME = common_grimoire
+		SCHOOL = goetia
+		MAX_MASTERY = 10
+		MIN_MASTERY = 0
+		MASTERY_GAIN = 2
+	}
+}
+
+KoM_create_grimoire_effect = {
+	$OWNER$ = { save_scope_as = owner }
+	set_artifact_rarity_$RARITY$ = yes
+
+	# Create the artifact
+	create_artifact = {
+		decaying = no
+		name = KoM_artifact_$NAME$_name
+		description = KoM_artifact_$NAME$_desc
+		type = journal
+		template = KoM_grimoire_template
+		visuals = KoM_grimoire_visuals
+		modifier = artifact_placeholder_modifier
+		wealth = scope:wealth
+		quality = scope:quality
+		history = { type = created_before_history }
+		save_scope_as = newly_created_artifact
+	}
+	hidden_effect_new_object = {
+		scope:newly_created_artifact = {
+			set_variable = { name = historical_unique_artifact value = yes }
+			set_variable = {
+				name = KoM_grimoire
+				value = flag:$SCHOOL$
+			}
+			add_artifact_modifier = KoM_max_mastery_null_modifier
+			KoM_give_modifier_times_keep_count_effect = {
+				COUNT = $MAX_MASTERY$
+				TYPE = artifact
+				MODIFIER = KoM_max_mastery_modifier
+				VAR = max_mastery
+			}
+			add_artifact_modifier = KoM_min_mastery_null_modifier
+			KoM_give_modifier_times_keep_count_effect = {
+				COUNT = $MIN_MASTERY$
+				TYPE = artifact
+				MODIFIER = KoM_min_mastery_modifier
+				VAR = min_mastery
+			}
+			add_artifact_modifier = KoM_mastery_gain_null_modifier
+			KoM_give_modifier_times_keep_count_effect = {
+				COUNT = $MASTERY_GAIN$
+				TYPE = artifact
+				MODIFIER = KoM_mastery_gain_modifier
+				VAR = mastery_gain
+			}
+		}
+	}
+}
+KoM_give_modifier_times_keep_count_effect = {
+	while = {
+		count = $COUNT$
+		add_$TYPE$_modifier = $MODIFIER$
+		if = {
+			limit = { has_variable = $VAR$ }
+			change_variable = {
+				name = $VAR$
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = $VAR$
+				value = 1
+			}
+		}
+	}
+}
+
+KoM_study_magic_school_effect = {
+	switch = {
+		trigger = $SCHOOL$
+		flag:goetia = { trait:KoM_magus = { save_scope_as = trait } }
+		flag:thaumaturgy = { trait:KoM_thaumaturge = { save_scope_as = trait } }
+		flag:theurgy = { trait:KoM_theurgist = { save_scope_as = trait } }
+		flag:alchemy = { trait:KoM_alchemist = { save_scope_as = trait } }
+		flag:taoism = { trait:KoM_daoshi = { save_scope_as = trait } }
+		flag:onmyodo = { trait:KoM_onmyoji = { save_scope_as = trait } }
+	}
+	if = {
+		limit = {
+			NOR = {
+				has_trait = scope:trait
+				switch = {
+					trigger = $SCHOOL$
+					flag:goetia = { has_variable = KoM_goetia_xp }
+					flag:thaumaturgy = { has_variable = KoM_thaumaturgy_xp }
+					flag:theurgy = { has_variable = KoM_theurgy_xp }
+					flag:alchemy = { has_variable = KoM_alchemy_xp }
+					flag:taoism = { has_variable = KoM_taoism_xp }
+					flag:onmyodo = { has_variable = KoM_onmyodo_xp }
+				}
+			}
+		}
+		KoM_learn_magic_school_from_trait_effect = { TRAIT = scope:trait }
+	}
+	else_if = {
+		limit = { has_trait = scope:trait }
+		add_trait_xp = {
+			trait = scope:trait
+			value = $COUNT$
+		}
+	}
+	else = {
+		custom_description = {
+			text = POD_add_magic_school_xp
+			object = scope:trait
+			value = $COUNT$
+			switch = {
+				trigger = $SCHOOL$
+				flag:goetia = { change_variable = { name = KoM_goetia_xp add = $COUNT$ } }
+				flag:thaumaturgy = { change_variable = { name = KoM_thaumaturgy_xp add = $COUNT$ } }
+				flag:theurgy = { change_variable = { name = KoM_theurgy_xp add = $COUNT$ } }
+				flag:alchemy = { change_variable = { name = KoM_alchemy_xp add = $COUNT$ } }
+				flag:taoism = { change_variable = { name = KoM_taoism_xp add = $COUNT$ } }
+				flag:onmyodo = { change_variable = { name = KoM_onmyodo_xp add = $COUNT$ } }
+			}
+		}
+	}
+}
+
+KoM_learn_magic_school_from_trait_effect = {
+	switch = {
+		trigger = $TRAIT$
+		trait:KoM_magus = { 
+			set_variable = { name = KoM_goetia_xp value = 0 } 
+			add_secret = { TYPE = KoM_secret_magus }
+		}
+		trait:KoM_thaumaturge = { 
+			set_variable = { name = KoM_thaumaturgy_xp value = 0 } 
+			add_secret = { TYPE = KoM_secret_thaumaturge } 
+		}
+		trait:KoM_theurgist = { 
+			set_variable = { name = KoM_theurgy_xp value = 0 } 
+			add_secret = { TYPE = KoM_secret_theurgist } 
+		}
+		trait:KoM_alchemist = { 
+			set_variable = { name = KoM_alchemy_xp value = 0 } 
+			add_secret = { TYPE = KoM_secret_alchemist } 
+		}
+		trait:KoM_daoshi = { 
+			set_variable = { name = KoM_taoism_xp value = 0 } 
+			add_secret = { TYPE = KoM_secret_daoshi } 
+		}
+		trait:KoM_onmyoji = { 
+			set_variable = { name = KoM_onmyodo_xp value = 0 } 
+			add_secret = { TYPE = KoM_secret_onmyoji } 
+		}
+	}
+}

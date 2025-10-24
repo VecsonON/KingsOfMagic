@@ -1,0 +1,198 @@
+﻿KoM_magus = {
+	flag = mage
+
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { NOT = { exists = this } }
+				desc = trait_KoM_magus
+			}
+			triggered_desc = {
+				trigger = { faith = { has_doctrine_parameter = witchcraft_illegal } }
+				desc = trait_witch
+			}
+			desc = trait_KoM_magus
+		}
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { NOT = { exists = this } }
+				desc = trait_KoM_magus_desc
+			}
+			triggered_desc = {
+				trigger = { faith = { has_doctrine_parameter = witchcraft_illegal } }
+				desc = trait_KoM_witch_desc
+			}
+			desc = trait_KoM_magus_desc
+		}
+	}
+
+	triggered_opinion = {
+		parameter = witchcraft_illegal
+		opinion_modifier = witchcraft_crime
+		ignore_opinion_value_if_same_trait = yes
+	}
+
+	triggered_opinion = {
+		parameter = witchcraft_shunned
+		opinion_modifier = witchcraft_intolerant
+		ignore_opinion_value_if_same_trait = yes
+	}
+
+	track = {
+		10 = { }
+		25 = { }
+		50 = { }
+		75 = { }
+		100 = { }
+	}
+
+	icon = magus.dds
+}
+KoM_thaumaturge = {
+	flag = mage
+
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { NOT = { exists = this } }
+				desc = trait_KoM_thaumaturge
+			}
+			triggered_desc = {
+				trigger = { faith = { has_doctrine_parameter = witchcraft_illegal } }
+				desc = trait_witch
+			}
+			desc = trait_KoM_thaumaturge
+		}
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { NOT = { exists = this } }
+				desc = trait_KoM_thaumaturge_desc
+			}
+			triggered_desc = {
+				trigger = { faith = { has_doctrine_parameter = witchcraft_illegal } }
+				desc = trait_KoM_witch_desc
+			}
+			desc = trait_KoM_thaumaturge_desc
+		}
+	}
+
+	triggered_opinion = {
+		parameter = witchcraft_illegal
+		opinion_modifier = witchcraft_crime
+		ignore_opinion_value_if_same_trait = yes
+	}
+
+	triggered_opinion = {
+		parameter = witchcraft_shunned
+		opinion_modifier = witchcraft_intolerant
+		ignore_opinion_value_if_same_trait = yes
+	}
+
+	track = {
+		10 = { }
+		25 = { }
+		50 = { }
+		75 = { }
+		100 = { }
+	}
+
+	icon = thaumaturge.dds
+}
+KoM_theurgist = {
+	flag = mage
+
+	track = {
+		10 = { }
+		25 = { }
+		50 = { }
+		75 = { }
+		100 = { }
+	}
+
+	icon = theurgist.dds
+}
+KoM_alchemist = {
+	flag = mage
+
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { NOT = { exists = this } }
+				desc = trait_KoM_alchemist
+			}
+			triggered_desc = {
+				trigger = { faith = { has_doctrine_parameter = witchcraft_illegal } }
+				desc = trait_witch
+			}
+			desc = trait_KoM_alchemist
+		}
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { NOT = { exists = this } }
+				desc = trait_KoM_alchemist_desc
+			}
+			triggered_desc = {
+				trigger = { faith = { has_doctrine_parameter = witchcraft_illegal } }
+				desc = trait_KoM_witch_desc
+			}
+			desc = trait_KoM_alchemist_desc
+		}
+	}
+
+	triggered_opinion = {
+		parameter = witchcraft_illegal
+		opinion_modifier = witchcraft_crime
+		ignore_opinion_value_if_same_trait = yes
+	}
+
+	triggered_opinion = {
+		parameter = witchcraft_shunned
+		opinion_modifier = witchcraft_intolerant
+		ignore_opinion_value_if_same_trait = yes
+	}
+
+	track = {
+		10 = { }
+		25 = { }
+		50 = { }
+		75 = { }
+		100 = { }
+	}
+	
+	icon = alchemist.dds
+}
+KoM_daoshi = {
+	flag = mage
+
+	track = {
+		10 = { }
+		25 = { }
+		50 = { }
+		75 = { }
+		100 = { }
+	}
+
+	icon = daoshi.dds
+}
+KoM_onmyoji = {
+	flag = mage
+
+	track = {
+		10 = { }
+		25 = { }
+		50 = { }
+		75 = { }
+		100 = { }
+	}
+
+	icon = onmyoji.dds
+}

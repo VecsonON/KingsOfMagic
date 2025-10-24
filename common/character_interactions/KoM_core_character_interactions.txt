@@ -1,0 +1,56 @@
+﻿KoM_study_grimoire_interaction = {
+	category = interaction_category_friendly
+	icon = icon_scheme_crypto_religion
+	desc = KoM_study_grimoire_interaction_desc
+
+	target_type = artifact
+	target_filter = actor_artifacts
+	is_shown = {
+		scope:actor = scope:recipient
+		scope:actor = {
+			any_character_artifact = {
+				has_variable = KoM_grimoire
+			}
+		}
+	}
+
+	# cooldown = { years = 1 }
+	
+	can_be_picked_artifact = {
+		scope:target = {
+			custom_tooltip = {
+				text = KoM_study_grimoire_interaction_tt
+				has_variable = KoM_grimoire
+			}
+			# switch = {
+			# 	trigger = var:KoM_grimoire
+			# 	flag:goetia = { h }
+			# }
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			duel = {
+				skill = learning
+				value = 10
+				50 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = high_positive_duel_skill_multiplier
+					}
+					KoM_study_magic_school_effect = { SCHOOL = scope:target.var:KoM_grimoire COUNT = scope:target.var:mastery_gain }
+				}
+				50 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = low_negative_duel_skill_multiplier
+					}
+					add_stress = 25
+				}
+			}
+		}
+	}
+
+	auto_accept = yes
+}

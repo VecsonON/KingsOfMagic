@@ -1,0 +1,5 @@
+﻿KoM_grimoire_visuals = {
+	icon = "KoM_grimoire.dds"
+	asset = ep1_indian_book_big_01_a_entity
+	support_type = "lectern"
+}	
