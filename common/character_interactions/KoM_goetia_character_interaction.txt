@@ -229,6 +229,7 @@
 				scope:paimon = { save_scope_value_as = { name = demon value = flag:paimon } }
 				fallback = { save_scope_value_as = { name = demon value = flag:null } }
 			}
+			if = { limit = { scope:demon ?= flag:null } }
 			switch = {
 				trigger = yes
 				scope:the_gate_of_invocation = {

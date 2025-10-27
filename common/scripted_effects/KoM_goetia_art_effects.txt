@@ -8,45 +8,75 @@
 KoM_learn_random_true_name_demon_effect = {
 	random_list = {
 		10 = { #Intrigue, Discover Secret of Target, Modifier(Scheme secrecy +10%), +5 Opportunities
-			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:bael_true_name } } } 
-			KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = bael } 
-		} 
+			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:bael_true_name } } }
+			send_interface_message = {
+				title = KoM_rite_the_gate_of_invocation
+				KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = bael }
+			}
+		}
 		10 = { #Learning, Modifier(Innovation speed +20%), Give random Inspiration to target, Can lessen relation
-			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:amon_true_name } } } 
-			KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = amon } 
-		} 
+			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:amon_true_name } } }
+			send_interface_message = {
+				title = KoM_rite_the_gate_of_invocation
+				KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = amon }
+			}
+		}
 		8 = { #Diplomacy, Modifier(Attractiveness Opinion +20), -50 stress, Modifier(-1 to all skills)
-			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:vapula_true_name } } } 
-			KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = vapula } 
-		} 
+			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:vapula_true_name } } }
+			send_interface_message = {
+				title = KoM_rite_the_gate_of_invocation
+				KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = vapula }
+			}
+		}
 		8 = { #Martial, Increases success chance for next Hunt, Modifier(+6 prowess), Modifier(+6 advantage)
-			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:barbatos_true_name } } } 
-			KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = barbatos } 
-		} 
+			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:barbatos_true_name } } }
+			send_interface_message = {
+				title = KoM_rite_the_gate_of_invocation
+				KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = barbatos }
+			}
+		}
 		6 = { #Learning, You will know who killed in your court, Modifier(-20% stress Gain), Heal depressed|-25 stress
-			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:gamigin_true_name } } } 
-			KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = gamigin } 
-		} 
-		6 = { #Intrigue, Intrigue +1, Modifier(General Opinion +10), Gain strong hook on target 
-			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:beleth_true_name } } } 
-			KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = beleth } 
-		} 
+			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:gamigin_true_name } } }
+			send_interface_message = {
+				title = KoM_rite_the_gate_of_invocation
+				KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = gamigin }
+			}
+		}
+		6 = { #Intrigue, Intrigue +1, Modifier(General Opinion +10), Gain strong hook on target
+			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:beleth_true_name } } }
+			send_interface_message = {
+				title = KoM_rite_the_gate_of_invocation
+				KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = beleth }
+			}
+		}
 		4 = { #Learning, Learning +1, Modifier(Travel Safety +50), Modifier(+2 learning per piety)
-			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:astaroth_true_name } } } 
-			KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = astaroth } 
-		} 
+			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:astaroth_true_name } } }
+			send_interface_message = {
+				title = KoM_rite_the_gate_of_invocation
+				KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = astaroth }
+			}
+		}
 		4 = { #Martial, Martial +1, Give to all Knights Modifier(+5 advantage), Give target Brave and Loyal
-			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:marchosias_true_name } } } 
-			KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = marchosias } 
-		} 
+			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:marchosias_true_name } } }
+			send_interface_message = {
+				title = KoM_rite_the_gate_of_invocation
+				KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = marchosias }
+			}
+		}
 		2 = { #Diplomacy, Diplomacy +1, Modifier(-20 vassal opinion), Modifier(Control Gain -50%)
-			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:belial_true_name } } } 
-			KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = belial } 
-		} 
+			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:belial_true_name } } }
+			send_interface_message = {
+				title = KoM_rite_the_gate_of_invocation
+				KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = belial }
+			}
+		}
 		2 = { #Stewardship, Stewardship +1, Modifier(+20 vassal opinion), Modifier(Control Gain +50%)
-			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:paimon_true_name } } } 
-			KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = paimon } 
-		} 
+			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:paimon_true_name } } }
+			send_interface_message = {
+				title = KoM_rite_the_gate_of_invocation
+				KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = paimon }
+			}
+		}
 	}
 }
 KoM_the_gate_of_invocation_learn_demon_name_effect = {
@@ -84,13 +114,13 @@ KoM_the_great_work_of_unification_effect = {
 		title = KoM_rite_the_great_work_of_unification
 		add_piety = -1000
 		remove_short_term_gold = 200
-		$TARGET$ = { 
+		$TARGET$ = {
 			every_character_trait = {
-				limit = { 
+				limit = {
 					OR = {
-						has_trait_category = personality 
+						has_trait_category = personality
 						has_trait_category = education
-					} 
+					}
 				}
 				save_scope_as = this_trait
 				PREV = { remove_trait = scope:this_trait }
@@ -100,7 +130,7 @@ KoM_the_great_work_of_unification_effect = {
 				limit = { has_any_nickname = yes }
 				remove_nickname = yes
 			}
-			
+
 		}
 		switch = {
 			trigger = $DEMON$

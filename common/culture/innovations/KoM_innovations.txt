@@ -1,0 +1,36 @@
+﻿KoM_goetia_icon = {
+	icon = "gfx/interface/icons/traits/magus.dds"
+	potential = { always = no }
+	group = culture_group_regional
+	culture_era = culture_era_late_medieval
+}
+KoM_thaumaturgy_icon = {
+	icon = "gfx/interface/icons/traits/thaumaturge.dds"
+	potential = { always = no }
+	group = culture_group_regional
+	culture_era = culture_era_late_medieval
+}
+KoM_theurgy_icon = {
+	icon = "gfx/interface/icons/traits/theurgist.dds"
+	potential = { always = no }
+	group = culture_group_regional
+	culture_era = culture_era_late_medieval
+}
+KoM_alchemy_icon = {
+	icon = "gfx/interface/icons/traits/alchemist.dds"
+	potential = { always = no }
+	group = culture_group_regional
+	culture_era = culture_era_late_medieval
+}
+KoM_taoism_icon = {
+	icon = "gfx/interface/icons/traits/daoshi.dds"
+	potential = { always = no }
+	group = culture_group_regional
+	culture_era = culture_era_late_medieval
+}
+KoM_onmyodo_icon = {
+	icon = "gfx/interface/icons/traits/onmyoji.dds"
+	potential = { always = no }
+	group = culture_group_regional
+	culture_era = culture_era_late_medieval
+}

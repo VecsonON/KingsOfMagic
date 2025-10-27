@@ -5,6 +5,7 @@ KoM_goetia_events.1 = { # the_gate_of_invocation
 	title = KoM_goetia_events.1.t
 	desc = KoM_goetia_events.1.desc
 	theme = witchcraft
+	override_background = { reference = sitting_room_night }
 
 	option = {
 		name = KoM_goetia_events.1.a
@@ -64,6 +65,7 @@ KoM_goetia_events.2 = { # the_lesser_conjurations
 	title = KoM_goetia_events.2.t
 	desc = KoM_goetia_events.2.desc
 	theme = witchcraft
+	override_background = { reference = sitting_room_night }
 
 	left_portrait = {
 		character = scope:KoM_target
@@ -213,6 +215,7 @@ KoM_goetia_events.3 = { # the_seventy_two_gates
 	title = KoM_goetia_events.3.t
 	desc = KoM_goetia_events.3.desc
 	theme = witchcraft
+	override_background = { reference = sitting_room_night }
 
 	left_portrait = {
 		character = scope:KoM_target
@@ -327,6 +330,7 @@ KoM_goetia_events.4 = { # the_royal_theurgy_of_solomon
 	title = KoM_goetia_events.4.t
 	desc = KoM_goetia_events.4.desc
 	theme = witchcraft
+	override_background = { reference = sitting_room_night }
 
 	left_portrait = {
 		character = scope:KoM_target

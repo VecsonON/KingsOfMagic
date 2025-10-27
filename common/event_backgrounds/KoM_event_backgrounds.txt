@@ -1,0 +1,208 @@
+﻿sitting_room_night = {
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					OR = {
+						AND = {
+							government_has_flag = government_is_tribal
+							location.culture ?= { has_graphical_steppe_culture_group_trigger = yes }
+						}
+						AND = {
+							is_landless_adventurer = yes
+							culture ?= { has_graphical_steppe_culture_group_trigger = yes }
+						}
+					}
+				}
+			}
+			trigger_else = {
+				OR = {
+					AND = {
+						government_has_flag = government_is_tribal
+						location.culture ?= { has_graphical_steppe_culture_group_trigger = yes }
+					}
+					AND = {
+						is_landless_adventurer = yes
+						culture ?= { has_graphical_steppe_culture_group_trigger = yes }
+					}
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_tent_interior_mongol_night.dds"
+		environment = "KoM_environment_event_night_light"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_tent_interior_mongol"
+	}
+	background = { #LAAMPs
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					is_landless_adventurer = yes
+				}
+			}
+			trigger_else = {
+				is_landless_adventurer = yes
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/ep3_adventurer_background_night.dds"
+		environment = "environment_ep3_living_tent_interior"
+		ambience = "event:/DLC/EP3/SFX/Events/Event_Images/ep3_evn_eventimage_living_tent_interior"
+	}
+	background = { # Byzantium/Greek Kings/Emperors
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					highest_held_title_tier >= tier_kingdom
+					OR = {
+						location.culture ?= {
+							has_graphical_mediterranean_culture_group_trigger = yes 
+						}
+						location ?= {
+							steppe_building_gfx_use_mediterranean_trigger = yes
+						}
+					}
+				}
+			}
+			trigger_else = {
+				highest_held_title_tier >= tier_kingdom
+				OR = {
+					location.culture ?= {
+						has_graphical_mediterranean_culture_group_trigger = yes 
+					}
+					location ?= {
+						steppe_building_gfx_use_mediterranean_trigger = yes
+					}
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/ep3_relaxing_room_night.dds"
+		environment = "KoM_environment_event_night_purple"
+		ambience = "event:/DLC/EP3/SFX/Events/Event_Images/ep3_evn_eventimage_byzantine_relaxing_room"
+	}
+	background = { # Byzantium/Greek Everyone else
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					OR = {
+						location.culture ?= {
+							OR = {
+								has_cultural_pillar = heritage_byzantine
+								has_cultural_pillar = heritage_caucasian
+								has_cultural_pillar = heritage_latin
+								has_graphical_mediterranean_culture_group_trigger = yes 
+							}
+						}
+						location ?= {
+							steppe_building_gfx_use_mediterranean_trigger = yes
+						}
+					}
+				}
+			}
+			trigger_else = {
+				OR = {
+					location.culture ?= {
+						OR = {
+							has_cultural_pillar = heritage_byzantine
+							has_cultural_pillar = heritage_caucasian
+							has_cultural_pillar = heritage_latin
+							has_graphical_mediterranean_culture_group_trigger = yes 
+						}
+					}
+					location ?= {
+						steppe_building_gfx_use_mediterranean_trigger = yes
+					}
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/ep3_medi_study_night.dds"
+		environment = "KoM_environment_event_night_purple"
+		ambience = "event:/SFX/Events/Backgrounds/office_workplace"
+	}
+	background = {	#FP2
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					OR = {
+						location.culture ?= { 
+							OR = {
+								has_building_gfx = iberian_building_gfx
+								has_building_gfx = iranian_building_gfx
+								has_building_gfx = indian_building_gfx
+								has_building_gfx = mena_building_gfx
+							}
+						}
+						location ?= {
+							OR = {
+								geographical_region = world_europe_west_iberia
+								steppe_building_gfx_use_mena_trigger = yes
+								steppe_building_gfx_use_indian_trigger = yes
+							}
+						}
+					}
+				}
+			}
+			trigger_else = {
+				OR = {
+					location.culture ?= { 
+						OR = {
+							has_building_gfx = iberian_building_gfx
+							has_building_gfx = iranian_building_gfx
+							has_building_gfx = indian_building_gfx
+							has_building_gfx = mena_building_gfx
+						}
+					}
+					location ?= {
+						OR = {
+							geographical_region = world_europe_west_iberia
+							steppe_building_gfx_use_mena_trigger = yes
+							steppe_building_gfx_use_indian_trigger = yes
+						}
+					}
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/fp2_relaxing_room_night.dds"
+		environment = "KoM_environment_event_night_deepblue"
+		ambience = "event:/DLC/FP2/SFX/Events/relaxing_room"
+	}
+	background = {	#Tribal Study
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					OR = {
+						location.culture ?= { has_building_gfx = norse_building_gfx }
+						should_use_tribal_realm_palace_graphics_trigger = yes
+						AND = {
+							government_has_flag = government_is_tribal
+							location.culture ?= { has_graphical_steppe_culture_group_trigger = yes }
+						}
+					}
+				}
+			}
+			trigger_else = {
+				OR = {
+					location.culture ?= { has_building_gfx = norse_building_gfx }
+					should_use_tribal_realm_palace_graphics_trigger = yes
+					AND = {
+						government_has_flag = government_is_tribal
+						location.culture ?= { has_graphical_steppe_culture_group_trigger = yes }
+					}
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/fp1_steward_study_night.dds"
+		environment = "KoM_environment_event_night_light"
+		ambience = "event:/SFX/Events/Backgrounds/office_workplace"
+	}
+
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/sittingroom_night.dds"
+		environment = "KoM_environment_event_night_light"
+		ambience = "event:/SFX/Events/Backgrounds/sittingroom_fireplace"
+	}
+}

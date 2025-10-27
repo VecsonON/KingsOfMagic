@@ -63,10 +63,10 @@
 				alwaystransparent = yes
 
 				highlight_icon = {
-					position = { 3 2 }
+					position = { 3 3 }
 					size = { 30 30 }
 					alwaystransparent = yes
-					texture = "gfx/interface/icons/traits/magus.dds"
+					texture = "[GetCultureInnovationType(Concatenate(Concatenate('KoM_',GetPlayer.MakeScope.Var('current_rite').Var('school').GetFlagName),'_icon')).GetIcon]"
 					block "effect" {}
 
 					glow = {

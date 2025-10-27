@@ -1,6 +1,10 @@
 ﻿l_english:
- KoM_artifact_grimoire_of_goetic_vecson_name: "[KoM_grimoire|E] of [KoM_goetic|E] Vecson"
- KoM_artifact_grimoire_of_goetic_vecson_desc: "Written by being from outside of the world, it contains every [KoM_goetic|E] teaching from True Names of Demons, up to how to control them."
+ KoM_artifact_grimoire_of_goetic_vecson_name: "[KoM_grimoire|E] of Magus Vecson"
+ KoM_artifact_grimoire_of_goetic_vecson_desc: "Written by being from outside of the world, it contains every [KoM_goetic|E] teaching."
+ KoM_artifact_grimoire_of_taoism_vecson_name: "[KoM_grimoire|E] of Daoshi Vecson"
+ KoM_artifact_grimoire_of_taoism_vecson_desc: "Written by being from outside of the world, it contains every [KoM_taoism|E] teaching."
+ KoM_artifact_grimoire_of_onmyodo_vecson_name: "[KoM_grimoire|E] of Onmyoji Vecson"
+ KoM_artifact_grimoire_of_onmyodo_vecson_desc: "Written by being from outside of the world, it contains every [KoM_onmyodo|E] teaching."
 
  KoM_artifact_ars_goetia_name: "Ars Goetia"
  KoM_artifact_ars_goetia_desc: "Ars Goetia"
