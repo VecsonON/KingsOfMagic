@@ -7,7 +7,7 @@ KoM_magick = {
 }
 KoM_goetia = {
 	parent = KoM_magick
-	alias = { KoM_magus }
+	alias = { KoM_goetic KoM_magus }
 }
 KoM_thaumaturgy = {
 	parent = KoM_magick
@@ -28,4 +28,18 @@ KoM_taoism = {
 KoM_onmyodo = {
 	parent = KoM_magick
 	alias = { KoM_onmyoji }
+}
+
+KoM_grimoire = {
+	parent = KoM_magick
+	alias = { KoM_grimoires }
+}
+
+KoM_rite = {
+	parent = KoM_magick
+	alias = { KoM_rites }
+}
+KoM_spell = {
+	parent = KoM_magick
+	alias = { KoM_spells }
 }

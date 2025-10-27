@@ -5,6 +5,9 @@
 
 	target_type = artifact
 	target_filter = actor_artifacts
+
+	# cooldown = { years = 1 }
+
 	is_shown = {
 		scope:actor = scope:recipient
 		scope:actor = {
@@ -14,18 +17,22 @@
 		}
 	}
 
-	# cooldown = { years = 1 }
-	
 	can_be_picked_artifact = {
 		scope:target = {
 			custom_tooltip = {
 				text = KoM_study_grimoire_interaction_tt
 				has_variable = KoM_grimoire
 			}
-			# switch = {
-			# 	trigger = var:KoM_grimoire
-			# 	flag:goetia = { h }
-			# }
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		trigger_if = {
+			limit = { exists = scope:target scope:target ?= { has_variable = KoM_grimoire } }
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = scope:target.var:KoM_grimoire VALUE = scope:target.var:max_mastery AT_LEAST = no } 
+				KoM_has_magic_school_xp_trigger = { SCHOOL = scope:target.var:KoM_grimoire VALUE = scope:target.var:min_mastery AT_LEAST = yes }
+			}
 		}
 	}
 

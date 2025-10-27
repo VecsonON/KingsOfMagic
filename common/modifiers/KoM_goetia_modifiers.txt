@@ -1,0 +1,72 @@
+﻿KoM_amon_guidance_modifier = {
+	icon = magic_positive
+	cultural_head_fascination_mult = 0.25
+}
+KoM_vapula_guidance_modifier = {
+	icon = magic_positive
+	attraction_opinion = 20
+}
+
+KoM_bael_influence_modifier = {
+	icon = magic_positive
+	owned_scheme_secrecy_add = 15
+}
+KoM_amon_influence_modifier = {
+	icon = magic_positive
+	monthly_lifestyle_xp_gain_mult = 0.2
+}
+KoM_barbatos_influence_modifier = {
+	icon = magic_positive
+	prowess_no_portrait = 6
+}
+KoM_gamigin_influence_modifier = {
+	icon = magic_positive
+	stress_gain_mult = -0.1
+}
+KoM_beleth_influence_modifier = {
+	icon = magic_positive
+	general_opinion = 10
+}
+KoM_astaroth_influence_modifier = {
+	icon = magic_positive
+	character_travel_safety = 30
+}
+KoM_marchosias_influence_modifier = {
+	icon = magic_positive
+	advantage = 5
+}
+KoM_belial_influence_modifier = {
+	icon = magic_negative
+	vassal_opinion = -20
+}
+KoM_paimon_influence_modifier = {
+	icon = magic_positive
+	vassal_opinion = 20
+}
+
+KoM_vapula_command_modifier = {
+	icon = magic_positive
+	diplomacy = -2
+	martial = -2
+	stewardship = -2
+	intrigue = -2
+	learning = -2
+}
+KoM_barbatos_command_modifier = {
+	icon = magic_positive
+	advantage = 12
+}
+KoM_astaroth_command_modifier = {
+	icon = magic_positive
+	learning_per_piety_level = 3
+}
+KoM_belial_command_modifier = {
+	icon = magic_negative
+	monthly_county_control_decline_add = -0.5
+	monthly_county_control_decline_factor = 1
+}
+KoM_paimon_command_modifier = {
+	icon = magic_positive
+	monthly_county_control_growth_add = 0.5
+	monthly_county_control_growth_factor = 1
+}

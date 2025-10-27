@@ -1,0 +1,5 @@
+﻿macro = {
+	description = "Returns Trait"
+	definition = "KoMGetTrait(Type)"
+	replace_with = "GetTrait(Type).GetName(GetNullCharacter)"
+}

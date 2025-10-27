@@ -1,0 +1,288 @@
+﻿KoM_goetia_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	use_diplomatic_range = no
+
+	is_shown = {
+		scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } }
+	}
+
+	send_options_exclusive = no
+
+	send_option = {
+		is_shown = { KoM_goetia_interaction_show_rite_trigger = { OPTION = the_gate_of_invocation } }
+		is_valid = {
+			KoM_must_self_cast_trigger = yes
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 10 AT_LEAST = yes }
+				KoM_knows_every_demon_true_name_trigger = no
+			}
+		}
+		flag = the_gate_of_invocation
+		localization = KoM_rite_the_gate_of_invocation
+	}
+
+	send_option = {
+		is_shown = { KoM_goetia_interaction_show_rite_trigger = { OPTION = the_lesser_conjurations } }
+		is_valid = {
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 30 AT_LEAST = yes }
+			}
+		}
+		flag = the_lesser_conjurations
+		localization = KoM_rite_the_lesser_conjurations
+	}
+
+	send_option = {
+		is_shown = { KoM_goetia_interaction_show_rite_trigger = { OPTION = the_seventy_two_gates } }
+		is_valid = {
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 50 AT_LEAST = yes }
+			}
+		}
+		flag = the_seventy_two_gates
+		localization = KoM_rite_the_seventy_two_gates
+	}
+
+	send_option = {
+		is_shown = { KoM_goetia_interaction_show_rite_trigger = { OPTION = the_royal_theurgy_of_solomon } }
+		is_valid = {
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 75 AT_LEAST = yes }
+			}
+		}
+		flag = the_royal_theurgy_of_solomon
+		localization = KoM_rite_the_royal_theurgy_of_solomon
+	}
+
+	send_option = {
+		is_shown = { KoM_goetia_interaction_show_rite_trigger = { OPTION = the_great_work_of_unification } }
+		is_valid = {
+			KoM_cannot_self_cast_trigger = yes
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 100 AT_LEAST = yes }
+			}
+			scope:recipient = {
+				is_imprisoned_by = scope:actor
+			}
+		}
+		flag = the_great_work_of_unification
+		localization = KoM_rite_the_great_work_of_unification
+	}
+
+	send_option = {
+		is_shown = { KoM_goetia_interaction_show_demon_trigger = { OPTION = bael } }
+		is_valid = {
+			scope:actor = { KoM_knows_true_name_of_demon_trigger = { DEMON = bael } }
+			trigger_if = {
+				limit = { scope:the_lesser_conjurations ?= yes }
+				KoM_cannot_self_cast_trigger = yes
+			}
+		}
+		flag = bael
+		localization = KoM_goetia_demon_bael
+	}
+	send_option = {
+		is_shown = { KoM_goetia_interaction_show_demon_trigger = { OPTION = amon } }
+		is_valid = {
+			scope:actor = { KoM_knows_true_name_of_demon_trigger = { DEMON = amon } }
+			trigger_if = {
+				limit = { scope:the_lesser_conjurations ?= yes }
+				KoM_must_self_cast_trigger = yes
+			}
+		}
+		flag = amon
+		localization = KoM_goetia_demon_amon
+	}
+	send_option = {
+		is_shown = { KoM_goetia_interaction_show_demon_trigger = { OPTION = vapula } }
+		is_valid = {
+			scope:actor = { KoM_knows_true_name_of_demon_trigger = { DEMON = vapula } }
+			trigger_if = {
+				limit = { scope:the_lesser_conjurations ?= yes }
+				KoM_must_self_cast_trigger = yes
+			}
+		}
+		flag = vapula
+		localization = KoM_goetia_demon_vapula
+	}
+	send_option = {
+		is_shown = { KoM_goetia_interaction_show_demon_trigger = { OPTION = barbatos } }
+		is_valid = {
+			scope:actor = { KoM_knows_true_name_of_demon_trigger = { DEMON = barbatos } }
+			trigger_if = {
+				limit = { scope:the_lesser_conjurations ?= yes }
+				KoM_must_self_cast_trigger = yes
+			}
+		}
+		flag = barbatos
+		localization = KoM_goetia_demon_barbatos
+	}
+	send_option = {
+		is_shown = { KoM_goetia_interaction_show_demon_trigger = { OPTION = gamigin } }
+		is_valid = {
+			scope:actor = { KoM_knows_true_name_of_demon_trigger = { DEMON = gamigin } }
+			trigger_if = {
+				limit = { scope:the_lesser_conjurations ?= yes }
+				KoM_cannot_self_cast_trigger = yes
+			}
+		}
+		flag = gamigin
+		localization = KoM_goetia_demon_gamigin
+	}
+	send_option = {
+		is_shown = { KoM_goetia_interaction_show_demon_trigger = { OPTION = beleth } }
+		is_valid = {
+			scope:actor = { KoM_knows_true_name_of_demon_trigger = { DEMON = beleth } }
+			trigger_if = {
+				limit = { scope:the_lesser_conjurations ?= yes }
+				KoM_must_self_cast_trigger = yes
+			}
+		}
+		flag = beleth
+		localization = KoM_goetia_demon_beleth
+	}
+	send_option = {
+		is_shown = { KoM_goetia_interaction_show_demon_trigger = { OPTION = astaroth } }
+		is_valid = {
+			scope:actor = { KoM_knows_true_name_of_demon_trigger = { DEMON = astaroth } }
+			trigger_if = {
+				limit = { scope:the_lesser_conjurations ?= yes }
+				KoM_must_self_cast_trigger = yes
+			}
+		}
+		flag = astaroth
+		localization = KoM_goetia_demon_astaroth
+	}
+	send_option = {
+		is_shown = { KoM_goetia_interaction_show_demon_trigger = { OPTION = marchosias } }
+		is_valid = {
+			scope:actor = { KoM_knows_true_name_of_demon_trigger = { DEMON = marchosias } }
+			trigger_if = {
+				limit = { scope:the_lesser_conjurations ?= yes }
+				KoM_must_self_cast_trigger = yes
+			}
+		}
+		flag = marchosias
+		localization = KoM_goetia_demon_marchosias
+	}
+	send_option = {
+		is_shown = { KoM_goetia_interaction_show_demon_trigger = { OPTION = belial } }
+		is_valid = {
+			scope:actor = { KoM_knows_true_name_of_demon_trigger = { DEMON = belial } }
+			trigger_if = {
+				limit = { scope:the_lesser_conjurations ?= yes }
+				KoM_must_self_cast_trigger = yes
+			}
+		}
+		flag = belial
+		localization = KoM_goetia_demon_belial
+	}
+	send_option = {
+		is_shown = { KoM_goetia_interaction_show_demon_trigger = { OPTION = paimon } }
+		is_valid = {
+			scope:actor = { KoM_knows_true_name_of_demon_trigger = { DEMON = paimon } }
+			trigger_if = {
+				limit = { scope:the_lesser_conjurations ?= yes }
+				KoM_must_self_cast_trigger = yes
+			}
+		}
+		flag = paimon
+		localization = KoM_goetia_demon_paimon
+	}
+
+	can_send = {
+		custom_tooltip = {
+			text = KoM_select_art
+			OR = {
+				scope:the_gate_of_invocation ?= yes
+
+				scope:bael ?= yes
+				scope:amon ?= yes
+				scope:vapula ?= yes
+				scope:barbatos ?= yes
+				scope:gamigin ?= yes
+				scope:beleth ?= yes
+				scope:astaroth ?= yes
+				scope:marchosias ?= yes
+				scope:belial ?= yes
+				scope:paimon ?= yes
+			}
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			switch = {
+				trigger = yes
+				scope:bael = { save_scope_value_as = { name = demon value = flag:bael } }
+				scope:amon = { save_scope_value_as = { name = demon value = flag:amon } }
+				scope:vapula = { save_scope_value_as = { name = demon value = flag:vapula } }
+				scope:barbatos = { save_scope_value_as = { name = demon value = flag:barbatos } }
+				scope:gamigin = { save_scope_value_as = { name = demon value = flag:gamigin } }
+				scope:beleth = { save_scope_value_as = { name = demon value = flag:beleth } }
+				scope:astaroth = { save_scope_value_as = { name = demon value = flag:astaroth } }
+				scope:marchosias = { save_scope_value_as = { name = demon value = flag:marchosias } }
+				scope:belial = { save_scope_value_as = { name = demon value = flag:belial } }
+				scope:paimon = { save_scope_value_as = { name = demon value = flag:paimon } }
+				fallback = { save_scope_value_as = { name = demon value = flag:null } }
+			}
+			switch = {
+				trigger = yes
+				scope:the_gate_of_invocation = {
+					KoM_start_rite_effect = {
+						ID = the_gate_of_invocation
+						MONTHLY_PROGRESS = KoM_rite_time_1_year
+						TARGET = scope:recipient
+						SCHOOL = goetia
+					}
+					show_as_tooltip = { KoM_the_gate_of_invocation_effect = yes }
+				}
+				scope:the_lesser_conjurations = {
+					KoM_start_rite_effect = {
+						ID = the_lesser_conjurations
+						MONTHLY_PROGRESS = KoM_rite_time_6_months
+						TARGET = scope:recipient
+						SCHOOL = goetia
+					}
+					show_as_tooltip = { KoM_the_lesser_conjurations_effect = { TARGET = scope:recipient } }
+				}
+				scope:the_seventy_two_gates = {
+					KoM_start_rite_effect = {
+						ID = the_seventy_two_gates
+						MONTHLY_PROGRESS = KoM_rite_time_1_year
+						TARGET = scope:recipient
+						SCHOOL = goetia
+					}
+					show_as_tooltip = { KoM_the_seventy_two_gates_effect = { TARGET = scope:recipient } }
+				}
+				scope:the_royal_theurgy_of_solomon = {
+					KoM_start_rite_effect = {
+						ID = the_royal_theurgy_of_solomon
+						MONTHLY_PROGRESS = KoM_rite_time_2_years
+						TARGET = scope:recipient
+						SCHOOL = goetia
+					}
+					show_as_tooltip = { KoM_the_royal_theurgy_of_solomon_effect = { TARGET = scope:recipient } }
+				}
+				scope:the_great_work_of_unification = {
+					KoM_start_rite_effect = {
+						ID = the_great_work_of_unification
+						MONTHLY_PROGRESS = KoM_rite_time_5_years
+						TARGET = scope:recipient
+						SCHOOL = goetia
+					}
+					show_as_tooltip = { KoM_the_great_work_of_unification_effect = { TARGET = scope:recipient DEMON = scope:demon } }
+				}
+			}
+			var:current_rite ?= { set_variable = { name = demon value = scope:demon } }
+			
+		}
+	}
+
+	auto_accept = yes
+
+	ai_will_do = { base = 0 }
+}

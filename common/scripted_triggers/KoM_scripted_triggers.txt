@@ -1,0 +1,158 @@
+﻿KoM_has_magic_school_xp_trigger = {
+	switch = {
+		trigger = $SCHOOL$
+		flag:goetia = { trait:KoM_magus = { save_temporary_scope_as = trait } }
+		flag:thaumaturgy = { trait:KoM_thaumaturge = { save_temporary_scope_as = trait } }
+		flag:theurgy = { trait:KoM_theurgist = { save_temporary_scope_as = trait } }
+		flag:alchemy = { trait:KoM_alchemist = { save_temporary_scope_as = trait } }
+		flag:taoism = { trait:KoM_daoshi = { save_temporary_scope_as = trait } }
+		flag:onmyodo = { trait:KoM_onmyoji = { save_temporary_scope_as = trait } }
+	}
+	KoM_has_magic_school_xp_trait_trigger = { TRAIT = scope:trait VALUE = $VALUE$ AT_LEAST = $AT_LEAST$ }
+}
+KoM_has_magic_school_xp_trait_trigger = {
+	trigger_if = {
+		limit = { $AT_LEAST$ = yes }
+		custom_description = {
+			text = KoM_has_at_least_magic_school_xp
+			object = $TRAIT$
+			value = $VALUE$
+			KoM_has_magic_school_xp_trait_operator_trigger = { TRAIT = $TRAIT$ VALUE = $VALUE$ OPERATOR = ">=" }
+		}
+	}
+	trigger_else = {
+		custom_description = {
+			text = KoM_has_below_magic_school_xp
+			object = $TRAIT$
+			value = $VALUE$
+			KoM_has_magic_school_xp_trait_operator_trigger = { TRAIT = $TRAIT$ VALUE = $VALUE$ OPERATOR = "<" }
+		}
+	}
+}
+
+KoM_has_magic_school_xp_trait_operator_trigger = {
+	trigger_if = {
+		limit = { has_trait = $TRAIT$ }
+		has_trait_xp = {
+			trait = $TRAIT$
+			value $OPERATOR$ $VALUE$
+		}
+	}
+	trigger_else = {
+		switch = {
+			trigger = $TRAIT$
+			trait:KoM_magus = { KoM_goetia_xp $OPERATOR$ $VALUE$ }
+			trait:KoM_thaumaturge = { KoM_thaumaturgy_xp $OPERATOR$ $VALUE$ }
+			trait:KoM_theurgist = { KoM_theurgy_xp $OPERATOR$ $VALUE$ }
+			trait:KoM_alchemist = { KoM_alchemy_xp $OPERATOR$ $VALUE$ }
+			trait:KoM_daoshi = { KoM_taoism_xp $OPERATOR$ $VALUE$ }
+			trait:KoM_onmyoji = { KoM_onmyodo_xp $OPERATOR$ $VALUE$ }
+		}
+	}
+}
+KoM_is_practitioner_of_magic_school_trigger = {
+	switch = {
+		trigger = $SCHOOL$
+		flag:goetia = { trait:KoM_magus = { save_temporary_scope_as = trait } }
+		flag:thaumaturgy = { trait:KoM_thaumaturge = { save_temporary_scope_as = trait } }
+		flag:theurgy = { trait:KoM_theurgist = { save_temporary_scope_as = trait } }
+		flag:alchemy = { trait:KoM_alchemist = { save_temporary_scope_as = trait } }
+		flag:taoism = { trait:KoM_daoshi = { save_temporary_scope_as = trait } }
+		flag:onmyodo = { trait:KoM_onmyoji = { save_temporary_scope_as = trait } }
+	}
+	KoM_is_practitioner_of_magic_school_trait_trigger = { TRAIT = scope:trait }
+	
+}
+KoM_is_practitioner_of_magic_school_trait_trigger = {
+	OR = {
+		has_trait = $TRAIT$
+		switch = {
+			trigger = $TRAIT$
+			trait:KoM_magus = { has_variable = KoM_goetia_xp }
+			trait:KoM_thaumaturge = { has_variable = KoM_thaumaturgy_xp }
+			trait:KoM_theurgist = { has_variable = KoM_theurgy_xp }
+			trait:KoM_alchemist = { has_variable = KoM_alchemy_xp }
+			trait:KoM_daoshi = { has_variable = KoM_taoism_xp }
+			trait:KoM_onmyoji = { has_variable = KoM_onmyodo_xp }
+		}
+	}
+}
+KoM_is_a_mage_trigger = {
+	OR = {
+		has_trait = KoM_magus
+		has_variable = KoM_goetia_xp
+		has_trait = KoM_thaumaturge
+		has_variable = KoM_thaumaturgy_xp
+		has_trait = KoM_theurgist
+		has_variable = KoM_theurgy_xp
+		has_trait = KoM_alchemist
+		has_variable = KoM_alchemy_xp
+		has_trait = KoM_daoshi
+		has_variable = KoM_taoism_xp
+		has_trait = KoM_onmyoji
+		has_variable = KoM_onmyodo_xp
+	}
+}
+
+KoM_cannot_self_cast_trigger = {
+	custom_tooltip = {
+		text = KoM_cannot_self_cast_trigger
+		NOT = { scope:actor = scope:recipient }
+	}
+}
+KoM_must_self_cast_trigger = {
+	custom_tooltip = {
+		text = KoM_must_self_cast_trigger
+		scope:actor = scope:recipient
+	}
+}
+
+#GOETIA
+KoM_knows_every_demon_true_name_trigger = {
+	custom_tooltip = {
+		text = KoM_knows_every_demon_true_name_trigger
+		KoM_knows_true_name_of_demon_trigger = { DEMON = bael }
+		KoM_knows_true_name_of_demon_trigger = { DEMON = amon }
+		KoM_knows_true_name_of_demon_trigger = { DEMON = vapula }
+		KoM_knows_true_name_of_demon_trigger = { DEMON = barbatos }
+		KoM_knows_true_name_of_demon_trigger = { DEMON = gamigin }
+		KoM_knows_true_name_of_demon_trigger = { DEMON = beleth }
+		KoM_knows_true_name_of_demon_trigger = { DEMON = astaroth }
+		KoM_knows_true_name_of_demon_trigger = { DEMON = marchosias }
+		KoM_knows_true_name_of_demon_trigger = { DEMON = belial }
+		KoM_knows_true_name_of_demon_trigger = { DEMON = paimon }
+	}
+}
+KoM_knows_true_name_of_demon_trigger = {
+	save_temporary_scope_value_as = { name = saved_tooltip value = flag:KoM_goetia_demon_$DEMON$ }
+	custom_tooltip = {
+		text = KoM_knows_true_name_of_demon_trigger
+		is_target_in_variable_list = { name = KoM_true_demon_names target = flag:$DEMON$_true_name }
+	}
+}
+
+KoM_goetia_interaction_show_rite_trigger = {
+	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:the_gate_of_invocation } } scope:the_gate_of_invocation = no }
+	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:the_lesser_conjurations } } scope:the_lesser_conjurations = no }
+	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:the_seventy_two_gates } } scope:the_seventy_two_gates = no }
+	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:the_royal_theurgy_of_solomon } } scope:the_royal_theurgy_of_solomon = no }
+	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:the_great_work_of_unification } } scope:the_great_work_of_unification = no }
+}
+KoM_goetia_interaction_show_demon_trigger = {
+	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:bael } } scope:bael = no }
+	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:amon } } scope:amon = no }
+	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:vapula } } scope:vapula = no }
+	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:barbatos } } scope:barbatos = no }
+	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:gamigin } } scope:gamigin = no }
+	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:beleth } } scope:beleth = no }
+	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:astaroth } } scope:astaroth = no }
+	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:marchosias } } scope:marchosias = no }
+	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:belial } } scope:belial = no }
+	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:paimon } } scope:paimon = no }
+	OR = {
+		scope:the_lesser_conjurations = yes
+		scope:the_seventy_two_gates = yes
+		scope:the_royal_theurgy_of_solomon = yes
+		scope:the_great_work_of_unification = yes
+	}
+}

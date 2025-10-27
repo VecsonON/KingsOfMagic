@@ -1,0 +1,11 @@
+﻿KoM_window_script = {
+	effect = {
+		KoM_calculate_time_effect = { MONTHLY_PROGRESS = var:current_rite.var:monthly_progress CURRENT_PROGRESS = var:current_rite.var:total_progress }
+		custom_tooltip = WINDOW_KOM_TT_TIME
+	}
+}
+KoM_window_cancel = {
+	effect = {
+		ALT_delete_rite_effect = { RITE = var:current_rite }
+	}
+}

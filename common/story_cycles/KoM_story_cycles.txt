@@ -1,0 +1,7 @@
+﻿KoM_story_cycle = {
+	on_setup = {
+		set_variable = { name  = total_progress value = 0 }
+	}
+
+	on_owner_death = { end_story = yes }
+}

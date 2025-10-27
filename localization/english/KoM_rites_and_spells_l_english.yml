@@ -1,0 +1,68 @@
+﻿l_english:
+
+ #Goetia
+ KoM_rite_the_gate_of_invocation: "[KoM_rite|E] of #underline;TOOLTIP:KoM_rite_the_gate_of_invocation_tt The Gate of Invocation#!"
+ KoM_rite_the_gate_of_invocation_tt: "By completing this [KoM_rite|E], you will learn True Name of random Demon."
+
+ KoM_rite_the_lesser_conjurations: "[KoM_rite|E] of #underline;TOOLTIP:KoM_rite_the_lesser_conjurations_tt The Lesser Conjurations#!"
+ KoM_rite_the_lesser_conjurations_tt: "By completing this [KoM_rite|E], you will summon Demon using their True Name to give you advice"
+ KoM_rite_the_lesser_conjurations_effect: "You will use True Name of [KoM_goetic|E] Demon to seek guidance."
+ KoM_rite_the_lesser_conjurations_effect1: "Random [secret|E] of target will be reveled to you."
+ KoM_rite_the_lesser_conjurations_effect2: "Every murdered [character|E] by target will be reveled to you."
+
+ KoM_rite_the_seventy_two_gates: "[KoM_rite|E] of #underline;TOOLTIP:KoM_rite_the_seventy_two_gates_tt The Seventy-Two Gates#!"
+ KoM_rite_the_seventy_two_gates_tt: "By completing this [KoM_rite|E], you will summon Demon using their True Name to slightly influence world."
+ KoM_rite_the_seventy_two_gates_effect: "You will use True Name of [KoM_goetic|E] Demon to summon them and force subtle change upon world."
+
+ KoM_rite_the_royal_theurgy_of_solomon: "[KoM_rite|E] of #underline;TOOLTIP:KoM_rite_the_royal_theurgy_of_solomon_tt The Royal Theurgy of Solomon#!"
+ KoM_rite_the_royal_theurgy_of_solomon_tt: "By completing this [KoM_rite|E], you will summon Demon using their True Name to influence world."
+ KoM_rite_the_royal_theurgy_of_solomon_effect: "You will use True Name of [KoM_goetic|E] Demon to summon them and force a simple command."
+ KoM_rite_the_royal_theurgy_of_solomon_effect1: "Every [scheme|E] of target will gain #P +5#! [scheme_opportunity|E]."
+ KoM_rite_the_royal_theurgy_of_solomon_effect2: "Random [relation|E] of target will be downgraded."
+
+ KoM_rite_the_great_work_of_unification: "[KoM_rite|E] of #underline;TOOLTIP:KoM_rite_the_great_work_of_unification_tt The Great Work of Unification#!"
+ KoM_rite_the_great_work_of_unification_tt: "By completing this [KoM_rite|E], you will force Demon using their True Name to possess target."
+
+ #Goetia Demons
+ KoM_goetia_demon_tt: "With True Name of Demon, you can use it to summon and control it in other [KoM_goetic|E] [KoM_rites|E]"
+
+ KoM_goetia_demon_bael: "[KoM_goetic|E] Demon #underline;TOOLTIP:KoM_goetia_demon_bael_tt Bael#!"
+ KoM_goetia_demon_bael_name: "Shard of $KoM_goetia_demon_bael$"
+ KoM_goetia_demon_bael_tt: "$KoM_goetia_demon_tt$\n\nWith $KoM_rite_the_lesser_conjurations$: Discover [secret|E] of target.\nWith $KoM_rite_the_seventy_two_gates$: Give [GetModifier('KoM_bael_influence_modifier').GetNameWithTooltip] [modifier|E] to target.\nWith $KoM_rite_the_royal_theurgy_of_solomon$: Give all [schemes|E] #P +5#! [scheme_opportunity|E].\nWith $KoM_rite_the_great_work_of_unification$ Possession: [KoMGetTrait('callous')], [KoMGetTrait('sadistic')], [KoMGetTrait('deceitful')] and [KoMGetTrait('education_intrigue_4')]"
+
+ KoM_goetia_demon_amon: "[KoM_goetic|E] Demon #underline;TOOLTIP:KoM_goetia_demon_amon_tt Amon#!"
+ KoM_goetia_demon_amon_name: "Shard of $KoM_goetia_demon_amon$"
+ KoM_goetia_demon_amon_tt: "$KoM_goetia_demon_tt$\n\nWith $KoM_rite_the_lesser_conjurations$: Give [GetModifier('KoM_amon_guidance_modifier').GetNameWithTooltip] [modifier|E] to target.\nWith $KoM_rite_the_seventy_two_gates$: Give target [GetModifier('KoM_amon_influence_modifier').GetNameWithTooltip] [modifier|E] [SelectLocalization( HasDlcFeature( 'royal_court' ), 'KoM_goetia_demon_amon_dlc_tt', 'blank_line' )].\nWith $KoM_rite_the_royal_theurgy_of_solomon$: Can downgrade a [relation|E].\nWith $KoM_rite_the_great_work_of_unification$ Possession: [KoMGetTrait('calm')], [KoMGetTrait('patient')], [KoMGetTrait('callous')] and [KoMGetTrait('education_learning_4')]"
+ KoM_goetia_demon_amon_dlc_tt: "and random [inspiration|E]"
+
+ KoM_goetia_demon_vapula: "[KoM_goetic|E] Demon #underline;TOOLTIP:KoM_goetia_demon_vapula_tt Vapula#!"
+ KoM_goetia_demon_vapula_name: "Shard of $KoM_goetia_demon_vapula$"
+ KoM_goetia_demon_vapula_tt: "$KoM_goetia_demon_tt$\n\nWith $KoM_rite_the_lesser_conjurations$: Give [GetModifier('KoM_vapula_guidance_modifier').GetNameWithTooltip] [modifier|E] to target.\nWith $KoM_rite_the_seventy_two_gates$: Give target #P -50#! [stress|E].\nWith $KoM_rite_the_royal_theurgy_of_solomon$: Give [GetModifier('KoM_vapula_command_modifier').GetNameWithTooltip] [modifier|E] to target.\nWith $KoM_rite_the_great_work_of_unification$ Possession: [KoMGetTrait('gregarious')], [KoMGetTrait('lustful')], [KoMGetTrait('lazy')] and [KoMGetTrait('education_diplomacy_4')]"
+
+ KoM_goetia_demon_barbatos: "[KoM_goetic|E] Demon #underline;TOOLTIP:KoM_goetia_demon_barbatos_tt Barbatos#!"
+ KoM_goetia_demon_barbatos_name: "Shard of $KoM_goetia_demon_barbatos$"
+ KoM_goetia_demon_barbatos_tt: "$KoM_goetia_demon_tt$\n\nWith $KoM_rite_the_lesser_conjurations$: Spawn sighting for next [GetActivityType( 'activity_hunt' ).GetName] [activity|E].\nWith $KoM_rite_the_seventy_two_gates$: Give [GetModifier('KoM_barbatos_influence_modifier').GetNameWithTooltip] [modifier|E] to target.\nWith $KoM_rite_the_royal_theurgy_of_solomon$: Give [GetModifier('KoM_barbatos_command_modifier').GetNameWithTooltip] [modifier|E] to target.\nWith $KoM_rite_the_great_work_of_unification$ Possession: [KoMGetTrait('brave')], [KoMGetTrait('diligent')], [KoMGetTrait('callous')] and [KoMGetTrait('education_martial_4')]"
+
+ KoM_goetia_demon_gamigin: "[KoM_goetic|E] Demon #underline;TOOLTIP:KoM_goetia_demon_gamigin_tt Gamigin#!"
+ KoM_goetia_demon_gamigin_name: "Shard of $KoM_goetia_demon_gamigin$"
+ KoM_goetia_demon_gamigin_tt: "$KoM_goetia_demon_tt$\n\nWith $KoM_rite_the_lesser_conjurations$: You will discover all [characters|E] target killed.\nWith $KoM_rite_the_seventy_two_gates$: Give [GetModifier('KoM_gamigin_influence_modifier').GetNameWithTooltip] [modifier|E] to target.\nWith $KoM_rite_the_royal_theurgy_of_solomon$: Heal target's [KoMGetTrait('depressed_1')] and give them #P -25#! [stress|E].\nWith $KoM_rite_the_great_work_of_unification$ Possession: [KoMGetTrait('patient')], [KoMGetTrait('eccentric')], [KoMGetTrait('cynical')] and [KoMGetTrait('education_stewardship_4')]"
+
+ KoM_goetia_demon_beleth: "[KoM_goetic|E] Demon #underline;TOOLTIP:KoM_goetia_demon_beleth_tt Beleth#!"
+ KoM_goetia_demon_beleth_name: "Shard of $KoM_goetia_demon_beleth$"
+ KoM_goetia_demon_beleth_tt: "$KoM_goetia_demon_tt$\n\nWith $KoM_rite_the_lesser_conjurations$: You will gain #P +1#! [intrigue|E].\nWith $KoM_rite_the_seventy_two_gates$: Give [GetModifier('KoM_beleth_influence_modifier').GetNameWithTooltip] [modifier|E] to target.\nWith $KoM_rite_the_royal_theurgy_of_solomon$: Gain [strong_hook|E] on target.\nWith $KoM_rite_the_great_work_of_unification$ Possession: [KoMGetTrait('callous')], [KoMGetTrait('deceitful')], [KoMGetTrait('arbitrary')] and [KoMGetTrait('education_intrigue_5')]"
+
+ KoM_goetia_demon_astaroth: "[KoM_goetic|E] Demon #underline;TOOLTIP:KoM_goetia_demon_astaroth_tt Astaroth#!"
+ KoM_goetia_demon_astaroth_name: "Shard of $KoM_goetia_demon_astaroth$"
+ KoM_goetia_demon_astaroth_tt: "$KoM_goetia_demon_tt$\n\nWith $KoM_rite_the_lesser_conjurations$: You will gain #P +1#! [learning|E].\nWith $KoM_rite_the_seventy_two_gates$: Give [GetModifier('KoM_astaroth_influence_modifier').GetNameWithTooltip] [modifier|E] to target.\nWith $KoM_rite_the_royal_theurgy_of_solomon$: Give [GetModifier('KoM_astaroth_command_modifier').GetNameWithTooltip] [modifier|E] to target.\nWith $KoM_rite_the_great_work_of_unification$ Possession: [KoMGetTrait('calm')], [KoMGetTrait('patient')], [KoMGetTrait('cynical')] and [KoMGetTrait('education_learning_5')]"
+
+ KoM_goetia_demon_marchosias: "[KoM_goetic|E] Demon #underline;TOOLTIP:KoM_goetia_demon_marchosias_tt Marchosias#!"
+ KoM_goetia_demon_marchosias_name: "Shard of $KoM_goetia_demon_marchosias$"
+ KoM_goetia_demon_marchosias_tt: "$KoM_goetia_demon_tt$\n\nWith $KoM_rite_the_lesser_conjurations$: You will gain #P +1#! [martial|E].\nWith $KoM_rite_the_seventy_two_gates$: Give [GetModifier('KoM_marchosias_influence_modifier').GetNameWithTooltip] [modifier|E] to all target's [knights|E].\nWith $KoM_rite_the_royal_theurgy_of_solomon$: Give target [KoMGetTrait('brave')] and [KoMGetTrait('loyal')].\nWith $KoM_rite_the_great_work_of_unification$ Possession: [KoMGetTrait('brave')], [KoMGetTrait('wrathful')], [KoMGetTrait('ambitious')] and [KoMGetTrait('education_martial_5')]"
+
+ KoM_goetia_demon_belial: "[KoM_goetic|E] Demon #underline;TOOLTIP:KoM_goetia_demon_belial_tt Belial#!"
+ KoM_goetia_demon_belial_name: "Shard of $KoM_goetia_demon_belial$"
+ KoM_goetia_demon_belial_tt: "$KoM_goetia_demon_tt$\n\nWith $KoM_rite_the_lesser_conjurations$: You will gain #P +1#! [diplomacy|E].\nWith $KoM_rite_the_seventy_two_gates$: Give [GetModifier('KoM_belial_influence_modifier').GetNameWithTooltip] [modifier|E] to target.\nWith $KoM_rite_the_royal_theurgy_of_solomon$: Give [GetModifier('KoM_belial_command_modifier').GetNameWithTooltip] [modifier|E] to target.\nWith $KoM_rite_the_great_work_of_unification$ Possession: [KoMGetTrait('arrogant')], [KoMGetTrait('gregarious')], [KoMGetTrait('ambitious')] and [KoMGetTrait('education_diplomacy_5')]"
+
+ KoM_goetia_demon_paimon: "[KoM_goetic|E] Demon #underline;TOOLTIP:KoM_goetia_demon_paimon_tt Paimon#!"
+ KoM_goetia_demon_paimon_name: "Shard of $KoM_goetia_demon_paimon$"
+ KoM_goetia_demon_paimon_tt: "$KoM_goetia_demon_tt$\n\nWith $KoM_rite_the_lesser_conjurations$: You will gain #P +1#! [stewardship|E].\nWith $KoM_rite_the_seventy_two_gates$: Give [GetModifier('KoM_paimon_influence_modifier').GetNameWithTooltip] [modifier|E] to target.\nWith $KoM_rite_the_royal_theurgy_of_solomon$: Give [GetModifier('KoM_paimon_command_modifier').GetNameWithTooltip] [modifier|E] to target.\nWith $KoM_rite_the_great_work_of_unification$ Possession: [KoMGetTrait('diligent')], [KoMGetTrait('patient')], [KoMGetTrait('stubborn')] and [KoMGetTrait('education_stewardship_5')]"

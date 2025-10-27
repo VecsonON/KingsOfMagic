@@ -9,3 +9,9 @@
  KoM_alchemy: "[KoM_alchemy|E]"
  KoM_taoism: "[KoM_taoism|E]"
  KoM_onmyodo: "[KoM_onmyodo|E]"
+
+ KoM_terrain_type_goetia_novice_cancel_negative_supply: "Unlock $KoM_rite_the_gate_of_invocation$"
+ KoM_terrain_type_goetia_apprentice_cancel_negative_supply: "Unlock $KoM_rite_the_lesser_conjurations$"
+ KoM_terrain_type_goetia_adept_cancel_negative_supply: "Unlock $KoM_rite_the_seventy_two_gates$"
+ KoM_terrain_type_goetia_expert_cancel_negative_supply: "Unlock $KoM_rite_the_royal_theurgy_of_solomon$"
+ KoM_terrain_type_goetia_master_cancel_negative_supply: "Unlock $KoM_rite_the_great_work_of_unification$"

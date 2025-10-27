@@ -1,0 +1,50 @@
+﻿KoM_goetia_xp = {
+	value = 0
+	if = { limit = { has_variable = KoM_goetia_xp } value = var:KoM_goetia_xp }
+}
+KoM_thaumaturgy_xp = {
+	value = 0
+	if = { limit = { has_variable = KoM_thaumaturgy_xp } value = var:KoM_thaumaturgy_xp }
+}
+KoM_theurgy_xp = {
+	value = 0
+	if = { limit = { has_variable = KoM_theurgy_xp } value = var:KoM_theurgy_xp }
+}
+KoM_alchemy_xp = {
+	value = 0
+	if = { limit = { has_variable = KoM_alchemy_xp } value = var:KoM_alchemy_xp }
+}
+KoM_taoism_xp = {
+	value = 0
+	if = { limit = { has_variable = KoM_taoism_xp } value = var:KoM_taoism_xp }
+}
+KoM_onmyodo_xp = {
+	value = 0
+	if = { limit = { has_variable = KoM_onmyodo_xp } value = var:KoM_onmyodo_xp }
+}
+
+KoM_rite_time_6_months = 16.68
+KoM_rite_time_1_year = {
+	value = KoM_rite_time_6_months
+	divide = 2
+}
+KoM_rite_time_2_years = {
+	value = KoM_rite_time_1_year
+	divide = 2
+}
+KoM_rite_time_3_years = {
+	value = KoM_rite_time_1_year
+	divide = 3
+}
+KoM_rite_time_4_years = {
+	value = KoM_rite_time_1_year
+	divide = 4
+}
+KoM_rite_time_5_years = {
+	value = KoM_rite_time_1_year
+	divide = 5
+}
+KoM_rite_time_10_years = {
+	value = KoM_rite_time_1_year
+	divide = 10
+}

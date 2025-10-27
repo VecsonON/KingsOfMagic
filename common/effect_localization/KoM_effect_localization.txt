@@ -1,8 +1,8 @@
-﻿POD_add_magic_school_xp = {
-	global      = POD_add_magic_school_xp_global
-	global_past = POD_add_magic_school_xp_global_past
-	first       = POD_add_magic_school_xp_first
-	first_past  = POD_add_magic_school_xp_first_past
-	third       = POD_add_magic_school_xp_third
-	third_past  = POD_add_magic_school_xp_third_past
+﻿KoM_add_magic_school_xp = {
+	global      = KoM_add_magic_school_xp_global
+	global_past = KoM_add_magic_school_xp_global_past
+	first       = KoM_add_magic_school_xp_first
+	first_past  = KoM_add_magic_school_xp_first_past
+	third       = KoM_add_magic_school_xp_third
+	third_past  = KoM_add_magic_school_xp_third_past
 }

@@ -8,7 +8,10 @@
 				desc = trait_KoM_magus
 			}
 			triggered_desc = {
-				trigger = { faith = { has_doctrine_parameter = witchcraft_illegal } }
+				trigger = { 
+					faith = { has_doctrine_parameter = witchcraft_illegal } 
+					NOT = { is_local_player = yes }
+				}
 				desc = trait_witch
 			}
 			desc = trait_KoM_magus
@@ -22,7 +25,10 @@
 				desc = trait_KoM_magus_desc
 			}
 			triggered_desc = {
-				trigger = { faith = { has_doctrine_parameter = witchcraft_illegal } }
+				trigger = { 
+					faith = { has_doctrine_parameter = witchcraft_illegal } 
+					NOT = { is_local_player = yes }
+				}
 				desc = trait_KoM_witch_desc
 			}
 			desc = trait_KoM_magus_desc
@@ -42,11 +48,11 @@
 	}
 
 	track = {
-		10 = { }
-		25 = { }
-		50 = { }
-		75 = { }
-		100 = { }
+		10 = { KoM_terrain_type_goetia_novice_cancel_negative_supply = yes }
+		25 = { KoM_terrain_type_goetia_apprentice_cancel_negative_supply = yes }
+		50 = { KoM_terrain_type_goetia_adept_cancel_negative_supply = yes }
+		75 = { KoM_terrain_type_goetia_expert_cancel_negative_supply = yes }
+		100 = { KoM_terrain_type_goetia_master_cancel_negative_supply = yes }
 	}
 
 	icon = magus.dds
@@ -61,7 +67,10 @@ KoM_thaumaturge = {
 				desc = trait_KoM_thaumaturge
 			}
 			triggered_desc = {
-				trigger = { faith = { has_doctrine_parameter = witchcraft_illegal } }
+				trigger = { 
+					faith = { has_doctrine_parameter = witchcraft_illegal } 
+					NOT = { is_local_player = yes }
+				}
 				desc = trait_witch
 			}
 			desc = trait_KoM_thaumaturge
@@ -75,7 +84,10 @@ KoM_thaumaturge = {
 				desc = trait_KoM_thaumaturge_desc
 			}
 			triggered_desc = {
-				trigger = { faith = { has_doctrine_parameter = witchcraft_illegal } }
+				trigger = { 
+					faith = { has_doctrine_parameter = witchcraft_illegal } 
+					NOT = { is_local_player = yes }
+				}
 				desc = trait_KoM_witch_desc
 			}
 			desc = trait_KoM_thaumaturge_desc
@@ -127,7 +139,10 @@ KoM_alchemist = {
 				desc = trait_KoM_alchemist
 			}
 			triggered_desc = {
-				trigger = { faith = { has_doctrine_parameter = witchcraft_illegal } }
+				trigger = { 
+					faith = { has_doctrine_parameter = witchcraft_illegal } 
+					NOT = { is_local_player = yes }
+				}
 				desc = trait_witch
 			}
 			desc = trait_KoM_alchemist
@@ -141,7 +156,10 @@ KoM_alchemist = {
 				desc = trait_KoM_alchemist_desc
 			}
 			triggered_desc = {
-				trigger = { faith = { has_doctrine_parameter = witchcraft_illegal } }
+				trigger = { 
+					faith = { has_doctrine_parameter = witchcraft_illegal } 
+					NOT = { is_local_player = yes }
+				}
 				desc = trait_KoM_witch_desc
 			}
 			desc = trait_KoM_alchemist_desc
@@ -167,7 +185,7 @@ KoM_alchemist = {
 		75 = { }
 		100 = { }
 	}
-	
+
 	icon = alchemist.dds
 }
 KoM_daoshi = {

@@ -1,0 +1,16 @@
+﻿KoM_has_at_least_magic_school_xp = {
+	first = KoM_has_at_least_magic_school_xp_first
+	third = KoM_has_at_least_magic_school_xp_third
+	global = KoM_has_at_least_magic_school_xp_global
+	first_not = KoM_has_at_least_magic_school_xp_first
+	third_not = KoM_has_at_least_magic_school_xp_third
+	global_not = KoM_has_at_least_magic_school_xp_global
+}
+KoM_has_below_magic_school_xp = {
+	first = KoM_has_below_magic_school_xp_first
+	third = KoM_has_below_magic_school_xp_third
+	global = KoM_has_below_magic_school_xp_global
+	first_not = KoM_has_below_magic_school_xp_first
+	third_not = KoM_has_below_magic_school_xp_third
+	global_not = KoM_has_below_magic_school_xp_global
+}

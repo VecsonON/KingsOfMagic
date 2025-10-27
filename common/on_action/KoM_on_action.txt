@@ -1,20 +1,22 @@
 ﻿on_game_start = {
-	on_actions = { KoM_on_game_start }
+	on_actions = { PoM_on_game_start }
 }
 
-yearly_global_pulse = {
-	on_actions = { KoM_yearly_global_pulse }
-}
-
-KoM_on_game_start = {
-	
+PoM_on_game_start = {
+	events = {
+		KoM_core_events.1
+	}
 	effect = {
 		set_global_variable = {
 			name = KoM_loaded
 			value = yes
 		}
-		trigger_event = KoM_core_events.0001
+		if = { limit = { has_global_variable = KoM_loaded } }
 	}
+}
+
+yearly_global_pulse = {
+	on_actions = { KoM_yearly_global_pulse }
 }
 
 KoM_yearly_global_pulse = {
@@ -43,5 +45,61 @@ KoM_yearly_global_pulse = {
 			limit = { has_variable = KoM_onmyodo_xp NOT = { any_secret = { secret_type = KoM_secret_onmyoji } } }
 			add_secret = { TYPE = KoM_secret_onmyoji }
 		}
+	}
+}
+
+yearly_playable_pulse = {
+	on_actions = { KoM_yearly_playable_pulse }
+}
+
+KoM_yearly_playable_pulse = {
+	effect = {
+		trigger_event = { on_action = KoM_quaterly_playable_pulse days =  45 }
+		trigger_event = { on_action = KoM_quaterly_playable_pulse days = 135 }
+		trigger_event = { on_action = KoM_quaterly_playable_pulse days = 225 }
+		trigger_event = { on_action = KoM_quaterly_playable_pulse days = 315 }
+	}
+}
+KoM_quaterly_playable_pulse = {
+	effect = {
+		trigger_event = { on_action = KoM_monthly_playable_pulse }
+		trigger_event = { on_action = KoM_monthly_playable_pulse months = 1 }
+		trigger_event = { on_action = KoM_monthly_playable_pulse months = 2 }
+	}
+}
+KoM_monthly_playable_pulse = {
+	effect = {
+		if = { limit = { has_variable = current_rite } 
+			var:current_rite = {
+				change_variable = {
+					name = total_progress
+					add = var:monthly_progress
+				}
+				if = { limit = { var:total_progress >= 100 } 
+					PREV = { 
+						trigger_event = { on_action = KoM_completed_rite } 
+					}
+				}
+			}
+		}
+	}
+}
+
+KoM_completed_rite = {
+	effect = {
+		switch = {
+			trigger = var:current_rite.var:id
+			flag:the_gate_of_invocation = { KoM_the_gate_of_invocation_effect = yes }
+			flag:the_lesser_conjurations = { KoM_the_lesser_conjurations_effect = { TARGET = var:current_rite.var:target } }
+			flag:the_seventy_two_gates = { KoM_the_seventy_two_gates_effect = { TARGET = var:current_rite.var:target } }
+			flag:the_royal_theurgy_of_solomon = { KoM_the_royal_theurgy_of_solomon_effect = { TARGET = var:current_rite.var:target } }
+			flag:the_great_work_of_unification = { KoM_the_great_work_of_unification_effect = { TARGET = var:current_rite.var:target DEMON = var:current_rite.var:demon } }
+		}
+	}
+}
+
+KoM_after_rite = {
+	effect = {
+		ALT_delete_rite_effect = { RITE = var:current_rite }
 	}
 }

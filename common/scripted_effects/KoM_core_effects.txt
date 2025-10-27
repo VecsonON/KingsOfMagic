@@ -1,12 +1,116 @@
 ﻿KoM_create_grimoire_dev_effect = { #DEV
 	KoM_create_grimoire_effect = {
 		OWNER = THIS
-		RARITY = common
-		NAME = common_grimoire
+		RARITY = illustrious
+		NAME = grimoire_of_goetic_vecson
 		SCHOOL = goetia
 		MAX_MASTERY = 10
 		MIN_MASTERY = 0
-		MASTERY_GAIN = 2
+		MASTERY_GAIN = 100
+	}
+}
+
+KoM_error_suppression_unused_flag = {
+	if = { limit = { always = no } if = { limit = { this = flag:$FLAG$ } } }
+}
+KoM_save_tooltip = {
+	save_scope_value_as = { name = saved_tooltip value = flag:$LOC$ }
+	KoM_error_suppression_unused_flag = { FLAG = $LOC$ }
+}
+KoM_calculate_time_effect = {
+	save_scope_value_as = {
+		name = temp_years_calc
+		value = {
+			value = 100
+			if = { limit = { $CURRENT_PROGRESS$ > 0 } subtract = $CURRENT_PROGRESS$ }
+			divide = $MONTHLY_PROGRESS$
+			divide = 12
+			min = 0
+		}
+	}
+	save_scope_value_as = {
+		name = temp_months_calc
+		value = {
+			value = 100
+			if = { limit = { $CURRENT_PROGRESS$ > 0 } subtract = $CURRENT_PROGRESS$ }
+			divide = $MONTHLY_PROGRESS$
+			modulo = 12
+			min = 0
+			add = 1
+		}
+	}
+	if = {
+		limit = { scope:temp_months_calc >= 12 }
+		save_scope_value_as = {
+			name = temp_months_calc
+			value = {
+				value = scope:temp_months_calc
+				add = -12
+			}
+		}
+		save_scope_value_as = {
+			name = temp_years_calc
+			value = {
+				value = scope:temp_years_calc
+				add = 1
+			}
+		}
+	}
+}
+KoM_downgrade_relation_effect = {
+	random_list = {
+		1 = {
+			trigger = {
+				has_relation_best_friend = $CHARACTER$
+			}
+			remove_relation_best_friend = $CHARACTER$
+			set_relation_friend = $CHARACTER$
+		}
+		1 = {
+			trigger = {
+				has_relation_soulmate = $CHARACTER$
+			}
+			remove_relation_soulmate = $CHARACTER$
+			set_relation_lover = $CHARACTER$
+		}
+		1 = {
+			trigger = {
+				has_relation_nemesis = $CHARACTER$
+			}
+			remove_relation_nemesis = $CHARACTER$
+			set_relation_rival = $CHARACTER$
+		}
+
+		1 = {
+			trigger = {
+				has_relation_friend = $CHARACTER$
+				NOT = { has_relation_best_friend = $CHARACTER$ }
+			}
+			remove_relation_friend = $CHARACTER$
+			set_relation_potential_friend = $CHARACTER$
+		}
+		1 = {
+			trigger = {
+				has_relation_lover = $CHARACTER$
+				NOT = { has_relation_soulmate = $CHARACTER$ }
+			}
+			remove_relation_lover = $CHARACTER$
+			set_relation_potential_lover = $CHARACTER$
+		}
+		1 = {
+			trigger = {
+				has_relation_rival = $CHARACTER$
+				NOT = { has_relation_nemesis = $CHARACTER$ }
+			}
+			remove_relation_rival = $CHARACTER$
+			set_relation_potential_rival = $CHARACTER$
+		}
+	}
+}
+KoM_remove_trait_effect = {
+	if = {
+		limit = { has_trait = $TRAIT$ }
+		remove_trait = $TRAIT$
 	}
 }
 
@@ -60,6 +164,10 @@ KoM_create_grimoire_effect = {
 	}
 }
 KoM_give_modifier_times_keep_count_effect = {
+	set_variable = {
+		name = $VAR$
+		value = 0
+	}
 	while = {
 		count = $COUNT$
 		add_$TYPE$_modifier = $MODIFIER$
@@ -91,72 +199,117 @@ KoM_study_magic_school_effect = {
 	}
 	if = {
 		limit = {
-			NOR = {
-				has_trait = scope:trait
-				switch = {
-					trigger = $SCHOOL$
-					flag:goetia = { has_variable = KoM_goetia_xp }
-					flag:thaumaturgy = { has_variable = KoM_thaumaturgy_xp }
-					flag:theurgy = { has_variable = KoM_theurgy_xp }
-					flag:alchemy = { has_variable = KoM_alchemy_xp }
-					flag:taoism = { has_variable = KoM_taoism_xp }
-					flag:onmyodo = { has_variable = KoM_onmyodo_xp }
-				}
-			}
+			NOT = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = $SCHOOL$ } }
 		}
 		KoM_learn_magic_school_from_trait_effect = { TRAIT = scope:trait }
 	}
 	else_if = {
 		limit = { has_trait = scope:trait }
-		add_trait_xp = {
-			trait = scope:trait
-			value = $COUNT$
+		send_interface_toast = {
+			type = event_toast_effect_neutral
+			title = KoM_study_magic_school_effect
+			add_trait_xp = {
+				trait = scope:trait
+				value = $COUNT$
+			}
 		}
 	}
 	else = {
-		custom_description = {
-			text = POD_add_magic_school_xp
-			object = scope:trait
-			value = $COUNT$
-			switch = {
-				trigger = $SCHOOL$
-				flag:goetia = { change_variable = { name = KoM_goetia_xp add = $COUNT$ } }
-				flag:thaumaturgy = { change_variable = { name = KoM_thaumaturgy_xp add = $COUNT$ } }
-				flag:theurgy = { change_variable = { name = KoM_theurgy_xp add = $COUNT$ } }
-				flag:alchemy = { change_variable = { name = KoM_alchemy_xp add = $COUNT$ } }
-				flag:taoism = { change_variable = { name = KoM_taoism_xp add = $COUNT$ } }
-				flag:onmyodo = { change_variable = { name = KoM_onmyodo_xp add = $COUNT$ } }
+		send_interface_toast = {
+			type = event_toast_effect_neutral
+			title = KoM_study_magic_school_effect
+			KoM_add_hidden_magic_school_xp_effect = { TRAIT = scope:trait SCHOOL = $SCHOOL$ COUNT = $COUNT$ }
+		}
+	}
+}
+KoM_add_hidden_magic_school_xp_effect = {
+	custom_description = {
+		text = KoM_add_magic_school_xp
+		object = $TRAIT$
+		value = $COUNT$
+		switch = {
+			trigger = $SCHOOL$
+			flag:goetia = { change_variable = { name = KoM_goetia_xp add = $COUNT$ } }
+			flag:thaumaturgy = { change_variable = { name = KoM_thaumaturgy_xp add = $COUNT$ } }
+			flag:theurgy = { change_variable = { name = KoM_theurgy_xp add = $COUNT$ } }
+			flag:alchemy = { change_variable = { name = KoM_alchemy_xp add = $COUNT$ } }
+			flag:taoism = { change_variable = { name = KoM_taoism_xp add = $COUNT$ } }
+			flag:onmyodo = { change_variable = { name = KoM_onmyodo_xp add = $COUNT$ } }
+		}
+	}
+}
+KoM_learn_magic_school_from_trait_effect = {
+	send_interface_toast = {
+		type = event_toast_effect_neutral
+		title = KoM_learn_magic_school_from_trait_effect
+		switch = {
+			trigger = $TRAIT$
+			trait:KoM_magus = {
+				set_variable = { name = KoM_goetia_xp value = 0 }
+				add_secret = { TYPE = KoM_secret_magus }
+			}
+			trait:KoM_thaumaturge = {
+				set_variable = { name = KoM_thaumaturgy_xp value = 0 }
+				add_secret = { TYPE = KoM_secret_thaumaturge }
+			}
+			trait:KoM_theurgist = {
+				set_variable = { name = KoM_theurgy_xp value = 0 }
+				add_secret = { TYPE = KoM_secret_theurgist }
+			}
+			trait:KoM_alchemist = {
+				set_variable = { name = KoM_alchemy_xp value = 0 }
+				add_secret = { TYPE = KoM_secret_alchemist }
+			}
+			trait:KoM_daoshi = {
+				set_variable = { name = KoM_taoism_xp value = 0 }
+				add_secret = { TYPE = KoM_secret_daoshi }
+			}
+			trait:KoM_onmyoji = {
+				set_variable = { name = KoM_onmyodo_xp value = 0 }
+				add_secret = { TYPE = KoM_secret_onmyoji }
 			}
 		}
 	}
 }
 
-KoM_learn_magic_school_from_trait_effect = {
-	switch = {
-		trigger = $TRAIT$
-		trait:KoM_magus = { 
-			set_variable = { name = KoM_goetia_xp value = 0 } 
-			add_secret = { TYPE = KoM_secret_magus }
+
+KoM_start_rite_effect = {
+	KoM_save_tooltip = { LOC = $ID$ }
+	KoM_calculate_time_effect = { MONTHLY_PROGRESS = $MONTHLY_PROGRESS$ CURRENT_PROGRESS = 0 }
+	custom_tooltip = {
+		text = KoM_start_rite_effect
+		create_story = {
+			type = KoM_story_cycle
+			save_scope_as = temp_rite
 		}
-		trait:KoM_thaumaturge = { 
-			set_variable = { name = KoM_thaumaturgy_xp value = 0 } 
-			add_secret = { TYPE = KoM_secret_thaumaturge } 
+		hidden_effect_new_object = {
+			scope:temp_rite = {
+				set_variable = {
+					name = id
+					value = flag:$ID$
+				}
+				set_variable = {
+					name = monthly_progress
+					value = $MONTHLY_PROGRESS$
+				}
+				set_variable = {
+					name = target
+					value = $TARGET$
+				}
+				set_variable = {
+					name = school
+					value = flag:$SCHOOL$
+				}
+			}
 		}
-		trait:KoM_theurgist = { 
-			set_variable = { name = KoM_theurgy_xp value = 0 } 
-			add_secret = { TYPE = KoM_secret_theurgist } 
-		}
-		trait:KoM_alchemist = { 
-			set_variable = { name = KoM_alchemy_xp value = 0 } 
-			add_secret = { TYPE = KoM_secret_alchemist } 
-		}
-		trait:KoM_daoshi = { 
-			set_variable = { name = KoM_taoism_xp value = 0 } 
-			add_secret = { TYPE = KoM_secret_daoshi } 
-		}
-		trait:KoM_onmyoji = { 
-			set_variable = { name = KoM_onmyodo_xp value = 0 } 
-			add_secret = { TYPE = KoM_secret_onmyoji } 
+		set_variable = {
+			name = current_rite
+			value = scope:temp_rite
 		}
 	}
+}
+ALT_delete_rite_effect = {
+	$RITE$ = { save_scope_as = rite }
+	remove_variable = current_rite
+	scope:rite = { end_story = yes }
 }

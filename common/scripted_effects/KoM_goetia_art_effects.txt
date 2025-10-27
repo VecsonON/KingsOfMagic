@@ -1,0 +1,217 @@
+﻿KoM_the_gate_of_invocation_effect = {
+	add_piety = -250
+	trigger_event = KoM_goetia_events.1
+	show_as_tooltip = {
+		KoM_learn_random_true_name_demon_effect = yes
+	}
+}
+KoM_learn_random_true_name_demon_effect = {
+	random_list = {
+		10 = { #Intrigue, Discover Secret of Target, Modifier(Scheme secrecy +10%), +5 Opportunities
+			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:bael_true_name } } } 
+			KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = bael } 
+		} 
+		10 = { #Learning, Modifier(Innovation speed +20%), Give random Inspiration to target, Can lessen relation
+			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:amon_true_name } } } 
+			KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = amon } 
+		} 
+		8 = { #Diplomacy, Modifier(Attractiveness Opinion +20), -50 stress, Modifier(-1 to all skills)
+			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:vapula_true_name } } } 
+			KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = vapula } 
+		} 
+		8 = { #Martial, Increases success chance for next Hunt, Modifier(+6 prowess), Modifier(+6 advantage)
+			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:barbatos_true_name } } } 
+			KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = barbatos } 
+		} 
+		6 = { #Learning, You will know who killed in your court, Modifier(-20% stress Gain), Heal depressed|-25 stress
+			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:gamigin_true_name } } } 
+			KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = gamigin } 
+		} 
+		6 = { #Intrigue, Intrigue +1, Modifier(General Opinion +10), Gain strong hook on target 
+			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:beleth_true_name } } } 
+			KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = beleth } 
+		} 
+		4 = { #Learning, Learning +1, Modifier(Travel Safety +50), Modifier(+2 learning per piety)
+			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:astaroth_true_name } } } 
+			KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = astaroth } 
+		} 
+		4 = { #Martial, Martial +1, Give to all Knights Modifier(+5 advantage), Give target Brave and Loyal
+			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:marchosias_true_name } } } 
+			KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = marchosias } 
+		} 
+		2 = { #Diplomacy, Diplomacy +1, Modifier(-20 vassal opinion), Modifier(Control Gain -50%)
+			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:belial_true_name } } } 
+			KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = belial } 
+		} 
+		2 = { #Stewardship, Stewardship +1, Modifier(+20 vassal opinion), Modifier(Control Gain +50%)
+			trigger = { NOT = { is_target_in_variable_list = { name = KoM_true_demon_names target = flag:paimon_true_name } } } 
+			KoM_the_gate_of_invocation_learn_demon_name_effect = { DEMON = paimon } 
+		} 
+	}
+}
+KoM_the_gate_of_invocation_learn_demon_name_effect = {
+	KoM_save_tooltip = { LOC = KoM_goetia_demon_$DEMON$ }
+	custom_tooltip = {
+		text = KoM_the_gate_of_invocation_learn_demon_name_effect
+		add_to_variable_list = { name = KoM_true_demon_names target = flag:$DEMON$_true_name }
+	}
+}
+
+KoM_the_lesser_conjurations_effect = {
+	$TARGET$ = { save_scope_as = KoM_target }
+	add_piety = -500
+	trigger_event = KoM_goetia_events.2
+	custom_tooltip = KoM_rite_the_lesser_conjurations_effect
+}
+
+KoM_the_seventy_two_gates_effect = {
+	$TARGET$ = { save_scope_as = KoM_target }
+	add_piety = -750
+	trigger_event = KoM_goetia_events.3
+	custom_tooltip = KoM_rite_the_seventy_two_gates_effect
+}
+
+KoM_the_royal_theurgy_of_solomon_effect = {
+	$TARGET$ = { save_scope_as = KoM_target }
+	add_piety = -1000
+	remove_short_term_gold = 100
+	trigger_event = KoM_goetia_events.4
+	custom_tooltip = KoM_rite_the_royal_theurgy_of_solomon_effect
+}
+
+KoM_the_great_work_of_unification_effect = {
+	send_interface_message = {
+		title = KoM_rite_the_great_work_of_unification
+		add_piety = -1000
+		remove_short_term_gold = 200
+		$TARGET$ = { 
+			every_character_trait = {
+				limit = { 
+					OR = {
+						has_trait_category = personality 
+						has_trait_category = education
+					} 
+				}
+				save_scope_as = this_trait
+				PREV = { remove_trait = scope:this_trait }
+			}
+			add_trait_force_tooltip = possessed_1
+			if = {
+				limit = { has_any_nickname = yes }
+				remove_nickname = yes
+			}
+			
+		}
+		switch = {
+			trigger = $DEMON$
+			flag:bael = {
+				$TARGET$ = {
+					add_trait_force_tooltip = callous
+					add_trait_force_tooltip = sadistic
+					add_trait_force_tooltip = deceitful
+					add_trait_force_tooltip = education_intrigue_4
+					KoM_the_great_work_of_unification_skill_effect = { DIPLOMACY = 4 MARTIAL = 5 STEWARDSHIP = 3 INTRIGUE = 10 LEANING = 4 }
+					change_first_name = "KoM_goetia_demon_bael_name"
+				}
+			}
+			flag:amon = {
+				$TARGET$ = {
+					add_trait_force_tooltip = calm
+					add_trait_force_tooltip = patient
+					add_trait_force_tooltip = callous
+					add_trait_force_tooltip = education_learning_4
+					KoM_the_great_work_of_unification_skill_effect = { DIPLOMACY = 6 MARTIAL = 6 STEWARDSHIP = 6 INTRIGUE = 0 LEANING = 10 }
+					change_first_name = "KoM_goetia_demon_amon_name"
+				}
+			}
+			flag:vapula = {
+				$TARGET$ = {
+					add_trait_force_tooltip = gregarious
+					add_trait_force_tooltip = lustful
+					add_trait_force_tooltip = lazy
+					add_trait_force_tooltip = education_diplomacy_4
+					KoM_the_great_work_of_unification_skill_effect = { DIPLOMACY = 10 MARTIAL = 1 STEWARDSHIP = 4 INTRIGUE = 2 LEANING = 4 }
+					change_first_name = "KoM_goetia_demon_vapula_name"
+				}
+			}
+			flag:barbatos = {
+				$TARGET$ = {
+					add_trait_force_tooltip = brave
+					add_trait_force_tooltip = diligent
+					add_trait_force_tooltip = callous
+					add_trait_force_tooltip = education_martial_4
+					KoM_the_great_work_of_unification_skill_effect = { DIPLOMACY = 2 MARTIAL = 10 STEWARDSHIP = 3 INTRIGUE = 6 LEANING = 3 }
+					change_first_name = "KoM_goetia_demon_barbatos_name"
+				}
+			}
+			flag:gamigin = {
+				$TARGET$ = {
+					add_trait_force_tooltip = patient
+					add_trait_force_tooltip = eccentric
+					add_trait_force_tooltip = cynical
+					add_trait_force_tooltip = education_stewardship_4
+					KoM_the_great_work_of_unification_skill_effect = { DIPLOMACY = 6 MARTIAL = 2 STEWARDSHIP = 10 INTRIGUE = 2 LEANING = 3 }
+					change_first_name = "KoM_goetia_demon_gamigin_name"
+				}
+			}
+			flag:beleth = {
+				$TARGET$ = {
+					add_trait_force_tooltip = callous
+					add_trait_force_tooltip = deceitful
+					add_trait_force_tooltip = arbitrary
+					add_trait_force_tooltip = education_intrigue_5
+					KoM_the_great_work_of_unification_skill_effect = { DIPLOMACY = 6 MARTIAL = 6 STEWARDSHIP = 6 INTRIGUE = 15 LEANING = 6 }
+					change_first_name = "KoM_goetia_demon_beleth_name"
+				}
+			}
+			flag:astaroth = {
+				$TARGET$ = {
+					add_trait_force_tooltip = calm
+					add_trait_force_tooltip = patient
+					add_trait_force_tooltip = cynical
+					add_trait_force_tooltip = education_learning_5
+					KoM_the_great_work_of_unification_skill_effect = { DIPLOMACY = 6 MARTIAL = 6 STEWARDSHIP = 6 INTRIGUE = 6 LEANING = 15 }
+					change_first_name = "KoM_goetia_demon_astaroth_name"
+				}
+			}
+			flag:marchosias = {
+				$TARGET$ = {
+					add_trait_force_tooltip = brave
+					add_trait_force_tooltip = wrathful
+					add_trait_force_tooltip = ambitious
+					add_trait_force_tooltip = education_martial_5
+					KoM_the_great_work_of_unification_skill_effect = { DIPLOMACY = 6 MARTIAL = 15 STEWARDSHIP = 6 INTRIGUE = 6 LEANING = 6 }
+					change_first_name = "KoM_goetia_demon_marchosias_name"
+				}
+			}
+			flag:belial = {
+				$TARGET$ = {
+					add_trait_force_tooltip = arrogant
+					add_trait_force_tooltip = gregarious
+					add_trait_force_tooltip = ambitious
+					add_trait_force_tooltip = education_diplomacy_5
+					KoM_the_great_work_of_unification_skill_effect = { DIPLOMACY = 15 MARTIAL = 6 STEWARDSHIP = 6 INTRIGUE = 6 LEANING = 6 }
+					change_first_name = "KoM_goetia_demon_belial_name"
+				}
+			}
+			flag:paimon = {
+				$TARGET$ = {
+					add_trait_force_tooltip = diligent
+					add_trait_force_tooltip = patient
+					add_trait_force_tooltip = stubborn
+					add_trait_force_tooltip = education_stewardship_5
+					KoM_the_great_work_of_unification_skill_effect = { DIPLOMACY = 6 MARTIAL = 6 STEWARDSHIP = 15 INTRIGUE = 6 LEANING = 6 }
+					change_first_name = "KoM_goetia_demon_paimon_name"
+				}
+			}
+		}
+	}
+	trigger_event = { on_action = KoM_after_rite }
+}
+KoM_the_great_work_of_unification_skill_effect = {
+	add_diplomacy_skill = $DIPLOMACY$
+	add_martial_skill = $MARTIAL$
+	add_stewardship_skill = $STEWARDSHIP$
+	add_intrigue_skill = $INTRIGUE$
+	add_learning_skill = $LEANING$
+}

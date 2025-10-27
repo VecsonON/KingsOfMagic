@@ -1,0 +1,159 @@
+﻿container = {
+	name = "window_KoM_button"
+	parentanchor = bottom|left
+	position = { -3 -350 }
+	alwaystransparent = no
+	layer = bottom
+	visible = "[And(And( Not( IsPauseMenuShown ), And(And(IsDefaultGUIMode, Character.IsValid), Not(GetVariableSystem.Exists( 'hide_bottom_left_HUD')))), Not( GreaterThan_CFixedPoint( GetPlayer.MakeScope.Var('hide_ui_bottom_left_bar').GetValue, '(CFixedPoint)0' ) ))]"
+	
+	
+	button_hud_character_bar = {
+		name = "house_button"
+		visible = "[GetPlayer.MakeScope.Var('current_rite').IsSet]"
+		onclick = "[GetVariableSystem.Toggle('cancel_rite_confirm')]"
+		parentanchor = left
+		
+		using = Animation_ShowHide_Standard
+
+		using = tooltip_es
+		tooltip_offset = { 20 0 }
+
+		tooltip = WINDOW_KOM_TT
+
+		state = {
+			name = _hide
+			on_start = "[GetVariableSystem.Clear('cancel_rite_confirm')]"
+		}
+
+		widget = {
+			name = "player_arcane_activity_widget"
+			datacontext = "[GetPlayer.MakeScope.Var('current_rite')]"
+			size = { 35 35 }
+			position = { 7 9 }
+			
+			icon = {
+				texture = "gfx/interface/buttons/button_lifestyles_base.dds"
+				size = { 100% 100% }
+			}
+
+			icon = {
+				name = "progress_frame"
+				texture = "gfx/interface/progressbars/action_progress_frame.dds"
+				alwaystransparent = yes
+				size = { 100% 100% }
+				parentanchor = center
+				alpha = 0.5
+			}
+
+			progresspie = {
+				name = "progress"
+				size = { 35 35 }
+				texture = "gfx/interface/progressbars/action_progress_thin.dds"
+				framesize = { 128 128 }
+				frame = 2
+				widgetanchor = center
+				parentanchor = center
+				value = "[GetPlayer.MakeScope.Var('current_rite').Var('total_progress').GetValue]"
+				min = 0
+				max = 100
+			}
+
+			widget = {
+				size = { 30 30 }
+				alwaystransparent = yes
+
+				highlight_icon = {
+					position = { 3 2 }
+					size = { 30 30 }
+					alwaystransparent = yes
+					texture = "gfx/interface/icons/traits/magus.dds"
+					block "effect" {}
+
+					glow = {
+						color = { 0 0 0 0.8 }
+						glow_radius = 3
+						using = Glow_Standard
+					}
+				}
+			}
+		}
+
+	}
+}
+window = {
+	name = "cancel_rite_confirm"
+	layer = top
+	parentanchor = center
+	size = { 500 350 }
+
+	visible = "[And(GetVariableSystem.Exists('cancel_rite_confirm'),GetPlayer.MakeScope.Var('current_rite').IsSet)]"
+		
+	using = Animation_ShowHide_Standard
+
+	base_dialog = {
+		blockoverride "dialog_contents"
+		{
+			margin = { 10 10 }
+			spacing = 10
+
+			header_standard = {
+				layoutpolicy_horizontal = expanding
+
+				blockoverride "header_text"
+				{
+					text = "CANCEL_RITE_CONFIRM_TITLE"
+				}
+
+				blockoverride "button_close"
+				{
+					visible = no
+				}
+			}
+
+			text_multi = {
+				name = "description"
+				autoresize = yes
+				max_width = 430
+				min_width = 430
+				margin = {15 10}
+
+				text = "CANCEL_RITE_CONFIRM_DESC"
+				using = "Font_Size_Small"
+
+				background = {
+					using = Background_Area
+				}
+			}
+
+			hbox = {
+				layoutpolicy_horizontal = expanding
+				margin = { 10 0 }
+				margin_bottom = 10
+
+				button_standard= {
+					layoutpolicy_horizontal = growing
+
+					text = "CANCEL_RITE_CONFIRM_BACK"
+					shortcut = "close_window"
+					
+					onclick = "[GetVariableSystem.Toggle('cancel_rite_confirm')]"
+				}
+
+				spacer = {
+					size = { 15 0 }
+				}
+
+				button_primary = {
+					layoutpolicy_horizontal = growing
+
+					text = "CANCEL_RITE_CONFIRM_CANCEL"
+					shortcut = "confirm"
+					
+					clicksound = "[GameDialog.GetClickSound]"
+					onclick = "[GetVariableSystem.Toggle('cancel_rite_confirm')]"
+					onclick = "[GetScriptedGui('KoM_window_cancel').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				}
+			}
+		}
+	}
+}
