@@ -66,3 +66,23 @@
  KoM_goetia_demon_paimon: "[KoM_goetic|E] Demon #underline;TOOLTIP:KoM_goetia_demon_paimon_tt Paimon#!"
  KoM_goetia_demon_paimon_name: "Shard of $KoM_goetia_demon_paimon$"
  KoM_goetia_demon_paimon_tt: "$KoM_goetia_demon_tt$\n\nWith $KoM_rite_the_lesser_conjurations$: You will gain #P +1#! [stewardship|E].\nWith $KoM_rite_the_seventy_two_gates$: Give [GetModifier('KoM_paimon_influence_modifier').GetNameWithTooltip] [modifier|E] to target.\nWith $KoM_rite_the_royal_theurgy_of_solomon$: Give [GetModifier('KoM_paimon_command_modifier').GetNameWithTooltip] [modifier|E] to target.\nWith $KoM_rite_the_great_work_of_unification$ Possession: [KoMGetTrait('diligent')], [KoMGetTrait('patient')], [KoMGetTrait('stubborn')] and [KoMGetTrait('education_stewardship_5')]"
+
+ #Thaumaturgy
+
+ #Theurgy
+ KoM_theurgy_level: "Per [piety_level|E]"
+
+ KoM_rite_the_initiate_of_purification: "[KoM_rite|E] of #underline;TOOLTIP:KoM_rite_the_initiate_of_purification_tt The Initiate of Purification#!"
+ KoM_rite_the_initiate_of_purification_tt: "By completing this [KoM_rite|E], One attunes their soul to The One giving Mastery over [KoM_theurgy|E]."
+
+ KoM_rite_the_invoker_of_powers: "[KoM_rite|E] of #underline;TOOLTIP:KoM_rite_the_invoker_of_powers_tt The Invoker of Powers#!"
+ KoM_rite_the_invoker_of_powers_tt: "By completing this [KoM_rite|E], One establishes contact with Divine Messengers giving [GetModifier('KoM_theurgy_the_invoker_of_powers_modifier').GetNameWithTooltip] [modifier|E]."
+
+ KoM_rite_the_walker_between_spheres: "[KoM_rite|E] of #underline;TOOLTIP:KoM_rite_the_walker_between_spheres_tt The Walker Between Spheres#!"
+ KoM_rite_the_walker_between_spheres_tt: "By completing this [KoM_rite|E], One begins to understand Grand Scheme of things giving [GetModifier('KoM_theurgy_the_walker_between_spheres_modifier').GetNameWithTooltip] [modifier|E]."
+
+ KoM_rite_the_hierophant_of_fire: "[KoM_rite|E] of #underline;TOOLTIP:KoM_rite_the_hierophant_of_fire_tt The Hierophant of Fire#!"
+ KoM_rite_the_hierophant_of_fire_tt: "By completing this [KoM_rite|E], One unites part of their soul with The One giving [GetModifier('KoM_theurgy_the_hierophant_of_fire_modifier').GetNameWithTooltip] [modifier|E]."
+
+ KoM_rite_the_theios_anthropos: "[KoM_rite|E] of #underline;TOOLTIP:KoM_rite_the_theios_anthropos_tt The Theios Anthrōpos#!"
+ KoM_rite_the_theios_anthropos_tt: "By completing this [KoM_rite|E], One can merge with The One for a moment giving [GetModifier('KoM_theurgy_the_theios_anthropos_modifier').GetNameWithTooltip] [modifier|E]."

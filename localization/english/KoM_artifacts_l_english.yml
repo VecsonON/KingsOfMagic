@@ -1,6 +1,12 @@
 ﻿l_english:
  KoM_artifact_grimoire_of_goetic_vecson_name: "[KoM_grimoire|E] of Magus Vecson"
  KoM_artifact_grimoire_of_goetic_vecson_desc: "Written by being from outside of the world, it contains every [KoM_goetic|E] teaching."
+ KoM_artifact_grimoire_of_thaumaturgy_vecson_name: "[KoM_grimoire|E] of Thaumaturge Vecson"
+ KoM_artifact_grimoire_of_thaumaturgy_vecson_desc: "Written by being from outside of the world, it contains every [KoM_thaumaturgy|E] teaching."
+ KoM_artifact_grimoire_of_theurgy_vecson_name: "[KoM_grimoire|E] of Theurgist Vecson"
+ KoM_artifact_grimoire_of_theurgy_vecson_desc: "Written by being from outside of the world, it contains every [KoM_theurgy|E] teaching."
+ KoM_artifact_grimoire_of_alchemy_vecson_name: "[KoM_grimoire|E] of Alchemist Vecson"
+ KoM_artifact_grimoire_of_alchemy_vecson_desc: "Written by being from outside of the world, it contains every [KoM_alchemy|E] teaching."
  KoM_artifact_grimoire_of_taoism_vecson_name: "[KoM_grimoire|E] of Daoshi Vecson"
  KoM_artifact_grimoire_of_taoism_vecson_desc: "Written by being from outside of the world, it contains every [KoM_taoism|E] teaching."
  KoM_artifact_grimoire_of_onmyodo_vecson_name: "[KoM_grimoire|E] of Onmyoji Vecson"

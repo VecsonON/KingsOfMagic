@@ -54,3 +54,11 @@ KoM_rite_time_10_years = {
 	value = KoM_rite_time_1_year
 	divide = 10
 }
+
+KoM_theurgy_level = {
+	value = 1
+	if = { 
+		limit = { exists = piety_level } 
+		value = piety_level
+	}
+}

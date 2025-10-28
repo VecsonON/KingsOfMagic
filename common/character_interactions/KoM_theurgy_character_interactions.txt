@@ -1,0 +1,129 @@
+﻿KoM_theurgy_interaction = {
+	category = interaction_category_religion
+	icon = KoM_theurgy_interaction
+	desc = KoM_theurgy_interaction_desc
+
+	use_diplomatic_range = no
+
+	is_shown = {
+		scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:theurgy } }
+	}
+	is_valid_showing_failures_only = {
+		scope:actor = { KoM_must_self_cast_trigger = yes }
+	}
+
+	send_option = {
+		is_valid = {
+			scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:theurgy VALUE = 10 AT_LEAST = yes } }
+		}
+		flag = the_initiate_of_purification
+		localization = KoM_rite_the_initiate_of_purification
+	}
+
+	send_option = {
+		is_valid = {
+			scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:theurgy VALUE = 30 AT_LEAST = yes } }
+		}
+		flag = the_invoker_of_powers
+		localization = KoM_rite_the_invoker_of_powers
+	}
+
+	send_option = {
+		is_valid = {
+			scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:theurgy VALUE = 50 AT_LEAST = yes } }
+		}
+		flag = the_walker_between_spheres
+		localization = KoM_rite_the_walker_between_spheres
+	}
+
+	send_option = {
+		is_valid = {
+			scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:theurgy VALUE = 75 AT_LEAST = yes } }
+		}
+		flag = the_hierophant_of_fire
+		localization = KoM_rite_the_hierophant_of_fire
+	}
+
+	send_option = {
+		is_valid = {
+			scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:theurgy VALUE = 100 AT_LEAST = yes } }
+		}
+		flag = the_theios_anthropos
+		localization = KoM_rite_the_theios_anthropos
+	}
+
+	can_send = {
+		custom_tooltip = {
+			text = KoM_select_art
+			OR = {
+				scope:the_initiate_of_purification ?= yes
+				scope:the_invoker_of_powers ?= yes
+				scope:the_walker_between_spheres ?= yes
+				scope:the_hierophant_of_fire ?= yes
+				scope:the_theios_anthropos ?= yes
+			}
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			switch = {
+				trigger = yes
+				scope:the_initiate_of_purification = {
+					KoM_start_rite_effect = {
+						ID = the_initiate_of_purification
+						MONTHLY_PROGRESS = KoM_rite_time_6_months
+						TARGET = scope:recipient
+						SCHOOL = theurgy
+					}
+					custom_tooltip = KoM_rite_showcase
+					show_as_tooltip = { KoM_the_initiate_of_purification_effect = yes }
+				}
+				scope:the_invoker_of_powers = {
+					KoM_start_rite_effect = {
+						ID = the_invoker_of_powers
+						MONTHLY_PROGRESS = KoM_rite_time_1_year
+						TARGET = scope:recipient
+						SCHOOL = theurgy
+					}
+					custom_tooltip = KoM_rite_showcase
+					show_as_tooltip = { KoM_the_invoker_of_powers_effect = yes }
+				}
+				scope:the_walker_between_spheres = {
+					KoM_start_rite_effect = {
+						ID = the_walker_between_spheres
+						MONTHLY_PROGRESS = KoM_rite_time_1_year
+						TARGET = scope:recipient
+						SCHOOL = theurgy
+					}
+					custom_tooltip = KoM_rite_showcase
+					show_as_tooltip = { KoM_the_walker_between_spheres_effect = yes }
+				}
+				scope:the_hierophant_of_fire = {
+					KoM_start_rite_effect = {
+						ID = the_hierophant_of_fire
+						MONTHLY_PROGRESS = KoM_rite_time_1_year
+						TARGET = scope:recipient
+						SCHOOL = theurgy
+					}
+					custom_tooltip = KoM_rite_showcase
+					show_as_tooltip = { KoM_the_hierophant_of_fire_effect = yes }
+				}
+				scope:the_theios_anthropos = {
+					KoM_start_rite_effect = {
+						ID = the_theios_anthropos
+						MONTHLY_PROGRESS = KoM_rite_time_2_years
+						TARGET = scope:recipient
+						SCHOOL = theurgy
+					}
+					custom_tooltip = KoM_rite_showcase
+					show_as_tooltip = { KoM_the_theios_anthropos_effect = yes }
+				}
+			}
+		}
+	}
+
+	auto_accept = yes
+
+	ai_will_do = { base = 0 }
+}

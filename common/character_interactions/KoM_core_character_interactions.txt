@@ -343,10 +343,20 @@ KoM_teach_magic_interaction = {
 		
 		modifier = {
 			scope:recipient.faith = { has_doctrine_parameter = witchcraft_illegal }
+			OR = {
+				scope:goetia = yes
+				scope:thaumaturgy = yes
+				scope:alchemy = yes
+			}
 			add = -40
 		}
 		modifier = {
 			scope:recipient.faith = { has_doctrine_parameter = witchcraft_shunned }
+			OR = {
+				scope:goetia = yes
+				scope:thaumaturgy = yes
+				scope:alchemy = yes
+			}
 			add = -20
 		}
 

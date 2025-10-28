@@ -15,3 +15,9 @@
  KoM_terrain_type_goetia_adept_cancel_negative_supply: "Unlock $KoM_rite_the_seventy_two_gates$"
  KoM_terrain_type_goetia_expert_cancel_negative_supply: "Unlock $KoM_rite_the_royal_theurgy_of_solomon$"
  KoM_terrain_type_goetia_master_cancel_negative_supply: "Unlock $KoM_rite_the_great_work_of_unification$"
+
+ KoM_terrain_type_theurgy_novice_cancel_negative_supply: "Unlock $KoM_rite_the_initiate_of_purification$"
+ KoM_terrain_type_theurgy_apprentice_cancel_negative_supply: "Unlock $KoM_rite_the_invoker_of_powers$"
+ KoM_terrain_type_theurgy_adept_cancel_negative_supply: "Unlock $KoM_rite_the_walker_between_spheres$"
+ KoM_terrain_type_theurgy_expert_cancel_negative_supply: "Unlock $KoM_rite_the_hierophant_of_fire$"
+ KoM_terrain_type_theurgy_master_cancel_negative_supply: "Unlock $KoM_rite_the_theios_anthropos$"

@@ -1,0 +1,38 @@
+﻿KoM_the_initiate_of_purification_effect = {
+	save_scope_value_as = {
+		name = xp_gained
+		value = {
+			value = piety_level
+			multiply = 2
+		}
+	}
+	KoM_study_magic_school_effect = { SCHOOL = flag:theurgy COUNT = scope:xp_gained }
+}
+KoM_the_invoker_of_powers_effect = {
+	add_character_modifier = {
+		modifier = KoM_theurgy_the_invoker_of_powers_modifier
+		years = 10
+	}
+	add_piety_level = -1
+}
+KoM_the_walker_between_spheres_effect = {
+	add_character_modifier = {
+		modifier = KoM_theurgy_the_walker_between_spheres_modifier
+		years = 5
+	}
+	add_piety_level = -1
+}
+KoM_the_hierophant_of_fire_effect = {
+	add_character_modifier = {
+		modifier = KoM_theurgy_the_hierophant_of_fire_modifier
+		years = 3
+	}
+	add_piety_level = -1
+}
+KoM_the_theios_anthropos_effect = {
+	add_character_modifier = {
+		modifier = KoM_theurgy_the_theios_anthropos_modifier
+		years = 2
+	}
+	add_piety_level = -1
+}

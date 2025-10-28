@@ -120,11 +120,11 @@ KoM_theurgist = {
 	flag = mage
 
 	track = {
-		10 = { }
-		25 = { }
-		50 = { }
-		75 = { }
-		100 = { }
+		10 = { KoM_terrain_type_theurgy_novice_cancel_negative_supply = yes }
+		25 = { KoM_terrain_type_theurgy_apprentice_cancel_negative_supply = yes }
+		50 = { KoM_terrain_type_theurgy_adept_cancel_negative_supply = yes }
+		75 = { KoM_terrain_type_theurgy_expert_cancel_negative_supply = yes }
+		100 = { KoM_terrain_type_theurgy_master_cancel_negative_supply = yes }
 	}
 
 	icon = theurgist.dds

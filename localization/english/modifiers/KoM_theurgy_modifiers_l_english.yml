@@ -1,0 +1,14 @@
+﻿l_english:
+ KoM_theurgy_modifier_desc: "#I This [modifier|E] scales with [piety_level|E]#!"
+
+ KoM_theurgy_the_invoker_of_powers_modifier: "The Invoker of Powers"
+ KoM_theurgy_the_invoker_of_powers_modifier_desc: "$KoM_theurgy_modifier_desc$\nThis [character|E] received vision from Angels."
+
+ KoM_theurgy_the_walker_between_spheres_modifier: "The Walker Between Spheres"
+ KoM_theurgy_the_walker_between_spheres_modifier_desc: "$KoM_theurgy_modifier_desc$\nThis [character|E] was granted partial understanding of Grand Scheme of things."
+
+ KoM_theurgy_the_hierophant_of_fire_modifier: "The Hierophant of Fire"
+ KoM_theurgy_the_hierophant_of_fire_modifier_desc: "$KoM_theurgy_modifier_desc$\nThis [character|E]'s soul was purified by The One."
+
+ KoM_theurgy_the_theios_anthropos_modifier: "The Theios Anthrōpos"
+ KoM_theurgy_the_theios_anthropos_modifier_desc: "$KoM_theurgy_modifier_desc$\nThis [character|E]'s soul 'touched' The One, becoming one for a moment."

@@ -239,6 +239,7 @@
 						TARGET = scope:recipient
 						SCHOOL = goetia
 					}
+					custom_tooltip = KoM_rite_showcase
 					show_as_tooltip = { KoM_the_gate_of_invocation_effect = yes }
 				}
 				scope:the_lesser_conjurations = {
@@ -248,6 +249,7 @@
 						TARGET = scope:recipient
 						SCHOOL = goetia
 					}
+					custom_tooltip = KoM_rite_showcase
 					show_as_tooltip = { KoM_the_lesser_conjurations_effect = { TARGET = scope:recipient } }
 				}
 				scope:the_seventy_two_gates = {
@@ -257,6 +259,7 @@
 						TARGET = scope:recipient
 						SCHOOL = goetia
 					}
+					custom_tooltip = KoM_rite_showcase
 					show_as_tooltip = { KoM_the_seventy_two_gates_effect = { TARGET = scope:recipient } }
 				}
 				scope:the_royal_theurgy_of_solomon = {
@@ -266,6 +269,7 @@
 						TARGET = scope:recipient
 						SCHOOL = goetia
 					}
+					custom_tooltip = KoM_rite_showcase
 					show_as_tooltip = { KoM_the_royal_theurgy_of_solomon_effect = { TARGET = scope:recipient } }
 				}
 				scope:the_great_work_of_unification = {
@@ -275,6 +279,7 @@
 						TARGET = scope:recipient
 						SCHOOL = goetia
 					}
+					custom_tooltip = KoM_rite_showcase
 					show_as_tooltip = { KoM_the_great_work_of_unification_effect = { TARGET = scope:recipient DEMON = scope:demon } }
 				}
 			}

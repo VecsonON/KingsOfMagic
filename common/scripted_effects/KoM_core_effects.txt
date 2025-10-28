@@ -11,6 +11,33 @@
 	KoM_create_grimoire_effect = {
 		OWNER = THIS
 		RARITY = illustrious
+		NAME = grimoire_of_thaumaturgy_vecson
+		SCHOOL = thaumaturgy
+		MAX_MASTERY = 10
+		MIN_MASTERY = 0
+		MASTERY_GAIN = 100
+	}
+	KoM_create_grimoire_effect = {
+		OWNER = THIS
+		RARITY = illustrious
+		NAME = grimoire_of_theurgy_vecson
+		SCHOOL = theurgy
+		MAX_MASTERY = 10
+		MIN_MASTERY = 0
+		MASTERY_GAIN = 100
+	}
+	KoM_create_grimoire_effect = {
+		OWNER = THIS
+		RARITY = illustrious
+		NAME = grimoire_of_alchemy_vecson
+		SCHOOL = alchemy
+		MAX_MASTERY = 10
+		MIN_MASTERY = 0
+		MASTERY_GAIN = 100
+	}
+	KoM_create_grimoire_effect = {
+		OWNER = THIS
+		RARITY = illustrious
 		NAME = grimoire_of_taoism_vecson
 		SCHOOL = taoism
 		MAX_MASTERY = 10
@@ -236,7 +263,7 @@ KoM_study_magic_school_effect = {
 		send_interface_toast = {
 			type = event_toast_effect_neutral
 			title = KoM_study_magic_school_effect
-			KoM_add_hidden_magic_school_xp_effect = { TRAIT = scope:trait SCHOOL = $SCHOOL$ COUNT = $COUNT$ }
+			KoM_add_hidden_magic_school_xp_effect = { TRAIT = scope:trait COUNT = $COUNT$ }
 		}
 	}
 }
@@ -246,13 +273,31 @@ KoM_add_hidden_magic_school_xp_effect = {
 		object = $TRAIT$
 		value = $COUNT$
 		switch = {
-			trigger = $SCHOOL$
-			flag:goetia = { change_variable = { name = KoM_goetia_xp add = $COUNT$ } }
-			flag:thaumaturgy = { change_variable = { name = KoM_thaumaturgy_xp add = $COUNT$ } }
-			flag:theurgy = { change_variable = { name = KoM_theurgy_xp add = $COUNT$ } }
-			flag:alchemy = { change_variable = { name = KoM_alchemy_xp add = $COUNT$ } }
-			flag:taoism = { change_variable = { name = KoM_taoism_xp add = $COUNT$ } }
-			flag:onmyodo = { change_variable = { name = KoM_onmyodo_xp add = $COUNT$ } }
+			trigger = $TRAIT$
+			trait:KoM_magus = { 
+				change_variable = { name = KoM_goetia_xp add = $COUNT$ } 
+				set_variable = { name = KoM_goetia_xp value = { value = var:KoM_goetia_xp max = 100 } }
+			}
+			trait:KoM_thaumaturge = { 
+				change_variable = { name = KoM_thaumaturgy_xp add = $COUNT$ } 
+				set_variable = { name = KoM_thaumaturgy_xp value = { value = var:KoM_thaumaturgy_xp max = 100 } }
+			}
+			trait:KoM_theurgist = { 
+				change_variable = { name = KoM_theurgy_xp add = $COUNT$ } 
+				set_variable = { name = KoM_theurgy_xp value = { value = var:KoM_theurgy_xp max = 100 } }
+			}
+			trait:KoM_alchemist = { 
+				change_variable = { name = KoM_alchemy_xp add = $COUNT$ } 
+				set_variable = { name = KoM_alchemy_xp value = { value = var:KoM_alchemy_xp max = 100 } }
+			}
+			trait:KoM_daoshi = { 
+				change_variable = { name = KoM_taoism_xp add = $COUNT$ } 
+				set_variable = { name = KoM_taoism_xp value = { value = var:KoM_taoism_xp max = 100 } }
+			}
+			trait:KoM_onmyoji = { 
+				change_variable = { name = KoM_onmyodo_xp add = $COUNT$ } 
+				set_variable = { name = KoM_onmyodo_xp value = { value = var:KoM_onmyodo_xp max = 100 } }
+			}
 		}
 	}
 }

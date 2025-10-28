@@ -94,6 +94,14 @@ KoM_completed_rite = {
 			flag:the_seventy_two_gates = { KoM_the_seventy_two_gates_effect = { TARGET = var:current_rite.var:target } }
 			flag:the_royal_theurgy_of_solomon = { KoM_the_royal_theurgy_of_solomon_effect = { TARGET = var:current_rite.var:target } }
 			flag:the_great_work_of_unification = { KoM_the_great_work_of_unification_effect = { TARGET = var:current_rite.var:target DEMON = var:current_rite.var:demon } }
+			
+			
+			
+			flag:the_initiate_of_purification = { KoM_the_initiate_of_purification_effect = yes }
+			flag:the_invoker_of_powers = { KoM_the_invoker_of_powers_effect = yes }
+			flag:the_walker_between_spheres = { KoM_the_walker_between_spheres_effect = yes }
+			flag:the_hierophant_of_fire = { KoM_the_hierophant_of_fire_effect = yes }
+			flag:the_theios_anthropos = { KoM_the_theios_anthropos_effect = yes }
 		}
 	}
 }

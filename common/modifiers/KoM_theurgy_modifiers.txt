@@ -1,0 +1,42 @@
+﻿KoM_theurgy_the_invoker_of_powers_modifier = {
+	icon = piety_positive
+	monthly_lifestyle_xp_gain_mult = 0.35
+	min_combat_roll = 2
+	scale = {
+		value = KoM_theurgy_level
+		desc = KoM_theurgy_level
+	}
+}
+KoM_theurgy_the_walker_between_spheres_modifier = {
+	icon = piety_positive
+	enemy_hostile_scheme_success_chance_add = -21
+	enemy_hostile_scheme_phase_duration_add = 28
+	owned_hostile_scheme_success_chance_add = 21
+	hostile_scheme_phase_duration_add = -28
+	scale = {
+		value = KoM_theurgy_level
+		desc = KoM_theurgy_level
+	}
+}
+KoM_theurgy_the_hierophant_of_fire_modifier = {
+	icon = piety_positive
+	stress_gain_mult = -0.07
+	stress_loss_mult = 0.14
+	health = 0.7
+	scale = {
+		value = KoM_theurgy_level
+		desc = KoM_theurgy_level
+	}
+}
+KoM_theurgy_the_theios_anthropos_modifier = {
+	icon = piety_positive
+	diplomacy = 7
+	martial = 7
+	stewardship = 7
+	intrigue = 7
+	learning = 7
+	scale = {
+		value = KoM_theurgy_level
+		desc = KoM_theurgy_level
+	}
+}
