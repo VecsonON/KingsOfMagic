@@ -220,17 +220,33 @@ KoM_core_events.10 = { # Random Grimoire Spawn
 			}
 			10 = { # Taoism
 				modifier = {
-					add = 20
+					add = 10
 					culture ?= culture:han
+				}
+				modifier = {
+					add = 10
+					faith ?= { religion ?= religion:taoism_religion }
+				}
+				modifier = {
+					add = 20
+					location ?= { geographical_region = world_asia_china }
 				}
 				save_scope_value_as = { name = school value = flag:taoism }
 				trigger_event = KoM_core_events.11
 			}
 			10 = { # Onmyodo
-				# modifier = {
-				# 	add = 20
-				# 	culture ?= culture:japanese
-				# }
+				modifier = {
+					add = 20
+					culture ?= culture:japanese
+				}
+				modifier = {
+					add = 10
+					faith ?= { religion ?= religion:shintoism_religion }
+				}
+				modifier = {
+					add = 10
+					location ?= { geographical_region = world_asia_japan }
+				}
 				save_scope_value_as = { name = school value = flag:onmyodo }
 				trigger_event = KoM_core_events.11
 			}
@@ -404,7 +420,10 @@ KoM_core_events.11 = {
 					}
 				}
 				scope:newly_created_artifact ?= {
-					set_variable = gained_via_decision
+					set_variable = {
+						name = gained_via_decision
+						value = PREV
+					}
 				}
 			}
 		}

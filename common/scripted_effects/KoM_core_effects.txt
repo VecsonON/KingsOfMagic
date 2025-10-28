@@ -158,6 +158,12 @@ KoM_remove_trait_effect = {
 		remove_trait = $TRAIT$
 	}
 }
+KoM_remove_modifier_effect = {
+	if = {
+		limit = { has_$TYPE$_modifier = $MODIFIER$ }
+		remove_$TYPE$_modifier = $MODIFIER$
+	}
+}
 
 KoM_create_grimoire_effect = {
 	$OWNER$ = { save_scope_as = owner }

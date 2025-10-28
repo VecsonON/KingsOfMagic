@@ -9,7 +9,10 @@
 		scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:theurgy } }
 	}
 	is_valid_showing_failures_only = {
-		scope:actor = { KoM_must_self_cast_trigger = yes }
+		scope:actor = { 
+			KoM_must_self_cast_trigger = yes 
+			piety_level >= 1
+		}
 	}
 
 	send_option = {

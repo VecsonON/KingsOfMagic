@@ -7,32 +7,53 @@
 		}
 	}
 	KoM_study_magic_school_effect = { SCHOOL = flag:theurgy COUNT = scope:xp_gained }
+	trigger_event = { on_action = KoM_after_rite }
 }
 KoM_the_invoker_of_powers_effect = {
-	add_character_modifier = {
-		modifier = KoM_theurgy_the_invoker_of_powers_modifier
-		years = 10
+	send_interface_message = {
+		title = KoM_rite_the_invoker_of_powers
+		KoM_remove_modifier_effect = { TYPE = character MODIFIER = KoM_theurgy_the_invoker_of_powers_modifier }
+		add_character_modifier = {
+			modifier = KoM_theurgy_the_invoker_of_powers_modifier
+			years = 10
+		}
+		add_piety_level = -1
 	}
-	add_piety_level = -1
+	trigger_event = { on_action = KoM_after_rite }
 }
 KoM_the_walker_between_spheres_effect = {
-	add_character_modifier = {
-		modifier = KoM_theurgy_the_walker_between_spheres_modifier
-		years = 5
+	send_interface_message = {
+		title = KoM_rite_the_walker_between_spheres
+		KoM_remove_modifier_effect = { TYPE = character MODIFIER = KoM_theurgy_the_walker_between_spheres_modifier }
+		add_character_modifier = {
+			modifier = KoM_theurgy_the_walker_between_spheres_modifier
+			years = 5
+		}
+		add_piety_level = -1
 	}
-	add_piety_level = -1
+	trigger_event = { on_action = KoM_after_rite }
 }
 KoM_the_hierophant_of_fire_effect = {
-	add_character_modifier = {
-		modifier = KoM_theurgy_the_hierophant_of_fire_modifier
-		years = 3
+	send_interface_message = {
+		title = KoM_rite_the_hierophant_of_fire
+		KoM_remove_modifier_effect = { TYPE = character MODIFIER = KoM_theurgy_the_hierophant_of_fire_modifier }
+		add_character_modifier = {
+			modifier = KoM_theurgy_the_hierophant_of_fire_modifier
+			years = 3
+		}
+		add_piety_level = -1
 	}
-	add_piety_level = -1
+	trigger_event = { on_action = KoM_after_rite }
 }
 KoM_the_theios_anthropos_effect = {
-	add_character_modifier = {
-		modifier = KoM_theurgy_the_theios_anthropos_modifier
-		years = 2
+	send_interface_message = {
+		title = KoM_rite_the_theios_anthropos
+		KoM_remove_modifier_effect = { TYPE = character MODIFIER = KoM_theurgy_the_theios_anthropos_modifier }
+		add_character_modifier = {
+			modifier = KoM_theurgy_the_theios_anthropos_modifier
+			years = 2
+		}
+		add_piety_level = -1
 	}
-	add_piety_level = -1
+	trigger_event = { on_action = KoM_after_rite }
 }

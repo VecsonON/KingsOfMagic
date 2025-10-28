@@ -39,7 +39,7 @@
 	}
 	ai_targets = { ai_recipients = self }
 
-	# cooldown = { years = 2 }
+	cooldown = { years = 2 }
 
 	is_shown = {
 		scope:actor = scope:recipient
@@ -65,6 +65,7 @@
 			scope:actor = {
 				KoM_has_magic_school_xp_trigger = { SCHOOL = scope:target.var:KoM_grimoire VALUE = scope:target.var:max_mastery AT_LEAST = no } 
 				KoM_has_magic_school_xp_trigger = { SCHOOL = scope:target.var:KoM_grimoire VALUE = scope:target.var:min_mastery AT_LEAST = yes }
+				learning >= 8
 			}
 		}
 	}
