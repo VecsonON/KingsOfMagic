@@ -6,7 +6,40 @@
 	target_type = artifact
 	target_filter = actor_artifacts
 
-	# cooldown = { years = 1 }
+	ai_frequency = 60
+	ai_will_do = {
+		base = 1
+
+		modifier = {
+			add = 10
+			scope:actor = { has_trait = scholar }
+		}
+		modifier = {
+			add = 20
+			scope:actor = { has_trait = witch }
+		}
+		modifier = {
+			add = scope:actor.age
+		}
+
+		modifier = {
+			add = -20
+			scope:actor = { 
+				faith = { has_doctrine_parameter = witchcraft_illegal }
+				NOT = { has_trait = cynical }
+			}
+		}
+		modifier = {
+			add = -10
+			scope:actor = { 
+				faith = { has_doctrine_parameter = witchcraft_shunned }
+				NOT = { has_trait = cynical }
+			}
+		}
+	}
+	ai_targets = { ai_recipients = self }
+
+	# cooldown = { years = 2 }
 
 	is_shown = {
 		scope:actor = scope:recipient
@@ -54,6 +87,69 @@
 						multiplier = low_negative_duel_skill_multiplier
 					}
 					add_stress = 25
+				}
+			}
+			if = {
+				limit = { 
+					scope:target = { has_variable = gained_via_decision } 
+					switch = {
+						trigger = scope:target.var:KoM_grimoire
+						flag:goetia = { has_variable = KoM_goetia_xp }
+						flag:thaumaturgy = { has_variable = KoM_thaumaturgy_xp }
+						flag:theurgy = { has_variable = KoM_theurgy_xp }
+						flag:alchemy = { has_variable = KoM_alchemy_xp }
+						flag:taoism = { has_variable = KoM_taoism_xp }
+						flag:onmyodo = { has_variable = KoM_onmyodo_xp }
+					}
+					KoM_is_a_mage_trigger = yes
+				}
+				custom_tooltip = KoM_study_grimoire_interaction_warning
+				hidden_effect = {
+					random = {
+						chance = 20
+						send_interface_message = {
+							title = KoM_study_grimoire_interaction
+							switch = {
+								trigger = scope:target.var:KoM_grimoire
+								flag:goetia = {
+									random_secret = {
+										limit = { secret_type = KoM_secret_magus }
+										expose_secret = scope:actor
+									}
+								}
+								flag:thaumaturgy = {
+									random_secret = {
+										limit = { secret_type = KoM_secret_thaumaturge }
+										expose_secret = scope:actor
+									}
+								}
+								flag:theurgy = {
+									random_secret = {
+										limit = { secret_type = KoM_secret_theurgist }
+										expose_secret = scope:actor
+									}
+								}
+								flag:alchemy = {
+									random_secret = {
+										limit = { secret_type = KoM_secret_alchemist }
+										expose_secret = scope:actor
+									}
+								}
+								flag:taoism = {
+									random_secret = {
+										limit = { secret_type = KoM_secret_daoshi }
+										expose_secret = scope:actor
+									}
+								}
+								flag:onmyodo = {
+									random_secret = {
+										limit = { secret_type = KoM_secret_onmyoji }
+										expose_secret = scope:actor
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		}

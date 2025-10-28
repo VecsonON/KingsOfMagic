@@ -1,0 +1,67 @@
+﻿KoM_seek_magic_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/fp1_decisons_hold_bolt.dds"
+	}	
+	decision_group_type = courtier
+
+	cooldown = { years = 2 }
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { KoM_is_a_mage_trigger = yes }
+				desc = KoM_seek_magic_decision_already_mage_desc
+			}
+			triggered_desc = {
+				trigger = { KoM_is_a_mage_trigger = no }
+				desc = KoM_seek_magic_decision_desc
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = KoM_seek_magic_decision_effect
+		trigger_event = {
+			id = KoM_core_events.10
+			months = { 2 13 }
+		}
+	}	
+
+	cost = {
+		prestige = 500
+	}
+
+	ai_check_interval = 60
+
+	ai_potential = {
+		has_trait = ambitious
+		KoM_is_a_mage_trigger = no
+	}
+
+	ai_will_do = {
+		base = 1
+
+		modifier = {
+			add = 10
+			has_trait = scholar
+		}
+		modifier = {
+			add = 20
+			has_trait = witch
+		}
+		modifier = {
+			add = age
+		}
+
+		modifier = {
+			add = -20
+			faith = { has_doctrine_parameter = witchcraft_illegal }
+			NOT = { has_trait = cynical }
+		}
+		modifier = {
+			add = -10
+			faith = { has_doctrine_parameter = witchcraft_shunned }
+			NOT = { has_trait = cynical }
+		}
+	}
+}

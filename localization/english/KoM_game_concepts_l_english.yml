@@ -14,18 +14,22 @@
  game_concept_KoM_goetia_desc: "#bold Goetia#! is an [KoM_magick|E] school of summoning and controlling spirits.\n\nWorld is full of spirits and other powerful in-material beings, and Magus know that. They conduct rites to summon and control spirits to their will, forcing them to enact change upon world."
 
  game_concept_KoM_thaumaturgy: "Thaumaturgy"
+ game_concept_KoM_thaumaturgic: "Thaumaturgic"
  game_concept_KoM_thaumaturge: "Thaumaturge"
  game_concept_KoM_thaumaturgy_desc: "#bold Thaumaturgy#! is an [KoM_magick|E] school of wonder-working.\n\nBeyond material world, there exist something larger, something primordial. Thaumaturge's want to influence it to change world around them as they fit. They cast spells and conduct rites to manipulate it to do their biding."
 
  game_concept_KoM_theurgy: "Theurgy"
+ game_concept_KoM_theurgic: "Theurgic"
  game_concept_KoM_theurgist: "Theurgist"
  game_concept_KoM_theurgy_desc: "#bold Theurgy#! is an [KoM_magick|E] school of divine.\n\nThere is God, and they are all-powerful. Normally God watches over creation without interfering, but especially faithful can prey for their glance, and even beg for world to change. Theurgists call upon God and their Angels to hopefully get change they want."
 
  game_concept_KoM_alchemy: "Alchemy"
+ game_concept_KoM_alchemic: "Alchemic"
  game_concept_KoM_alchemist: "Alchemist"
  game_concept_KoM_alchemy_desc: "#bold Alchemy#! is an [KoM_magick|E] school of mattery.\n\nWhatever god exists, or not. One that we can be sure exist is our material world and it is full of tools of power, one just has to know where to look. Alchemists seek to understand material world to perfection, and to use it's power to achieve what they want."
 
  game_concept_KoM_taoism: "Taoism"
+ game_concept_KoM_taoist: "Taoist"
  game_concept_KoM_daoshi: "Daoshi"
  game_concept_KoM_taoism_desc: "#bold Taoism#! is an [KoM_magick|E] school of Harmony.\n\nDao is everything, from rivers and mountains to humans and animals, And everything is connected by it. Daoshi seek to align themselves to Great Dao by balancing themselves to Yin and Yang, all in goal to achieve great wisdom and longevity."
 
@@ -35,7 +39,7 @@
 
  game_concept_KoM_grimoire: "Grimoire"
  game_concept_KoM_grimoires: "Grimoires"
- game_concept_KoM_grimoire_desc: "#bold Grimoire#! are books of power, containing practices, rites and spells of specific [Concept('KoM_magick', 'School of Magick')|E] represented in [KoM|E] as [artifacts|E].\n\nGrimoires can be found by an [activity|E] to explore abandoned#weak (not always)#! libraries or other places of knowledge, by using [decision|E] to seek for them#weak (this #bold will#! expose your intentions)#! or but standard CK3 [artifact|E] shenanigans. For that purpose I can recommend using #V 'Search & Trade Artifacts' Mod#!."
+ game_concept_KoM_grimoire_desc: "#bold Grimoire#! are books of power, containing practices, rites and spells of specific [Concept('KoM_magick', 'School of Magick')|E] represented in [KoM|E] as [artifacts|E].\n\nGrimoires can be found by:\n$BULLET_WITH_TAB$[activity|E] to explore abandoned#weak (not always)#! libraries or other places of knowledge\n$BULLET_WITH_TAB$#V $KoM_seek_magic_decision$#! [decision|E]#weak (this #bold will#! expose your intentions)#!\n$BULLET_WITH_TAB$Standard CK3 [artifact|E] shenanigans. #weak For that purpose I can recommend using #bold Search & Trade Artifacts#! Mod.#!"
 
  game_concept_KoM_rite: "Rite"
  game_concept_KoM_rites: "Rites"

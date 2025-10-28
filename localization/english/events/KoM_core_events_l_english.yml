@@ -1,0 +1,23 @@
+﻿l_english:
+ KoM_core_events.11.t: "Merchant is here"
+ KoM_core_events.11.desc: "Of late, my interest in the more superficial curiosities of the world has grown. Thus, I have dispatched my heralds to seek out merchants who might offer something capable of satisfying my newfound fascination.\n\nTheir efforts have led me to this very moment; before me stands a merchant bearing what he calls a [KoM_grimoire|E]. [GetPlayer.Custom('KoMFakeTelling')]. The price he asks is steep, yet his conviction in its authenticity is unshaken.\n\nShould I risk my [gold|E] on what may well be nothing more than worthless peace of paper?"
+ KoM_core_events.11.a: "I will buy it."
+ KoM_core_events.11.a.tt: "You will but unknown book, of random [rarity|E] and which can be fake after-all with chance of #N 50%#!. [KoM_magick|E] of real [KoM_grimoire|E] is random, but each school has some #underline;TOOLTIP:KoM_core_events.11.a.tt.tt triggers#! that increase their chance in comparison to others"
+ KoM_core_events.11.a.tt.tt: "$KoM_core_events.11.goetia$\n$KoM_core_events.11.thaumaturgy$\n$KoM_core_events.11.theurgy$\n$KoM_core_events.11.alchemy$\n$KoM_core_events.11.taoism$\n$KoM_core_events.11.onmyodo$"
+ KoM_core_events.11.a.fake: "It was a fake all along!"
+ KoM_core_events.11.a.true: "This is a real [KoM_grimoire|E]!"
+ KoM_core_events.11.b: "I am not interested in this one."
+
+ KoM_core_events.11.goetia: "[KoM_goetia|E]:\n$BULLET_WITH_TAB$Your current location is in [GetGeographicalRegion('world_europe_west').GetName], [GetGeographicalRegion('world_europe_south').GetName] or [GetGeographicalRegion('world_europe_east').GetName]\n$BULLET_WITH_TAB$[faith|E] in your current location has Witchcraft: [GetDoctrine('doctrine_witchcraft_accepted').GetBaseName]\n$BULLET_WITH_TAB$[faith|E] in your current location has Witchcraft: [GetDoctrine('doctrine_witchcraft_virtuous').GetBaseName]"
+ KoM_core_events.11.thaumaturgy: "[KoM_thaumaturgy|E]:\n$BULLET_WITH_TAB$Your current location is in [GetGeographicalRegion('world_europe_south').GetName]\n$BULLET_WITH_TAB$[culture|E] in your current location has [GetCultureTradition('tradition_mendicant_mystics').GetName]\n$BULLET_WITH_TAB$[culture|E] in your current location has [GetCultureTradition('tradition_philosopher_culture').GetName]\n$BULLET_WITH_TAB$[culture|E] in your current location has [GetCultureTradition('tradition_sorcerous_metallurgy').GetName]"
+ KoM_core_events.11.theurgy: "[KoM_theurgy|E]:\n$BULLET_WITH_TAB$[faith|E] in your current location is of [GetReligionByKey('christianity_religion').GetName] [religion|E]\n$BULLET_WITH_TAB$[faith|E] in your current location is of [GetReligionByKey('islam_religion').GetName] [religion|E]\n$BULLET_WITH_TAB$[culture|E] in your current location has [GetCultureTradition('tradition_zealous_people').GetName]"
+ KoM_core_events.11.alchemy: "[KoM_alchemy|E]:\n$BULLET_WITH_TAB$[culture|E] in your current location has [GetCultureTradition('tradition_metal_craftsmanship').GetName]\n$BULLET_WITH_TAB$[culture|E] in your current location has [GetCultureTradition('tradition_hard_working').GetName]\n$BULLET_WITH_TAB$[culture|E] in your current location has [GetCultureTradition('tradition_artisans').GetName]"
+ KoM_core_events.11.taoism: "[KoM_taoism|E]:\n$BULLET_WITH_TAB$[culture|E] in your current location is [GetCultureByKey('han').GetName]"
+ KoM_core_events.11.onmyodo: "[KoM_onmyodo|E]:"
+
+ KoMFakeTelling_fake_learning: "Due to my high [learning|E][learning_i|E] I can tell that this is likely a #N fake [KoM_grimoire|E]#!"
+ KoMFakeTelling_fake_xp: "Due to my high mastery of [KoM_magick|E] I can tell that this is likely a #N fake [KoM_grimoire|E]#!"
+ KoMFakeTelling_true_learning: "Due to my high [learning|E][learning_i|E] I can tell that this is likely a #P genuine [KoM_grimoire|E]#!"
+ KoMFakeTelling_true_xp: "Due to my high mastery of [KoM_magick|E] I can tell that this is likely a #P genuine [KoM_grimoire|E]#!"
+ KoMFakeTelling_unsure: "Whether it is genuine or a fake, I cannot tell"
+ 

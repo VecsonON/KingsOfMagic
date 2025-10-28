@@ -1,0 +1,7 @@
+﻿l_english:
+ KoM_seek_magic_decision: "Interest in Magic"
+ KoM_seek_magic_decision_tooltip: "In search of [KoM_magick|E]"
+ KoM_seek_magic_decision_desc: "There are many talks about [KoM_magick|E] around the [court|E] lately, I know magic exists; Everyone knows that. Problem is finding trust-worthy source of knowledge.\n\nAnd that problem can be solved by throwing around my [prestige|E] and [gold|E] at it until solution appears!"
+ KoM_seek_magic_decision_already_mage_desc: "There is so much more to [KoM_magick|E] than what I already know, and what my [KoM_grimoires|E] can supply.\n\nMaybe sending heralds and scouts to seek merchants willing to sell their [KoM_grimoires|E] would give me more knowledge!"
+ KoM_seek_magic_decision_confirm: "Send the Heralds!"
+ KoM_seek_magic_decision_effect: "In about a year, you will gain event in which you have chance to gain new [KoM_grimoire|E]"

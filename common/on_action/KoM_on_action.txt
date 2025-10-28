@@ -103,3 +103,16 @@ KoM_after_rite = {
 		ALT_delete_rite_effect = { RITE = var:current_rite }
 	}
 }
+
+on_artifact_changed_owner = {
+	on_actions = { KoM_on_artifact_changed_owner }
+}
+
+KoM_on_artifact_changed_owner = {
+	effect = {
+		if = {
+			limit = { has_variable = gained_via_decision }
+			remove_variable = gained_via_decision
+		}
+	}
+}

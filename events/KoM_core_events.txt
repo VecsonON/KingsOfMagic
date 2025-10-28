@@ -78,9 +78,9 @@ KoM_core_events.1 = { # Spawn Artifacts
 				RARITY = illustrious
 				NAME = theurgia
 				SCHOOL = theurgy
-				MAX_MASTERY = 1
+				MAX_MASTERY = 10
 				MIN_MASTERY = 0
-				MASTERY_GAIN = 15
+				MASTERY_GAIN = 25
 			}
 		}
 		random_ruler = {
@@ -89,9 +89,9 @@ KoM_core_events.1 = { # Spawn Artifacts
 				RARITY = famed
 				NAME = liber_de_causis
 				SCHOOL = theurgy
-				MAX_MASTERY = 1
+				MAX_MASTERY = 10
 				MIN_MASTERY = 0
-				MASTERY_GAIN = 10
+				MASTERY_GAIN = 20
 			}
 		}
 		random_ruler = {
@@ -100,9 +100,9 @@ KoM_core_events.1 = { # Spawn Artifacts
 				RARITY = masterwork
 				NAME = chaldean_oracles
 				SCHOOL = theurgy
-				MAX_MASTERY = 1
+				MAX_MASTERY = 10
 				MIN_MASTERY = 0
-				MASTERY_GAIN = 5
+				MASTERY_GAIN = 15
 			}
 		}
 		
@@ -138,6 +138,285 @@ KoM_core_events.1 = { # Spawn Artifacts
 				MIN_MASTERY = 0
 				MASTERY_GAIN = 5
 			}
+		}
+	}
+}
+
+KoM_core_events.10 = { # Random Grimoire Spawn
+	hidden = yes
+	immediate = {
+		random_list = {
+			10 = { # Goetia
+				modifier = {
+					add = 10
+					location ?= {
+						geographical_region = world_europe_west
+						geographical_region = world_europe_south
+						geographical_region = world_europe_east
+					}
+				}
+				modifier = {
+					add = 10
+					location ?= { faith ?= { has_doctrine = doctrine_witchcraft_accepted } }
+				}
+				modifier = {
+					add = 20
+					location ?= { faith ?= { has_doctrine = doctrine_witchcraft_virtuous } }
+				}
+				save_scope_value_as = { name = school value = flag:goetia }
+				trigger_event = KoM_core_events.11
+			}
+			10 = { # Thaumaturgy
+				modifier = {
+					add = 10
+					location ?= { geographical_region = world_europe_south }
+				}
+				modifier = {
+					add = 10
+					location ?= { culture ?= { has_cultural_tradition = tradition_mendicant_mystics } }
+				}
+				modifier = {
+					add = 10
+					location ?= { culture ?= { has_cultural_tradition = tradition_philosopher_culture } }
+				}
+				modifier = {
+					add = 10
+					location ?= { culture ?= { has_cultural_tradition = tradition_sorcerous_metallurgy } }
+				}
+				save_scope_value_as = { name = school value = flag:thaumaturgy }
+				trigger_event = KoM_core_events.11
+			}
+			10 = { # Theurgy
+				modifier = {
+					add = 10
+					faith ?= { religion ?= religion:christianity_religion }
+				}
+				modifier = {
+					add = 10
+					faith ?= { religion ?= religion:islam_religion }
+				}
+				modifier = {
+					add = 10
+					culture ?= { has_cultural_tradition = tradition_zealous_people }
+				}
+				save_scope_value_as = { name = school value = flag:theurgy }
+				trigger_event = KoM_core_events.11
+			}
+			10 = { # Alchemy
+				modifier = {
+					add = 10
+					location ?= { culture ?= { has_cultural_tradition = tradition_metal_craftsmanship } }
+				}
+				modifier = {
+					add = 10
+					location ?= { culture ?= { has_cultural_tradition = tradition_hard_working } }
+				}
+				modifier = {
+					add = 10
+					location ?= { culture ?= { has_cultural_tradition = tradition_artisans } }
+				}
+				save_scope_value_as = { name = school value = flag:alchemy }
+				trigger_event = KoM_core_events.11
+			}
+			10 = { # Taoism
+				modifier = {
+					add = 20
+					culture ?= culture:han
+				}
+				save_scope_value_as = { name = school value = flag:taoism }
+				trigger_event = KoM_core_events.11
+			}
+			10 = { # Onmyodo
+				# modifier = {
+				# 	add = 20
+				# 	culture ?= culture:japanese
+				# }
+				save_scope_value_as = { name = school value = flag:onmyodo }
+				trigger_event = KoM_core_events.11
+			}
+		}
+		random = {
+			chance = 50
+			save_scope_value_as = { name = fake value = yes }
+		}
+	}
+}
+
+scripted_effect KoM_give_random_grimoire_effect = {
+	random_list = {
+		50 = {
+			send_interface_message = {
+				title = KoM_core_events.11.a.true
+				KoM_create_grimoire_effect = {
+					OWNER = THIS
+					RARITY = common
+					NAME = common_$SCHOOL$_grimoire
+					SCHOOL = $SCHOOL$
+					MAX_MASTERY = $COMMON_MAX$
+					MIN_MASTERY = $COMMON_MIN$
+					MASTERY_GAIN = $COMMON_GAIN$
+				}
+			}
+		}
+		20 = {
+			send_interface_message = {
+				title = KoM_core_events.11.a.true
+				KoM_create_grimoire_effect = {
+					OWNER = THIS
+					RARITY = masterwork
+					NAME = masterwork_$SCHOOL$_grimoire
+					SCHOOL = $SCHOOL$
+					MAX_MASTERY = $MASTERWORK_MAX$
+					MIN_MASTERY = $MASTERWORK_MIN$
+					MASTERY_GAIN = $MASTERWORK_GAIN$
+				}
+			}
+		}
+		5 = {
+			send_interface_message = {
+				title = KoM_core_events.11.a.true
+				KoM_create_grimoire_effect = {
+					OWNER = THIS
+					RARITY = famed
+					NAME = famed_$SCHOOL$_grimoire
+					SCHOOL = $SCHOOL$
+					MAX_MASTERY = $FAMED_MAX$
+					MIN_MASTERY = $FAMED_MIN$
+					MASTERY_GAIN = $FAMED_GAIN$
+				}
+			}
+		}
+		1 = {
+			send_interface_message = {
+				title = KoM_core_events.11.a.true
+				KoM_create_grimoire_effect = {
+					OWNER = THIS
+					RARITY = illustrious
+					NAME = illustrious_$SCHOOL$_grimoire
+					SCHOOL = $SCHOOL$
+					MAX_MASTERY = $ILLUSTRIOUS_MAX$
+					MIN_MASTERY = $ILLUSTRIOUS_MIN$
+					MASTERY_GAIN = $ILLUSTRIOUS_GAIN$
+				}
+			}
+		}
+	}
+}
+
+KoM_core_events.11 = {
+	type = character_event
+	title = KoM_core_events.11.t
+	desc = KoM_core_events.11.desc
+	theme = witchcraft
+	override_background = { reference = market }
+
+	immediate = {
+		create_character = {
+			age = { 22 90 }
+			location = location
+			culture = location.culture
+			faith = location.faith
+			gender_female_chance = 50
+			random_traits = yes
+			save_scope_as = merchant
+		}
+	}
+
+	right_portrait = {
+		character = ROOT
+	}
+
+	left_portrait = {
+		character = scope:merchant
+	}
+
+	option = {
+		name = KoM_core_events.11.a
+		pay_short_term_gold = {
+			target = scope:merchant
+			gold = medium_gold_value
+		}
+		custom_tooltip = {
+			text = KoM_core_events.11.a.tt
+			if = {
+				limit = { scope:fake ?= yes }
+				send_interface_message = {
+					title = KoM_core_events.11.a.fake
+					add_stress = 25
+				}
+			}
+			else = {
+				switch = {
+					trigger = scope:school
+					flag:goetia = {
+						KoM_give_random_grimoire_effect = {
+							SCHOOL = goetia
+							COMMON_MIN = 0 COMMON_MAX = 20 COMMON_GAIN = 6
+							MASTERWORK_MIN = 10 MASTERWORK_MAX = 40 MASTERWORK_GAIN = 8
+							FAMED_MIN = 20 FAMED_MAX = 80 FAMED_GAIN = 10
+							ILLUSTRIOUS_MIN = 30 ILLUSTRIOUS_MAX = 100 ILLUSTRIOUS_GAIN = 12
+						}
+					}
+					flag:thaumaturgy = {
+						KoM_give_random_grimoire_effect = {
+							SCHOOL = thaumaturgy
+							COMMON_MIN = 0 COMMON_MAX = 20 COMMON_GAIN = 2
+							MASTERWORK_MIN = 10 MASTERWORK_MAX = 40 MASTERWORK_GAIN = 4
+							FAMED_MIN = 20 FAMED_MAX = 80 FAMED_GAIN = 6
+							ILLUSTRIOUS_MIN = 30 ILLUSTRIOUS_MAX = 100 ILLUSTRIOUS_GAIN = 8
+						}
+					}
+					flag:theurgy = {
+						KoM_give_random_grimoire_effect = {
+							SCHOOL = theurgy
+							COMMON_MIN = 0 COMMON_MAX = 10 COMMON_GAIN = 5
+							MASTERWORK_MIN = 0 MASTERWORK_MAX = 10 MASTERWORK_GAIN = 10
+							FAMED_MIN = 0 FAMED_MAX = 10 FAMED_GAIN = 15
+							ILLUSTRIOUS_MIN = 0 ILLUSTRIOUS_MAX = 10 ILLUSTRIOUS_GAIN = 20
+						}
+					}
+					flag:alchemy = {
+						KoM_give_random_grimoire_effect = {
+							SCHOOL = alchemy
+							COMMON_MIN = 0 COMMON_MAX = 20 COMMON_GAIN = 4
+							MASTERWORK_MIN = 10 MASTERWORK_MAX = 40 MASTERWORK_GAIN = 6
+							FAMED_MIN = 20 FAMED_MAX = 80 FAMED_GAIN = 8
+							ILLUSTRIOUS_MIN = 30 ILLUSTRIOUS_MAX = 100 ILLUSTRIOUS_GAIN = 10
+						}
+					}
+					flag:taoism = {
+						KoM_give_random_grimoire_effect = {
+							SCHOOL = taoism
+							COMMON_MIN = 0 COMMON_MAX = 20 COMMON_GAIN = 4
+							MASTERWORK_MIN = 10 MASTERWORK_MAX = 40 MASTERWORK_GAIN = 6
+							FAMED_MIN = 20 FAMED_MAX = 80 FAMED_GAIN = 8
+							ILLUSTRIOUS_MIN = 30 ILLUSTRIOUS_MAX = 100 ILLUSTRIOUS_GAIN = 10
+						}
+					}
+					flag:onmyodo = {
+						KoM_give_random_grimoire_effect = {
+							SCHOOL = onmyodo
+							COMMON_MIN = 0 COMMON_MAX = 20 COMMON_GAIN = 4
+							MASTERWORK_MIN = 10 MASTERWORK_MAX = 40 MASTERWORK_GAIN = 6
+							FAMED_MIN = 20 FAMED_MAX = 80 FAMED_GAIN = 8
+							ILLUSTRIOUS_MIN = 30 ILLUSTRIOUS_MAX = 100 ILLUSTRIOUS_GAIN = 10
+						}
+					}
+				}
+				scope:newly_created_artifact ?= {
+					set_variable = gained_via_decision
+				}
+			}
+		}
+	}
+
+	option = {
+		name = KoM_core_events.11.b
+	}
+
+	after  = {
+		hidden_effect = {
+			scope:merchant = { death = { death_reason = death_mysterious } }
 		}
 	}
 }

@@ -2,5 +2,6 @@
  KoM_study_grimoire_interaction: "Study [KoM_grimoire|E]"
  KoM_study_grimoire_interaction_desc: "Study [KoM_grimoire|E]"
  KoM_study_grimoire_interaction_tt: "You need to select a [KoM_grimoire|E]!"
+ KoM_study_grimoire_interaction_warning: "#X Because this [KoM_grimoire|E] was obtained via #italic $KoM_seek_magic_decision$#! [decision|E], there is #bold 20%#! chance to expose your [KoM_magick|E] [secret|E].#!"
 
  KoM_select_art: "You have to select a [KoM_rite|E] or [KoM_spell|E]!"

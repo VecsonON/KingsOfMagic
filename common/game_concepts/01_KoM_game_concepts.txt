@@ -11,23 +11,23 @@ KoM_goetia = {
 }
 KoM_thaumaturgy = {
 	parent = KoM_magick
-	alias = { KoM_thaumaturge }
+	alias = { KoM_thaumaturgic KoM_thaumaturge }
 }
 KoM_theurgy = {
 	parent = KoM_magick
-	alias = { KoM_theurgist }
+	alias = { KoM_theurgic KoM_theurgist }
 }
 KoM_alchemy = {
 	parent = KoM_magick
-	alias = { KoM_alchemist }
+	alias = { KoM_alchemic KoM_alchemist }
 }
 KoM_taoism = {
 	parent = KoM_magick
-	alias = { KoM_daoshi }
+	alias = { Kom_taoistic KoM_daoshi }
 }
 KoM_onmyodo = {
 	parent = KoM_magick
-	alias = { KoM_onmyoji }
+	alias = { KoM_onmyoji } # Doesn't have a Conjugation
 }
 
 KoM_grimoire = {
