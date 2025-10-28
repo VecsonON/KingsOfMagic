@@ -157,3 +157,395 @@
 
 	auto_accept = yes
 }
+
+KoM_teach_magic_interaction = {
+	category = interaction_category_friendly
+	icon = icon_scheme_crypto_religion
+	desc = KoM_teach_magic_interaction_desc
+
+	is_shown = {
+		NOT = { scope:actor = scope:recipient }
+		scope:actor = { KoM_is_a_mage_trigger = yes }
+	}
+
+	send_option = {
+		is_shown = { scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+		is_valid = { scope:recipient = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = scope:actor.KoM_goetia_xp AT_LEAST = no } } }
+		flag = goetia
+		localization = KoM_goetia
+	}
+
+	send_option = {
+		is_shown = { scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:thaumaturgy } } }
+		is_valid = { scope:recipient = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = scope:actor.KoM_thaumaturgy_xp AT_LEAST = no } } }
+		flag = thaumaturgy
+		localization = KoM_thaumaturgy
+	}
+
+	send_option = {
+		is_shown = { scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:theurgy } } }
+		is_valid = { scope:recipient = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:theurgy VALUE = scope:actor.KoM_theurgy_xp AT_LEAST = no } } }
+		flag = theurgy
+		localization = KoM_theurgy
+	}
+
+	send_option = {
+		is_shown = { scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:alchemy } } }
+		is_valid = { scope:recipient = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = scope:actor.KoM_alchemy_xp AT_LEAST = no } } }
+		flag = alchemy
+		localization = KoM_alchemy
+	}
+
+	send_option = {
+		is_shown = { scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:taoism } } }
+		is_valid = { scope:recipient = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:taoism VALUE = scope:actor.KoM_taoism_xp AT_LEAST = no } } }
+		flag = taoism
+		localization = KoM_taoism
+	}
+
+	send_option = {
+		is_shown = { scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:onmyodo } } }
+		is_valid = { scope:recipient = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = scope:actor.KoM_onmyodo_xp AT_LEAST = no } } }
+		flag = onmyodo
+		localization = KoM_onmyodo
+	}
+
+	on_accept = {
+		scope:actor = {
+			custom_tooltip = KoM_teach_magic_interaction_info
+		}
+		scope:recipient = {
+			duel = {
+				skill = learning
+				value = 15
+				50 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = high_positive_duel_skill_multiplier
+					}
+					modifier = {
+						add = scope:actor.learning
+					}
+					switch = {
+						trigger = yes
+						scope:goetia = { KoM_teach_magic_effect = { SCHOOL = goetia STUDENT = scope:recipient TEACHER = scope:actor } }
+						scope:thaumaturgy = { KoM_teach_magic_effect = { SCHOOL = thaumaturgy STUDENT = scope:recipient TEACHER = scope:actor } }
+						scope:theurgy = { KoM_teach_magic_effect = { SCHOOL = theurgy STUDENT = scope:recipient TEACHER = scope:actor } }
+						scope:alchemy = { KoM_teach_magic_effect = { SCHOOL = alchemy STUDENT = scope:recipient TEACHER = scope:actor } }
+						scope:taoism = { KoM_teach_magic_effect = { SCHOOL = taoism STUDENT = scope:recipient TEACHER = scope:actor } }
+						scope:onmyodo = { KoM_teach_magic_effect = { SCHOOL = onmyodo STUDENT = scope:recipient TEACHER = scope:actor } }
+						fallback = { custom_tooltip = KoM_teach_magic_interaction_warning }
+					}
+				}
+				50 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = low_negative_duel_skill_multiplier
+					}
+					modifier = {
+						add = {
+							value = scope:actor.learning
+							multiply = -1
+						}
+					}
+					send_interface_message = {
+						title = KoM_teach_magic_interaction
+						add_stress = 25
+					}
+				}
+			}
+		}
+	}
+
+	ai_frequency = 60
+	ai_will_do = { 
+		base = -45
+		opinion_modifier = {
+			who = scope:actor
+			opinion_target = scope:recipient
+			multiplier = 0.5
+		}
+		compatibility_modifier = {
+			who = scope:actor
+			compatibility_target = scope:recipient
+			multiplier = 0.2
+		}
+		opinion_modifier = {
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.5
+		}
+		ai_value_modifier = {
+			who = scope:recipient
+			ai_honor = 0.2
+			ai_compassion = 0.1
+			ai_rationality = 0.2
+			ai_greed = 0.2
+			ai_sociability = 0.1
+		}
+		ai_value_modifier = {
+			trigger = {
+				OR = {
+					scope:recipient.faith = { has_doctrine_parameter = witchcraft_illegal }
+					scope:recipient.faith = { has_doctrine_parameter = witchcraft_shunned }
+				}
+			}
+			ai_zeal = -0.5
+			max = 20
+		}
+
+		# Are they important (to me)
+		modifier = {
+			add = {
+				value = scope:recipient.highest_held_title_tier
+				subtract = scope:actor.highest_held_title_tier
+				multiply = 10
+			}
+		}
+		modifier = {
+			OR = {
+				is_close_family_of = scope:recipient
+				is_consort_of = scope:recipient
+				has_relation_lover = scope:recipient
+				has_relation_friend = scope:recipient
+			}
+			add = 20
+		}
+		modifier = {
+			OR = {
+				has_relation_best_friend = scope:recipient
+				has_relation_soulmate = scope:recipient
+			}
+			add = 30
+		}
+		modifier = {
+			exists = house
+			exists = scope:recipient.house
+			house = scope:recipient.house
+			add = 10
+		}
+
+		# Do I want to spread the word
+		ai_value_modifier = {
+			ai_sociability = 0.2
+			ai_compassion = 0.1
+			ai_boldness = 0.4
+			min = -20
+		}
+	}
+	ai_targets = { 
+		ai_recipients = family 
+		ai_recipients = scripted_relations 
+		max = 10 
+	}
+	ai_accept = {
+		base = 0
+		
+		modifier = {
+			scope:recipient.faith = { has_doctrine_parameter = witchcraft_illegal }
+			add = -40
+		}
+		modifier = {
+			scope:recipient.faith = { has_doctrine_parameter = witchcraft_shunned }
+			add = -20
+		}
+
+		opinion_modifier = {
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.5
+			desc = AI_OPINION_REASON
+		}
+
+		modifier = {
+			add = 10
+			desc = ai_acceptance_trait_ambitious
+			scope:recipient = { has_trait = ambitious }
+		}
+
+		modifier = {
+			add = 10
+			desc = ai_acceptance_trait_cynical
+			scope:recipient = { has_trait = cynical }
+		}
+
+		modifier = {
+			add = 10
+			desc = ai_acceptance_trait_scholar
+			scope:recipient = { has_trait = scholar }
+		}
+	}
+}
+
+KoM_request_teaching_interaction = {
+	category = interaction_category_friendly
+	icon = icon_scheme_crypto_religion
+	desc = KoM_teach_magic_interaction_desc
+
+	is_shown = {
+		NOT = { scope:actor = scope:recipient }
+		scope:recipient = { 
+			# KoM_is_a_mage_trigger = yes # As this would also show it for secret mages
+			OR = {
+				has_trait_with_flag = mage
+				scope:actor = {
+					any_known_secret = {
+						secret_owner = scope:recipient
+						OR = {
+							secret_type = KoM_secret_magus
+							secret_type = KoM_secret_thaumaturge
+							secret_type = KoM_secret_theurgist
+							secret_type = KoM_secret_alchemist
+							secret_type = KoM_secret_daoshi
+							secret_type = KoM_secret_onmyoji
+						}
+					}
+				}
+			}
+		}
+	}
+
+	send_option = {
+		is_shown = { scope:recipient = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+		is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = scope:recipient.KoM_goetia_xp AT_LEAST = no } } }
+		flag = goetia
+		localization = KoM_goetia
+	}
+
+	send_option = {
+		is_shown = { scope:recipient = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:thaumaturgy } } }
+		is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = scope:recipient.KoM_thaumaturgy_xp AT_LEAST = no } } }
+		flag = thaumaturgy
+		localization = KoM_thaumaturgy
+	}
+
+	send_option = {
+		is_shown = { scope:recipient = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:theurgy } } }
+		is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:theurgy VALUE = scope:recipient.KoM_theurgy_xp AT_LEAST = no } } }
+		flag = theurgy
+		localization = KoM_theurgy
+	}
+
+	send_option = {
+		is_shown = { scope:recipient = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:alchemy } } }
+		is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = scope:recipient.KoM_alchemy_xp AT_LEAST = no } } }
+		flag = alchemy
+		localization = KoM_alchemy
+	}
+
+	send_option = {
+		is_shown = { scope:recipient = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:taoism } } }
+		is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:taoism VALUE = scope:recipient.KoM_taoism_xp AT_LEAST = no } } }
+		flag = taoism
+		localization = KoM_taoism
+	}
+
+	send_option = {
+		is_shown = { scope:recipient = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:onmyodo } } }
+		is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = scope:recipient.KoM_onmyodo_xp AT_LEAST = no } } }
+		flag = onmyodo
+		localization = KoM_onmyodo
+	}
+
+	on_accept = {
+		scope:recipient = {
+			custom_tooltip = KoM_request_teaching_interaction_info
+		}
+		scope:actor = {
+			duel = {
+				skill = learning
+				value = 15
+				50 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = high_positive_duel_skill_multiplier
+					}
+					modifier = {
+						add = scope:recipient.learning
+					}
+					switch = {
+						trigger = yes
+						scope:goetia = { KoM_teach_magic_effect = { SCHOOL = goetia STUDENT = scope:actor TEACHER = scope:recipient } }
+						scope:thaumaturgy = { KoM_teach_magic_effect = { SCHOOL = thaumaturgy STUDENT = scope:actor TEACHER = scope:recipient } }
+						scope:theurgy = { KoM_teach_magic_effect = { SCHOOL = theurgy STUDENT = scope:actor TEACHER = scope:recipient } }
+						scope:alchemy = { KoM_teach_magic_effect = { SCHOOL = alchemy STUDENT = scope:actor TEACHER = scope:recipient } }
+						scope:taoism = { KoM_teach_magic_effect = { SCHOOL = taoism STUDENT = scope:actor TEACHER = scope:recipient } }
+						scope:onmyodo = { KoM_teach_magic_effect = { SCHOOL = onmyodo STUDENT = scope:actor TEACHER = scope:recipient } }
+						fallback = { custom_tooltip = KoM_teach_magic_interaction_warning }
+					}
+				}
+				50 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = low_negative_duel_skill_multiplier
+					}
+					modifier = {
+						add = {
+							value = scope:recipient.learning
+							multiply = -1
+						}
+					}
+					send_interface_message = {
+						title = KoM_teach_magic_interaction
+						add_stress = 25
+					}
+				}
+			}
+		}
+	}
+
+	ai_frequency = 60
+	ai_will_do = { 
+		base = 5
+		
+		modifier = {
+			has_trait = ambitious 
+			add = 10
+		}
+		modifier = {
+			has_trait = scholar 
+			add = 10
+		}
+		modifier = {
+			has_trait = witch 
+			add = 10
+		}
+		modifier = {
+			has_trait = ambitious 
+			add = 10
+		}
+	}
+	ai_targets = { 
+		ai_recipients = courtiers 
+		ai_recipients = guests 
+		ai_recipients = family 
+		ai_recipients = scripted_relations 
+		max = 10 
+	}
+	ai_accept = {
+		base = -50
+		opinion_modifier = {
+			who = scope:actor
+			opinion_target = scope:recipient
+			multiplier = 0.5
+		}
+		compatibility_modifier = {
+			who = scope:actor
+			compatibility_target = scope:recipient
+			multiplier = 0.2
+		}
+		opinion_modifier = {
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.5
+		}
+		ai_value_modifier = {
+			who = scope:recipient
+			ai_honor = -0.25
+			ai_compassion = 0
+			ai_rationality = 0.25
+			ai_greed = 0.5
+			ai_sociability = 0.25
+		}
+	}
+}

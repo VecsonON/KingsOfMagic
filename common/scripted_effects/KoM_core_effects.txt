@@ -332,3 +332,79 @@ ALT_delete_rite_effect = {
 	remove_variable = current_rite
 	scope:rite = { end_story = yes }
 }
+
+KoM_teach_magic_effect = {
+	save_scope_value_as = {
+		name = xp_gained
+		value = {
+			value = $TEACHER$.learning
+			divide = 5
+		}
+	}
+	if = {
+		limit = {
+			save_temporary_scope_value_as = {
+				name = total_xp_after
+				value = {
+					value = $STUDENT$.KoM_$SCHOOL$_xp
+					add = scope:xp_gained
+				}
+			}
+			scope:total_xp_after > $TEACHER$.KoM_$SCHOOL$_xp
+		}
+		save_scope_value_as = {
+			name = xp_gained
+			value = {
+				value = scope:xp_gained
+				add = {
+					value = scope:total_xp_after
+					add = {
+						value = $TEACHER$.KoM_$SCHOOL$_xp
+						multiply = -1
+					}
+					multiply = -1
+				}
+			}
+		}
+	}
+	KoM_study_magic_school_effect = { SCHOOL = flag:$SCHOOL$ COUNT = scope:xp_gained }
+	switch = {
+		trigger = flag:$SCHOOL$
+		flag:goetia = { 
+			every_secret = {
+				limit = { secret_type = KoM_secret_magus }
+				reveal_to = $TEACHER$
+			}
+		}
+		flag:thaumaturgy = { 
+			every_secret = {
+				limit = { secret_type = KoM_secret_thaumaturge }
+				reveal_to = $TEACHER$
+			}
+		}
+		flag:theurgy = { 
+			every_secret = {
+				limit = { secret_type = KoM_secret_theurgist }
+				reveal_to = $TEACHER$
+			}
+		}
+		flag:alchemy = { 
+			every_secret = {
+				limit = { secret_type = KoM_secret_alchemist }
+				reveal_to = $TEACHER$
+			}
+		}
+		flag:taoism = { 
+			every_secret = {
+				limit = { secret_type = KoM_secret_daoshi }
+				reveal_to = $TEACHER$
+			}
+		}
+		flag:onmyodo = { 
+			every_secret = {
+				limit = { secret_type = KoM_secret_onmyoji }
+				reveal_to = $TEACHER$
+			}
+		}
+	}
+}

@@ -31,23 +31,14 @@ KoM_has_magic_school_xp_trait_trigger = {
 }
 
 KoM_has_magic_school_xp_trait_operator_trigger = {
-	trigger_if = {
-		limit = { has_trait = $TRAIT$ }
-		has_trait_xp = {
-			trait = $TRAIT$
-			value $OPERATOR$ $VALUE$
-		}
-	}
-	trigger_else = {
-		switch = {
-			trigger = $TRAIT$
-			trait:KoM_magus = { KoM_goetia_xp $OPERATOR$ $VALUE$ }
-			trait:KoM_thaumaturge = { KoM_thaumaturgy_xp $OPERATOR$ $VALUE$ }
-			trait:KoM_theurgist = { KoM_theurgy_xp $OPERATOR$ $VALUE$ }
-			trait:KoM_alchemist = { KoM_alchemy_xp $OPERATOR$ $VALUE$ }
-			trait:KoM_daoshi = { KoM_taoism_xp $OPERATOR$ $VALUE$ }
-			trait:KoM_onmyoji = { KoM_onmyodo_xp $OPERATOR$ $VALUE$ }
-		}
+	switch = {
+		trigger = $TRAIT$
+		trait:KoM_magus = { KoM_goetia_xp $OPERATOR$ $VALUE$ }
+		trait:KoM_thaumaturge = { KoM_thaumaturgy_xp $OPERATOR$ $VALUE$ }
+		trait:KoM_theurgist = { KoM_theurgy_xp $OPERATOR$ $VALUE$ }
+		trait:KoM_alchemist = { KoM_alchemy_xp $OPERATOR$ $VALUE$ }
+		trait:KoM_daoshi = { KoM_taoism_xp $OPERATOR$ $VALUE$ }
+		trait:KoM_onmyoji = { KoM_onmyodo_xp $OPERATOR$ $VALUE$ }
 	}
 }
 KoM_is_practitioner_of_magic_school_trigger = {

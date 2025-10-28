@@ -23,7 +23,7 @@ KoM_alchemy = {
 }
 KoM_taoism = {
 	parent = KoM_magick
-	alias = { Kom_taoistic KoM_daoshi }
+	alias = { KoM_taoistic KoM_daoshi }
 }
 KoM_onmyodo = {
 	parent = KoM_magick

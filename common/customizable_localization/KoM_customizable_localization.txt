@@ -50,7 +50,7 @@ KoMFakeTelling = {
 	text = {
 		trigger = {
 			learning >= 20
-			scope:fake ?= no
+			NOT = { exists = scope:fake }
 		}
 		localization_key = KoMFakeTelling_true_learning
 	}
@@ -64,7 +64,7 @@ KoMFakeTelling = {
 				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:taoism VALUE = 40 AT_LEAST = yes }
 				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 40 AT_LEAST = yes }
 			}
-			scope:fake ?= no
+			NOT = { exists = scope:fake }
 		}
 		localization_key = KoMFakeTelling_true_xp
 	}

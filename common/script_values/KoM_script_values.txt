@@ -1,26 +1,32 @@
 ﻿KoM_goetia_xp = {
 	value = 0
 	if = { limit = { has_variable = KoM_goetia_xp } value = var:KoM_goetia_xp }
+	if = { limit = { has_trait = KoM_magus } value = "this.has_trait_xp(KoM_magus)" }
 }
 KoM_thaumaturgy_xp = {
 	value = 0
 	if = { limit = { has_variable = KoM_thaumaturgy_xp } value = var:KoM_thaumaturgy_xp }
+	if = { limit = { has_trait = KoM_thaumaturge } value = "this.has_trait_xp(KoM_thaumaturge)" }
 }
 KoM_theurgy_xp = {
 	value = 0
 	if = { limit = { has_variable = KoM_theurgy_xp } value = var:KoM_theurgy_xp }
+	if = { limit = { has_trait = KoM_theurgist } value = "this.has_trait_xp(KoM_theurgist)" }
 }
 KoM_alchemy_xp = {
 	value = 0
 	if = { limit = { has_variable = KoM_alchemy_xp } value = var:KoM_alchemy_xp }
+	if = { limit = { has_trait = KoM_alchemist } value = "this.has_trait_xp(KoM_alchemist)" }
 }
 KoM_taoism_xp = {
 	value = 0
 	if = { limit = { has_variable = KoM_taoism_xp } value = var:KoM_taoism_xp }
+	if = { limit = { has_trait = KoM_daoshi } value = "this.has_trait_xp(KoM_daoshi)" }
 }
 KoM_onmyodo_xp = {
 	value = 0
 	if = { limit = { has_variable = KoM_onmyodo_xp } value = var:KoM_onmyodo_xp }
+	if = { limit = { has_trait = KoM_onmyoji } value = "this.has_trait_xp(KoM_onmyoji)" }
 }
 
 KoM_rite_time_6_months = 16.68
