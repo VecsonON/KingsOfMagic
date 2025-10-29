@@ -39,7 +39,7 @@
 	}
 	ai_targets = { ai_recipients = self }
 
-	# cooldown = { years = 2 }
+	cooldown = { years = 2 }
 
 	is_shown = {
 		scope:actor = scope:recipient
