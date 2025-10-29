@@ -14,3 +14,27 @@
 
 	unique = yes
 }
+KoM_potion_template = {
+	can_equip = {
+		custom_tooltip = {
+			text = KoM_potion_template_tt
+			always = no
+		}
+	}
+
+	can_benefit = {
+	}
+	
+	# can this character reforge this artifact (turn this artifact into another)
+	can_reforge = {
+		always = no
+	}
+
+	# can this character repair this artifact (restore its durability)
+	can_repair = {
+		always = no
+	}
+
+	fallback = {
+	}
+}

@@ -1,0 +1,341 @@
+﻿KoM_change_alchemical_material_effect = {
+	KoM_increase_or_set_variable_effect = { VAR = $MATERIAL$ VAL = $COUNT$ }
+	KoM_save_tooltip = { LOC = $MATERIAL$ }
+	save_scope_value_as = {
+		name = count
+		value = $COUNT$
+	}
+	if = { limit = { $COUNT$ >= 1 } custom_tooltip = KoM_gain_alchemical_material_effect }
+	else = { custom_tooltip = KoM_lose_alchemical_material_effect }
+}
+
+KoM_create_potion_effect = {
+	$OWNER$ = { save_scope_as = owner }
+	set_artifact_rarity_masterwork = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = KoM_rite_$ID$_name
+		description = KoM_rite_$ID$_effect
+		type = miscellaneous
+		template = KoM_potion_template
+		visuals = flask
+		modifier = artifact_placeholder_modifier
+		wealth = scope:wealth
+		quality = scope:quality
+		history = { 
+			type = created 
+			actor = THIS
+			recipient = THIS
+			location = THIS.location
+		}
+		save_scope_as = newly_created_artifact
+	}
+	hidden_effect_new_object = {
+		scope:newly_created_artifact = {
+			set_variable = {
+				name = KoM_potion
+				value = flag:KoM_$ID$
+			}
+			add_artifact_modifier = KoM_$ID$_effect_modifier
+		}
+	}
+}
+KoM_consume_potion_effect = {
+	switch = {
+		trigger = $POTION$.var:KoM_potion
+		flag:KoM_elixir_of_the_white_rose = { KoM_elixir_of_the_white_rose_potion_effect = yes }
+		flag:KoM_draught_of_still_waters = { KoM_draught_of_still_waters_potion_effect = yes }
+		flag:KoM_infusion_of_lead = { KoM_infusion_of_lead_potion_effect = yes }
+
+		flag:KoM_elixir_of_ash_and_salt = { KoM_elixir_of_ash_and_salt_potion_effect = yes }
+		flag:KoM_dew_of_morning_stars = { KoM_dew_of_morning_stars_potion_effect = yes }
+		flag:KoM_aqua_sapientiae = { KoM_aqua_sapientiae_potion_effect = yes }
+
+		flag:KoM_elixir_of_the_solar_mind = { KoM_elixir_of_the_solar_mind_potion_effect = yes }
+		flag:KoM_draught_of_the_inner_flame = { KoM_draught_of_the_inner_flame_potion_effect = yes }
+		flag:KoM_tears_of_the_red_king = { KoM_tears_of_the_red_king_potion_effect = yes }
+
+		flag:KoM_blood_of_the_phoenix = { KoM_blood_of_the_phoenix_potion_effect = yes }
+		flag:KoM_elixir_rubedo = { KoM_elixir_rubedo_potion_effect = yes }
+		flag:KoM_homunculi = { KoM_homunculi_potion_effect = yes }
+
+		flag:KoM_elixir_vitae = { KoM_elixir_vitae_potion_effect = yes }
+		flag:KoM_aurum_astralis = { KoM_aurum_astralis_potion_effect = yes }
+		flag:KoM_the_philosophers_stone = { KoM_the_philosophers_stone_potion_effect = yes }
+	}
+	$POTION$ = { destroy_artifact = THIS }
+}
+
+########################################################
+KoM_elixir_of_the_white_rose_effect = {
+	KoM_create_potion_effect = {
+		OWNER = THIS
+		ID = elixir_of_the_white_rose
+	}
+	KoM_study_magic_school_effect = { SCHOOL = flag:alchemy COUNT = 2 }
+	trigger_event = { on_action = KoM_after_rite }
+}
+KoM_elixir_of_the_white_rose_potion_effect = {
+	custom_tooltip = KoM_rite_elixir_of_the_white_rose_effect
+	trigger_event = health.1101
+	trigger_event = health.1102
+	show_as_tooltip = { 
+		KoM_remove_trait_effect = { TRAIT = ill }
+		KoM_remove_trait_effect = { TRAIT = pneumonic }
+	}
+}
+
+KoM_draught_of_still_waters_effect = {
+	KoM_create_potion_effect = {
+		OWNER = THIS
+		ID = draught_of_still_waters
+	}
+	KoM_study_magic_school_effect = { SCHOOL = flag:alchemy COUNT = 2 }
+	trigger_event = { on_action = KoM_after_rite }
+}
+KoM_draught_of_still_waters_potion_effect = {
+	add_stress = -30
+}
+
+KoM_infusion_of_lead_effect = {
+	KoM_create_potion_effect = {
+		OWNER = THIS
+		ID = infusion_of_lead
+	}
+	KoM_study_magic_school_effect = { SCHOOL = flag:alchemy COUNT = 2 }
+	trigger_event = { on_action = KoM_after_rite }
+}
+KoM_infusion_of_lead_potion_effect = {
+	add_character_modifier = { modifier = KoM_infusion_of_lead_potion_modifier years = 5 }
+}
+########################################################
+KoM_elixir_of_ash_and_salt_effect = {
+	KoM_create_potion_effect = {
+		OWNER = THIS
+		ID = elixir_of_ash_and_salt
+	}
+	KoM_study_magic_school_effect = { SCHOOL = flag:alchemy COUNT = 4 }
+	trigger_event = { on_action = KoM_after_rite }
+}
+KoM_elixir_of_ash_and_salt_potion_effect = {
+	custom_tooltip = KoM_rite_elixir_of_ash_and_salt_effect
+	if = { limit = { has_trait = wounded_1 }  remove_trait = wounded_1 }
+	if = { limit = { has_trait = wounded_2 }  remove_trait = wounded_2 }
+	if = { limit = { has_trait = wounded_3 }  remove_trait = wounded_3 }
+	if = { limit = { has_trait = disfigured } remove_trait = disfigured }
+	if = { limit = { has_trait = scarred } 	  remove_trait = scarred }
+}
+
+KoM_dew_of_morning_stars_effect = {
+	KoM_create_potion_effect = {
+		OWNER = THIS
+		ID = dew_of_morning_stars
+	}
+	KoM_study_magic_school_effect = { SCHOOL = flag:alchemy COUNT = 4 }
+	trigger_event = { on_action = KoM_after_rite }
+}
+KoM_dew_of_morning_stars_potion_effect = {
+	add_character_modifier = { modifier = KoM_dew_of_morning_stars_potion_modifier years = 10 }
+}
+
+KoM_aqua_sapientiae_effect = {
+	KoM_create_potion_effect = {
+		OWNER = THIS
+		ID = aqua_sapientiae
+	}
+	KoM_study_magic_school_effect = { SCHOOL = flag:alchemy COUNT = 4 }
+	trigger_event = { on_action = KoM_after_rite }
+}
+KoM_aqua_sapientiae_potion_effect = {
+	add_character_modifier = { modifier = KoM_aqua_sapientiae_potion_modifier years = 10 }
+}
+########################################################=
+KoM_elixir_of_the_solar_mind_effect = {
+	KoM_create_potion_effect = {
+		OWNER = THIS
+		ID = elixir_of_the_solar_mind
+	}
+	KoM_study_magic_school_effect = { SCHOOL = flag:alchemy COUNT = 6 }
+	trigger_event = { on_action = KoM_after_rite }
+}
+KoM_elixir_of_the_solar_mind_potion_effect = {
+	add_character_modifier = { modifier = KoM_elixir_of_the_solar_mind_potion_modifier years = 15 }
+}
+
+KoM_draught_of_the_inner_flame_effect = {
+	KoM_create_potion_effect = {
+		OWNER = THIS
+		ID = draught_of_the_inner_flame
+	}
+	KoM_study_magic_school_effect = { SCHOOL = flag:alchemy COUNT = 6 }
+	trigger_event = { on_action = KoM_after_rite }
+}
+KoM_draught_of_the_inner_flame_potion_effect = {
+	add_character_modifier = { modifier = KoM_draught_of_the_inner_flame_potion_modifier years = 15 }
+}
+
+KoM_tears_of_the_red_king_effect = {
+	KoM_create_potion_effect = {
+		OWNER = THIS
+		ID = tears_of_the_red_king
+	}
+	KoM_study_magic_school_effect = { SCHOOL = flag:alchemy COUNT = 6 }
+	trigger_event = { on_action = KoM_after_rite }
+}
+KoM_tears_of_the_red_king_potion_effect = {
+	add_character_modifier = { modifier = KoM_tears_of_the_red_king_potion_modifier years = 5 }
+}
+########################################################=
+KoM_blood_of_the_phoenix_effect = {
+	KoM_create_potion_effect = {
+		OWNER = THIS
+		ID = blood_of_the_phoenix
+	}
+	KoM_study_magic_school_effect = { SCHOOL = flag:alchemy COUNT = 8 }
+	trigger_event = { on_action = KoM_after_rite }
+}
+KoM_blood_of_the_phoenix_potion_effect = {
+	custom_tooltip = KoM_rite_blood_of_the_phoenix_effect
+	KoM_remove_trait_effect = { TRAIT = infirm }
+	KoM_remove_trait_effect = { TRAIT = one_legged }
+	KoM_remove_trait_effect = { TRAIT = one_eyed }
+	KoM_remove_trait_effect = { TRAIT = maimed }
+	KoM_remove_trait_effect = { TRAIT = consumption }
+	KoM_remove_trait_effect = { TRAIT = gout_ridden }
+	KoM_remove_trait_effect = { TRAIT = cancer }
+	KoM_remove_trait_effect = { TRAIT = typhus }
+	KoM_remove_trait_effect = { TRAIT = bubonic_plague }
+	KoM_remove_trait_effect = { TRAIT = smallpox }
+	KoM_remove_trait_effect = { TRAIT = measles }
+	KoM_remove_trait_effect = { TRAIT = dysentery }
+	KoM_remove_trait_effect = { TRAIT = bubonic_plague }
+	KoM_remove_trait_effect = { TRAIT = eunuch_1 }
+	KoM_remove_trait_effect = { TRAIT = beardless_eunuch }
+	KoM_remove_trait_effect = { TRAIT = blind }
+	KoM_remove_trait_effect = { TRAIT = beauty_bad_1 }
+	KoM_remove_trait_effect = { TRAIT = beauty_bad_2 }
+	KoM_remove_trait_effect = { TRAIT = beauty_bad_3 }
+	KoM_remove_trait_effect = { TRAIT = intellect_bad_1 }
+	KoM_remove_trait_effect = { TRAIT = intellect_bad_2 }
+	KoM_remove_trait_effect = { TRAIT = intellect_bad_3 }
+	KoM_remove_trait_effect = { TRAIT = physique_bad_1 }
+	KoM_remove_trait_effect = { TRAIT = physique_bad_2 }
+	KoM_remove_trait_effect = { TRAIT = physique_bad_3 }
+	KoM_remove_trait_effect = { TRAIT = clubfooted }
+	KoM_remove_trait_effect = { TRAIT = hunchbacked }
+	KoM_remove_trait_effect = { TRAIT = stuttering }
+	KoM_remove_trait_effect = { TRAIT = weak }
+	KoM_remove_trait_effect = { TRAIT = scaly }
+	KoM_remove_trait_effect = { TRAIT = albino }
+	KoM_remove_trait_effect = { TRAIT = wheezing }
+	KoM_remove_trait_effect = { TRAIT = spindly }
+	KoM_remove_trait_effect = { TRAIT = infertile }
+}
+
+KoM_elixir_rubedo_effect = {
+	KoM_create_potion_effect = {
+		OWNER = THIS
+		ID = elixir_rubedo
+	}
+	KoM_study_magic_school_effect = { SCHOOL = flag:alchemy COUNT = 8 }
+	trigger_event = { on_action = KoM_after_rite }
+}
+KoM_elixir_rubedo_potion_effect = {
+	custom_tooltip = KoM_rite_elixir_rubedo_effect
+	KoM_remove_trait_effect = { TRAIT = depressed_1 }
+	KoM_remove_trait_effect = { TRAIT = depressed_genetic }
+	KoM_remove_trait_effect = { TRAIT = lunatic_1 }
+	KoM_remove_trait_effect = { TRAIT = lunatic_genetic }
+	KoM_remove_trait_effect = { TRAIT = incapable }
+	KoM_remove_trait_effect = { TRAIT = drunkard }
+	KoM_remove_trait_effect = { TRAIT = flagellant }
+	KoM_remove_trait_effect = { TRAIT = comfort_eater }
+	KoM_remove_trait_effect = { TRAIT = contrite }
+	KoM_remove_trait_effect = { TRAIT = improvident }
+	KoM_remove_trait_effect = { TRAIT = inappetetic }
+	KoM_remove_trait_effect = { TRAIT = reclusive }
+	KoM_remove_trait_effect = { TRAIT = irritable }
+	KoM_remove_trait_effect = { TRAIT = rakish }
+	KoM_remove_trait_effect = { TRAIT = hashishiyah }
+	KoM_remove_trait_effect = { TRAIT = profligate }
+	KoM_remove_trait_effect = { TRAIT = ergotism }
+	KoM_remove_trait_effect = { TRAIT = dull }
+	KoM_remove_trait_effect = { TRAIT = lisping }
+}
+
+KoM_homunculi_effect = {
+	KoM_create_potion_effect = {
+		OWNER = THIS
+		ID = homunculi
+	}
+	KoM_study_magic_school_effect = { SCHOOL = flag:alchemy COUNT = 8 }
+	trigger_event = { on_action = KoM_after_rite }
+}
+KoM_homunculi_potion_effect = {
+	custom_tooltip = KoM_rite_homunculi_effect
+	create_character = {
+		age = 22
+		location = THIS.location
+		culture = THIS.culture
+		faith = THIS.faith
+		gender_female_chance = 50
+		trait = diligent
+		trait = patient
+		trait = brave
+		trait = stuttering
+		trait = strong
+		trait = dull
+		trait = loyal
+		trait = burdened
+		trait = infertile
+		trait = intellect_bad_3
+		save_scope_as = homunculi
+	}
+	hidden_effect_new_object = {
+		send_interface_message = {
+			title = KoM_rite_homunculi_name
+			add_courtier = scope:homunculi
+			scope:homunculi ?= {
+				add_character_modifier = KoM_homunculi_modifier
+				hidden_effect = { return_to_court = yes }
+			}
+		}
+	}
+}
+########################################################=
+KoM_elixir_vitae_effect = {
+	KoM_create_potion_effect = {
+		OWNER = THIS
+		ID = elixir_vitae
+	}
+	KoM_study_magic_school_effect = { SCHOOL = flag:alchemy COUNT = 10 }
+	trigger_event = { on_action = KoM_after_rite }
+}
+KoM_elixir_vitae_potion_effect = {
+	add_character_modifier = { modifier = KoM_elixir_vitae_potion_modifier years = 25 }
+}
+
+KoM_aurum_astralis_effect = {
+	KoM_create_potion_effect = {
+		OWNER = THIS
+		ID = aurum_astralis
+	}
+	KoM_study_magic_school_effect = { SCHOOL = flag:alchemy COUNT = 10 }
+	trigger_event = { on_action = KoM_after_rite }
+}
+KoM_aurum_astralis_potion_effect = {
+	add_character_modifier = { modifier = KoM_aurum_astralis_potion_modifier years = 10 }
+}
+
+KoM_the_philosophers_stone_effect = {
+	KoM_create_potion_effect = {
+		OWNER = THIS
+		ID = the_philosophers_stone
+	}
+	KoM_study_magic_school_effect = { SCHOOL = flag:alchemy COUNT = 10 }
+	trigger_event = { on_action = KoM_after_rite }
+}
+KoM_the_philosophers_stone_potion_effect = {
+	add_trait_force_tooltip = immortal
+}

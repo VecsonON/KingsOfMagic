@@ -8,8 +8,8 @@
 				desc = trait_KoM_magus
 			}
 			triggered_desc = {
-				trigger = { 
-					faith = { has_doctrine_parameter = witchcraft_illegal } 
+				trigger = {
+					faith = { has_doctrine_parameter = witchcraft_illegal }
 					NOT = { is_local_player = yes }
 				}
 				desc = trait_witch
@@ -25,8 +25,8 @@
 				desc = trait_KoM_magus_desc
 			}
 			triggered_desc = {
-				trigger = { 
-					faith = { has_doctrine_parameter = witchcraft_illegal } 
+				trigger = {
+					faith = { has_doctrine_parameter = witchcraft_illegal }
 					NOT = { is_local_player = yes }
 				}
 				desc = trait_KoM_witch_desc
@@ -67,8 +67,8 @@ KoM_thaumaturge = {
 				desc = trait_KoM_thaumaturge
 			}
 			triggered_desc = {
-				trigger = { 
-					faith = { has_doctrine_parameter = witchcraft_illegal } 
+				trigger = {
+					faith = { has_doctrine_parameter = witchcraft_illegal }
 					NOT = { is_local_player = yes }
 				}
 				desc = trait_witch
@@ -84,8 +84,8 @@ KoM_thaumaturge = {
 				desc = trait_KoM_thaumaturge_desc
 			}
 			triggered_desc = {
-				trigger = { 
-					faith = { has_doctrine_parameter = witchcraft_illegal } 
+				trigger = {
+					faith = { has_doctrine_parameter = witchcraft_illegal }
 					NOT = { is_local_player = yes }
 				}
 				desc = trait_KoM_witch_desc
@@ -139,8 +139,8 @@ KoM_alchemist = {
 				desc = trait_KoM_alchemist
 			}
 			triggered_desc = {
-				trigger = { 
-					faith = { has_doctrine_parameter = witchcraft_illegal } 
+				trigger = {
+					faith = { has_doctrine_parameter = witchcraft_illegal }
 					NOT = { is_local_player = yes }
 				}
 				desc = trait_witch
@@ -156,8 +156,8 @@ KoM_alchemist = {
 				desc = trait_KoM_alchemist_desc
 			}
 			triggered_desc = {
-				trigger = { 
-					faith = { has_doctrine_parameter = witchcraft_illegal } 
+				trigger = {
+					faith = { has_doctrine_parameter = witchcraft_illegal }
 					NOT = { is_local_player = yes }
 				}
 				desc = trait_KoM_witch_desc
@@ -179,11 +179,31 @@ KoM_alchemist = {
 	}
 
 	track = {
-		10 = { }
-		25 = { }
-		50 = { }
-		75 = { }
-		100 = { }
+		10 = {
+			KoM_terrain_type_alchemy_elixir_of_ash_and_salt_cancel_negative_supply = yes
+			KoM_terrain_type_alchemy_draught_of_still_waters_cancel_negative_supply = yes
+			KoM_terrain_type_alchemy_infusion_of_lead_cancel_negative_supply = yes
+		}
+		25 =  {
+			KoM_terrain_type_alchemy_elixir_of_ash_and_salt_cancel_negative_supply = yes
+			KoM_terrain_type_alchemy_dew_of_morning_stars_cancel_negative_supply = yes
+			KoM_terrain_type_alchemy_aqua_sapientiae_cancel_negative_supply = yes
+		}
+		50 =  {
+			KoM_terrain_type_alchemy_elixir_of_the_solar_mind_cancel_negative_supply = yes
+			KoM_terrain_type_alchemy_draught_of_the_inner_flame_cancel_negative_supply = yes
+			KoM_terrain_type_alchemy_tears_of_the_red_king_cancel_negative_supply = yes
+		}
+		75 =  {
+			KoM_terrain_type_alchemy_blood_of_the_phoenix_cancel_negative_supply = yes
+			KoM_terrain_type_alchemy_elixir_rubedo_cancel_negative_supply = yes
+			KoM_terrain_type_alchemy_homunculi_cancel_negative_supply = yes
+		}
+		100 =  {
+			KoM_terrain_type_alchemy_elixir_vitae_cancel_negative_supply = yes
+			KoM_terrain_type_alchemy_aurum_astralis_cancel_negative_supply = yes
+			KoM_terrain_type_alchemy_the_philosophers_stone_cancel_negative_supply = yes
+		}
 	}
 
 	icon = alchemist.dds

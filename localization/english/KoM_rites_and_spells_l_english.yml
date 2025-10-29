@@ -86,3 +86,107 @@
 
  KoM_rite_the_theios_anthropos: "[KoM_rite|E] of #underline;TOOLTIP:KoM_rite_the_theios_anthropos_tt The Theios Anthrōpos#!"
  KoM_rite_the_theios_anthropos_tt: "By completing this [KoM_rite|E], One can merge with The One for a moment giving [GetModifier('KoM_theurgy_the_theios_anthropos_modifier').GetNameWithTooltip] [modifier|E]."
+
+ #Alchemy
+ KoM_alchemy_salt: "#underline;TOOLTIP:KoM_alchemy_salt_tt Alchemical Salt#!"
+ KoM_alchemy_salt_tt: "Salt so much 'purer' in [KoM_alchemist]s eyes."
+
+ KoM_alchemy_charcoal: "#underline;TOOLTIP:KoM_alchemy_charcoal_tt Alchemical Charcoal#!"
+ KoM_alchemy_charcoal_tt: "Charcoal is made only from the high quality wood."
+
+ KoM_alchemy_honey: "#underline;TOOLTIP:KoM_alchemy_honey_tt High-quality Honey#!"
+ KoM_alchemy_honey_tt: "High-quality honey found only on tables of Emperors."
+
+ KoM_alchemy_lead: "#underline;TOOLTIP:KoM_alchemy_lead_tt Lead#!"
+ KoM_alchemy_lead_tt: "Very heavy Very-pure metal mined in few locations."
+
+ KoM_alchemy_silver: "#underline;TOOLTIP:KoM_alchemy_silver_tt Silver#!"
+ KoM_alchemy_silver_tt: "Quite expensive metal sometimes used as currency."
+
+ KoM_alchemy_crushed_crystals: "#underline;TOOLTIP:KoM_alchemy_crushed_crystals_tt Crushed Crystals#!"
+ KoM_alchemy_crushed_crystals_tt: "Small heap of crushed crystals, which are said to be Diamonds."
+
+ KoM_alchemy_human_blood: "#underline;TOOLTIP:KoM_alchemy_human_blood_tt Human Blood#!"
+ KoM_alchemy_human_blood_tt: "Red liquid flowing in our veins, very potent life-force."
+
+ KoM_alchemy_vulcanic_ash: "#underline;TOOLTIP:KoM_alchemy_vulcanic_ash_tt Vulcanic Ash#!"
+ KoM_alchemy_vulcanic_ash_tt: "Ash from Vulcanic Eruptions, quite rare."
+
+ KoM_alchemy_fireflower: "#underline;TOOLTIP:KoM_alchemy_fireflower_tt Fire-flower#!"
+ KoM_alchemy_fireflower_tt: "Very rare, almost extinct flower said to grow near lava or fire."
+
+ KoM_rite_elixir_of_the_white_rose: "[Concept('KoM_rite', 'Recipe')|E] of $KoM_rite_elixir_of_the_white_rose_name$"
+ KoM_rite_elixir_of_the_white_rose_name: "#underline;TOOLTIP:KoM_rite_elixir_of_the_white_rose_tt Elixir of the White Rose#!"
+ KoM_rite_elixir_of_the_white_rose_tt: "$KoM_rite_elixir_of_the_white_rose_effect$, requires 1 $KoM_alchemy_honey|V$ to brew"
+ KoM_rite_elixir_of_the_white_rose_effect: "Heals #underline;TOOLTIP:KoM_rite_elixir_of_the_white_rose_effect_tt not-life-ending disease#! [traits|E]"
+ KoM_rite_elixir_of_the_white_rose_effect_tt: "[KoMGetTrait('ill')] and [KoMGetTrait('pneumonic')]"
+
+ KoM_rite_draught_of_still_waters: "[Concept('KoM_rite', 'Recipe')|E] of $KoM_rite_draught_of_still_waters_name$"
+ KoM_rite_draught_of_still_waters_name: "#underline;TOOLTIP:KoM_rite_draught_of_still_waters_tt Draught of Still Waters#!"
+ KoM_rite_draught_of_still_waters_tt: "$KoM_rite_draught_of_still_waters_effect$, requires 1 $KoM_alchemy_charcoal|V$ to brew"
+ KoM_rite_draught_of_still_waters_effect: "Gives #P -30#! [stress|E]"
+
+ KoM_rite_infusion_of_lead: "[Concept('KoM_rite', 'Recipe')|E] of $KoM_rite_infusion_of_lead_name$"
+ KoM_rite_infusion_of_lead_name: "#underline;TOOLTIP:KoM_rite_infusion_of_lead_tt Infusion of Lead#!"
+ KoM_rite_infusion_of_lead_tt: "$KoM_rite_infusion_of_lead_effect$, requires 2 $KoM_alchemy_lead|V$ to brew"
+ KoM_rite_infusion_of_lead_effect: "Gives stacking [GetModifier('KoM_infusion_of_lead_potion_modifier').GetNameWithTooltip] [modifier|E] for 5 years"
+
+ KoM_rite_elixir_of_ash_and_salt: "[Concept('KoM_rite', 'Recipe')|E] of $KoM_rite_elixir_of_ash_and_salt_name$"
+ KoM_rite_elixir_of_ash_and_salt_name: "#underline;TOOLTIP:KoM_rite_elixir_of_ash_and_salt_tt Elixir of Ash and Salt#!"
+ KoM_rite_elixir_of_ash_and_salt_tt: "$KoM_rite_elixir_of_ash_and_salt_effect$, requires 1 $KoM_alchemy_salt|V$ and 1 $KoM_alchemy_vulcanic_ash|V$ to brew"
+ KoM_rite_elixir_of_ash_and_salt_effect: "Heals every Vanilla Wounds, and Scar-like [traits|E]"
+
+ KoM_rite_dew_of_morning_stars: "[Concept('KoM_rite', 'Recipe')|E] of $KoM_rite_dew_of_morning_stars_name$"
+ KoM_rite_dew_of_morning_stars_name: "#underline;TOOLTIP:KoM_rite_dew_of_morning_stars_tt Dew of Morning Stars#!"
+ KoM_rite_dew_of_morning_stars_tt: "$KoM_rite_dew_of_morning_stars_effect$, requires 2 $KoM_alchemy_honey|V$ and 1 $KoM_alchemy_silver|V$ to brew"
+ KoM_rite_dew_of_morning_stars_effect: "Gives stacking [GetModifier('KoM_dew_of_morning_stars_potion_modifier').GetNameWithTooltip] [modifier|E] for 10 years"
+
+ KoM_rite_aqua_sapientiae: "[Concept('KoM_rite', 'Recipe')|E] of $KoM_rite_aqua_sapientiae_name$"
+ KoM_rite_aqua_sapientiae_name: "#underline;TOOLTIP:KoM_rite_aqua_sapientiae_tt Aqua Sapientiae#!"
+ KoM_rite_aqua_sapientiae_tt: "$KoM_rite_aqua_sapientiae_effect$, requires 2 $KoM_alchemy_silver|V$ and 1 $KoM_alchemy_crushed_crystals|V$ to brew"
+ KoM_rite_aqua_sapientiae_effect: "Gives stacking [GetModifier('KoM_aqua_sapientiae_potion_modifier').GetNameWithTooltip] [modifier|E] for 10 years"
+
+ KoM_rite_elixir_of_the_solar_mind: "[Concept('KoM_rite', 'Recipe')|E] of $KoM_rite_elixir_of_the_solar_mind_name$"
+ KoM_rite_elixir_of_the_solar_mind_name: "#underline;TOOLTIP:KoM_rite_elixir_of_the_solar_mind_tt Elixir of the Solar Mind#!"
+ KoM_rite_elixir_of_the_solar_mind_tt: "$KoM_rite_elixir_of_the_solar_mind_effect$, requires 3 $KoM_alchemy_salt$ and 2 $KoM_alchemy_honey$ and to brew"
+ KoM_rite_elixir_of_the_solar_mind_effect: "Gives stacking [GetModifier('KoM_elixir_of_the_solar_mind_potion_modifier').GetNameWithTooltip] [modifier|E] for 15 years"
+
+ KoM_rite_draught_of_the_inner_flame: "[Concept('KoM_rite', 'Recipe')|E] of $KoM_rite_draught_of_the_inner_flame_name$"
+ KoM_rite_draught_of_the_inner_flame_name: "#underline;TOOLTIP:KoM_rite_draught_of_the_inner_flame_tt Draught of the Inner Flame#!"
+ KoM_rite_draught_of_the_inner_flame_tt: "$KoM_rite_draught_of_the_inner_flame_effect$, requires 3 $KoM_alchemy_charcoal|V$ and 3 $KoM_alchemy_honey|V$ to brew"
+ KoM_rite_draught_of_the_inner_flame_effect: "Gives stacking [GetModifier('KoM_draught_of_the_inner_flame_potion_modifier').GetNameWithTooltip] [modifier|E] for 15 years"
+
+ KoM_rite_tears_of_the_red_king: "[Concept('KoM_rite', 'Recipe')|E] of $KoM_rite_tears_of_the_red_king_name$"
+ KoM_rite_tears_of_the_red_king_name: "#underline;TOOLTIP:KoM_rite_tears_of_the_red_king_tt Tears of the Red King#!"
+ KoM_rite_tears_of_the_red_king_tt: "$KoM_rite_tears_of_the_red_king_effect$, requires 2 $KoM_alchemy_human_blood|V$ and 3 $KoM_alchemy_silver|V$ to brew"
+ KoM_rite_tears_of_the_red_king_effect: "Gives stacking [GetModifier('KoM_tears_of_the_red_king_potion_modifier').GetNameWithTooltip] [modifier|E] for 5 years"
+
+ KoM_rite_blood_of_the_phoenix: "[Concept('KoM_rite', 'Recipe')|E] of $KoM_rite_blood_of_the_phoenix_name$"
+ KoM_rite_blood_of_the_phoenix_name: "#underline;TOOLTIP:KoM_rite_blood_of_the_phoenix_tt Blood of the Phoenix#!"
+ KoM_rite_blood_of_the_phoenix_tt: "$KoM_rite_blood_of_the_phoenix_effect$, requires 3 $KoM_alchemy_human_blood|V$ and 2 $KoM_alchemy_crushed_crystals|V$ to brew"
+ KoM_rite_blood_of_the_phoenix_effect: "Removes negative genetic [traits|E], as well most negative physical [traits|E]"
+
+ KoM_rite_elixir_rubedo: "[Concept('KoM_rite', 'Recipe')|E] of $KoM_rite_elixir_rubedo_name$"
+ KoM_rite_elixir_rubedo_name: "#underline;TOOLTIP:KoM_rite_elixir_rubedo_tt Elixir Rubedo#!"
+ KoM_rite_elixir_rubedo_tt: "$KoM_rite_elixir_rubedo_effect$, requires 2 $KoM_alchemy_crushed_crystals|V$, 4 $KoM_alchemy_honey|V$ and 1 $KoM_alchemy_fireflower|V$ to brew"
+ KoM_rite_elixir_rubedo_effect: "Heals every negative copping [trait|E] and well negative mental [traits|E] with exclusion of [KoMGetTrait('possessed_1')]"
+
+ KoM_rite_homunculi: "[Concept('KoM_rite', 'Recipe')|E] of $KoM_rite_homunculi_name$"
+ KoM_rite_homunculi_name: "#underline;TOOLTIP:KoM_rite_homunculi_tt Homunculi#!"
+ KoM_rite_homunculi_tt: "$KoM_rite_homunculi_effect$, requires 3 $KoM_alchemy_human_blood|V$, 2 $KoM_alchemy_fireflower|V$ and 4 $KoM_alchemy_lead|V$ to brew"
+ KoM_rite_homunculi_effect: "Creates a new character age 22 with [GetModifier('KoM_homunculi_modifier').GetNameWithTooltip] [modifier|E]"
+
+ KoM_rite_elixir_vitae: "[Concept('KoM_rite', 'Recipe')|E] of $KoM_rite_elixir_vitae_name$"
+ KoM_rite_elixir_vitae_name: "#underline;TOOLTIP:KoM_rite_elixir_vitae_tt Elixir Vitae#!"
+ KoM_rite_elixir_vitae_tt: "$KoM_rite_elixir_vitae_effect$, requires 3 $KoM_alchemy_human_blood|V$, 2 $KoM_alchemy_fireflower|V$ and 4 $KoM_alchemy_honey|V$ to brew"
+ KoM_rite_elixir_vitae_effect: "Gives stacking [GetModifier('KoM_elixir_vitae_potion_modifier').GetNameWithTooltip] [modifier|E] for 25 years"
+
+ KoM_rite_aurum_astralis: "[Concept('KoM_rite', 'Recipe')|E] of $KoM_rite_aurum_astralis_name$"
+ KoM_rite_aurum_astralis_name: "#underline;TOOLTIP:KoM_rite_aurum_astralis_tt Aurum Astralis#!"
+ KoM_rite_aurum_astralis_tt: "$KoM_rite_aurum_astralis_effect$, requires 4 $KoM_alchemy_honey|V$, 4 $KoM_alchemy_silver|V$ and 2 $KoM_alchemy_vulcanic_ash|V$ to brew"
+ KoM_rite_aurum_astralis_effect: "Gives #N;bold not stacking#! [GetModifier('KoM_aurum_astralis_potion_modifier').GetNameWithTooltip] [modifier|E] for 10 years"
+
+ KoM_rite_the_philosophers_stone: "[Concept('KoM_rite', 'Recipe')|E] of $KoM_rite_the_philosophers_stone_name$"
+ KoM_rite_the_philosophers_stone_name: "#underline;TOOLTIP:KoM_rite_the_philosophers_stone_tt The Philosopher's Stone#!"
+ KoM_rite_the_philosophers_stone_tt: "$KoM_rite_the_philosophers_stone_effect$, requires every [KoM_alchemic|E] Consumable besides The Philosopher's Stone itself to brew"
+ KoM_rite_the_philosophers_stone_effect: "Gives [trait|E] [KoMGetTrait('immortal')]"

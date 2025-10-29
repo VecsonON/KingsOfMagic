@@ -1,0 +1,10 @@
+﻿l_english:
+ KoM_use_alchemical_consumable_interaction: "Use [KoM_alchemic|E] Consumable"
+ KoM_use_alchemical_consumable_interaction_desc: "Use [KoM_alchemic|E] Consumable"
+ KoM_use_alchemical_consumable_interaction_tt: "You have to select [KoM_alchemic|E] Consumable!"
+
+ KoM_offer_alchemical_consumable_interaction: "Offer [KoM_alchemic|E] Consumable"
+ KoM_offer_alchemical_consumable_interaction_desc: "Offer [KoM_alchemic|E] Consumable to [recipient.GetFirstName]"
+
+ KoM_alchemy_interaction: "Alchemy"
+ KoM_alchemy_interaction_desc: "Use your knowledge of [KoM_alchemy|E] to perform [KoM_magick|E]"

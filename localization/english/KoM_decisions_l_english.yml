@@ -5,3 +5,9 @@
  KoM_seek_magic_decision_already_mage_desc: "There is so much more to [KoM_magick|E] than what I already know, and what my [KoM_grimoires|E] can supply.\n\nMaybe sending heralds and scouts to seek merchants willing to sell their [KoM_grimoires|E] would give me more knowledge!"
  KoM_seek_magic_decision_confirm: "Send the Heralds!"
  KoM_seek_magic_decision_effect: "In about a year, you will gain event in which you have chance to gain new [KoM_grimoire|E]"
+
+ KoM_go_to_the_market_decision: "Go to local Market"
+ KoM_go_to_the_market_decision_tooltip: "[gold|E] really can buy anything"
+ KoM_go_to_the_market_decision_desc: "As a [KoM_alchemist|E], what you need the most besides knowledge are materials to brew potions. And you know a market nearby that can have what you need."
+ KoM_go_to_the_market_decision_confirm: "[KoM_alchemy|E] isn't cheap"
+ KoM_go_to_the_market_decision_effect: "You will go to nearby market to but some materials."

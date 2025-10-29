@@ -12,3 +12,8 @@ KoM_terrain_type_grimoire_max_combat_roll = {
 	no_difference_sign = yes
 	color = neutral
 }
+KoM_terrain_type_rite_speed_advantage = {
+	decimals = 0
+	color = good
+	percent = yes
+}

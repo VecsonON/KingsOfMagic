@@ -1,6 +1,7 @@
 ﻿l_english:
  KoM_select_art: "You have to select a [KoM_rite|E] or [KoM_spell|E]!"
  KoM_rite_showcase: "After [KoM_rite|E] is done:"
+ KoM_potion_showcase: "After using [KoM_alchemic|E] Consumable:"
 
  KoM_study_grimoire_interaction: "Study [KoM_grimoire|E]"
  KoM_study_grimoire_interaction_desc: "Study [KoM_grimoire|E]"

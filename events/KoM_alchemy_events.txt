@@ -1,0 +1,298 @@
+﻿namespace = KoM_alchemy_events
+
+scripted_effect KoM_generate_materials_effect = {
+	random_list = {
+		pick = $PICK$
+		unique = yes
+		10 = {
+			add_to_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_salt }
+			set_variable = { name = KoM_alchemic_materials_salt_num value = { value = { 5 10 } floor = yes } }
+		}
+		10 = {
+			add_to_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_charcoal }
+			set_variable = { name = KoM_alchemic_materials_charcoal_num value = { value = { 4 10 } floor = yes } }
+		}
+		6 = {
+			add_to_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_honey }
+			set_variable = { name = KoM_alchemic_materials_honey_num value = { value = { 5 9 } floor = yes } }
+		}
+		6 = {
+			add_to_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_lead }
+			set_variable = { name = KoM_alchemic_materials_lead_num value = { value = { 3 6 } floor = yes } }
+		}
+		6 = {
+			add_to_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_silver }
+			set_variable = { name = KoM_alchemic_materials_silver_num value = { value = { 3 5 } floor = yes } }
+		}
+		4 = {
+			add_to_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_crushed_crystals }
+			set_variable = { name = KoM_alchemic_materials_crushed_crystals_num value = { value = { 3 5 } floor = yes } }
+		}
+		2 = {
+			add_to_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_human_blood }
+			set_variable = { name = KoM_alchemic_materials_human_blood_num value = { value = { 3 4 } floor = yes } }
+		}
+		2 = {
+			add_to_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_vulcanic_ash }
+			set_variable = { name = KoM_alchemic_materials_vulcanic_ash_num value = { value = { 2 3 } floor = yes } }
+		}
+		1 = {
+			add_to_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_fireflower }
+			set_variable = { name = KoM_alchemic_materials_fireflower_num value = { value = { 1 2 } floor = yes } }
+		}
+	}
+}
+
+KoM_alchemy_events.1 = { # 
+	hidden = yes
+	immediate = {
+		if = {
+			limit = { location ?= { has_variable = KoM_alchemic_materials_refresh } }
+		}
+		else = {
+			random_list = {
+				1 = { location ?= { KoM_generate_materials_effect = { PICK = 2 } } }
+				1 = { location ?= { KoM_generate_materials_effect = { PICK = 3 } } }
+				1 = { location ?= { KoM_generate_materials_effect = { PICK = 4 } } }
+				1 = { location ?= { KoM_generate_materials_effect = { PICK = 5 } } }
+			}
+			
+		}
+		trigger_event = KoM_alchemy_events.2
+	}
+}
+KoM_alchemy_events.2 = { # 
+	type = character_event
+	title = KoM_alchemy_events.2.t
+	desc = {
+		desc = KoM_alchemy_events.2.desc
+		triggered_desc = {
+			trigger = { location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_salt } } }
+			desc = KoM_alchemy_events.2.desc.salt
+		}
+		triggered_desc = {
+			trigger = { location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_charcoal } } }
+			desc = KoM_alchemy_events.2.desc.charcoal
+		}
+		triggered_desc = {
+			trigger = { location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_honey } } }
+			desc = KoM_alchemy_events.2.desc.honey
+		}
+		triggered_desc = {
+			trigger = { location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_lead } } }
+			desc = KoM_alchemy_events.2.desc.lead
+		}
+		triggered_desc = {
+			trigger = { location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_silver } } }
+			desc = KoM_alchemy_events.2.desc.silver
+		}
+		triggered_desc = {
+			trigger = { location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_crushed_crystals } } }
+			desc = KoM_alchemy_events.2.desc.crushed_crystals
+		}
+		triggered_desc = {
+			trigger = { location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_human_blood } } }
+			desc = KoM_alchemy_events.2.desc.human_blood
+		}
+		triggered_desc = {
+			trigger = { location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_vulcanic_ash } } }
+			desc = KoM_alchemy_events.2.desc.vulcanic_ash
+		}
+		triggered_desc = {
+			trigger = { location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_fireflower } } }
+			desc = KoM_alchemy_events.2.desc.fireflower
+		}
+	}
+	theme = witchcraft
+	override_background = { reference = market }
+
+	immediate = {
+		location ?= { save_scope_as = KoM_location }
+	}
+
+	option = {
+		name = KoM_alchemy_events.2.salt
+		trigger = { 
+			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_salt } } 
+			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt NOT = { var:KoM_alchemic_materials_salt_num ?= 0 } } }
+		}
+		show_as_unavailable = {
+			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt var:KoM_alchemic_materials_salt_num ?= 0 } }
+		}
+		KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_salt COUNT = 1 }
+		location = { change_variable = { name = KoM_alchemic_materials_salt_num add = -1 } }
+		save_scope_value_as = {
+			name = cost
+			value = { 10 20 } 
+		}
+		remove_short_term_gold = scope:cost
+		trigger_event = KoM_alchemy_events.2
+	}
+
+	option = {
+		name = KoM_alchemy_events.2.charcoal
+		trigger = { 
+			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_charcoal } } 
+			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt NOT = { var:KoM_alchemic_materials_charcoal_num ?= 0 } } }
+		}
+		show_as_unavailable = {
+			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt var:KoM_alchemic_materials_charcoal_num ?= 0 } }
+		}
+		KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_charcoal COUNT = 1 }
+		location = { change_variable = { name = KoM_alchemic_materials_charcoal_num add = -1 } }
+		save_scope_value_as = {
+			name = cost
+			value = { 15 20 } 
+		}
+		remove_short_term_gold = scope:cost
+		trigger_event = KoM_alchemy_events.2
+	}
+
+	option = {
+		name = KoM_alchemy_events.2.honey
+		trigger = { 
+			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_honey } } 
+			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt NOT = { var:KoM_alchemic_materials_honey_num ?= 0 } } }
+		}
+		show_as_unavailable = {
+			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt var:KoM_alchemic_materials_honey_num ?= 0 } }
+		}
+		KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_honey COUNT = 1 }
+		location = { change_variable = { name = KoM_alchemic_materials_honey_num add = -1 } }
+		save_scope_value_as = {
+			name = cost
+			value = { 20 30 } 
+		}
+		remove_short_term_gold = scope:cost
+		trigger_event = KoM_alchemy_events.2
+	}
+
+	option = {
+		name = KoM_alchemy_events.2.lead
+		trigger = { 
+			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_lead } } 
+			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt NOT = { var:KoM_alchemic_materials_lead_num ?= 0 } } }
+		}
+		show_as_unavailable = {
+			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt var:KoM_alchemic_materials_lead_num ?= 0 } }
+		}
+		KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_lead COUNT = 1 }
+		location = { change_variable = { name = KoM_alchemic_materials_lead_num add = -1 } }
+		save_scope_value_as = {
+			name = cost
+			value = { 50 75 } 
+		}
+		remove_short_term_gold = scope:cost
+		trigger_event = KoM_alchemy_events.2
+	}
+
+	option = {
+		name = KoM_alchemy_events.2.silver
+		trigger = { 
+			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_silver } } 
+			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt NOT = { var:KoM_alchemic_materials_silver_num ?= 0 } } }
+		}
+		show_as_unavailable = {
+			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt var:KoM_alchemic_materials_silver_num ?= 0 } }
+		}
+		KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_silver COUNT = 1 }
+		location = { change_variable = { name = KoM_alchemic_materials_silver_num add = -1 } }
+		save_scope_value_as = {
+			name = cost
+			value = { 50 100 } 
+		}
+		remove_short_term_gold = scope:cost
+		trigger_event = KoM_alchemy_events.2
+	}
+
+	option = {
+		name = KoM_alchemy_events.2.crushed_crystals
+		trigger = { 
+			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_crushed_crystals } } 
+			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt NOT = { var:KoM_alchemic_materials_crushed_crystals_num ?= 0 } } }
+		}
+		show_as_unavailable = {
+			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt var:KoM_alchemic_materials_crushed_crystals_num ?= 0 } }
+		}
+		KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_crushed_crystals COUNT = 1 }
+		location = { change_variable = { name = KoM_alchemic_materials_crushed_crystals_num add = -1 } }
+		save_scope_value_as = {
+			name = cost
+			value = { 100 200 } 
+		}
+		remove_short_term_gold = scope:cost
+		trigger_event = KoM_alchemy_events.2
+	}
+
+	option = {
+		name = KoM_alchemy_events.2.human_blood
+		trigger = { 
+			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_human_blood } } 
+			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt NOT = { var:KoM_alchemic_materials_human_blood_num ?= 0 } } }
+		}
+		show_as_unavailable = {
+			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt var:KoM_alchemic_materials_human_blood_num ?= 0 } }
+		}
+		KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_human_blood COUNT = 1 }
+		location = { change_variable = { name = KoM_alchemic_materials_human_blood_num add = -1 } }
+		save_scope_value_as = {
+			name = cost
+			value = { 100 200 } 
+		}
+		remove_short_term_gold = scope:cost
+		trigger_event = KoM_alchemy_events.2
+	}
+
+	option = {
+		name = KoM_alchemy_events.2.vulcanic_ash
+		trigger = { 
+			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_vulcanic_ash } } 
+			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt NOT = { var:KoM_alchemic_materials_vulcanic_ash_num ?= 0 } } }
+		}
+		show_as_unavailable = {
+			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt var:KoM_alchemic_materials_vulcanic_ash_num ?= 0 } }
+		}
+		KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_vulcanic_ash COUNT = 1 }
+		location = { change_variable = { name = KoM_alchemic_materials_vulcanic_ash_num add = -1 } }
+		save_scope_value_as = {
+			name = cost
+			value = { 150 250 } 
+		}
+		remove_short_term_gold = scope:cost
+		trigger_event = KoM_alchemy_events.2
+	}
+
+	option = {
+		name = KoM_alchemy_events.2.fireflower
+		trigger = { 
+			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_fireflower } } 
+			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt NOT = { var:KoM_alchemic_materials_fireflower_num ?= 0 } } }
+		}
+		show_as_unavailable = {
+			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt var:KoM_alchemic_materials_fireflower_num ?= 0 } }
+		}
+		KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_fireflower COUNT = 1 }
+		location = { change_variable = { name = KoM_alchemic_materials_fireflower_num add = -1 } }
+		save_scope_value_as = {
+			name = cost
+			value = { 300 500 } 
+		}
+		remove_short_term_gold = scope:cost
+		trigger_event = KoM_alchemy_events.2
+	}
+
+	option = {
+		name = KoM_alchemy_events.2.a
+	}
+
+	after = {
+		if = {
+			limit = { NOT = { location ?= { has_variable = KoM_alchemic_materials_refresh } } }
+			location ?= { 
+				trigger_event = { on_action = KoM_alchemy_material_refresh years = 1 } 
+				set_variable = KoM_alchemic_materials_refresh
+			}
+		}
+		custom_tooltip = KoM_alchemy_events.2.after
+	}
+}

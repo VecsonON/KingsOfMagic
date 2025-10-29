@@ -88,7 +88,7 @@ KoM_is_a_mage_trigger = {
 KoM_cannot_self_cast_trigger = {
 	custom_tooltip = {
 		text = KoM_cannot_self_cast_trigger
-		NOT = { scope:actor = scope:recipient }
+		scope:actor != scope:recipient
 	}
 }
 KoM_must_self_cast_trigger = {
@@ -123,27 +123,45 @@ KoM_knows_true_name_of_demon_trigger = {
 }
 
 KoM_goetia_interaction_show_rite_trigger = {
-	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:the_gate_of_invocation } } scope:the_gate_of_invocation = no }
-	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:the_lesser_conjurations } } scope:the_lesser_conjurations = no }
-	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:the_seventy_two_gates } } scope:the_seventy_two_gates = no }
-	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:the_royal_theurgy_of_solomon } } scope:the_royal_theurgy_of_solomon = no }
-	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:the_great_work_of_unification } } scope:the_great_work_of_unification = no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:the_gate_of_invocation } scope:the_gate_of_invocation = no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:the_lesser_conjurations } scope:the_lesser_conjurations = no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:the_seventy_two_gates } scope:the_seventy_two_gates = no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:the_royal_theurgy_of_solomon } scope:the_royal_theurgy_of_solomon = no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:the_great_work_of_unification } scope:the_great_work_of_unification = no }
 }
 KoM_goetia_interaction_show_demon_trigger = {
-	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:bael } } scope:bael = no }
-	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:amon } } scope:amon = no }
-	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:vapula } } scope:vapula = no }
-	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:barbatos } } scope:barbatos = no }
-	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:gamigin } } scope:gamigin = no }
-	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:beleth } } scope:beleth = no }
-	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:astaroth } } scope:astaroth = no }
-	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:marchosias } } scope:marchosias = no }
-	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:belial } } scope:belial = no }
-	trigger_if = { limit = { NOT = { scope:$OPTION$ = scope:paimon } } scope:paimon = no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:bael } scope:bael = no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:amon } scope:amon = no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:vapula } scope:vapula = no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:barbatos } scope:barbatos = no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:gamigin } scope:gamigin = no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:beleth } scope:beleth = no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:astaroth } scope:astaroth = no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:marchosias } scope:marchosias = no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:belial } scope:belial = no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:paimon } scope:paimon = no }
 	OR = {
 		scope:the_lesser_conjurations = yes
 		scope:the_seventy_two_gates = yes
 		scope:the_royal_theurgy_of_solomon = yes
 		scope:the_great_work_of_unification = yes
+	}
+}
+
+# ALCHEMY
+KoM_has_above_alchemic_material_trigger = {
+	save_temporary_scope_value_as = { name = saved_tooltip value = flag:KoM_alchemy_$MATERIAL$ }
+	save_temporary_scope_value_as = { name = saved_number value = $COUNT$ }
+	custom_tooltip = {
+		text = KoM_has_above_alchemic_material_trigger
+		KoM_alchemy_$MATERIAL$ >= $COUNT$
+	}
+}
+KoM_has_alchemic_potion_trigger = {
+	save_temporary_scope_value_as = { name = saved_tooltip value = flag:KoM_rite_$POTION$_name }
+	trigger_if = { limit = { scope:saved_tooltip ?= flag:KoM_rite_$POTION$_name } }
+	custom_tooltip = {
+		text = KoM_has_alchemic_potion_trigger
+		any_character_artifact = { count >= 1 var:KoM_potion ?= flag:KoM_$POTION$ }
 	}
 }

@@ -1,0 +1,104 @@
+﻿KoM_elixir_of_the_white_rose_effect_modifier = {
+	KoM_terrain_type_alchemy_elixir_of_the_white_rose_effect_cancel_negative_supply = yes
+}
+KoM_draught_of_still_waters_effect_modifier = {
+	KoM_terrain_type_alchemy_draught_of_still_waters_effect_cancel_negative_supply = yes
+}
+KoM_infusion_of_lead_effect_modifier = {
+	KoM_terrain_type_alchemy_infusion_of_lead_effect_cancel_negative_supply = yes
+}
+######################
+KoM_elixir_of_ash_and_salt_effect_modifier = {
+	KoM_terrain_type_alchemy_elixir_of_ash_and_salt_effect_cancel_negative_supply = yes
+}
+KoM_dew_of_morning_stars_effect_modifier = {
+	KoM_terrain_type_alchemy_dew_of_morning_stars_effect_cancel_negative_supply = yes
+}
+KoM_aqua_sapientiae_effect_modifier = {
+	KoM_terrain_type_alchemy_aqua_sapientiae_effect_cancel_negative_supply = yes
+}
+######################
+KoM_elixir_of_the_solar_mind_effect_modifier = {
+	KoM_terrain_type_alchemy_elixir_of_the_solar_mind_effect_cancel_negative_supply = yes
+}
+KoM_draught_of_the_inner_flame_effect_modifier = {
+	KoM_terrain_type_alchemy_draught_of_the_inner_flame_effect_cancel_negative_supply = yes
+}
+KoM_tears_of_the_red_king_effect_modifier = {
+	KoM_terrain_type_alchemy_tears_of_the_red_king_effect_cancel_negative_supply = yes
+}
+######################
+KoM_blood_of_the_phoenix_effect_modifier = {
+	KoM_terrain_type_alchemy_blood_of_the_phoenix_effect_cancel_negative_supply = yes
+}
+KoM_elixir_rubedo_effect_modifier = {
+	KoM_terrain_type_alchemy_elixir_rubedo_effect_cancel_negative_supply = yes
+}
+KoM_homunculi_effect_modifier = {
+	KoM_terrain_type_alchemy_homunculi_effect_cancel_negative_supply = yes
+}
+######################
+KoM_elixir_vitae_effect_modifier = {
+	KoM_terrain_type_alchemy_elixir_vitae_effect_cancel_negative_supply = yes
+}
+KoM_aurum_astralis_effect_modifier = {
+	KoM_terrain_type_alchemy_aurum_astralis_effect_cancel_negative_supply = yes
+}
+KoM_the_philosophers_stone_effect_modifier = {
+	KoM_terrain_type_alchemy_the_philosophers_stone_effect_cancel_negative_supply = yes
+}
+############################################
+KoM_infusion_of_lead_potion_modifier = {
+	icon = drink_positive
+	prowess_no_portrait = 6
+	stacking = yes
+}
+KoM_dew_of_morning_stars_potion_modifier = {
+	icon = drink_positive
+	enemy_hostile_scheme_success_chance_add = -10
+	enemy_hostile_scheme_phase_duration_add = 20
+	owned_hostile_scheme_success_chance_add = 20
+	hostile_scheme_phase_duration_add = -20
+	stacking = yes
+}
+KoM_aqua_sapientiae_potion_modifier = {
+	icon = drink_positive
+	monthly_lifestyle_xp_gain_mult = 0.3
+	stacking = yes
+}
+KoM_elixir_of_the_solar_mind_potion_modifier = {
+	icon = drink_positive
+	stress_loss_mult = 0.25
+	stacking = yes
+}
+KoM_draught_of_the_inner_flame_potion_modifier = {
+	icon = drink_positive
+	stress_gain_mult = -0.1
+	stacking = yes
+}
+KoM_tears_of_the_red_king_potion_modifier = {
+	icon = drink_positive
+	diplomacy = 2
+	martial = 2
+	stewardship = 2
+	intrigue = 2
+	learning = 2
+	stacking = yes
+}
+KoM_homunculi_modifier = {
+	icon = magic_mixed
+	life_expectancy = -50
+	prowess_no_portrait = 15
+	fertility = -1
+	attraction_opinion = -40
+}
+KoM_elixir_vitae_potion_modifier = {
+	icon = drink_positive
+	life_expectancy = 25
+	stacking = yes
+}
+KoM_aurum_astralis_potion_modifier = {
+	icon = drink_positive
+	KoM_terrain_type_rite_speed_advantage = 0.5
+	stacking = yes
+}

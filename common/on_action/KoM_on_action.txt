@@ -73,7 +73,10 @@ KoM_monthly_playable_pulse = {
 			var:current_rite = {
 				change_variable = {
 					name = total_progress
-					add = var:monthly_progress
+					add = {
+						value = var:monthly_progress
+						multiply = PREV.KoM_extra_rite_speed_mult
+					}
 				}
 				if = { limit = { var:total_progress >= 100 } 
 					PREV = { 
@@ -102,6 +105,22 @@ KoM_completed_rite = {
 			flag:the_walker_between_spheres = { KoM_the_walker_between_spheres_effect = yes }
 			flag:the_hierophant_of_fire = { KoM_the_hierophant_of_fire_effect = yes }
 			flag:the_theios_anthropos = { KoM_the_theios_anthropos_effect = yes }
+			
+			flag:elixir_of_the_white_rose = { KoM_elixir_of_the_white_rose_effect = yes }
+			flag:draught_of_still_waters = { KoM_draught_of_still_waters_effect = yes }
+			flag:infusion_of_lead = { KoM_infusion_of_lead_effect = yes }
+			flag:elixir_of_ash_and_salt = { KoM_elixir_of_ash_and_salt_effect = yes }
+			flag:dew_of_morning_stars = { KoM_dew_of_morning_stars_effect = yes }
+			flag:aqua_sapientiae = { KoM_aqua_sapientiae_effect = yes }
+			flag:elixir_of_the_solar_mind = { KoM_elixir_of_the_solar_mind_effect = yes }
+			flag:draught_of_the_inner_flame = { KoM_draught_of_the_inner_flame_effect = yes }
+			flag:tears_of_the_red_king = { KoM_tears_of_the_red_king_effect = yes }
+			flag:blood_of_the_phoenix = { KoM_blood_of_the_phoenix_effect = yes }
+			flag:elixir_rubedo = { KoM_elixir_rubedo_effect = yes }
+			flag:homunculi = { KoM_homunculi_effect = yes }
+			flag:elixir_vitae = { KoM_elixir_vitae_effect = yes }
+			flag:aurum_astralis = { KoM_aurum_astralis_effect = yes }
+			flag:the_philosophers_stone = { KoM_the_philosophers_stone_effect = yes }
 		}
 	}
 }
@@ -122,5 +141,21 @@ KoM_on_artifact_changed_owner = {
 			limit = { NOT = { var:gained_via_decision ?= THIS } }
 			remove_variable = gained_via_decision
 		}
+	}
+}
+
+KoM_alchemy_material_refresh = {
+	effect = {
+		remove_variable = KoM_alchemic_materials_refresh
+		clear_variable_list = KoM_alchemic_materials
+		remove_variable = KoM_alchemic_materials_salt_num
+		remove_variable = KoM_alchemic_materials_charcoal_num
+		remove_variable = KoM_alchemic_materials_honey_num
+		remove_variable = KoM_alchemic_materials_lead_num
+		remove_variable = KoM_alchemic_materials_silver_num
+		remove_variable = KoM_alchemic_materials_crushed_crystals_num
+		remove_variable = KoM_alchemic_materials_human_blood_num
+		remove_variable = KoM_alchemic_materials_vulcanic_ash_num
+		remove_variable = KoM_alchemic_materials_fireflower_num
 	}
 }

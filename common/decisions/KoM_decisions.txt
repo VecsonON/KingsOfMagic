@@ -65,3 +65,23 @@
 		}
 	}
 }
+
+KoM_go_to_the_market_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/fp1_decisons_hold_bolt.dds"
+	}	
+	decision_group_type = courtier
+
+	cooldown = { months = 2 }
+
+	is_shown = {
+		KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:alchemy }
+	}
+
+	effect = {
+		custom_tooltip = KoM_go_to_the_market_decision_effect
+		trigger_event = KoM_alchemy_events.1
+	}
+
+	ai_check_interval = 0
+}

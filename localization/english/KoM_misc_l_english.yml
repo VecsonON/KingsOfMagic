@@ -35,3 +35,11 @@
  KoM_knows_true_name_of_demon_trigger: "You must know True name of [Localize(SCOPE.GetFlagName('saved_tooltip'))]!"
  KoM_cannot_self_cast_trigger: "This [KoM_magick|E] cannot be used on yourself!"
  KoM_must_self_cast_trigger: "This [KoM_magick|E] must be used on yourself!"
+
+ KoM_gain_alchemical_material_effect: "You will gain [SCOPE.GetValue('count')|0P] [Localize(SCOPE.GetFlagName('saved_tooltip'))]"
+ KoM_lose_alchemical_material_effect: "You will lose [SCOPE.GetValue('count')|0N] [Localize(SCOPE.GetFlagName('saved_tooltip'))]"
+
+ KoM_potion_template_tt: "You cannot equip an [KoM_alchemic|E] consumable!"
+ 
+ KoM_has_above_alchemic_material_trigger: "You need at least [SCOPE.GetValue('saved_number')|0V] [Localize(SCOPE.GetFlagName('saved_tooltip'))]"
+ KoM_has_alchemic_potion_trigger: "You need at least 1 [Localize(SCOPE.GetFlagName('saved_tooltip'))]"

@@ -29,7 +29,7 @@ KoMFakeTelling = {
 	text = {
 		trigger = {
 			learning >= 20
-			scope:fake ?= yes
+			has_variable = fake
 		}
 		localization_key = KoMFakeTelling_fake_learning
 	}
@@ -43,14 +43,14 @@ KoMFakeTelling = {
 				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:taoism VALUE = 40 AT_LEAST = yes }
 				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 40 AT_LEAST = yes }
 			}
-			scope:fake ?= yes
+			has_variable = fake
 		}
 		localization_key = KoMFakeTelling_fake_xp
 	}
 	text = {
 		trigger = {
 			learning >= 20
-			NOT = { exists = scope:fake }
+			NOT = { has_variable = fake }
 		}
 		localization_key = KoMFakeTelling_true_learning
 	}
@@ -64,7 +64,7 @@ KoMFakeTelling = {
 				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:taoism VALUE = 40 AT_LEAST = yes }
 				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 40 AT_LEAST = yes }
 			}
-			NOT = { exists = scope:fake }
+			NOT = { has_variable = fake }
 		}
 		localization_key = KoMFakeTelling_true_xp
 	}

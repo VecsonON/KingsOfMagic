@@ -253,7 +253,7 @@ KoM_core_events.10 = { # Random Grimoire Spawn
 		}
 		random = {
 			chance = 50
-			save_scope_value_as = { name = fake value = yes }
+			set_variable = { name = fake value = yes }
 		}
 	}
 }
@@ -312,7 +312,7 @@ scripted_effect KoM_give_random_grimoire_effect = {
 					SCHOOL = $SCHOOL$
 					MAX_MASTERY = $ILLUSTRIOUS_MAX$
 					MIN_MASTERY = $ILLUSTRIOUS_MIN$
-					MASTERY_GAIN = $ILLUSTRIOUS_GAIN$
+					MASTERY_GAIN = $MASTERY_GAIN$
 				}
 			}
 		}
@@ -355,7 +355,7 @@ KoM_core_events.11 = {
 		custom_tooltip = {
 			text = KoM_core_events.11.a.tt
 			if = {
-				limit = { scope:fake ?= yes }
+				limit = { has_variable = fake }
 				send_interface_message = {
 					title = KoM_core_events.11.a.fake
 					add_stress = 25
@@ -436,6 +436,7 @@ KoM_core_events.11 = {
 	after  = {
 		hidden_effect = {
 			scope:merchant = { death = { death_reason = death_mysterious } }
+			remove_variable = fake
 		}
 	}
 }

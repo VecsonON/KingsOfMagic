@@ -2,22 +2,59 @@
  KoM_terrain_type_grimoire_advantage: "[Artifact.Custom('KoMMagicSchoolNameArtifact')] Mastery Gained"
  KoM_terrain_type_grimoire_min_combat_roll: "Maximal [Artifact.Custom('KoMMagicSchoolNameArtifact')] Mastery"
  KoM_terrain_type_grimoire_max_combat_roll: "Minimal [Artifact.Custom('KoMMagicSchoolNameArtifact')] Mastery"
-
+ KoM_terrain_type_rite_speed_advantage: "Speed of [KoM_rites|E]"
+ ####################################################################################################################
  KoM_goetia: "[KoM_goetia|E]"
  KoM_thaumaturgy: "[KoM_thaumaturgy|E]"
  KoM_theurgy: "[KoM_theurgy|E]"
  KoM_alchemy: "[KoM_alchemy|E]"
  KoM_taoism: "[KoM_taoism|E]"
  KoM_onmyodo: "[KoM_onmyodo|E]"
-
+ ####################################################################################################################
  KoM_terrain_type_goetia_novice_cancel_negative_supply: "Unlock $KoM_rite_the_gate_of_invocation$"
  KoM_terrain_type_goetia_apprentice_cancel_negative_supply: "Unlock $KoM_rite_the_lesser_conjurations$"
  KoM_terrain_type_goetia_adept_cancel_negative_supply: "Unlock $KoM_rite_the_seventy_two_gates$"
  KoM_terrain_type_goetia_expert_cancel_negative_supply: "Unlock $KoM_rite_the_royal_theurgy_of_solomon$"
  KoM_terrain_type_goetia_master_cancel_negative_supply: "Unlock $KoM_rite_the_great_work_of_unification$"
-
+ ####################################################################################################################
  KoM_terrain_type_theurgy_novice_cancel_negative_supply: "Unlock $KoM_rite_the_initiate_of_purification$"
  KoM_terrain_type_theurgy_apprentice_cancel_negative_supply: "Unlock $KoM_rite_the_invoker_of_powers$"
  KoM_terrain_type_theurgy_adept_cancel_negative_supply: "Unlock $KoM_rite_the_walker_between_spheres$"
  KoM_terrain_type_theurgy_expert_cancel_negative_supply: "Unlock $KoM_rite_the_hierophant_of_fire$"
  KoM_terrain_type_theurgy_master_cancel_negative_supply: "Unlock $KoM_rite_the_theios_anthropos$"
+ ####################################################################################################################
+ KoM_terrain_type_alchemy_elixir_of_the_white_rose_cancel_negative_supply: "Unlock $KoM_rite_elixir_of_the_white_rose$"
+ KoM_terrain_type_alchemy_elixir_of_the_white_rose_effect_cancel_negative_supply: "$KoM_rite_elixir_of_the_white_rose_effect$"
+ KoM_terrain_type_alchemy_draught_of_still_waters_cancel_negative_supply: "Unlock $KoM_rite_draught_of_still_waters$"
+ KoM_terrain_type_alchemy_draught_of_still_waters_effect_cancel_negative_supply: "$KoM_rite_draught_of_still_waters_effect$"
+ KoM_terrain_type_alchemy_infusion_of_lead_cancel_negative_supply: "Unlock $KoM_rite_infusion_of_lead$"
+ KoM_terrain_type_alchemy_infusion_of_lead_effect_cancel_negative_supply: "$KoM_rite_infusion_of_lead_effect$"
+
+ KoM_terrain_type_alchemy_elixir_of_ash_and_salt_cancel_negative_supply: "Unlock $KoM_rite_elixir_of_ash_and_salt$"
+ KoM_terrain_type_alchemy_elixir_of_ash_and_salt_effect_cancel_negative_supply: "$KoM_rite_elixir_of_ash_and_salt_effect$"
+ KoM_terrain_type_alchemy_dew_of_morning_stars_cancel_negative_supply: "Unlock $KoM_rite_dew_of_morning_stars$"
+ KoM_terrain_type_alchemy_dew_of_morning_stars_effect_cancel_negative_supply: "$KoM_rite_dew_of_morning_stars_effect$"
+ KoM_terrain_type_alchemy_aqua_sapientiae_cancel_negative_supply: "Unlock $KoM_rite_aqua_sapientiae$"
+ KoM_terrain_type_alchemy_aqua_sapientiae_effect_cancel_negative_supply: "$KoM_rite_aqua_sapientiae_effect$"
+
+ KoM_terrain_type_alchemy_elixir_of_the_solar_mind_cancel_negative_supply: "Unlock $KoM_rite_elixir_of_the_solar_mind$"
+ KoM_terrain_type_alchemy_elixir_of_the_solar_mind_effect_cancel_negative_supply: "$KoM_rite_elixir_of_the_solar_mind_effect$"
+ KoM_terrain_type_alchemy_draught_of_the_inner_flame_cancel_negative_supply: "Unlock $KoM_rite_draught_of_the_inner_flame$"
+ KoM_terrain_type_alchemy_draught_of_the_inner_flame_effect_cancel_negative_supply: "$KoM_rite_draught_of_the_inner_flame_effect$"
+ KoM_terrain_type_alchemy_tears_of_the_red_king_cancel_negative_supply: "Unlock $KoM_rite_tears_of_the_red_king$"
+ KoM_terrain_type_alchemy_tears_of_the_red_king_effect_cancel_negative_supply: "$KoM_rite_tears_of_the_red_king_effect$"
+
+ KoM_terrain_type_alchemy_blood_of_the_phoenix_cancel_negative_supply: "Unlock $KoM_rite_blood_of_the_phoenix$"
+ KoM_terrain_type_alchemy_blood_of_the_phoenix_effect_cancel_negative_supply: "$KoM_rite_blood_of_the_phoenix_effect$"
+ KoM_terrain_type_alchemy_elixir_rubedo_cancel_negative_supply: "Unlock $KoM_rite_elixir_rubedo$"
+ KoM_terrain_type_alchemy_elixir_rubedo_effect_cancel_negative_supply: "$KoM_rite_elixir_rubedo_effect$"
+ KoM_terrain_type_alchemy_homunculi_cancel_negative_supply: "Unlock $KoM_rite_homunculi$"
+ KoM_terrain_type_alchemy_homunculi_effect_cancel_negative_supply: "$KoM_rite_homunculi_effect$"
+
+ KoM_terrain_type_alchemy_elixir_vitae_cancel_negative_supply: "Unlock $KoM_rite_elixir_vitae$"
+ KoM_terrain_type_alchemy_elixir_vitae_effect_cancel_negative_supply: "$KoM_rite_elixir_vitae_effect$"
+ KoM_terrain_type_alchemy_aurum_astralis_cancel_negative_supply: "Unlock $KoM_rite_aurum_astralis$"
+ KoM_terrain_type_alchemy_aurum_astralis_effect_cancel_negative_supply: "$KoM_rite_aurum_astralis_effect$"
+ KoM_terrain_type_alchemy_the_philosophers_stone_cancel_negative_supply: "Unlock $KoM_rite_the_philosophers_stone$"
+ KoM_terrain_type_alchemy_the_philosophers_stone_effect_cancel_negative_supply: "$KoM_rite_the_philosophers_stone_effect$"
+ ####################################################################################################################
