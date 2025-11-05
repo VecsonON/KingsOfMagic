@@ -1,0 +1,74 @@
+﻿KoM_thaumaturgy_interaction = {
+	category = interaction_category_religion
+	icon = KoM_thaumaturgy_interaction
+	desc = KoM_thaumaturgy_interaction_desc
+
+	use_diplomatic_range = no
+
+	is_shown = {
+		scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:thaumaturgy } }
+	}
+
+	send_options_exclusive = no
+
+	send_option = {
+		is_valid = {
+			scope:remove_spell = no
+			custom_tooltip = {
+				text = KoM_thaumaturgy_interaction_create_spell_req
+				calc_true_if = {
+					amount >= 1
+					NOT = { has_variable = KoM_saved_spell_1 }
+				}
+			}
+		}
+		flag = create_spell
+		localization = KoM_thaumaturgy_interaction_create_spell
+	}
+	send_option = {
+		is_valid = { scope:create_spell = no }
+		flag = remove_spell
+		localization = KoM_thaumaturgy_interaction_remove_spell
+	}
+
+	send_option = {
+		is_shown = { scope:create_spell = no }
+		is_valid = {
+			scope:actor = { has_variable = KoM_saved_spell_1 }
+		}
+		flag = number1
+		localization = KoM_thaumaturgy_interaction_spell_number1
+	}
+
+	can_send = {
+		custom_tooltip = {
+			text = KoM_select_art
+			OR = {
+				scope:create_spell ?= yes
+				scope:number1 ?= yes
+			}
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			switch = {
+				trigger = yes
+				scope:create_spell = {
+					
+				}
+				scope:remove_spell = {
+					switch = {
+						trigger = yes
+						scope:number1 = { KoM_remove_spell_from_spell_list_effect = { NUMBER = 1 } }
+					}
+				}
+				scope:number1 = { KoM_execute_spell_from_number_effect = { TARGET = scope:recipient NUMBER = 1 } }
+			}
+		}
+	}
+
+	auto_accept = yes
+
+	ai_will_do = { base = 0 }
+}

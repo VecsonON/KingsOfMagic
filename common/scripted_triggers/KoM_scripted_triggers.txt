@@ -165,3 +165,5 @@ KoM_has_alchemic_potion_trigger = {
 		any_character_artifact = { count >= 1 var:KoM_potion ?= flag:KoM_$POTION$ }
 	}
 }
+
+# THAUMATURGY

@@ -9,3 +9,153 @@ KoM_window_cancel = {
 		ALT_delete_rite_effect = { RITE = var:current_rite }
 	}
 }
+
+
+###
+
+KoM_spell_creator_open = {
+	effect = {
+		clear_variable_list = KoM_spell_creator_declarations
+		add_to_variable_list = { name = KoM_spell_creator_declarations target = flag:persona }
+		add_to_variable_list = { name = KoM_spell_creator_declarations target = flag:res }
+		add_to_variable_list = { name = KoM_spell_creator_declarations target = flag:locus }
+
+		clear_variable_list = KoM_spell_creator_confirmations
+		add_to_variable_list = { name = KoM_spell_creator_confirmations target = flag:voluntas }
+		add_to_variable_list = { name = KoM_spell_creator_confirmations target = flag:nuntius }
+		add_to_variable_list = { name = KoM_spell_creator_confirmations target = flag:angelus }
+		add_to_variable_list = { name = KoM_spell_creator_confirmations target = flag:deus }
+
+		clear_variable_list = KoM_spell_creator_spell_actions
+		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:recuperare }
+		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:claritudo }
+		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:sarcio }
+		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:iniuria }
+		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:celeritas }
+		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:fortitudo }
+		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:stabilitas }
+		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:duo }
+		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:opinio }
+		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:anima }
+		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:tres }
+		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:scientia }
+		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:melius }
+		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:peius }
+
+		KoM_create_empty_spell_effect = yes
+		set_variable = {
+			name = KoM_spell_creator_spell
+			value = scope:temp_spell
+		}
+	}
+}
+KoM_spell_creator_close = {
+	effect = {
+		clear_variable_list = KoM_spell_creator_declarations
+		clear_variable_list = KoM_spell_creator_confirmations
+		clear_variable_list = KoM_spell_creator_spell_actions
+		remove_variable = KoM_spell_creator_spell
+	}
+}
+
+KoM_spell_creator_select_declaration = {
+	effect = { KoM_select_spell_declaration_effect = { SPELL = var:KoM_spell_creator_spell DECLARATION = scope:declaration } }
+}
+
+KoM_spell_creator_select_confirmation = {
+	effect = { KoM_select_spell_confirmation_effect = { SPELL = var:KoM_spell_creator_spell CONFIRMATION = scope:confirmation } }
+}
+
+KoM_spell_creator_add_spell_action = {
+	is_valid = {
+		save_temporary_scope_value_as = {
+			name = num_of_actions
+			value = {
+				value = 0
+				every_in_list = {
+					list = var:spell_actions
+					add = 1
+				}
+			}
+		}
+		save_temporary_scope_value_as = {
+			name = max_actions
+			value = {
+				value = 1
+				if = {
+					limit = {
+						exists = scope:spell.var:spell_actions
+						scope:spell = {
+							any_in_list = {
+								list = var:spell_actions
+								THIS = flag:duo
+							}
+						} 
+					}
+					add = 2
+				}
+				else_if = {
+					limit = {
+						exists = scope:spell.var:spell_actions
+						scope:spell = {
+							any_in_list = {
+								list = var:spell_actions
+								THIS = flag:tres
+							}
+						} 
+					}
+					add = 3
+				}
+
+			}
+		}
+		custom_tooltip = {
+			text = KoM_spell_creator_add_spell_action_max
+			scope:num_of_actions >= scope:max_actions
+		}
+		custom_tooltip = {
+			text = KoM_spell_creator_add_spell_action_incompatible_actions
+			trigger_if = {
+				limit = { scope:spell_action = flag:duo exists = scope:spell.var:spell_actions }
+				scope:spell = {
+					NOT = {
+						any_in_list = {
+							list = var:spell_actions
+							THIS = flag:tres
+						}
+					}
+				}
+			}
+			trigger_if = {
+				limit = { scope:spell_action = flag:tres exists = scope:spell.var:spell_actions }
+				scope:spell = {
+					NOT = {
+						any_in_list = {
+							list = var:spell_actions
+							THIS = flag:duo
+						}
+					}
+				}
+			}
+		}
+	}
+	effect = { KoM_add_spell_action_effect = { SPELL = var:KoM_spell_creator_spell SPELL_ACTION = scope:spell_action } }
+}
+
+KoM_spell_creator_preview = {
+	effect = { KoM_execute_spell_effect = { TARGET = ROOT SPELL = var:KoM_spell_creator_spell } }
+}
+
+KoM_spell_creator_clear_spell_actions = {
+	effect = {
+		var:KoM_spell_creator_spell ?= {
+			clear_variable_list = spell_actions
+		}
+	}
+}
+
+KoM_finish_spell = {
+	effect = {
+		KoM_add_spell_to_list_effect = { SPELL = var:KoM_spell_creator_spell }
+	}
+}

@@ -5,6 +5,6 @@
 
 	on_owner_death = { end_story = yes }
 }
-KoM_story_cycle_potion = {
+KoM_story_cycle_spell = {
 	on_owner_death = { end_story = yes }
 }

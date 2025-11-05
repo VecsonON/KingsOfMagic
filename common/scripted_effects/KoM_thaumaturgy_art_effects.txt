@@ -1,0 +1,107 @@
+﻿KoM_create_empty_spell_effect = {
+	create_story = {
+		type = KoM_story_cycle_spell
+		save_scope_as = temp_spell
+	}
+	hidden_effect_new_object = {
+		scope:temp_spell = { 
+			set_variable = KoM_spell 
+		}
+	}
+}
+KoM_select_spell_declaration_effect = {
+	$SPELL$ ?= {
+		set_variable = { name = declaration value = $DECLARATION$ }
+	}
+}
+KoM_select_spell_confirmation_effect = {
+	$SPELL$ ?= {
+		set_variable = { name = confirmation value = $CONFIRMATION$ }
+	}
+}
+KoM_add_spell_action_effect = {
+	$SPELL$ ?= {
+		add_target_to_variable_list = { name = spell_actions target = $SPELL_ACTION$ }
+	}
+}
+KoM_add_spell_to_list_effect = {
+	if = {
+		limit = { NOT = { has_variable = KoM_saved_spell_1 } }
+		KOM_add_spell_to_spell_list_effect = { NUMBER = 1 SPELL = $SPELL$ }
+	}
+	else_if = {
+		limit = { NOT = { has_variable = KoM_saved_spell_2 } }
+		KOM_add_spell_to_spell_list_effect = { NUMBER = 2 SPELL = $SPELL$ }
+	}
+	else_if = {
+		limit = { NOT = { has_variable = KoM_saved_spell_3 } }
+		KOM_add_spell_to_spell_list_effect = { NUMBER = 3 SPELL = $SPELL$ }
+	}
+	else_if = {
+		limit = { NOT = { has_variable = KoM_saved_spell_4 } }
+		KOM_add_spell_to_spell_list_effect = { NUMBER = 4 SPELL = $SPELL$ }
+	}
+	else_if = {
+		limit = { NOT = { has_variable = KoM_saved_spell_5 } }
+		KOM_add_spell_to_spell_list_effect = { NUMBER = 5 SPELL = $SPELL$ }
+	}
+	else_if = {
+		limit = { NOT = { has_variable = KoM_saved_spell_6 } }
+		KOM_add_spell_to_spell_list_effect = { NUMBER = 6 SPELL = $SPELL$ }
+	}
+	else_if = {
+		limit = { NOT = { has_variable = KoM_saved_spell_7 } }
+		KOM_add_spell_to_spell_list_effect = { NUMBER = 7 SPELL = $SPELL$ }
+	}
+}
+KOM_add_spell_to_spell_list_effect = {
+	set_variable = {
+		name = KoM_saved_spell_$NUMBER$
+		value = $SPELL$
+	}
+}
+KoM_remove_spell_from_spell_list_effect = {
+	remove_variable = KoM_saved_spell_$NUMBER$
+}
+KoM_execute_spell_from_number_effect = {
+	save_scope_value_as = {
+		name = spell
+		value = var:KoM_saved_spell_$NUMBER$
+	}
+	KoM_execute_spell_effect = { TARGET = $TARGET$ SPELL = scope:spell }
+}
+# TARGET, SPELL. SCOPE = CASTER
+KoM_execute_spell_effect = {
+	$SPELL$ = { save_scope_as = spell }
+	$TARGET$ = { save_scope_as = target }
+	save_scope_as = caster
+	scope:spell = {
+		if = {
+			limit = { 
+				has_variable = declaration 
+				has_variable = confirmation 
+			}
+			every_in_list = {
+				list = spell_actions
+				switch = {
+					trigger = THIS
+					flag:recuperare = { KoM_spell_action_recuperare_effect = yes }
+				}
+			}
+		}
+	}
+}
+
+
+################## SPELL ACTIONS ##################
+KoM_spell_action_recuperare_effect = {
+	if = {
+		limit = { scope:spell.var:declaration = flag:persona }
+	}
+	if = {
+		limit = { scope:spell.var:declaration = flag:res }
+	}
+	if = {
+		limit = { scope:spell.var:declaration = flag:locus }
+	}
+}
