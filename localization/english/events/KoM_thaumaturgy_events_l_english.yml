@@ -1,0 +1,5 @@
+﻿l_english:
+ KoM_thaumaturgy_events.1.t: "Naming the [KoM_spell|E]"
+ KoM_thaumaturgy_events.1.desc: "It is time to name [KoM_spell|E] I am working on. After-all, I cannot just leave my working name of 'Thaumaturgic Spell' right?"
+ KoM_thaumaturgy_events.1.a: "#italic This#!, is perfect"
+ KoM_thaumaturgy_events.1.b: "I will think about it later"

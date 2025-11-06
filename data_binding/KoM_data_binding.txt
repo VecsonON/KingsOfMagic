@@ -3,3 +3,8 @@
 	definition = "KoMGetTrait(Type)"
 	replace_with = "GetTrait(Type).GetName(GetNullCharacter)"
 }
+macro = {
+	description = "Returns Trait"
+	definition = "KoMGetSpellName(Type)"
+	replace_with = "Type.Story.MakeScope.Var('assigned_character').Char.GetNameNoTooltip"
+}

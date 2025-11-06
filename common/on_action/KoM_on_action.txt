@@ -98,7 +98,10 @@ KoM_completed_rite = {
 			flag:the_royal_theurgy_of_solomon = { KoM_the_royal_theurgy_of_solomon_effect = { TARGET = var:current_rite.var:target } }
 			flag:the_great_work_of_unification = { KoM_the_great_work_of_unification_effect = { TARGET = var:current_rite.var:target DEMON = var:current_rite.var:demon } }
 			
-			
+			flag:thaumaturgy_spell_creation = { 
+				KoM_add_spell_to_list_effect = { SPELL = var:current_rite.var:spell } 
+				trigger_event = { on_action = KoM_after_rite }
+			}
 			
 			flag:the_initiate_of_purification = { KoM_the_initiate_of_purification_effect = yes }
 			flag:the_invoker_of_powers = { KoM_the_invoker_of_powers_effect = yes }

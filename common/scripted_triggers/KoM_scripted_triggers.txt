@@ -148,6 +148,36 @@ KoM_goetia_interaction_show_demon_trigger = {
 	}
 }
 
+# THAUMATURGY
+KoM_thaumaturgy_interaction_show_trigger = {
+	trigger_if = { limit = { NOT = { $NUMBER$ = 1 } } scope:number1 = no }
+	trigger_if = { limit = { NOT = { $NUMBER$ = 2 } } scope:number2 = no }
+	trigger_if = { limit = { NOT = { $NUMBER$ = 3 } } scope:number3 = no }
+	trigger_if = { limit = { NOT = { $NUMBER$ = 4 } } scope:number4 = no }
+	trigger_if = { limit = { NOT = { $NUMBER$ = 5 } } scope:number5 = no }
+	trigger_if = { limit = { NOT = { $NUMBER$ = 6 } } scope:number6 = no }
+	trigger_if = { limit = { NOT = { $NUMBER$ = 7 } } scope:number7 = no }
+}
+KoM_can_cast_spell_trigger = {
+	$SPELL$ = { save_temporary_scope_as = spell }
+	$TARGET$ = { save_temporary_scope_as = spell_target }
+	save_temporary_scope_as = caster
+	save_temporary_scope_value_as = { name = declaration_given value = flag:$DECLARATION$ }
+	scope:spell ?= {
+		custom_tooltip = {
+			text = KoM_can_cast_spell_trigger_incorrect_declaration
+			var:declaration ?= flag:$DECLARATION$
+		}
+		any_in_list = {
+			variable = spell_actions
+			switch = {
+				trigger = var:action_name
+				flag:recuperare = {  }
+			}
+		}
+	}
+}
+
 # ALCHEMY
 KoM_has_above_alchemic_material_trigger = {
 	save_temporary_scope_value_as = { name = saved_tooltip value = flag:KoM_alchemy_$MATERIAL$ }
@@ -165,5 +195,3 @@ KoM_has_alchemic_potion_trigger = {
 		any_character_artifact = { count >= 1 var:KoM_potion ?= flag:KoM_$POTION$ }
 	}
 }
-
-# THAUMATURGY

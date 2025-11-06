@@ -16,31 +16,48 @@ KoM_window_cancel = {
 KoM_spell_creator_open = {
 	effect = {
 		clear_variable_list = KoM_spell_creator_declarations
-		add_to_variable_list = { name = KoM_spell_creator_declarations target = flag:persona }
-		add_to_variable_list = { name = KoM_spell_creator_declarations target = flag:res }
-		add_to_variable_list = { name = KoM_spell_creator_declarations target = flag:locus }
-
 		clear_variable_list = KoM_spell_creator_confirmations
-		add_to_variable_list = { name = KoM_spell_creator_confirmations target = flag:voluntas }
-		add_to_variable_list = { name = KoM_spell_creator_confirmations target = flag:nuntius }
-		add_to_variable_list = { name = KoM_spell_creator_confirmations target = flag:angelus }
-		add_to_variable_list = { name = KoM_spell_creator_confirmations target = flag:deus }
-
 		clear_variable_list = KoM_spell_creator_spell_actions
-		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:recuperare }
-		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:claritudo }
-		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:sarcio }
-		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:iniuria }
-		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:celeritas }
-		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:fortitudo }
-		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:stabilitas }
-		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:duo }
-		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:opinio }
-		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:anima }
-		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:tres }
-		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:scientia }
-		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:melius }
-		add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:peius }
+
+		if = {
+			limit = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 10 AT_LEAST = yes } }
+			add_to_variable_list = { name = KoM_spell_creator_declarations target = flag:persona }
+			add_to_variable_list = { name = KoM_spell_creator_confirmations target = flag:voluntas }
+			add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:recuperare }
+			add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:claritudo }
+		}
+		if = {
+			limit = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 30 AT_LEAST = yes } }
+			add_to_variable_list = { name = KoM_spell_creator_declarations target = flag:res }
+			add_to_variable_list = { name = KoM_spell_creator_confirmations target = flag:nuntius }
+			add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:sarcio }
+			add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:damnum }
+			add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:celeritas }
+		}
+		if = {
+			limit = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 50 AT_LEAST = yes } }
+			add_to_variable_list = { name = KoM_spell_creator_confirmations target = flag:angelus }
+			add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:duo }
+			add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:fortitudo }
+			add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:stabilitas }
+		}
+		if = {
+			limit = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 75 AT_LEAST = yes } }
+			add_to_variable_list = { name = KoM_spell_creator_declarations target = flag:locus }
+			add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:opinio }
+			add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:anima }
+		}
+		if = {
+			limit = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 100 AT_LEAST = yes } }
+			add_to_variable_list = { name = KoM_spell_creator_confirmations target = flag:deus }
+			add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:tres }
+			add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:scientia }
+			add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:melius }
+			add_to_variable_list = { name = KoM_spell_creator_spell_actions target = flag:peius }
+		}
+
+
+
 
 		KoM_create_empty_spell_effect = yes
 		set_variable = {
@@ -55,6 +72,7 @@ KoM_spell_creator_close = {
 		clear_variable_list = KoM_spell_creator_confirmations
 		clear_variable_list = KoM_spell_creator_spell_actions
 		remove_variable = KoM_spell_creator_spell
+		remove_variable = KoM_spell_creator_open
 	}
 }
 
@@ -72,9 +90,11 @@ KoM_spell_creator_add_spell_action = {
 			name = num_of_actions
 			value = {
 				value = 0
-				every_in_list = {
-					list = var:spell_actions
-					add = 1
+				var:KoM_spell_creator_spell = { 
+					every_in_list = {
+						variable = spell_actions
+						add = 1
+					}
 				}
 			}
 		}
@@ -84,11 +104,10 @@ KoM_spell_creator_add_spell_action = {
 				value = 1
 				if = {
 					limit = {
-						exists = scope:spell.var:spell_actions
-						scope:spell = {
+						var:KoM_spell_creator_spell = {
 							any_in_list = {
-								list = var:spell_actions
-								THIS = flag:duo
+								variable = spell_actions
+								var:action_name = flag:duo
 							}
 						} 
 					}
@@ -96,11 +115,10 @@ KoM_spell_creator_add_spell_action = {
 				}
 				else_if = {
 					limit = {
-						exists = scope:spell.var:spell_actions
-						scope:spell = {
+						var:KoM_spell_creator_spell = {
 							any_in_list = {
-								list = var:spell_actions
-								THIS = flag:tres
+								variable = spell_actions
+								var:action_name = flag:tres
 							}
 						} 
 					}
@@ -111,28 +129,40 @@ KoM_spell_creator_add_spell_action = {
 		}
 		custom_tooltip = {
 			text = KoM_spell_creator_add_spell_action_max
-			scope:num_of_actions >= scope:max_actions
+			scope:max_actions > scope:num_of_actions
 		}
 		custom_tooltip = {
 			text = KoM_spell_creator_add_spell_action_incompatible_actions
 			trigger_if = {
-				limit = { scope:spell_action = flag:duo exists = scope:spell.var:spell_actions }
-				scope:spell = {
+				limit = { scope:spell_action = flag:duo }
+				var:KoM_spell_creator_spell = {
 					NOT = {
 						any_in_list = {
-							list = var:spell_actions
-							THIS = flag:tres
+							variable = spell_actions
+							var:action_name = flag:tres
+						}
+					}
+					NOT = {
+						any_in_list = {
+							variable = spell_actions
+							var:action_name = flag:duo
 						}
 					}
 				}
 			}
 			trigger_if = {
-				limit = { scope:spell_action = flag:tres exists = scope:spell.var:spell_actions }
-				scope:spell = {
+				limit = { scope:spell_action = flag:tres }
+				var:KoM_spell_creator_spell = {
 					NOT = {
 						any_in_list = {
-							list = var:spell_actions
-							THIS = flag:duo
+							variable = spell_actions
+							var:action_name = flag:duo
+						}
+					}
+					NOT = {
+						any_in_list = {
+							variable = spell_actions
+							var:action_name = flag:tres
 						}
 					}
 				}
@@ -143,19 +173,65 @@ KoM_spell_creator_add_spell_action = {
 }
 
 KoM_spell_creator_preview = {
-	effect = { KoM_execute_spell_effect = { TARGET = ROOT SPELL = var:KoM_spell_creator_spell } }
+	effect = { 
+		if = {
+			limit = { var:KoM_spell_creator_spell.var:declaration ?= flag:persona }
+			save_scope_as = spell_target
+		}
+		if = {
+			limit = { var:KoM_spell_creator_spell.var:declaration ?= flag:res }
+			if = {
+				limit = { has_any_artifact = yes }
+				random_character_artifact = { save_scope_as = spell_target }
+			}
+			else = {
+				random_artifact = { save_scope_as = spell_target }
+			}
+		}
+		if = {
+			limit = { var:KoM_spell_creator_spell.var:declaration ?= flag:locus }
+			location = {
+				county = { save_scope_as = spell_target }
+			}
+		}
+		KoM_execute_spell_effect = { TARGET = scope:spell_target SPELL = var:KoM_spell_creator_spell } 
+	}
 }
 
 KoM_spell_creator_clear_spell_actions = {
 	effect = {
-		var:KoM_spell_creator_spell ?= {
-			clear_variable_list = spell_actions
-		}
+		var:KoM_spell_creator_spell ?= { clear_variable_list = spell_actions }
+	}
+}
+
+KoM_spell_creator_rename_spell = {
+	effect = {
+		trigger_event = KoM_thaumaturgy_events.1
 	}
 }
 
 KoM_finish_spell = {
+	is_valid = {
+		custom_tooltip = {
+			text = KoM_finish_spell_need_declaration
+			var:KoM_spell_creator_spell ?= { has_variable = declaration }
+		}
+		custom_tooltip = {
+			text = KoM_finish_spell_need_confirmation
+			var:KoM_spell_creator_spell ?= { has_variable = confirmation }
+		}
+		custom_tooltip = {
+			text = KoM_finish_spell_need_spell_actions
+			var:KoM_spell_creator_spell ?= { has_variable_list = spell_actions }
+		}
+	}
 	effect = {
-		KoM_add_spell_to_list_effect = { SPELL = var:KoM_spell_creator_spell }
+		KoM_start_rite_effect = {
+			ID = thaumaturgy_spell_creation
+			MONTHLY_PROGRESS = KoM_rite_time_1_year
+			TARGET = ROOT
+			SCHOOL = thaumaturgy
+		}
+		var:current_rite ?= { set_variable = { name = spell value = PREV.var:KoM_spell_creator_spell } }
 	}
 }

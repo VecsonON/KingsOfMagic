@@ -1,0 +1,54 @@
+﻿namespace = KoM_thaumaturgy_events
+
+KoM_thaumaturgy_events.1 = { 
+	type = character_event
+	title = KoM_thaumaturgy_events.1.t
+	desc = KoM_thaumaturgy_events.1.desc
+	theme = court
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	immediate = {
+		create_character = {
+			name = thaumaturgic_spell
+			age = 16
+			gender_female_chance = 50
+			random_traits = no
+			location = location
+			faith = faith
+			culture = culture
+			save_scope_as = KoM_eternal_character
+		}
+		scope:KoM_eternal_character = {
+			death = { death_reason = death_mysterious }
+			make_unprunable = yes
+		}
+	}
+
+	widget = {
+		gui = "KoM_event_window_widgets_custom_text"
+		container = "dynamic_birth_name"
+		controller = name_character
+		setup_scope = {
+			scope:KoM_eternal_character = { save_scope_as = name_character_target }
+		}
+	}
+
+	option = { 
+		name = KoM_thaumaturgy_events.1.a
+		hidden_effect_new_object = {
+			var:KoM_spell_creator_spell ?= {
+				set_variable = {
+					name = assigned_character
+					value = scope:KoM_eternal_character
+				}
+			}
+		}
+	}
+
+	option = {
+		name = KoM_thaumaturgy_events.1.b
+	}
+}

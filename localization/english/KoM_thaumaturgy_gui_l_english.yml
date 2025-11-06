@@ -1,0 +1,22 @@
+﻿l_english:
+ KOM_THAUMATURGY_SPELL_CREATOR_TITLE: "[KoM_thaumaturgy|E] [KoM_spell|E] Creator"
+ KOM_THAUMATURGY_SPELL_CREATOR_DECLARATIONS: "Declarations"
+ KOM_THAUMATURGY_SPELL_CREATOR_CONFIRMATIONS: "Confirmations"
+ KOM_THAUMATURGY_SPELL_CREATOR_ACTIONS: "Actions"
+ KOM_THAUMATURGY_SPELL_CREATOR_CLEAR_ACTIONS: "Clean Actions"
+ KOM_THAUMATURGY_SPELL_CREATOR_START_PLANNING: "Start Planning"
+ KOM_THAUMATURGY_SPELL_CREATOR_RENAME_SPELL: "Rename Spell"
+
+ KoM_spell_creator_add_spell_action_max: "[KoM_spell|E] has reached maximal complexity! #weak [SCOPE.GetValue('num_of_actions')]/[SCOPE.GetValue('max_actions')]#!"
+ KoM_spell_creator_add_spell_action_incompatible_actions: "[KoM_spell|E] have some action that blocks adding this!"
+ KoM_finish_spell_need_declaration: "[KoM_spell|E] needs $KoM_thaumaturgy_declaration$ to work!"
+ KoM_finish_spell_need_confirmation: "[KoM_spell|E] needs $KoM_thaumaturgy_confirmation$ to work!"
+ KoM_finish_spell_need_spell_actions: "[KoM_spell|E] needs $KoM_thaumaturgy_action$ to work!"
+
+ thaumaturgic_spell: "Thaumaturgic Spell"
+ custom_name: "[GetPlayer.MakeScope.Var('KoM_spell_creator_spell').Story.MakeScope.Var('assigned_character').Char.GetNameNoTooltip]"
+
+ KoM_thaumaturgy_creator_declaration: "$KoM_thaumaturgy_declaration$: [SelectLocalization(GetPlayer.MakeScope.Var('KoM_spell_creator_spell').Story.MakeScope.Var('declaration').IsSet, Localize(Concatenate('KoM_thaumaturgy_',GetPlayer.MakeScope.Var('KoM_spell_creator_spell').Story.MakeScope.Var('declaration').GetFlagName)), 'None')]"
+ KoM_thaumaturgy_creator_confirmation: "$KoM_thaumaturgy_confirmation$: [SelectLocalization(GetPlayer.MakeScope.Var('KoM_spell_creator_spell').Story.MakeScope.Var('confirmation').IsSet, Localize(Concatenate('KoM_thaumaturgy_',GetPlayer.MakeScope.Var('KoM_spell_creator_spell').Story.MakeScope.Var('confirmation').GetFlagName)), 'None')]"
+
+ KoM_can_cast_spell_trigger_incorrect_declaration: "This [KoM_spell|E] uses $KoM_thaumaturgy_declaration$ incompatible with this target! #weak [Localize(Concatenate('KoM_thaumaturgy_',SCOPE.GetFlagName('declaration_given')))] where needed is [Localize(Concatenate('KoM_thaumaturgy_',spell.MakeScope.Var('declaration').GetFlagName))]#!"

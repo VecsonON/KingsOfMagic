@@ -17,6 +17,32 @@
  KoM_terrain_type_goetia_expert_cancel_negative_supply: "Unlock $KoM_rite_the_royal_theurgy_of_solomon$"
  KoM_terrain_type_goetia_master_cancel_negative_supply: "Unlock $KoM_rite_the_great_work_of_unification$"
  ####################################################################################################################
+ KoM_terrain_type_thaumaturgy_declaration_persona_cancel_negative_supply: "Unlock $KoM_thaumaturgy_declaration$ of $KoM_thaumaturgy_persona$"
+ KoM_terrain_type_thaumaturgy_confirmation_voluntas_cancel_negative_supply: "Unlock $KoM_thaumaturgy_confirmation$ of $KoM_thaumaturgy_voluntas$"
+ KoM_terrain_type_thaumaturgy_action_recuperare_cancel_negative_supply: "Unlock $KoM_thaumaturgy_action$ of $KoM_thaumaturgy_recuperare$"
+ KoM_terrain_type_thaumaturgy_action_claritudo_cancel_negative_supply: "Unlock $KoM_thaumaturgy_action$ of $KoM_thaumaturgy_claritudo$"
+
+ KoM_terrain_type_thaumaturgy_declaration_res_cancel_negative_supply: "Unlock $KoM_thaumaturgy_declaration$ of $KoM_thaumaturgy_res$"
+ KoM_terrain_type_thaumaturgy_confirmation_nuntius_cancel_negative_supply: "Unlock $KoM_thaumaturgy_confirmation$ of $KoM_thaumaturgy_nuntius$"
+ KoM_terrain_type_thaumaturgy_action_sarcio_cancel_negative_supply: "Unlock $KoM_thaumaturgy_action$ of $KoM_thaumaturgy_sarcio$"
+ KoM_terrain_type_thaumaturgy_action_damnum_cancel_negative_supply: "Unlock $KoM_thaumaturgy_action$ of $KoM_thaumaturgy_damnum$"
+ KoM_terrain_type_thaumaturgy_action_celeritas_cancel_negative_supply: "Unlock $KoM_thaumaturgy_action$ of $KoM_thaumaturgy_celeritas$"
+
+ KoM_terrain_type_thaumaturgy_confirmation_angelus_cancel_negative_supply: "Unlock $KoM_thaumaturgy_confirmation$ of $KoM_thaumaturgy_angelus$"
+ KoM_terrain_type_thaumaturgy_action_duo_cancel_negative_supply: "Unlock $KoM_thaumaturgy_action$ of $KoM_thaumaturgy_duo$"
+ KoM_terrain_type_thaumaturgy_action_fortitudo_cancel_negative_supply: "Unlock $KoM_thaumaturgy_action$ of $KoM_thaumaturgy_fortitudo$"
+ KoM_terrain_type_thaumaturgy_action_stabilitas_cancel_negative_supply: "Unlock $KoM_thaumaturgy_action$ of $KoM_thaumaturgy_stabilitas$"
+
+ KoM_terrain_type_thaumaturgy_declaration_locus_cancel_negative_supply: "Unlock $KoM_thaumaturgy_declaration$ of $KoM_thaumaturgy_locus$"
+ KoM_terrain_type_thaumaturgy_action_opinio_cancel_negative_supply: "Unlock $KoM_thaumaturgy_action$ of $KoM_thaumaturgy_opinio$"
+ KoM_terrain_type_thaumaturgy_action_anima_cancel_negative_supply: "Unlock $KoM_thaumaturgy_action$ of $KoM_thaumaturgy_anima$"
+
+ KoM_terrain_type_thaumaturgy_confirmation_deus_cancel_negative_supply: "Unlock $KoM_thaumaturgy_confirmation$ of $KoM_thaumaturgy_angelus$"
+ KoM_terrain_type_thaumaturgy_action_tres_cancel_negative_supply: "Unlock $KoM_thaumaturgy_action$ of $KoM_thaumaturgy_tres$"
+ KoM_terrain_type_thaumaturgy_action_scientia_cancel_negative_supply: "Unlock $KoM_thaumaturgy_action$ of $KoM_thaumaturgy_scientia$"
+ KoM_terrain_type_thaumaturgy_action_melius_cancel_negative_supply: "Unlock $KoM_thaumaturgy_action$ of $KoM_thaumaturgy_melius$"
+ KoM_terrain_type_thaumaturgy_action_peius_cancel_negative_supply: "Unlock $KoM_thaumaturgy_action$ of $KoM_thaumaturgy_peius$"
+ ####################################################################################################################
  KoM_terrain_type_theurgy_novice_cancel_negative_supply: "Unlock $KoM_rite_the_initiate_of_purification$"
  KoM_terrain_type_theurgy_apprentice_cancel_negative_supply: "Unlock $KoM_rite_the_invoker_of_powers$"
  KoM_terrain_type_theurgy_adept_cancel_negative_supply: "Unlock $KoM_rite_the_walker_between_spheres$"

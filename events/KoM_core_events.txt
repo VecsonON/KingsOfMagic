@@ -312,7 +312,7 @@ scripted_effect KoM_give_random_grimoire_effect = {
 					SCHOOL = $SCHOOL$
 					MAX_MASTERY = $ILLUSTRIOUS_MAX$
 					MIN_MASTERY = $ILLUSTRIOUS_MIN$
-					MASTERY_GAIN = $MASTERY_GAIN$
+					MASTERY_GAIN = $ILLUSTRIOUS_GAIN$
 				}
 			}
 		}

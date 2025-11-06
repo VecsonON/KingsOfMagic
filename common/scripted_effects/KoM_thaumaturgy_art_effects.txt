@@ -4,8 +4,28 @@
 		save_scope_as = temp_spell
 	}
 	hidden_effect_new_object = {
+		create_character = {
+			name = thaumaturgic_spell
+			age = 16
+			gender_female_chance = 50
+			random_traits = no
+			location = location
+			faith = faith
+			culture = culture
+			save_scope_as = KoM_eternal_character
+		}
+		scope:KoM_eternal_character = {
+			death = { death_reason = death_mysterious }
+			make_unprunable = yes
+		}
+		scope:temp_spell = {
+		}
 		scope:temp_spell = { 
 			set_variable = KoM_spell 
+			set_variable = {
+				name = assigned_character
+				value = scope:KoM_eternal_character
+			}
 		}
 	}
 }
@@ -20,8 +40,13 @@ KoM_select_spell_confirmation_effect = {
 	}
 }
 KoM_add_spell_action_effect = {
+	create_story = {
+		type = KoM_story_cycle_spell
+		save_scope_as = temp_action
+	}
+	scope:temp_action ?= { set_variable = { name = action_name value = $SPELL_ACTION$ } }
 	$SPELL$ ?= {
-		add_target_to_variable_list = { name = spell_actions target = $SPELL_ACTION$ }
+		add_to_variable_list = { name = spell_actions target = scope:temp_action }
 	}
 }
 KoM_add_spell_to_list_effect = {
@@ -64,44 +89,92 @@ KoM_remove_spell_from_spell_list_effect = {
 	remove_variable = KoM_saved_spell_$NUMBER$
 }
 KoM_execute_spell_from_number_effect = {
-	save_scope_value_as = {
-		name = spell
-		value = var:KoM_saved_spell_$NUMBER$
-	}
-	KoM_execute_spell_effect = { TARGET = $TARGET$ SPELL = scope:spell }
+	KoM_execute_spell_effect = { TARGET = $TARGET$ SPELL = var:KoM_saved_spell_$NUMBER$ }
 }
 # TARGET, SPELL. SCOPE = CASTER
 KoM_execute_spell_effect = {
 	$SPELL$ = { save_scope_as = spell }
-	$TARGET$ = { save_scope_as = target }
+	$TARGET$ = { save_scope_as = spell_target }
 	save_scope_as = caster
 	scope:spell = {
 		if = {
 			limit = { 
-				has_variable = declaration 
-				has_variable = confirmation 
+				exists = var:declaration 
+				exists = var:confirmation 
 			}
 			every_in_list = {
-				list = spell_actions
+				variable = spell_actions
 				switch = {
-					trigger = THIS
+					trigger = var:action_name
 					flag:recuperare = { KoM_spell_action_recuperare_effect = yes }
+					flag:claritudo = {  }
+					flag:sarcio = {  }
+					flag:damnum = {  }
+					flag:celeritas = {  }
+					flag:fortitudo = {  }
+					flag:stabilitas = {  }
+					flag:opinio = {  }
+					flag:anima = {  }
+					flag:scientia = {  }
+					flag:melius = {  }
+					flag:peius = {  }
+
+					flag:duo = {  }
+					flag:tres = {  }
 				}
 			}
 		}
 	}
 }
 
+KoM_thaumaturgy_interaction_effect = {
+	$CASTER$ = {
+		switch = {
+			trigger = yes
+			scope:create_spell = {
+				KoM_open_spell_creator_effect = yes
+			}
+			scope:remove_spell = {
+				switch = {
+					trigger = yes
+					scope:number1 = { KoM_remove_spell_from_spell_list_effect = { NUMBER = 1 } }
+					scope:number2 = { KoM_remove_spell_from_spell_list_effect = { NUMBER = 2 } }
+					scope:number3 = { KoM_remove_spell_from_spell_list_effect = { NUMBER = 3 } }
+					scope:number4 = { KoM_remove_spell_from_spell_list_effect = { NUMBER = 4 } }
+					scope:number5 = { KoM_remove_spell_from_spell_list_effect = { NUMBER = 5 } }
+					scope:number6 = { KoM_remove_spell_from_spell_list_effect = { NUMBER = 6 } }
+					scope:number7 = { KoM_remove_spell_from_spell_list_effect = { NUMBER = 7 } }
+				}
+				custom_tooltip = KoM_thaumaturgy_interaction_effect_delete
+			}
+			scope:number1 = { KoM_execute_spell_from_number_effect = { TARGET = $TARGET$ NUMBER = 1 } }
+			scope:number2 = { KoM_execute_spell_from_number_effect = { TARGET = $TARGET$ NUMBER = 2 } }
+			scope:number3 = { KoM_execute_spell_from_number_effect = { TARGET = $TARGET$ NUMBER = 3 } }
+			scope:number4 = { KoM_execute_spell_from_number_effect = { TARGET = $TARGET$ NUMBER = 4 } }
+			scope:number5 = { KoM_execute_spell_from_number_effect = { TARGET = $TARGET$ NUMBER = 5 } }
+			scope:number6 = { KoM_execute_spell_from_number_effect = { TARGET = $TARGET$ NUMBER = 6 } }
+			scope:number7 = { KoM_execute_spell_from_number_effect = { TARGET = $TARGET$ NUMBER = 7 } }
+		}
+	}
+}
+KoM_open_spell_creator_effect = {
+	set_variable = KoM_spell_creator_open
+}
 
 ################## SPELL ACTIONS ##################
 KoM_spell_action_recuperare_effect = {
-	if = {
-		limit = { scope:spell.var:declaration = flag:persona }
-	}
-	if = {
-		limit = { scope:spell.var:declaration = flag:res }
-	}
-	if = {
-		limit = { scope:spell.var:declaration = flag:locus }
+	scope:spell_target = {
+		if = {
+			limit = { scope:spell.var:declaration = flag:persona }
+			add_gold = 100
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:res }
+			add_durability = 10
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:locus }
+			change_county_control = 10
+		}
 	}
 }

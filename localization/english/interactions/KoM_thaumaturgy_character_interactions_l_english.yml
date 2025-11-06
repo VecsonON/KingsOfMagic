@@ -1,0 +1,17 @@
+﻿l_english:
+ KoM_thaumaturgy_persona_interaction: "Thaumaturgy: $KoM_thaumaturgy_persona$"
+ KoM_thaumaturgy_res_interaction: "Thaumaturgy: $KoM_thaumaturgy_res$"
+ KoM_thaumaturgy_locus_interaction: "Thaumaturgy: $KoM_thaumaturgy_locus$"
+ KoM_thaumaturgy_interaction_desc: "Use your knowledge of [KoM_thaumaturgy|E] to perform [KoM_magick|E]"
+ KoM_thaumaturgy_interaction_create_spell: "Open [KoM_spell|E] Creator"
+ KoM_thaumaturgy_interaction_remove_spell: "Delete selected [KoM_spell|E]"
+
+ KoM_thaumaturgy_interaction_spell_number1: "[KoMGetSpellName(GetPlayer.MakeScope.Var('KoM_saved_spell_1'))]"
+ KoM_thaumaturgy_interaction_spell_number2: "[KoMGetSpellName(GetPlayer.MakeScope.Var('KoM_saved_spell_2'))]"
+ KoM_thaumaturgy_interaction_spell_number3: "[KoMGetSpellName(GetPlayer.MakeScope.Var('KoM_saved_spell_3'))]"
+ KoM_thaumaturgy_interaction_spell_number4: "[KoMGetSpellName(GetPlayer.MakeScope.Var('KoM_saved_spell_4'))]"
+ KoM_thaumaturgy_interaction_spell_number5: "[KoMGetSpellName(GetPlayer.MakeScope.Var('KoM_saved_spell_5'))]"
+ KoM_thaumaturgy_interaction_spell_number6: "[KoMGetSpellName(GetPlayer.MakeScope.Var('KoM_saved_spell_6'))]"
+ KoM_thaumaturgy_interaction_spell_number7: "[KoMGetSpellName(GetPlayer.MakeScope.Var('KoM_saved_spell_7'))]"
+
+ KoM_thaumaturgy_interaction_effect_delete: "You will delete selected [KoM_spell|E]!"

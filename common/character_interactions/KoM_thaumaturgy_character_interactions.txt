@@ -1,4 +1,4 @@
-﻿KoM_thaumaturgy_interaction = {
+﻿KoM_thaumaturgy_persona_interaction = {
 	category = interaction_category_religion
 	icon = KoM_thaumaturgy_interaction
 	desc = KoM_thaumaturgy_interaction_desc
@@ -9,16 +9,37 @@
 		scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:thaumaturgy } }
 	}
 
+	is_valid_showing_failures_only = {
+		scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 10 AT_LEAST = yes } }
+	}
+
 	send_options_exclusive = no
 
 	send_option = {
-		is_valid = {
+		is_shown = {
 			scope:remove_spell = no
-			custom_tooltip = {
-				text = KoM_thaumaturgy_interaction_create_spell_req
-				calc_true_if = {
-					amount >= 1
-					NOT = { has_variable = KoM_saved_spell_1 }
+			scope:number1 = no
+			scope:number2 = no
+			scope:number3 = no
+			scope:number4 = no
+			scope:number5 = no
+			scope:number6 = no
+			scope:number7 = no
+		}
+		is_valid = {
+			scope:actor = {
+				custom_tooltip = {
+					text = KoM_thaumaturgy_interaction_create_spell_req
+					calc_true_if = {
+						amount >= 1
+						NOT = { has_variable = KoM_saved_spell_1 }
+						NOT = { has_variable = KoM_saved_spell_2 }
+						NOT = { has_variable = KoM_saved_spell_3 }
+						NOT = { has_variable = KoM_saved_spell_4 }
+						NOT = { has_variable = KoM_saved_spell_5 }
+						NOT = { has_variable = KoM_saved_spell_6 }
+						NOT = { has_variable = KoM_saved_spell_7 }
+					}
 				}
 			}
 		}
@@ -26,18 +47,100 @@
 		localization = KoM_thaumaturgy_interaction_create_spell
 	}
 	send_option = {
-		is_valid = { scope:create_spell = no }
+		is_shown = { scope:create_spell = no }
 		flag = remove_spell
 		localization = KoM_thaumaturgy_interaction_remove_spell
 	}
 
 	send_option = {
-		is_shown = { scope:create_spell = no }
-		is_valid = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 1 }
 			scope:actor = { has_variable = KoM_saved_spell_1 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = persona SPELL = var:KoM_saved_spell_1 TARGET = scope:recipient } }
 		}
 		flag = number1
 		localization = KoM_thaumaturgy_interaction_spell_number1
+	}
+
+	send_option = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 2 }
+			scope:actor = { has_variable = KoM_saved_spell_2 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = persona SPELL = var:KoM_saved_spell_2 TARGET = scope:recipient } }
+		}
+		flag = number2
+		localization = KoM_thaumaturgy_interaction_spell_number2
+	}
+
+	send_option = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 3 }
+			scope:actor = { has_variable = KoM_saved_spell_3 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = persona SPELL = var:KoM_saved_spell_3 TARGET = scope:recipient } }
+		}
+		flag = number3
+		localization = KoM_thaumaturgy_interaction_spell_number3
+	}
+
+	send_option = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 4 }
+			scope:actor = { has_variable = KoM_saved_spell_4 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = persona SPELL = var:KoM_saved_spell_4 TARGET = scope:recipient } }
+		}
+		flag = number4
+		localization = KoM_thaumaturgy_interaction_spell_number4
+	}
+
+	send_option = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 5 }
+			scope:actor = { has_variable = KoM_saved_spell_5 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = persona SPELL = var:KoM_saved_spell_5 TARGET = scope:recipient } }
+		}
+		flag = number5
+		localization = KoM_thaumaturgy_interaction_spell_number5
+	}
+
+	send_option = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 6 }
+			scope:actor = { has_variable = KoM_saved_spell_6 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = persona SPELL = var:KoM_saved_spell_6 TARGET = scope:recipient } }
+		}
+		flag = number6
+		localization = KoM_thaumaturgy_interaction_spell_number6
+	}
+
+	send_option = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 7 }
+			scope:actor = { has_variable = KoM_saved_spell_7 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = persona SPELL = var:KoM_saved_spell_7 TARGET = scope:recipient } }
+		}
+		flag = number7
+		localization = KoM_thaumaturgy_interaction_spell_number7
 	}
 
 	can_send = {
@@ -46,26 +149,368 @@
 			OR = {
 				scope:create_spell ?= yes
 				scope:number1 ?= yes
+				scope:number2 ?= yes
+				scope:number3 ?= yes
+				scope:number4 ?= yes
+				scope:number5 ?= yes
+				scope:number6 ?= yes
+				scope:number7 ?= yes
 			}
 		}
 	}
 
 	on_accept = {
-		scope:actor = {
-			switch = {
-				trigger = yes
-				scope:create_spell = {
-					
-				}
-				scope:remove_spell = {
-					switch = {
-						trigger = yes
-						scope:number1 = { KoM_remove_spell_from_spell_list_effect = { NUMBER = 1 } }
+		KoM_thaumaturgy_interaction_effect = { CASTER = scope:actor TARGET = scope:recipient }
+	}
+
+	auto_accept = yes
+
+	ai_will_do = { base = 0 }
+}
+KoM_thaumaturgy_res_interaction = {
+	category = interaction_category_religion
+	icon = KoM_thaumaturgy_interaction
+	desc = KoM_thaumaturgy_interaction_desc
+
+	use_diplomatic_range = no
+
+	target_type = artifact
+	target_filter = recipient_artifacts
+
+	is_shown = {
+		scope:recipient = { has_any_artifact = yes }
+		scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:thaumaturgy } }
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 25 AT_LEAST = yes } }
+	}
+
+	has_valid_target = { exists = scope:target }
+
+	send_options_exclusive = no
+
+	send_option = {
+		is_shown = {
+			scope:remove_spell = no
+			scope:number1 = no
+			scope:number2 = no
+			scope:number3 = no
+			scope:number4 = no
+			scope:number5 = no
+			scope:number6 = no
+			scope:number7 = no
+		}
+		is_valid = {
+			scope:actor = {
+				custom_tooltip = {
+					text = KoM_thaumaturgy_interaction_create_spell_req
+					calc_true_if = {
+						amount >= 1
+						NOT = { has_variable = KoM_saved_spell_1 }
+						NOT = { has_variable = KoM_saved_spell_2 }
+						NOT = { has_variable = KoM_saved_spell_3 }
+						NOT = { has_variable = KoM_saved_spell_4 }
+						NOT = { has_variable = KoM_saved_spell_5 }
+						NOT = { has_variable = KoM_saved_spell_6 }
+						NOT = { has_variable = KoM_saved_spell_7 }
 					}
 				}
-				scope:number1 = { KoM_execute_spell_from_number_effect = { TARGET = scope:recipient NUMBER = 1 } }
 			}
 		}
+		flag = create_spell
+		localization = KoM_thaumaturgy_interaction_create_spell
+	}
+	send_option = {
+		is_shown = { scope:create_spell = no }
+		flag = remove_spell
+		localization = KoM_thaumaturgy_interaction_remove_spell
+	}
+
+	send_option = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 1 }
+			scope:actor = { has_variable = KoM_saved_spell_1 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = res SPELL = var:KoM_saved_spell_1 TARGET = scope:target } }
+		}
+		flag = number1
+		localization = KoM_thaumaturgy_interaction_spell_number1
+	}
+
+	send_option = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 2 }
+			scope:actor = { has_variable = KoM_saved_spell_2 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = res SPELL = var:KoM_saved_spell_2 TARGET = scope:target } }
+		}
+		flag = number2
+		localization = KoM_thaumaturgy_interaction_spell_number2
+	}
+
+	send_option = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 3 }
+			scope:actor = { has_variable = KoM_saved_spell_3 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = res SPELL = var:KoM_saved_spell_3 TARGET = scope:target } }
+		}
+		flag = number3
+		localization = KoM_thaumaturgy_interaction_spell_number3
+	}
+
+	send_option = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 4 }
+			scope:actor = { has_variable = KoM_saved_spell_4 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = res SPELL = var:KoM_saved_spell_4 TARGET = scope:target } }
+		}
+		flag = number4
+		localization = KoM_thaumaturgy_interaction_spell_number4
+	}
+
+	send_option = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 5 }
+			scope:actor = { has_variable = KoM_saved_spell_5 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = res SPELL = var:KoM_saved_spell_5 TARGET = scope:target } }
+		}
+		flag = number5
+		localization = KoM_thaumaturgy_interaction_spell_number5
+	}
+
+	send_option = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 6 }
+			scope:actor = { has_variable = KoM_saved_spell_6 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = res SPELL = var:KoM_saved_spell_6 TARGET = scope:target } }
+		}
+		flag = number6
+		localization = KoM_thaumaturgy_interaction_spell_number6
+	}
+
+	send_option = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 7 }
+			scope:actor = { has_variable = KoM_saved_spell_7 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = res SPELL = var:KoM_saved_spell_7 TARGET = scope:target } }
+		}
+		flag = number7
+		localization = KoM_thaumaturgy_interaction_spell_number7
+	}
+
+	can_send = {
+		custom_tooltip = {
+			text = KoM_select_art
+			OR = {
+				scope:create_spell ?= yes
+				scope:number1 ?= yes
+				scope:number2 ?= yes
+				scope:number3 ?= yes
+				scope:number4 ?= yes
+				scope:number5 ?= yes
+				scope:number6 ?= yes
+				scope:number7 ?= yes
+			}
+		}
+	}
+
+	on_accept = {
+		KoM_thaumaturgy_interaction_effect = { CASTER = scope:actor TARGET = scope:target }
+	}
+
+	auto_accept = yes
+
+	ai_will_do = { base = 0 }
+}
+KoM_thaumaturgy_locus_interaction = {
+	category = interaction_category_religion
+	icon = KoM_thaumaturgy_interaction
+	desc = KoM_thaumaturgy_interaction_desc
+
+	use_diplomatic_range = no
+
+	target_type = title
+	target_filter = recipient_domain_titles
+
+	is_shown = {
+		scope:recipient = { is_landed = yes }
+		scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:thaumaturgy } }
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 75 AT_LEAST = yes } }
+	}
+
+	has_valid_target = { exists = scope:target }
+
+	send_options_exclusive = no
+
+	send_option = {
+		is_shown = {
+			scope:remove_spell = no
+			scope:number1 = no
+			scope:number2 = no
+			scope:number3 = no
+			scope:number4 = no
+			scope:number5 = no
+			scope:number6 = no
+			scope:number7 = no
+		}
+		is_valid = {
+			scope:actor = {
+				custom_tooltip = {
+					text = KoM_thaumaturgy_interaction_create_spell_req
+					calc_true_if = {
+						amount >= 1
+						NOT = { has_variable = KoM_saved_spell_1 }
+						NOT = { has_variable = KoM_saved_spell_2 }
+						NOT = { has_variable = KoM_saved_spell_3 }
+						NOT = { has_variable = KoM_saved_spell_4 }
+						NOT = { has_variable = KoM_saved_spell_5 }
+						NOT = { has_variable = KoM_saved_spell_6 }
+						NOT = { has_variable = KoM_saved_spell_7 }
+					}
+				}
+			}
+		}
+		flag = create_spell
+		localization = KoM_thaumaturgy_interaction_create_spell
+	}
+	send_option = {
+		is_shown = { scope:create_spell = no }
+		flag = remove_spell
+		localization = KoM_thaumaturgy_interaction_remove_spell
+	}
+
+	send_option = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 1 }
+			scope:actor = { has_variable = KoM_saved_spell_1 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = locus SPELL = var:KoM_saved_spell_1 TARGET = scope:target } }
+		}
+		flag = number1
+		localization = KoM_thaumaturgy_interaction_spell_number1
+	}
+
+	send_option = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 2 }
+			scope:actor = { has_variable = KoM_saved_spell_2 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = locus SPELL = var:KoM_saved_spell_2 TARGET = scope:target } }
+		}
+		flag = number2
+		localization = KoM_thaumaturgy_interaction_spell_number2
+	}
+
+	send_option = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 3 }
+			scope:actor = { has_variable = KoM_saved_spell_3 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = locus SPELL = var:KoM_saved_spell_3 TARGET = scope:target } }
+		}
+		flag = number3
+		localization = KoM_thaumaturgy_interaction_spell_number3
+	}
+
+	send_option = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 4 }
+			scope:actor = { has_variable = KoM_saved_spell_4 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = locus SPELL = var:KoM_saved_spell_4 TARGET = scope:target } }
+		}
+		flag = number4
+		localization = KoM_thaumaturgy_interaction_spell_number4
+	}
+
+	send_option = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 5 }
+			scope:actor = { has_variable = KoM_saved_spell_5 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = locus SPELL = var:KoM_saved_spell_5 TARGET = scope:target } }
+		}
+		flag = number5
+		localization = KoM_thaumaturgy_interaction_spell_number5
+	}
+
+	send_option = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 6 }
+			scope:actor = { has_variable = KoM_saved_spell_6 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = locus SPELL = var:KoM_saved_spell_6 TARGET = scope:target } }
+		}
+		flag = number6
+		localization = KoM_thaumaturgy_interaction_spell_number6
+	}
+
+	send_option = {
+		is_shown = {
+			scope:create_spell = no
+			KoM_thaumaturgy_interaction_show_trigger = { NUMBER = 7 }
+			scope:actor = { has_variable = KoM_saved_spell_7 }
+		}
+		is_valid = {
+			scope:actor = {KoM_can_cast_spell_trigger = { DECLARATION = locus SPELL = var:KoM_saved_spell_7 TARGET = scope:target } }
+		}
+		flag = number7
+		localization = KoM_thaumaturgy_interaction_spell_number7
+	}
+
+	can_send = {
+		custom_tooltip = {
+			text = KoM_select_art
+			OR = {
+				scope:create_spell ?= yes
+				scope:number1 ?= yes
+				scope:number2 ?= yes
+				scope:number3 ?= yes
+				scope:number4 ?= yes
+				scope:number5 ?= yes
+				scope:number6 ?= yes
+				scope:number7 ?= yes
+			}
+		}
+	}
+
+	on_accept = {
+		KoM_thaumaturgy_interaction_effect = { CASTER = scope:actor TARGET = scope:target }
 	}
 
 	auto_accept = yes

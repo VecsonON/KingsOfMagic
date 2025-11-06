@@ -1,1 +1,304 @@
-﻿
+﻿widget = {
+	name = "KoM_thaumaturgy_spell_creator"
+	visible = "[And(And(Not(IsPauseMenuShown), IsDefaultGUIMode), GetPlayer.IsValid)]"
+	layer = royal_court
+	size = { 100% 100% }
+
+	window = {
+		parentanchor = center
+		size = { 900 700 }
+		using = Window_Background
+		using = Window_Decoration
+
+		visible = "[GetPlayer.MakeScope.Var('KoM_spell_creator_open').IsSet]"
+
+		state = {
+			name = _show
+			using = Animation_FadeIn_Quick
+			using = Sound_WindowShow_Standard
+			on_start = "[GetScriptedGui('KoM_spell_creator_open').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		}
+
+		state = {
+			name = _hide
+			using = Animation_FadeOut_Quick
+			using = Sound_WindowHide_Standard
+			on_start = "[GetScriptedGui('KoM_spell_creator_close').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		}
+
+		allow_outside = yes
+
+		vbox = {
+			layoutpolicy_vertical = expanding
+			layoutpolicy_horizontal = expanding
+
+			using = Window_Margins
+
+			allow_outside = yes
+
+			header_pattern = {
+				layoutpolicy_horizontal = expanding
+
+				blockoverride "header_text" { text = KOM_THAUMATURGY_SPELL_CREATOR_TITLE }
+
+				blockoverride "button_close"
+				{
+					onclick = "[GetScriptedGui('KoM_spell_creator_close').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				}
+			}
+			hbox = {
+				layoutpolicy_vertical = expanding
+				layoutpolicy_horizontal = expanding
+				
+				vbox = {
+					layoutpolicy_vertical = expanding
+					layoutpolicy_horizontal = expanding
+					background = { using = Background_Area }
+					vbox = {
+						layoutpolicy_vertical = expanding
+						layoutpolicy_horizontal = expanding
+						vbox = {
+							layoutpolicy_horizontal = expanding
+							margin = { 5 10 }
+							hbox = {
+								text_single = {
+									text = "[KoMGetSpellName(GetPlayer.MakeScope.Var('KoM_spell_creator_spell'))]"
+									default_format = "#T"
+									using = Font_Size_Big
+								}
+
+								spacer = { size = { 15 0 } }
+
+								button_edit_text = {
+									tooltip = "KOM_THAUMATURGY_SPELL_CREATOR_RENAME_SPELL"
+									size = { 25 25 }	
+									onclick = "[GetScriptedGui('KoM_spell_creator_rename_spell').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								}
+							}
+
+							spacer = { size = { 0 10 } }
+
+							vbox = {
+								layoutpolicy_horizontal = expanding
+								text_single = {
+									layoutpolicy_horizontal = expanding
+									text = "KoM_thaumaturgy_creator_declaration"
+									default_format = "#medium"
+									using = Font_Size_Medium
+
+								}
+								text_single = {
+									layoutpolicy_horizontal = expanding
+									text = "KoM_thaumaturgy_creator_confirmation"
+									default_format = "#medium"
+									using = Font_Size_Medium
+								}
+							}
+
+							spacer = { size = { 0 10 } }
+
+							divider_light = {
+								layoutpolicy_horizontal = expanding
+							}
+							hbox = {
+								layoutpolicy_horizontal = expanding
+								hbox = {
+									datamodel = "[GetPlayer.MakeScope.Var('KoM_spell_creator_spell').GetList('spell_actions')]"
+									layoutpolicy_horizontal = expanding
+									min_height = 26
+									item = {
+										text_single = {
+											margin_left = 2
+											# layoutpolicy_horizontal = expanding
+											text = "[Localize(Concatenate('KoM_thaumaturgy_', Scope.Story.MakeScope.Var('action_name').GetFlagName))]"
+											default_format = "#medium"
+											using = Font_Size_Medium
+										}
+									}
+								}
+							}
+
+							spacer = { size = { 0 10 } }
+							
+							divider_light = {
+								layoutpolicy_horizontal = expanding
+							}
+							hbox = {
+								layoutpolicy_horizontal = expanding
+								scrollbox = {
+									size = { 400 400 }
+									layoutpolicy_vertical = expanding
+									layoutpolicy_horizontal = expanding
+									blockoverride "scrollbox_content" {
+										vbox = {
+											text_multi = {
+												layoutpolicy_horizontal = expanding
+												layoutpolicy_vertical = expanding
+												margin = { 5 5 }
+												autoresize = yes
+												text = "[GetScriptedGui('KoM_spell_creator_preview').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												align = left
+											}
+										}
+									}
+								}
+							}
+						}
+						hbox = {
+							layoutpolicy_vertical = expanding
+							layoutpolicy_horizontal = expanding
+
+						}
+					}
+					hbox = {
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						button_standard_big = {
+							size = { 190 30 }
+							texture = "gfx/interface/buttons/button_standard_clean.dds"
+							enabled = "[GetScriptedGui('KoM_finish_spell').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							onclick = "[GetScriptedGui('KoM_finish_spell').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							onclick = "[GetScriptedGui('KoM_spell_creator_close').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "[GetScriptedGui('KoM_finish_spell').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							text = "KOM_THAUMATURGY_SPELL_CREATOR_START_PLANNING"
+
+							background = { using = Background_Area_ExtraDark }
+							using = tooltip_below
+						}
+						button_standard = {
+							size = { 120 30 }
+							texture = "gfx/interface/buttons/button_standard_clean.dds"
+							onclick = "[GetScriptedGui('KoM_spell_creator_clear_spell_actions').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							text = "KOM_THAUMATURGY_SPELL_CREATOR_CLEAR_ACTIONS"
+
+							background = { using = Background_Area_ExtraDark }
+							using = tooltip_below
+						}
+					}
+					spacer = { size = { 0 15 } }
+				}
+				vbox = {
+					layoutpolicy_vertical = expanding
+					min_width = 400
+					background = { using = Background_Area }
+
+					margin = { 4 2 }
+
+					hbox = {
+						layoutpolicy_horizontal = expanding
+						button_tab = {
+							layoutpolicy_horizontal = expanding
+							onclick = "[GetVariableSystem.Set( 'KoM_thaumaturgy_spell_creator_tab', 'declarations' )]"
+							down = "[GetVariableSystem.HasValue( 'KoM_thaumaturgy_spell_creator_tab', 'declarations' )]"
+							text = "KOM_THAUMATURGY_SPELL_CREATOR_DECLARATIONS"
+							default_format = "#medium"
+
+							using = tooltip_below
+						}
+						button_tab = {
+							layoutpolicy_horizontal = expanding
+							onclick = "[GetVariableSystem.Set( 'KoM_thaumaturgy_spell_creator_tab', 'confirmations' )]"
+							down = "[GetVariableSystem.HasValue( 'KoM_thaumaturgy_spell_creator_tab', 'confirmations' )]"
+							text = "KOM_THAUMATURGY_SPELL_CREATOR_CONFIRMATIONS"
+							default_format = "#medium"
+
+							using = tooltip_below
+						}
+						button_tab = {
+							layoutpolicy_horizontal = expanding
+							onclick = "[GetVariableSystem.Set( 'KoM_thaumaturgy_spell_creator_tab', 'spell_actions' )]"
+							down = "[GetVariableSystem.HasValue( 'KoM_thaumaturgy_spell_creator_tab', 'spell_actions' )]"
+							text = "KOM_THAUMATURGY_SPELL_CREATOR_ACTIONS"
+							default_format = "#medium"
+
+							using = tooltip_below
+						}
+					}
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						scrollbox = {
+							visible = "[GetVariableSystem.HasValue( 'KoM_thaumaturgy_spell_creator_tab', 'declarations' )]"
+							layoutpolicy_vertical = expanding
+							layoutpolicy_horizontal = expanding
+							blockoverride "scrollbox_content" {
+								vbox = {
+									datamodel = "[GetPlayer.MakeScope.GetList('KoM_spell_creator_declarations')]"
+									layoutpolicy_horizontal = expanding
+									spacing = 10
+
+									item = {
+										button_standard_big = {
+											size = { 350 60 }
+											texture = "gfx/interface/buttons/button_standard_clean.dds"
+											text = "[Localize(Concatenate('KoM_thaumaturgy_', Scope.GetFlagName))]"
+
+											onclick = "[GetScriptedGui('KoM_spell_creator_select_declaration').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('declaration',MakeScopeFlag(Scope.GetFlagName)).End)]"
+											down = "[EqualTo_string(GetPlayer.MakeScope.Var('KoM_spell_creator_spell').Story.MakeScope.Var('declaration').GetFlagName,Scope.GetFlagName)]"
+
+											background = { using = Background_Area_ExtraDark }
+											using = tooltip_below
+										}
+									}
+								}
+							}
+						}
+						scrollbox = {
+							visible = "[GetVariableSystem.HasValue( 'KoM_thaumaturgy_spell_creator_tab', 'confirmations' )]"
+							layoutpolicy_vertical = expanding
+							layoutpolicy_horizontal = expanding
+							blockoverride "scrollbox_content" {
+								vbox = {
+									datamodel = "[GetPlayer.MakeScope.GetList('KoM_spell_creator_confirmations')]"
+									layoutpolicy_horizontal = expanding
+									spacing = 10
+
+									item = {
+										button_standard_big = {
+											size = { 350 50 }
+											texture = "gfx/interface/buttons/button_standard_clean.dds"
+											text = "[Localize(Concatenate('KoM_thaumaturgy_', Scope.GetFlagName))]"
+
+											onclick = "[GetScriptedGui('KoM_spell_creator_select_confirmation').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('confirmation',MakeScopeFlag(Scope.GetFlagName)).End)]"
+											down = "[EqualTo_string(GetPlayer.MakeScope.Var('KoM_spell_creator_spell').Story.MakeScope.Var('confirmation').GetFlagName,Scope.GetFlagName)]"
+
+											background = { using = Background_Area_ExtraDark }
+											using = tooltip_below
+										}
+									}
+								}
+							}
+						}
+						scrollbox = {
+							visible = "[GetVariableSystem.HasValue( 'KoM_thaumaturgy_spell_creator_tab', 'spell_actions' )]"
+							layoutpolicy_vertical = expanding
+							layoutpolicy_horizontal = expanding
+							blockoverride "scrollbox_content" {
+								vbox = {
+									datamodel = "[GetPlayer.MakeScope.GetList('KoM_spell_creator_spell_actions')]"
+									layoutpolicy_horizontal = expanding
+									spacing = 10
+
+									item = {
+										button_standard_big = {
+											size = { 350 40 }
+											texture = "gfx/interface/buttons/button_standard_clean.dds"
+											text = "[Localize(Concatenate('KoM_thaumaturgy_', Scope.GetFlagName))]"
+
+											enabled = "[GetScriptedGui('KoM_spell_creator_add_spell_action').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('spell_action',MakeScopeFlag(Scope.GetFlagName)).End)]"
+											onclick = "[GetScriptedGui('KoM_spell_creator_add_spell_action').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('spell_action',MakeScopeFlag(Scope.GetFlagName)).End)]"
+											tooltip = "[GetScriptedGui('KoM_spell_creator_add_spell_action').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('spell_action',MakeScopeFlag(Scope.GetFlagName)).End)]"
+
+											background = { using = Background_Area_ExtraDark }
+											using = tooltip_below
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

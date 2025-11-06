@@ -107,11 +107,37 @@ KoM_thaumaturge = {
 	}
 
 	track = {
-		10 = { }
-		25 = { }
-		50 = { }
-		75 = { }
-		100 = { }
+		10 = {
+			KoM_terrain_type_thaumaturgy_declaration_persona_cancel_negative_supply = yes
+			KoM_terrain_type_thaumaturgy_confirmation_voluntas_cancel_negative_supply = yes
+			KoM_terrain_type_thaumaturgy_action_recuperare_cancel_negative_supply = yes
+			KoM_terrain_type_thaumaturgy_action_claritudo_cancel_negative_supply = yes
+		}
+		25 =  {
+			KoM_terrain_type_thaumaturgy_declaration_res_cancel_negative_supply = yes
+			KoM_terrain_type_thaumaturgy_confirmation_nuntius_cancel_negative_supply = yes
+			KoM_terrain_type_thaumaturgy_action_sarcio_cancel_negative_supply = yes
+			KoM_terrain_type_thaumaturgy_action_damnum_cancel_negative_supply = yes
+			KoM_terrain_type_thaumaturgy_action_celeritas_cancel_negative_supply = yes
+		}
+		50 =  {
+			KoM_terrain_type_thaumaturgy_confirmation_angelus_cancel_negative_supply = yes
+			KoM_terrain_type_thaumaturgy_action_duo_cancel_negative_supply = yes
+			KoM_terrain_type_thaumaturgy_action_fortitudo_cancel_negative_supply = yes
+			KoM_terrain_type_thaumaturgy_action_stabilitas_cancel_negative_supply = yes
+		}
+		75 =  {
+			KoM_terrain_type_thaumaturgy_declaration_locus_cancel_negative_supply = yes
+			KoM_terrain_type_thaumaturgy_action_opinio_cancel_negative_supply = yes
+			KoM_terrain_type_thaumaturgy_action_anima_cancel_negative_supply = yes
+		}
+		100 =  {
+			KoM_terrain_type_thaumaturgy_confirmation_deus_cancel_negative_supply = yes
+			KoM_terrain_type_thaumaturgy_action_tres_cancel_negative_supply = yes
+			KoM_terrain_type_thaumaturgy_action_scientia_cancel_negative_supply = yes
+			KoM_terrain_type_thaumaturgy_action_melius_cancel_negative_supply = yes
+			KoM_terrain_type_thaumaturgy_action_peius_cancel_negative_supply = yes
+		}
 	}
 
 	icon = thaumaturge.dds

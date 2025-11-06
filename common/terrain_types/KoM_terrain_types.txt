@@ -1,301 +1,75 @@
-﻿KoM_terrain_type_grimoire = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_rite_speed = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
+﻿KoM_terrain_type_grimoire = { }
+KoM_terrain_type_rite_speed = { }
 #########################################
-KoM_terrain_type_goetia_novice = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_goetia_apprentice = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_goetia_adept = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_goetia_expert = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_goetia_master = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
+KoM_terrain_type_goetia_novice = { }
+KoM_terrain_type_goetia_apprentice = { }
+KoM_terrain_type_goetia_adept = { }
+KoM_terrain_type_goetia_expert = { }
+KoM_terrain_type_goetia_master = { }
 #########################################
-KoM_terrain_type_theurgy_novice = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_theurgy_apprentice = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_theurgy_adept = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_theurgy_expert = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_theurgy_master = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
+KoM_terrain_type_thaumaturgy_declaration_persona = { }
+KoM_terrain_type_thaumaturgy_confirmation_voluntas = { }
+KoM_terrain_type_thaumaturgy_action_recuperare = { }
+KoM_terrain_type_thaumaturgy_action_claritudo = { }
+##########################
+KoM_terrain_type_thaumaturgy_declaration_res = { }
+KoM_terrain_type_thaumaturgy_confirmation_nuntius = { }
+KoM_terrain_type_thaumaturgy_action_sarcio = { }
+KoM_terrain_type_thaumaturgy_action_damnum = { }
+KoM_terrain_type_thaumaturgy_action_celeritas = { }
+##########################
+KoM_terrain_type_thaumaturgy_confirmation_angelus = { }
+KoM_terrain_type_thaumaturgy_action_fortitudo = { }
+KoM_terrain_type_thaumaturgy_action_stabilitas = { }
+##########################
+KoM_terrain_type_thaumaturgy_declaration_locus = { }
+KoM_terrain_type_thaumaturgy_action_duo = { }
+KoM_terrain_type_thaumaturgy_action_opinio = { }
+KoM_terrain_type_thaumaturgy_action_anima = { }
+##########################
+KoM_terrain_type_thaumaturgy_confirmation_deus = { }
+KoM_terrain_type_thaumaturgy_action_tres = { }
+KoM_terrain_type_thaumaturgy_action_scientia = { }
+KoM_terrain_type_thaumaturgy_action_melius = { }
+KoM_terrain_type_thaumaturgy_action_peius = { }
 #########################################
-KoM_terrain_type_alchemy_elixir_of_the_white_rose = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_elixir_of_the_white_rose_effect = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_draught_of_still_waters = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_draught_of_still_waters_effect = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_infusion_of_lead = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_infusion_of_lead_effect = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
+KoM_terrain_type_theurgy_novice = { }
+KoM_terrain_type_theurgy_apprentice = { }
+KoM_terrain_type_theurgy_adept = { }
+KoM_terrain_type_theurgy_expert = { }
+KoM_terrain_type_theurgy_master = { }
+#########################################
+KoM_terrain_type_alchemy_elixir_of_the_white_rose = { }
+KoM_terrain_type_alchemy_elixir_of_the_white_rose_effect = { }
+KoM_terrain_type_alchemy_draught_of_still_waters = { }
+KoM_terrain_type_alchemy_draught_of_still_waters_effect = { }
+KoM_terrain_type_alchemy_infusion_of_lead = { }
+KoM_terrain_type_alchemy_infusion_of_lead_effect = { }
 ##########################
-KoM_terrain_type_alchemy_elixir_of_ash_and_salt = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_elixir_of_ash_and_salt_effect = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_dew_of_morning_stars = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_dew_of_morning_stars_effect = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_aqua_sapientiae = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_aqua_sapientiae_effect = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
+KoM_terrain_type_alchemy_elixir_of_ash_and_salt = { }
+KoM_terrain_type_alchemy_elixir_of_ash_and_salt_effect = { }
+KoM_terrain_type_alchemy_dew_of_morning_stars = { }
+KoM_terrain_type_alchemy_dew_of_morning_stars_effect = { }
+KoM_terrain_type_alchemy_aqua_sapientiae = { }
+KoM_terrain_type_alchemy_aqua_sapientiae_effect = { }
 ##########################
-KoM_terrain_type_alchemy_elixir_of_the_solar_mind = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_elixir_of_the_solar_mind_effect = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_draught_of_the_inner_flame = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_draught_of_the_inner_flame_effect = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_tears_of_the_red_king = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_tears_of_the_red_king_effect = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
+KoM_terrain_type_alchemy_elixir_of_the_solar_mind = { }
+KoM_terrain_type_alchemy_elixir_of_the_solar_mind_effect = { }
+KoM_terrain_type_alchemy_draught_of_the_inner_flame = { }
+KoM_terrain_type_alchemy_draught_of_the_inner_flame_effect = { }
+KoM_terrain_type_alchemy_tears_of_the_red_king = { }
+KoM_terrain_type_alchemy_tears_of_the_red_king_effect = { }
 ##########################
-KoM_terrain_type_alchemy_blood_of_the_phoenix = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_blood_of_the_phoenix_effect = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_elixir_rubedo = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_elixir_rubedo_effect = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_homunculi = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_homunculi_effect = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
+KoM_terrain_type_alchemy_blood_of_the_phoenix = { }
+KoM_terrain_type_alchemy_blood_of_the_phoenix_effect = { }
+KoM_terrain_type_alchemy_elixir_rubedo = { }
+KoM_terrain_type_alchemy_elixir_rubedo_effect = { }
+KoM_terrain_type_alchemy_homunculi = { }
+KoM_terrain_type_alchemy_homunculi_effect = { }
 ##########################
-KoM_terrain_type_alchemy_elixir_vitae = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_elixir_vitae_effect = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_aurum_astralis = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_aurum_astralis_effect = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_the_philosophers_stone = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
-KoM_terrain_type_alchemy_the_philosophers_stone_effect = {
-	color = { 220 45 120 }
-	travel_danger_color = hsv { 0.16 0.7 0.8 }
-	travel_danger_score = drylands_danger_value
-	province_modifier = { }
-	audio_parameter = 1.0
-}
+KoM_terrain_type_alchemy_elixir_vitae = { }
+KoM_terrain_type_alchemy_elixir_vitae_effect = { }
+KoM_terrain_type_alchemy_aurum_astralis = { }
+KoM_terrain_type_alchemy_aurum_astralis_effect = { }
+KoM_terrain_type_alchemy_the_philosophers_stone = { }
+KoM_terrain_type_alchemy_the_philosophers_stone_effect = { }
