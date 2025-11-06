@@ -57,7 +57,10 @@ KoM_spell_creator_open = {
 		}
 
 
-
+		var:KoM_spell_creator_spell ?= {
+			KoM_cleanup_spell_effect = yes
+		}
+		remove_variable = KoM_spell_creator_spell
 
 		KoM_create_empty_spell_effect = yes
 		set_variable = {
@@ -175,10 +178,6 @@ KoM_spell_creator_add_spell_action = {
 KoM_spell_creator_preview = {
 	effect = { 
 		if = {
-			limit = { var:KoM_spell_creator_spell.var:declaration ?= flag:persona }
-			save_scope_as = spell_target
-		}
-		if = {
 			limit = { var:KoM_spell_creator_spell.var:declaration ?= flag:res }
 			if = {
 				limit = { has_any_artifact = yes }
@@ -188,19 +187,24 @@ KoM_spell_creator_preview = {
 				random_artifact = { save_scope_as = spell_target }
 			}
 		}
-		if = {
+		else_if = {
 			limit = { var:KoM_spell_creator_spell.var:declaration ?= flag:locus }
 			location = {
 				county = { save_scope_as = spell_target }
 			}
 		}
+		else = { save_scope_as = spell_target }
 		KoM_execute_spell_effect = { TARGET = scope:spell_target SPELL = var:KoM_spell_creator_spell } 
 	}
 }
 
 KoM_spell_creator_clear_spell_actions = {
 	effect = {
-		var:KoM_spell_creator_spell ?= { clear_variable_list = spell_actions }
+		var:KoM_spell_creator_spell ?= { 
+			KoM_cleanup_spell_actions_effect = yes
+			clear_variable_list = spell_actions 
+			trigger_event = { on_action = KoM_thaumaturgy_calculate_difficulty }
+		}
 	}
 }
 

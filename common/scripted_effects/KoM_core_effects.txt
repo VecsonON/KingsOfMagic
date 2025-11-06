@@ -55,12 +55,18 @@
 	}
 }
 
+KoM_error_suppression_unused = {
+	if = { limit = { always = no } if = { limit = { this = $VAR$ } } }
+}
 KoM_error_suppression_unused_flag = {
-	if = { limit = { always = no } if = { limit = { this = flag:$FLAG$ } } }
+	KoM_error_suppression_unused = { VAR = flag:$FLAG$ }
+}
+KoM_save_tooltip_custom = {
+	save_scope_value_as = { name = $NAME$ value = $LOC$ }
+	KoM_error_suppression_unused = { VAR = $LOC$ }
 }
 KoM_save_tooltip = {
-	save_scope_value_as = { name = saved_tooltip value = flag:$LOC$ }
-	KoM_error_suppression_unused_flag = { FLAG = $LOC$ }
+	KoM_save_tooltip_custom = { NAME = saved_tooltip LOC = flag:$LOC$ }
 }
 KoM_calculate_time_effect = {
 	save_scope_value_as = {

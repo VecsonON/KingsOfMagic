@@ -147,6 +147,46 @@ KoM_on_artifact_changed_owner = {
 	}
 }
 
+KoM_thaumaturgy_calculate_difficulty = {
+	effect = {
+		save_scope_value_as = {
+			name = difficulty
+			value = {
+				value = 1
+				every_in_list = {
+					variable = spell_actions
+					switch = {
+						trigger = var:action_name
+						flag:recuperare = { add = 1 }
+						flag:claritudo = { add = 2 }
+						flag:sarcio = { add = 3 }
+						flag:damnum = { add = 3 }
+						flag:celeritas = { add = 3 }
+						flag:fortitudo = { add = 3 }
+						flag:stabilitas = { add = 3 }
+						flag:opinio = { add = 4 }
+						flag:anima = { add = 4 }
+						flag:scientia = { add = 5 }
+						flag:melius = { add = 5 }
+						flag:peius = { add = 5 }
+
+						flag:duo = { add = 5 }
+						flag:tres = { add = 15 }
+					}
+				}
+				switch = {
+					trigger = var:confirmation
+					flag:voluntas = { multiply = 0.8 }
+					flag:nuntius = { multiply = 1 }
+					flag:angelus = { multiply = 1.25 }
+					flag:deus = { multiply = 1.5 }
+				}
+			}
+		}
+		set_variable = { name = spell_difficulty value = scope:difficulty }
+	}
+}
+
 KoM_alchemy_material_refresh = {
 	effect = {
 		remove_variable = KoM_alchemic_materials_refresh

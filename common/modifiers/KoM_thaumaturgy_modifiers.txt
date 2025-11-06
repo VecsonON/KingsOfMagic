@@ -1,0 +1,21 @@
+﻿KoM_recuperare_persona_tier_1_modifier = { icon = health_positive stacking = yes negate_health_penalty_add = 0.25 }
+KoM_recuperare_persona_tier_2_modifier = { icon = health_positive stacking = yes negate_health_penalty_add = 0.5 }
+KoM_recuperare_persona_tier_3_modifier = { icon = health_positive stacking = yes negate_health_penalty_add = 0.75 }
+KoM_recuperare_persona_tier_4_modifier = { icon = health_positive stacking = yes negate_health_penalty_add = 1 }
+KoM_recuperare_locus_tier_1_modifier = { icon = county_modifier_development_positive stacking = yes development_decline_factor = -0.05 }
+KoM_recuperare_locus_tier_2_modifier = { icon = county_modifier_development_positive stacking = yes development_decline_factor = -0.1 }
+KoM_recuperare_locus_tier_3_modifier = { icon = county_modifier_development_positive stacking = yes development_decline_factor = -0.15 }
+KoM_recuperare_locus_tier_4_modifier = { icon = county_modifier_development_positive stacking = yes development_decline_factor = -0.2 }
+
+KoM_claritudo_persona_tier_1_modifier = { icon = learning_positive stacking = yes monthly_lifestyle_xp_gain_mult = 0.05 }
+KoM_claritudo_persona_tier_2_modifier = { icon = learning_positive stacking = yes monthly_lifestyle_xp_gain_mult = 0.1 }
+KoM_claritudo_persona_tier_3_modifier = { icon = learning_positive stacking = yes monthly_lifestyle_xp_gain_mult = 0.15 }
+KoM_claritudo_persona_tier_4_modifier = { icon = learning_positive stacking = yes monthly_lifestyle_xp_gain_mult = 0.2 }
+KoM_claritudo_res_tier_1_modifier = { icon = prestige_positive stacking = yes monthly_prestige = 0.02 }
+KoM_claritudo_res_tier_2_modifier = { icon = prestige_positive stacking = yes monthly_prestige = 0.04 }
+KoM_claritudo_res_tier_3_modifier = { icon = prestige_positive stacking = yes monthly_prestige = 0.06 }
+KoM_claritudo_res_tier_4_modifier = { icon = prestige_positive stacking = yes monthly_prestige = 0.08 }
+KoM_claritudo_locus_tier_1_modifier = { icon = county_modifier_development_positive stacking = yes development_growth_factor = 0.05 }
+KoM_claritudo_locus_tier_2_modifier = { icon = county_modifier_development_positive stacking = yes development_growth_factor = 0.1 }
+KoM_claritudo_locus_tier_3_modifier = { icon = county_modifier_development_positive stacking = yes development_growth_factor = 0.15 }
+KoM_claritudo_locus_tier_4_modifier = { icon = county_modifier_development_positive stacking = yes development_growth_factor = 0.2 }

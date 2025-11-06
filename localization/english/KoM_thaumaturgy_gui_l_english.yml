@@ -18,5 +18,6 @@
 
  KoM_thaumaturgy_creator_declaration: "$KoM_thaumaturgy_declaration$: [SelectLocalization(GetPlayer.MakeScope.Var('KoM_spell_creator_spell').Story.MakeScope.Var('declaration').IsSet, Localize(Concatenate('KoM_thaumaturgy_',GetPlayer.MakeScope.Var('KoM_spell_creator_spell').Story.MakeScope.Var('declaration').GetFlagName)), 'None')]"
  KoM_thaumaturgy_creator_confirmation: "$KoM_thaumaturgy_confirmation$: [SelectLocalization(GetPlayer.MakeScope.Var('KoM_spell_creator_spell').Story.MakeScope.Var('confirmation').IsSet, Localize(Concatenate('KoM_thaumaturgy_',GetPlayer.MakeScope.Var('KoM_spell_creator_spell').Story.MakeScope.Var('confirmation').GetFlagName)), 'None')]"
+ KoM_thaumaturgy_creator_difficulty: "$KoM_thaumaturgy_spell_difficulty$: [GetPlayer.MakeScope.Var('KoM_spell_creator_spell').Story.MakeScope.Var('spell_difficulty').GetValue|0]"
 
  KoM_can_cast_spell_trigger_incorrect_declaration: "This [KoM_spell|E] uses $KoM_thaumaturgy_declaration$ incompatible with this target! #weak [Localize(Concatenate('KoM_thaumaturgy_',SCOPE.GetFlagName('declaration_given')))] where needed is [Localize(Concatenate('KoM_thaumaturgy_',spell.MakeScope.Var('declaration').GetFlagName))]#!"

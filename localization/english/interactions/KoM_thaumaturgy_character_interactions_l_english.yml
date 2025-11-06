@@ -5,6 +5,7 @@
  KoM_thaumaturgy_interaction_desc: "Use your knowledge of [KoM_thaumaturgy|E] to perform [KoM_magick|E]"
  KoM_thaumaturgy_interaction_create_spell: "Open [KoM_spell|E] Creator"
  KoM_thaumaturgy_interaction_remove_spell: "Delete selected [KoM_spell|E]"
+ KoM_thaumaturgy_interaction_create_spell_req: "You have used all #bold 7#! [KoM_spell|E] slots!"
 
  KoM_thaumaturgy_interaction_spell_number1: "[KoMGetSpellName(GetPlayer.MakeScope.Var('KoM_saved_spell_1'))]"
  KoM_thaumaturgy_interaction_spell_number2: "[KoMGetSpellName(GetPlayer.MakeScope.Var('KoM_saved_spell_2'))]"

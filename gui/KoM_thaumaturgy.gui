@@ -93,6 +93,12 @@
 									default_format = "#medium"
 									using = Font_Size_Medium
 								}
+								text_single = {
+									layoutpolicy_horizontal = expanding
+									text = "KoM_thaumaturgy_creator_difficulty"
+									default_format = "#medium"
+									using = Font_Size_Medium
+								}
 							}
 
 							spacer = { size = { 0 10 } }
@@ -126,16 +132,18 @@
 							hbox = {
 								layoutpolicy_horizontal = expanding
 								scrollbox = {
-									size = { 400 400 }
+									size = { 400 385 }
 									layoutpolicy_vertical = expanding
 									layoutpolicy_horizontal = expanding
 									blockoverride "scrollbox_content" {
 										vbox = {
+											layoutpolicy_horizontal = expanding
 											text_multi = {
 												layoutpolicy_horizontal = expanding
 												layoutpolicy_vertical = expanding
 												margin = { 5 5 }
 												autoresize = yes
+												max_width = 400
 												text = "[GetScriptedGui('KoM_spell_creator_preview').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 												align = left
 											}
