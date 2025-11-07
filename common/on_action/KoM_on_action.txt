@@ -88,6 +88,17 @@ KoM_monthly_playable_pulse = {
 	}
 }
 
+on_death = {
+	on_actions = { KoM_on_death }
+}
+
+KoM_on_death = {
+	effect = {
+		KoM_pass_saved_spells_effect = { HEIR = primary_heir }
+		KoM_pass_alchemical_materials_effect = { HEIR = primary_heir }
+	}
+}
+
 KoM_completed_rite = {
 	effect = {
 		switch = {
@@ -162,13 +173,13 @@ KoM_thaumaturgy_calculate_difficulty = {
 						flag:sarcio = { add = 3 }
 						flag:damnum = { add = 3 }
 						flag:celeritas = { add = 3 }
-						flag:fortitudo = { add = 3 }
-						flag:stabilitas = { add = 3 }
-						flag:opinio = { add = 4 }
-						flag:anima = { add = 4 }
+						flag:fortitudo = { add = 4 }
+						flag:stabilitas = { add = 4 }
+						flag:opinio = { add = 5 }
+						flag:anima = { add = 5 }
 						flag:scientia = { add = 5 }
-						flag:melius = { add = 5 }
-						flag:peius = { add = 5 }
+						flag:melius = { add = 10 }
+						flag:peius = { add = 10 }
 
 						flag:duo = { add = 5 }
 						flag:tres = { add = 15 }

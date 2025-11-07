@@ -80,14 +80,17 @@ KoM_spell_creator_close = {
 }
 
 KoM_spell_creator_select_declaration = {
+	saved_scopes = { declaration }
 	effect = { KoM_select_spell_declaration_effect = { SPELL = var:KoM_spell_creator_spell DECLARATION = scope:declaration } }
 }
 
 KoM_spell_creator_select_confirmation = {
+	saved_scopes = { confirmation }
 	effect = { KoM_select_spell_confirmation_effect = { SPELL = var:KoM_spell_creator_spell CONFIRMATION = scope:confirmation } }
 }
 
 KoM_spell_creator_add_spell_action = {
+	saved_scopes = { spell_action }
 	is_valid = {
 		save_temporary_scope_value_as = {
 			name = num_of_actions

@@ -173,6 +173,7 @@ KoM_can_cast_spell_trigger = {
 			switch = {
 				trigger = var:action_name
 				flag:recuperare = {  }
+				fallback = {}
 			}
 		}
 	}

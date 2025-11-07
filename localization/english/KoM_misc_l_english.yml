@@ -43,3 +43,7 @@
  
  KoM_has_above_alchemic_material_trigger: "You need at least [SCOPE.GetValue('saved_number')|0V] [Localize(SCOPE.GetFlagName('saved_tooltip'))]"
  KoM_has_alchemic_potion_trigger: "You need at least 1 [Localize(SCOPE.GetFlagName('saved_tooltip'))]"
+
+ KoM_increase_durability_effect: "Increase max durability of [ARTIFACT.GetName] by $VALUE|P0$."
+ KoM_spell_while_effect: "This will happen [SCOPE.GetValue('saved_number')|0V] times"
+ KoM_give_modifier_based_on_type_tooltip: "This modifier changes depending on the artifact's type"

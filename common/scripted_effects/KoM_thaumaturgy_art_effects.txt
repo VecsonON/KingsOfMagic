@@ -17,9 +17,9 @@
 			make_unprunable = yes
 		}
 		scope:temp_spell = {
-			set_variable = KoM_spell
 			set_variable = { name = assigned_character value = scope:KoM_eternal_character }
 			set_variable = { name = spell_difficulty value = 1 }
+			if = { limit = { var:assigned_character ?= ROOT } }
 		}
 	}
 }
@@ -57,6 +57,15 @@ KoM_remove_spell_from_spell_list_effect = {
 	remove_variable = KoM_saved_spell_$NUMBER$
 }
 KoM_execute_spell_from_number_effect = { KoM_execute_spell_effect = { TARGET = $TARGET$ SPELL = var:KoM_saved_spell_$NUMBER$ } }
+KoM_pass_saved_spells_effect = {
+	if = { limit = { has_variable = KoM_saved_spell_1 } $HEIR$ = { KoM_add_spell_to_list_effect = { SPELL = PREV.var:KoM_saved_spell_1 } } }
+	if = { limit = { has_variable = KoM_saved_spell_2 } $HEIR$ = { KoM_add_spell_to_list_effect = { SPELL = PREV.var:KoM_saved_spell_2 } } }
+	if = { limit = { has_variable = KoM_saved_spell_3 } $HEIR$ = { KoM_add_spell_to_list_effect = { SPELL = PREV.var:KoM_saved_spell_3 } } }
+	if = { limit = { has_variable = KoM_saved_spell_4 } $HEIR$ = { KoM_add_spell_to_list_effect = { SPELL = PREV.var:KoM_saved_spell_4 } } }
+	if = { limit = { has_variable = KoM_saved_spell_5 } $HEIR$ = { KoM_add_spell_to_list_effect = { SPELL = PREV.var:KoM_saved_spell_5 } } }
+	if = { limit = { has_variable = KoM_saved_spell_6 } $HEIR$ = { KoM_add_spell_to_list_effect = { SPELL = PREV.var:KoM_saved_spell_6 } } }
+	if = { limit = { has_variable = KoM_saved_spell_7 } $HEIR$ = { KoM_add_spell_to_list_effect = { SPELL = PREV.var:KoM_saved_spell_7 } } }
+}
 
 KoM_cleanup_spell_effect = {
 	KoM_cleanup_spell_actions_effect = yes
@@ -80,28 +89,31 @@ KoM_execute_spell_effect = {
 		100 = {
 			compare_modifier = { value = scope:duel_value multiplier = high_positive_duel_skill_multiplier }
 			modifier = { add = KoM_thaumaturgy_xp }
-			scope:spell = {
-				if = {
-					limit = { exists = var:declaration exists = var:confirmation }
-					every_in_list = {
-						variable = spell_actions
-						switch = {
-							trigger = var:action_name
-							flag:recuperare = { KoM_spell_action_recuperare_effect = yes }
-							flag:claritudo = { KoM_spell_action_claritudo_effect = yes }
-							flag:sarcio = {  }
-							flag:damnum = {  }
-							flag:celeritas = {  }
-							flag:fortitudo = {  }
-							flag:stabilitas = {  }
-							flag:opinio = {  }
-							flag:anima = {  }
-							flag:scientia = {  }
-							flag:melius = {  }
-							flag:peius = {  }
+			send_interface_message = {
+				title = KoM_execute_spell_success_effect
+				scope:spell = {
+					if = {
+						limit = { exists = var:declaration exists = var:confirmation }
+						every_in_list = {
+							variable = spell_actions
+							switch = {
+								trigger = var:action_name
+								flag:recuperare = { KoM_spell_action_recuperare_effect = yes }
+								flag:claritudo = { KoM_spell_action_claritudo_effect = yes }
+								flag:sarcio = { KoM_spell_action_sarcio_effect = yes }
+								flag:damnum = { KoM_spell_action_damnum_effect = yes }
+								flag:celeritas = { KoM_spell_action_celeritas_effect = yes }
+								flag:fortitudo = { KoM_spell_action_fortitudo_effect = yes }
+								flag:stabilitas = { KoM_spell_action_stabilitas_effect = yes }
+								flag:opinio = { KoM_spell_action_opinio_effect = yes }
+								flag:anima = { KoM_spell_action_anima_effect = yes }
+								flag:scientia = { KoM_spell_action_scientia_effect = yes }
+								flag:melius = { KoM_spell_action_melius_effect = yes }
+								flag:peius = { KoM_spell_action_peius_effect = yes }
 
-							flag:duo = {  }
-							flag:tres = {  }
+								flag:duo = { custom_tooltip = KoM_thaumaturgy_duo_effect }
+								flag:tres = { custom_tooltip = KoM_thaumaturgy_tres_effect }
+							}
 						}
 					}
 				}
@@ -109,6 +121,7 @@ KoM_execute_spell_effect = {
 		}
 		100 = {
 			compare_modifier = { value = scope:duel_value multiplier = low_negative_duel_skill_multiplier }
+			send_interface_message = { title = KoM_execute_spell_failure_effect }
 		}
 	}
 }
@@ -167,6 +180,73 @@ KoM_spell_save_scale_effect = {
 		}
 	}
 }
+KoM_spell_save_action_number_effect = {
+	scope:spell = {
+		save_scope_value_as = {
+			name = $ACTION$_num
+			value = {
+				value = 0
+				every_in_list = {
+					variable = spell_actions
+					limit = { var:action_name = flag:$ACTION$ }
+					add = 1
+				}
+			}
+		}
+	}
+}
+KoM_spell_while_effect = {
+	save_scope_value_as = { name = saved_number value = $NUM$ }
+	custom_tooltip = {
+		text = KoM_spell_while_effect
+		while = {
+			count = $NUM$
+			$EFFECT$
+		}
+	}
+	show_as_tooltip = { $EFFECT$ }
+}
+KoM_spell_overload_add_modifier = {
+	if = { limit = { scope:$ACTION$_num >= 2 }
+		save_scope_value_as = {
+			name = while_num
+			value = {
+				value = scope:$ACTION$_num
+				add = -1
+			}
+		}
+		# KoM_spell_while_effect = {
+		# 	NUM = scope:while_num
+		# 	EFFECT = "KoM_add_confirmation_modifier_effect = { TYPE = $TYPE$ MODIFIER = $MODIFIER$ YEARS = $YEARS$ }"
+		# }
+		save_scope_value_as = { name = saved_number value = scope:while_num }
+		custom_tooltip = {
+			text = KoM_spell_while_effect
+			while = {
+				count = scope:while_num
+				KoM_add_confirmation_modifier_effect = { TYPE = $TYPE$ MODIFIER = $MODIFIER$_overload YEARS = $YEARS$ }
+			}
+		}
+		show_as_tooltip = { KoM_add_confirmation_modifier_effect = { TYPE = $TYPE$ MODIFIER = $MODIFIER$_overload YEARS = $YEARS$ } }
+	}
+}
+
+# KoM_spell_action_$ID$_effect = {
+# 	scope:spell_target = {
+# 		if = {
+# 			limit = { scope:spell.var:declaration = flag:persona }
+# 			$PERSONA EFFECT$
+# 		}
+# 		if = {
+# 			limit = { scope:spell.var:declaration = flag:res }
+# 			$RES EFFECT$
+# 		}
+# 		if = {
+# 			limit = { scope:spell.var:declaration = flag:locus }
+# 			every_de_jure_county = { $LOCUS EFFECT$ }
+# 		}
+# 	}
+# }
 
 KoM_spell_action_recuperare_effect = {
 	scope:spell_target = {
@@ -202,6 +282,506 @@ KoM_spell_action_claritudo_effect = {
 		if = {
 			limit = { scope:spell.var:declaration = flag:locus }
 			every_de_jure_county = { KoM_add_confirmation_modifier_effect = { TYPE = county MODIFIER = KoM_claritudo_locus YEARS = 6 } }
+		}
+	}
+}
+KoM_spell_action_sarcio_effect = {
+	scope:spell_target = {
+		KoM_spell_save_scale_effect = yes
+		if = {
+			limit = { scope:spell.var:declaration = flag:persona }
+			if = {
+				limit = { NOT = { exists = scope:already_done_sarcio } }
+				switch = {
+					trigger = scope:scaling
+					1 = { custom_tooltip = KoM_thaumaturgy_sarcio_effect_tier_1 }
+					2 = { custom_tooltip = KoM_thaumaturgy_sarcio_effect_tier_2 }
+					3 = { custom_tooltip = KoM_thaumaturgy_sarcio_effect_tier_3 }
+					4 = { custom_tooltip = KoM_thaumaturgy_sarcio_effect_tier_4 }
+				}
+				if = { limit = { has_trait = wounded_1 scope:scaling >= 1 } remove_trait = wounded_1 }
+				if = { limit = { has_trait = scarred scope:scaling >= 1 } remove_trait = scarred }
+				if = { limit = { has_trait = ill scope:scaling >= 1 } recover_from_disease_effect = { DISEASE = ill } }
+
+				if = { limit = { has_trait = wounded_2 scope:scaling >= 2 } remove_trait = wounded_2 add_trait = wounded_1 }
+				if = { limit = { has_trait = impotent scope:scaling >= 3 } remove_trait = impotent }
+				if = { limit = { has_trait = disfigured scope:scaling >= 2 } remove_trait = disfigured }
+				if = { limit = { has_trait = pneumonic scope:scaling >= 2 } recover_from_disease_effect = { DISEASE = pneumonic } }
+				if = { limit = { has_trait = early_great_pox scope:scaling >= 2 } recover_from_disease_effect = { DISEASE = early_great_pox } }
+
+				if = { limit = { has_trait = wounded_3 scope:scaling >= 3 } remove_trait = wounded_3 add_trait = wounded_2 }
+				if = { limit = { has_trait = infirm scope:scaling >= 3 } remove_trait = infirm }
+				if = { limit = { has_trait = consumption scope:scaling >= 3 } recover_from_disease_effect = { DISEASE = consumption } }
+				if = { limit = { has_trait = great_pox scope:scaling >= 3 } recover_from_disease_effect = { DISEASE = great_pox } }
+				if = { limit = { has_trait = gout_ridden scope:scaling >= 3 } recover_from_disease_effect = { DISEASE = gout_ridden } }
+				if = { limit = { has_trait = dysentery scope:scaling >= 3 } recover_from_disease_effect = { DISEASE = dysentery } }
+				if = { limit = { has_trait = leper scope:scaling >= 3 } recover_from_disease_effect = { DISEASE = leper } }
+				if = { limit = { has_trait = lovers_pox scope:scaling >= 3 } recover_from_disease_effect = { DISEASE = lovers_pox } }
+				if = { limit = { has_trait = ergotism scope:scaling >= 3 } recover_from_disease_effect = { DISEASE = ergotism } }
+
+				if = { limit = { has_trait = maimed scope:scaling >= 4 } remove_trait = maimed }
+				if = { limit = { has_trait = one_legged scope:scaling >= 4 } remove_trait = one_legged }
+				if = { limit = { has_trait = eunuch_1 scope:scaling >= 4 } remove_trait = eunuch_1 }
+				if = { limit = { has_trait = one_eyed scope:scaling >= 4 } remove_trait = one_eyed }
+				if = { limit = { has_trait = blind scope:scaling >= 4 } remove_trait = blind add_trait = one_eyed }
+				if = { limit = { has_trait = incapable scope:scaling >= 4 } remove_trait = incapable }
+				if = { limit = { has_trait = cancer scope:scaling >= 4 } recover_from_disease_effect = { DISEASE = cancer } }
+				if = { limit = { has_trait = smallpox scope:scaling >= 4 } recover_from_disease_effect = { DISEASE = smallpox } }
+				if = { limit = { has_trait = typhus scope:scaling >= 4 } recover_from_disease_effect = { DISEASE = typhus } }
+				if = { limit = { has_trait = bubonic_plague scope:scaling >= 4 } recover_from_disease_effect = { DISEASE = bubonic_plague } }
+				if = { limit = { has_trait = measles scope:scaling >= 4 } recover_from_disease_effect = { DISEASE = measles } }
+
+				KoM_remove_modifier_effect = { TYPE = character MODIFIER = infected_wound_modifier }
+				KoM_remove_modifier_effect = { TYPE = character MODIFIER = gangrene_modifier }
+				remove_disease_treatment_effect = yes
+
+				KoM_spell_save_action_number_effect = { ACTION = sarcio }
+				KoM_spell_overload_add_modifier = { ACTION = sarcio TYPE = character MODIFIER = KoM_sarcio_persona YEARS = 5 }
+				save_scope_as = already_done_sarcio
+			}
+
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:res }
+			save_scope_value_as = {
+				name = durability_gain
+				value = {
+					value = scope:scaling
+					multiply = 3
+				}
+			}
+			KoM_increase_durability_effect = { VALUE = scope:durability_gain }
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:locus }
+			every_de_jure_county = { KoM_add_confirmation_modifier_effect = { TYPE = county MODIFIER = KoM_sarcio_locus YEARS = 5 } }
+		}
+	}
+}
+KoM_spell_action_damnum_effect = {
+	KoM_spell_save_action_number_effect = { ACTION = damnum }
+	scope:spell_target = {
+		KoM_spell_save_scale_effect = yes
+		if = {
+			limit = { scope:spell.var:declaration = flag:persona }
+			if = {
+				limit = { NOT = { exists = scope:already_done_damnum } }
+				if = { limit = { scope:scaling >= 1 } increase_wounds_no_death_effect = { REASON = fight } }
+				if = { limit = { scope:scaling >= 2 } increase_wounds_no_death_effect = { REASON = fight } }
+				if = { limit = { scope:scaling >= 3 } increase_wounds_no_death_effect = { REASON = fight } }
+				if = { limit = { scope:scaling >= 4 } maimed_in_battle_effect = yes }
+
+				KoM_spell_overload_add_modifier = { ACTION = damnum TYPE = character MODIFIER = KoM_damnum_persona YEARS = 5 }
+				save_scope_as = already_done_damnum
+			}
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:res }
+			save_scope_value_as = {
+				name = durability_gain
+				value = { value = scope:scaling multiply = -4 }
+			}
+			add_durability = scope:durability_gain
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:locus }
+			every_de_jure_county = { KoM_add_confirmation_modifier_effect = { TYPE = county MODIFIER = KoM_damnum_locus YEARS = 5 } }
+		}
+	}
+}
+KoM_spell_action_celeritas_effect = {
+	KoM_spell_save_action_number_effect = { ACTION = celeritas }
+	scope:spell_target = {
+		KoM_spell_save_scale_effect = yes
+		if = {
+			limit = { scope:spell.var:declaration = flag:persona }
+			KoM_add_confirmation_modifier_effect = { TYPE = character MODIFIER = KoM_celeritas_persona YEARS = 6 }
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:res }
+			if = {
+				limit = { NOT = { exists = scope:applied_durability } }
+				save_scope_value_as = {
+					name = durability_gain
+					value = {
+						value = -30
+						add = {
+							value = scope:scaling
+							multiply = 4
+							multiply = scope:celeritas_num
+						}
+						max = 0
+					}
+				}
+				add_durability = scope:durability_gain
+				save_scope_as = applied_durability
+			}
+			set_owner = {
+				target = scope:caster
+				history = {
+					location = scope:spell_target.artifact_owner.location
+					actor = scope:spell_target
+					recipient = scope:spell_target.artifact_owner
+					type = stolen
+				}
+			}
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:locus }
+			every_de_jure_county = { KoM_add_confirmation_modifier_effect = { TYPE = county MODIFIER = KoM_celeritas_locus YEARS = 5 } }
+		}
+	}
+}
+KoM_spell_action_fortitudo_effect = {
+	scope:spell_target = {
+		if = {
+			limit = { scope:spell.var:declaration = flag:persona }
+			KoM_add_confirmation_modifier_effect = { TYPE = character MODIFIER = KoM_fortitudo_persona YEARS = 5 }
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:res }
+			KoM_add_confirmation_modifier_effect = { TYPE = artifact MODIFIER = KoM_fortitudo_res YEARS = 0 }
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:locus }
+			every_de_jure_county = { KoM_add_confirmation_modifier_effect = { TYPE = county MODIFIER = KoM_fortitudo_locus YEARS = 6 } }
+		}
+	}
+}
+KoM_spell_action_stabilitas_effect = {
+	scope:spell_target = {
+		if = {
+			limit = { scope:spell.var:declaration = flag:persona }
+			KoM_spell_save_scale_effect = yes
+			save_scope_value_as = {
+				name = stress_gain
+				value = { value = scope:scaling multiply = -10 }
+			}
+			add_stress = scope:stress_gain
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:res }
+			KoM_add_confirmation_modifier_effect = { TYPE = artifact MODIFIER = KoM_stabilitas_res YEARS = 0 }
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:locus }
+			every_de_jure_county = { KoM_add_confirmation_modifier_effect = { TYPE = county MODIFIER = KoM_stabilitas_locus YEARS = 6 } }
+		}
+	}
+}
+KoM_spell_action_opinio_effect = {
+	scope:spell_target = {
+		if = {
+			limit = { scope:spell.var:declaration = flag:persona }
+			KoM_add_confirmation_modifier_effect = { TYPE = character MODIFIER = KoM_opinio_persona YEARS = 5 }
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:res }
+			KoM_add_confirmation_modifier_effect = { TYPE = artifact MODIFIER = KoM_opinio_res YEARS = 0 }
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:locus }
+			every_de_jure_county = { KoM_add_confirmation_modifier_effect = { TYPE = county MODIFIER = KoM_opinio_locus YEARS = 6 } }
+		}
+	}
+}
+KoM_spell_action_anima_effect = {
+	scope:spell_target = {
+		if = {
+			limit = { scope:spell.var:declaration = flag:persona }
+			KoM_add_confirmation_modifier_effect = { TYPE = character MODIFIER = KoM_anima_persona YEARS = 5 }
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:res }
+			KoM_add_confirmation_modifier_effect = { TYPE = artifact MODIFIER = KoM_anima_res YEARS = 0 }
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:locus }
+			every_de_jure_county = { KoM_add_confirmation_modifier_effect = { TYPE = county MODIFIER = KoM_anima_locus YEARS = 6 } }
+		}
+	}
+}
+KoM_spell_action_scientia_effect = {
+	scope:spell_target = {
+		if = {
+			limit = { scope:spell.var:declaration = flag:persona }
+			KoM_add_confirmation_modifier_effect = { TYPE = character MODIFIER = KoM_scientia_persona YEARS = 5 }
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:res }
+			KoM_add_confirmation_modifier_effect = { TYPE = artifact MODIFIER = KoM_scientia_res YEARS = 0 }
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:locus }
+			KoM_spell_save_scale_effect = yes
+			save_scope_value_as = {
+				name = development_add
+				value = {
+					value = scope:scaling
+					multiply = 2
+				}
+			}
+			every_de_jure_county = { change_development_progress_with_overflow = scope:development_add }
+		}
+	}
+}
+KoM_spell_action_melius_effect = {
+	KoM_spell_save_scale_effect = yes
+	scope:spell_target = {
+		if = {
+			limit = { scope:spell.var:declaration = flag:persona }
+			if = {
+				limit = { NOT = { exists = scope:already_done_melius } }
+				if = { limit = { scope:scaling >= 1 }
+					random_list = {
+						1 = { trigger = { NOT = { has_trait = strong } } add_trait = strong }
+						1 = { trigger = { NOT = { has_trait = shrewd } } add_trait = shrewd }
+						1 = { trigger = { NOT = { has_trait = pure_blooded } } add_trait = pure_blooded }
+						1 = { trigger = { NOT = { has_trait = fecund } } add_trait = fecund }
+						1 = { trigger = { has_trait = clubfooted } remove_trait = clubfooted }
+						1 = { trigger = { has_trait = hunchbacked } remove_trait = hunchbacked }
+						1 = { trigger = { has_trait = lisping } remove_trait = lisping }
+						1 = { trigger = { has_trait = stuttering } remove_trait = stuttering }
+						1 = { trigger = { has_trait = inbred } remove_trait = inbred }
+						1 = { trigger = { has_trait = weak } remove_trait = weak }
+						1 = { trigger = { has_trait = dull } remove_trait = dull }
+						1 = { trigger = { has_trait = impotent } remove_trait = impotent }
+						1 = { trigger = { has_trait = spindly } remove_trait = spindly }
+						1 = { trigger = { has_trait = scaly } remove_trait = scaly }
+						1 = { trigger = { has_trait = wheezing } remove_trait = wheezing }
+						1 = { trigger = { has_trait = bleeder } remove_trait = bleeder }
+						1 = { trigger = { has_trait = infertile } remove_trait = infertile }
+					}
+				}
+				if = { limit = { scope:scaling >= 2 }
+					random_list = {
+						1 = {
+							trigger = { has_trait = beauty_bad }
+							change_trait_rank = { trait = beauty_bad rank = -1 }
+						}
+						1 = {
+							trigger = { NOT = { has_trait = beauty_bad has_trait = beauty_good_3 } }
+							change_trait_rank = { trait = beauty_good rank = 1 }
+						}
+					}
+				}
+				if = { limit = { scope:scaling >= 3 }
+					random_list = {
+						1 = {
+							trigger = { has_trait = physique_bad }
+							change_trait_rank = { trait = physique_bad rank = -1 }
+						}
+						1 = {
+							trigger = { NOT = { has_trait = physique_bad has_trait = physique_good_3 } }
+							change_trait_rank = { trait = physique_good rank = 1 }
+						}
+					}
+				}
+				if = { limit = { scope:scaling >= 4 }
+					random_list = {
+						1 = {
+							trigger = { has_trait = intellect_bad }
+							change_trait_rank = { trait = intellect_bad rank = -1 }
+						}
+						1 = {
+							trigger = { NOT = { has_trait = intellect_bad has_trait = intellect_good_3 } }
+							change_trait_rank = { trait = intellect_good rank = 1 }
+						}
+					}
+				}
+
+				KoM_spell_save_action_number_effect = { ACTION = melius }
+				if = {
+					limit = { scope:melius_num >= 2 }
+					random_list = {
+						10 = { give_random_commander_trait_effect = yes }
+						20 = {
+							modifier = { trigger = { scope:scaling >= 2 } add = -10 }
+							modifier = { trigger = { scope:scaling >= 3 } add = -6 }
+							modifier = { trigger = { scope:scaling >= 4 } add = -3 }
+						}
+					}
+				}
+				if = {
+					limit = { scope:melius_num >= 3 }
+					random_list = {
+						10 = { 
+							trigger = { has_education_rank_5_trigger = no }
+							random_list = {
+								1 = { trigger = { has_trait = education_diplomacy } change_trait_rank = { trait = education_diplomacy rank = 1 } }
+								1 = { trigger = { has_trait = education_martial } change_trait_rank = { trait = education_martial rank = 1 } }
+								1 = { trigger = { has_trait = education_stewardship } change_trait_rank = { trait = education_stewardship rank = 1 } }
+								1 = { trigger = { has_trait = education_intrigue } change_trait_rank = { trait = education_intrigue rank = 1 } }
+								1 = { trigger = { has_trait = education_learning } change_trait_rank = { trait = education_learning rank = 1 } }
+							}
+						}
+						20 = {
+							modifier = { trigger = { scope:scaling >= 2 } add = -10 }
+							modifier = { trigger = { scope:scaling >= 3 } add = -6 }
+							modifier = { trigger = { scope:scaling >= 4 } add = -3 }
+						}
+					}
+
+				}
+
+				save_scope_as = already_done_melius
+			}
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:res }
+			KoM_spell_while_effect = {
+				NUM = scope:scaling
+				EFFECT = "KoM_give_positive_modifier_based_on_type = yes"
+			}
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:locus }
+			KoM_spell_while_effect = {
+				NUM = scope:scaling
+				EFFECT = "every_de_jure_county = { every_county_province = { limit = { has_holding = yes } generate_building = yes } }"
+			}
+		}
+	}
+}
+KoM_spell_action_peius_effect = {
+	scope:spell_target = {
+		KoM_spell_save_scale_effect = yes
+		if = {
+			limit = { scope:spell.var:declaration = flag:persona }
+			if = {
+				limit = { NOT = { exists = scope:already_done_peius } }
+				if = { limit = { scope:scaling >= 1 }
+					random_list = {
+						1 = { trigger = { NOT = { has_trait = clubfooted } } add_trait = clubfooted }
+						1 = { trigger = { NOT = { has_trait = hunchbacked } } add_trait = hunchbacked }
+						1 = { trigger = { NOT = { has_trait = lisping } } add_trait = lisping }
+						1 = { trigger = { NOT = { has_trait = stuttering } } add_trait = stuttering }
+						1 = { trigger = { NOT = { has_trait = inbred } } add_trait = inbred }
+						1 = { trigger = { NOT = { has_trait = weak } } add_trait = weak }
+						1 = { trigger = { NOT = { has_trait = dull } } add_trait = dull }
+						1 = { trigger = { NOT = { has_trait = impotent } } add_trait = impotent }
+						1 = { trigger = { NOT = { has_trait = spindly } } add_trait = spindly }
+						1 = { trigger = { NOT = { has_trait = scaly } } add_trait = scaly }
+						1 = { trigger = { NOT = { has_trait = wheezing } } add_trait = wheezing }
+						1 = { trigger = { NOT = { has_trait = bleeder } } add_trait = bleeder }
+						1 = { trigger = { NOT = { has_trait = infertile } } add_trait = infertile }
+						1 = { trigger = { has_trait = strong } remove_trait = strong }
+						1 = { trigger = { has_trait = shrewd } remove_trait = shrewd }
+						1 = { trigger = { has_trait = pure_blooded } remove_trait = pure_blooded }
+						1 = { trigger = { has_trait = fecund } remove_trait = fecund }
+					}
+				}
+				if = { limit = { scope:scaling >= 2 }
+					random_list = {
+						1 = {
+							trigger = { has_trait = beauty_good }
+							change_trait_rank = { trait = beauty_good rank = -1 }
+						}
+						1 = {
+							trigger = { NOT = { has_trait = beauty_good has_trait = beauty_bad_3 } }
+							change_trait_rank = { trait = beauty_bad rank = 1 }
+						}
+					}
+				}
+				if = { limit = { scope:scaling >= 3 }
+					random_list = {
+						1 = {
+							trigger = { has_trait = physique_good }
+							change_trait_rank = { trait = physique_good rank = -1 }
+						}
+						1 = {
+							trigger = { NOT = { has_trait = physique_good has_trait = physique_bad_3 } }
+							change_trait_rank = { trait = physique_bad rank = 1 }
+						}
+					}
+				}
+				if = { limit = { scope:scaling >= 4 }
+					random_list = {
+						1 = {
+							trigger = { has_trait = intellect_good }
+							change_trait_rank = { trait = intellect_good rank = -1 }
+						}
+						1 = {
+							trigger = { NOT = { has_trait = intellect_good has_trait = intellect_bad_3 } }
+							change_trait_rank = { trait = intellect_bad rank = 1 }
+						}
+					}
+				}
+
+				KoM_spell_save_action_number_effect = { ACTION = peius }
+				if = {
+					limit = { scope:peius_num >= 2 }
+					random_list = {
+						10 = { 
+							custom_tooltip = KoM_thaumaturgy_peius_effect_overload
+							random_list = {
+								1 = { trigger = { has_trait = logistician } remove_trait = logistician }
+								1 = { trigger = { has_trait = military_engineer } remove_trait = military_engineer }
+								1 = { trigger = { has_trait = aggressive_attacker } remove_trait = aggressive_attacker }
+								1 = { trigger = { has_trait = unyielding_defender } remove_trait = unyielding_defender }
+								1 = { trigger = { has_trait = forder } remove_trait = forder }
+								1 = { trigger = { has_trait = flexible_leader } remove_trait = flexible_leader }
+								1 = { trigger = { has_trait = desert_warrior } remove_trait = desert_warrior }
+								1 = { trigger = { has_trait = jungle_stalker } remove_trait = jungle_stalker }
+								1 = { trigger = { has_trait = winter_soldier } remove_trait = winter_soldier }
+								1 = { trigger = { has_trait = forest_fighter } remove_trait = forest_fighter }
+								1 = { trigger = { has_trait = open_terrain_expert } remove_trait = open_terrain_expert }
+								1 = { trigger = { has_trait = rough_terrain_expert } remove_trait = rough_terrain_expert }
+								1 = { trigger = { has_trait = reaver } remove_trait = reaver }
+								1 = { trigger = { has_trait = reckless } remove_trait = reckless }
+								1 = { trigger = { has_trait = holy_warrior } remove_trait = holy_warrior }
+								1 = { trigger = { has_trait = organizer } remove_trait = organizer }
+								1 = { trigger = { has_trait = cautious_leader } remove_trait = cautious_leader }
+							}	
+						}
+						20 = {
+							modifier = { trigger = { scope:scaling >= 2 } add = -10 }
+							modifier = { trigger = { scope:scaling >= 3 } add = -6 }
+							modifier = { trigger = { scope:scaling >= 4 } add = -3 }
+						}
+					}
+				}
+				if = {
+					limit = { scope:peius_num >= 3 }
+					random_list = {
+						10 = { 
+							trigger = { has_education_rank_1_trigger = no }
+							random_list = {
+								1 = { trigger = { has_trait = education_diplomacy } change_trait_rank = { trait = education_diplomacy rank = -1 } }
+								1 = { trigger = { has_trait = education_martial } change_trait_rank = { trait = education_martial rank = -1 } }
+								1 = { trigger = { has_trait = education_stewardship } change_trait_rank = { trait = education_stewardship rank = -1 } }
+								1 = { trigger = { has_trait = education_intrigue } change_trait_rank = { trait = education_intrigue rank = -1 } }
+								1 = { trigger = { has_trait = education_learning } change_trait_rank = { trait = education_learning rank = -1 } }
+							}
+						}
+						20 = {
+							modifier = { trigger = { scope:scaling >= 2 } add = -10 }
+							modifier = { trigger = { scope:scaling >= 3 } add = -6 }
+							modifier = { trigger = { scope:scaling >= 4 } add = -3 }
+						}
+					}
+
+				}
+				save_scope_as = already_done_peius
+			}
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:res }
+			KoM_spell_while_effect = {
+				NUM = scope:scaling
+				EFFECT = "KoM_give_negative_modifier_based_on_type = yes"
+			}
+		}
+		if = {
+			limit = { scope:spell.var:declaration = flag:locus }
+			save_scope_value_as = {
+				name = development_add
+				value = {
+					value = scope:scaling
+					multiply = -4
+				}
+			}
+			every_de_jure_county = { change_development_progress_with_overflow = scope:development_add }
 		}
 	}
 }

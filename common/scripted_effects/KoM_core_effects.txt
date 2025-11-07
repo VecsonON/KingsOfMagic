@@ -197,6 +197,52 @@ KoM_give_modifier_times_keep_count_effect = {
 	}
 	KoM_increase_or_set_variable_effect = { VAR = $VAR$ VAL = $COUNT$ }
 }
+KoM_increase_durability_effect = {
+	custom_description = {
+		text = KoM_increase_durability_effect
+		object = THIS
+		value = $VALUE$
+		set_max_durability = { value = { value = artifact_max_durability add = $VALUE$ } }
+	}
+}
+KoM_give_positive_modifier_based_on_type = {
+	switch = {
+		trigger = artifact_slot_type
+		helmet = { add_artifact_modifier = artifact_monthly_minor_prestige_4_modifier }
+		primary_armament = { add_artifact_modifier = artifact_prowess_1_modifier }
+		regalia = { add_artifact_modifier = artifact_vassal_limit_1_modifier }
+		armor = { add_artifact_modifier = artifact_negate_prowess_penalty_add_1_modifier }
+		miscellaneous = { add_artifact_modifier = artifact_monthly_minor_prestige_2_modifier }
+		wall_big = { add_artifact_modifier = artifact_monthly_minor_prestige_4_modifier }
+		wall_small = { add_artifact_modifier = artifact_monthly_minor_prestige_3_modifier }
+		throne = { add_artifact_modifier = artifact_court_grandeur_baseline_add_2_modifier }
+		sculpture = { add_artifact_modifier = artifact_court_grandeur_baseline_add_1_modifier }
+		book = { add_artifact_modifier = artifact_monthly_lifestyle_xp_miniscule_modifier }
+		pedestal = { add_artifact_modifier = artifact_court_grandeur_baseline_add_1_modifier }
+		journal = { add_artifact_modifier = artifact_monthly_lifestyle_xp_miniscule_modifier }
+		fallback = { }
+	}
+	custom_tooltip = KoM_give_modifier_based_on_type_tooltip
+}
+KoM_give_negative_modifier_based_on_type = {
+	switch = {
+		trigger = artifact_slot_type
+		helmet = { add_artifact_modifier = artifact_monthly_minor_prestige_4_negative_modifier }
+		primary_armament = { add_artifact_modifier = artifact_prowess_1_negative_modifier }
+		regalia = { add_artifact_modifier = artifact_vassal_limit_1_negative_modifier }
+		armor = { add_artifact_modifier = artifact_negate_prowess_penalty_add_1_negative_modifier }
+		miscellaneous = { add_artifact_modifier = artifact_monthly_minor_prestige_2_negative_modifier }
+		wall_big = { add_artifact_modifier = artifact_monthly_minor_prestige_4_negative_modifier }
+		wall_small = { add_artifact_modifier = artifact_monthly_minor_prestige_3_negative_modifier }
+		throne = { add_artifact_modifier = artifact_court_grandeur_baseline_add_2_negative_modifier }
+		sculpture = { add_artifact_modifier = artifact_court_grandeur_baseline_add_1_negative_modifier }
+		book = { add_artifact_modifier = artifact_monthly_lifestyle_xp_miniscule_negative_modifier }
+		pedestal = { add_artifact_modifier = artifact_court_grandeur_baseline_add_1_negative_modifier }
+		journal = { add_artifact_modifier = artifact_monthly_lifestyle_xp_miniscule_negative_modifier }
+		fallback = { }
+	}
+	custom_tooltip = KoM_give_modifier_based_on_type_tooltip
+}
 
 KoM_create_grimoire_effect = {
 	$OWNER$ = { save_scope_as = owner }

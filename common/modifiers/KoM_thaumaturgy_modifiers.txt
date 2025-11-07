@@ -19,3 +19,87 @@ KoM_claritudo_locus_tier_1_modifier = { icon = county_modifier_development_posit
 KoM_claritudo_locus_tier_2_modifier = { icon = county_modifier_development_positive stacking = yes development_growth_factor = 0.1 }
 KoM_claritudo_locus_tier_3_modifier = { icon = county_modifier_development_positive stacking = yes development_growth_factor = 0.15 }
 KoM_claritudo_locus_tier_4_modifier = { icon = county_modifier_development_positive stacking = yes development_growth_factor = 0.2 }
+
+KoM_sarcio_persona_overload_tier_1_modifier = { icon = health_positive stacking = yes health = 0.2 }
+KoM_sarcio_persona_overload_tier_2_modifier = { icon = health_positive stacking = yes health = 0.4 }
+KoM_sarcio_persona_overload_tier_3_modifier = { icon = health_positive stacking = yes health = 0.6 }
+KoM_sarcio_persona_overload_tier_4_modifier = { icon = health_positive stacking = yes health = 0.8 }
+KoM_sarcio_locus_tier_1_modifier = { icon = rat_positive stacking = yes epidemic_resistance = 5 }
+KoM_sarcio_locus_tier_2_modifier = { icon = rat_positive stacking = yes epidemic_resistance = 10 }
+KoM_sarcio_locus_tier_3_modifier = { icon = rat_positive stacking = yes epidemic_resistance = 15 }
+KoM_sarcio_locus_tier_4_modifier = { icon = rat_positive stacking = yes epidemic_resistance = 20 }
+
+KoM_damnum_persona_overload_tier_1_modifier = { icon = health_negative stacking = yes health = -0.2 }
+KoM_damnum_persona_overload_tier_2_modifier = { icon = health_negative stacking = yes health = -0.4 }
+KoM_damnum_persona_overload_tier_3_modifier = { icon = health_negative stacking = yes health = -0.6 }
+KoM_damnum_persona_overload_tier_4_modifier = { icon = health_negative stacking = yes health = -0.8 }
+KoM_damnum_locus_tier_1_modifier = { icon = rock_negative stacking = yes build_gold_cost = 0.05 build_prestige_cost = 0.05 build_piety_cost = 0.05 }
+KoM_damnum_locus_tier_2_modifier = { icon = rock_negative stacking = yes build_gold_cost = 0.1 build_prestige_cost = 0.1 build_piety_cost = 0.1 }
+KoM_damnum_locus_tier_3_modifier = { icon = rock_negative stacking = yes build_gold_cost = 0.15 build_prestige_cost = 0.15 build_piety_cost = 0.15 }
+KoM_damnum_locus_tier_4_modifier = { icon = rock_negative stacking = yes build_gold_cost = 0.2 build_prestige_cost = 0.2 build_piety_cost = 0.2 }
+
+KoM_celeritas_persona_tier_1_modifier = { icon = travel_speed_positive stacking = yes character_travel_speed_mult = 0.1 movement_speed = 0.05 }
+KoM_celeritas_persona_tier_2_modifier = { icon = travel_speed_positive stacking = yes character_travel_speed_mult = 0.2 movement_speed = 0.1 }
+KoM_celeritas_persona_tier_3_modifier = { icon = travel_speed_positive stacking = yes character_travel_speed_mult = 0.3 movement_speed = 0.15 }
+KoM_celeritas_persona_tier_4_modifier = { icon = travel_speed_positive stacking = yes character_travel_speed_mult = 0.4 movement_speed = 0.2 }
+KoM_celeritas_locus_tier_1_modifier = { icon = rock_positive stacking = yes build_speed = -0.05 }
+KoM_celeritas_locus_tier_2_modifier = { icon = rock_positive stacking = yes build_speed = -0.1 }
+KoM_celeritas_locus_tier_3_modifier = { icon = rock_positive stacking = yes build_speed = -0.15 }
+KoM_celeritas_locus_tier_4_modifier = { icon = rock_positive stacking = yes build_speed = -0.2 }
+
+KoM_fortitudo_persona_tier_1_modifier = { icon = prowess_positive stacking = yes prowess_no_portrait = 2 }
+KoM_fortitudo_persona_tier_2_modifier = { icon = prowess_positive stacking = yes prowess_no_portrait = 4 }
+KoM_fortitudo_persona_tier_3_modifier = { icon = prowess_positive stacking = yes prowess_no_portrait = 6 }
+KoM_fortitudo_persona_tier_4_modifier = { icon = prowess_positive stacking = yes prowess_no_portrait = 8 }
+KoM_fortitudo_res_tier_1_modifier = { icon = prowess_positive stacking = yes negate_prowess_penalty_add = 1 }
+KoM_fortitudo_res_tier_2_modifier = { icon = prowess_positive stacking = yes negate_prowess_penalty_add = 2 }
+KoM_fortitudo_res_tier_3_modifier = { icon = prowess_positive stacking = yes negate_prowess_penalty_add = 3 }
+KoM_fortitudo_res_tier_4_modifier = { icon = prowess_positive stacking = yes negate_prowess_penalty_add = 4 }
+KoM_fortitudo_locus_tier_1_modifier = { icon = travel_safety_positive stacking = yes fort_level = 1 }
+KoM_fortitudo_locus_tier_2_modifier = { icon = travel_safety_positive stacking = yes fort_level = 2 }
+KoM_fortitudo_locus_tier_3_modifier = { icon = travel_safety_positive stacking = yes fort_level = 3 }
+KoM_fortitudo_locus_tier_4_modifier = { icon = travel_safety_positive stacking = yes fort_level = 4 }
+
+KoM_stabilitas_res_tier_1_modifier = { icon = stress_positive stacking = yes stress_gain_mult = -0.01 }
+KoM_stabilitas_res_tier_2_modifier = { icon = stress_positive stacking = yes stress_gain_mult = -0.02 }
+KoM_stabilitas_res_tier_3_modifier = { icon = stress_positive stacking = yes stress_gain_mult = -0.03 }
+KoM_stabilitas_res_tier_4_modifier = { icon = stress_positive stacking = yes stress_gain_mult = -0.04 }
+KoM_stabilitas_locus_tier_1_modifier = { icon = county_modifier_development_positive stacking = yes monthly_county_control_growth_add = 0.05 }
+KoM_stabilitas_locus_tier_2_modifier = { icon = county_modifier_development_positive stacking = yes monthly_county_control_growth_add = 0.1 }
+KoM_stabilitas_locus_tier_3_modifier = { icon = county_modifier_development_positive stacking = yes monthly_county_control_growth_add = 0.15 }
+KoM_stabilitas_locus_tier_4_modifier = { icon = county_modifier_development_positive stacking = yes monthly_county_control_growth_add = 0.2 }
+
+KoM_opinio_persona_tier_1_modifier = { icon = social_positive stacking = yes general_opinion = 2 }
+KoM_opinio_persona_tier_2_modifier = { icon = social_positive stacking = yes general_opinion = 4 }
+KoM_opinio_persona_tier_3_modifier = { icon = social_positive stacking = yes general_opinion = 6 }
+KoM_opinio_persona_tier_4_modifier = { icon = social_positive stacking = yes general_opinion = 8 }
+KoM_opinio_res_tier_1_modifier = { icon = signet_ring_positive stacking = yes monthly_prestige_gain_mult = 0.01 }
+KoM_opinio_res_tier_2_modifier = { icon = signet_ring_positive stacking = yes monthly_prestige_gain_mult = 0.02 }
+KoM_opinio_res_tier_3_modifier = { icon = signet_ring_positive stacking = yes monthly_prestige_gain_mult = 0.03 }
+KoM_opinio_res_tier_4_modifier = { icon = signet_ring_positive stacking = yes monthly_prestige_gain_mult = 0.04 }
+KoM_opinio_locus_tier_1_modifier = { icon = legitimacy_positive stacking = yes county_opinion_add = 5 }
+KoM_opinio_locus_tier_2_modifier = { icon = legitimacy_positive stacking = yes county_opinion_add = 10 }
+KoM_opinio_locus_tier_3_modifier = { icon = legitimacy_positive stacking = yes county_opinion_add = 15 }
+KoM_opinio_locus_tier_4_modifier = { icon = legitimacy_positive stacking = yes county_opinion_add = 20 }
+
+KoM_anima_persona_tier_1_modifier = { icon = health_positive stacking = yes life_expectancy = 3 }
+KoM_anima_persona_tier_2_modifier = { icon = health_positive stacking = yes life_expectancy = 6 }
+KoM_anima_persona_tier_3_modifier = { icon = health_positive stacking = yes life_expectancy = 9 }
+KoM_anima_persona_tier_4_modifier = { icon = health_positive stacking = yes life_expectancy = 12 }
+KoM_anima_res_tier_1_modifier = { icon = health_positive stacking = yes health = 0.1 }
+KoM_anima_res_tier_2_modifier = { icon = health_positive stacking = yes health = 0.2 }
+KoM_anima_res_tier_3_modifier = { icon = health_positive stacking = yes health = 0.3 }
+KoM_anima_res_tier_4_modifier = { icon = health_positive stacking = yes health = 0.4 }
+KoM_anima_locus_tier_1_modifier = { icon = county_modifier_development_positive stacking = yes development_growth = 0.1 }
+KoM_anima_locus_tier_2_modifier = { icon = county_modifier_development_positive stacking = yes development_growth = 0.2 }
+KoM_anima_locus_tier_3_modifier = { icon = county_modifier_development_positive stacking = yes development_growth = 0.3 }
+KoM_anima_locus_tier_4_modifier = { icon = county_modifier_development_positive stacking = yes development_growth = 0.4 }
+
+KoM_scientia_persona_tier_1_modifier = { icon = health_positive stacking = yes diplomacy = 1 martial = 1 stewardship = 1 intrigue = 1 learning = 1 }
+KoM_scientia_persona_tier_2_modifier = { icon = health_positive stacking = yes diplomacy = 2 martial = 2 stewardship = 2 intrigue = 2 learning = 2 }
+KoM_scientia_persona_tier_3_modifier = { icon = health_positive stacking = yes diplomacy = 3 martial = 3 stewardship = 3 intrigue = 3 learning = 3 }
+KoM_scientia_persona_tier_4_modifier = { icon = health_positive stacking = yes diplomacy = 4 martial = 4 stewardship = 4 intrigue = 4 learning = 4 }
+KoM_scientia_res_tier_1_modifier = { icon = health_positive stacking = yes monthly_lifestyle_xp_gain_add = 1 }
+KoM_scientia_res_tier_2_modifier = { icon = health_positive stacking = yes monthly_lifestyle_xp_gain_add = 2 }
+KoM_scientia_res_tier_3_modifier = { icon = health_positive stacking = yes monthly_lifestyle_xp_gain_add = 3 }
+KoM_scientia_res_tier_4_modifier = { icon = health_positive stacking = yes monthly_lifestyle_xp_gain_add = 4 }

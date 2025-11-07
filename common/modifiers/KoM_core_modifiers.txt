@@ -18,3 +18,13 @@ KoM_mastery_gain_modifier = {
 KoM_mastery_gain_null_modifier = {
 	KoM_terrain_type_grimoire_advantage = 0.00001
 }
+
+artifact_monthly_minor_prestige_4_negative_modifier = { monthly_dynasty_prestige = -0.08 }
+artifact_prowess_1_negative_modifier = { prowess_no_portrait = -1 }
+artifact_vassal_limit_1_negative_modifier = { vassal_limit = -1 }
+artifact_negate_prowess_penalty_add_1_negative_modifier = { negate_prowess_penalty_add = -1 }
+artifact_monthly_minor_prestige_2_negative_modifier = { monthly_dynasty_prestige = -0.04 }
+artifact_monthly_minor_prestige_3_negative_modifier = { monthly_dynasty_prestige = -0.06 }
+artifact_court_grandeur_baseline_add_2_negative_modifier = { court_grandeur_baseline_add = -2 }
+artifact_court_grandeur_baseline_add_1_negative_modifier = { court_grandeur_baseline_add = -1 }
+artifact_monthly_lifestyle_xp_miniscule_negative_modifier = { monthly_lifestyle_xp_gain_mult = -0.01 }
