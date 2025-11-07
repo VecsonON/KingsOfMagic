@@ -135,6 +135,8 @@ KoM_completed_rite = {
 			flag:elixir_vitae = { KoM_elixir_vitae_effect = yes }
 			flag:aurum_astralis = { KoM_aurum_astralis_effect = yes }
 			flag:the_philosophers_stone = { KoM_the_philosophers_stone_effect = yes }
+
+			flag:the_neidan_meditation = { KoM_the_neidan_meditation_effect = yes }
 		}
 	}
 }

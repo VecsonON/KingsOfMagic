@@ -47,3 +47,5 @@
  KoM_increase_durability_effect: "Increase max durability of [ARTIFACT.GetName] by $VALUE|P0$."
  KoM_spell_while_effect: "This will happen [SCOPE.GetValue('saved_number')|0V] times"
  KoM_give_modifier_based_on_type_tooltip: "This modifier changes depending on the artifact's type"
+
+ KoM_taoism_gain_progress_actual_effect: "You will gain [SCOPE.GetValue('saved_number')|2P] [trait_level_track_xp|E] in the [KoMGetTrait(SCOPE.GetFlagName('saved_tooltip'))]"

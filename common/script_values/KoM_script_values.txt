@@ -112,3 +112,16 @@ KoM_alchemy_vulcanic_ash = {
 KoM_alchemy_fireflower = {
 	value = 0 if = { limit = { has_variable = KoM_alchemy_fireflower } 	 value = var:KoM_alchemy_fireflower }
 }
+
+KoM_taoism_lianjing_huaqi_xp = {
+	value = 0
+	if = { limit = { has_trait = KoM_lianjing_huaqi } value = "this.has_trait_xp(KoM_lianjing_huaqi)" }
+}
+KoM_taoism_lianqi_huashen_xp = {
+	value = 0
+	if = { limit = { has_trait = KoM_lianqi_huashen } value = "this.has_trait_xp(KoM_lianqi_huashen)" }
+}
+KoM_taoism_lianshen_huanxu_xp = {
+	value = 0
+	if = { limit = { has_trait = KoM_lianshen_huanxu } value = "this.has_trait_xp(KoM_lianshen_huanxu)" }
+}

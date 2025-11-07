@@ -262,3 +262,8 @@
  KoM_rite_the_philosophers_stone_name: "#underline;TOOLTIP:KoM_rite_the_philosophers_stone_tt The Philosopher's Stone#!"
  KoM_rite_the_philosophers_stone_tt: "$KoM_rite_the_philosophers_stone_effect$, requires every [KoM_alchemic|E] Consumable besides The Philosopher's Stone itself to brew"
  KoM_rite_the_philosophers_stone_effect: "Gives [trait|E] [KoMGetTrait('immortal')]"
+
+ #Taoism
+ KoM_rite_the_neidan_meditation: "#underline;TOOLTIP:KoM_rite_the_neidan_meditation_tt The Neidan Meditation#!"
+ KoM_rite_the_neidan_meditation_tt: "Neidan, also known as internal alchemy, is process in which [KoM_daoshi|E] 'cultivate' themselves in goal of achieving [KoMGetTrait('KoM_xian')]."
+ KoM_the_neidan_meditation_effect: "Amount of xp gained is equal to your [KoMGetTrait('KoM_daoshi')] xp divided by #bold 50#!. #I This [KoM_rite|E] will repeat itself!#!"

@@ -73,3 +73,5 @@ KoM_terrain_type_alchemy_aurum_astralis = { }
 KoM_terrain_type_alchemy_aurum_astralis_effect = { }
 KoM_terrain_type_alchemy_the_philosophers_stone = { }
 KoM_terrain_type_alchemy_the_philosophers_stone_effect = { }
+#########################################
+KoM_terrain_type_taoism_the_neidan_meditation = { }

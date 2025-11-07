@@ -237,6 +237,8 @@ KoM_alchemist = {
 KoM_daoshi = {
 	flag = mage
 
+	KoM_terrain_type_taoism_the_neidan_meditation_cancel_negative_supply = yes
+
 	track = {
 		10 = { }
 		25 = { }
@@ -259,4 +261,117 @@ KoM_onmyoji = {
 	}
 
 	icon = onmyoji.dds
+}
+
+### TAOISM ###
+
+KoM_lianjing_huaqi = {
+	flag = taoism_stage
+	shown_in_ruler_designer = no
+
+	track = {
+		25 = {
+			health = 1
+			prowess_no_portrait = 3
+		}
+		50 = {
+			health = 1
+			prowess_no_portrait = 3
+		}
+		75 = {
+			health = 1
+			prowess_no_portrait = 3
+		}
+		100 = {
+			health = 1
+			prowess_no_portrait = 3
+		}
+	}
+
+	icon = lianjing_huaqi.dds
+}
+KoM_lianqi_huashen = {
+	flag = taoism_stage
+	shown_in_ruler_designer = no
+
+	health = 4
+	prowess_no_portrait = 12
+	no_prowess_loss_from_age = yes
+
+	track = {
+		25 = {
+			health = 2
+			prowess_no_portrait = 4
+			life_expectancy = 25
+		}
+		50 = {
+			health = 2
+			prowess_no_portrait = 4
+			life_expectancy = 25
+		}
+		75 = {
+			health = 2
+			prowess_no_portrait = 4
+			life_expectancy = 25
+		}
+		100 = {
+			health = 2
+			prowess_no_portrait = 4
+			life_expectancy = 25
+		}
+	}
+
+	icon = lianqi_huashen.dds
+}
+KoM_lianshen_huanxu = {
+	flag = taoism_stage
+	shown_in_ruler_designer = no
+
+	health = 10
+	prowess_no_portrait = 28
+	life_expectancy = 100
+
+	track = {
+		25 = {
+			health = 2
+			prowess_no_portrait = 6
+			life_expectancy = 100
+		}
+		50 = {
+			health = 2
+			prowess_no_portrait = 7
+			life_expectancy = 250
+		}
+		75 = {
+			health = 3
+			prowess_no_portrait = 8
+			life_expectancy = 250
+		}
+		100 = {
+			health = 3
+			prowess_no_portrait = 10
+			life_expectancy = 300
+		}
+	}
+
+	icon = lianshen_huanxu.dds
+}
+KoM_xian = {
+	flag = taoism_stage
+	shown_in_ruler_designer = no
+
+	health = 20
+	prowess_no_portrait = 60
+	life_expectancy = 1000
+
+	immortal = yes
+	# Dummy flags — just here for loc really.
+	flag = is_immortal
+	flag = immortal_visuals
+	flag = immortal_fertility
+	flag = immortal_incapability
+	long_reign_bonus_mult = -1000
+	no_prowess_loss_from_age = yes
+
+	icon = xian.dds
 }

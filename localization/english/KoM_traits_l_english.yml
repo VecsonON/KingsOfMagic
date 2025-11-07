@@ -32,3 +32,22 @@
  trait_KoM_onmyoji_desc: "Practitioner of [KoM_onmyodo|E] school of [KoM_magick|E]"
  trait_track_KoM_onmyoji: "[KoM_onmyodo|E] $trait_track_KoM$"
  trait_track_KoM_onmyoji_desc: "$trait_track_KoM_desc$"
+
+
+ trait_KoM_lianjing_huaqi: "Lianjing Huaqi"
+ trait_KoM_lianjing_huaqi_desc: "First stage between [KoM_daoshi|E] and [KoMGetTrait('KoM_xian')]. Lianjing Huaqi focuses on refining ones Jing into Qi"
+ trait_track_KoM_lianjing_huaqi: "Progress towards [KoMGetTrait('KoM_lianqi_huashen')]"
+ trait_track_KoM_lianjing_huaqi_desc: "$trait_track_KoM_lianjing_huaqi$"
+
+ trait_KoM_lianqi_huashen: "Lianqi Huashen"
+ trait_KoM_lianqi_huashen_desc: "Seconds stage between [KoM_daoshi|E] and [KoMGetTrait('KoM_xian')]. Lianqi Huashen refines Qi into Shen"
+ trait_track_KoM_lianqi_huashen: "Progress towards [KoMGetTrait('KoM_lianshen_huanxu')]"
+ trait_track_KoM_lianqi_huashen_desc: "$trait_track_KoM_lianqi_huashen$"
+
+ trait_KoM_lianshen_huanxu: "Lianshen Huanxu"
+ trait_KoM_lianshen_huanxu_desc: "Last stage between [KoM_daoshi|E] and [KoMGetTrait('KoM_xian')]. Lianshen Huanxu seeks to merge Shen into Tao"
+ trait_track_KoM_lianshen_huanxu: "Progress towards [KoMGetTrait('KoM_xian')]"
+ trait_track_KoM_lianshen_huanxu_desc: "$trait_track_KoM_lianshen_huanxu$"
+
+ trait_KoM_xian: "Xian"
+ trait_KoM_xian_desc: "Xian, also known as 'Immortal' are [KoM_daoshi|E] that succeeded in their quest for immortality."

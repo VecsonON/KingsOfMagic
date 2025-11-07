@@ -1,0 +1,47 @@
+﻿KoM_taoism_interaction = {
+	category = interaction_category_religion
+	icon = KoM_taoism_interaction
+	desc = KoM_taoism_interaction_desc
+
+	use_diplomatic_range = no
+
+	is_shown = {
+		scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:taoism } }
+	}
+
+	send_option = {
+		flag = the_neidan_meditation
+		localization = KoM_rite_the_neidan_meditation
+	}
+
+	can_send = {
+		custom_tooltip = {
+			text = KoM_select_art
+			OR = {
+				scope:the_neidan_meditation ?= yes
+			}
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			switch = {
+				trigger = yes
+				scope:the_neidan_meditation = {
+					KoM_start_rite_effect = {
+						ID = the_neidan_meditation
+						MONTHLY_PROGRESS = KoM_rite_time_6_months
+						TARGET = scope:recipient
+						SCHOOL = taoism
+					}
+					custom_tooltip = KoM_rite_showcase
+					show_as_tooltip = { KoM_the_neidan_meditation_effect = yes }
+				}
+			}
+		}
+	}
+
+	auto_accept = yes
+
+	ai_will_do = { base = 0 }
+}
