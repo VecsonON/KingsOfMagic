@@ -240,11 +240,11 @@ KoM_daoshi = {
 	KoM_terrain_type_taoism_the_neidan_meditation_cancel_negative_supply = yes
 
 	track = {
-		10 = { }
-		25 = { }
-		50 = { }
-		75 = { }
-		100 = { }
+		10 = { KoM_terrain_type_taoism_qingqiu_huifu_yishi_cancel_negative_supply = yes }
+		25 = { KoM_terrain_type_taoism_qiqiu_pingjing_xinling_de_yishi_cancel_negative_supply = yes }
+		50 = { KoM_terrain_type_taoism_qifu_yishi_cancel_negative_supply = yes }
+		75 = { KoM_terrain_type_taoism_qiqiu_mingri_zhishi_de_yishi_cancel_negative_supply = yes }
+		100 = { KoM_terrain_type_taoism_qingqiu_kuaisu_luxing_de_yishi_cancel_negative_supply = yes }
 	}
 
 	icon = daoshi.dds
@@ -273,18 +273,22 @@ KoM_lianjing_huaqi = {
 		25 = {
 			health = 1
 			prowess_no_portrait = 3
+			stress_gain_mult = -0.02
 		}
 		50 = {
 			health = 1
 			prowess_no_portrait = 3
+			stress_gain_mult = -0.02
 		}
 		75 = {
 			health = 1
 			prowess_no_portrait = 3
+			stress_gain_mult = -0.03
 		}
 		100 = {
 			health = 1
 			prowess_no_portrait = 3
+			stress_gain_mult = -0.03
 		}
 	}
 
@@ -296,27 +300,32 @@ KoM_lianqi_huashen = {
 
 	health = 4
 	prowess_no_portrait = 12
+	stress_gain_mult = -0.1
 	no_prowess_loss_from_age = yes
 
 	track = {
 		25 = {
 			health = 2
 			prowess_no_portrait = 4
+			stress_gain_mult = -0.05
 			life_expectancy = 25
 		}
 		50 = {
 			health = 2
 			prowess_no_portrait = 4
+			stress_gain_mult = -0.05
 			life_expectancy = 25
 		}
 		75 = {
 			health = 2
 			prowess_no_portrait = 4
+			stress_gain_mult = -0.05
 			life_expectancy = 25
 		}
 		100 = {
 			health = 2
 			prowess_no_portrait = 4
+			stress_gain_mult = -0.05
 			life_expectancy = 25
 		}
 	}
@@ -329,27 +338,32 @@ KoM_lianshen_huanxu = {
 
 	health = 10
 	prowess_no_portrait = 28
+	stress_gain_mult = -0.3
 	life_expectancy = 100
 
 	track = {
 		25 = {
 			health = 2
 			prowess_no_portrait = 6
+			stress_gain_mult = -0.1
 			life_expectancy = 100
 		}
 		50 = {
 			health = 2
 			prowess_no_portrait = 7
+			stress_gain_mult = -0.1
 			life_expectancy = 250
 		}
 		75 = {
 			health = 3
 			prowess_no_portrait = 8
+			stress_gain_mult = -0.1
 			life_expectancy = 250
 		}
 		100 = {
 			health = 3
 			prowess_no_portrait = 10
+			stress_gain_mult = -0.1
 			life_expectancy = 300
 		}
 	}
@@ -362,6 +376,7 @@ KoM_xian = {
 
 	health = 20
 	prowess_no_portrait = 60
+	stress_gain_mult = -0.7
 	life_expectancy = 1000
 
 	immortal = yes

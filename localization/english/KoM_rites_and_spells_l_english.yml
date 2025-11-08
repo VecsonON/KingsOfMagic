@@ -267,3 +267,28 @@
  KoM_rite_the_neidan_meditation: "#underline;TOOLTIP:KoM_rite_the_neidan_meditation_tt The Neidan Meditation#!"
  KoM_rite_the_neidan_meditation_tt: "Neidan, also known as internal alchemy, is process in which [KoM_daoshi|E] 'cultivate' themselves in goal of achieving [KoMGetTrait('KoM_xian')]."
  KoM_the_neidan_meditation_effect: "Amount of xp gained is equal to your [KoMGetTrait('KoM_daoshi')] xp divided by #bold 50#!. #I This [KoM_rite|E] will repeat itself!#!"
+
+ KoM_rite_qingqiu_huifu_yishi: "#underline;TOOLTIP:KoM_rite_qingqiu_huifu_yishi_desc Qingqiu Huifu Yishi#!"
+ KoM_rite_qingqiu_huifu_yishi_desc: "Very Simple [KoM_rite|E] of [KoM_taoism|E] to heal ailments. Efficiency of this [KoM_rite|E] is directly proportional to one's stage of #underline;TOOLTIP:KoM_rite_the_neidan_meditation_tt Neidan#!"
+ KoM_rite_qingqiu_huifu_yishi_lianjing_huaqi_effect: "As [KoMGetTrait('KoM_lianjing_huaqi')], thanks to your understanding of Jing you can heal: [KoMGetTrait('wounded_1')], [KoMGetTrait('ill')] and [KoMGetTrait('scarred')]"
+ KoM_rite_qingqiu_huifu_yishi_lianqi_huashen_effect: "As [KoMGetTrait('KoM_lianqi_huashen')], thanks to you refining Jing into Qi you can heal #underline;TOOLTIP:KoM_rite_qingqiu_huifu_yishi_lianjing_huaqi_effect Everything $trait_KoM_lianjing_huaqi$ can#! and also: [KoMGetTrait('wounded_2')], [KoMGetTrait('impotent')], [KoMGetTrait('disfigured')], [KoMGetTrait('pneumonic')] and [KoMGetTrait('early_great_pox')]"
+ KoM_rite_qingqiu_huifu_yishi_lianshen_huanxu_effect: "As [KoMGetTrait('KoM_lianshen_huanxu')], thanks to you refining Jing into Qi you can heal #underline;TOOLTIP:KoM_rite_qingqiu_huifu_yishi_lianqi_huashen_effect Everything $trait_KoM_lianjing_huaqi$ can#! and also: [KoMGetTrait('wounded_3')], [KoMGetTrait('infirm')], [KoMGetTrait('consumption')], [KoMGetTrait('great_pox')], [KoMGetTrait('gout_ridden')], [KoMGetTrait('dysentery')], [KoMGetTrait('leper')], [KoMGetTrait('lovers_pox')] and [KoMGetTrait('ergotism')]"
+ KoM_rite_qingqiu_huifu_yishi_xian_effect: "As [KoMGetTrait('KoM_xian')], thanks to you uniting with Tao you can heal #underline;TOOLTIP:KoM_rite_qingqiu_huifu_yishi_lianshen_huanxu_effect Everything $trait_KoM_lianjing_huaqi$ can#! and also: [KoMGetTrait('maimed')], [KoMGetTrait('one_legged')], [KoMGetTrait('eunuch_1')], [KoMGetTrait('one_eyed')], [KoMGetTrait('blind')], [KoMGetTrait('incapable')], [KoMGetTrait('cancer')], [KoMGetTrait('smallpox')], [KoMGetTrait('typhus')], [KoMGetTrait('bubonic_plague')] and [KoMGetTrait('measles')]"
+
+ KoM_rite_qiqiu_pingjing_xinling_de_yishi: "#underline;TOOLTIP:KoM_rite_qiqiu_pingjing_xinling_de_yishi_desc Qiqiu Pingjing Xinling De Yishi#!"
+ KoM_rite_qiqiu_pingjing_xinling_de_yishi_desc: "Simple [KoM_taoistic|E] [KoM_rite|E] to calm and 'fix' mind. Efficiency of this [KoM_rite|E] is directly proportional to one's stage of #underline;TOOLTIP:KoM_rite_the_neidan_meditation_tt Neidan#!"
+ KoM_rite_qiqiu_pingjing_xinling_de_yishi_lianqi_huashen_effect: "As [KoMGetTrait('KoM_lianqi_huashen')], remove: [KoMGetTrait('drunkard')], [KoMGetTrait('hashishiyah')], [KoMGetTrait('rakish')], [KoMGetTrait('inappetetic')] and [KoMGetTrait('comfort_eater')]"
+ KoM_rite_qiqiu_pingjing_xinling_de_yishi_lianshen_huanxu_effect: "As [KoMGetTrait('KoM_lianshen_huanxu')], remove #underline;TOOLTIP:KoM_rite_qiqiu_pingjing_xinling_de_yishi_lianqi_huashen_effect everything $trait_KoM_lianshen_huanxu$ can#! as well as: [KoMGetTrait('irritable')], [KoMGetTrait('flagellant')], [KoMGetTrait('profligate')] and [KoMGetTrait('improvident')]"
+ KoM_rite_qiqiu_pingjing_xinling_de_yishi_xian_effect: "As [KoMGetTrait('KoM_xian')], remove #underline;TOOLTIP:KoM_rite_qiqiu_pingjing_xinling_de_yishi_lianshen_huanxu_effect everything $trait_KoM_lianshen_huanxu$ can#! as well as: [KoMGetTrait('reclusive')], [KoMGetTrait('contrite')], [KoMGetTrait('depressed_1')] and [KoMGetTrait('lunatic_1')]"
+
+ KoM_rite_qifu_yishi: "#underline;TOOLTIP:KoM_rite_qifu_yishi_desc Qifu Yishi#!"
+ KoM_rite_qifu_yishi_desc: "Standard [KoM_rite|E] of [KoM_taoism|E] to bestow good luck. Efficiency of this [KoM_rite|E] is directly proportional to one's stage of #underline;TOOLTIP:KoM_rite_the_neidan_meditation_tt Neidan#!"
+
+ KoM_rite_qiqiu_mingri_zhishi_de_yishi: "#underline;TOOLTIP:KoM_rite_qiqiu_mingri_zhishi_de_yishi_desc Qiqiu Mingri Zhishi De Yishi#!"
+ KoM_rite_qiqiu_mingri_zhishi_de_yishi_desc: "Very Useful [KoM_taoistic|E] [KoM_rite|E] to divinate what will happen in future. Efficiency of this [KoM_rite|E] is directly proportional to one's stage of #underline;TOOLTIP:KoM_rite_the_neidan_meditation_tt Neidan#!"
+ KoM_rite_qiqiu_mingri_zhishi_de_yishi_lianqi_huashen_effect: "As [KoMGetTrait('KoM_lianqi_huashen')] or higher, You will discover all [schemes|E] your target currently is doing"
+ KoM_rite_qiqiu_mingri_zhishi_de_yishi_lianshen_huanxu_effect: "As [KoMGetTrait('KoM_lianshen_huanxu')] or higher, You will discover all [schemes|E] targeted against your target."
+ KoM_rite_qiqiu_mingri_zhishi_de_yishi_xian_effect: "As [KoMGetTrait('KoM_xian')], You will stop all [schemes|E] targeted against your target"
+
+ KoM_rite_qingqiu_kuaisu_luxing_de_yishi: "#underline;TOOLTIP:KoM_rite_qingqiu_kuaisu_luxing_de_yishi_desc Qingqiu Kuaisu Luxing De Yishi#!"
+ KoM_rite_qingqiu_kuaisu_luxing_de_yishi_desc: "Peak of [KoM_taoistic|E] [KoM_rites|E] used to achieve near instantaneous travel at higher levels. Efficiency of this [KoM_rite|E] is directly proportional to one's stage of #underline;TOOLTIP:KoM_rite_the_neidan_meditation_tt Neidan#!"

@@ -14,11 +14,68 @@
 		localization = KoM_rite_the_neidan_meditation
 	}
 
+	send_option = {
+		is_valid = {
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:taoism VALUE = 10 AT_LEAST = yes }
+				has_trait_with_flag = taoism_stage
+			}
+		}
+		flag = qingqiu_huifu_yishi
+		localization = KoM_rite_qingqiu_huifu_yishi
+	}
+	send_option = {
+		is_valid = {
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:taoism VALUE = 30 AT_LEAST = yes }
+				has_trait_with_flag = taoism_stage
+			}
+		}
+		flag = qiqiu_pingjing_xinling_de_yishi
+		localization = KoM_rite_qiqiu_pingjing_xinling_de_yishi
+	}
+	send_option = {
+		is_valid = {
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:taoism VALUE = 50 AT_LEAST = yes }
+				has_trait_with_flag = taoism_stage
+			}
+		}
+		flag = qifu_yishi
+		localization = KoM_rite_qifu_yishi
+	}
+	send_option = {
+		is_valid = {
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:taoism VALUE = 75 AT_LEAST = yes }
+				has_trait_with_flag = taoism_stage
+			}
+		}
+		flag = qiqiu_mingri_zhishi_de_yishi
+		localization = KoM_rite_qiqiu_mingri_zhishi_de_yishi
+	}
+	send_option = {
+		is_valid = {
+			scope:actor = {
+				KoM_must_self_cast_trigger = yes
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:taoism VALUE = 100 AT_LEAST = yes }
+				has_trait_with_flag = taoism_stage
+			}
+		}
+		flag = qingqiu_kuaisu_luxing_de_yishi
+		localization = KoM_rite_qingqiu_kuaisu_luxing_de_yishi
+	}
+
 	can_send = {
 		custom_tooltip = {
 			text = KoM_select_art
 			OR = {
 				scope:the_neidan_meditation ?= yes
+				scope:qingqiu_huifu_yishi ?= yes
+				scope:qiqiu_pingjing_xinling_de_yishi ?= yes
+				scope:qifu_yishi ?= yes
+				scope:qiqiu_mingri_zhishi_de_yishi ?= yes
+				scope:qingqiu_kuaisu_luxing_de_yishi ?= yes
 			}
 		}
 	}
@@ -36,6 +93,56 @@
 					}
 					custom_tooltip = KoM_rite_showcase
 					show_as_tooltip = { KoM_the_neidan_meditation_effect = yes }
+				}
+				scope:qingqiu_huifu_yishi = {
+					KoM_start_rite_effect = {
+						ID = qingqiu_huifu_yishi
+						MONTHLY_PROGRESS = KoM_rite_time_6_months
+						TARGET = scope:recipient
+						SCHOOL = taoism
+					}
+					custom_tooltip = KoM_rite_showcase
+					show_as_tooltip = { KoM_qingqiu_huifu_yishi_effect = { TARGET = scope:recipient } }
+				}
+				scope:qiqiu_pingjing_xinling_de_yishi = {
+					KoM_start_rite_effect = {
+						ID = qiqiu_pingjing_xinling_de_yishi
+						MONTHLY_PROGRESS = KoM_rite_time_6_months
+						TARGET = scope:recipient
+						SCHOOL = taoism
+					}
+					custom_tooltip = KoM_rite_showcase
+					show_as_tooltip = { KoM_qiqiu_pingjing_xinling_de_yishi_effect = { TARGET = scope:recipient } }
+				}
+				scope:qifu_yishi = {
+					KoM_start_rite_effect = {
+						ID = qifu_yishi
+						MONTHLY_PROGRESS = KoM_rite_time_6_months
+						TARGET = scope:recipient
+						SCHOOL = taoism
+					}
+					custom_tooltip = KoM_rite_showcase
+					show_as_tooltip = { KoM_qifu_yishi_effect = { TARGET = scope:recipient } }
+				}
+				scope:qiqiu_mingri_zhishi_de_yishi = {
+					KoM_start_rite_effect = {
+						ID = qiqiu_mingri_zhishi_de_yishi
+						MONTHLY_PROGRESS = KoM_rite_time_6_months
+						TARGET = scope:recipient
+						SCHOOL = taoism
+					}
+					custom_tooltip = KoM_rite_showcase
+					show_as_tooltip = { KoM_qiqiu_mingri_zhishi_de_yishi_effect = { TARGET = scope:recipient } }
+				}
+				scope:qingqiu_kuaisu_luxing_de_yishi = {
+					KoM_start_rite_effect = {
+						ID = qingqiu_kuaisu_luxing_de_yishi
+						MONTHLY_PROGRESS = KoM_rite_time_6_months
+						TARGET = scope:recipient
+						SCHOOL = taoism
+					}
+					custom_tooltip = KoM_rite_showcase
+					show_as_tooltip = { KoM_qingqiu_kuaisu_luxing_de_yishi_effect = yes }
 				}
 			}
 		}

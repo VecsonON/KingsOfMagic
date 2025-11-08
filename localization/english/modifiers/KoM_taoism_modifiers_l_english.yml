@@ -1,2 +1,20 @@
 ﻿l_english:
- 
+ KoM_qiqiu_pingjing_xinling_de_yishi_lianjing_huaqi_modifier: "$KoM_rite_qiqiu_pingjing_xinling_de_yishi$: $trait_KoM_lianjing_huaqi$"
+ KoM_qiqiu_pingjing_xinling_de_yishi_lianqi_huashen_modifier: "$KoM_rite_qiqiu_pingjing_xinling_de_yishi$: $trait_KoM_lianqi_huashen$"
+ KoM_qiqiu_pingjing_xinling_de_yishi_lianshen_huanxu_modifier: "$KoM_rite_qiqiu_pingjing_xinling_de_yishi$: $trait_KoM_lianshen_huanxu$"
+ KoM_qiqiu_pingjing_xinling_de_yishi_xian_modifier: "$KoM_rite_qiqiu_pingjing_xinling_de_yishi$: $trait_KoM_xian$"
+
+ KoM_qifu_yishi_lianjing_huaqi_modifier: "$KoM_rite_qifu_yishi$: $trait_KoM_lianjing_huaqi$"
+ KoM_qifu_yishi_lianqi_huashen_modifier: "$KoM_rite_qifu_yishi$: $trait_KoM_lianqi_huashen$"
+ KoM_qifu_yishi_lianshen_huanxu_modifier: "$KoM_rite_qifu_yishi$: $trait_KoM_lianshen_huanxu$"
+ KoM_qifu_yishi_xian_modifier: "$KoM_rite_qifu_yishi$: $trait_KoM_xian$"
+
+ KoM_qiqiu_mingri_zhishi_de_yishi_lianjing_huaqi_modifier: "$KoM_rite_qiqiu_mingri_zhishi_de_yishi$: $trait_KoM_lianjing_huaqi$"
+ KoM_qiqiu_mingri_zhishi_de_yishi_lianqi_huashen_modifier: "$KoM_rite_qiqiu_mingri_zhishi_de_yishi$: $trait_KoM_lianqi_huashen$"
+ KoM_qiqiu_mingri_zhishi_de_yishi_lianshen_huanxu_modifier: "$KoM_rite_qiqiu_mingri_zhishi_de_yishi$: $trait_KoM_lianshen_huanxu$"
+ KoM_qiqiu_mingri_zhishi_de_yishi_xian_modifier: "$KoM_rite_qiqiu_mingri_zhishi_de_yishi$: $trait_KoM_xian$"
+
+ KoM_qingqiu_kuaisu_luxing_de_yishi_lianjing_huaqi_modifier: "$KoM_rite_qingqiu_kuaisu_luxing_de_yishi$: $trait_KoM_lianjing_huaqi$"
+ KoM_qingqiu_kuaisu_luxing_de_yishi_lianqi_huashen_modifier: "$KoM_rite_qingqiu_kuaisu_luxing_de_yishi$: $trait_KoM_lianqi_huashen$"
+ KoM_qingqiu_kuaisu_luxing_de_yishi_lianshen_huanxu_modifier: "$KoM_rite_qingqiu_kuaisu_luxing_de_yishi$: $trait_KoM_lianshen_huanxu$"
+ KoM_qingqiu_kuaisu_luxing_de_yishi_xian_modifier: "$KoM_rite_qingqiu_kuaisu_luxing_de_yishi$: $trait_KoM_xian$"

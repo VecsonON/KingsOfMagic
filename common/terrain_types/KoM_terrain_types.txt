@@ -75,3 +75,8 @@ KoM_terrain_type_alchemy_the_philosophers_stone = { }
 KoM_terrain_type_alchemy_the_philosophers_stone_effect = { }
 #########################################
 KoM_terrain_type_taoism_the_neidan_meditation = { }
+KoM_terrain_type_taoism_qingqiu_huifu_yishi = { }
+KoM_terrain_type_taoism_qiqiu_pingjing_xinling_de_yishi = { }
+KoM_terrain_type_taoism_qifu_yishi = { }
+KoM_terrain_type_taoism_qiqiu_mingri_zhishi_de_yishi = { }
+KoM_terrain_type_taoism_qingqiu_kuaisu_luxing_de_yishi = { }

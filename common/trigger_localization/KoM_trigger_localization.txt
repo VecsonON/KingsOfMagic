@@ -14,3 +14,8 @@ KoM_has_below_magic_school_xp = {
 	third_not = KoM_has_below_magic_school_xp_third
 	global_not = KoM_has_below_magic_school_xp_global
 }
+has_trait_with_flag_taoism_stage = {
+	global = HAS_TRAIT_WITH_FLAG_TAOISM_STAGE_TRIGGER
+	first = HAS_TRAIT_WITH_FLAG_TAOISM_STAGE_TRIGGER
+	third = HAS_TRAIT_WITH_FLAG_TAOISM_STAGE_TRIGGER
+}
