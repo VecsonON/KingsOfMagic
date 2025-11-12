@@ -1,0 +1,20 @@
+﻿l_english:
+ activity_KoM_visit_hideout: "Visit potential [KoM_hideout|E]"
+ activity_KoM_visit_hideout_destination_selection: "Select [province|E] to visit"
+ activity_KoM_visit_hideout_host_an_a: "a"
+ activity_KoM_visit_hideout_selection_tooltip: "Visit potential [KoM_hideout|E]"
+ activity_KoM_visit_hideout_desc: "Some people say that there exist places of power, places where [KoM_practitioners|E] of [KoM_magick|E] made their [KoM_hideouts|E]. And I want to visits some of them"
+ activity_KoM_visit_hideout_province_desc: "Visit potential [KoM_hideout|E]"
+ activity_KoM_visit_hideout_host_desc: "$BULLET_WITH_TAB$School of [KoM_magick|E]\n$BULLET_WITH_TAB$Ownership of [KoM_hideout|E]\n$BULLET_WITH_TAB$Possibility to find [KoM_grimoires|E]\n$BULLET_WITH_TAB$[gold_i|E][gold|E]\n$BULLET_WITH_TAB$[prestige_i|E][prestige|E]\n$BULLET_WITH_TAB$#N [KoMGetTrait('wounded_1')]/[KoMGetTrait('wounded_2')]/[KoMGetTrait('wounded_3')]/[KoMGetTrait('maimed')]#!\n$BULLET_WITH_TAB$@death_icon!#N;bold Death#!"
+ activity_KoM_visit_hideout_guest_desc: "Visit potential [KoM_hideout|E]"
+ activity_KoM_visit_hideout_conclusion_desc: "My visit is complete"
+
+ KoM_visit_hideout_main: "Visit"
+ KoM_visit_hideout_main_desc: "Let's see what is inside!"
+
+ activity_KoM_visit_hideout_owned: "You own this [KoM_hideout|E]"
+ activity_KoM_visit_hideout_visited_known_rumor: "You think that this [province|E] #N Doesn't#! have a real [KoM_hideout|E]"
+ activity_KoM_visit_hideout_visited_owned: "You know this [KoM_hideout|E] was occupied last time you were here"
+ activity_KoM_visit_hideout_visited_unknown: "You know [KoM_hideout|E] is here"
+ activity_KoM_visit_hideout_unvisited: "You don't know if [KoM_hideout|E] is really here, but it is worth the try anyway"
+ activity_KoM_visit_hideout_valid: "This [province|E] lack any rumors about a [KoM_hideout|E]!"

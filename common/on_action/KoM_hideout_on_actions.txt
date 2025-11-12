@@ -1,0 +1,193 @@
+﻿KoM_hideout_init = {
+	effect = {
+		KoM_hideout_create_building_template_effect = { ID = hideout_building_main MAX_LEVEL = 5 ACTIVE = no }
+		KoM_hideout_create_building_template_effect = { ID = hideout_building_secrecy MAX_LEVEL = 5 ACTIVE = no }
+		KoM_hideout_create_building_template_effect = { ID = hideout_building_library MAX_LEVEL = 6 ACTIVE = no }
+
+		KoM_hideout_create_building_template_effect = { ID = hideout_building_defense_goetia MAX_LEVEL = 3 ACTIVE = no } #Goetia
+		KoM_hideout_create_building_template_effect = { ID = hideout_building_defense_thaumaturgy MAX_LEVEL = 3 ACTIVE = no } #Thaumaturgy
+		KoM_hideout_create_building_template_effect = { ID = hideout_building_defense_alchemy MAX_LEVEL = 3 ACTIVE = no } #Alchemy
+		KoM_hideout_create_building_template_effect = { ID = hideout_building_defense_onmyodo MAX_LEVEL = 3 ACTIVE = no } #Onmyodo
+
+		KoM_hideout_create_building_template_effect = { ID = hideout_building_thaumaturgic_laboratory MAX_LEVEL = 4 ACTIVE = no } #Thaumaturgy
+		KoM_hideout_create_building_template_effect = { ID = hideout_building_shrine MAX_LEVEL = 5 ACTIVE = no } #Theurgy
+		KoM_hideout_create_building_template_effect = { ID = hideout_building_alchemic_garden MAX_LEVEL = 5 ACTIVE = yes } #Alchemy
+		KoM_hideout_create_building_template_effect = { ID = hideout_building_meditation_spot MAX_LEVEL = 3 ACTIVE = no } #Taoism
+		KoM_hideout_create_building_template_effect = { ID = hideout_building_talisman_of_protection MAX_LEVEL = 5 ACTIVE = yes } #Onmyodo
+		KoM_hideout_create_building_template_effect = { ID = hideout_building_talisman_of_fortune MAX_LEVEL = 5 ACTIVE = yes } #Onmyodo
+		KoM_hideout_create_building_template_effect = { ID = hideout_building_talisman_of_peace MAX_LEVEL = 5 ACTIVE = yes } #Onmyodo
+
+	}
+}
+
+KoM_hideout_generation = {
+	effect = {
+		save_scope_value_as = {
+			name = KoM_hideout_amount
+			value = 0
+		}
+		every_empire = {
+			while = {
+				count = 2
+				random_de_jure_county = {
+					random_county_province = {
+						limit = { NOT = { has_province_modifier = KoM_rumors_of_hideout_modifier } }
+						KoM_hideout_generate_random_effect = yes
+						save_scope_value_as = {
+							name = KoM_hideout_amount
+							value = { value = scope:KoM_hideout_amount add = 1 }
+						}
+					}
+				}
+			}
+			while = {
+				count = 3
+				random_de_jure_county = {
+					random_county_province = {
+						limit = { NOT = { has_province_modifier = KoM_rumors_of_hideout_modifier } } 
+						add_province_modifier = KoM_rumors_of_hideout_modifier
+					}
+				}
+			}
+		}
+		if = { limit = { scope:KoM_hideout_amount < 10 }
+			while = {
+				count = 10
+				random_province = {
+					limit = { NOT = { has_province_modifier = KoM_rumors_of_hideout_modifier } }
+					KoM_hideout_generate_random_effect = yes
+				}
+			}
+		}
+	}
+}
+
+KoM_hideout_building_refresh = {
+	effect = {
+		KoM_remove_perk_safe_effect = { PERK = KoM_hideout_building_shrine_level_1_perk }
+		KoM_remove_perk_safe_effect = { PERK = KoM_hideout_building_shrine_level_2_perk }
+		KoM_remove_perk_safe_effect = { PERK = KoM_hideout_building_shrine_level_3_perk }
+		KoM_remove_perk_safe_effect = { PERK = KoM_hideout_building_shrine_level_4_perk }
+		KoM_remove_perk_safe_effect = { PERK = KoM_hideout_building_shrine_level_5_perk }
+
+		every_in_list = {
+			variable = KoM_owned_hideouts
+			every_in_list = {
+				variable = hideout_buildings
+				save_scope_as = hideout_building
+				ROOT = {
+					switch = {
+						trigger = scope:hideout_building.var:building_template.var:building_id
+						flag:hideout_building_shrine = {
+							switch = {
+								trigger = scope:hideout_building.var:building_level
+								1 = { KoM_give_perk_safe_effect = { PERK = KoM_hideout_building_shrine_level_1_perk } }
+								2 = { KoM_give_perk_safe_effect = { PERK = KoM_hideout_building_shrine_level_2_perk } }
+								3 = { KoM_give_perk_safe_effect = { PERK = KoM_hideout_building_shrine_level_3_perk } }
+								4 = { KoM_give_perk_safe_effect = { PERK = KoM_hideout_building_shrine_level_4_perk } }
+								5 = { KoM_give_perk_safe_effect = { PERK = KoM_hideout_building_shrine_level_5_perk } }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+KoM_hideout_generate_random = {
+	effect = {
+		while = {
+			count = var:wealth
+			KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_main }
+			KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_secrecy }
+			KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_library }
+			switch = {
+				trigger = var:main_magick_school
+				flag:goetia = {
+					KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_defense_goetia }
+				}
+				flag:thaumaturgy = { 
+					KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_defense_thaumaturgy }
+					KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_thaumaturgic_laboratory }
+				}
+				flag:theurgy = {
+					KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_shrine }
+				}
+				flag:alchemy = {
+					KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_defense_alchemy }
+					KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_alchemic_garden }
+				}
+				flag:taoism = {
+					KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_meditation_spot }
+				}
+				flag:onmyodo = {
+					KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_defense_onmyodo }
+					KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_talisman_of_protection }
+					KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_talisman_of_fortune }
+					KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_talisman_of_peace }
+				}
+			}
+		}
+	}
+}
+KoM_hideout_raid = {
+	effect = {
+		random = { chance = 25 KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = THIS ID = hideout_building_main VALUE = -1 } }
+		random = { chance = 25 KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = THIS ID = hideout_building_secrecy VALUE = -1 } }
+		random = { chance = 25 KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = THIS ID = hideout_building_library VALUE = -1 } }
+
+		random = { chance = 25 KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = THIS ID = hideout_building_defense_goetia VALUE = -1 } }
+		random = { chance = 25 KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = THIS ID = hideout_building_defense_thaumaturgy VALUE = -1 } }
+		random = { chance = 25 KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = THIS ID = hideout_building_defense_alchemy VALUE = -1 } }
+		random = { chance = 25 KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = THIS ID = hideout_building_defense_onmyodo VALUE = -1 } }
+
+		random = { chance = 25 KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = THIS ID = hideout_building_thaumaturgic_laboratory VALUE = -1 } }
+		random = { chance = 25 KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = THIS ID = hideout_building_shrine VALUE = -1 } }
+		random = { chance = 25 KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = THIS ID = hideout_building_alchemic_garden VALUE = -1 } }
+		random = { chance = 25 KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = THIS ID = hideout_building_meditation_spot VALUE = -1 } }
+		random = { chance = 25 KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = THIS ID = hideout_building_talisman_of_protection VALUE = -1 } }
+		random = { chance = 25 KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = THIS ID = hideout_building_talisman_of_fortune VALUE = -1 } }
+		random = { chance = 25 KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = THIS ID = hideout_building_talisman_of_peace VALUE = -1 } }
+	}
+}
+KoM_hideout_deletion = {
+	effect = { end_story = yes }
+}
+
+KoM_hideout_yearly_pulse = {
+	effect = {
+		every_in_list = {
+			variable = hideout_buildings
+			switch = {
+				trigger = var:building_template.var:building_id
+				flag:hideout_building_alchemic_garden = {
+					random_list = {
+						pick = 1
+						unique = yes
+						10 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = salt COUNT = 1 } }
+						10 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = charcoal COUNT = 1 } }
+						6 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = honey COUNT = 1 } }
+						6 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = lead COUNT = 1 } }
+						6 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = silver COUNT = 1 } }
+						4 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = crushed_crystals COUNT = 1 } }
+						2 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = human_blood COUNT = 1 } }
+						2 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = vulcanic_ash COUNT = 1 } }
+						1 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = fireflower COUNT = 1 } }
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				save_temporary_scope_value_as = {
+					name = biyearly_countdown
+					value = { value = current_year modulo = 3 }
+				}
+				scope:biyearly_countdown = 0
+			}
+			save_scope_value_as = { name = random_skill value = { 5 30 } }
+			KoM_hideout_ai_read_effect = { HIDEOUT = THIS SKILL = scope:random_skill }
+		}
+	}
+}

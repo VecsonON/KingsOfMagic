@@ -104,7 +104,7 @@
  KoM_thaumaturgy_deus_tt: "Deus, from latin meaning 'God', is a $KoM_thaumaturgy_confirmation$ of highest grade calling to God(s), it is the hardest $KoM_thaumaturgy_confirmation$ to actually use and master. But it's power is unrivaled by any other confirmation.\n\n$KoM_thaumaturgy_spell_difficulty$: X1.5"
 
  KoM_thaumaturgy_action: "#underline;TOOLTIP:KoM_thaumaturgy_action_tt Action#!"
- KoM_thaumaturgy_action_tt: "Action is considered by some [KoMGetTrait('KoM_thaumaturge')]s as the most important part of $KoM_thaumaturgy_incantation$ as it specifies what action/effect [KoM_spell|E] accomplishes. Number of every actions in unknown but presumed to be in hundreds"
+ KoM_thaumaturgy_action_tt: "Action is considered by some [KoMGetTrait('KoM_thaumaturge')]s as the most important part of $KoM_thaumaturgy_incantation$ as it specifies what action/effect [KoM_spell|E] accomplishes. Number of every action in existence is unknown but presumed to be in hundreds"
 
  KoM_thaumaturgy_recuperare: "#underline;TOOLTIP:KoM_thaumaturgy_recuperare_tt Recuperare#!"
  KoM_thaumaturgy_recuperare_tt: "Recuperare, from latin meaning 'Recover' or 'To be recovered', is a $KoM_thaumaturgy_action$ of generally understood 'repair'.\n\n$KoM_thaumaturgy_spell_difficulty$: +1"

@@ -1,0 +1,227 @@
+﻿# KoM_scavenge_hideout_building_hideout_building_main = { Backed in event
+# 	effect = {
+# 		custom_tooltip = KoM_hideout_events.3003.hideout_building_main.tt
+# 		KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_main VALUE = -1 }
+# 	}
+# }
+KoM_scavenge_hideout_building_hideout_building_secrecy = {
+	effect = {
+		custom_tooltip = KoM_hideout_events.3003.hideout_building_secrecy.tt
+		KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_secrecy VALUE = -1 }
+		add_gold = 25
+		add_prestige = 50
+	}
+}
+KoM_scavenge_hideout_building_hideout_building_library = {
+	effect = {
+		custom_tooltip = KoM_hideout_events.3003.hideout_building_library.tt
+		KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_library VALUE = -1 }
+		KoM_hideout_get_building_from_id = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_library }
+		save_scope_value_as = { name = random_max value = { 0 15 } }
+		save_scope_value_as = { name = random_min value = { 0 15 } }
+		save_scope_value_as = { name = random_gain value = { 1 4 } }
+
+		save_scope_value_as = {
+			name = random_max
+			value = {
+				value = scope:random_max
+				multiply = scope:building.var:building_level
+			}
+		}
+		save_scope_value_as = {
+			name = random_min
+			value = {
+				value = scope:random_min
+				multiply = scope:building.var:building_level
+			}
+		}
+		save_scope_value_as = {
+			name = random_gain
+			value = {
+				value = scope:random_gain
+				add = scope:building.var:building_level
+			}
+		}
+		random_list = {
+			1 = {
+				modifier = {
+					OR = {
+						location.var:KoM_local_hideout.var:hideout_owner ?= { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } 
+						location.var:KoM_local_hideout.var:main_magick_school ?= flag:goetia
+					}
+					add = 9
+				}
+				KoM_scavenge_hideout_building_hideout_building_library_effect = { SCHOOL = goetia }
+			}
+			1 = {
+				modifier = { 
+					OR = {
+						location.var:KoM_local_hideout.var:hideout_owner ?= { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:thaumaturgy } } 
+						location.var:KoM_local_hideout.var:main_magick_school ?= flag:thaumaturgy
+					}
+					add = 9
+				}
+				KoM_scavenge_hideout_building_hideout_building_library_effect = { SCHOOL = thaumaturgy }
+			}
+			1 = {
+				modifier = { 
+					OR = {
+						location.var:KoM_local_hideout.var:hideout_owner ?= { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:theurgy } } 
+						location.var:KoM_local_hideout.var:main_magick_school ?= flag:theurgy
+					}
+					add = 9
+				}
+				KoM_scavenge_hideout_building_hideout_building_library_effect = { SCHOOL = theurgy }
+			}
+			1 = {
+				modifier = { 
+					OR = {
+						location.var:KoM_local_hideout.var:hideout_owner ?= { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:alchemy } } 
+						location.var:KoM_local_hideout.var:main_magick_school ?= flag:alchemy
+					}
+					add = 9
+				}
+				KoM_scavenge_hideout_building_hideout_building_library_effect = { SCHOOL = alchemy }
+			}
+			1 = {
+				modifier = { 
+					OR = {
+						location.var:KoM_local_hideout.var:hideout_owner ?= { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:taoism } } 
+						location.var:KoM_local_hideout.var:main_magick_school ?= flag:taoism
+					}
+					add = 9
+				}
+				KoM_scavenge_hideout_building_hideout_building_library_effect = { SCHOOL = taoism }
+			}
+			1 = {
+				modifier = { 
+					OR = {
+						location.var:KoM_local_hideout.var:hideout_owner ?= { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:onmyodo } } 
+						location.var:KoM_local_hideout.var:main_magick_school ?= flag:onmyodo
+					}
+					add = 9
+				}
+				KoM_scavenge_hideout_building_hideout_building_library_effect = { SCHOOL = onmyodo }
+			}
+		}
+	}
+}
+
+KoM_scavenge_hideout_building_hideout_building_defense_goetia = {
+	effect = {
+		custom_tooltip = KoM_hideout_events.3003.hideout_building_defense_goetia.tt
+		KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_defense_goetia VALUE = -1 }
+		save_scope_value_as = {
+			name = random_num
+			value = { 1 6 }
+		}
+		KoM_study_magic_school_effect = { SCHOOL = flag:goetia COUNT = scope:random_num }
+	}
+}
+KoM_scavenge_hideout_building_hideout_building_defense_thaumaturgy = {
+	effect = {
+		custom_tooltip = KoM_hideout_events.3003.hideout_building_defense_thaumaturgy.tt
+		KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_defense_thaumaturgy VALUE = -1 }
+		save_scope_value_as = {
+			name = random_num
+			value = { 1 6 }
+		}
+		KoM_study_magic_school_effect = { SCHOOL = flag:thaumaturgy COUNT = scope:random_num }
+	}
+}
+KoM_scavenge_hideout_building_hideout_building_defense_alchemy = {
+	effect = {
+		custom_tooltip = KoM_hideout_events.3003.hideout_building_defense_alchemy.tt
+		KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_defense_alchemy VALUE = -1 }
+		save_scope_value_as = {
+			name = random_num
+			value = { 1 6 }
+		}
+		KoM_study_magic_school_effect = { SCHOOL = flag:alchemy COUNT = scope:random_num }
+	}
+}
+KoM_scavenge_hideout_building_hideout_building_defense_onmyodo = {
+	effect = {
+		custom_tooltip = KoM_hideout_events.3003.hideout_building_defense_onmyodo.tt
+		KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_defense_onmyodo VALUE = -1 }
+		save_scope_value_as = {
+			name = random_num
+			value = { 1 6 }
+		}
+		KoM_study_magic_school_effect = { SCHOOL = flag:onmyodo COUNT = scope:random_num }
+	}
+}
+
+KoM_scavenge_hideout_building_hideout_building_shrine = {
+	effect = {
+		custom_tooltip = KoM_hideout_events.3003.hideout_building_shrine.tt
+		KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_shrine VALUE = -1 }
+		save_scope_value_as = {
+			name = random_num
+			value = { 4 8 }
+		}
+		KoM_study_magic_school_effect = { SCHOOL = flag:theurgy COUNT = scope:random_num }
+	}
+}
+KoM_scavenge_hideout_building_hideout_building_alchemic_garden = {
+	effect = {
+		custom_tooltip = KoM_hideout_events.3003.hideout_building_alchemic_garden.tt
+		KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_alchemic_garden VALUE = -1 }
+		random_list = {
+			pick = 5
+			10 = { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_salt COUNT = 1 } }
+			10 = { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_charcoal COUNT = 1 } }
+			6 = { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_honey COUNT = 1 } }
+			6 = { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_lead COUNT = 1 } }
+			6 = { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_silver COUNT = 1 } }
+			4 = { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_crushed_crystals COUNT = 1 } }
+			2 = { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_human_blood COUNT = 1 } }
+			2 = { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_vulcanic_ash COUNT = 1 } }
+			1 = { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_fireflower COUNT = 1 } }
+		}
+	}
+}
+KoM_scavenge_hideout_building_hideout_building_meditation_spot = {
+	effect = {
+		custom_tooltip = KoM_hideout_events.3003.hideout_building_meditation_spot.tt
+		KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_meditation_spot VALUE = -1 }
+		save_scope_value_as = {
+			name = random_num
+			value = { 4 8 }
+		}
+		KoM_study_magic_school_effect = { SCHOOL = flag:taoism COUNT = scope:random_num }
+	}
+}
+KoM_scavenge_hideout_building_hideout_building_talisman_of_protection = {
+	effect = {
+		custom_tooltip = KoM_hideout_events.3003.hideout_building_talisman_of_protection.tt
+		KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_talisman_of_protection VALUE = -1 }
+		save_scope_value_as = {
+			name = random_num
+			value = { 3 7 }
+		}
+		KoM_study_magic_school_effect = { SCHOOL = flag:onmyodo COUNT = scope:random_num }
+	}
+}
+KoM_scavenge_hideout_building_hideout_building_talisman_of_fortune = {
+	effect = {
+		custom_tooltip = KoM_hideout_events.3003.hideout_building_talisman_of_fortune.tt
+		KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_talisman_of_fortune VALUE = -1 }
+		save_scope_value_as = {
+			name = random_num
+			value = { 3 7 }
+		}
+		KoM_study_magic_school_effect = { SCHOOL = flag:onmyodo COUNT = scope:random_num }
+	}
+}
+KoM_scavenge_hideout_building_hideout_building_talisman_of_peace = {
+	effect = {
+		custom_tooltip = KoM_hideout_events.3003.hideout_building_talisman_of_peace.tt
+		KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_talisman_of_peace VALUE = -1 }
+		save_scope_value_as = {
+			name = random_num
+			value = { 3 7 }
+		}
+		KoM_study_magic_school_effect = { SCHOOL = flag:onmyodo COUNT = scope:random_num }
+	}
+}

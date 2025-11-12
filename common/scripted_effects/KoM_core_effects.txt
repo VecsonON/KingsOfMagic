@@ -243,6 +243,12 @@ KoM_give_negative_modifier_based_on_type = {
 	}
 	custom_tooltip = KoM_give_modifier_based_on_type_tooltip
 }
+KoM_give_perk_safe_effect = {
+	if = { limit = { NOT = { has_perk = $PERK$ } } add_perk = $PERK$ }
+}
+KoM_remove_perk_safe_effect = {
+	if = { limit = { has_perk = $PERK$ } remove_perk = $PERK$ }
+}
 
 KoM_create_grimoire_effect = {
 	$OWNER$ = { save_scope_as = owner }

@@ -28,3 +28,9 @@ artifact_monthly_minor_prestige_3_negative_modifier = { monthly_dynasty_prestige
 artifact_court_grandeur_baseline_add_2_negative_modifier = { court_grandeur_baseline_add = -2 }
 artifact_court_grandeur_baseline_add_1_negative_modifier = { court_grandeur_baseline_add = -1 }
 artifact_monthly_lifestyle_xp_miniscule_negative_modifier = { monthly_lifestyle_xp_gain_mult = -0.01 }
+
+KoM_rumors_of_hideout_modifier = { icon = compass_mixed }
+KoM_home_advantage_modifier = {
+	icon = prowess_positive
+	prowess_no_portrait = 20
+}

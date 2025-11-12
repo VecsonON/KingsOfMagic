@@ -1,0 +1,135 @@
+﻿KoM_discovery_chance = {
+	value = 100
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_secrecy } scope:building.var:building_level = 1 } add = -10 }
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_secrecy } scope:building.var:building_level = 2 } add = -30 }
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_secrecy } scope:building.var:building_level = 3 } add = -50 }
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_secrecy } scope:building.var:building_level = 4 } add = -70 }
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_secrecy } scope:building.var:building_level = 5 } add = -90 }
+}
+KoM_defense_value = {
+	value = 5 # Base
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_goetia } scope:building.var:building_level = 1 } add = 5 }
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_goetia } scope:building.var:building_level = 2 } add = 10 }
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_goetia } scope:building.var:building_level = 3 } add = 15 }
+	
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_thaumaturgy } scope:building.var:building_level = 1 } add = 5 }
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_thaumaturgy } scope:building.var:building_level = 2 } add = 10 }
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_thaumaturgy } scope:building.var:building_level = 3 } add = 15 }
+	
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_alchemy } scope:building.var:building_level = 1 } add = 5 }
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_alchemy } scope:building.var:building_level = 2 } add = 10 }
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_alchemy } scope:building.var:building_level = 3 } add = 15 }
+	
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_onmyodo } scope:building.var:building_level = 1 } add = 5 }
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_onmyodo } scope:building.var:building_level = 2 } add = 10 }
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_onmyodo } scope:building.var:building_level = 3 } add = 15 }
+}
+
+KoM_general_hideout_cost_multiplier = {
+	value = 1
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = hideout_building_main } scope:building.var:building_level = 2 } add = -0.1 }
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = hideout_building_main } scope:building.var:building_level = 3 } add = -0.2 }
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = hideout_building_main } scope:building.var:building_level = 4 } add = -0.3 }
+	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = hideout_building_main } scope:building.var:building_level = 5 } add = -0.4 }
+}
+
+KoM_hideout_building_main_level = {
+	value = 0
+	if = {
+		limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = hideout_building_main } }
+		value = scope:building.var:building_level
+	}
+}
+KoM_hideout_building_secrecy_level = {
+	value = 0
+	if = {
+		limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = hideout_building_secrecy } }
+		value = scope:building.var:building_level
+	}
+}
+KoM_hideout_building_library_level = {
+	value = 0
+	if = {
+		limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = hideout_building_library } }
+		value = scope:building.var:building_level
+	}
+}
+
+KoM_hideout_building_defense_goetia_level = {
+	value = 0
+	if = {
+		limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = hideout_building_defense_goetia } }
+		value = scope:building.var:building_level
+	}
+}
+KoM_hideout_building_defense_thaumaturgy_level = {
+	value = 0
+	if = {
+		limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = hideout_building_defense_thaumaturgy } }
+		value = scope:building.var:building_level
+	}
+}
+KoM_hideout_building_defense_alchemy_level = {
+	value = 0
+	if = {
+		limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = hideout_building_defense_alchemy } }
+		value = scope:building.var:building_level
+	}
+}
+KoM_hideout_building_defense_onmyodo_level = {
+	value = 0
+	if = {
+		limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = hideout_building_defense_onmyodo } }
+		value = scope:building.var:building_level
+	}
+}
+
+KoM_hideout_building_thaumaturgic_laboratory_level = {
+	value = 0
+	if = {
+		limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = hideout_building_thaumaturgic_laboratory } }
+		value = scope:building.var:building_level
+	}
+}
+KoM_hideout_building_shrine_level = {
+	value = 0
+	if = {
+		limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = hideout_building_shrine } }
+		value = scope:building.var:building_level
+	}
+}
+KoM_hideout_building_alchemic_garden_level = {
+	value = 0
+	if = {
+		limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = hideout_building_alchemic_garden } }
+		value = scope:building.var:building_level
+	}
+}
+KoM_hideout_building_meditation_spot_level = {
+	value = 0
+	if = {
+		limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = hideout_building_meditation_spot } }
+		value = scope:building.var:building_level
+	}
+}
+KoM_hideout_building_talisman_of_protection_level = {
+	value = 0
+	if = {
+		limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = hideout_building_talisman_of_protection } }
+		value = scope:building.var:building_level
+	}
+}
+KoM_hideout_building_talisman_of_fortune_level = {
+	value = 0
+	if = {
+		limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = hideout_building_talisman_of_fortune } }
+		value = scope:building.var:building_level
+	}
+}
+KoM_hideout_building_talisman_of_peace_level = {
+	value = 0
+	if = {
+		limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = hideout_building_talisman_of_peace } }
+		value = scope:building.var:building_level
+	}
+}

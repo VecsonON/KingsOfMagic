@@ -16,3 +16,12 @@
  KoM_request_teaching_interaction: "Request Teaching for [KoM_magick|E]"
  KoM_request_teaching_interaction_desc: "Send Request to [recipient.GetFirstName] for them to teach you [KoM_magick|E]"
  KoM_request_teaching_interaction_info: "#I You cannot teach [actor.GetFirstName] more than you know, if you were to teach more than your mastery, it will be truncated to it.#!"
+
+ KoM_write_grimoire_interaction: "Write a [KoM_grimoire|E]"
+ KoM_write_grimoire_interaction_desc: "Every [KoM_grimoire|E] had an author, maybe it is time for you to create one yourself?"
+ KoM_write_grimoire_interaction_max: "Your created [KoM_grimoire|E] will have maximal mastery of [SCOPE.GetValue('random_max')|V0]"
+ KoM_write_grimoire_interaction_min: "Your created [KoM_grimoire|E] will have minimal mastery of [SCOPE.GetValue('random_min')|V0]"
+ KoM_write_grimoire_interaction_gain: "Your created [KoM_grimoire|E] will have mastery gain of [SCOPE.GetValue('random_gain')|V0]"
+
+ KoM_build_hideout_interaction: "Build a [KoM_hideout|E]"
+ KoM_build_hideout_interaction_desc: "[KoM_hideouts|E] are vital for any [KoM_practitioner|E] wanting to focus on their study of [KoM_magick|E], it should be worth creating one for myself."

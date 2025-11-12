@@ -85,6 +85,16 @@ KoM_theurgy_level = {
 	}
 }
 
+KoM_thaumaturgy_spell_difficulty = {
+	value = 0
+	add = scope:spell.var:spell_difficulty
+	if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_thaumaturgic_laboratory } scope:building.var:building_level = 1 } multiply = 0.95 }
+	if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_thaumaturgic_laboratory } scope:building.var:building_level = 2 } multiply = 0.90 }
+	if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_thaumaturgic_laboratory } scope:building.var:building_level = 3 } multiply = 0.85 }
+	if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_thaumaturgic_laboratory } scope:building.var:building_level = 4 } multiply = 0.8 }
+	min = 1
+}
+
 KoM_alchemy_salt = {
 	value = 0 if = { limit = { has_variable = KoM_alchemy_salt }  		 value = var:KoM_alchemy_salt }
 }

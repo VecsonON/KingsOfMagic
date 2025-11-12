@@ -560,3 +560,164 @@ KoM_request_teaching_interaction = {
 		}
 	}
 }
+
+KoM_write_grimoire_interaction = {
+	category = interaction_category_friendly
+	icon = icon_scheme_crypto_religion
+	desc = KoM_write_grimoire_interaction_desc
+
+	cooldown = { years = 5 }
+
+	is_shown = {
+		scope:actor = scope:recipient
+		scope:actor = { KoM_is_a_mage_trigger = yes }
+	}
+
+	send_option = {
+		is_shown = { scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+		flag = goetia
+		localization = KoM_goetia
+	}
+
+	send_option = {
+		is_shown = { scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:thaumaturgy } } }
+		flag = thaumaturgy
+		localization = KoM_thaumaturgy
+	}
+
+	send_option = {
+		is_shown = { scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:theurgy } } }
+		flag = theurgy
+		localization = KoM_theurgy
+	}
+
+	send_option = {
+		is_shown = { scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:alchemy } } }
+		flag = alchemy
+		localization = KoM_alchemy
+	}
+
+	send_option = {
+		is_shown = { scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:taoism } } }
+		flag = taoism
+		localization = KoM_taoism
+	}
+
+	send_option = {
+		is_shown = { scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:onmyodo } } }
+		flag = onmyodo
+		localization = KoM_onmyodo
+	}
+
+
+	on_accept = {
+		scope:actor = {
+			save_scope_value_as = {
+				name = random_max
+				value = {
+					value = 100
+					switch = {
+						trigger = yes
+						scope:goetia = { value = KoM_goetia_xp }
+						scope:thaumaturgy = { value = KoM_thaumaturgy_xp }
+						scope:theurgy = { value = KoM_theurgy_xp }
+						scope:alchemy = { value = KoM_alchemy_xp }
+						scope:taoism = { value = KoM_taoism_xp }
+						scope:onmyodo = { value = KoM_onmyodo_xp }
+					}
+				}
+			}
+			save_scope_value_as = {
+				name = random_min
+				value = {
+					value = scope:random_max
+					subtract = 40
+					min = 0
+					if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_library } scope:building.var:building_level = 1 } multiply = 0.95 }
+					if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_library } scope:building.var:building_level = 2 } multiply = 0.90 }
+					if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_library } scope:building.var:building_level = 3 } multiply = 0.85 }
+					if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_library } scope:building.var:building_level = 4 } multiply = 0.8 }
+					if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_library } scope:building.var:building_level = 5 } multiply = 0.75 }
+					if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_library } scope:building.var:building_level = 6 } multiply = 0.7 }
+				}
+			}
+			save_scope_value_as = {
+				name = random_gain
+				value = {
+					value = learning
+					divide = 10
+					if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_library } scope:building.var:building_level = 1 } multiply = 1.1 }
+					if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_library } scope:building.var:building_level = 2 } multiply = 1.2 }
+					if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_library } scope:building.var:building_level = 3 } multiply = 1.3 }
+					if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_library } scope:building.var:building_level = 4 } multiply = 1.4 }
+					if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_library } scope:building.var:building_level = 5 } multiply = 1.5 }
+					if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_library } scope:building.var:building_level = 6 } multiply = 1.6 }
+					floor = yes
+					max = 100
+					min = 1
+				}
+			}
+			custom_tooltip = KoM_write_grimoire_interaction_max
+			custom_tooltip = KoM_write_grimoire_interaction_min
+			custom_tooltip = KoM_write_grimoire_interaction_gain
+			switch = {
+				trigger = yes
+				scope:goetia = { KoM_scavenge_hideout_building_hideout_building_library_effect = { SCHOOL = goetia } }
+				scope:thaumaturgy = { KoM_scavenge_hideout_building_hideout_building_library_effect = { SCHOOL = thaumaturgy } }
+				scope:theurgy = { KoM_scavenge_hideout_building_hideout_building_library_effect = { SCHOOL = theurgy } }
+				scope:alchemy = { KoM_scavenge_hideout_building_hideout_building_library_effect = { SCHOOL = alchemy } }
+				scope:taoism = { KoM_scavenge_hideout_building_hideout_building_library_effect = { SCHOOL = taoism } }
+				scope:onmyodo = { KoM_scavenge_hideout_building_hideout_building_library_effect = { SCHOOL = onmyodo } }
+			}
+		}
+	}
+
+	auto_accept = yes
+
+	ai_will_do = { base = 0 }
+}
+
+KoM_build_hideout_interaction = {
+	category = interaction_category_friendly
+	icon = icon_transfer_county
+	desc = KoM_build_hideout_interaction_desc
+
+	cooldown = { years = 25 }
+
+	target_type = title
+	target_filter = actor_realm_titles
+
+	is_shown = {
+		scope:actor = scope:recipient
+		scope:actor = { KoM_is_a_mage_trigger = yes }
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			gold >= 1250
+		}
+	}
+
+	can_be_picked = {
+		scope:target = {
+			title_province = {
+				NOT = { has_province_modifier = KoM_rumors_of_hideout_modifier }
+			}
+			tier <= tier_county
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			remove_short_term_gold = 1250
+			KoM_hideout_create_empty_hideout_effect = { LOCATION = scope:target.title_province }
+			hidden_effect_new_object = {
+				KoM_hideout_change_owner_effect = { HIDEOUT = scope:temp_hideout NEW_OWNER = scope:actor }
+			}
+		}
+	}
+
+	auto_accept = yes
+
+	ai_will_do = { base = 0 }
+}

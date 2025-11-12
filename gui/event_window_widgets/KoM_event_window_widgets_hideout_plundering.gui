@@ -1,0 +1,37 @@
+﻿
+vbox = {
+	name = "KoM_event_window_widgets_hideout_plundering"
+	layoutpolicy_horizontal = expanding
+	scrollbox = {
+		layoutpolicy_horizontal = expanding
+		size = { 500 250 }
+		
+		blockoverride "scrollbox_margins" {}
+		blockoverride "scrollbox_content" {
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				margin_bottom = 1
+				spacing = 5
+				
+				datamodel = "[GetPlayer.GetCurrentLocation.MakeScope.Var('KoM_local_hideout').Story.MakeScope.GetList('hideout_buildings')]"
+				
+				item = {
+					KoM_fake_event_button = {
+						layoutpolicy_horizontal = expanding
+
+						visible = "[Not(EqualTo_string(Scope.Var('building_template').Story.MakeScope.Var('building_id').GetFlagKey, 'hideout_building_main'))]"
+						
+						onclick = "[GetScriptedGui(Concatenate('KoM_scavenge_hideout_building_',Scope.Var('building_template').Story.MakeScope.Var('building_id').GetFlagName)).Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+
+						blockoverride "button_text" {
+							text = "[Localize(Concatenate('KoM_hideout_events.3003.',Scope.Var('building_template').Story.MakeScope.Var('building_id').GetFlagName))]"
+						}
+						blockoverride "button_tooltip" {
+							tooltip = "[GetScriptedGui(Concatenate('KoM_scavenge_hideout_building_',Scope.Var('building_template').Story.MakeScope.Var('building_id').GetFlagName)).BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -52,3 +52,21 @@
 
  HAS_TRAIT_WITH_FLAG_TAOISM_STAGE_TRIGGER: "You must have any of these [traits|E]: [KoMGetTrait('KoM_lianjing_huaqi')], [KoMGetTrait('KoM_lianqi_huashen')], [KoMGetTrait('KoM_lianshen_huanxu')] or [KoMGetTrait('KoM_xian')]"
  NOT_HAS_TRAIT_WITH_FLAG_TAOISM_STAGE_TRIGGER: "You must have any of these [traits|E]: [KoMGetTrait('KoM_lianjing_huaqi')], [KoMGetTrait('KoM_lianqi_huashen')], [KoMGetTrait('KoM_lianshen_huanxu')] or [KoMGetTrait('KoM_xian')]"
+
+ KoM_rumors_of_hideout_modifier: "Rumors about Hideout"
+ KoM_home_advantage_modifier: "Home Advantage"
+
+ KoM_hideout_create_empty_hideout_effect: "A new [KoM_hideout|E] will be built in [SCOPE.sProvince('KoM_location').GetName]"
+ KoM_hideout_add_building_to_hideout_effect: "[Localize(Concatenate('KoM_',SCOPE.GetFlagName('building_id')))|V] will be built in [SCOPE.sCharacter('KoM_hideout_character').GetFirstNameNoTooltip|V] at [SCOPE.GetValue('building_level')|0V] level"
+ KoM_hideout_increase_building_level_effect: "[Localize(Concatenate('KoM_',KoM_hideout_building.MakeScope.Var('building_template').Story.MakeScope.Var('building_id').GetFlagName))|V] level will be increase by [SCOPE.GetValue('change')|P0]!"
+ KoM_hideout_decrease_building_level_effect: "[Localize(Concatenate('KoM_',KoM_hideout_building.MakeScope.Var('building_template').Story.MakeScope.Var('building_id').GetFlagName))|V] level will be decreased by [SCOPE.GetValue('change')|N0]!"
+ KoM_hideout_move_hideout_effect: "[KoM_hideout.MakeScope.Var('hideout_character').Char.GetFirstNameNoTooltip|V] will be moved from [SCOPE.sProvince('KoM_old_location')] to [SCOPE.sProvince('KoM_new_location')]"
+ KoM_hideout_change_owner_effect: "[KoM_hideout.MakeScope.Var('hideout_character').Char.GetFirstNameNoTooltip|V]'s ownership will be transferred to [SCOPE.sCharacter('KoM_new_owner').GetName]"
+ KoM_hideout_remove_owner_effect: "[KoM_hideout.MakeScope.Var('hideout_character').Char.GetFirstNameNoTooltip|V] will become owner-less!"
+ KoM_hideout_destroy_effect: "[KoM_hideout.MakeScope.Var('hideout_character').Char.GetFirstNameNoTooltip|V] will be destroyed!"
+ KoM_hideout_has_building_trigger: "[KoM_hideout_temp.MakeScope.Var('hideout_character').Char.GetFirstNameNoTooltip|V] Needs to have [Localize(Concatenate('KoM_',SCOPE.GetFlagName('building_id')))|V]!"
+ KoM_hideout_has_building_has_level_trigger: "[KoM_hideout_temp.MakeScope.Var('hideout_character').Char.GetFirstNameNoTooltip|V] needs to have [Localize(Concatenate('KoM_',SCOPE.GetFlagName('building_id')))|V] of at least [SCOPE.GetValue('building_level')|0V]!"
+ KoM_hideout_has_building_has_not_level_trigger: "[KoM_hideout_temp.MakeScope.Var('hideout_character').Char.GetFirstNameNoTooltip|V] cannot have [Localize(Concatenate('KoM_',SCOPE.GetFlagName('building_id')))|V] with level equal or higher than [SCOPE.GetValue('building_level')|0V]!"
+
+ KoM_hideout_ai_read_effect_success: "$KoM_hideout_raid$ succeeded at [KoM_hideout.MakeScope.Var('hideout_character').Char.GetFirstNameNoTooltip|V]"
+ KoM_hideout_ai_read_effect_success_tt: "$KoM_hideout_raid$ succeeded at [KoM_hideout.MakeScope.Var('hideout_character').Char.GetFirstNameNoTooltip|V] #weak [KoM_hideout_temp.MakeScope.Var('hideout_location').GetName]#!!"

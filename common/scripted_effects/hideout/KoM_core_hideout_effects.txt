@@ -1,0 +1,688 @@
+﻿#CORE
+# LOCATION - PROVINCE
+KoM_hideout_create_empty_hideout_effect = {
+	$LOCATION$ = { save_scope_as = KoM_location }
+	custom_tooltip = {
+		text = KoM_hideout_create_empty_hideout_effect
+		create_character = {
+			name = KoM_hideout_name_new
+			dynasty = none
+			age = 16
+			gender_female_chance = 50
+			random_traits = no
+			location = scope:KoM_location
+			faith = scope:KoM_location.faith
+			culture = scope:KoM_location.culture
+			save_scope_as = KoM_hideout_character
+		}
+		scope:KoM_hideout_character = {
+			create_story = { type = KoM_story_cycle_hideout save_scope_as = temp_hideout }
+			scope:temp_hideout ?= {
+				set_variable = { name = hideout_location value = scope:KoM_location }
+				set_variable = { name = hideout_character value = scope:KoM_hideout_character }
+				set_variable = { name = hideout_type value = flag:KoM_ruined }
+				KoM_hideout_add_building_to_hideout_effect = { HIDEOUT = THIS ID = hideout_building_main LEVEL = 1 }
+			}
+		}
+		scope:KoM_location = {
+			set_variable = {
+				name = KoM_local_hideout
+				value = scope:temp_hideout
+			}
+			add_province_modifier = KoM_rumors_of_hideout_modifier
+		}
+	}
+}
+# HIDEOUT - STORY | TYPE - TXT
+KoM_hideout_change_type_effect = {
+	$HIDEOUT$ = { save_scope_as = KoM_hideout }
+	scope:KoM_hideout = { set_variable = { name = hideout_type value = flag:$TYPE$ } }
+}
+# HIDEOUT - STORY | NEW_LOCATION - PROVINCE
+KoM_hideout_move_hideout_effect = {
+	$HIDEOUT$ = { save_scope_as = KoM_hideout }
+	scope:KoM_hideout.var:hideout_location = { save_scope_as = KoM_old_location }
+	$NEW_LOCATION$ = { save_scope_as = KoM_new_location }
+	custom_tooltip = {
+		text = KoM_hideout_move_hideout_effect
+		scope:KoM_hideout.var:hideout_location = { remove_province_modifier = KoM_rumors_of_hideout_modifier remove_variable = KoM_local_hideout }
+		scope:KoM_new_location = { set_variable = { name = KoM_local_hideout value = scope:KoM_hideout } }
+		scope:KoM_hideout = { set_variable = { name = hideout_location value = scope:KoM_new_location } }
+	}
+}
+# HIDEOUT - STORY | NEW_OWNER - CHARACTER
+KoM_hideout_change_owner_effect = {
+	$HIDEOUT$ = { save_scope_as = KoM_hideout }
+	$NEW_OWNER$ = { save_scope_as = KoM_new_owner }
+	custom_tooltip = {
+		text = KoM_hideout_change_owner_effect
+		scope:KoM_hideout = {
+			var:hideout_owner ?= { 
+				remove_list_variable = { name = KoM_owned_hideouts target = scope:KoM_hideout } 
+				trigger_event = { on_action = KoM_hideout_building_refresh }
+			}
+			scope:KoM_new_owner = { 
+				add_to_variable_list = { name = KoM_owned_hideouts target = scope:KoM_hideout } 
+				trigger_event = { on_action = KoM_hideout_building_refresh }
+			}
+			KoM_hideout_change_type_effect = { HIDEOUT = scope:KoM_hideout TYPE = KoM_owned }
+			set_variable = { name = hideout_owner value = scope:KoM_new_owner }
+			remove_variable = main_magick_school
+		}
+	}
+}
+# HIDEOUT - STORY
+KoM_hideout_remove_owner_effect = {
+	$HIDEOUT$ = { save_scope_as = KoM_hideout }
+	custom_tooltip = {
+		text = KoM_hideout_remove_owner_effect
+		scope:KoM_hideout = {
+			var:hideout_owner ?= { 
+				remove_list_variable = { name = KoM_owned_hideouts target = scope:KoM_hideout } 
+				trigger_event = { on_action = KoM_hideout_building_refresh } 
+			}
+			remove_variable = hideout_owner
+			set_variable = { name = hideout_type value = flag:KoM_abandoned }
+		}
+	}
+}
+# BUILDINGS
+# ID - TXT | MAX_LEVEL - INT | ACTIVE - BOOL
+KoM_hideout_create_building_template_effect = {
+	if = {
+		limit = { NOT = { exists = global_var:KoM_eternal_character } }
+		random_province = { save_scope_as = KoM_location }
+		create_character = {
+			dynasty = none
+			age = 16
+			gender_female_chance = 50
+			random_traits = no
+			location = scope:KoM_location
+			faith = scope:KoM_location.faith
+			culture = scope:KoM_location.culture
+			save_scope_as = KoM_eternal_character
+		}
+		scope:KoM_eternal_character = { create_story = { type = KoM_story_cycle_hideout_building_template } }
+		set_global_variable = { name = KoM_eternal_character value = scope:KoM_eternal_character }
+	}
+	global_var:KoM_eternal_character ?= {
+		create_story = { type = KoM_story_cycle_hideout_building save_scope_as = temp_building }
+		scope:temp_building ?= {
+			set_variable = { name = building_id value = flag:$ID$ }
+			set_variable = { name = building_max_level value = $MAX_LEVEL$ }
+			set_variable = { name = building_active value = $ACTIVE$ }
+		}
+		add_to_global_variable_list = { name = hideout_building_templates target = scope:temp_building }
+	}
+}
+# ID - TXT
+KoM_hideout_get_building_template_from_id = {
+	every_in_global_list = {
+		variable = hideout_building_templates
+		limit = { var:building_id = flag:$ID$ }
+		save_scope_as = building_template
+	}
+	if = {
+		limit = { NOT = { exists = scope:building_template } }
+		error_log = "Hideout Building is missing template!"
+	}
+}
+# HIDEOUT - STORY | ID - TXT
+KoM_hideout_get_building_from_id = {
+	$HIDEOUT$ = { save_scope_as = KoM_hideout }
+	scope:KoM_hideout = {
+		every_in_list = {
+			variable = hideout_buildings
+			limit = { var:building_template.var:building_id = flag:$ID$ }
+			save_scope_as = building
+		}
+	}
+}
+# HIDEOUT - STORY | ID = TXT | LEVEL = INT
+KoM_hideout_add_building_to_hideout_effect = {
+	$HIDEOUT$ = { save_scope_as = KoM_hideout }
+	scope:KoM_hideout.var:hideout_character = { save_scope_as = KoM_hideout_character }
+	save_scope_value_as = { name = building_id value = flag:$ID$ }
+	save_scope_value_as = { name = building_level value = $LEVEL$ }
+	custom_tooltip = {
+		text = KoM_hideout_add_building_to_hideout_effect
+		if = {
+			limit = { 
+				NOT = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = $ID$ } }
+			}
+			scope:KoM_hideout_character = {
+				create_story = { type = KoM_story_cycle_hideout_building save_scope_as = KoM_hideout_building }
+			}
+			KoM_hideout_get_building_template_from_id = { ID = $ID$ }
+			scope:KoM_hideout_building ?= {
+				set_variable = { name = building_hideout value = scope:KoM_hideout }
+				set_variable = { name = building_template value = scope:building_template }
+				set_variable = { name = building_level value = $LEVEL$ }
+			}
+			scope:KoM_hideout = { 
+				add_to_variable_list = { name = hideout_buildings target = scope:KoM_hideout_building } 
+				var:hideout_owner ?= { trigger_event = { on_action = KoM_hideout_building_refresh } }
+			}
+		}
+	}
+}
+# HIDEOUT_BUILDING - STORY | VALUE - INT
+KoM_hideout_change_building_level_effect = {
+	$HIDEOUT_BUILDING$ = { save_scope_as = KoM_hideout_building }
+	scope:KoM_hideout_building = {
+		save_scope_value_as = { name = change value = $VALUE$ }
+		if = { limit = { scope:change < 0 } save_scope_value_as = { name = change value = { value = scope:change multiply = -1 } } }
+		if = { limit = { $VALUE$ >= 1 } custom_tooltip = KoM_hideout_increase_building_level_effect }
+		else = { custom_tooltip = KoM_hideout_decrease_building_level_effect }
+		set_variable = {
+			name = building_level
+			value = {
+				value = var:building_level
+				add = $VALUE$
+				max = var:building_template.var:building_max_level
+			}
+		}
+		var:building_hideout.var:hideout_owner ?= { trigger_event = { on_action = KoM_hideout_building_refresh } }
+		if = {
+			limit = { 
+				save_temporary_scope_value_as = {
+					name = building_level_after
+					value = {
+						value = scope:KoM_hideout_building.var:building_level
+						add = -1
+					}
+				}
+				scope:building_level_after <= 0
+			}
+			KoM_hideout_destroy_building_effect = { BUILDING = scope:KoM_hideout_building }
+		}
+		if = {
+			limit = { 
+				OR = {
+					NOT = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout_building.var:building_hideout ID = hideout_building_main } } 
+					AND = {
+						scope:building_level_after <= 0
+						scope:KoM_hideout_building.var:building_template.var:building_id = flag:hideout_building_main
+					}
+				}
+			}
+			KoM_hideout_destroy_effect = { HIDEOUT = scope:KoM_hideout_building.var:building_hideout }
+		}
+	}
+}
+# HIDEOUT - STORY | ID - TXT | VALUE - INT 
+KoM_hideout_change_building_level_from_id_effect = {
+	$HIDEOUT$ = { save_scope_as = KoM_hideout }
+	scope:KoM_hideout = {
+		every_in_list = {
+			variable = hideout_buildings
+			limit = { var:building_template.var:building_id = flag:$ID$ }
+			KoM_hideout_change_building_level_effect = { HIDEOUT_BUILDING = THIS VALUE = $VALUE$ }
+		}
+	}
+}
+# ID - TXT
+KoM_build_or_upgrade_hideout_building_effect = {
+	if = { 
+		limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = $ID$ } }
+		KoM_hideout_change_building_level_effect = { HIDEOUT_BUILDING = scope:building VALUE = 1 }
+	}
+	else = {
+		KoM_hideout_add_building_to_hideout_effect = { HIDEOUT = THIS ID = $ID$ LEVEL = 1 }
+	}
+}
+# HIDEOUT_BUILDING - STORY
+KoM_hideout_destroy_building_effect = {
+	$BUILDING$ = { save_scope_as = KoM_hideout_building }
+	scope:KoM_hideout_building ?= {
+		var:building_hideout ?= { remove_list_variable = { name = hideout_buildings target = scope:KoM_hideout_building } }
+		trigger_event = { on_action = KoM_hideout_deletion days = 1 }
+	}
+}
+# HIDEOUT - STORY
+KoM_hideout_destroy_effect = {
+	$HIDEOUT$ = { save_scope_as = KoM_hideout }
+	custom_tooltip = {
+		text = KoM_hideout_destroy_effect
+		scope:KoM_hideout = {
+			every_in_list = {
+				variable = hideout_buildings
+				KoM_hideout_destroy_building_effect = { BUILDING = THIS }
+			}
+			var:hideout_location = { remove_province_modifier = KoM_rumors_of_hideout_modifier }
+			trigger_event = { on_action = KoM_hideout_deletion days = 1 }
+		}
+	}
+}
+#OTHER
+# HIDEOUT - STORY | SKILL - INT
+KoM_hideout_ai_read_effect = {
+	$HIDEOUT$ = { save_scope_as = KoM_hideout }
+	scope:KoM_hideout ?= {
+		random = {
+			chance = KoM_discovery_chance
+			save_scope_value_as = { name = secrecy_check value = yes }
+		}
+		random_list = {
+			1 = { 
+				modifier = { add = $SKILL$ } 
+				save_scope_value_as = { name = defense_check value = yes } 
+			}
+			1 = { 
+				modifier = { add = KoM_defense_value } 
+			}
+		}
+		if = {
+			limit = {
+				scope:secrecy_check ?= yes
+				scope:defense_check ?= yes
+			}
+			var:hideout_owner ?= {
+				send_interface_message = { 
+					title = KoM_hideout_ai_read_effect_success 
+					custom_tooltip = KoM_hideout_ai_read_effect_success_tt
+				}
+			}
+			trigger_event = { on_action = KoM_hideout_raid }
+		}
+	}
+}
+# scope - PROVINCE
+KoM_hideout_generate_random_effect = {
+	KoM_hideout_create_empty_hideout_effect = { LOCATION = THIS }
+	random_list = {
+		2 = { 
+			KoM_hideout_change_type_effect = { HIDEOUT = var:KoM_local_hideout TYPE = KoM_ruined } 
+			var:KoM_local_hideout.var:hideout_character = { change_first_name = "KoM_hideout_name_ruined" }
+		}
+		3 = { 
+			KoM_hideout_change_type_effect = { HIDEOUT = var:KoM_local_hideout TYPE = KoM_abandoned } 
+			var:KoM_local_hideout.var:hideout_character = { change_first_name = "KoM_hideout_name_abandoned" }
+		}
+		1 = { 
+			create_character = {
+				age = { 22 60 }
+				gender_female_chance = 50
+				location = THIS
+				faith = faith
+				culture = culture
+				save_scope_as = KoM_hideout_owner
+			}
+			KoM_hideout_change_owner_effect = { HIDEOUT = var:KoM_local_hideout NEW_OWNER = scope:KoM_hideout_owner }
+			var:KoM_local_hideout.var:hideout_character = {
+				change_first_name = "KoM_hideout_name_owner"
+			}
+		}
+	}
+	random_list = {
+		1 = {
+			modifier = {
+				add = 10
+				OR = {
+					geographical_region = world_europe_west
+					geographical_region = world_europe_south
+					geographical_region = world_europe_east
+				}
+			}
+			modifier = {
+				add = 10
+				faith ?= { has_doctrine = doctrine_witchcraft_accepted }
+			}
+			modifier = {
+				add = 20
+				faith ?= { has_doctrine = doctrine_witchcraft_virtuous }
+			}
+			var:KoM_local_hideout = { set_variable = { name = main_magick_school value = flag:goetia } }
+			scope:KoM_hideout_owner ?= {
+				KoM_study_magic_school_effect = { SCHOOL = flag:goetia COUNT = 1 }
+				save_scope_value_as = { name = random_num value = { 20 80 } }
+				KoM_study_magic_school_effect = { SCHOOL = flag:goetia COUNT = scope:random_num }
+			}
+		}
+		1 = {
+			modifier = {
+				add = 10
+				geographical_region = world_europe_south
+			}
+			modifier = {
+				add = 10
+				culture ?= { has_cultural_tradition = tradition_mendicant_mystics }
+			}
+			modifier = {
+				add = 10
+				culture ?= { has_cultural_tradition = tradition_philosopher_culture }
+			}
+			modifier = {
+				add = 10
+				culture ?= { has_cultural_tradition = tradition_sorcerous_metallurgy }
+			}
+			var:KoM_local_hideout = { set_variable = { name = main_magick_school value = flag:thaumaturgy } }
+			scope:KoM_hideout_owner ?= {
+				KoM_study_magic_school_effect = { SCHOOL = flag:thaumaturgy COUNT = 1 }
+				save_scope_value_as = { name = random_num value = { 20 80 } }
+				KoM_study_magic_school_effect = { SCHOOL = flag:thaumaturgy COUNT = scope:random_num }
+			}
+		}
+		1 = {
+			modifier = {
+				add = 10
+				faith ?= { religion ?= religion:christianity_religion }
+			}
+			modifier = {
+				add = 10
+				faith ?= { religion ?= religion:islam_religion }
+			}
+			modifier = {
+				add = 10
+				culture ?= { has_cultural_tradition = tradition_zealous_people }
+			}
+			var:KoM_local_hideout = { set_variable = { name = main_magick_school value = flag:theurgy } }
+			scope:KoM_hideout_owner ?= {
+				KoM_study_magic_school_effect = { SCHOOL = flag:theurgy COUNT = 1 }
+				save_scope_value_as = { name = random_num value = { 20 80 } }
+				KoM_study_magic_school_effect = { SCHOOL = flag:theurgy COUNT = scope:random_num }
+			}
+		}
+		1 = {
+			modifier = {
+				add = 10
+				culture ?= { has_cultural_tradition = tradition_metal_craftsmanship }
+			}
+			modifier = {
+				add = 10
+				culture ?= { has_cultural_tradition = tradition_hard_working }
+			}
+			modifier = {
+				add = 10
+				culture ?= { has_cultural_tradition = tradition_artisans }
+			}
+			var:KoM_local_hideout = { set_variable = { name = main_magick_school value = flag:alchemy } }
+			scope:KoM_hideout_owner ?= {
+				KoM_study_magic_school_effect = { SCHOOL = flag:alchemy COUNT = 1 }
+				save_scope_value_as = { name = random_num value = { 20 80 } }
+				KoM_study_magic_school_effect = { SCHOOL = flag:alchemy COUNT = scope:random_num }
+			}
+		}
+		1 = {
+			modifier = {
+				add = 10
+				culture ?= culture:han
+			}
+			modifier = {
+				add = 10
+				faith ?= { religion ?= religion:taoism_religion }
+			}
+			modifier = {
+				add = 20
+				geographical_region = world_asia_china
+			}
+			var:KoM_local_hideout = { set_variable = { name = main_magick_school value = flag:taoism } }
+			scope:KoM_hideout_owner ?= {
+				KoM_study_magic_school_effect = { SCHOOL = flag:taoism COUNT = 1 }
+				save_scope_value_as = { name = random_num value = { 20 80 } }
+				KoM_study_magic_school_effect = { SCHOOL = flag:taoism COUNT = scope:random_num }
+			}
+		}
+		1 = {
+			modifier = {
+				add = 20
+				culture ?= culture:japanese
+			}
+			modifier = {
+				add = 10
+				faith ?= { religion ?= religion:shintoism_religion }
+			}
+			modifier = {
+				add = 10
+				geographical_region = world_asia_japan
+			}
+			var:KoM_local_hideout = { set_variable = { name = main_magick_school value = flag:onmyodo } }
+			scope:KoM_hideout_owner ?= {
+				KoM_study_magic_school_effect = { SCHOOL = flag:onmyodo COUNT = 1 }
+				save_scope_value_as = { name = random_num value = { 20 80 } }
+				KoM_study_magic_school_effect = { SCHOOL = flag:onmyodo COUNT = scope:random_num }
+			}
+		}
+	}
+	var:KoM_local_hideout ?= { 
+		random_list = {
+			1 = { set_variable = { name = wealth value = 1 } }
+			1 = { set_variable = { name = wealth value = 2 } }
+			2 = { set_variable = { name = wealth value = 3 } }
+			3 = { set_variable = { name = wealth value = 4 } }
+			4 = { set_variable = { name = wealth value = 5 } }
+			3 = { set_variable = { name = wealth value = 6 } }
+			2 = { set_variable = { name = wealth value = 7 } }
+			1 = { set_variable = { name = wealth value = 8 } }
+			1 = { set_variable = { name = wealth value = 9 } }
+		}
+		trigger_event = { on_action = KoM_hideout_generate_random } 
+		switch = {
+			trigger = var:hideout_type
+			flag:KoM_ruined = { save_scope_value_as = { name = raid_num value = 10 } }
+			flag:KoM_abandoned = { save_scope_value_as = { name = raid_num value = 5 } }
+			flag:KoM_owned = { save_scope_value_as = { name = raid_num value = 2 } }
+		}
+		while = {
+			count = scope:raid_num
+			save_scope_value_as = { name = skill_num value = { 0 50 } }
+			KoM_hideout_ai_read_effect = { HIDEOUT = THIS SKILL = scope:skill_num }
+		}
+	}
+}
+# HIDEOUT - STORY | GOLD_COST - INT | PRESTIGE_COST - INT | PIETY_COST - INT
+KoM_hideout_building_cost_effect = {
+	save_scope_value_as = {
+		name = gold_cost
+		value = {
+			value = $GOLD_COST$
+			multiply = $HIDEOUT$.KoM_general_hideout_cost_multiplier
+		}
+	}
+	save_scope_value_as = {
+		name = prestige_cost
+		value = {
+			value = $PRESTIGE_COST$
+			multiply = $HIDEOUT$.KoM_general_hideout_cost_multiplier
+			multiply = -1
+		}
+	}
+	save_scope_value_as = {
+		name = piety_cost
+		value = {
+			value = $PIETY_COST$
+			multiply = $HIDEOUT$.KoM_general_hideout_cost_multiplier
+			multiply = -1
+		}
+	}
+	if = {
+		limit = { scope:gold_cost >= 1 }
+		remove_short_term_gold = scope:gold_cost
+	}
+	if = {
+		limit = { scope:prestige_cost >= 1 }
+		add_prestige = scope:prestige_cost
+	}
+	if = {
+		limit = { scope:piety_cost >= 1 }
+		add_piety = scope:piety_cost
+	}
+}
+# SCHOOL - TXT
+KoM_scavenge_hideout_building_hideout_building_library_effect = {
+	if = {
+		limit = {
+			OR = {
+				scope:random_max >= 80
+				scope:random_gain >= 10
+			}
+		}
+		KoM_create_grimoire_effect = {
+			OWNER = THIS
+			RARITY = illustrious
+			NAME = illustrious_$SCHOOL$_grimoire
+			SCHOOL = $SCHOOL$
+			MAX_MASTERY = scope:random_max
+			MIN_MASTERY = scope:random_min
+			MASTERY_GAIN = scope:random_gain
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				scope:random_max >= 60
+				scope:random_gain >= 8
+			}
+		}
+		KoM_create_grimoire_effect = {
+			OWNER = THIS
+			RARITY = famed
+			NAME = famed_$SCHOOL$_grimoire
+			SCHOOL = $SCHOOL$
+			MAX_MASTERY = scope:random_max
+			MIN_MASTERY = scope:random_min
+			MASTERY_GAIN = scope:random_gain
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				scope:random_max >= 40
+				scope:random_gain >= 6
+			}
+		}
+		KoM_create_grimoire_effect = {
+			OWNER = THIS
+			RARITY = masterwork
+			NAME = masterwork_$SCHOOL$_grimoire
+			SCHOOL = $SCHOOL$
+			MAX_MASTERY = scope:random_max
+			MIN_MASTERY = scope:random_min
+			MASTERY_GAIN = scope:random_gain
+		}
+	}
+	else = {
+		KoM_create_grimoire_effect = {
+			OWNER = THIS
+			RARITY = common
+			NAME = common_$SCHOOL$_grimoire
+			SCHOOL = $SCHOOL$
+			MAX_MASTERY = scope:random_max
+			MIN_MASTERY = scope:random_min
+			MASTERY_GAIN = scope:random_gain
+		}
+	}
+} 
+# MATERIAL - TXT | COUNT - INT
+KoM_hideout_change_alchemical_material_effect = {
+	KoM_increase_or_set_variable_effect = { VAR = KoM_alchemy_$MATERIAL$_num VAL = $COUNT$ }
+	if = {
+		limit = { var:KoM_alchemy_$MATERIAL$_num <= 0 }
+		remove_variable = KoM_alchemy_$MATERIAL$_num
+	}
+}
+# HIDEOUT_BUILDING - STORY
+KoM_hideout_gather_all_alchemical_material_effect = {
+	$HIDEOUT_BUILDING$ = { save_scope_as = KoM_hideout_building }
+	scope:KoM_hideout_building = {
+		if = { limit = { has_variable = KoM_alchemy_salt_num }
+			save_scope_value_as = {
+				name = salt_change
+				value = {
+					value = var:KoM_alchemy_salt_num
+					multiply = -1
+				}
+			}
+			ROOT = { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_salt COUNT = PREV.var:KoM_alchemy_salt_num } }
+			KoM_hideout_change_alchemical_material_effect = { MATERIAL = salt COUNT = scope:salt_change }
+		}
+		if = { limit = { has_variable = KoM_alchemy_charcoal_num }
+			save_scope_value_as = {
+				name = charcoal_change
+				value = {
+					value = var:KoM_alchemy_charcoal_num
+					multiply = -1
+				}
+			}
+			ROOT = { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_charcoal COUNT = PREV.var:KoM_alchemy_charcoal_num } }
+			KoM_hideout_change_alchemical_material_effect = { MATERIAL = charcoal COUNT = scope:charcoal_change }
+		}
+		if = { limit = { has_variable = KoM_alchemy_honey_num }
+			save_scope_value_as = {
+				name = honey_change
+				value = {
+					value = var:KoM_alchemy_honey_num
+					multiply = -1
+				}
+			}
+			ROOT = { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_honey COUNT = PREV.var:KoM_alchemy_honey_num } }
+			KoM_hideout_change_alchemical_material_effect = { MATERIAL = honey COUNT = scope:honey_change }
+		}
+		if = { limit = { has_variable = KoM_alchemy_lead_num }
+			save_scope_value_as = {
+				name = lead_change
+				value = {
+					value = var:KoM_alchemy_lead_num
+					multiply = -1
+				}
+			}
+			ROOT = { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_lead COUNT = PREV.var:KoM_alchemy_lead_num } }
+			KoM_hideout_change_alchemical_material_effect = { MATERIAL = lead COUNT = scope:lead_change }
+		}
+		if = { limit = { has_variable = KoM_alchemy_silver_num }
+			save_scope_value_as = {
+				name = silver_change
+				value = {
+					value = var:KoM_alchemy_silver_num
+					multiply = -1
+				}
+			}
+			ROOT = { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_silver COUNT = PREV.var:KoM_alchemy_silver_num } }
+			KoM_hideout_change_alchemical_material_effect = { MATERIAL = silver COUNT = scope:silver_change }
+		}
+		if = { limit = { has_variable = KoM_alchemy_crushed_crystals_num }
+			save_scope_value_as = {
+				name = crushed_crystals_change
+				value = {
+					value = var:KoM_alchemy_crushed_crystals_num
+					multiply = -1
+				}
+			}
+			ROOT = { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_crushed_crystals COUNT = PREV.var:KoM_alchemy_crushed_crystals_num } }
+			KoM_hideout_change_alchemical_material_effect = { MATERIAL = crushed_crystals COUNT = scope:crushed_crystals_change }
+		}
+		if = { limit = { has_variable = KoM_alchemy_human_blood_num }
+			save_scope_value_as = {
+				name = human_blood_change
+				value = {
+					value = var:KoM_alchemy_human_blood_num
+					multiply = -1
+				}
+			}
+			ROOT = { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_human_blood COUNT = PREV.var:KoM_alchemy_human_blood_num } }
+			KoM_hideout_change_alchemical_material_effect = { MATERIAL = human_blood COUNT = scope:human_blood_change }
+		}
+		if = { limit = { has_variable = KoM_alchemy_vulcanic_ash_num }
+			save_scope_value_as = {
+				name = vulcanic_ash_change
+				value = {
+					value = var:KoM_alchemy_vulcanic_ash_num
+					multiply = -1
+				}
+			}
+			ROOT = { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_vulcanic_ash COUNT = PREV.var:KoM_alchemy_vulcanic_ash_num } }
+			KoM_hideout_change_alchemical_material_effect = { MATERIAL = vulcanic_ash COUNT = scope:vulcanic_ash_change }
+		}
+		if = { limit = { has_variable = KoM_alchemy_fireflower_num }
+			save_scope_value_as = {
+				name = fireflower_change
+				value = {
+					value = var:KoM_alchemy_fireflower_num
+					multiply = -1
+				}
+			}
+			ROOT = { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_fireflower COUNT = PREV.var:KoM_alchemy_fireflower_num } }
+			KoM_hideout_change_alchemical_material_effect = { MATERIAL = fireflower COUNT = scope:fireflower_change }
+		}
+	}
+}

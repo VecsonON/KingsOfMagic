@@ -3,7 +3,7 @@
 }
 KoM_magick = {
 	parent = KingsOfMagic
-	alias = { KoM_mage }
+	alias = { KoM_practitioner KoM_practitioners }
 }
 KoM_goetia = {
 	parent = KoM_magick
@@ -42,4 +42,9 @@ KoM_rite = {
 KoM_spell = {
 	parent = KoM_magick
 	alias = { KoM_spells }
+}
+
+KoM_hideout = {
+	parent = KoM_magick
+	alias = { KoM_hideouts }
 }

@@ -50,6 +50,9 @@ KoM_the_neidan_meditation_effect = {
 		value = {
 			value = KoM_taoism_xp
 			if = { limit = { KoM_taoism_xp != 0 } divide = 50 }
+			if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_meditation_spot } scope:building.var:building_level = 1 } multiply = 1.15 }
+			if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_meditation_spot } scope:building.var:building_level = 2 } multiply = 1.3 }
+			if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_meditation_spot } scope:building.var:building_level = 3 } multiply = 1.45 }
 		}
 	}
 	send_interface_message = {

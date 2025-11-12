@@ -1,0 +1,231 @@
+﻿KoM_create_empty_spell_effect = {
+	create_story = { type = KoM_story_cycle_spell save_scope_as = temp_spell }
+	hidden_effect_new_object = {
+		create_character = {
+			name = thaumaturgic_spell
+			dynasty = none
+			age = 16
+			gender_female_chance = 50
+			random_traits = no
+			location = location
+			faith = faith
+			culture = culture
+			save_scope_as = KoM_eternal_character
+		}
+		scope:KoM_eternal_character = {
+			death = { death_reason = death_mysterious }
+			make_unprunable = yes
+		}
+		scope:temp_spell = {
+			set_variable = { name = assigned_character value = scope:KoM_eternal_character }
+			set_variable = { name = spell_difficulty value = 1 }
+			if = { limit = { var:assigned_character ?= ROOT } }
+		}
+	}
+}
+KoM_select_spell_declaration_effect = {
+	$SPELL$ ?= { set_variable = { name = declaration value = $DECLARATION$ } }
+}
+KoM_select_spell_confirmation_effect = {
+	$SPELL$ ?= {
+		set_variable = { name = confirmation value = $CONFIRMATION$ }
+		trigger_event = { on_action = KoM_thaumaturgy_calculate_difficulty }
+	}
+}
+KoM_add_spell_action_effect = {
+	create_story = { type = KoM_story_cycle_spell save_scope_as = temp_action }
+	scope:temp_action ?= { set_variable = { name = action_name value = $SPELL_ACTION$ } }
+	$SPELL$ ?= {
+		add_to_variable_list = { name = spell_actions target = scope:temp_action }
+		trigger_event = { on_action = KoM_thaumaturgy_calculate_difficulty }
+	}
+}
+KoM_add_spell_to_list_effect = {
+	if = { limit = { NOT = { has_variable = KoM_saved_spell_1 } } KOM_add_spell_to_spell_list_effect = { NUMBER = 1 SPELL = $SPELL$ } }
+	else_if = { limit = { NOT = { has_variable = KoM_saved_spell_2 } } KOM_add_spell_to_spell_list_effect = { NUMBER = 2 SPELL = $SPELL$ } }
+	else_if = { limit = { NOT = { has_variable = KoM_saved_spell_3 } } KOM_add_spell_to_spell_list_effect = { NUMBER = 3 SPELL = $SPELL$ } }
+	else_if = { limit = { NOT = { has_variable = KoM_saved_spell_4 } } KOM_add_spell_to_spell_list_effect = { NUMBER = 4 SPELL = $SPELL$ } }
+	else_if = { limit = { NOT = { has_variable = KoM_saved_spell_5 } } KOM_add_spell_to_spell_list_effect = { NUMBER = 5 SPELL = $SPELL$ } }
+	else_if = { limit = { NOT = { has_variable = KoM_saved_spell_6 } } KOM_add_spell_to_spell_list_effect = { NUMBER = 6 SPELL = $SPELL$ } }
+	else_if = { limit = { NOT = { has_variable = KoM_saved_spell_7 } } KOM_add_spell_to_spell_list_effect = { NUMBER = 7 SPELL = $SPELL$ } }
+}
+KOM_add_spell_to_spell_list_effect = {
+	set_variable = { name = KoM_saved_spell_$NUMBER$ value = $SPELL$ }
+}
+KoM_remove_spell_from_spell_list_effect = {
+	var:KoM_saved_spell_$NUMBER$ ?= { KoM_cleanup_spell_effect = yes }
+	remove_variable = KoM_saved_spell_$NUMBER$
+}
+KoM_execute_spell_from_number_effect = { KoM_execute_spell_effect = { TARGET = $TARGET$ SPELL = var:KoM_saved_spell_$NUMBER$ } }
+KoM_pass_saved_spells_effect = {
+	if = { limit = { has_variable = KoM_saved_spell_1 } $HEIR$ = { KoM_add_spell_to_list_effect = { SPELL = PREV.var:KoM_saved_spell_1 } } }
+	if = { limit = { has_variable = KoM_saved_spell_2 } $HEIR$ = { KoM_add_spell_to_list_effect = { SPELL = PREV.var:KoM_saved_spell_2 } } }
+	if = { limit = { has_variable = KoM_saved_spell_3 } $HEIR$ = { KoM_add_spell_to_list_effect = { SPELL = PREV.var:KoM_saved_spell_3 } } }
+	if = { limit = { has_variable = KoM_saved_spell_4 } $HEIR$ = { KoM_add_spell_to_list_effect = { SPELL = PREV.var:KoM_saved_spell_4 } } }
+	if = { limit = { has_variable = KoM_saved_spell_5 } $HEIR$ = { KoM_add_spell_to_list_effect = { SPELL = PREV.var:KoM_saved_spell_5 } } }
+	if = { limit = { has_variable = KoM_saved_spell_6 } $HEIR$ = { KoM_add_spell_to_list_effect = { SPELL = PREV.var:KoM_saved_spell_6 } } }
+	if = { limit = { has_variable = KoM_saved_spell_7 } $HEIR$ = { KoM_add_spell_to_list_effect = { SPELL = PREV.var:KoM_saved_spell_7 } } }
+}
+
+KoM_cleanup_spell_effect = {
+	KoM_cleanup_spell_actions_effect = yes
+	end_story = yes
+}
+KoM_cleanup_spell_actions_effect = {
+	every_in_list = { variable = spell_actions end_story = yes }
+	clear_variable_list = spell_actions
+}
+
+# TARGET, SPELL. SCOPE = CASTER
+KoM_execute_spell_effect = {
+	$SPELL$ = { save_scope_as = spell }
+	$TARGET$ = { save_scope_as = spell_target }
+	save_scope_as = caster
+	KoM_save_tooltip_custom = { NAME = spell_difficulty_loc LOC = KoM_thaumaturgy_spell_difficulty }
+	custom_tooltip = KoM_execute_spell_effect_difficulty
+	duel = {
+		skill = learning
+		value = KoM_thaumaturgy_spell_difficulty
+		100 = {
+			compare_modifier = { value = scope:duel_value multiplier = high_positive_duel_skill_multiplier }
+			modifier = { add = KoM_thaumaturgy_xp }
+			send_interface_message = {
+				title = KoM_execute_spell_success_effect
+				scope:spell = {
+					if = {
+						limit = { exists = var:declaration exists = var:confirmation }
+						every_in_list = {
+							variable = spell_actions
+							switch = {
+								trigger = var:action_name
+								flag:recuperare = { KoM_spell_action_recuperare_effect = yes }
+								flag:claritudo = { KoM_spell_action_claritudo_effect = yes }
+								flag:sarcio = { KoM_spell_action_sarcio_effect = yes }
+								flag:damnum = { KoM_spell_action_damnum_effect = yes }
+								flag:celeritas = { KoM_spell_action_celeritas_effect = yes }
+								flag:fortitudo = { KoM_spell_action_fortitudo_effect = yes }
+								flag:stabilitas = { KoM_spell_action_stabilitas_effect = yes }
+								flag:opinio = { KoM_spell_action_opinio_effect = yes }
+								flag:anima = { KoM_spell_action_anima_effect = yes }
+								flag:scientia = { KoM_spell_action_scientia_effect = yes }
+								flag:melius = { KoM_spell_action_melius_effect = yes }
+								flag:peius = { KoM_spell_action_peius_effect = yes }
+
+								flag:duo = { custom_tooltip = KoM_thaumaturgy_duo_effect }
+								flag:tres = { custom_tooltip = KoM_thaumaturgy_tres_effect }
+							}
+						}
+					}
+				}
+			}
+		}
+		100 = {
+			compare_modifier = { value = scope:duel_value multiplier = low_negative_duel_skill_multiplier }
+			send_interface_message = { title = KoM_execute_spell_failure_effect }
+		}
+	}
+}
+
+KoM_thaumaturgy_interaction_effect = {
+	$CASTER$ = {
+		switch = {
+			trigger = yes
+			scope:create_spell = { KoM_open_spell_creator_effect = yes }
+			scope:remove_spell = {
+				switch = {
+					trigger = yes
+					scope:number1 = { KoM_remove_spell_from_spell_list_effect = { NUMBER = 1 } }
+					scope:number2 = { KoM_remove_spell_from_spell_list_effect = { NUMBER = 2 } }
+					scope:number3 = { KoM_remove_spell_from_spell_list_effect = { NUMBER = 3 } }
+					scope:number4 = { KoM_remove_spell_from_spell_list_effect = { NUMBER = 4 } }
+					scope:number5 = { KoM_remove_spell_from_spell_list_effect = { NUMBER = 5 } }
+					scope:number6 = { KoM_remove_spell_from_spell_list_effect = { NUMBER = 6 } }
+					scope:number7 = { KoM_remove_spell_from_spell_list_effect = { NUMBER = 7 } }
+				}
+				custom_tooltip = KoM_thaumaturgy_interaction_effect_delete
+			}
+			scope:number1 = { KoM_execute_spell_from_number_effect = { TARGET = $TARGET$ NUMBER = 1 } }
+			scope:number2 = { KoM_execute_spell_from_number_effect = { TARGET = $TARGET$ NUMBER = 2 } }
+			scope:number3 = { KoM_execute_spell_from_number_effect = { TARGET = $TARGET$ NUMBER = 3 } }
+			scope:number4 = { KoM_execute_spell_from_number_effect = { TARGET = $TARGET$ NUMBER = 4 } }
+			scope:number5 = { KoM_execute_spell_from_number_effect = { TARGET = $TARGET$ NUMBER = 5 } }
+			scope:number6 = { KoM_execute_spell_from_number_effect = { TARGET = $TARGET$ NUMBER = 6 } }
+			scope:number7 = { KoM_execute_spell_from_number_effect = { TARGET = $TARGET$ NUMBER = 7 } }
+		}
+	}
+}
+KoM_open_spell_creator_effect = { set_variable = KoM_spell_creator_open }
+
+KoM_add_confirmation_modifier_effect = {
+	switch = {
+		trigger = scope:spell.var:confirmation
+		flag:voluntas = { KoM_add_confirmation_modifier_$TYPE$_effect = { MODIFIER = $MODIFIER$_tier_1_modifier YEARS = $YEARS$ } }
+		flag:nuntius = { KoM_add_confirmation_modifier_$TYPE$_effect = { MODIFIER = $MODIFIER$_tier_2_modifier YEARS = $YEARS$ } }
+		flag:angelus = { KoM_add_confirmation_modifier_$TYPE$_effect = { MODIFIER = $MODIFIER$_tier_3_modifier YEARS = $YEARS$ } }
+		flag:deus = { KoM_add_confirmation_modifier_$TYPE$_effect = { MODIFIER = $MODIFIER$_tier_4_modifier YEARS = $YEARS$ } }
+	}
+}
+KoM_add_confirmation_modifier_character_effect = { add_character_modifier = { modifier = $MODIFIER$ years = $YEARS$ } }
+KoM_add_confirmation_modifier_artifact_effect = { add_artifact_modifier = $MODIFIER$ if = { limit = { $YEARS$ = 1 } } }
+KoM_add_confirmation_modifier_county_effect = { add_county_modifier = { modifier = $MODIFIER$ years = $YEARS$ } }
+KoM_spell_save_scale_effect = {
+	save_scope_value_as = {
+		name = scaling
+		value = {
+			if = { limit = { scope:spell.var:confirmation ?= flag:deus } value = 4 }
+			if = { limit = { scope:spell.var:confirmation ?= flag:angelus } value = 3 }
+			if = { limit = { scope:spell.var:confirmation ?= flag:nuntius } value = 2 }
+			if = { limit = { scope:spell.var:confirmation ?= flag:voluntas } value = 1 }
+		}
+	}
+}
+KoM_spell_save_action_number_effect = {
+	scope:spell = {
+		save_scope_value_as = {
+			name = $ACTION$_num
+			value = {
+				value = 0
+				every_in_list = {
+					variable = spell_actions
+					limit = { var:action_name = flag:$ACTION$ }
+					add = 1
+				}
+			}
+		}
+	}
+}
+KoM_spell_while_effect = {
+	save_scope_value_as = { name = saved_number value = $NUM$ }
+	custom_tooltip = {
+		text = KoM_spell_while_effect
+		while = {
+			count = $NUM$
+			$EFFECT$
+		}
+	}
+	show_as_tooltip = { $EFFECT$ }
+}
+KoM_spell_overload_add_modifier = {
+	if = { limit = { scope:$ACTION$_num >= 2 }
+		save_scope_value_as = {
+			name = while_num
+			value = {
+				value = scope:$ACTION$_num
+				add = -1
+			}
+		}
+		# KoM_spell_while_effect = {
+		# 	NUM = scope:while_num
+		# 	EFFECT = "KoM_add_confirmation_modifier_effect = { TYPE = $TYPE$ MODIFIER = $MODIFIER$ YEARS = $YEARS$ }"
+		# }
+		save_scope_value_as = { name = saved_number value = scope:while_num }
+		custom_tooltip = {
+			text = KoM_spell_while_effect
+			while = {
+				count = scope:while_num
+				KoM_add_confirmation_modifier_effect = { TYPE = $TYPE$ MODIFIER = $MODIFIER$_overload YEARS = $YEARS$ }
+			}
+		}
+		show_as_tooltip = { KoM_add_confirmation_modifier_effect = { TYPE = $TYPE$ MODIFIER = $MODIFIER$_overload YEARS = $YEARS$ } }
+	}
+}

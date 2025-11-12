@@ -1,0 +1,149 @@
+﻿KoM_hideout_has_building_trigger = {
+	$HIDEOUT$ = { save_temporary_scope_as = KoM_hideout_temp }
+	save_temporary_scope_value_as = { name = building_id value = flag:$ID$ }
+	custom_tooltip = {
+		text = KoM_hideout_has_building_trigger
+		scope:KoM_hideout_temp = {
+			any_in_list = {
+				variable = hideout_buildings
+				var:building_template.var:building_id = flag:$ID$
+				save_temporary_scope_as = building
+			}
+		}
+	}
+}
+KoM_hideout_has_building_has_level_trigger = {
+	$HIDEOUT$ = { save_temporary_scope_as = KoM_hideout_temp }
+	save_temporary_scope_value_as = { name = building_id value = flag:$ID$ }
+	save_temporary_scope_value_as = { name = building_level value = $LEVEL$ }
+	custom_tooltip = {
+		text = KoM_hideout_has_building_has_level_trigger
+		scope:KoM_hideout_temp = {
+			any_in_list = {
+				variable = hideout_buildings
+				var:building_template.var:building_id = flag:$ID$
+				var:building_level >= $LEVEL$
+				save_temporary_scope_as = building
+			}
+		}
+	}
+}
+KoM_hideout_has_building_has_not_level_trigger = {
+	$HIDEOUT$ = { save_temporary_scope_as = KoM_hideout_temp }
+	save_temporary_scope_value_as = { name = building_id value = flag:$ID$ }
+	save_temporary_scope_value_as = { name = building_level value = $LEVEL$ }
+	custom_tooltip = {
+		text = KoM_hideout_has_building_has_not_level_trigger
+		scope:KoM_hideout_temp = {
+			any_in_list = {
+				variable = hideout_buildings
+				count = 0
+				var:building_template.var:building_id = flag:$ID$
+				var:building_level >= $LEVEL$
+				save_temporary_scope_as = building
+			}
+		}
+	}
+}
+
+KoM_hideout_has_building_or_school_trigger = {
+	$HIDEOUT$ = { save_temporary_scope_as = KoM_hideout_temp }
+	OR = {
+		KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout_temp ID = $ID$ }
+		KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:$SCHOOL$ }
+	}
+}
+
+KoM_hideout_has_enough_resources_trigger = {
+	save_temporary_scope_value_as = {
+		name = gold_cost
+		value = {
+			value = $GOLD_COST$
+			multiply = $HIDEOUT$.KoM_general_hideout_cost_multiplier
+		}
+	}
+	save_temporary_scope_value_as = {
+		name = prestige_cost
+		value = {
+			value = $PRESTIGE_COST$
+			multiply = $HIDEOUT$.KoM_general_hideout_cost_multiplier
+			multiply = -1
+		}
+	}
+	save_temporary_scope_value_as = {
+		name = piety_cost
+		value = {
+			value = $PIETY_COST$
+			multiply = $HIDEOUT$.KoM_general_hideout_cost_multiplier
+			multiply = -1
+		}
+	}
+	trigger_if = {
+		limit = { scope:gold_cost >= 1 }
+		gold >= scope:gold_cost
+	}
+	trigger_if = {
+		limit = { scope:prestige_cost >= 1 }
+		prestige >= scope:prestige_cost
+	}
+	trigger_if = {
+		limit = { scope:piety_cost >= 1 }
+		piety >= scope:piety_cost
+	}
+}
+
+KoM_hideout_has_enough_school_xp_tier_3_trigger = {
+	save_temporary_scope_value_as = { 
+		name = building_level 
+		value = { 
+			value = 0 
+			if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = $HIDEOUT$ ID = $ID$ } } value = scope:building.var:building_level }
+		} 
+	}
+	switch = {
+		trigger = scope:building_level
+		0 = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:$SCHOOL$ VALUE = 25 AT_LEAST = yes } }
+		1 = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:$SCHOOL$ VALUE = 50 AT_LEAST = yes } }
+		2 = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:$SCHOOL$ VALUE = 75 AT_LEAST = yes } }
+	}
+}
+KoM_hideout_has_enough_school_xp_tier_4_trigger = {
+	save_temporary_scope_value_as = { 
+		name = building_level 
+		value = { 
+			value = 0 
+			if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = $HIDEOUT$ ID = $ID$ } } value = scope:building.var:building_level }
+		} 
+	}
+	switch = {
+		trigger = scope:building_level
+		0 = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:$SCHOOL$ VALUE = 10 AT_LEAST = yes } }
+		1 = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:$SCHOOL$ VALUE = 25 AT_LEAST = yes } }
+		2 = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:$SCHOOL$ VALUE = 50 AT_LEAST = yes } }
+		3 = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:$SCHOOL$ VALUE = 75 AT_LEAST = yes } }
+	}
+}
+KoM_hideout_has_enough_school_xp_tier_5_trigger = {
+	save_temporary_scope_value_as = { 
+		name = building_level 
+		value = { 
+			value = 0 
+			if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = $HIDEOUT$ ID = $ID$ } } value = scope:building.var:building_level }
+		} 
+	}
+	switch = {
+		trigger = scope:building_level
+		0 = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:$SCHOOL$ VALUE = 10 AT_LEAST = yes } }
+		1 = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:$SCHOOL$ VALUE = 25 AT_LEAST = yes } }
+		2 = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:$SCHOOL$ VALUE = 50 AT_LEAST = yes } }
+		3 = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:$SCHOOL$ VALUE = 75 AT_LEAST = yes } }
+		4 = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:$SCHOOL$ VALUE = 100 AT_LEAST = yes } }
+	}
+}
+
+KoM_has_hideout_building_trigger = {
+	any_in_list = {
+		variable = KoM_owned_hideouts
+		KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = $ID$ }
+	}
+}

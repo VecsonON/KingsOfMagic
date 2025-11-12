@@ -1,0 +1,163 @@
+﻿KoM_hideout_building_shrine_level_1_perk = {
+	lifestyle = KoM_dummy_lifestyle
+	tree = KoM_dummy_lifestyle
+	character_modifier = {
+		monthly_piety = 0.5
+	}
+	can_be_auto_selected = { always = no }
+}
+KoM_hideout_building_shrine_level_2_perk = {
+	lifestyle = KoM_dummy_lifestyle
+	tree = KoM_dummy_lifestyle
+	character_modifier = {
+		monthly_piety = 1
+	}
+	can_be_auto_selected = { always = no }
+}
+KoM_hideout_building_shrine_level_3_perk = {
+	lifestyle = KoM_dummy_lifestyle
+	tree = KoM_dummy_lifestyle
+	character_modifier = {
+		monthly_piety = 1.5
+	}
+	can_be_auto_selected = { always = no }
+}
+KoM_hideout_building_shrine_level_4_perk = {
+	lifestyle = KoM_dummy_lifestyle
+	tree = KoM_dummy_lifestyle
+	character_modifier = {
+		monthly_piety = 2
+	}
+	can_be_auto_selected = { always = no }
+}
+KoM_hideout_building_shrine_level_5_perk = {
+	lifestyle = KoM_dummy_lifestyle
+	tree = KoM_dummy_lifestyle
+	character_modifier = {
+		monthly_piety = 3
+	}
+	can_be_auto_selected = { always = no }
+}
+####################################################
+KoM_hideout_building_talisman_of_protection_level_1_perk = {
+	lifestyle = KoM_dummy_lifestyle
+	tree = KoM_dummy_lifestyle
+	character_modifier = {
+		
+	}
+	can_be_auto_selected = { always = no }
+}
+KoM_hideout_building_talisman_of_protection_level_2_perk = {
+	lifestyle = KoM_dummy_lifestyle
+	tree = KoM_dummy_lifestyle
+	character_modifier = {
+		
+	}
+	can_be_auto_selected = { always = no }
+}
+KoM_hideout_building_talisman_of_protection_level_3_perk = {
+	lifestyle = KoM_dummy_lifestyle
+	tree = KoM_dummy_lifestyle
+	character_modifier = {
+		
+	}
+	can_be_auto_selected = { always = no }
+}
+KoM_hideout_building_talisman_of_protection_level_4_perk = {
+	lifestyle = KoM_dummy_lifestyle
+	tree = KoM_dummy_lifestyle
+	character_modifier = {
+		
+	}
+	can_be_auto_selected = { always = no }
+}
+KoM_hideout_building_talisman_of_protection_level_5_perk = {
+	lifestyle = KoM_dummy_lifestyle
+	tree = KoM_dummy_lifestyle
+	character_modifier = {
+		
+	}
+	can_be_auto_selected = { always = no }
+}
+####################################################
+KoM_hideout_building_talisman_of_fortune_level_1_perk = {
+	lifestyle = KoM_dummy_lifestyle
+	tree = KoM_dummy_lifestyle
+	character_modifier = {
+		
+	}
+	can_be_auto_selected = { always = no }
+}
+KoM_hideout_building_talisman_of_fortune_level_2_perk = {
+	lifestyle = KoM_dummy_lifestyle
+	tree = KoM_dummy_lifestyle
+	character_modifier = {
+		
+	}
+	can_be_auto_selected = { always = no }
+}
+KoM_hideout_building_talisman_of_fortune_level_3_perk = {
+	lifestyle = KoM_dummy_lifestyle
+	tree = KoM_dummy_lifestyle
+	character_modifier = {
+		
+	}
+	can_be_auto_selected = { always = no }
+}
+KoM_hideout_building_talisman_of_fortune_level_4_perk = {
+	lifestyle = KoM_dummy_lifestyle
+	tree = KoM_dummy_lifestyle
+	character_modifier = {
+		
+	}
+	can_be_auto_selected = { always = no }
+}
+KoM_hideout_building_talisman_of_fortune_level_5_perk = {
+	lifestyle = KoM_dummy_lifestyle
+	tree = KoM_dummy_lifestyle
+	character_modifier = {
+		
+	}
+	can_be_auto_selected = { always = no }
+}
+####################################################
+KoM_hideout_building_talisman_of_peace_level_1_perk = {
+	lifestyle = KoM_dummy_lifestyle
+	tree = KoM_dummy_lifestyle
+	character_modifier = {
+		
+	}
+	can_be_auto_selected = { always = no }
+}
+KoM_hideout_building_talisman_of_peace_level_2_perk = {
+	lifestyle = KoM_dummy_lifestyle
+	tree = KoM_dummy_lifestyle
+	character_modifier = {
+		
+	}
+	can_be_auto_selected = { always = no }
+}
+KoM_hideout_building_talisman_of_peace_level_3_perk = {
+	lifestyle = KoM_dummy_lifestyle
+	tree = KoM_dummy_lifestyle
+	character_modifier = {
+		
+	}
+	can_be_auto_selected = { always = no }
+}
+KoM_hideout_building_talisman_of_peace_level_4_perk = {
+	lifestyle = KoM_dummy_lifestyle
+	tree = KoM_dummy_lifestyle
+	character_modifier = {
+		
+	}
+	can_be_auto_selected = { always = no }
+}
+KoM_hideout_building_talisman_of_peace_level_5_perk = {
+	lifestyle = KoM_dummy_lifestyle
+	tree = KoM_dummy_lifestyle
+	character_modifier = {
+		
+	}
+	can_be_auto_selected = { always = no }
+}

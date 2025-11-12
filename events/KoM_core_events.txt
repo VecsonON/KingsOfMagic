@@ -150,9 +150,11 @@ KoM_core_events.10 = { # Random Grimoire Spawn
 				modifier = {
 					add = 10
 					location ?= {
-						geographical_region = world_europe_west
-						geographical_region = world_europe_south
-						geographical_region = world_europe_east
+						OR = {
+							geographical_region = world_europe_west
+							geographical_region = world_europe_south
+							geographical_region = world_europe_east
+						}
 					}
 				}
 				modifier = {

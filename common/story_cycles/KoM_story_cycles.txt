@@ -6,7 +6,45 @@
 	on_owner_death = { end_story = yes }
 }
 KoM_story_cycle_spell = {
-	on_owner_death = { 
-		
+	on_owner_death = { }
+}
+KoM_story_cycle_hideout = {
+	on_owner_death = {
+		create_character = {
+			age = 16
+			gender_female_chance = 50
+			random_traits = no
+			location = story_owner.location
+			faith = story_owner.faith
+			culture = story_owner.culture
+			save_scope_as = KoM_hideout_character
+		}
+		scope:KoM_hideout_character = { change_first_name = { template_character = PREV.story_owner } }
+		story_owner = { every_owned_story = { make_story_owner = scope:KoM_hideout_character } }
+		set_variable = { name = hideout_character value = scope:KoM_hideout_character }
+		make_story_owner = scope:KoM_hideout_character
+	}
+	on_end = {
+		var:hideout_character = { death = { death_reason = death_disappearance } }
+	}
+}
+KoM_story_cycle_hideout_building = {}
+KoM_story_cycle_hideout_building_template = {
+	on_owner_death = {
+		create_character = {
+			age = 16
+			gender_female_chance = 50
+			random_traits = no
+			location = story_owner.location
+			faith = story_owner.faith
+			culture = story_owner.culture
+			save_scope_as = KoM_eternal_character
+		}
+		story_owner = { every_owned_story = { make_story_owner = scope:KoM_eternal_character } }
+		make_story_owner = scope:KoM_eternal_character
+		set_global_variable = {
+			name = KoM_eternal_character
+			value = scope:KoM_eternal_character
+		}
 	}
 }

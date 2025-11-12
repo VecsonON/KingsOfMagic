@@ -1,0 +1,899 @@
+﻿namespace = KoM_hideout_events
+
+KoM_hideout_events.1 = { # Starting Event
+	type = activity_event
+	title = KoM_hideout_events.1.t
+	desc = {
+		desc = KoM_hideout_events.1.desc
+		triggered_desc = {
+			trigger = {
+				scope:province = { has_variable = KoM_local_hideout var:KoM_local_hideout ?= { save_temporary_scope_as = KoM_hideout } }
+				scope:KoM_hideout ?= { var:hideout_owner ?= ROOT }
+				any_in_list = { variable = visited_hideouts this = scope:province }
+			}
+			desc = KoM_hideout_events.1.desc.mine
+		}
+		triggered_desc = {
+			trigger = {
+				scope:province = { has_variable = KoM_local_hideout var:KoM_local_hideout ?= { save_temporary_scope_as = KoM_hideout } }
+				scope:KoM_hideout ?= {
+					var:hideout_type = flag:KoM_owned
+					NOT = { var:hideout_owner ?= ROOT }
+				}
+				any_in_list = { variable = visited_hideouts this = scope:province }
+			}
+			desc = KoM_hideout_events.1.desc.not_mine
+		}
+		triggered_desc = {
+			trigger = { 
+				scope:province = { has_variable = KoM_local_hideout var:KoM_local_hideout ?= { save_temporary_scope_as = KoM_hideout } }
+				scope:KoM_hideout ?= {
+					var:hideout_type != flag:KoM_owned
+					NOT = { var:hideout_owner ?= ROOT }
+				}
+				any_in_list = { variable = visited_hideouts this = scope:province }
+			}
+			desc = KoM_hideout_events.1.desc.visited
+		}
+		triggered_desc = {
+			trigger = { NOT = { any_in_list = { variable = visited_hideouts this = scope:province } } }
+			desc = KoM_hideout_events.1.desc.unknown
+		}
+	}
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = thinking
+	}
+
+	option = { # Your own Hideout
+		name = KoM_hideout_events.1.a
+		trigger = {
+			scope:province = { has_variable = KoM_local_hideout }
+			scope:province.var:KoM_local_hideout ?= { var:hideout_owner ?= ROOT }
+		}
+		trigger_event = KoM_hideout_events.1001
+	}
+	option = { # Hideout you know owner of
+		name = KoM_hideout_events.1.b
+		trigger = {
+			scope:province = { has_variable = KoM_local_hideout }
+			scope:province.var:KoM_local_hideout ?= {
+				var:hideout_type = flag:KoM_owned
+				NOT = { var:hideout_owner ?= ROOT }
+			}
+			any_in_list = { variable = visited_hideouts this = scope:province }
+		}
+		trigger_event = KoM_hideout_events.2001
+	}
+	option = { # Hideout you were before
+		name = KoM_hideout_events.1.c
+		trigger = { 
+			any_in_list = { variable = visited_hideouts this = scope:province } 
+			scope:province.var:KoM_local_hideout ?= {
+				var:hideout_type != flag:KoM_owned
+				NOT = { var:hideout_owner ?= ROOT }
+			}
+		}
+		trigger_event = KoM_hideout_events.3002
+	}
+	option = { # Unvisited Hideout
+		name = KoM_hideout_events.1.d
+		trigger = { 
+			NOT = { any_in_list = { variable = visited_hideouts this = scope:province } } 
+			trigger_if = {
+				limit = { exists = scope:province.var:KoM_local_hideout }
+			scope:province.var:KoM_local_hideout ?= { NOT = { var:hideout_owner ?= ROOT } }
+			}
+		}
+		random_list = {
+			1 = { desc = KoM_hideout_events.1.d.a show_chance = no }
+			1 = { desc = KoM_hideout_events.1.d.b show_chance = no }
+		}
+		hidden_effect = {
+			save_scope_as = failed
+			if = {
+				limit = {
+					scope:province = { has_variable = KoM_local_hideout var:KoM_local_hideout ?= { save_temporary_scope_as = KoM_hideout } }
+				}
+				random = {
+					chance = scope:province.var:KoM_local_hideout.KoM_discovery_chance
+					trigger_event = KoM_hideout_events.3002
+					add_to_variable_list = { name = visited_hideouts target = scope:province }
+					clear_saved_scope = failed
+				}
+			}
+			if = {
+				limit = { exists = scope:failed }
+				trigger_event = KoM_hideout_events.3001
+				clear_saved_scope = failed
+			}
+		}
+	}
+	option = { # Return
+		name = KoM_hideout_events.1.e
+	}
+}
+
+KoM_hideout_events.1001 = {
+	type = activity_event
+	title = KoM_hideout_events.1001.t
+	desc = KoM_hideout_events.1001.desc
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = interested
+	}
+
+	immediate = {
+		scope:province.var:KoM_local_hideout = { save_scope_as = KoM_hideout }
+	}
+	
+	option = {
+		name = KoM_hideout_events.1001.a
+		custom_tooltip = KoM_hideout_events.1001.a.tt
+		trigger_event = KoM_hideout_events.1002
+	}
+	
+	option = {
+		name = KoM_hideout_events.1001.b
+		custom_tooltip = KoM_hideout_events.1001.b.tt
+		trigger_event = KoM_hideout_events.1003
+	}
+
+	option = {
+		name = KoM_hideout_events.1001.c
+		add_internal_flag = special
+		KoM_hideout_destroy_effect = { HIDEOUT = scope:KoM_hideout }
+	}
+	option = {
+		name = KoM_hideout_events.1001.d
+		add_internal_flag = special
+		KoM_hideout_remove_owner_effect = { HIDEOUT = scope:KoM_hideout }
+	}
+	option = {
+		name = KoM_hideout_events.1001.e
+		add_internal_flag = special
+		custom_tooltip = KoM_hideout_events.1001.e.tt
+		trigger_event = KoM_hideout_events.1004
+	}
+	option = {
+		name = KoM_hideout_events.1001.f
+	}
+}
+
+KoM_hideout_events.1002 = { 
+	type = activity_event
+	title = KoM_hideout_events.1002.t
+	desc = KoM_hideout_events.1002.desc
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = personality_bold
+	}
+
+	immediate = {
+		location.var:KoM_local_hideout = { save_scope_as = KoM_hideout }
+	}
+
+	widget = {
+		gui = "KoM_event_window_widgets_hideout_build_or_upgrade"
+		container = "custom_widgets_container"
+	}
+
+	option = {
+		name = KoM_hideout_events.1002.a
+		trigger_event = KoM_hideout_events.1001
+	}
+}
+
+KoM_hideout_events.1003 = { 
+	type = activity_event
+	title = KoM_hideout_events.1003.t
+	desc = KoM_hideout_events.1003.desc
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = personality_bold
+	}
+
+	immediate = {
+		location.var:KoM_local_hideout = { save_scope_as = KoM_hideout }
+	}
+
+	widget = {
+		gui = "KoM_event_window_widgets_hideout_use"
+		container = "custom_widgets_container"
+	}
+
+	option = {
+		name = KoM_hideout_events.1003.a
+		trigger_event = KoM_hideout_events.1001
+	}
+}
+
+KoM_hideout_events.1004 = { 
+	type = activity_event
+	title = KoM_hideout_events.1004.t
+	desc = KoM_hideout_events.1004.desc
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = personality_bold
+	}
+
+	widget = {
+		gui = "KoM_event_window_widgets_custom_text"
+		container = "custom_widgets_container"
+		controller = name_character
+		setup_scope = {
+			scope:province.var:KoM_local_hideout.var:hideout_character = { save_scope_as = name_character_target }
+		}
+	}
+
+	option = { 
+		name = KoM_hideout_events.1004.a
+		trigger_event = KoM_hideout_events.1001
+	}
+}
+
+
+KoM_hideout_events.2001 = {
+	type = activity_event
+	title = KoM_hideout_events.2001.t
+	desc = KoM_hideout_events.2001.desc
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = interested
+	}
+
+	right_portrait = {
+		character = location.var:KoM_local_hideout.var:hideout_owner
+		animation = disapproval
+	}
+
+	immediate = {
+		location.var:KoM_local_hideout.var:hideout_owner = {
+			add_character_modifier = {
+				modifier = KoM_home_advantage_modifier
+				days = 1
+			}
+			save_scope_as = KoM_hideout_owner
+		}
+	}
+
+	option = {
+		name = KoM_hideout_events.2001.a
+		trigger_event = KoM_hideout_events.2002
+	}
+
+	option = {
+		name = KoM_hideout_events.2001.b
+		configure_start_single_combat_effect = {
+			SC_INITIATOR = scope:KoM_hideout_owner
+			SC_ATTACKER = scope:KoM_hideout_owner
+			SC_DEFENDER = scope:host
+			FATALITY = possible
+			FIXED = no
+			LOCALE = corridor_night
+			OUTPUT_EVENT = KoM_hideout_events.3007
+			INVALIDATION_EVENT = KoM_hideout_events.3007
+		}
+	}
+
+	option = {
+		name = KoM_hideout_events.2001.c
+	}
+}
+
+scripted_effect KoM_hideout_events2002_effect = {
+	random_list = {
+		5 = {
+			trigger = { scope:KoM_hideout_owner.KoM_$SCHOOL$_xp >= 10 }
+			save_scope_value_as = { name = random_max value = { 0 20 } }
+			save_scope_value_as = { name = random_min value = { 0 20 } }
+			save_scope_value_as = { name = random_gain value = { 4 8 } }
+			KoM_create_grimoire_effect = {
+				OWNER = THIS
+				RARITY = common
+				NAME = common_$SCHOOL$_grimoire
+				SCHOOL = $SCHOOL$
+				MAX_MASTERY = scope:random_max
+				MIN_MASTERY = scope:random_min
+				MASTERY_GAIN = scope:random_gain
+			}
+		}
+		50 = {
+			trigger = { scope:KoM_hideout_owner.KoM_$SCHOOL$_xp >= 30 }
+			save_scope_value_as = { name = random_max value = { 20 50 } }
+			save_scope_value_as = { name = random_min value = { 0 50 } }
+			save_scope_value_as = { name = random_gain value = { 6 10 } }
+			KoM_create_grimoire_effect = {
+				OWNER = THIS
+				RARITY = masterwork
+				NAME = masterwork_$SCHOOL$_grimoire
+				SCHOOL = $SCHOOL$
+				MAX_MASTERY = scope:random_max
+				MIN_MASTERY = scope:random_min
+				MASTERY_GAIN = scope:random_gain
+			}
+		}
+		20 = {
+			trigger = { scope:KoM_hideout_owner.KoM_$SCHOOL$_xp >= 50 }
+			save_scope_value_as = { name = random_max value = { 40 70 } }
+			save_scope_value_as = { name = random_min value = { 0 70 } }
+			save_scope_value_as = { name = random_gain value = { 8 15 } }
+			KoM_create_grimoire_effect = {
+				OWNER = THIS
+				RARITY = famed
+				NAME = famed_$SCHOOL$_grimoire
+				SCHOOL = $SCHOOL$
+				MAX_MASTERY = scope:random_max
+				MIN_MASTERY = scope:random_min
+				MASTERY_GAIN = scope:random_gain
+			}
+		}
+		5 = {
+			trigger = { scope:KoM_hideout_owner.KoM_$SCHOOL$_xp >= 70 }
+			save_scope_value_as = { name = random_max value = { 50 90 } }
+			save_scope_value_as = { name = random_min value = { 0 90 } }
+			save_scope_value_as = { name = random_gain value = { 10 20 } }
+			KoM_create_grimoire_effect = {
+				OWNER = THIS
+				RARITY = illustrious
+				NAME = illustrious_$SCHOOL$_grimoire
+				SCHOOL = $SCHOOL$
+				MAX_MASTERY = scope:random_max
+				MIN_MASTERY = scope:random_min
+				MASTERY_GAIN = scope:random_gain
+			}
+		}
+	}
+}
+
+KoM_hideout_events.2002 = {
+	type = activity_event
+	title = KoM_hideout_events.2002.t
+	desc = KoM_hideout_events.2002.desc
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = interested
+	}
+
+	right_portrait = {
+		character = location.var:KoM_local_hideout.var:hideout_owner
+		animation = disapproval
+	}
+
+	immediate = {
+		location.var:KoM_local_hideout.var:hideout_owner = {
+			add_character_modifier = {
+				modifier = KoM_home_advantage_modifier
+				days = 1
+			}
+			save_scope_as = KoM_hideout_owner
+			
+		}
+		
+	}
+
+	option = {
+		name = KoM_hideout_events.2002.a
+		remove_short_term_gold = 1250
+		KoM_hideout_change_owner_effect = { HIDEOUT = location.var:KoM_local_hideout NEW_OWNER = ROOT }
+	}
+
+	option = {
+		name = KoM_hideout_events.2002.b
+		remove_short_term_gold = 200
+		random_list = {
+			1 = {
+				trigger = { scope:KoM_hideout_owner = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+				KoM_hideout_events2002_effect = { SCHOOL = goetia }
+			}
+			1 = {
+				trigger = { scope:KoM_hideout_owner = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:thaumaturgy } } }
+				KoM_hideout_events2002_effect = { SCHOOL = thaumaturgy }
+			}
+			1 = {
+				trigger = { scope:KoM_hideout_owner = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:theurgy } } }
+				KoM_hideout_events2002_effect = { SCHOOL = theurgy }
+			}
+			1 = {
+				trigger = { scope:KoM_hideout_owner = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:alchemy } } }
+				KoM_hideout_events2002_effect = { SCHOOL = alchemy }
+			}
+			1 = {
+				trigger = { scope:KoM_hideout_owner = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:taoism } } }
+				KoM_hideout_events2002_effect = { SCHOOL = taoism }
+			}
+			1 = {
+				trigger = { scope:KoM_hideout_owner = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:onmyodo } } }
+				KoM_hideout_events2002_effect = { SCHOOL = onmyodo }
+			}
+		}
+	}
+
+	option = {
+		name = KoM_hideout_events.2002.c
+		remove_short_term_gold = 50
+		random_list = {
+			1 = {
+				trigger = { scope:KoM_hideout_owner = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+				KoM_teach_magic_effect = { SCHOOL = goetia STUDENT = scope:host TEACHER = scope:KoM_hideout_owner }
+			}
+			1 = {
+				trigger = { scope:KoM_hideout_owner = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:thaumaturgy } } }
+				KoM_teach_magic_effect = { SCHOOL = thaumaturgy STUDENT = scope:host TEACHER = scope:KoM_hideout_owner }
+			}
+			1 = {
+				trigger = { scope:KoM_hideout_owner = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:theurgy } } }
+				KoM_teach_magic_effect = { SCHOOL = theurgy STUDENT = scope:host TEACHER = scope:KoM_hideout_owner }
+			}
+			1 = {
+				trigger = { scope:KoM_hideout_owner = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:alchemy } } }
+				KoM_teach_magic_effect = { SCHOOL = alchemy STUDENT = scope:host TEACHER = scope:KoM_hideout_owner }
+			}
+			1 = {
+				trigger = { scope:KoM_hideout_owner = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:taoism } } }
+				KoM_teach_magic_effect = { SCHOOL = taoism STUDENT = scope:host TEACHER = scope:KoM_hideout_owner }
+			}
+			1 = {
+				trigger = { scope:KoM_hideout_owner = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:onmyodo } } }
+				KoM_teach_magic_effect = { SCHOOL = onmyodo STUDENT = scope:host TEACHER = scope:KoM_hideout_owner }
+			}
+		}
+	}
+
+	option = {
+		name = KoM_hideout_events.2002.d
+	}
+}
+
+scripted_effect KoM_hideout_events3001_effect = {
+	if = {
+		limit = {
+			scope:province = { has_variable = KoM_local_hideout var:KoM_local_hideout ?= { save_temporary_scope_as = KoM_hideout } }
+		}
+		trigger_event = KoM_hideout_events.3002
+		add_to_variable_list = { name = visited_hideouts target = scope:province }
+	}
+	else = { 
+		send_interface_message = { title = KoM_hideout_events.3001.t } 
+		add_to_variable_list = { name = visited_hideouts_known_nothing target = scope:province }
+	}
+}
+
+KoM_hideout_events.3001 = {
+	type = activity_event
+	title = KoM_hideout_events.3001.t
+	desc = KoM_hideout_events.3001.desc
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = sadness
+	}
+
+	option = {
+		name = KoM_hideout_events.3001.a
+		trigger = { 
+			OR = {
+				diplomacy >= 25 
+				intrigue >= 25 
+			}
+		}
+		add_prestige = -500
+		KoM_hideout_events3001_effect = yes
+	}
+
+	option = {
+		name = KoM_hideout_events.3001.b
+		trigger = { 
+			OR = {
+				stewardship >= 25 
+				martial >= 25 
+			}
+		}
+		remove_short_term_gold = 150
+		KoM_hideout_events3001_effect = yes
+	}
+
+	option = {
+		name = KoM_hideout_events.3001.c
+		trigger = { 
+			learning >= 25 
+		}
+		add_stress = 50
+		KoM_hideout_events3001_effect = yes
+	}
+
+	option = { # Oh
+		name = KoM_hideout_events.3001.d
+		add_stress = 75
+	}
+}
+
+scripted_effect KoM_hideout_events3002_effect = {
+	scope:province.var:KoM_local_hideout = { save_scope_as = KoM_hideout }
+	duel = {
+		skill = $SKILL$
+		value = scope:KoM_hideout.KoM_defense_value
+		25 = {
+			desc = KoM_hideout_events.3002.a.a
+			compare_modifier = { value = scope:duel_value multiplier = 1 }
+			if = { limit = { scope:KoM_hideout = { has_variable = hideout_owner } } trigger_event = KoM_hideout_events.3006 }
+			else = { trigger_event = KoM_hideout_events.3003 }
+		}
+		25 = {
+			desc = KoM_hideout_events.3002.a.b
+			compare_modifier = { value = scope:duel_value multiplier = 0.75 }
+			if = { limit = { scope:KoM_hideout = { has_variable = hideout_owner } } trigger_event = KoM_hideout_events.3006 }
+			else = { trigger_event = KoM_hideout_events.3003 }
+			increase_wounds_effect = { REASON = fight }
+			add_stress = 25
+		}
+		25 = {
+			desc = KoM_hideout_events.3002.a.c
+			compare_modifier = { value = scope:duel_value multiplier = -0.5 }
+			if = { limit = { scope:KoM_hideout = { has_variable = hideout_owner } } trigger_event = KoM_hideout_events.3006 }
+			else = { trigger_event = KoM_hideout_events.3003 }
+			increase_wounds_effect = { REASON = fight }
+			increase_wounds_effect = { REASON = fight }
+			add_stress = 50
+		}
+		25 = {
+			desc = KoM_hideout_events.3002.a.d
+			compare_modifier = { value = scope:duel_value multiplier = -0.75 }
+			trigger_event = KoM_hideout_events.3005
+			add_trait = maimed
+			increase_wounds_effect = { REASON = fight }
+			increase_wounds_effect = { REASON = fight }
+			add_stress = 100
+		}
+		25 = {
+			desc = KoM_hideout_events.3002.a.e
+			compare_modifier = { value = scope:duel_value multiplier = -1 }
+			death = { death_reason = death_disappearance }
+		}
+	}
+}
+
+KoM_hideout_events.3002 = {
+	type = activity_event
+	title = KoM_hideout_events.3002.t
+	desc = {
+		desc = KoM_hideout_events.3002.desc
+		triggered_desc = {
+			trigger = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:province.var:KoM_local_hideout ID = hideout_building_defense_goetia } }
+			desc = KoM_hideout_events.3002.desc.goetia
+		}
+		triggered_desc = {
+			trigger = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:province.var:KoM_local_hideout ID = hideout_building_defense_thaumaturgy } }
+			desc = KoM_hideout_events.3002.desc.thaumaturgy
+		}
+		triggered_desc = {
+			trigger = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:province.var:KoM_local_hideout ID = hideout_building_defense_alchemy } }
+			desc = KoM_hideout_events.3002.desc.alchemy
+		}
+		triggered_desc = {
+			trigger = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:province.var:KoM_local_hideout ID = hideout_building_defense_onmyodo } }
+			desc = KoM_hideout_events.3002.desc.onmyodo
+		}
+		triggered_desc = {
+			trigger = { 
+				NOR = {
+					KoM_hideout_has_building_trigger = { HIDEOUT = scope:province.var:KoM_local_hideout ID = hideout_building_defense_goetia }
+					KoM_hideout_has_building_trigger = { HIDEOUT = scope:province.var:KoM_local_hideout ID = hideout_building_defense_thaumaturgy }
+					KoM_hideout_has_building_trigger = { HIDEOUT = scope:province.var:KoM_local_hideout ID = hideout_building_defense_alchemy }
+					KoM_hideout_has_building_trigger = { HIDEOUT = scope:province.var:KoM_local_hideout ID = hideout_building_defense_onmyodo } 
+				}
+			}
+			desc = KoM_hideout_events.3002.desc.fallback
+		}
+	}
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = worry
+	}
+
+	option = {
+		name = KoM_hideout_events.3002.a
+		switch = {
+			trigger = highest_skill_including_prowess
+			diplomacy = { KoM_hideout_events3002_effect = { SKILL = diplomacy } }
+			martial = { KoM_hideout_events3002_effect = { SKILL = martial } }
+			stewardship = { KoM_hideout_events3002_effect = { SKILL = stewardship } }
+			intrigue = { KoM_hideout_events3002_effect = { SKILL = intrigue } }
+			learning = { KoM_hideout_events3002_effect = { SKILL = learning } }
+			prowess = { KoM_hideout_events3002_effect = { SKILL = prowess } }
+		}
+	}
+}
+
+KoM_hideout_events.3003 = {
+	type = activity_event
+	title = KoM_hideout_events.3003.t
+	desc = KoM_hideout_events.3003.desc
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = paranoia
+	}
+	
+	widgets = {
+		widget = {
+			gui = "KoM_event_window_widgets_hideout_plundering"
+			container = "custom_widgets_container"
+		}
+	}
+	immediate = {
+		location.var:KoM_local_hideout = {
+			save_scope_as = KoM_hideout
+			var:hideout_owner ?= {
+				send_interface_message = { 
+					title = KoM_hideout_ai_read_effect_success 
+					custom_tooltip = KoM_hideout_ai_read_effect_success_tt
+				}
+			}
+		}
+	}
+
+	option = {
+		name = KoM_hideout_events.3003.hideout_building_main
+		custom_tooltip = KoM_hideout_events.3003.hideout_building_main.tt
+		KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_main VALUE = -1 }
+		add_gold = 100
+		add_prestige = 200
+		if = {
+			limit = { KoM_hideout_has_building_trigger = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_main } }
+			trigger_event = KoM_hideout_events.3003
+		}
+		else = {
+			trigger_event = KoM_hideout_events.3004
+		}
+	}
+
+	option = {
+		name = KoM_hideout_events.3003.a
+		KoM_hideout_change_owner_effect = { HIDEOUT = location.var:KoM_local_hideout NEW_OWNER = ROOT }
+	}
+
+	option = {
+		name = KoM_hideout_events.3003.b
+		
+	}
+}
+
+KoM_hideout_events.3004 = {
+	type = activity_event
+	title = KoM_hideout_events.3004.t
+	desc = KoM_hideout_events.3004.desc
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = shock
+	}
+
+	option = {
+		name = KoM_hideout_events.3004.a
+	}
+}
+
+KoM_hideout_events.3005 = {
+	type = activity_event
+	title = KoM_hideout_events.3005.t
+	desc = KoM_hideout_events.3005.desc
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = pain
+	}
+
+	option = {
+		name = KoM_hideout_events.3005.a
+	}
+}
+
+
+KoM_hideout_events.3006 = {
+	type = activity_event
+	title = KoM_hideout_events.3006.t
+	desc = KoM_hideout_events.3006.desc
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = shock
+	}
+
+	right_portrait = {
+		character = location.var:KoM_local_hideout.var:hideout_owner
+		animation = shock
+	}
+
+	trigger = {
+		location.var:KoM_local_hideout.var:hideout_owner = {
+			is_alive = yes
+		}
+	}
+
+	immediate = {
+		location.var:KoM_local_hideout.var:hideout_owner = {
+			add_character_modifier = {
+				modifier = KoM_home_advantage_modifier
+				days = 1
+			}
+			save_scope_as = KoM_hideout_owner
+		}
+	}
+
+	option = {
+		name = KoM_hideout_events.3006.a
+		trigger = {
+			knows_language_of_culture = scope:KoM_hideout_owner.culture
+		}
+		show_as_unavailable = {
+			NOT = { knows_language_of_culture = scope:KoM_hideout_owner.culture }
+		}
+		duel = {
+			skill = diplomacy
+			target = scope:KoM_hideout_owner
+			25 = {
+				desc = KoM_hideout_events.3006.a.a
+				compare_modifier = { value = scope:duel_value multiplier = 0.5 }
+				custom_tooltip = KoM_hideout_events.3008.c.tt
+			}
+			25 = {
+				desc = KoM_hideout_events.3006.a.b
+				compare_modifier = { value = scope:duel_value multiplier = -0.5 }
+				configure_start_single_combat_effect = {
+					SC_INITIATOR = scope:KoM_hideout_owner
+					SC_ATTACKER = scope:KoM_hideout_owner
+					SC_DEFENDER = scope:host
+					FATALITY = possible
+					FIXED = no
+					LOCALE = corridor_night
+					OUTPUT_EVENT = KoM_hideout_events.3007
+					INVALIDATION_EVENT = KoM_hideout_events.3007
+				}
+			}
+		}
+	}
+
+	option = {
+		name = KoM_hideout_events.3006.b
+		configure_start_single_combat_effect = {
+			SC_INITIATOR = scope:host
+			SC_ATTACKER = scope:host
+			SC_DEFENDER = scope:KoM_hideout_owner
+			FATALITY = possible
+			FIXED = no
+			LOCALE = corridor_night
+			OUTPUT_EVENT = KoM_hideout_events.3007
+			INVALIDATION_EVENT = KoM_hideout_events.3007
+		}
+	}
+
+	on_trigger_fail = {
+		trigger_event = KoM_hideout_events.3003
+		KoM_hideout_remove_owner_effect = { HIDEOUT = location.var:KoM_local_hideout }
+	}
+}
+
+KoM_hideout_events.3007 = {
+	hidden = yes
+	immediate = {
+		if = {
+			limit = { scope:host = scope:sc_victor }
+			trigger_event = KoM_hideout_events.3008
+		}
+		else = {
+			death = { death_reason = death_disappearance }
+		}
+	}
+}
+KoM_hideout_events.3008 = {
+	type = activity_event
+	title = KoM_hideout_events.3008.t
+	desc = {
+		desc = KoM_hideout_events.3008.desc
+		triggered_desc = {
+			trigger = { location.var:KoM_local_hideout.var:hideout_owner = { is_alive = yes } }
+			desc = KoM_hideout_events.3008.desc.alive
+		}
+		triggered_desc = {
+			trigger = { location.var:KoM_local_hideout.var:hideout_owner = { is_alive = no } }
+			desc = KoM_hideout_events.3008.desc.dead
+		}
+	}
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = celebrate_sword
+	}
+
+	right_portrait = {
+		triggered_animation = { 
+			trigger = { location.var:KoM_local_hideout.var:hideout_owner = { is_alive = yes } }
+			animation = beg
+		}
+		character = location.var:KoM_local_hideout.var:hideout_owner
+		animation = pain
+	}
+
+	option = {
+		name = KoM_hideout_events.3008.a
+		trigger = { location.var:KoM_local_hideout.var:hideout_owner = { is_alive = yes } }
+		location.var:KoM_local_hideout.var:hideout_owner = {
+			death = { death_reason = death_murder killer = ROOT }
+		}
+		trigger_event = KoM_hideout_events.3003
+		custom_tooltip = KoM_hideout_events.3008.tt
+	}
+
+	option = {
+		name = KoM_hideout_events.3008.b
+		trigger = { location.var:KoM_local_hideout.var:hideout_owner = { is_alive = yes } }
+		KoM_hideout_remove_owner_effect = { HIDEOUT = location.var:KoM_local_hideout }
+		trigger_event = KoM_hideout_events.3003
+		custom_tooltip = KoM_hideout_events.3008.tt
+	}
+
+	option = {
+		name = KoM_hideout_events.3008.c
+		trigger = { location.var:KoM_local_hideout.var:hideout_owner = { is_alive = yes } }
+		custom_tooltip = KoM_hideout_events.3008.c.tt
+	}
+
+	option = {
+		name = KoM_hideout_events.3008.d
+		trigger = { location.var:KoM_local_hideout.var:hideout_owner = { is_alive = no } }
+		KoM_hideout_remove_owner_effect = { HIDEOUT = location.var:KoM_local_hideout }
+		trigger_event = KoM_hideout_events.3003
+		custom_tooltip = KoM_hideout_events.3008.tt
+	}
+}

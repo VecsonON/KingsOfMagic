@@ -1,0 +1,15 @@
+﻿KoM_use_hideout_building = {
+	saved_scopes = { building }
+	is_shown = { 
+		scope:building.var:building_template.var:building_active = yes
+	}
+}
+
+
+KoM_use_hideout_building_hideout_building_alchemic_garden = {
+	effect = {
+		KoM_hideout_get_building_from_id = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_alchemic_garden }
+		custom_tooltip = KoM_hideout_building_alchemic_garden_active
+		KoM_hideout_gather_all_alchemical_material_effect = { HIDEOUT_BUILDING = scope:building }
+	}
+}

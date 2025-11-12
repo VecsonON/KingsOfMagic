@@ -1,0 +1,105 @@
+﻿l_english:
+ KoM_hideout_building: "#underline;TOOLTIP:KoM_hideout_building_tt Hideout Building#!"
+ KoM_hideout_buildings: "#underline;TOOLTIP:KoM_hideout_building_tt Hideout Buildings#!"
+ KoM_hideout_building_tt: "[KoM_hideouts|E], similarly to [domiciles|E] can host buildings. Some building provide owner with passive buffs, some make [KoM_hideout|E] better is some way #weak (For example, making it harder to find)#! and some give buffs or stuff from visiting it as owner. $KoM_hideout_building$ that buff owner only apply their buffs once, meaning you cannot stack their effects!"
+
+ KoM_hideout_building_active: "#underline;TOOLTIP:KoM_hideout_building_active_desc Hideout Active Building#!"
+ KoM_hideout_building_active_desc: "Not all $KoM_hideout_buildings$ just sit there and do everything passively, some can be used actively to trigger an effect based on $KoM_hideout_building$ used."
+
+ KoM_hideout_visit: "#underline;TOOLTIP:KoM_hideout_visit_tt Hideout Visit#!"
+ KoM_hideout_visit_tt: "Visiting a [KoM_hideout|E] is done via [activity|E], unlocked by either having: +30[learning_i][learning|E], [KoMGetTrait('scholar')] [trait|E] or by being [KoM_practitioner|E] of [KoM_magick|E].\n\nVisiting a [KoM_hideout|E] can accomplish many different things:\n$BULLET_WITH_TAB$Visiting an abandoned [KoM_hideout|E]#weak (One without owner)#!, will create opportunity to plunder what is left.\n$BULLET_WITH_TAB$Visiting [KoM_hideout|E] you own will allow you to expand your $KoM_hideout_buildings$, gather active buffs from buildings and many more.\n$BULLET_WITH_TAB$Visiting [KoM_hideout|E] you know that has an owner allows you to fight them, or trade. In some cases even find a teacher!\n$BULLET_WITH_TAB$And most often case, visiting [KoM_hideout|E] you only heard rumors can lead to discovering state of it allowing you to plunder it if no owner if found, or communicate with owner. Though in most cases what you will find is nothing, either because [KoM_hideout|E] is too well hidden, or because there wasn't one to begin with."
+
+ KoM_hideout_raid: "#underline;TOOLTIP:KoM_hideout_raid_tt Hideout Raid#!"
+ KoM_hideout_raided: "#underline;TOOLTIP:KoM_hideout_raid_tt Raided#!"
+ KoM_hideout_raid_tt: "There are many ambitious young and old people willing to throw their life to gain power, money and prestige. Such people can decide to visit [province|E] which houses rumors about local [KoM_hideout|E] and if they find it, raid it. Such raids often lead to $KoM_hideout_buildings$ being either destroyed, or just damaged. But in some cases raiders can damage something that badly whole [KoM_hideout|E] self-destructs.\n\nPlayers can also raid [KoM_hideouts|E] by using #V $activity_KoM_visit_hideout$#! [activity|E]. But mind you that doing so carry risks!"
+
+
+ KoM_hideout_building_main: "#underline;TOOLTIP:KoM_hideout_building_main_tt Core#!"
+ KoM_hideout_building_main_tt: "Core, also know as [KoM_hideout|E] proper, is a part of hideout from which all other $KoM_hideout_building$ stem from. Without Core, [KoM_hideout|E] quickly would break\n\nEffects:\n$KoM_hideout_building_main_effect$"
+ KoM_hideout_building_main_effect: "$BULLET_WITH_TAB$Each level of $KoM_hideout_building_main$ decreases cost of building or upgrading any $KoM_hideout_building$ by #P 10%#! with #bold exception#! of first level"
+
+ KoM_hideout_building_secrecy: "#underline;TOOLTIP:KoM_hideout_building_secrecy_tt Cover#!"
+ KoM_hideout_building_secrecy_tt: "Cover of a [KoM_hideout|E], used to hide Hideout from general populous. Without Cover, [KoM_hideout|E] would quickly be discovered by Raiders and if defenses aren't strong enough, destroy whole [KoM_hideout|E].\n\nEffects:\n$KoM_hideout_building_secrecy_effect$"
+ KoM_hideout_building_secrecy_effect: "$BULLET_WITH_TAB$Each level of $KoM_hideout_building_secrecy$ decreases chance of raiders finding [KoM_hideout|E] by #P 20%#! with #bold exception#! of first level, decreasing chance only by #P 10%#!"
+
+ KoM_hideout_building_library: "#underline;TOOLTIP:KoM_hideout_building_library_tt Library#!"
+ KoM_hideout_building_library_tt: "A simple bookshelf, sometimes entire room dedicated to storing [KoM_grimoires|E]. It is here were most [KoM_practitioners|E] of [KoM_magick|E] start writing their own [KoM_grimoires|E] or studying existing ones.\n\nEffects:\n$KoM_hideout_building_library_effect$"
+ KoM_hideout_building_library_effect: "$BULLET_WITH_TAB$Each level of $KoM_hideout_building_secrecy$ improves #V KoM_write_grimoire_interaction#! by increasing Mastery gain by #P +10%#! and reducing Minimal Mastery by #P -5%#!"
+
+ KoM_hideout_building_defense_goetia: "#underline;TOOLTIP:KoM_hideout_building_defense_goetia_tt [KoM_goetic|E] Summoning Circles#!"
+ KoM_hideout_building_defense_goetia_tt: "Created by [KoMGetTrait('KoM_magus')], these circles summon number of smaller demons to protect their master's lair.\n\nEffects:\n$KoM_hideout_building_defense_goetia_effect$"
+ KoM_hideout_building_defense_goetia_effect: "$BULLET_WITH_TAB$Each level of $KoM_hideout_building_defense_goetia$ increases difficulty of $KoM_hideout_raid$ by #P 5/10/15#!"
+
+ KoM_hideout_building_defense_thaumaturgy: "#underline;TOOLTIP:KoM_hideout_building_defense_thaumaturgy_tt [KoM_thaumaturgic|E] Arrays#!"
+ KoM_hideout_building_defense_thaumaturgy_tt: "Created by [KoMGetTrait('KoM_thaumaturge')], not too complicated array designed to maim and kill most unprepared raiders.\n\nEffects:\n$KoM_hideout_building_defense_thaumaturgy_effect$"
+ KoM_hideout_building_defense_thaumaturgy_effect: "$BULLET_WITH_TAB$Each level of $KoM_hideout_building_defense_thaumaturgy$ increases difficulty of $KoM_hideout_raid$ by #P 5/10/15#!"
+
+ KoM_hideout_building_defense_alchemy: "#underline;TOOLTIP:KoM_hideout_building_defense_alchemy_tt [KoM_alchemic|E] Golem Guard#!"
+ KoM_hideout_building_defense_alchemy_tt: "Created by [KoMGetTrait('KoM_alchemist')], almost alive, but not really Guard made of stone and other metals. Very useful against potential raiders.\n\nEffects:\n$KoM_hideout_building_defense_alchemy_effect$"
+ KoM_hideout_building_defense_alchemy_effect: "$BULLET_WITH_TAB$Each level of $KoM_hideout_building_defense_alchemy$ increases difficulty of $KoM_hideout_raid$ by #P 5/10/15#!"
+
+ KoM_hideout_building_defense_onmyodo: "#underline;TOOLTIP:KoM_hideout_building_defense_onmyodo_tt [KoM_onmyodo|E] Protective Talismans#!"
+ KoM_hideout_building_defense_onmyodo_tt: "Created by [KoMGetTrait('KoM_onmyoji')], huge number of talismans meant to confuse, and sometimes even kill intruders by leading them to more deadly traditional traps.\n\nEffects:\n$KoM_hideout_building_defense_onmyodo_effect$"
+ KoM_hideout_building_defense_onmyodo_effect: "$BULLET_WITH_TAB$Each level of $KoM_hideout_building_defense_onmyodo$ increases difficulty of $KoM_hideout_raid$ by #P 5/10/15#!"
+
+
+ KoM_hideout_building_thaumaturgic_laboratory: "#underline;TOOLTIP:KoM_hideout_building_thaumaturgic_laboratory_tt [KoM_thaumaturgic|E] Laboratory#!"
+ KoM_hideout_building_thaumaturgic_laboratory_tt: "A 'laboratory' with enough safety equipment to safety study and make new [KoM_thaumaturgic|E] [KoM_spell|E].\n\nEffects:\n$KoM_hideout_building_thaumaturgic_laboratory_effect$"
+ KoM_hideout_building_thaumaturgic_laboratory_effect: "$BULLET_WITH_TAB$Each level of $KoM_hideout_building_thaumaturgic_laboratory$ decreases difficulty of any casted [KoM_thaumaturgic|E] [KoM_spell|E] by #P -5%#! with minimal difficulty #bold 1#!."
+
+ KoM_hideout_building_shrine: "#underline;TOOLTIP:KoM_hideout_building_shrine_tt Shrine#!"
+ KoM_hideout_building_shrine_tt: "A [KoM_theurgic|E] shrine, even though it may look quite out of place. They often carry some kind of blessings, and are perfect spot for prayers\n\nEffects:\n$KoM_hideout_building_shrine_effect$"
+ KoM_hideout_building_shrine_effect: "$BULLET_WITH_TAB$Level 1: [KoMGetPerk('KoM_hideout_building_shrine_level_1_perk')]\n$BULLET_WITH_TAB$Level 2: [KoMGetPerk('KoM_hideout_building_shrine_level_2_perk')]\n$BULLET_WITH_TAB$Level 3: [KoMGetPerk('KoM_hideout_building_shrine_level_3_perk')]\n$BULLET_WITH_TAB$Level 4: [KoMGetPerk('KoM_hideout_building_shrine_level_4_perk')]\n$BULLET_WITH_TAB$Level 5: [KoMGetPerk('KoM_hideout_building_shrine_level_5_perk')]"
+
+ KoM_hideout_building_alchemic_garden: "#underline;TOOLTIP:KoM_hideout_building_alchemic_garden_tt [KoM_alchemic|E] Garden#!"
+ KoM_hideout_building_alchemic_garden_tt: "Garden, though not one you think of, that 'grow' multiple [KoM_alchemic|E] indigents. Though often called garden, this $KoM_hideout_building$ in really can grow many things normally wouldn't be possible.\n\nEffects:\n$KoM_hideout_building_alchemic_garden_effect$"
+ KoM_hideout_building_alchemic_garden_effect: "$BULLET_WITH_TAB$Every year garden will 'grow' an [KoM_alchemic|E] indigent or any type.\n$BULLET_WITH_TAB$You can use this $KoM_hideout_building$ to collect all [KoM_alchemic|E] that has been gathered here\n$BULLET_WITH_TAB$Each level of $KoM_hideout_building_alchemic_garden$ increases number of indigents grown by #P 1#!"
+ KoM_hideout_building_alchemic_garden_active: "You will gather all [KoM_alchemic|E] materials that has 'grown' since your last visit."
+
+ KoM_hideout_building_meditation_spot: "#underline;TOOLTIP:KoM_hideout_building_meditation_spot_tt Meditation Spot#!"
+ KoM_hideout_building_meditation_spot_tt: "Often pretty clean, and empty room in a [KoM_hideout|E] with some incense also scattered around. It's here were [KoMGetTrait('KoM_daoshi')] meditate, and advance towards [KoMGetTrait('KoM_xian')]\n\nEffects:\n$KoM_hideout_building_meditation_spot_effect$"
+ KoM_hideout_building_meditation_spot_effect: "$BULLET_WITH_TAB$Each level of $KoM_hideout_building_meditation_spot$ increases mastery gain over [KoM_taoism|E] from Meditation by #P +15%#!"
+
+ KoM_hideout_building_talisman_of_protection: "#underline;TOOLTIP:KoM_hideout_building_talisman_of_protection_tt Talismans of Protection#!"
+ KoM_hideout_building_talisman_of_protection_tt: "A set of talismans, all focused on protecting [KoM_hideout|E] as well [KoM_hideout|E]'s owner from danger, be in supernatural or mundane\n\nEffects:\n$KoM_hideout_building_talisman_of_protection_effect$"
+ KoM_hideout_building_talisman_of_protection_effect: "$BULLET_WITH_TAB$Level 1: [KoMGetPerk('KoM_hideout_building_talisman_of_protection_level_1_perk')]\n$BULLET_WITH_TAB$Level 2: [KoMGetPerk('KoM_hideout_building_talisman_of_protection_level_2_perk')]\n$BULLET_WITH_TAB$Level 3: [KoMGetPerk('KoM_hideout_building_talisman_of_protection_level_3_perk')]\n$BULLET_WITH_TAB$Level 4: [KoMGetPerk('KoM_hideout_building_talisman_of_protection_level_4_perk')]\n$BULLET_WITH_TAB$Level 5: [KoMGetPerk('KoM_hideout_building_talisman_of_protection_level_5_perk')]"
+
+ KoM_hideout_building_talisman_of_fortune: "#underline;TOOLTIP:KoM_hideout_building_talisman_of_fortune_tt Talismans of Fortune#!"
+ KoM_hideout_building_talisman_of_fortune_tt: "Array of talismans of many sizes, all focused on inducing balance of Yin and Yang with goal of pushing away any misfortune from [KoM_hideout|E]'s owner\n\nEffects:\n$KoM_hideout_building_talisman_of_fortune_effect$"
+ KoM_hideout_building_talisman_of_fortune_effect: "$BULLET_WITH_TAB$Level 1: [KoMGetPerk('KoM_hideout_building_talisman_of_fortune_level_1_perk')]\n$BULLET_WITH_TAB$Level 2: [KoMGetPerk('KoM_hideout_building_talisman_of_fortune_level_2_perk')]\n$BULLET_WITH_TAB$Level 3: [KoMGetPerk('KoM_hideout_building_talisman_of_fortune_level_3_perk')]\n$BULLET_WITH_TAB$Level 4: [KoMGetPerk('KoM_hideout_building_talisman_of_fortune_level_4_perk')]\n$BULLET_WITH_TAB$Level 5: [KoMGetPerk('KoM_hideout_building_talisman_of_fortune_level_5_perk')]"
+
+ KoM_hideout_building_talisman_of_peace: "#underline;TOOLTIP:KoM_hideout_building_talisman_of_peace_tt Talismans of Peace#!"
+ KoM_hideout_building_talisman_of_peace_tt: "A complex 'circle' of talismans, all designed to perfectly manipulate Yin and Yang in area, inducing Peace upon world.\n\nEffects:\n$KoM_hideout_building_talisman_of_peace_effect$"
+ KoM_hideout_building_talisman_of_peace_effect: "$BULLET_WITH_TAB$Level 1: [KoMGetPerk('KoM_hideout_building_talisman_of_peace_level_1_perk')]\n$BULLET_WITH_TAB$Level 2: [KoMGetPerk('KoM_hideout_building_talisman_of_peace_level_2_perk')]\n$BULLET_WITH_TAB$Level 3: [KoMGetPerk('KoM_hideout_building_talisman_of_peace_level_3_perk')]\n$BULLET_WITH_TAB$Level 4: [KoMGetPerk('KoM_hideout_building_talisman_of_peace_level_4_perk')]\n$BULLET_WITH_TAB$Level 5: [KoMGetPerk('KoM_hideout_building_talisman_of_peace_level_5_perk')]"
+
+ ### Perks
+ KoM_hideout_building_shrine_level_1_perk_name: "$KoM_hideout_building_shrine$ Level 1"
+ KoM_hideout_building_shrine_level_2_perk_name: "$KoM_hideout_building_shrine$ Level 2"
+ KoM_hideout_building_shrine_level_3_perk_name: "$KoM_hideout_building_shrine$ Level 3"
+ KoM_hideout_building_shrine_level_4_perk_name: "$KoM_hideout_building_shrine$ Level 4"
+ KoM_hideout_building_shrine_level_5_perk_name: "$KoM_hideout_building_shrine$ Level 5"
+
+ KoM_hideout_building_talisman_of_protection_level_1_perk_name: "$KoM_hideout_building_talisman_of_protection$ Level 1"
+ KoM_hideout_building_talisman_of_protection_level_2_perk_name: "$KoM_hideout_building_talisman_of_protection$ Level 2"
+ KoM_hideout_building_talisman_of_protection_level_3_perk_name: "$KoM_hideout_building_talisman_of_protection$ Level 3"
+ KoM_hideout_building_talisman_of_protection_level_4_perk_name: "$KoM_hideout_building_talisman_of_protection$ Level 4"
+ KoM_hideout_building_talisman_of_protection_level_5_perk_name: "$KoM_hideout_building_talisman_of_protection$ Level 5"
+
+ KoM_hideout_building_talisman_of_fortune_level_1_perk_name: "$KoM_hideout_building_talisman_of_fortune$ Level 1"
+ KoM_hideout_building_talisman_of_fortune_level_2_perk_name: "$KoM_hideout_building_talisman_of_fortune$ Level 2"
+ KoM_hideout_building_talisman_of_fortune_level_3_perk_name: "$KoM_hideout_building_talisman_of_fortune$ Level 3"
+ KoM_hideout_building_talisman_of_fortune_level_4_perk_name: "$KoM_hideout_building_talisman_of_fortune$ Level 4"
+ KoM_hideout_building_talisman_of_fortune_level_5_perk_name: "$KoM_hideout_building_talisman_of_fortune$ Level 5"
+
+ KoM_hideout_building_talisman_of_peace_level_1_perk_name: "$KoM_hideout_building_talisman_of_peace$ Level 1"
+ KoM_hideout_building_talisman_of_peace_level_2_perk_name: "$KoM_hideout_building_talisman_of_peace$ Level 2"
+ KoM_hideout_building_talisman_of_peace_level_3_perk_name: "$KoM_hideout_building_talisman_of_peace$ Level 3"
+ KoM_hideout_building_talisman_of_peace_level_4_perk_name: "$KoM_hideout_building_talisman_of_peace$ Level 4"
+ KoM_hideout_building_talisman_of_peace_level_5_perk_name: "$KoM_hideout_building_talisman_of_peace$ Level 5"
+
+ ### RANDOM NAMES
+
+ KoM_hideout_name_owner: "[KoM_hideout|E] of [SCOPE.sCharacter('KoM_hideout_owner').GetFirstName]"
+ KoM_hideout_name_ruined: "Long Ruined [KoM_hideout|E]"
+ KoM_hideout_name_abandoned: "Long Abandoned [KoM_hideout|E]"
+ KoM_hideout_name_new: "Newly Build [KoM_hideout|E]"

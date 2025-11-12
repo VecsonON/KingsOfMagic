@@ -1,0 +1,5 @@
+﻿KoM_dummy_lifestyle = {
+	is_valid = { always = no }
+	xp_per_level = 1500
+	base_xp_gain = 25
+}
