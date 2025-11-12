@@ -17,6 +17,7 @@ KoM_story_cycle_hideout = {
 			location = story_owner.location
 			faith = story_owner.faith
 			culture = story_owner.culture
+			trait = KoM_npc
 			save_scope_as = KoM_hideout_character
 		}
 		scope:KoM_hideout_character = { change_first_name = { template_character = PREV.story_owner } }
@@ -38,6 +39,7 @@ KoM_story_cycle_hideout_building_template = {
 			location = story_owner.location
 			faith = story_owner.faith
 			culture = story_owner.culture
+			trait = KoM_npc
 			save_scope_as = KoM_eternal_character
 		}
 		story_owner = { every_owned_story = { make_story_owner = scope:KoM_eternal_character } }

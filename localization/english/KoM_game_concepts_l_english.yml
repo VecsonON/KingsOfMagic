@@ -42,7 +42,7 @@
 
  game_concept_KoM_grimoire: "Grimoire"
  game_concept_KoM_grimoires: "Grimoires"
- game_concept_KoM_grimoire_desc: "#bold Grimoire#! are books of power, containing practices, rites and spells of specific [Concept('KoM_magick', 'School of Magick')|E] represented in [KoM|E] as [artifacts|E].\n\nGrimoires can be found by:\n$BULLET_WITH_TAB$[activity|E] to explore abandoned#weak (not always)#! libraries or other places of knowledge\n$BULLET_WITH_TAB$#V $KoM_seek_magic_decision$#! [decision|E]#weak (this #bold will#! expose your intentions)#!\n$BULLET_WITH_TAB$Standard CK3 [artifact|E] shenanigans. #weak For that purpose I can recommend using #bold Search & Trade Artifacts#! Mod.#!"
+ game_concept_KoM_grimoire_desc: "#bold Grimoire#! are books of power, containing practices, rites and spells of specific [Concept('KoM_magick', 'School of Magick')|E] represented in [KingsOfMagic|E] as [artifacts|E].\n\nGrimoires can be found by:\n$BULLET_WITH_TAB$#V $activity_KoM_visit_hideout$#! [activity|E] #weak;underline;TOOLTIP:activity_KoM_visit_hideout_req You need to pass these requirements!#!, where with enough luck you can gain [KoM_grimoire|E]\n$BULLET_WITH_TAB$#V $KoM_seek_magic_decision$#! [decision|E]#weak (this #bold will#! expose your intentions)#!\n$BULLET_WITH_TAB$Standard CK3 [artifact|E] shenanigans. #weak For that purpose I can recommend using #bold Search & Trade Artifacts#! Mod.#!"
 
  game_concept_KoM_rite: "Rite"
  game_concept_KoM_rites: "Rites"

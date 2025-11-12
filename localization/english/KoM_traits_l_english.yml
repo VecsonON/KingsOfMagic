@@ -1,4 +1,7 @@
 ﻿l_english:
+ trait_KoM_npc: "[KingsOfMagic|E] NPC"
+ trait_KoM_npc_desc: "I exist for [KingsOfMagic|E] to work, killing me won't do anything since I will be replaced by new [character|E]. Feel free to ignore me!"
+
  trait_KoM_witch_desc: "What ever they call themselves, they are still witch at the core and should be burned the same!"
  trait_track_KoM: "Mastery"
  trait_track_KoM_desc: "Mastery is a measure of much this [character|E] understands their [KoM_magick|E] school"

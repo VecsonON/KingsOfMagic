@@ -7,6 +7,7 @@
  activity_KoM_visit_hideout_province_desc: "Visit potential [KoM_hideout|E]"
  activity_KoM_visit_hideout_host_desc: "$BULLET_WITH_TAB$School of [KoM_magick|E]\n$BULLET_WITH_TAB$Ownership of [KoM_hideout|E]\n$BULLET_WITH_TAB$Possibility to find [KoM_grimoires|E]\n$BULLET_WITH_TAB$[gold_i|E][gold|E]\n$BULLET_WITH_TAB$[prestige_i|E][prestige|E]\n$BULLET_WITH_TAB$#N [KoMGetTrait('wounded_1')]/[KoMGetTrait('wounded_2')]/[KoMGetTrait('wounded_3')]/[KoMGetTrait('maimed')]#!\n$BULLET_WITH_TAB$@death_icon!#N;bold Death#!"
  activity_KoM_visit_hideout_guest_desc: "Visit potential [KoM_hideout|E]"
+ activity_KoM_visit_hideout_req: "$BULLET_WITH_TAB$At least 25 [learning|E]\n$BULLET_WITH_TAB$[KoMGetTrait('scholar')] [trait|E]\n$BULLET_WITH_TAB$Already be a [KoM_practitioner|E] of [KoM_magick|E]"
  activity_KoM_visit_hideout_conclusion_desc: "My visit is complete"
 
  KoM_visit_hideout_main: "Visit"

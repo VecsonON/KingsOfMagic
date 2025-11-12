@@ -13,6 +13,7 @@ KoM_hideout_create_empty_hideout_effect = {
 			location = scope:KoM_location
 			faith = scope:KoM_location.faith
 			culture = scope:KoM_location.culture
+			trait = KoM_npc
 			save_scope_as = KoM_hideout_character
 		}
 		scope:KoM_hideout_character = {
@@ -100,6 +101,7 @@ KoM_hideout_create_building_template_effect = {
 			location = scope:KoM_location
 			faith = scope:KoM_location.faith
 			culture = scope:KoM_location.culture
+			trait = KoM_npc
 			save_scope_as = KoM_eternal_character
 		}
 		scope:KoM_eternal_character = { create_story = { type = KoM_story_cycle_hideout_building_template } }

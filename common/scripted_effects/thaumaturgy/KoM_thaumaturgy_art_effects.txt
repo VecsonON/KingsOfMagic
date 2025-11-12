@@ -10,6 +10,7 @@
 			location = location
 			faith = faith
 			culture = culture
+			trait = KoM_npc
 			save_scope_as = KoM_eternal_character
 		}
 		scope:KoM_eternal_character = {

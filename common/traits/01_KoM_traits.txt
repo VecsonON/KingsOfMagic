@@ -1,4 +1,17 @@
-﻿KoM_magus = {
+﻿KoM_npc = {
+	incapacitating = yes
+	disables_combat_leadership = yes
+	shown_in_ruler_designer = no
+	immortal = yes
+	shown_in_encyclopedia = no
+	inheritance_blocker = all
+	claim_inheritance_blocker = all
+	can_have_children = no
+	ai_energy = -100
+	icon = hideout.dds
+}
+
+KoM_magus = {
 	flag = mage
 
 	name = {
