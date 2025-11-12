@@ -9,40 +9,40 @@
 	else = { custom_tooltip = KoM_lose_alchemical_material_effect }
 }
 KoM_pass_alchemical_materials_effect = {
-	if = { 
-		limit = { has_variable = KoM_alchemy_salt } 
+	if = {
+		limit = { has_variable = KoM_alchemy_salt }
 		$HEIR$ ?= { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_salt COUNT = PREV.KoM_alchemy_salt } }
 	}
-	if = { 
-		limit = { has_variable = KoM_alchemy_charcoal } 
+	if = {
+		limit = { has_variable = KoM_alchemy_charcoal }
 		$HEIR$ ?= { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_charcoal COUNT = PREV.KoM_alchemy_charcoal } }
 	}
-	if = { 
-		limit = { has_variable = KoM_alchemy_honey } 
+	if = {
+		limit = { has_variable = KoM_alchemy_honey }
 		$HEIR$ ?= { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_honey COUNT = PREV.KoM_alchemy_honey } }
 	}
-	if = { 
-		limit = { has_variable = KoM_alchemy_lead } 
+	if = {
+		limit = { has_variable = KoM_alchemy_lead }
 		$HEIR$ ?= { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_lead COUNT = PREV.KoM_alchemy_lead } }
 	}
-	if = { 
-		limit = { has_variable = KoM_alchemy_silver } 
+	if = {
+		limit = { has_variable = KoM_alchemy_silver }
 		$HEIR$ ?= { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_silver COUNT = PREV.KoM_alchemy_silver } }
 	}
-	if = { 
-		limit = { has_variable = KoM_alchemy_crushed_crystals } 
+	if = {
+		limit = { has_variable = KoM_alchemy_crushed_crystals }
 		$HEIR$ ?= { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_crushed_crystals COUNT = PREV.KoM_alchemy_crushed_crystals } }
 	}
-	if = { 
-		limit = { has_variable = KoM_alchemy_human_blood } 
+	if = {
+		limit = { has_variable = KoM_alchemy_human_blood }
 		$HEIR$ ?= { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_human_blood COUNT = PREV.KoM_alchemy_human_blood } }
 	}
-	if = { 
-		limit = { has_variable = KoM_alchemy_vulcanic_ash } 
+	if = {
+		limit = { has_variable = KoM_alchemy_vulcanic_ash }
 		$HEIR$ ?= { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_vulcanic_ash COUNT = PREV.KoM_alchemy_vulcanic_ash } }
 	}
-	if = { 
-		limit = { has_variable = KoM_alchemy_fireflower } 
+	if = {
+		limit = { has_variable = KoM_alchemy_fireflower }
 		$HEIR$ ?= { KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_fireflower COUNT = PREV.KoM_alchemy_fireflower } }
 	}
 }
@@ -61,8 +61,8 @@ KoM_create_potion_effect = {
 		modifier = artifact_placeholder_modifier
 		wealth = scope:wealth
 		quality = scope:quality
-		history = { 
-			type = created 
+		history = {
+			type = created
 			actor = THIS
 			recipient = THIS
 			location = THIS.location
@@ -118,7 +118,7 @@ KoM_elixir_of_the_white_rose_potion_effect = {
 	custom_tooltip = KoM_rite_elixir_of_the_white_rose_effect
 	trigger_event = health.1101
 	trigger_event = health.1102
-	show_as_tooltip = { 
+	show_as_tooltip = {
 		KoM_remove_trait_effect = { TRAIT = ill }
 		KoM_remove_trait_effect = { TRAIT = pneumonic }
 	}

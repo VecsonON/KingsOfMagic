@@ -70,7 +70,7 @@ KoM_save_tooltip = {
 }
 KoM_calculate_time_effect = {
 	save_scope_value_as = {
-		name = monthly_progress 
+		name = monthly_progress
 		value = {
 			value = $MONTHLY_PROGRESS$
 			multiply = KoM_extra_rite_speed_mult
@@ -343,28 +343,28 @@ KoM_add_hidden_magic_school_xp_effect = {
 		value = $COUNT$
 		switch = {
 			trigger = $TRAIT$
-			trait:KoM_magus = { 
-				change_variable = { name = KoM_goetia_xp add = $COUNT$ } 
+			trait:KoM_magus = {
+				change_variable = { name = KoM_goetia_xp add = $COUNT$ }
 				set_variable = { name = KoM_goetia_xp value = { value = KoM_goetia_xp max = 100 } }
 			}
-			trait:KoM_thaumaturge = { 
-				change_variable = { name = KoM_thaumaturgy_xp add = $COUNT$ } 
+			trait:KoM_thaumaturge = {
+				change_variable = { name = KoM_thaumaturgy_xp add = $COUNT$ }
 				set_variable = { name = KoM_thaumaturgy_xp value = { value = KoM_thaumaturgy_xp max = 100 } }
 			}
-			trait:KoM_theurgist = { 
-				change_variable = { name = KoM_theurgy_xp add = $COUNT$ } 
+			trait:KoM_theurgist = {
+				change_variable = { name = KoM_theurgy_xp add = $COUNT$ }
 				set_variable = { name = KoM_theurgy_xp value = { value = KoM_theurgy_xp max = 100 } }
 			}
-			trait:KoM_alchemist = { 
-				change_variable = { name = KoM_alchemy_xp add = $COUNT$ } 
+			trait:KoM_alchemist = {
+				change_variable = { name = KoM_alchemy_xp add = $COUNT$ }
 				set_variable = { name = KoM_alchemy_xp value = { value = KoM_alchemy_xp max = 100 } }
 			}
-			trait:KoM_daoshi = { 
-				change_variable = { name = KoM_taoism_xp add = $COUNT$ } 
+			trait:KoM_daoshi = {
+				change_variable = { name = KoM_taoism_xp add = $COUNT$ }
 				set_variable = { name = KoM_taoism_xp value = { value = KoM_taoism_xp max = 100 } }
 			}
-			trait:KoM_onmyoji = { 
-				change_variable = { name = KoM_onmyodo_xp add = $COUNT$ } 
+			trait:KoM_onmyoji = {
+				change_variable = { name = KoM_onmyodo_xp add = $COUNT$ }
 				set_variable = { name = KoM_onmyodo_xp value = { value = KoM_onmyodo_xp max = 100 } }
 			}
 		}
@@ -484,37 +484,37 @@ KoM_teach_magic_effect = {
 	KoM_study_magic_school_effect = { SCHOOL = flag:$SCHOOL$ COUNT = scope:xp_gained }
 	switch = {
 		trigger = flag:$SCHOOL$
-		flag:goetia = { 
+		flag:goetia = {
 			every_secret = {
 				limit = { secret_type = KoM_secret_magus }
 				reveal_to = $TEACHER$
 			}
 		}
-		flag:thaumaturgy = { 
+		flag:thaumaturgy = {
 			every_secret = {
 				limit = { secret_type = KoM_secret_thaumaturge }
 				reveal_to = $TEACHER$
 			}
 		}
-		flag:theurgy = { 
+		flag:theurgy = {
 			every_secret = {
 				limit = { secret_type = KoM_secret_theurgist }
 				reveal_to = $TEACHER$
 			}
 		}
-		flag:alchemy = { 
+		flag:alchemy = {
 			every_secret = {
 				limit = { secret_type = KoM_secret_alchemist }
 				reveal_to = $TEACHER$
 			}
 		}
-		flag:taoism = { 
+		flag:taoism = {
 			every_secret = {
 				limit = { secret_type = KoM_secret_daoshi }
 				reveal_to = $TEACHER$
 			}
 		}
-		flag:onmyodo = { 
+		flag:onmyodo = {
 			every_secret = {
 				limit = { secret_type = KoM_secret_onmyoji }
 				reveal_to = $TEACHER$

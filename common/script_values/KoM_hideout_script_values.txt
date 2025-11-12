@@ -11,15 +11,15 @@ KoM_defense_value = {
 	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_goetia } scope:building.var:building_level = 1 } add = 5 }
 	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_goetia } scope:building.var:building_level = 2 } add = 10 }
 	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_goetia } scope:building.var:building_level = 3 } add = 15 }
-	
+
 	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_thaumaturgy } scope:building.var:building_level = 1 } add = 5 }
 	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_thaumaturgy } scope:building.var:building_level = 2 } add = 10 }
 	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_thaumaturgy } scope:building.var:building_level = 3 } add = 15 }
-	
+
 	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_alchemy } scope:building.var:building_level = 1 } add = 5 }
 	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_alchemy } scope:building.var:building_level = 2 } add = 10 }
 	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_alchemy } scope:building.var:building_level = 3 } add = 15 }
-	
+
 	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_onmyodo } scope:building.var:building_level = 1 } add = 5 }
 	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_onmyodo } scope:building.var:building_level = 2 } add = 10 }
 	if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = hideout_building_defense_onmyodo } scope:building.var:building_level = 3 } add = 15 }

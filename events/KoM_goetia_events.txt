@@ -189,8 +189,8 @@ KoM_goetia_events.2 = { # the_lesser_conjurations
 				scope:KoM_target ?= {
 					custom_tooltip = KoM_rite_the_lesser_conjurations_effect2
 					every_secret = {
-						limit = { 
-							NOT = { is_known_by = ROOT } 
+						limit = {
+							NOT = { is_known_by = ROOT }
 							secret_type = secret_murder
 						}
 						reveal_to = ROOT
@@ -235,7 +235,7 @@ KoM_goetia_events.3 = { # the_seventy_two_gates
 			}
 			flag:amon = {
 				scope:KoM_target ?= {
-					if = { limit = { has_ep1_dlc_trigger = yes } 
+					if = { limit = { has_ep1_dlc_trigger = yes }
 						random_list = {
 							1 = { create_inspiration = book_inspiration custom_tooltip = inspire_interaction_book }
 							1 = { create_inspiration = weaver_inspiration custom_tooltip = inspire_interaction_weaver }

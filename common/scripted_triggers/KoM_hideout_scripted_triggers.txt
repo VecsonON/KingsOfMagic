@@ -93,12 +93,12 @@ KoM_hideout_has_enough_resources_trigger = {
 }
 
 KoM_hideout_has_enough_school_xp_tier_3_trigger = {
-	save_temporary_scope_value_as = { 
-		name = building_level 
-		value = { 
-			value = 0 
+	save_temporary_scope_value_as = {
+		name = building_level
+		value = {
+			value = 0
 			if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = $HIDEOUT$ ID = $ID$ } } value = scope:building.var:building_level }
-		} 
+		}
 	}
 	switch = {
 		trigger = scope:building_level
@@ -108,12 +108,12 @@ KoM_hideout_has_enough_school_xp_tier_3_trigger = {
 	}
 }
 KoM_hideout_has_enough_school_xp_tier_4_trigger = {
-	save_temporary_scope_value_as = { 
-		name = building_level 
-		value = { 
-			value = 0 
+	save_temporary_scope_value_as = {
+		name = building_level
+		value = {
+			value = 0
 			if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = $HIDEOUT$ ID = $ID$ } } value = scope:building.var:building_level }
-		} 
+		}
 	}
 	switch = {
 		trigger = scope:building_level
@@ -124,12 +124,12 @@ KoM_hideout_has_enough_school_xp_tier_4_trigger = {
 	}
 }
 KoM_hideout_has_enough_school_xp_tier_5_trigger = {
-	save_temporary_scope_value_as = { 
-		name = building_level 
-		value = { 
-			value = 0 
+	save_temporary_scope_value_as = {
+		name = building_level
+		value = {
+			value = 0
 			if = { limit = { KoM_hideout_has_building_trigger = { HIDEOUT = $HIDEOUT$ ID = $ID$ } } value = scope:building.var:building_level }
-		} 
+		}
 	}
 	switch = {
 		trigger = scope:building_level

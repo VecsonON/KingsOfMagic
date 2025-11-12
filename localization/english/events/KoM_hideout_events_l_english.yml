@@ -34,12 +34,12 @@
  KoM_hideout_events.1002.hideout_building_main: "$KoM_hideout_building_main$ level [GetPlayer.GetCurrentLocation.MakeScope.Var('KoM_local_hideout').Story.MakeScope.ScriptValue('KoM_hideout_building_main_level')|V0]/[Scope.Var('building_max_level').GetValue|0V]"
  KoM_hideout_events.1002.hideout_building_secrecy: "$KoM_hideout_building_secrecy$ level [GetPlayer.GetCurrentLocation.MakeScope.Var('KoM_local_hideout').Story.MakeScope.ScriptValue('KoM_hideout_building_secrecy_level')|V0]/[Scope.Var('building_max_level').GetValue|0V]"
  KoM_hideout_events.1002.hideout_building_library: "$KoM_hideout_building_library$ level [GetPlayer.GetCurrentLocation.MakeScope.Var('KoM_local_hideout').Story.MakeScope.ScriptValue('KoM_hideout_building_library_level')|V0]/[Scope.Var('building_max_level').GetValue|0V]"
- 
+
  KoM_hideout_events.1002.hideout_building_defense_goetia: "$KoM_hideout_building_defense_goetia$ level [GetPlayer.GetCurrentLocation.MakeScope.Var('KoM_local_hideout').Story.MakeScope.ScriptValue('KoM_hideout_building_defense_goetia_level')|V0]/[Scope.Var('building_max_level').GetValue|0V]"
  KoM_hideout_events.1002.hideout_building_defense_thaumaturgy: "$KoM_hideout_building_defense_thaumaturgy$ level [GetPlayer.GetCurrentLocation.MakeScope.Var('KoM_local_hideout').Story.MakeScope.ScriptValue('KoM_hideout_building_defense_thaumaturgy_level')|V0]/[Scope.Var('building_max_level').GetValue|0V]"
  KoM_hideout_events.1002.hideout_building_defense_alchemy: "$KoM_hideout_building_defense_alchemy$ level [GetPlayer.GetCurrentLocation.MakeScope.Var('KoM_local_hideout').Story.MakeScope.ScriptValue('KoM_hideout_building_defense_alchemy_level')|V0]/[Scope.Var('building_max_level').GetValue|0V]"
  KoM_hideout_events.1002.hideout_building_defense_onmyodo: "$KoM_hideout_building_defense_onmyodo$ level [GetPlayer.GetCurrentLocation.MakeScope.Var('KoM_local_hideout').Story.MakeScope.ScriptValue('KoM_hideout_building_defense_onmyodo_level')|V0]/[Scope.Var('building_max_level').GetValue|0V]"
- 
+
  KoM_hideout_events.1002.hideout_building_thaumaturgic_laboratory: "$KoM_hideout_building_thaumaturgic_laboratory$ level [GetPlayer.GetCurrentLocation.MakeScope.Var('KoM_local_hideout').Story.MakeScope.ScriptValue('KoM_hideout_building_thaumaturgic_laboratory_level')|V0]/[Scope.Var('building_max_level').GetValue|0V]"
  KoM_hideout_events.1002.hideout_building_shrine: "$KoM_hideout_building_shrine$ level [GetPlayer.GetCurrentLocation.MakeScope.Var('KoM_local_hideout').Story.MakeScope.ScriptValue('KoM_hideout_building_shrine_level')|V0]/[Scope.Var('building_max_level').GetValue|0V]"
  KoM_hideout_events.1002.hideout_building_alchemic_garden: "$KoM_hideout_building_alchemic_garden$ level [GetPlayer.GetCurrentLocation.MakeScope.Var('KoM_local_hideout').Story.MakeScope.ScriptValue('KoM_hideout_building_alchemic_garden_level')|V0]/[Scope.Var('building_max_level').GetValue|0V]"
@@ -131,7 +131,7 @@
  KoM_hideout_events.3003.hideout_building_talisman_of_fortune.tt: "Scavenging this $KoM_hideout_building$ won't affect this [KoM_hideout|E] negatively"
  KoM_hideout_events.3003.hideout_building_talisman_of_peace: "A array of talismans... Giving feeling of peace?"
  KoM_hideout_events.3003.hideout_building_talisman_of_peace.tt: "Scavenging this $KoM_hideout_building$ won't affect this [KoM_hideout|E] negatively"
- 
+
  KoM_hideout_events.3004.t: "A bit too much"
  KoM_hideout_events.3004.desc: "As I were scavenging what I could from... everything? I suddenly heard a loud crack, that and very obvious sings that if I won't evacuate right now I will be buried underneath kilograms of dirt."
  KoM_hideout_events.3004.a: "RUN!"
@@ -139,7 +139,7 @@
  KoM_hideout_events.3005.t: "MY ARM!"
  KoM_hideout_events.3005.desc: "ARGH! My arms is GONE! I need to go home NOW."
  KoM_hideout_events.3005.a: "Coming here was a mistake"
- 
+
  KoM_hideout_events.3006.t: "My true goal - Small Problem"
  KoM_hideout_events.3006.desc: "After dealing with security previous owner had installed, I am finally were I want to be, at the core of [KoM_hideout|E] where I have easy access to all the rooms!\n\nThat was.. Until I heard a voice coming from one of rooms. I quickly gather myself and..."
  KoM_hideout_events.3006.a: "Scream 'I can explain!'"

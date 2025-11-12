@@ -12,13 +12,13 @@ vbox = {
 
 	editbox_standard = {
 		size = { 240 30 }
-	
-		blockoverride "editbox_properties" 
+
+		blockoverride "editbox_properties"
 		{
 		    name = "no_name_needed"
 		    text = "[EventWindowWidgetNameCharacter.GetCurrentName]"
 			ontextedited = "[EventWindowWidgetNameCharacter.OnEditCurrentName]"
-			
+
 			state = {
 				name = "name_refresh"
 				next = "b"

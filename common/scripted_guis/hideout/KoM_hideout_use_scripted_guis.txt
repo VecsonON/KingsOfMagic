@@ -1,6 +1,6 @@
 ﻿KoM_use_hideout_building = {
 	saved_scopes = { building }
-	is_shown = { 
+	is_shown = {
 		scope:building.var:building_template.var:building_active = yes
 	}
 }

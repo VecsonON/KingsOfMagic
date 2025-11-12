@@ -24,7 +24,7 @@ KoM_potion_template = {
 
 	can_benefit = {
 	}
-	
+
 	# can this character reforge this artifact (turn this artifact into another)
 	can_reforge = {
 		always = no

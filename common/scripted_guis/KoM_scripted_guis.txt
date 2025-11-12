@@ -96,7 +96,7 @@ KoM_spell_creator_add_spell_action = {
 			name = num_of_actions
 			value = {
 				value = 0
-				var:KoM_spell_creator_spell = { 
+				var:KoM_spell_creator_spell = {
 					every_in_list = {
 						variable = spell_actions
 						add = 1
@@ -115,7 +115,7 @@ KoM_spell_creator_add_spell_action = {
 								variable = spell_actions
 								var:action_name = flag:duo
 							}
-						} 
+						}
 					}
 					add = 2
 				}
@@ -126,7 +126,7 @@ KoM_spell_creator_add_spell_action = {
 								variable = spell_actions
 								var:action_name = flag:tres
 							}
-						} 
+						}
 					}
 					add = 3
 				}
@@ -179,7 +179,7 @@ KoM_spell_creator_add_spell_action = {
 }
 
 KoM_spell_creator_preview = {
-	effect = { 
+	effect = {
 		if = {
 			limit = { var:KoM_spell_creator_spell.var:declaration ?= flag:res }
 			if = {
@@ -197,15 +197,15 @@ KoM_spell_creator_preview = {
 			}
 		}
 		else = { save_scope_as = spell_target }
-		KoM_execute_spell_effect = { TARGET = scope:spell_target SPELL = var:KoM_spell_creator_spell } 
+		KoM_execute_spell_effect = { TARGET = scope:spell_target SPELL = var:KoM_spell_creator_spell }
 	}
 }
 
 KoM_spell_creator_clear_spell_actions = {
 	effect = {
-		var:KoM_spell_creator_spell ?= { 
+		var:KoM_spell_creator_spell ?= {
 			KoM_cleanup_spell_actions_effect = yes
-			clear_variable_list = spell_actions 
+			clear_variable_list = spell_actions
 			trigger_event = { on_action = KoM_thaumaturgy_calculate_difficulty }
 		}
 	}

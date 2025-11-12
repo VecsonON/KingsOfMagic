@@ -4,20 +4,20 @@
 	scrollbox = {
 		layoutpolicy_horizontal = expanding
 		size = { 500 250 }
-		
+
 		blockoverride "scrollbox_margins" {}
 		blockoverride "scrollbox_content" {
 			vbox = {
 				layoutpolicy_horizontal = expanding
 				margin_bottom = 1
 				spacing = 5
-				
+
 				datamodel = "[GetPlayer.GetCurrentLocation.MakeScope.Var('KoM_local_hideout').Story.MakeScope.GetList('hideout_buildings')]"
-				
+
 				item = {
 					KoM_fake_event_button = {
 						layoutpolicy_horizontal = expanding
-						
+
 						visible = "[GetScriptedGui('KoM_use_hideout_building').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('building', Scope.Story.MakeScope).End)]"
 						enabled = "[GetScriptedGui(Concatenate('KoM_use_hideout_building_',Scope.Var('building_template').Var('building_id').GetFlagName)).IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 						onclick = "[GetScriptedGui(Concatenate('KoM_use_hideout_building_',Scope.Var('building_template').Var('building_id').GetFlagName)).Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"

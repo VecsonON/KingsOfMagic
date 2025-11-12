@@ -39,10 +39,10 @@ KoM_offer_alchemical_consumable_interaction = {
 	desc = KoM_offer_alchemical_consumable_interaction_desc
 
 	common_interaction = yes
-	
+
 	target_type = artifact
 	target_filter = actor_artifacts
-	
+
 	is_shown = {
 		NOT = { scope:actor = scope:recipient }
 		scope:actor = {
@@ -66,7 +66,7 @@ KoM_offer_alchemical_consumable_interaction = {
 			KoM_consume_potion_effect = { POTION = scope:target }
 		}
 	}
-	
+
 	ai_accept = {
 		base = -25
 		opinion_modifier = { # More likely to accept if Recipient likes the Actor
@@ -99,7 +99,7 @@ KoM_offer_alchemical_consumable_interaction = {
 			desc = "ACTOR_NEMESIS_TO_ME_REASON"
 		}
 	}
-	
+
 	ai_potential = {
 		# The basic requirements
 		is_imprisoned = no
@@ -130,7 +130,7 @@ KoM_alchemy_interaction = {
 
 	send_option = {
 		is_valid = {
-			scope:actor = { 
+			scope:actor = {
 				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 10 AT_LEAST = yes }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = honey COUNT = 1 }
 			}
@@ -140,8 +140,8 @@ KoM_alchemy_interaction = {
 	}
 	send_option = {
 		is_valid = {
-			scope:actor = { 
-				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 10 AT_LEAST = yes } 
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 10 AT_LEAST = yes }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = charcoal COUNT = 1 }
 			}
 		}
@@ -150,8 +150,8 @@ KoM_alchemy_interaction = {
 	}
 	send_option = {
 		is_valid = {
-			scope:actor = { 
-				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 10 AT_LEAST = yes } 
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 10 AT_LEAST = yes }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = lead COUNT = 2 }
 			}
 		}
@@ -161,8 +161,8 @@ KoM_alchemy_interaction = {
 
 	send_option = {
 		is_valid = {
-			scope:actor = { 
-				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 30 AT_LEAST = yes } 
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 30 AT_LEAST = yes }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = salt COUNT = 1 }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = vulcanic_ash COUNT = 1 }
 			}
@@ -172,8 +172,8 @@ KoM_alchemy_interaction = {
 	}
 	send_option = {
 		is_valid = {
-			scope:actor = { 
-				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 30 AT_LEAST = yes } 
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 30 AT_LEAST = yes }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = honey COUNT = 2 }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = silver COUNT = 2 }
 			}
@@ -183,8 +183,8 @@ KoM_alchemy_interaction = {
 	}
 	send_option = {
 		is_valid = {
-			scope:actor = { 
-				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 30 AT_LEAST = yes } 
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 30 AT_LEAST = yes }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = silver COUNT = 2 }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = crushed_crystals COUNT = 1 }
 			}
@@ -195,8 +195,8 @@ KoM_alchemy_interaction = {
 
 	send_option = {
 		is_valid = {
-			scope:actor = { 
-				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 50 AT_LEAST = yes } 
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 50 AT_LEAST = yes }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = salt COUNT = 3 }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = honey COUNT = 2 }
 			}
@@ -206,8 +206,8 @@ KoM_alchemy_interaction = {
 	}
 	send_option = {
 		is_valid = {
-			scope:actor = { 
-				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 50 AT_LEAST = yes } 
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 50 AT_LEAST = yes }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = charcoal COUNT = 3 }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = honey COUNT = 3 }
 			}
@@ -217,8 +217,8 @@ KoM_alchemy_interaction = {
 	}
 	send_option = {
 		is_valid = {
-			scope:actor = { 
-				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 50 AT_LEAST = yes } 
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 50 AT_LEAST = yes }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = human_blood COUNT = 2 }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = silver COUNT = 3 }
 			}
@@ -229,8 +229,8 @@ KoM_alchemy_interaction = {
 
 	send_option = {
 		is_valid = {
-			scope:actor = { 
-				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 75 AT_LEAST = yes } 
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 75 AT_LEAST = yes }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = human_blood COUNT = 3 }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = crushed_crystals COUNT = 2 }
 			}
@@ -240,8 +240,8 @@ KoM_alchemy_interaction = {
 	}
 	send_option = {
 		is_valid = {
-			scope:actor = { 
-				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 75 AT_LEAST = yes } 
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 75 AT_LEAST = yes }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = crushed_crystals COUNT = 2 }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = honey COUNT = 4 }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = fireflower COUNT = 1 }
@@ -252,8 +252,8 @@ KoM_alchemy_interaction = {
 	}
 	send_option = {
 		is_valid = {
-			scope:actor = { 
-				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 75 AT_LEAST = yes } 
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 75 AT_LEAST = yes }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = human_blood COUNT = 3 }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = fireflower COUNT = 2 }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = lead COUNT = 4 }
@@ -265,8 +265,8 @@ KoM_alchemy_interaction = {
 
 	send_option = {
 		is_valid = {
-			scope:actor = { 
-				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 100 AT_LEAST = yes } 
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 100 AT_LEAST = yes }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = human_blood COUNT = 3 }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = fireflower COUNT = 2 }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = honey COUNT = 4 }
@@ -277,8 +277,8 @@ KoM_alchemy_interaction = {
 	}
 	send_option = {
 		is_valid = {
-			scope:actor = { 
-				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 100 AT_LEAST = yes } 
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 100 AT_LEAST = yes }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = honey COUNT = 4 }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = silver COUNT = 4 }
 				KoM_has_above_alchemic_material_trigger = { MATERIAL = vulcanic_ash COUNT = 2 }
@@ -289,8 +289,8 @@ KoM_alchemy_interaction = {
 	}
 	send_option = {
 		is_valid = {
-			scope:actor = { 
-				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 100 AT_LEAST = yes } 
+			scope:actor = {
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 100 AT_LEAST = yes }
 				KoM_has_alchemic_potion_trigger = { POTION = elixir_of_the_white_rose }
 				KoM_has_alchemic_potion_trigger = { POTION = draught_of_still_waters }
 				KoM_has_alchemic_potion_trigger = { POTION = infusion_of_lead }
@@ -354,7 +354,7 @@ KoM_alchemy_interaction = {
 					custom_tooltip = KoM_potion_showcase
 					show_as_tooltip = { KoM_infusion_of_lead_potion_effect = yes }
 				}
-				
+
 				scope:elixir_of_ash_and_salt = {
 					KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_salt COUNT = -1 }
 					KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_vulcanic_ash COUNT = -1 }
@@ -397,7 +397,7 @@ KoM_alchemy_interaction = {
 					custom_tooltip = KoM_potion_showcase
 					show_as_tooltip = { KoM_aqua_sapientiae_potion_effect = yes }
 				}
-				
+
 				scope:elixir_of_the_solar_mind = {
 					KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_salt COUNT = -3 }
 					KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_honey COUNT = -2 }
@@ -440,7 +440,7 @@ KoM_alchemy_interaction = {
 					custom_tooltip = KoM_potion_showcase
 					show_as_tooltip = { KoM_tears_of_the_red_king_potion_effect = yes }
 				}
-				
+
 				scope:blood_of_the_phoenix = {
 					KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_human_blood COUNT = -3 }
 					KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_crushed_crystals COUNT = -2 }
@@ -485,7 +485,7 @@ KoM_alchemy_interaction = {
 					custom_tooltip = KoM_potion_showcase
 					show_as_tooltip = { KoM_homunculi_potion_effect = yes }
 				}
-				
+
 				scope:elixir_vitae = {
 					KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_human_blood COUNT = -3 }
 					KoM_change_alchemical_material_effect = { MATERIAL = KoM_alchemy_fireflower COUNT = -2 }

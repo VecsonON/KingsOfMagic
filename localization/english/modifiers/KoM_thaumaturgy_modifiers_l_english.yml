@@ -38,7 +38,7 @@
  KoM_damnum_locus_tier_2_modifier: "$KoM_thaumaturgy_locus$ $KoM_thaumaturgy_damnum$ Tier 2"
  KoM_damnum_locus_tier_3_modifier: "$KoM_thaumaturgy_locus$ $KoM_thaumaturgy_damnum$ Tier 3"
  KoM_damnum_locus_tier_4_modifier: "$KoM_thaumaturgy_locus$ $KoM_thaumaturgy_damnum$ Tier 4"
- 
+
  KoM_celeritas_persona_tier_1_modifier: "$KoM_thaumaturgy_persona$ $KoM_thaumaturgy_celeritas$ Tier 1"
  KoM_celeritas_persona_tier_2_modifier: "$KoM_thaumaturgy_persona$ $KoM_thaumaturgy_celeritas$ Tier 2"
  KoM_celeritas_persona_tier_3_modifier: "$KoM_thaumaturgy_persona$ $KoM_thaumaturgy_celeritas$ Tier 3"

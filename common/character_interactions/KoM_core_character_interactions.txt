@@ -24,14 +24,14 @@
 
 		modifier = {
 			add = -20
-			scope:actor = { 
+			scope:actor = {
 				faith = { has_doctrine_parameter = witchcraft_illegal }
 				NOT = { has_trait = cynical }
 			}
 		}
 		modifier = {
 			add = -10
-			scope:actor = { 
+			scope:actor = {
 				faith = { has_doctrine_parameter = witchcraft_shunned }
 				NOT = { has_trait = cynical }
 			}
@@ -63,7 +63,7 @@
 		trigger_if = {
 			limit = { exists = scope:target scope:target ?= { has_variable = KoM_grimoire } }
 			scope:actor = {
-				KoM_has_magic_school_xp_trigger = { SCHOOL = scope:target.var:KoM_grimoire VALUE = scope:target.var:max_mastery AT_LEAST = no } 
+				KoM_has_magic_school_xp_trigger = { SCHOOL = scope:target.var:KoM_grimoire VALUE = scope:target.var:max_mastery AT_LEAST = no }
 				KoM_has_magic_school_xp_trigger = { SCHOOL = scope:target.var:KoM_grimoire VALUE = scope:target.var:min_mastery AT_LEAST = yes }
 				learning >= 8
 			}
@@ -91,8 +91,8 @@
 				}
 			}
 			if = {
-				limit = { 
-					scope:target = { has_variable = gained_via_decision } 
+				limit = {
+					scope:target = { has_variable = gained_via_decision }
 					switch = {
 						trigger = scope:target.var:KoM_grimoire
 						flag:goetia = { has_variable = KoM_goetia_xp }
@@ -259,7 +259,7 @@ KoM_teach_magic_interaction = {
 	}
 
 	ai_frequency = 60
-	ai_will_do = { 
+	ai_will_do = {
 		base = -45
 		opinion_modifier = {
 			who = scope:actor
@@ -334,14 +334,14 @@ KoM_teach_magic_interaction = {
 			min = -20
 		}
 	}
-	ai_targets = { 
-		ai_recipients = family 
-		ai_recipients = scripted_relations 
-		max = 10 
+	ai_targets = {
+		ai_recipients = family
+		ai_recipients = scripted_relations
+		max = 10
 	}
 	ai_accept = {
 		base = 0
-		
+
 		modifier = {
 			scope:recipient.faith = { has_doctrine_parameter = witchcraft_illegal }
 			OR = {
@@ -395,7 +395,7 @@ KoM_request_teaching_interaction = {
 
 	is_shown = {
 		NOT = { scope:actor = scope:recipient }
-		scope:recipient = { 
+		scope:recipient = {
 			# KoM_is_a_mage_trigger = yes # As this would also show it for secret mages
 			OR = {
 				has_trait_with_flag = mage
@@ -506,32 +506,32 @@ KoM_request_teaching_interaction = {
 	}
 
 	ai_frequency = 60
-	ai_will_do = { 
+	ai_will_do = {
 		base = 5
-		
+
 		modifier = {
-			has_trait = ambitious 
+			has_trait = ambitious
 			add = 10
 		}
 		modifier = {
-			has_trait = scholar 
+			has_trait = scholar
 			add = 10
 		}
 		modifier = {
-			has_trait = witch 
+			has_trait = witch
 			add = 10
 		}
 		modifier = {
-			has_trait = ambitious 
+			has_trait = ambitious
 			add = 10
 		}
 	}
-	ai_targets = { 
-		ai_recipients = courtiers 
-		ai_recipients = guests 
-		ai_recipients = family 
-		ai_recipients = scripted_relations 
-		max = 10 
+	ai_targets = {
+		ai_recipients = courtiers
+		ai_recipients = guests
+		ai_recipients = family
+		ai_recipients = scripted_relations
+		max = 10
 	}
 	ai_accept = {
 		base = -50

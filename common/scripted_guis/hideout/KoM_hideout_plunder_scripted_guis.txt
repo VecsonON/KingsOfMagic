@@ -46,7 +46,7 @@ KoM_scavenge_hideout_building_hideout_building_library = {
 			1 = {
 				modifier = {
 					OR = {
-						location.var:KoM_local_hideout.var:hideout_owner ?= { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } 
+						location.var:KoM_local_hideout.var:hideout_owner ?= { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } }
 						location.var:KoM_local_hideout.var:main_magick_school ?= flag:goetia
 					}
 					add = 9
@@ -54,9 +54,9 @@ KoM_scavenge_hideout_building_hideout_building_library = {
 				KoM_scavenge_hideout_building_hideout_building_library_effect = { SCHOOL = goetia }
 			}
 			1 = {
-				modifier = { 
+				modifier = {
 					OR = {
-						location.var:KoM_local_hideout.var:hideout_owner ?= { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:thaumaturgy } } 
+						location.var:KoM_local_hideout.var:hideout_owner ?= { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:thaumaturgy } }
 						location.var:KoM_local_hideout.var:main_magick_school ?= flag:thaumaturgy
 					}
 					add = 9
@@ -64,9 +64,9 @@ KoM_scavenge_hideout_building_hideout_building_library = {
 				KoM_scavenge_hideout_building_hideout_building_library_effect = { SCHOOL = thaumaturgy }
 			}
 			1 = {
-				modifier = { 
+				modifier = {
 					OR = {
-						location.var:KoM_local_hideout.var:hideout_owner ?= { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:theurgy } } 
+						location.var:KoM_local_hideout.var:hideout_owner ?= { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:theurgy } }
 						location.var:KoM_local_hideout.var:main_magick_school ?= flag:theurgy
 					}
 					add = 9
@@ -74,9 +74,9 @@ KoM_scavenge_hideout_building_hideout_building_library = {
 				KoM_scavenge_hideout_building_hideout_building_library_effect = { SCHOOL = theurgy }
 			}
 			1 = {
-				modifier = { 
+				modifier = {
 					OR = {
-						location.var:KoM_local_hideout.var:hideout_owner ?= { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:alchemy } } 
+						location.var:KoM_local_hideout.var:hideout_owner ?= { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:alchemy } }
 						location.var:KoM_local_hideout.var:main_magick_school ?= flag:alchemy
 					}
 					add = 9
@@ -84,9 +84,9 @@ KoM_scavenge_hideout_building_hideout_building_library = {
 				KoM_scavenge_hideout_building_hideout_building_library_effect = { SCHOOL = alchemy }
 			}
 			1 = {
-				modifier = { 
+				modifier = {
 					OR = {
-						location.var:KoM_local_hideout.var:hideout_owner ?= { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:taoism } } 
+						location.var:KoM_local_hideout.var:hideout_owner ?= { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:taoism } }
 						location.var:KoM_local_hideout.var:main_magick_school ?= flag:taoism
 					}
 					add = 9
@@ -94,9 +94,9 @@ KoM_scavenge_hideout_building_hideout_building_library = {
 				KoM_scavenge_hideout_building_hideout_building_library_effect = { SCHOOL = taoism }
 			}
 			1 = {
-				modifier = { 
+				modifier = {
 					OR = {
-						location.var:KoM_local_hideout.var:hideout_owner ?= { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:onmyodo } } 
+						location.var:KoM_local_hideout.var:hideout_owner ?= { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:onmyodo } }
 						location.var:KoM_local_hideout.var:main_magick_school ?= flag:onmyodo
 					}
 					add = 9

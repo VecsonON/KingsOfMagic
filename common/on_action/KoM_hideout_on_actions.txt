@@ -44,7 +44,7 @@ KoM_hideout_generation = {
 				count = 3
 				random_de_jure_county = {
 					random_county_province = {
-						limit = { NOT = { has_province_modifier = KoM_rumors_of_hideout_modifier } } 
+						limit = { NOT = { has_province_modifier = KoM_rumors_of_hideout_modifier } }
 						add_province_modifier = KoM_rumors_of_hideout_modifier
 					}
 				}
@@ -107,7 +107,7 @@ KoM_hideout_generate_random = {
 				flag:goetia = {
 					KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_defense_goetia }
 				}
-				flag:thaumaturgy = { 
+				flag:thaumaturgy = {
 					KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_defense_thaumaturgy }
 					KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_thaumaturgic_laboratory }
 				}

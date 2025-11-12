@@ -57,12 +57,12 @@ KoM_hideout_change_owner_effect = {
 	custom_tooltip = {
 		text = KoM_hideout_change_owner_effect
 		scope:KoM_hideout = {
-			var:hideout_owner ?= { 
-				remove_list_variable = { name = KoM_owned_hideouts target = scope:KoM_hideout } 
+			var:hideout_owner ?= {
+				remove_list_variable = { name = KoM_owned_hideouts target = scope:KoM_hideout }
 				trigger_event = { on_action = KoM_hideout_building_refresh }
 			}
-			scope:KoM_new_owner = { 
-				add_to_variable_list = { name = KoM_owned_hideouts target = scope:KoM_hideout } 
+			scope:KoM_new_owner = {
+				add_to_variable_list = { name = KoM_owned_hideouts target = scope:KoM_hideout }
 				trigger_event = { on_action = KoM_hideout_building_refresh }
 			}
 			KoM_hideout_change_type_effect = { HIDEOUT = scope:KoM_hideout TYPE = KoM_owned }
@@ -77,9 +77,9 @@ KoM_hideout_remove_owner_effect = {
 	custom_tooltip = {
 		text = KoM_hideout_remove_owner_effect
 		scope:KoM_hideout = {
-			var:hideout_owner ?= { 
-				remove_list_variable = { name = KoM_owned_hideouts target = scope:KoM_hideout } 
-				trigger_event = { on_action = KoM_hideout_building_refresh } 
+			var:hideout_owner ?= {
+				remove_list_variable = { name = KoM_owned_hideouts target = scope:KoM_hideout }
+				trigger_event = { on_action = KoM_hideout_building_refresh }
 			}
 			remove_variable = hideout_owner
 			set_variable = { name = hideout_type value = flag:KoM_abandoned }
@@ -147,7 +147,7 @@ KoM_hideout_add_building_to_hideout_effect = {
 	custom_tooltip = {
 		text = KoM_hideout_add_building_to_hideout_effect
 		if = {
-			limit = { 
+			limit = {
 				NOT = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout ID = $ID$ } }
 			}
 			scope:KoM_hideout_character = {
@@ -159,8 +159,8 @@ KoM_hideout_add_building_to_hideout_effect = {
 				set_variable = { name = building_template value = scope:building_template }
 				set_variable = { name = building_level value = $LEVEL$ }
 			}
-			scope:KoM_hideout = { 
-				add_to_variable_list = { name = hideout_buildings target = scope:KoM_hideout_building } 
+			scope:KoM_hideout = {
+				add_to_variable_list = { name = hideout_buildings target = scope:KoM_hideout_building }
 				var:hideout_owner ?= { trigger_event = { on_action = KoM_hideout_building_refresh } }
 			}
 		}
@@ -184,7 +184,7 @@ KoM_hideout_change_building_level_effect = {
 		}
 		var:building_hideout.var:hideout_owner ?= { trigger_event = { on_action = KoM_hideout_building_refresh } }
 		if = {
-			limit = { 
+			limit = {
 				save_temporary_scope_value_as = {
 					name = building_level_after
 					value = {
@@ -197,9 +197,9 @@ KoM_hideout_change_building_level_effect = {
 			KoM_hideout_destroy_building_effect = { BUILDING = scope:KoM_hideout_building }
 		}
 		if = {
-			limit = { 
+			limit = {
 				OR = {
-					NOT = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout_building.var:building_hideout ID = hideout_building_main } } 
+					NOT = { KoM_hideout_has_building_trigger = { HIDEOUT = scope:KoM_hideout_building.var:building_hideout ID = hideout_building_main } }
 					AND = {
 						scope:building_level_after <= 0
 						scope:KoM_hideout_building.var:building_template.var:building_id = flag:hideout_building_main
@@ -210,7 +210,7 @@ KoM_hideout_change_building_level_effect = {
 		}
 	}
 }
-# HIDEOUT - STORY | ID - TXT | VALUE - INT 
+# HIDEOUT - STORY | ID - TXT | VALUE - INT
 KoM_hideout_change_building_level_from_id_effect = {
 	$HIDEOUT$ = { save_scope_as = KoM_hideout }
 	scope:KoM_hideout = {
@@ -223,7 +223,7 @@ KoM_hideout_change_building_level_from_id_effect = {
 }
 # ID - TXT
 KoM_build_or_upgrade_hideout_building_effect = {
-	if = { 
+	if = {
 		limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = $ID$ } }
 		KoM_hideout_change_building_level_effect = { HIDEOUT_BUILDING = scope:building VALUE = 1 }
 	}
@@ -264,12 +264,12 @@ KoM_hideout_ai_read_effect = {
 			save_scope_value_as = { name = secrecy_check value = yes }
 		}
 		random_list = {
-			1 = { 
-				modifier = { add = $SKILL$ } 
-				save_scope_value_as = { name = defense_check value = yes } 
+			1 = {
+				modifier = { add = $SKILL$ }
+				save_scope_value_as = { name = defense_check value = yes }
 			}
-			1 = { 
-				modifier = { add = KoM_defense_value } 
+			1 = {
+				modifier = { add = KoM_defense_value }
 			}
 		}
 		if = {
@@ -278,8 +278,8 @@ KoM_hideout_ai_read_effect = {
 				scope:defense_check ?= yes
 			}
 			var:hideout_owner ?= {
-				send_interface_message = { 
-					title = KoM_hideout_ai_read_effect_success 
+				send_interface_message = {
+					title = KoM_hideout_ai_read_effect_success
 					custom_tooltip = KoM_hideout_ai_read_effect_success_tt
 				}
 			}
@@ -291,15 +291,15 @@ KoM_hideout_ai_read_effect = {
 KoM_hideout_generate_random_effect = {
 	KoM_hideout_create_empty_hideout_effect = { LOCATION = THIS }
 	random_list = {
-		2 = { 
-			KoM_hideout_change_type_effect = { HIDEOUT = var:KoM_local_hideout TYPE = KoM_ruined } 
+		2 = {
+			KoM_hideout_change_type_effect = { HIDEOUT = var:KoM_local_hideout TYPE = KoM_ruined }
 			var:KoM_local_hideout.var:hideout_character = { change_first_name = "KoM_hideout_name_ruined" }
 		}
-		3 = { 
-			KoM_hideout_change_type_effect = { HIDEOUT = var:KoM_local_hideout TYPE = KoM_abandoned } 
+		3 = {
+			KoM_hideout_change_type_effect = { HIDEOUT = var:KoM_local_hideout TYPE = KoM_abandoned }
 			var:KoM_local_hideout.var:hideout_character = { change_first_name = "KoM_hideout_name_abandoned" }
 		}
-		1 = { 
+		1 = {
 			create_character = {
 				age = { 22 60 }
 				gender_female_chance = 50
@@ -444,7 +444,7 @@ KoM_hideout_generate_random_effect = {
 			}
 		}
 	}
-	var:KoM_local_hideout ?= { 
+	var:KoM_local_hideout ?= {
 		random_list = {
 			1 = { set_variable = { name = wealth value = 1 } }
 			1 = { set_variable = { name = wealth value = 2 } }
@@ -456,7 +456,7 @@ KoM_hideout_generate_random_effect = {
 			1 = { set_variable = { name = wealth value = 8 } }
 			1 = { set_variable = { name = wealth value = 9 } }
 		}
-		trigger_event = { on_action = KoM_hideout_generate_random } 
+		trigger_event = { on_action = KoM_hideout_generate_random }
 		switch = {
 			trigger = var:hideout_type
 			flag:KoM_ruined = { save_scope_value_as = { name = raid_num value = 10 } }
@@ -572,7 +572,7 @@ KoM_scavenge_hideout_building_hideout_building_library_effect = {
 			MASTERY_GAIN = scope:random_gain
 		}
 	}
-} 
+}
 # MATERIAL - TXT | COUNT - INT
 KoM_hideout_change_alchemical_material_effect = {
 	KoM_increase_or_set_variable_effect = { VAR = KoM_alchemy_$MATERIAL$_num VAL = $COUNT$ }

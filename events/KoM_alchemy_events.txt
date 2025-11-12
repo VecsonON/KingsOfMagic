@@ -43,7 +43,7 @@ scripted_effect KoM_generate_materials_effect = {
 	}
 }
 
-KoM_alchemy_events.1 = { # 
+KoM_alchemy_events.1 = { #
 	hidden = yes
 	immediate = {
 		if = {
@@ -56,12 +56,12 @@ KoM_alchemy_events.1 = { #
 				1 = { location ?= { KoM_generate_materials_effect = { PICK = 4 } } }
 				1 = { location ?= { KoM_generate_materials_effect = { PICK = 5 } } }
 			}
-			
+
 		}
 		trigger_event = KoM_alchemy_events.2
 	}
 }
-KoM_alchemy_events.2 = { # 
+KoM_alchemy_events.2 = { #
 	type = character_event
 	title = KoM_alchemy_events.2.t
 	desc = {
@@ -112,8 +112,8 @@ KoM_alchemy_events.2 = { #
 
 	option = {
 		name = KoM_alchemy_events.2.salt
-		trigger = { 
-			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_salt } } 
+		trigger = {
+			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_salt } }
 			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt NOT = { var:KoM_alchemic_materials_salt_num ?= 0 } } }
 		}
 		show_as_unavailable = {
@@ -123,7 +123,7 @@ KoM_alchemy_events.2 = { #
 		location = { change_variable = { name = KoM_alchemic_materials_salt_num add = -1 } }
 		save_scope_value_as = {
 			name = cost
-			value = { 10 20 } 
+			value = { 10 20 }
 		}
 		remove_short_term_gold = scope:cost
 		trigger_event = KoM_alchemy_events.2
@@ -131,8 +131,8 @@ KoM_alchemy_events.2 = { #
 
 	option = {
 		name = KoM_alchemy_events.2.charcoal
-		trigger = { 
-			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_charcoal } } 
+		trigger = {
+			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_charcoal } }
 			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt NOT = { var:KoM_alchemic_materials_charcoal_num ?= 0 } } }
 		}
 		show_as_unavailable = {
@@ -142,7 +142,7 @@ KoM_alchemy_events.2 = { #
 		location = { change_variable = { name = KoM_alchemic_materials_charcoal_num add = -1 } }
 		save_scope_value_as = {
 			name = cost
-			value = { 15 20 } 
+			value = { 15 20 }
 		}
 		remove_short_term_gold = scope:cost
 		trigger_event = KoM_alchemy_events.2
@@ -150,8 +150,8 @@ KoM_alchemy_events.2 = { #
 
 	option = {
 		name = KoM_alchemy_events.2.honey
-		trigger = { 
-			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_honey } } 
+		trigger = {
+			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_honey } }
 			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt NOT = { var:KoM_alchemic_materials_honey_num ?= 0 } } }
 		}
 		show_as_unavailable = {
@@ -161,7 +161,7 @@ KoM_alchemy_events.2 = { #
 		location = { change_variable = { name = KoM_alchemic_materials_honey_num add = -1 } }
 		save_scope_value_as = {
 			name = cost
-			value = { 20 30 } 
+			value = { 20 30 }
 		}
 		remove_short_term_gold = scope:cost
 		trigger_event = KoM_alchemy_events.2
@@ -169,8 +169,8 @@ KoM_alchemy_events.2 = { #
 
 	option = {
 		name = KoM_alchemy_events.2.lead
-		trigger = { 
-			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_lead } } 
+		trigger = {
+			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_lead } }
 			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt NOT = { var:KoM_alchemic_materials_lead_num ?= 0 } } }
 		}
 		show_as_unavailable = {
@@ -180,7 +180,7 @@ KoM_alchemy_events.2 = { #
 		location = { change_variable = { name = KoM_alchemic_materials_lead_num add = -1 } }
 		save_scope_value_as = {
 			name = cost
-			value = { 50 75 } 
+			value = { 50 75 }
 		}
 		remove_short_term_gold = scope:cost
 		trigger_event = KoM_alchemy_events.2
@@ -188,8 +188,8 @@ KoM_alchemy_events.2 = { #
 
 	option = {
 		name = KoM_alchemy_events.2.silver
-		trigger = { 
-			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_silver } } 
+		trigger = {
+			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_silver } }
 			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt NOT = { var:KoM_alchemic_materials_silver_num ?= 0 } } }
 		}
 		show_as_unavailable = {
@@ -199,7 +199,7 @@ KoM_alchemy_events.2 = { #
 		location = { change_variable = { name = KoM_alchemic_materials_silver_num add = -1 } }
 		save_scope_value_as = {
 			name = cost
-			value = { 50 100 } 
+			value = { 50 100 }
 		}
 		remove_short_term_gold = scope:cost
 		trigger_event = KoM_alchemy_events.2
@@ -207,8 +207,8 @@ KoM_alchemy_events.2 = { #
 
 	option = {
 		name = KoM_alchemy_events.2.crushed_crystals
-		trigger = { 
-			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_crushed_crystals } } 
+		trigger = {
+			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_crushed_crystals } }
 			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt NOT = { var:KoM_alchemic_materials_crushed_crystals_num ?= 0 } } }
 		}
 		show_as_unavailable = {
@@ -218,7 +218,7 @@ KoM_alchemy_events.2 = { #
 		location = { change_variable = { name = KoM_alchemic_materials_crushed_crystals_num add = -1 } }
 		save_scope_value_as = {
 			name = cost
-			value = { 100 200 } 
+			value = { 100 200 }
 		}
 		remove_short_term_gold = scope:cost
 		trigger_event = KoM_alchemy_events.2
@@ -226,8 +226,8 @@ KoM_alchemy_events.2 = { #
 
 	option = {
 		name = KoM_alchemy_events.2.human_blood
-		trigger = { 
-			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_human_blood } } 
+		trigger = {
+			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_human_blood } }
 			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt NOT = { var:KoM_alchemic_materials_human_blood_num ?= 0 } } }
 		}
 		show_as_unavailable = {
@@ -237,7 +237,7 @@ KoM_alchemy_events.2 = { #
 		location = { change_variable = { name = KoM_alchemic_materials_human_blood_num add = -1 } }
 		save_scope_value_as = {
 			name = cost
-			value = { 100 200 } 
+			value = { 100 200 }
 		}
 		remove_short_term_gold = scope:cost
 		trigger_event = KoM_alchemy_events.2
@@ -245,8 +245,8 @@ KoM_alchemy_events.2 = { #
 
 	option = {
 		name = KoM_alchemy_events.2.vulcanic_ash
-		trigger = { 
-			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_vulcanic_ash } } 
+		trigger = {
+			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_vulcanic_ash } }
 			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt NOT = { var:KoM_alchemic_materials_vulcanic_ash_num ?= 0 } } }
 		}
 		show_as_unavailable = {
@@ -256,7 +256,7 @@ KoM_alchemy_events.2 = { #
 		location = { change_variable = { name = KoM_alchemic_materials_vulcanic_ash_num add = -1 } }
 		save_scope_value_as = {
 			name = cost
-			value = { 150 250 } 
+			value = { 150 250 }
 		}
 		remove_short_term_gold = scope:cost
 		trigger_event = KoM_alchemy_events.2
@@ -264,8 +264,8 @@ KoM_alchemy_events.2 = { #
 
 	option = {
 		name = KoM_alchemy_events.2.fireflower
-		trigger = { 
-			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_fireflower } } 
+		trigger = {
+			location = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_fireflower } }
 			location = { custom_tooltip = { text = KoM_alchemy_events.2.tt NOT = { var:KoM_alchemic_materials_fireflower_num ?= 0 } } }
 		}
 		show_as_unavailable = {
@@ -275,7 +275,7 @@ KoM_alchemy_events.2 = { #
 		location = { change_variable = { name = KoM_alchemic_materials_fireflower_num add = -1 } }
 		save_scope_value_as = {
 			name = cost
-			value = { 300 500 } 
+			value = { 300 500 }
 		}
 		remove_short_term_gold = scope:cost
 		trigger_event = KoM_alchemy_events.2
@@ -288,8 +288,8 @@ KoM_alchemy_events.2 = { #
 	after = {
 		if = {
 			limit = { NOT = { location ?= { has_variable = KoM_alchemic_materials_refresh } } }
-			location ?= { 
-				trigger_event = { on_action = KoM_alchemy_material_refresh years = 1 } 
+			location ?= {
+				trigger_event = { on_action = KoM_alchemy_material_refresh years = 1 }
 				set_variable = KoM_alchemic_materials_refresh
 			}
 		}

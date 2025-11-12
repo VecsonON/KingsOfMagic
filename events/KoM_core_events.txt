@@ -71,9 +71,9 @@ KoM_core_events.1 = { # Spawn Artifacts
 				MASTERY_GAIN = 4
 			}
 		}
-		
+
 		random_ruler = {
-			KoM_create_grimoire_effect = { # Theurgia 
+			KoM_create_grimoire_effect = { # Theurgia
 				OWNER = THIS
 				RARITY = illustrious
 				NAME = theurgia
@@ -105,7 +105,7 @@ KoM_core_events.1 = { # Spawn Artifacts
 				MASTERY_GAIN = 15
 			}
 		}
-		
+
 		random_ruler = {
 			KoM_create_grimoire_effect = { # Tabula Smaragdina
 				OWNER = THIS

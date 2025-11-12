@@ -5,14 +5,14 @@
 	alwaystransparent = no
 	layer = bottom
 	visible = "[And(And( Not( IsPauseMenuShown ), And(And(IsDefaultGUIMode, Character.IsValid), Not(GetVariableSystem.Exists( 'hide_bottom_left_HUD')))), Not( GreaterThan_CFixedPoint( GetPlayer.MakeScope.Var('hide_ui_bottom_left_bar').GetValue, '(CFixedPoint)0' ) ))]"
-	
-	
+
+
 	button_hud_character_bar = {
 		name = "house_button"
 		visible = "[GetPlayer.MakeScope.Var('current_rite').IsSet]"
 		onclick = "[GetVariableSystem.Toggle('cancel_rite_confirm')]"
 		parentanchor = left
-		
+
 		using = Animation_ShowHide_Standard
 
 		using = tooltip_es
@@ -30,7 +30,7 @@
 			datacontext = "[GetPlayer.MakeScope.Var('current_rite')]"
 			size = { 35 35 }
 			position = { 7 9 }
-			
+
 			icon = {
 				texture = "gfx/interface/buttons/button_lifestyles_base.dds"
 				size = { 100% 100% }
@@ -87,7 +87,7 @@ window = {
 	size = { 500 350 }
 
 	visible = "[And(GetVariableSystem.Exists('cancel_rite_confirm'),GetPlayer.MakeScope.Var('current_rite').IsSet)]"
-		
+
 	using = Animation_ShowHide_Standard
 
 	base_dialog = {
@@ -135,7 +135,7 @@ window = {
 
 					text = "CANCEL_RITE_CONFIRM_BACK"
 					shortcut = "close_window"
-					
+
 					onclick = "[GetVariableSystem.Toggle('cancel_rite_confirm')]"
 				}
 
@@ -148,7 +148,7 @@ window = {
 
 					text = "CANCEL_RITE_CONFIRM_CANCEL"
 					shortcut = "confirm"
-					
+
 					clicksound = "[GameDialog.GetClickSound]"
 					onclick = "[GetVariableSystem.Toggle('cancel_rite_confirm')]"
 					onclick = "[GetScriptedGui('KoM_window_cancel').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -165,7 +165,7 @@ types KoMTypes
 		name = "KoM_fake_event_button"
 		size = { 500 36 }
 
-		default_clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_icon_select"	
+		default_clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_icon_select"
 
 		icon = {
 			texture = "gfx/interface/buttons/button_event.dds"
@@ -220,7 +220,7 @@ types KoMTypes
 				layoutpolicy_horizontal = expanding
 				margin = { 5 0 }
 				alwaystransparent = yes
-				
+
 				block "button_text" {
 					raw_text = "INSERT TEXT"
 				}

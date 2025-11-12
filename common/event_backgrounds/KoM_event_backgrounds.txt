@@ -57,7 +57,7 @@
 					highest_held_title_tier >= tier_kingdom
 					OR = {
 						location.culture ?= {
-							has_graphical_mediterranean_culture_group_trigger = yes 
+							has_graphical_mediterranean_culture_group_trigger = yes
 						}
 						location ?= {
 							steppe_building_gfx_use_mediterranean_trigger = yes
@@ -69,7 +69,7 @@
 				highest_held_title_tier >= tier_kingdom
 				OR = {
 					location.culture ?= {
-						has_graphical_mediterranean_culture_group_trigger = yes 
+						has_graphical_mediterranean_culture_group_trigger = yes
 					}
 					location ?= {
 						steppe_building_gfx_use_mediterranean_trigger = yes
@@ -92,7 +92,7 @@
 								has_cultural_pillar = heritage_byzantine
 								has_cultural_pillar = heritage_caucasian
 								has_cultural_pillar = heritage_latin
-								has_graphical_mediterranean_culture_group_trigger = yes 
+								has_graphical_mediterranean_culture_group_trigger = yes
 							}
 						}
 						location ?= {
@@ -108,7 +108,7 @@
 							has_cultural_pillar = heritage_byzantine
 							has_cultural_pillar = heritage_caucasian
 							has_cultural_pillar = heritage_latin
-							has_graphical_mediterranean_culture_group_trigger = yes 
+							has_graphical_mediterranean_culture_group_trigger = yes
 						}
 					}
 					location ?= {
@@ -127,7 +127,7 @@
 				limit = { exists = scope:bg_override_char }
 				scope:bg_override_char = {
 					OR = {
-						location.culture ?= { 
+						location.culture ?= {
 							OR = {
 								has_building_gfx = iberian_building_gfx
 								has_building_gfx = iranian_building_gfx
@@ -147,7 +147,7 @@
 			}
 			trigger_else = {
 				OR = {
-					location.culture ?= { 
+					location.culture ?= {
 						OR = {
 							has_building_gfx = iberian_building_gfx
 							has_building_gfx = iranian_building_gfx

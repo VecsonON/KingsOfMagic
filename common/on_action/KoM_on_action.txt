@@ -2,9 +2,9 @@
 	on_actions = { PoM_on_game_start }
 }
 on_game_start_after_lobby = {
-	on_actions = { 
+	on_actions = {
 		KoM_hideout_init
-		KoM_hideout_generation 
+		KoM_hideout_generation
 	}
 }
 

@@ -60,7 +60,7 @@
 				trigger_event = KoM_hideout_events.1
 				if = {
 					limit = { this = scope:host }
-					scope:activity = { progress_activity_phase_after = { weeks = 2 } }	
+					scope:activity = { progress_activity_phase_after = { weeks = 2 } }
 				}
 			}
 			on_end = {
@@ -85,14 +85,14 @@
 	ai_will_select_province = {
 		value = 0
 	}
-	
+
 	is_location_valid = {
 		custom_tooltip = {
 			text = activity_KoM_visit_hideout_valid
 			has_province_modifier = KoM_rumors_of_hideout_modifier
 		}
 	}
-	province_description = { 
+	province_description = {
 		triggered_desc = {
 			trigger = {
 				var:KoM_local_hideout ?= {
@@ -134,25 +134,25 @@
 	province_score = {
 		value = 25
 		if = { limit = { var:KoM_local_hideout ?= { var:hideout_owner ?= scope:host } } value = 100 }
-		if = { 
-			limit = { 
+		if = {
+			limit = {
 				scope:host = { any_in_list = { variable = visited_hideouts this = root } }
 				var:KoM_local_hideout ?= { var:hideout_type = flag:KoM_owned }
 				var:KoM_local_hideout ?= { var:hideout_owner != scope:host }
-			} 
-			value = 75 
+			}
+			value = 75
 		}
-		if = { 
-			limit = { 
+		if = {
+			limit = {
 				scope:host = { any_in_list = { variable = visited_hideouts this = root } }
 				var:KoM_local_hideout ?= { var:hideout_type != flag:KoM_owned }
-			} 
-			value = 50 
+			}
+			value = 50
 		}
-		if = { 
-			limit = { 
+		if = {
+			limit = {
 				scope:host = { any_in_list = { variable = visited_hideouts_known_nothing this = root } }
-			} 
+			}
 			value = 0
 		}
 	}
@@ -165,11 +165,11 @@
 	cooldown = {
 		years = 1
 	}
-	
+
 	###################
 	# ACTIVITY-SPECIFIC PULSES
 	###################
-	
+
 	pulse_actions = { chance_of_no_event = 100 }
 
 	###################
@@ -272,7 +272,7 @@
 		environment = "environment_tgp_farm_asia"
 		ambience = "event:/DLC/EP4/SFX/Events/Event_Backgrounds/tgp_farm_asia"
 	}
-	
+
 	background = { # Farmland, settled
 		trigger = {
 			scope:host.location != scope:activity.activity_location
@@ -427,7 +427,7 @@
 			}
 		}
 		texture = "gfx/interface/illustrations/event_scenes/bp1_wetlands.dds"
-		environment = "environment_event_bp1_wetlands" 
+		environment = "environment_event_bp1_wetlands"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
 
@@ -500,7 +500,7 @@
 		}
 		texture = "gfx/interface/illustrations/event_scenes/ep3_constantinople.dds"
 		environment = "environment_ep3_constantinople"
-		ambience = "event:/DLC/EP3/SFX/Events/Event_Images/ep3_evn_eventimage_constantinople" 
+		ambience = "event:/DLC/EP3/SFX/Events/Event_Images/ep3_evn_eventimage_constantinople"
 	}
 	background = {	#FP2
 		trigger = {
@@ -514,8 +514,8 @@
 			}
 		}
 		texture = "gfx/interface/illustrations/event_scenes/fp2_courtyard.dds"
-		environment = "environment_event_fp2_courtyard" 
-		ambience = "event:/DLC/FP2/SFX/Events/courtyard" 
+		environment = "environment_event_fp2_courtyard"
+		ambience = "event:/DLC/FP2/SFX/Events/courtyard"
 	}
 	background = {	#Indian Courtyard
 		trigger = {
@@ -529,7 +529,7 @@
 			}
 		}
 		texture = "gfx/interface/illustrations/event_scenes/bp1_courtyard_indian.dds"
-		environment = "environment_event_bp1_courtyard_indian" 
+		environment = "environment_event_bp1_courtyard_indian"
 		ambience = "event:/SFX/Events/Backgrounds/castle_courtyard_western"
 	}
 	background = {	#MENA Courtyard
@@ -539,7 +539,7 @@
 					OR = {
 						culture ?= { has_graphical_mena_culture_group_trigger = yes }
 						culture ?= { has_building_gfx = iranian_building_gfx }
-						steppe_building_gfx_use_mena_trigger = yes 
+						steppe_building_gfx_use_mena_trigger = yes
 					}
 				}
 			}
@@ -551,14 +551,14 @@
 	# End Travel
 	background = {
 		texture = "gfx/interface/illustrations/event_scenes/bp1_bonfire.dds"
-		environment = "environment_event_bp1_bonfire" 
+		environment = "environment_event_bp1_bonfire"
 		ambience = "event:/SFX/Events/Backgrounds/burning_building"
 	}
 
 	window_characters = {
 		host = {
 			camera = camera_body
-			
+
 			effect = {
 				if = {
 					limit = {

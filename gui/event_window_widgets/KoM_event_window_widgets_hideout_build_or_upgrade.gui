@@ -4,20 +4,20 @@
 	scrollbox = {
 		layoutpolicy_horizontal = expanding
 		size = { 500 250 }
-		
+
 		blockoverride "scrollbox_margins" {}
 		blockoverride "scrollbox_content" {
 			vbox = {
 				layoutpolicy_horizontal = expanding
 				margin_bottom = 1
 				spacing = 5
-				
+
 				datamodel = "[GetGlobalList('hideout_building_templates')]"
-				
+
 				item = {
 					KoM_fake_event_button = {
 						layoutpolicy_horizontal = expanding
-						
+
 						visible = "[GetScriptedGui(Concatenate('KoM_build_or_upgrade_hideout_building_',Scope.Var('building_id').GetFlagName)).IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 						enabled = "[GetScriptedGui(Concatenate('KoM_build_or_upgrade_hideout_building_',Scope.Var('building_id').GetFlagName)).IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 						onclick = "[GetScriptedGui(Concatenate('KoM_build_or_upgrade_hideout_building_',Scope.Var('building_id').GetFlagName)).Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
@@ -34,39 +34,3 @@
 		}
 	}
 }
-# widget = {
-# 	name = "KoM_event_window_widgets_hideout_managing"
-# 	size = { 500 150 }
-# 	allow_outside = yes
-# 	scrollbox = {
-# 		layoutpolicy_horizontal = expanding
-# 		size = { 500 150 }
-		
-# 		blockoverride "scrollbox_margins" {}
-# 		blockoverride "scrollbox_content" {
-# 			vbox = {
-# 				layoutpolicy_horizontal = expanding
-
-# 				margin_bottom = 1
-# 				spacing = 5
-				
-# 				datamodel = "[GetPlayer.MakeScope.GetList('hideout_options')]"
-				
-# 				item = {
-# 					KoM_fake_event_button = {
-# 						layoutpolicy_horizontal = expanding
-						
-# 						onclick = "[GetScriptedGui(Concatenate('KoM_manage_hideout_building_',Scope.GetFlagName)).Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-
-# 						blockoverride "button_text" {
-# 							text = "[Localize(Concatenate('KoM_hideout_events.1001.',Scope.GetFlagName))]"
-# 						}
-# 						blockoverride "button_tooltip" {
-# 							tooltip = "[GetScriptedGui(Concatenate('KoM_manage_hideout_building_',Scope.GetFlagName)).BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-# 						}
-# 					}
-# 				}
-# 			}
-# 		}
-# 	}
-# }

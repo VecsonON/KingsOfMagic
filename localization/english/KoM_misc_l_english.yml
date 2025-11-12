@@ -13,7 +13,7 @@
  KoM_add_magic_school_xp_first_past: "You gained $VALUE|0V$ hidden [trait_level_track_xp|E] in [TRAIT.GetName(GetNullCharacter)] [secret|E] #weak $KoM_magic_school_loca$#!"
  KoM_add_magic_school_xp_third: "[CHARACTER.GetShortUIName] gains $VALUE|0V$ hidden [trait_level_track_xp|E] in [TRAIT.GetName(GetNullCharacter)] [secret|E] #weak $KoM_magic_school_loca$#!"
  KoM_add_magic_school_xp_third_past: "[CHARACTER.GetShortUIName] gained $VALUE|0V$ hidden [trait_level_track_xp|E] in [TRAIT.GetName(GetNullCharacter)] [secret|E] #weak $KoM_magic_school_loca$#!"
- 
+
  KoM_magic_school_loca: "[AddTextIf( ObjectsEqual(TRAIT.Self, GetTrait('KoM_magus')), Localize('KoM_secret_magus_hint'))][AddTextIf( ObjectsEqual(TRAIT.Self, GetTrait('KoM_thaumaturge')), Localize('KoM_secret_thaumaturge_hint'))][AddTextIf( ObjectsEqual(TRAIT.Self, GetTrait('KoM_theurgist')), Localize('KoM_secret_theurgist_hint'))][AddTextIf( ObjectsEqual(TRAIT.Self, GetTrait('KoM_alchemist')), Localize('KoM_secret_alchemist_hint'))][AddTextIf( ObjectsEqual(TRAIT.Self, GetTrait('KoM_daoshi')), Localize('KoM_secret_daoshi_hint'))][AddTextIf( ObjectsEqual(TRAIT.Self, GetTrait('KoM_onmyoji')), Localize('KoM_secret_onmyoji_hint'))]"
 
  KoM_study_magic_school_effect: "Studying [Concept('KoM_magick','Magic School')|E]"
@@ -40,7 +40,7 @@
  KoM_lose_alchemical_material_effect: "You will lose [SCOPE.GetValue('count')|0N] [Localize(SCOPE.GetFlagName('saved_tooltip'))]"
 
  KoM_potion_template_tt: "You cannot equip an [KoM_alchemic|E] consumable!"
- 
+
  KoM_has_above_alchemic_material_trigger: "You need at least [SCOPE.GetValue('saved_number')|0V] [Localize(SCOPE.GetFlagName('saved_tooltip'))]"
  KoM_has_alchemic_potion_trigger: "You need at least 1 [Localize(SCOPE.GetFlagName('saved_tooltip'))]"
 

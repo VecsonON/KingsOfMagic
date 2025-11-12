@@ -49,7 +49,7 @@
 			hbox = {
 				layoutpolicy_vertical = expanding
 				layoutpolicy_horizontal = expanding
-				
+
 				vbox = {
 					layoutpolicy_vertical = expanding
 					layoutpolicy_horizontal = expanding
@@ -71,7 +71,7 @@
 
 								button_edit_text = {
 									tooltip = "KOM_THAUMATURGY_SPELL_CREATOR_RENAME_SPELL"
-									size = { 25 25 }	
+									size = { 25 25 }
 									onclick = "[GetScriptedGui('KoM_spell_creator_rename_spell').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 								}
 							}
@@ -125,7 +125,7 @@
 							}
 
 							spacer = { size = { 0 10 } }
-							
+
 							divider_light = {
 								layoutpolicy_horizontal = expanding
 							}

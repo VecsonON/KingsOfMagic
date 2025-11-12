@@ -1,6 +1,6 @@
 ﻿namespace = KoM_thaumaturgy_events
 
-KoM_thaumaturgy_events.1 = { 
+KoM_thaumaturgy_events.1 = {
 	type = character_event
 	title = KoM_thaumaturgy_events.1.t
 	desc = KoM_thaumaturgy_events.1.desc
@@ -37,7 +37,7 @@ KoM_thaumaturgy_events.1 = {
 		}
 	}
 
-	option = { 
+	option = {
 		name = KoM_thaumaturgy_events.1.a
 		hidden_effect_new_object = {
 			var:KoM_spell_creator_spell ?= {

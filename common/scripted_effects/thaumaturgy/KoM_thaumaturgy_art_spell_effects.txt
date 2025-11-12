@@ -372,7 +372,7 @@ KoM_spell_action_melius_effect = {
 				if = {
 					limit = { scope:melius_num >= 3 }
 					random_list = {
-						10 = { 
+						10 = {
 							trigger = { has_education_rank_5_trigger = no }
 							random_list = {
 								1 = { trigger = { has_trait = education_diplomacy } change_trait_rank = { trait = education_diplomacy rank = 1 } }
@@ -479,7 +479,7 @@ KoM_spell_action_peius_effect = {
 				if = {
 					limit = { scope:peius_num >= 2 }
 					random_list = {
-						10 = { 
+						10 = {
 							custom_tooltip = KoM_thaumaturgy_peius_effect_overload
 							random_list = {
 								1 = { trigger = { has_trait = logistician } remove_trait = logistician }
@@ -499,7 +499,7 @@ KoM_spell_action_peius_effect = {
 								1 = { trigger = { has_trait = holy_warrior } remove_trait = holy_warrior }
 								1 = { trigger = { has_trait = organizer } remove_trait = organizer }
 								1 = { trigger = { has_trait = cautious_leader } remove_trait = cautious_leader }
-							}	
+							}
 						}
 						20 = {
 							modifier = { trigger = { scope:scaling >= 2 } add = -10 }
@@ -511,7 +511,7 @@ KoM_spell_action_peius_effect = {
 				if = {
 					limit = { scope:peius_num >= 3 }
 					random_list = {
-						10 = { 
+						10 = {
 							trigger = { has_education_rank_1_trigger = no }
 							random_list = {
 								1 = { trigger = { has_trait = education_diplomacy } change_trait_rank = { trait = education_diplomacy rank = -1 } }

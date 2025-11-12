@@ -25,7 +25,7 @@ KoM_hideout_events.1 = { # Starting Event
 			desc = KoM_hideout_events.1.desc.not_mine
 		}
 		triggered_desc = {
-			trigger = { 
+			trigger = {
 				scope:province = { has_variable = KoM_local_hideout var:KoM_local_hideout ?= { save_temporary_scope_as = KoM_hideout } }
 				scope:KoM_hideout ?= {
 					var:hideout_type != flag:KoM_owned
@@ -71,8 +71,8 @@ KoM_hideout_events.1 = { # Starting Event
 	}
 	option = { # Hideout you were before
 		name = KoM_hideout_events.1.c
-		trigger = { 
-			any_in_list = { variable = visited_hideouts this = scope:province } 
+		trigger = {
+			any_in_list = { variable = visited_hideouts this = scope:province }
 			scope:province.var:KoM_local_hideout ?= {
 				var:hideout_type != flag:KoM_owned
 				NOT = { var:hideout_owner ?= ROOT }
@@ -82,11 +82,11 @@ KoM_hideout_events.1 = { # Starting Event
 	}
 	option = { # Unvisited Hideout
 		name = KoM_hideout_events.1.d
-		trigger = { 
-			NOT = { any_in_list = { variable = visited_hideouts this = scope:province } } 
+		trigger = {
+			NOT = { any_in_list = { variable = visited_hideouts this = scope:province } }
 			trigger_if = {
 				limit = { exists = scope:province.var:KoM_local_hideout }
-			scope:province.var:KoM_local_hideout ?= { NOT = { var:hideout_owner ?= ROOT } }
+				scope:province.var:KoM_local_hideout ?= { NOT = { var:hideout_owner ?= ROOT } }
 			}
 		}
 		random_list = {
@@ -134,13 +134,13 @@ KoM_hideout_events.1001 = {
 	immediate = {
 		scope:province.var:KoM_local_hideout = { save_scope_as = KoM_hideout }
 	}
-	
+
 	option = {
 		name = KoM_hideout_events.1001.a
 		custom_tooltip = KoM_hideout_events.1001.a.tt
 		trigger_event = KoM_hideout_events.1002
 	}
-	
+
 	option = {
 		name = KoM_hideout_events.1001.b
 		custom_tooltip = KoM_hideout_events.1001.b.tt
@@ -168,7 +168,7 @@ KoM_hideout_events.1001 = {
 	}
 }
 
-KoM_hideout_events.1002 = { 
+KoM_hideout_events.1002 = {
 	type = activity_event
 	title = KoM_hideout_events.1002.t
 	desc = KoM_hideout_events.1002.desc
@@ -196,7 +196,7 @@ KoM_hideout_events.1002 = {
 	}
 }
 
-KoM_hideout_events.1003 = { 
+KoM_hideout_events.1003 = {
 	type = activity_event
 	title = KoM_hideout_events.1003.t
 	desc = KoM_hideout_events.1003.desc
@@ -224,7 +224,7 @@ KoM_hideout_events.1003 = {
 	}
 }
 
-KoM_hideout_events.1004 = { 
+KoM_hideout_events.1004 = {
 	type = activity_event
 	title = KoM_hideout_events.1004.t
 	desc = KoM_hideout_events.1004.desc
@@ -246,7 +246,7 @@ KoM_hideout_events.1004 = {
 		}
 	}
 
-	option = { 
+	option = {
 		name = KoM_hideout_events.1004.a
 		trigger_event = KoM_hideout_events.1001
 	}
@@ -395,9 +395,9 @@ KoM_hideout_events.2002 = {
 				days = 1
 			}
 			save_scope_as = KoM_hideout_owner
-			
+
 		}
-		
+
 	}
 
 	option = {
@@ -481,8 +481,8 @@ scripted_effect KoM_hideout_events3001_effect = {
 		trigger_event = KoM_hideout_events.3002
 		add_to_variable_list = { name = visited_hideouts target = scope:province }
 	}
-	else = { 
-		send_interface_message = { title = KoM_hideout_events.3001.t } 
+	else = {
+		send_interface_message = { title = KoM_hideout_events.3001.t }
 		add_to_variable_list = { name = visited_hideouts_known_nothing target = scope:province }
 	}
 }
@@ -502,10 +502,10 @@ KoM_hideout_events.3001 = {
 
 	option = {
 		name = KoM_hideout_events.3001.a
-		trigger = { 
+		trigger = {
 			OR = {
-				diplomacy >= 25 
-				intrigue >= 25 
+				diplomacy >= 25
+				intrigue >= 25
 			}
 		}
 		add_prestige = -500
@@ -514,10 +514,10 @@ KoM_hideout_events.3001 = {
 
 	option = {
 		name = KoM_hideout_events.3001.b
-		trigger = { 
+		trigger = {
 			OR = {
-				stewardship >= 25 
-				martial >= 25 
+				stewardship >= 25
+				martial >= 25
 			}
 		}
 		remove_short_term_gold = 150
@@ -526,8 +526,8 @@ KoM_hideout_events.3001 = {
 
 	option = {
 		name = KoM_hideout_events.3001.c
-		trigger = { 
-			learning >= 25 
+		trigger = {
+			learning >= 25
 		}
 		add_stress = 50
 		KoM_hideout_events3001_effect = yes
@@ -606,12 +606,12 @@ KoM_hideout_events.3002 = {
 			desc = KoM_hideout_events.3002.desc.onmyodo
 		}
 		triggered_desc = {
-			trigger = { 
+			trigger = {
 				NOR = {
 					KoM_hideout_has_building_trigger = { HIDEOUT = scope:province.var:KoM_local_hideout ID = hideout_building_defense_goetia }
 					KoM_hideout_has_building_trigger = { HIDEOUT = scope:province.var:KoM_local_hideout ID = hideout_building_defense_thaumaturgy }
 					KoM_hideout_has_building_trigger = { HIDEOUT = scope:province.var:KoM_local_hideout ID = hideout_building_defense_alchemy }
-					KoM_hideout_has_building_trigger = { HIDEOUT = scope:province.var:KoM_local_hideout ID = hideout_building_defense_onmyodo } 
+					KoM_hideout_has_building_trigger = { HIDEOUT = scope:province.var:KoM_local_hideout ID = hideout_building_defense_onmyodo }
 				}
 			}
 			desc = KoM_hideout_events.3002.desc.fallback
@@ -652,7 +652,7 @@ KoM_hideout_events.3003 = {
 		character = scope:host
 		animation = paranoia
 	}
-	
+
 	widgets = {
 		widget = {
 			gui = "KoM_event_window_widgets_hideout_plundering"
@@ -663,8 +663,8 @@ KoM_hideout_events.3003 = {
 		location.var:KoM_local_hideout = {
 			save_scope_as = KoM_hideout
 			var:hideout_owner ?= {
-				send_interface_message = { 
-					title = KoM_hideout_ai_read_effect_success 
+				send_interface_message = {
+					title = KoM_hideout_ai_read_effect_success
 					custom_tooltip = KoM_hideout_ai_read_effect_success_tt
 				}
 			}
@@ -693,7 +693,7 @@ KoM_hideout_events.3003 = {
 
 	option = {
 		name = KoM_hideout_events.3003.b
-		
+
 	}
 }
 
@@ -857,7 +857,7 @@ KoM_hideout_events.3008 = {
 	}
 
 	right_portrait = {
-		triggered_animation = { 
+		triggered_animation = {
 			trigger = { location.var:KoM_local_hideout.var:hideout_owner = { is_alive = yes } }
 			animation = beg
 		}

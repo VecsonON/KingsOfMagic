@@ -52,7 +52,7 @@ KoM_is_practitioner_of_magic_school_trigger = {
 		flag:onmyodo = { trait:KoM_onmyoji = { save_temporary_scope_as = trait } }
 	}
 	KoM_is_practitioner_of_magic_school_trait_trigger = { TRAIT = scope:trait }
-	
+
 }
 KoM_is_practitioner_of_magic_school_trait_trigger = {
 	OR = {
