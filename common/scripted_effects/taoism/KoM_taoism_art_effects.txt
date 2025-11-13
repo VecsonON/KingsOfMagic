@@ -182,6 +182,7 @@ KoM_qifu_yishi_effect = {
 		KoM_lianshen_huanxu = { $TARGET$ = { add_character_modifier = { modifier = KoM_qifu_yishi_lianshen_huanxu_modifier years = 10 } } }
 		KoM_xian = { $TARGET$ = { add_character_modifier = { modifier = KoM_qifu_yishi_xian_modifier years = 10 } } }
 	}
+	trigger_event = { on_action = KoM_after_rite }
 }
 KoM_qiqiu_mingri_zhishi_de_yishi_effect = {
 	switch = {
@@ -218,6 +219,7 @@ KoM_qiqiu_mingri_zhishi_de_yishi_effect = {
 		custom_tooltip = KoM_rite_qiqiu_mingri_zhishi_de_yishi_xian_effect
 		$TARGET$ = { every_targeting_scheme = { end_scheme = yes } }
 	}
+	trigger_event = { on_action = KoM_after_rite }
 }
 KoM_qingqiu_kuaisu_luxing_de_yishi_effect = {
 	switch = {
@@ -227,4 +229,5 @@ KoM_qingqiu_kuaisu_luxing_de_yishi_effect = {
 		KoM_lianshen_huanxu = { add_character_modifier = { modifier = KoM_qingqiu_kuaisu_luxing_de_yishi_lianshen_huanxu_modifier years = 10 } }
 		KoM_xian = { add_character_modifier = { modifier = KoM_qingqiu_kuaisu_luxing_de_yishi_xian_modifier years = 10 } }
 	}
+	trigger_event = { on_action = KoM_after_rite }
 }

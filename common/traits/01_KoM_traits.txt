@@ -353,6 +353,7 @@ KoM_lianshen_huanxu = {
 	prowess_no_portrait = 28
 	stress_gain_mult = -0.3
 	life_expectancy = 100
+	no_prowess_loss_from_age = yes
 
 	track = {
 		25 = {
@@ -391,6 +392,7 @@ KoM_xian = {
 	prowess_no_portrait = 60
 	stress_gain_mult = -0.7
 	life_expectancy = 1000
+	no_prowess_loss_from_age = yes
 
 	immortal = yes
 	# Dummy flags — just here for loc really.

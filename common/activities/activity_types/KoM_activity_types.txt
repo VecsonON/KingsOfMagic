@@ -10,11 +10,8 @@
 	}
 
 	can_start_showing_failures_only = {
-		is_available_adult = yes
-	}
-
-	is_valid_showing_failures_only = {
 		NOT = { is_activity_type_on_cooldown = activity_KoM_visit_hideout }
+		is_available_adult = yes
 	}
 
 	is_valid = {
