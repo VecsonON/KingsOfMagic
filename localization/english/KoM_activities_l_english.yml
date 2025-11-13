@@ -9,6 +9,7 @@
  activity_KoM_visit_hideout_guest_desc: "Visit potential [KoM_hideout|E]"
  activity_KoM_visit_hideout_req: "$BULLET_WITH_TAB$At least 25 [learning|E]\n$BULLET_WITH_TAB$[KoMGetTrait('scholar')] [trait|E]\n$BULLET_WITH_TAB$Already be a [KoM_practitioner|E] of [KoM_magick|E]"
  activity_KoM_visit_hideout_conclusion_desc: "My visit is complete"
+ TRAVEL_NAME_FOR_activity_KoM_visit_hideout: "$TRAVEL_NAME_FOR_activity_tournament$"
 
  KoM_visit_hideout_main: "Visit"
  KoM_visit_hideout_main_desc: "Let's see what is inside!"

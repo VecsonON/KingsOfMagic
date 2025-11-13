@@ -333,6 +333,17 @@ KoM_teach_magic_interaction = {
 			ai_boldness = 0.4
 			min = -20
 		}
+		modifier = {
+			NOR = {
+				scope:goetia = yes
+				scope:thaumaturgy = yes
+				scope:theurgy = yes
+				scope:alchemy = yes
+				scope:taoism = yes
+				scope:onmyodo = yes
+			}
+			add = -500
+		}
 	}
 	ai_targets = {
 		ai_recipients = family
@@ -524,6 +535,17 @@ KoM_request_teaching_interaction = {
 		modifier = {
 			has_trait = ambitious
 			add = 10
+		}
+		modifier = {
+			NOR = {
+				scope:goetia = yes
+				scope:thaumaturgy = yes
+				scope:theurgy = yes
+				scope:alchemy = yes
+				scope:taoism = yes
+				scope:onmyodo = yes
+			}
+			add = -50
 		}
 	}
 	ai_targets = {

@@ -43,7 +43,7 @@
  trait_track_KoM_lianjing_huaqi_desc: "$trait_track_KoM_lianjing_huaqi$"
 
  trait_KoM_lianqi_huashen: "Lianqi Huashen"
- trait_KoM_lianqi_huashen_desc: "Seconds stage between [KoM_daoshi|E] and [KoMGetTrait('KoM_xian')]. Lianqi Huashen refines Qi into Shen"
+ trait_KoM_lianqi_huashen_desc: "Second stage between [KoM_daoshi|E] and [KoMGetTrait('KoM_xian')]. Lianqi Huashen refines Qi into Shen"
  trait_track_KoM_lianqi_huashen: "Progress towards [KoMGetTrait('KoM_lianshen_huanxu')]"
  trait_track_KoM_lianqi_huashen_desc: "$trait_track_KoM_lianqi_huashen$"
 

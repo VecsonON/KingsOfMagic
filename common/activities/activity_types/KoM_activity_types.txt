@@ -13,6 +13,10 @@
 		is_available_adult = yes
 	}
 
+	is_valid_showing_failures_only = {
+		NOT = { is_activity_type_on_cooldown = activity_KoM_visit_hideout }
+	}
+
 	is_valid = {
 		NOT = {
 			has_variable = activity_invalidated

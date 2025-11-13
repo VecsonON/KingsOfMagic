@@ -675,8 +675,8 @@ KoM_hideout_events.3003 = {
 		name = KoM_hideout_events.3003.hideout_building_main
 		custom_tooltip = KoM_hideout_events.3003.hideout_building_main.tt
 		KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_main VALUE = -1 }
-		add_gold = 100
-		add_prestige = 200
+		add_gold = 50
+		add_prestige = 100
 		if = {
 			limit = { KoM_hideout_has_building_trigger = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_main } }
 			trigger_event = KoM_hideout_events.3003
