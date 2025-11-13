@@ -442,9 +442,9 @@ KoM_start_rite_effect = {
 	}
 }
 ALT_delete_rite_effect = {
-	$RITE$ = { save_scope_as = rite }
+	$RITE$ ?= { save_scope_as = rite }
 	remove_variable = current_rite
-	scope:rite = { end_story = yes }
+	scope:rite ?= { end_story = yes }
 }
 
 KoM_teach_magic_effect = {

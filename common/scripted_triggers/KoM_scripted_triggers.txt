@@ -123,28 +123,28 @@ KoM_knows_true_name_of_demon_trigger = {
 }
 
 KoM_goetia_interaction_show_rite_trigger = {
-	trigger_if = { limit = { scope:$OPTION$ != scope:the_gate_of_invocation } scope:the_gate_of_invocation = no }
-	trigger_if = { limit = { scope:$OPTION$ != scope:the_lesser_conjurations } scope:the_lesser_conjurations = no }
-	trigger_if = { limit = { scope:$OPTION$ != scope:the_seventy_two_gates } scope:the_seventy_two_gates = no }
-	trigger_if = { limit = { scope:$OPTION$ != scope:the_royal_theurgy_of_solomon } scope:the_royal_theurgy_of_solomon = no }
-	trigger_if = { limit = { scope:$OPTION$ != scope:the_great_work_of_unification } scope:the_great_work_of_unification = no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:the_gate_of_invocation } scope:the_gate_of_invocation ?= no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:the_lesser_conjurations } scope:the_lesser_conjurations ?= no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:the_seventy_two_gates } scope:the_seventy_two_gates ?= no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:the_royal_theurgy_of_solomon } scope:the_royal_theurgy_of_solomon ?= no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:the_great_work_of_unification } scope:the_great_work_of_unification ?= no }
 }
 KoM_goetia_interaction_show_demon_trigger = {
-	trigger_if = { limit = { scope:$OPTION$ != scope:bael } scope:bael = no }
-	trigger_if = { limit = { scope:$OPTION$ != scope:amon } scope:amon = no }
-	trigger_if = { limit = { scope:$OPTION$ != scope:vapula } scope:vapula = no }
-	trigger_if = { limit = { scope:$OPTION$ != scope:barbatos } scope:barbatos = no }
-	trigger_if = { limit = { scope:$OPTION$ != scope:gamigin } scope:gamigin = no }
-	trigger_if = { limit = { scope:$OPTION$ != scope:beleth } scope:beleth = no }
-	trigger_if = { limit = { scope:$OPTION$ != scope:astaroth } scope:astaroth = no }
-	trigger_if = { limit = { scope:$OPTION$ != scope:marchosias } scope:marchosias = no }
-	trigger_if = { limit = { scope:$OPTION$ != scope:belial } scope:belial = no }
-	trigger_if = { limit = { scope:$OPTION$ != scope:paimon } scope:paimon = no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:bael } scope:bael ?= no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:amon } scope:amon ?= no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:vapula } scope:vapula ?= no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:barbatos } scope:barbatos ?= no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:gamigin } scope:gamigin ?= no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:beleth } scope:beleth ?= no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:astaroth } scope:astaroth ?= no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:marchosias } scope:marchosias ?= no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:belial } scope:belial ?= no }
+	trigger_if = { limit = { scope:$OPTION$ != scope:paimon } scope:paimon ?= no }
 	OR = {
-		scope:the_lesser_conjurations = yes
-		scope:the_seventy_two_gates = yes
-		scope:the_royal_theurgy_of_solomon = yes
-		scope:the_great_work_of_unification = yes
+		scope:the_lesser_conjurations ?= yes
+		scope:the_seventy_two_gates ?= yes
+		scope:the_royal_theurgy_of_solomon ?= yes
+		scope:the_great_work_of_unification ?= yes
 	}
 }
 

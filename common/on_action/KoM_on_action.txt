@@ -189,7 +189,7 @@ KoM_after_rite = {
 KoM_on_artifact_changed_owner = {
 	effect = {
 		if = {
-			limit = { NOT = { var:gained_via_decision ?= THIS } }
+			limit = { NOT = { var:gained_via_decision ?= scope:owner } }
 			remove_variable = gained_via_decision
 		}
 	}

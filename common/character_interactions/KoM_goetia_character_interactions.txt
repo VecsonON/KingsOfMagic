@@ -28,7 +28,7 @@
 		is_shown = { KoM_goetia_interaction_show_rite_trigger = { OPTION = the_lesser_conjurations } }
 		is_valid = {
 			scope:actor = {
-				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 30 AT_LEAST = yes }
+				KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 25 AT_LEAST = yes }
 			}
 		}
 		flag = the_lesser_conjurations

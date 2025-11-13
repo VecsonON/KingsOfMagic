@@ -93,12 +93,266 @@ KoM_the_lesser_conjurations_effect = {
 	trigger_event = KoM_goetia_events.2
 	custom_tooltip = KoM_rite_the_lesser_conjurations_effect
 }
+KoM_hunt_sighting_county_province_effect = {
+	if = {
+		limit = { is_landed = no }
+		domicile.domicile_location.county ?= {
+			if = {
+				limit = { hunt_activity_recent_hunt_sighting_trigger = no }
+				add_to_list = sighting_counties
+			}
+			if = { # Estate owners cannot move to hunt
+				limit = { root = { is_landless_adventurer = yes } }
+				every_neighboring_county = {
+					limit = { hunt_activity_recent_hunt_sighting_trigger = no }
+					add_to_list = sighting_counties
+				}
+			}
+		}
+	}
+	else = {
+		every_sub_realm_county = {
+			limit = { hunt_activity_recent_hunt_sighting_trigger = no }
+			add_to_list = sighting_counties
+		}
+	}
+	random_in_list = {
+		list = sighting_counties
+		limit = { hunt_activity_recent_hunt_sighting_trigger = no }
+		weight = {
+			base = 1
+			modifier = {
+				add = {
+					value = 0
+					subtract = development_level
+					divide = 4
+				}
+			}
+			modifier = {
+				county_has_province_with_terrain = {
+					terrain = taiga
+					terrain = forest
+					terrain = mountains
+					terrain = jungle
+				}
+				add = 10
+			}
+		}
+		save_scope_as = sighting_county
+		random_county_province = {
+			weight = {
+				base = 1
+				hunt_activity_sighting_terrain_modifier = yes
+				hunt_activity_sighting_building_modifier = { PROVINCE = this }
+				hunt_activity_game_building_modifier = { PROVINCE = this }
+			}
+			save_scope_as = sighting_province
+		}
+	}
+}
+KoM_the_lesser_conjurations_real_effect = {
+	save_scope_as = KoM_caster
+	switch = {
+		trigger = $DEMON$
+		flag:bael = {
+			scope:KoM_target ?= {
+				custom_tooltip = KoM_rite_the_lesser_conjurations_effect1
+				random_secret = {
+					limit = { NOT = { is_known_by = scope:KoM_caster } }
+					reveal_to = scope:KoM_caster
+				}
+			}
+		}
+		flag:amon = {
+			add_character_modifier = { modifier = KoM_amon_guidance_modifier years = 5 }
+		}
+		flag:vapula = {
+			add_character_modifier = { modifier = KoM_vapula_guidance_modifier years = 5 }
+		}
+		flag:barbatos = {
+			random_list = {
+				5 = {
+					hidden_effect = {
+						hunt_activity_sighting_master_effect = { TYPE = hunter }
+						# Save county
+						KoM_hunt_sighting_county_province_effect = yes
+						# Save sighting
+						scope:sighting_county = {
+							hunt_activity_falconry_game_effect = { PROVINCE = scope:sighting_province }
+							# Create new sighting
+							hunt_create_sighting_effect = {
+								TYPE = standard
+								ANIMAL = var:animal_type
+								OWNER = scope:KoM_target
+							}
+						}
+					}
+					send_interface_message = {
+						title = KoM_goetia_events.2.a
+						show_as_tooltip = { scope:sighting_county ?= { add_county_modifier = hunt_sighting_standard_modifier } }
+					}
+				}
+				5 = {
+					hidden_effect = {
+						hunt_activity_sighting_master_effect = { TYPE = hunter }
+						# Save county
+						KoM_hunt_sighting_county_province_effect = yes
+						# Save sighting
+						scope:sighting_county = {
+							hunt_activity_falconry_game_effect = { PROVINCE = scope:sighting_province }
+							# Create new sighting
+							hunt_create_sighting_effect = {
+								TYPE = dangerous
+								ANIMAL = var:animal_type
+								OWNER = scope:KoM_target
+							}
+						}
+					}
+					send_interface_message = {
+						title = KoM_goetia_events.2.a
+						show_as_tooltip = { scope:sighting_county ?= { add_county_modifier = hunt_sighting_dangerous_modifier } }
+					}
+				}
+				10 = {
+					hidden_effect = {
+						hunt_activity_sighting_master_effect = { TYPE = falconer }
+						# Save county
+						KoM_hunt_sighting_county_province_effect = yes
+						# Save sighting
+						scope:sighting_county = {
+							hunt_activity_falconry_game_effect = { PROVINCE = scope:sighting_province }
+							# Create new sighting
+							hunt_create_sighting_effect = {
+								TYPE = falconry
+								ANIMAL = var:animal_type
+								OWNER = scope:KoM_target
+							}
+						}
+					}
+					send_interface_message = {
+						title = KoM_goetia_events.2.a
+						show_as_tooltip = { scope:sighting_county ?= { add_county_modifier = hunt_sighting_falconry_modifier } }
+					}
+				}
+				1 = {
+					hidden_effect = {
+						hunt_activity_sighting_master_effect = { TYPE = hunter }
+						# Save county
+						KoM_hunt_sighting_county_province_effect = yes
+						# Save sighting
+						scope:sighting_county = {
+							hunt_activity_falconry_game_effect = { PROVINCE = scope:sighting_province }
+							# Create new sighting
+							hunt_create_sighting_effect = {
+								TYPE = legendary
+								ANIMAL = var:animal_type
+								OWNER = scope:KoM_target
+							}
+						}
+					}
+					send_interface_message = {
+						title = KoM_goetia_events.2.a
+						show_as_tooltip = { scope:sighting_county ?= { add_county_modifier = hunt_sighting_legendary_modifier } }
+					}
+				}
+			}
+
+		}
+		flag:gamigin = {
+			scope:KoM_target ?= {
+				custom_tooltip = KoM_rite_the_lesser_conjurations_effect2
+				every_secret = {
+					limit = {
+						NOT = { is_known_by = scope:KoM_caster }
+						secret_type = secret_murder
+					}
+					reveal_to = scope:KoM_caster
+				}
+			}
+		}
+		flag:beleth = { add_intrigue_skill = 1 }
+		flag:astaroth = { add_learning_skill = 1 }
+		flag:marchosias = { add_martial_skill = 1 }
+		flag:belial = { add_diplomacy_skill = 1 }
+		flag:paimon = { add_stewardship_skill = 1 }
+	}
+}
 
 KoM_the_seventy_two_gates_effect = {
 	$TARGET$ = { save_scope_as = KoM_target }
 	add_piety = -750
 	trigger_event = KoM_goetia_events.3
 	custom_tooltip = KoM_rite_the_seventy_two_gates_effect
+}
+KoM_the_seventy_two_gates_real_effect = {
+	switch = {
+		trigger = $DEMON$
+		flag:bael = {
+			scope:KoM_target ?= {
+				add_character_modifier = { modifier = KoM_bael_influence_modifier years = 10 }
+			}
+		}
+		flag:amon = {
+			scope:KoM_target ?= {
+				if = { limit = { has_ep1_dlc_trigger = yes }
+					random_list = {
+						1 = { create_inspiration = book_inspiration custom_tooltip = inspire_interaction_book }
+						1 = { create_inspiration = weaver_inspiration custom_tooltip = inspire_interaction_weaver }
+						1 = { create_inspiration = adventure_inspiration custom_tooltip = inspire_interaction_adventure }
+						1 = { create_inspiration = artisan_inspiration custom_tooltip = inspire_interaction_artisan }
+						1 = { create_inspiration = smith_inspiration custom_tooltip = inspire_interaction_smith }
+						1 = { create_inspiration = alchemy_inspiration custom_tooltip = inspire_interaction_alchemy }
+						1 = { create_inspiration = armor_inspiration custom_tooltip = inspire_interaction_armor }
+						1 = { create_inspiration = weapon_inspiration custom_tooltip = inspire_interaction_weapon }
+					}
+				}
+				add_character_modifier = { modifier = KoM_amon_influence_modifier years = 10 }
+			}
+		}
+		flag:vapula = {
+			scope:KoM_target ?= {
+				add_stress = -50
+			}
+		}
+		flag:barbatos = {
+			scope:KoM_target ?= {
+				add_character_modifier = { modifier = KoM_barbatos_influence_modifier years = 10 }
+			}
+
+		}
+		flag:gamigin = {
+			scope:KoM_target ?= {
+				add_character_modifier = { modifier = KoM_gamigin_influence_modifier years = 10 }
+			}
+		}
+		flag:beleth = {
+			scope:KoM_target ?= {
+				add_character_modifier = { modifier = KoM_beleth_influence_modifier years = 10 }
+			}
+		}
+		flag:astaroth = {
+			scope:KoM_target ?= {
+				add_character_modifier = { modifier = KoM_astaroth_influence_modifier years = 10 }
+			}
+		}
+		flag:marchosias = {
+			scope:KoM_target ?= {
+				every_knight = {
+					add_character_modifier = { modifier = KoM_marchosias_influence_modifier years = 10 }
+				}
+			}
+		}
+		flag:belial = {
+			scope:KoM_target ?= {
+				add_character_modifier = { modifier = KoM_belial_influence_modifier years = 10 }
+			}
+		}
+		flag:paimon = {
+			scope:KoM_target ?= {
+				add_character_modifier = { modifier = KoM_paimon_influence_modifier years = 10 }
+			}
+		}
+	}
 }
 
 KoM_the_royal_theurgy_of_solomon_effect = {
@@ -107,6 +361,69 @@ KoM_the_royal_theurgy_of_solomon_effect = {
 	remove_short_term_gold = 100
 	trigger_event = KoM_goetia_events.4
 	custom_tooltip = KoM_rite_the_royal_theurgy_of_solomon_effect
+}
+KoM_the_royal_theurgy_of_solomon_real_effect = {
+	switch = {
+		trigger = $DEMON$
+		flag:bael = {
+			scope:KoM_target ?= {
+				custom_tooltip = KoM_rite_the_royal_theurgy_of_solomon_effect1
+				every_scheme = { change_opportunities = 5 }
+			}
+		}
+		flag:amon = {
+			scope:KoM_target ?= {
+				custom_tooltip = KoM_rite_the_royal_theurgy_of_solomon_effect2
+				KoM_downgrade_relation_effect = { CHARACTER = ROOT }
+			}
+		}
+		flag:vapula = {
+			scope:KoM_target ?= {
+				add_character_modifier = { modifier = KoM_vapula_command_modifier years = 5 }
+			}
+		}
+		flag:barbatos = {
+			scope:KoM_target ?= {
+				add_character_modifier = { modifier = KoM_barbatos_command_modifier years = 5 }
+			}
+		}
+		flag:gamigin = {
+			scope:KoM_target ?= {
+				KoM_remove_trait_effect = { TRAIT = depressed_1 }
+				KoM_remove_trait_effect = { TRAIT = depressed_genetic }
+				add_stress = -25
+			}
+		}
+		flag:beleth = {
+			add_hook = {
+				type = strong_favor_hook
+				target = scope:KoM_target
+			}
+		}
+		flag:astaroth = {
+			scope:KoM_target ?= {
+				add_character_modifier = { modifier = KoM_astaroth_command_modifier years = 5 }
+			}
+		}
+		flag:marchosias = {
+			scope:KoM_target ?= {
+				KoM_remove_trait_effect = { TRAIT = craven }
+				KoM_remove_trait_effect = { TRAIT = disloyal }
+				add_trait = brave
+				add_trait = loyal
+			}
+		}
+		flag:belial = {
+			scope:KoM_target ?= {
+				add_character_modifier = { modifier = KoM_belial_command_modifier years = 5 }
+			}
+		}
+		flag:paimon = {
+			scope:KoM_target ?= {
+				add_character_modifier = { modifier = KoM_paimon_command_modifier years = 5 }
+			}
+		}
+	}
 }
 
 KoM_the_great_work_of_unification_effect = {

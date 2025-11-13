@@ -1,0 +1,643 @@
+﻿KoM_ai_goetia_the_gate_of_invocation_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { scope:actor = { KoM_knows_every_demon_true_name_trigger = no KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 10 AT_LEAST = yes } } }
+
+	on_accept = {
+		scope:actor = { KoM_the_gate_of_invocation_effect = yes }
+		if = { limit = { debug_only = yes } error_log = "AI used The Gate of Invocation" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 12
+	ai_will_do = { base = 50 }
+}
+
+KoM_ai_goetia_the_lesser_conjurations_bael_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 25 AT_LEAST = yes } 
+			KoM_knows_true_name_of_demon_trigger = { DEMON = bael } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_lesser_conjurations_real_effect = { DEMON = flag:bael } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Lesser Conjurations: Bael" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = courtiers ai_recipients = scripted_relations max = 25 }
+	ai_frequency = 12
+	ai_will_do = { 
+		base = 20 
+		modifier = {
+			scope:actor = {
+				OR = {
+					has_relation_potential_rival = scope:recipient
+					has_relation_rival = scope:recipient
+					has_relation_nemesis = scope:recipient
+					opinion = { target = scope:recipient value <= -1 }
+				}
+			}
+			add = 20
+		}
+	}
+}
+KoM_ai_goetia_the_lesser_conjurations_amon_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 25 AT_LEAST = yes } 
+			KoM_knows_true_name_of_demon_trigger = { DEMON = amon } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_lesser_conjurations_real_effect = { DEMON = flag:amon } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Lesser Conjurations: Amon" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = courtiers }
+	ai_frequency = 12
+	ai_will_do = { 
+		base = 20
+	}
+}
+KoM_ai_goetia_the_lesser_conjurations_vapula_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 25 AT_LEAST = yes } 
+			KoM_knows_true_name_of_demon_trigger = { DEMON = vapula } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_lesser_conjurations_real_effect = { DEMON = flag:vapula } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Lesser Conjurations: Vapula" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 12
+	ai_will_do = { 
+		base = 20
+	}
+}
+KoM_ai_goetia_the_lesser_conjurations_gamigin_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 25 AT_LEAST = yes } 
+			KoM_knows_true_name_of_demon_trigger = { DEMON = gamigin } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_lesser_conjurations_real_effect = { DEMON = flag:gamigin } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Lesser Conjurations: Gamigin" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = courtiers ai_recipients = scripted_relations max = 25 }
+	ai_frequency = 12
+	ai_will_do = { 
+		base = 20
+		modifier = {
+			scope:actor = {
+				OR = {
+					has_relation_potential_rival = scope:recipient
+					has_relation_rival = scope:recipient
+					has_relation_nemesis = scope:recipient
+					opinion = { target = scope:recipient value <= -1 }
+				}
+			}
+			add = 20
+		}
+	}
+}
+KoM_ai_goetia_the_lesser_conjurations_beleth_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 25 AT_LEAST = yes } 
+			KoM_knows_true_name_of_demon_trigger = { DEMON = beleth } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_lesser_conjurations_real_effect = { DEMON = flag:beleth } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Lesser Conjurations: Beleth" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 12
+	ai_will_do = { base = 20 }
+}
+KoM_ai_goetia_the_lesser_conjurations_astaroth_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 25 AT_LEAST = yes } 
+			KoM_knows_true_name_of_demon_trigger = { DEMON = astaroth } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_lesser_conjurations_real_effect = { DEMON = flag:astaroth } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Lesser Conjurations: Astaroth" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 12
+	ai_will_do = { base = 20 }
+}
+KoM_ai_goetia_the_lesser_conjurations_marchosias_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 25 AT_LEAST = yes } 
+			KoM_knows_true_name_of_demon_trigger = { DEMON = marchosias } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_lesser_conjurations_real_effect = { DEMON = flag:marchosias } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Lesser Conjurations: Marchosias" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 12
+	ai_will_do = { base = 20 }
+}
+KoM_ai_goetia_the_lesser_conjurations_belial_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 25 AT_LEAST = yes } 
+			KoM_knows_true_name_of_demon_trigger = { DEMON = belial } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_lesser_conjurations_real_effect = { DEMON = flag:belial } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Lesser Conjurations: Belial" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 12
+	ai_will_do = { base = 20 }
+}
+KoM_ai_goetia_the_lesser_conjurations_paimon_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 25 AT_LEAST = yes } 
+			KoM_knows_true_name_of_demon_trigger = { DEMON = paimon } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_lesser_conjurations_real_effect = { DEMON = flag:paimon } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Lesser Conjurations: Paimon" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 12
+	ai_will_do = { base = 20 }
+}
+
+KoM_ai_goetia_the_seventy_two_gates_bael_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 50 AT_LEAST = yes }
+			KoM_knows_true_name_of_demon_trigger = { DEMON = bael } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_seventy_two_gates_real_effect = { DEMON = flag:bael } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Bael" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 25
+	ai_will_do = { base = 20 }
+}
+KoM_ai_goetia_the_seventy_two_gates_amon_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 50 AT_LEAST = yes }
+			KoM_knows_true_name_of_demon_trigger = { DEMON = amon } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_seventy_two_gates_real_effect = { DEMON = flag:amon } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Amon" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = courtiers }
+	ai_frequency = 25
+	ai_will_do = { 
+		base = 20
+		modifier = { add = { value = "scope:actor.opinion(scope:recipient)" multiply = 0.5 } }
+	}
+}
+KoM_ai_goetia_the_seventy_two_gates_vapula_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 50 AT_LEAST = yes }
+			KoM_knows_true_name_of_demon_trigger = { DEMON = vapula } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_seventy_two_gates_real_effect = { DEMON = flag:vapula } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Vapula" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 25
+	ai_will_do = { 
+		base = 5 
+		modifier = { add = 5 stress >= 50 }
+		modifier = { add = 5 stress >= 100 }
+		modifier = { add = 5 stress >= 150 }
+		modifier = { add = 5 stress >= 200 }
+		modifier = { add = 5 stress >= 250 }
+		modifier = { add = 5 stress >= 300 }
+	}
+}
+KoM_ai_goetia_the_seventy_two_gates_barbatos_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 50 AT_LEAST = yes }
+			KoM_knows_true_name_of_demon_trigger = { DEMON = barbatos } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_seventy_two_gates_real_effect = { DEMON = flag:barbatos } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Barbatos" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 25
+	ai_will_do = { base = 20 }
+}
+KoM_ai_goetia_the_seventy_two_gates_gamigin_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 50 AT_LEAST = yes }
+			KoM_knows_true_name_of_demon_trigger = { DEMON = gamigin } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_seventy_two_gates_real_effect = { DEMON = flag:gamigin } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Gamigin" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 25
+	ai_will_do = { base = 20 }
+}
+KoM_ai_goetia_the_seventy_two_gates_beleth_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 50 AT_LEAST = yes }
+			KoM_knows_true_name_of_demon_trigger = { DEMON = beleth } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_seventy_two_gates_real_effect = { DEMON = flag:beleth } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Beleth" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 25
+	ai_will_do = { base = 20 }
+}
+KoM_ai_goetia_the_seventy_two_gates_astaroth_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 50 AT_LEAST = yes }
+			KoM_knows_true_name_of_demon_trigger = { DEMON = astaroth } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_seventy_two_gates_real_effect = { DEMON = flag:astaroth } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Astaroth" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 25
+	ai_will_do = { base = 20 }
+}
+KoM_ai_goetia_the_seventy_two_gates_marchosias_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 50 AT_LEAST = yes }
+			KoM_knows_true_name_of_demon_trigger = { DEMON = marchosias } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_seventy_two_gates_real_effect = { DEMON = flag:marchosias } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Marchosias" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 25
+	ai_will_do = { base = 20 }
+}
+KoM_ai_goetia_the_seventy_two_gates_belial_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 50 AT_LEAST = yes }
+			KoM_knows_true_name_of_demon_trigger = { DEMON = belial } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_seventy_two_gates_real_effect = { DEMON = flag:belial } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Belial" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 25
+	ai_will_do = { base = 20 }
+}
+KoM_ai_goetia_the_seventy_two_gates_paimon_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 50 AT_LEAST = yes }
+			KoM_knows_true_name_of_demon_trigger = { DEMON = paimon } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_seventy_two_gates_real_effect = { DEMON = flag:paimon } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Paimon" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 25
+	ai_will_do = { base = 20 }
+}
+
+KoM_ai_goetia_the_royal_theurgy_of_solomon_bael_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 75 AT_LEAST = yes }
+			KoM_knows_true_name_of_demon_trigger = { DEMON = bael } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_royal_theurgy_of_solomon_real_effect = { DEMON = flag:bael } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Bael" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 50
+	ai_will_do = { 
+		base = 5
+		modifier = {
+			any_scheme = { count >= 1 }
+			add = 25
+		}
+	}
+}
+KoM_ai_goetia_the_royal_theurgy_of_solomon_vapula_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 75 AT_LEAST = yes }
+			KoM_knows_true_name_of_demon_trigger = { DEMON = vapula } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_royal_theurgy_of_solomon_real_effect = { DEMON = flag:vapula } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Vapula" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 50
+	ai_will_do = { base = 20 }
+}
+KoM_ai_goetia_the_royal_theurgy_of_solomon_barbatos_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 75 AT_LEAST = yes }
+			KoM_knows_true_name_of_demon_trigger = { DEMON = barbatos } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_royal_theurgy_of_solomon_real_effect = { DEMON = flag:barbatos } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Barbatos" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 50
+	ai_will_do = { base = 20 }
+}
+KoM_ai_goetia_the_royal_theurgy_of_solomon_astaroth_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 75 AT_LEAST = yes }
+			KoM_knows_true_name_of_demon_trigger = { DEMON = astaroth } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_royal_theurgy_of_solomon_real_effect = { DEMON = flag:astaroth } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Astaroth" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 50
+	ai_will_do = { base = 20 }
+}
+KoM_ai_goetia_the_royal_theurgy_of_solomon_belial_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 75 AT_LEAST = yes }
+			KoM_knows_true_name_of_demon_trigger = { DEMON = belial } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_royal_theurgy_of_solomon_real_effect = { DEMON = flag:belial } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Belial" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 50
+	ai_will_do = { base = 20 }
+}
+KoM_ai_goetia_the_royal_theurgy_of_solomon_paimon_interaction = {
+	category = interaction_category_religion
+	icon = KoM_goetia_interaction
+	desc = KoM_goetia_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } }
+	is_valid = { 
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:goetia VALUE = 75 AT_LEAST = yes }
+			KoM_knows_true_name_of_demon_trigger = { DEMON = paimon } 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_royal_theurgy_of_solomon_real_effect = { DEMON = flag:paimon } }
+		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Paimon" }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 50
+	ai_will_do = { base = 20 }
+}
