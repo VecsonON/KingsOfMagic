@@ -8,7 +8,6 @@
 
 	on_accept = {
 		scope:actor = { KoM_the_gate_of_invocation_effect = yes }
-		if = { limit = { debug_only = yes } error_log = "AI used The Gate of Invocation" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -32,7 +31,6 @@ KoM_ai_goetia_the_lesser_conjurations_bael_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_lesser_conjurations_real_effect = { DEMON = flag:bael } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Lesser Conjurations: Bael" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -68,7 +66,6 @@ KoM_ai_goetia_the_lesser_conjurations_amon_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_lesser_conjurations_real_effect = { DEMON = flag:amon } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Lesser Conjurations: Amon" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -93,7 +90,6 @@ KoM_ai_goetia_the_lesser_conjurations_vapula_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_lesser_conjurations_real_effect = { DEMON = flag:vapula } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Lesser Conjurations: Vapula" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -118,7 +114,6 @@ KoM_ai_goetia_the_lesser_conjurations_gamigin_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_lesser_conjurations_real_effect = { DEMON = flag:gamigin } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Lesser Conjurations: Gamigin" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -154,7 +149,6 @@ KoM_ai_goetia_the_lesser_conjurations_beleth_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_lesser_conjurations_real_effect = { DEMON = flag:beleth } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Lesser Conjurations: Beleth" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -177,7 +171,6 @@ KoM_ai_goetia_the_lesser_conjurations_astaroth_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_lesser_conjurations_real_effect = { DEMON = flag:astaroth } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Lesser Conjurations: Astaroth" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -200,7 +193,6 @@ KoM_ai_goetia_the_lesser_conjurations_marchosias_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_lesser_conjurations_real_effect = { DEMON = flag:marchosias } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Lesser Conjurations: Marchosias" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -223,7 +215,6 @@ KoM_ai_goetia_the_lesser_conjurations_belial_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_lesser_conjurations_real_effect = { DEMON = flag:belial } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Lesser Conjurations: Belial" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -246,7 +237,6 @@ KoM_ai_goetia_the_lesser_conjurations_paimon_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_lesser_conjurations_real_effect = { DEMON = flag:paimon } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Lesser Conjurations: Paimon" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -270,7 +260,6 @@ KoM_ai_goetia_the_seventy_two_gates_bael_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_seventy_two_gates_real_effect = { DEMON = flag:bael } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Bael" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -293,7 +282,6 @@ KoM_ai_goetia_the_seventy_two_gates_amon_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_seventy_two_gates_real_effect = { DEMON = flag:amon } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Amon" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -319,7 +307,6 @@ KoM_ai_goetia_the_seventy_two_gates_vapula_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_seventy_two_gates_real_effect = { DEMON = flag:vapula } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Vapula" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -350,7 +337,6 @@ KoM_ai_goetia_the_seventy_two_gates_barbatos_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_seventy_two_gates_real_effect = { DEMON = flag:barbatos } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Barbatos" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -373,7 +359,6 @@ KoM_ai_goetia_the_seventy_two_gates_gamigin_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_seventy_two_gates_real_effect = { DEMON = flag:gamigin } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Gamigin" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -396,7 +381,6 @@ KoM_ai_goetia_the_seventy_two_gates_beleth_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_seventy_two_gates_real_effect = { DEMON = flag:beleth } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Beleth" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -419,7 +403,6 @@ KoM_ai_goetia_the_seventy_two_gates_astaroth_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_seventy_two_gates_real_effect = { DEMON = flag:astaroth } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Astaroth" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -442,7 +425,6 @@ KoM_ai_goetia_the_seventy_two_gates_marchosias_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_seventy_two_gates_real_effect = { DEMON = flag:marchosias } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Marchosias" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -465,7 +447,6 @@ KoM_ai_goetia_the_seventy_two_gates_belial_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_seventy_two_gates_real_effect = { DEMON = flag:belial } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Belial" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -488,7 +469,6 @@ KoM_ai_goetia_the_seventy_two_gates_paimon_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_seventy_two_gates_real_effect = { DEMON = flag:paimon } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Paimon" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -512,7 +492,6 @@ KoM_ai_goetia_the_royal_theurgy_of_solomon_bael_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_royal_theurgy_of_solomon_real_effect = { DEMON = flag:bael } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Bael" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -541,7 +520,6 @@ KoM_ai_goetia_the_royal_theurgy_of_solomon_vapula_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_royal_theurgy_of_solomon_real_effect = { DEMON = flag:vapula } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Vapula" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -564,7 +542,6 @@ KoM_ai_goetia_the_royal_theurgy_of_solomon_barbatos_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_royal_theurgy_of_solomon_real_effect = { DEMON = flag:barbatos } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Barbatos" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -587,7 +564,6 @@ KoM_ai_goetia_the_royal_theurgy_of_solomon_astaroth_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_royal_theurgy_of_solomon_real_effect = { DEMON = flag:astaroth } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Astaroth" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -610,7 +586,6 @@ KoM_ai_goetia_the_royal_theurgy_of_solomon_belial_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_royal_theurgy_of_solomon_real_effect = { DEMON = flag:belial } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Belial" }
 	}
 
 	ai_potential = { is_physically_able = yes }
@@ -633,7 +608,6 @@ KoM_ai_goetia_the_royal_theurgy_of_solomon_paimon_interaction = {
 
 	on_accept = {
 		scope:actor = { scope:recipient = { save_scope_as = KoM_target } KoM_the_royal_theurgy_of_solomon_real_effect = { DEMON = flag:paimon } }
-		if = { limit = { debug_only = yes } error_log = "AI used The Seventy-Two Gates: Paimon" }
 	}
 
 	ai_potential = { is_physically_able = yes }
