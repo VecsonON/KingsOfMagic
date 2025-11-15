@@ -10,6 +10,7 @@
  game_concept_KoM_magick_list: "$BULLET_WITH_TAB$[KoM_goetia|E] - Magick of summoning and controlling spirits\n$BULLET_WITH_TAB$[KoM_thaumaturgy|E] - Magick of wonder-working\n$BULLET_WITH_TAB$[KoM_theurgy|E] - Magick of Divine\n$BULLET_WITH_TAB$[KoM_alchemy|E] - Magick of Mattery\n$BULLET_WITH_TAB$[KoM_taoism|E] - Magic of Harmony\n$BULLET_WITH_TAB$#X (X)#![KoM_onmyodo|E] - Magic of Yin and Yang"
 
  KoM_witchcraft_info: "This [KoM_magick|E] school is considered as #bold witchcraft#! by outsiders, causing strife against [faiths|E] with Witchcraft: [GetDoctrine('doctrine_witchcraft_crime').GetBaseName] or Witchcraft: [GetDoctrine('doctrine_witchcraft_shunned').GetBaseName]"
+ KoM_magic_ai_info: "#I AI cannot use this [KoM_magick|E]! At least for now.#!"
 
  game_concept_KoM_goetia: "Goetia"
  game_concept_KoM_goetic: "Goetic"
@@ -19,7 +20,7 @@
  game_concept_KoM_thaumaturgy: "Thaumaturgy"
  game_concept_KoM_thaumaturgic: "Thaumaturgic"
  game_concept_KoM_thaumaturge: "Thaumaturge"
- game_concept_KoM_thaumaturgy_desc: "#bold Thaumaturgy#! is an [KoM_magick|E] school of wonder-working.\n\nBeyond material world, there exist something larger, something primordial. Thaumaturge's want to influence it to change world around them as they fit. They cast spells and conduct rites to manipulate it to do their biding.\n\n$KoM_witchcraft_info$"
+ game_concept_KoM_thaumaturgy_desc: "#bold Thaumaturgy#! is an [KoM_magick|E] school of wonder-working.\n\nBeyond material world, there exist something larger, something primordial. Thaumaturge's want to influence it to change world around them as they fit. They cast spells and conduct rites to manipulate it to do their biding.\n\n$KoM_witchcraft_info$\n\n$KoM_magic_ai_info$"
 
  game_concept_KoM_theurgy: "Theurgy"
  game_concept_KoM_theurgic: "Theurgic"
@@ -38,7 +39,7 @@
 
  game_concept_KoM_onmyodo: "Onmyodo"
  game_concept_KoM_onmyoji: "Onmyoji"
- game_concept_KoM_onmyodo_desc: "#bold Onmyodo#! is an [KoM_magick|E] school of Yin and Yang.\n\nWorld is governed by Yin and Yang as well as Elements, and that is truth. Onmyoji understand that achieving Harmony with Yin and Yang one protects themselves from misfortune and disease, as they come from disharmony."
+ game_concept_KoM_onmyodo_desc: "#bold Onmyodo#! is an [KoM_magick|E] school of Yin and Yang.\n\nWorld is governed by Yin and Yang as well as Elements, and that is truth. Onmyoji understand that achieving Harmony with Yin and Yang one protects themselves from misfortune and disease, as they come from disharmony.\n\n$KoM_magic_ai_info$"
 
  game_concept_KoM_grimoire: "Grimoire"
  game_concept_KoM_grimoires: "Grimoires"
