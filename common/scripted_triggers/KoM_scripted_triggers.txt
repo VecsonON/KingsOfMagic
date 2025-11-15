@@ -98,6 +98,33 @@ KoM_must_self_cast_trigger = {
 	}
 }
 
+KoM_should_ai_heal_trigger = {
+	OR = {
+		has_any_illness = yes
+		has_trait = scarred
+		has_trait = disfigured
+		has_trait = impotent
+		has_trait = infirm
+		has_trait = maimed
+		has_trait = one_legged
+		has_trait = eunuch_1
+		has_trait = one_eyed
+		has_trait = blind
+		has_trait = incapable
+	}
+}
+KoM_should_ai_heal_mind_trigger = {
+	OR = {
+		has_a_bad_stress_coping_trait_trigger = yes
+		has_trait = depressed_1
+		has_trait = depressed_genetic
+		has_trait = lunatic_1
+		has_trait = lunatic_genetic
+		has_trait = reclusive
+		has_trait = improvident
+	}
+}
+
 #GOETIA
 KoM_knows_every_demon_true_name_trigger = {
 	custom_tooltip = {

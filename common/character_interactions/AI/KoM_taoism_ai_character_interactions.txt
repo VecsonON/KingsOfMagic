@@ -1,0 +1,128 @@
+﻿KoM_ai_taoism_the_neidan_meditation_interaction = {
+	category = interaction_category_religion
+	icon = KoM_taoism_interaction
+	desc = KoM_taoism_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:taoism } } }
+
+	on_accept = {
+		scope:actor = { KoM_the_neidan_meditation_effect = yes }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 6
+	ai_will_do = { base = 50 }
+}
+KoM_ai_taoism_qingqiu_huifu_yishi_interaction = {
+	category = interaction_category_religion
+	icon = KoM_taoism_interaction
+	desc = KoM_taoism_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:taoism } } }
+	is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:taoism VALUE = 10 AT_LEAST = yes } } }
+
+	on_accept = {
+		scope:actor = { KoM_qingqiu_huifu_yishi_effect = { TARGET = scope:recipient } }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 12
+	ai_will_do = {
+		base = 25
+		modifier = {
+			scope:actor = { KoM_should_ai_heal_trigger = yes }
+			add = 50
+		}
+	}
+}
+KoM_ai_taoism_qiqiu_pingjing_xinling_de_yishi_interaction = {
+	category = interaction_category_religion
+	icon = KoM_taoism_interaction
+	desc = KoM_taoism_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:taoism } } }
+	is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:taoism VALUE = 30 AT_LEAST = yes } } }
+
+	on_accept = {
+		scope:actor = { KoM_qiqiu_pingjing_xinling_de_yishi_effect = { TARGET = scope:recipient } }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 12
+	ai_will_do = {
+		base = 25
+		modifier = {
+			scope:actor = { KoM_should_ai_heal_mind_trigger = yes }
+			add = 50
+		}
+	}
+}
+KoM_ai_taoism_qifu_yishi_interaction = {
+	category = interaction_category_religion
+	icon = KoM_taoism_interaction
+	desc = KoM_taoism_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:taoism } } }
+	is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:taoism VALUE = 50 AT_LEAST = yes } } }
+
+	on_accept = {
+		scope:actor = { KoM_qifu_yishi_effect = { TARGET = scope:recipient } }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 25
+	ai_will_do = { base = 50 }
+}
+KoM_ai_taoism_qiqiu_mingri_zhishi_de_yishi_interaction = {
+	category = interaction_category_religion
+	icon = KoM_taoism_interaction
+	desc = KoM_taoism_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:taoism } } }
+	is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:taoism VALUE = 75 AT_LEAST = yes } } }
+
+	on_accept = {
+		scope:actor = { KoM_qiqiu_mingri_zhishi_de_yishi_effect = { TARGET = scope:recipient } }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 50
+	ai_will_do = { 
+		base = 25
+		modifier = {
+			any_targeting_scheme = {
+				hostile_scheme_trigger = yes
+				is_scheme_exposed = yes
+			}
+			add  = 75
+		} 
+	}
+}
+KoM_ai_taoism_qingqiu_kuaisu_luxing_de_yishi_interaction = {
+	category = interaction_category_religion
+	icon = KoM_taoism_interaction
+	desc = KoM_taoism_interaction_desc
+
+	is_shown = { scope:actor = { is_ai = yes KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:taoism } } }
+	is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:taoism VALUE = 100 AT_LEAST = yes } } }
+
+	on_accept = {
+		scope:actor = { KoM_qingqiu_kuaisu_luxing_de_yishi_effect = yes }
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 75
+	ai_will_do = { 
+		base = 50 
+		modifier = {
+			is_at_war = yes
+			add = 50
+		}
+	}
+}

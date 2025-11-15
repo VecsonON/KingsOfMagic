@@ -183,7 +183,7 @@ KoM_thaumaturgy_res_interaction = {
 	}
 
 	is_valid_showing_failures_only = {
-		scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 25 AT_LEAST = yes } }
+		scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 30 AT_LEAST = yes } }
 	}
 
 	has_valid_target = { exists = scope:target }

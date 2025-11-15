@@ -77,6 +77,11 @@ KoM_rite_time_10_years = {
 	divide = 10
 }
 
+KoM_yearly_ai_xp_gain = {
+	value = learning
+	divide = 10
+}
+
 KoM_theurgy_level = {
 	value = 1
 	if = {

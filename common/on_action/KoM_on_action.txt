@@ -80,6 +80,108 @@ KoM_yearly_playable_pulse = {
 		trigger_event = { on_action = KoM_quaterly_playable_pulse days = 135 }
 		trigger_event = { on_action = KoM_quaterly_playable_pulse days = 225 }
 		trigger_event = { on_action = KoM_quaterly_playable_pulse days = 315 }
+
+		if = {
+			limit = { is_ai = yes }
+			random_list = {
+				1 = { 
+					trigger = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:goetia } } 
+					KoM_study_magic_school_effect = { SCHOOL = flag:goetia COUNT = KoM_yearly_ai_xp_gain } 
+				}
+				1 = { 
+					trigger = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:thaumaturgy } } 
+					KoM_study_magic_school_effect = { SCHOOL = flag:thaumaturgy COUNT = KoM_yearly_ai_xp_gain } 
+				}
+				1 = { 
+					trigger = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:theurgy } } 
+					KoM_study_magic_school_effect = { SCHOOL = flag:theurgy COUNT = KoM_yearly_ai_xp_gain } 
+				}
+				1 = { 
+					trigger = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:alchemy } } 
+					KoM_study_magic_school_effect = { SCHOOL = flag:alchemy COUNT = KoM_yearly_ai_xp_gain } 
+				}
+				1 = { 
+					trigger = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:taoism } } 
+					KoM_study_magic_school_effect = { SCHOOL = flag:taoism COUNT = KoM_yearly_ai_xp_gain } 
+				}
+				1 = { 
+					trigger = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:onmyodo } } 
+					KoM_study_magic_school_effect = { SCHOOL = flag:onmyodo COUNT = KoM_yearly_ai_xp_gain } 
+				}
+			}
+			if = {
+				limit = { 
+					KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:alchemy } 
+					save_temporary_scope_value_as = {
+						name = biyearly_countdown
+						value = { value = current_year modulo = 2 }
+					}
+					scope:biyearly_countdown = 0
+				}
+				random_list = {
+					20 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 10 AT_LEAST = yes } }
+						KoM_elixir_of_the_white_rose_effect = yes
+					}
+					20 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 10 AT_LEAST = yes } }
+						KoM_draught_of_still_waters_effect = yes
+					}
+					20 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 10 AT_LEAST = yes } }
+						KoM_infusion_of_lead_effect = yes
+					}
+					20 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 30 AT_LEAST = yes } }
+						KoM_elixir_of_ash_and_salt_effect = yes
+					}
+					20 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 30 AT_LEAST = yes } }
+						KoM_dew_of_morning_stars_effect = yes
+					}
+					20 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 30 AT_LEAST = yes } }
+						KoM_aqua_sapientiae_effect = yes
+					}
+					15 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 50 AT_LEAST = yes } }
+						KoM_elixir_of_the_solar_mind_effect = yes
+					}
+					15 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 50 AT_LEAST = yes } }
+						KoM_draught_of_the_inner_flame_effect = yes
+					}
+					15 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 50 AT_LEAST = yes } }
+						KoM_tears_of_the_red_king_effect = yes
+					}
+					15 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 75 AT_LEAST = yes } }
+						KoM_blood_of_the_phoenix_effect = yes
+					}
+					15 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 75 AT_LEAST = yes } }
+						KoM_elixir_rubedo_effect = yes
+					}
+					15 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 75 AT_LEAST = yes } }
+						KoM_homunculi_effect = yes
+					}
+					10 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 100 AT_LEAST = yes } }
+						KoM_elixir_vitae_effect = yes
+					}
+					10 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 100 AT_LEAST = yes } }
+						KoM_aurum_astralis_effect = yes
+					}
+					1 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 100 AT_LEAST = yes } }
+						KoM_the_philosophers_stone_effect = yes
+					}
+				}
+			}
+		}
 	}
 }
 KoM_quaterly_playable_pulse = {
@@ -107,6 +209,7 @@ KoM_monthly_playable_pulse = {
 				}
 			}
 		}
+
 	}
 }
 

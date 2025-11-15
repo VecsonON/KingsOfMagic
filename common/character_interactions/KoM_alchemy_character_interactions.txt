@@ -6,8 +6,6 @@
 	target_type = artifact
 	target_filter = actor_artifacts
 
-	ai_frequency = 0
-
 	is_shown = {
 		scope:actor = scope:recipient
 		scope:actor = {
@@ -30,6 +28,13 @@
 		scope:actor = {
 			KoM_consume_potion_effect = { POTION = scope:target }
 		}
+	}
+
+	ai_potential = { is_physically_able = yes }
+	ai_targets = { ai_recipients = self }
+	ai_frequency = 6
+	ai_will_do = {
+		base = 50
 	}
 }
 

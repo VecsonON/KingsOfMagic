@@ -9,4 +9,4 @@ tags={
 	"Gameplay"
 }
 name="Kings of Magic"
-supported_version="1.17.*"
+supported_version="1.18.*"
