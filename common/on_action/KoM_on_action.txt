@@ -181,6 +181,70 @@ KoM_yearly_playable_pulse = {
 					}
 				}
 			}
+			if = {
+				limit = { 
+					KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:onmyodo } 
+					save_temporary_scope_value_as = {
+						name = biyearly_countdown
+						value = { value = current_year modulo = 5 }
+					}
+					scope:biyearly_countdown = 0
+				}
+				random_list = {
+					5 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 10 AT_LEAST = yes } }
+						KoM_create_ofuda_effect = { RARITY = common NAME = dust_cleansing }
+					}
+					5 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 10 AT_LEAST = yes } }
+						KoM_create_ofuda_effect = { RARITY = common NAME = breath_calming }
+					}
+					5 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 10 AT_LEAST = yes } }
+						KoM_create_ofuda_effect = { RARITY = common NAME = shadow_protection }
+					}
+					4 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 30 AT_LEAST = yes } }
+						KoM_create_ofuda_effect = { RARITY = common NAME = yin_accumulation }
+					}
+					4 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 30 AT_LEAST = yes } }
+						KoM_create_ofuda_effect = { RARITY = common NAME = yang_accumulation }
+					}
+					3 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 50 AT_LEAST = yes } }
+						KoM_create_ofuda_effect = { RARITY = masterwork NAME = seimeis_star }
+					}
+					3 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 50 AT_LEAST = yes } }
+						KoM_create_ofuda_effect = { RARITY = masterwork NAME = yin_yang_balance }
+					}
+					3 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 50 AT_LEAST = yes } }
+						KoM_create_ofuda_effect = { RARITY = masterwork NAME = luck_of_heaven }
+					}
+					2 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 75 AT_LEAST = yes } }
+						KoM_create_ofuda_effect = { RARITY = famed NAME = kami_guidance }
+					}
+					2 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 75 AT_LEAST = yes } }
+						KoM_create_ofuda_effect = { RARITY = famed NAME = kami_pact }
+					}
+					1 = {
+						trigger = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 100 AT_LEAST = yes } }
+						KoM_create_ofuda_effect = { RARITY = illustrious NAME = yin_yang_harmony }
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = { any_character_artifact = { has_artifact_modifier = KoM_yin_yang_harmony_modifier } }
+			every_character_artifact = {
+				limit = { has_artifact_modifier = KoM_yin_yang_harmony_modifier }
+				PREV = { add_stress = -1 }
+			}
 		}
 	}
 }
@@ -351,5 +415,20 @@ KoM_alchemy_material_refresh = {
 		remove_variable = KoM_alchemic_materials_human_blood_num
 		remove_variable = KoM_alchemic_materials_vulcanic_ash_num
 		remove_variable = KoM_alchemic_materials_fireflower_num
+	}
+}
+
+KoM_onmyodo_extra_effects = {
+	effect = {
+		if = {
+			limit = { scope:saved_tooltip = flag:kami_pact }
+			random_list = {
+				1 = { add_artifact_modifier = KoM_kami_pact_diplomacy_modifier }
+				1 = { add_artifact_modifier = KoM_kami_pact_martial_modifier }
+				1 = { add_artifact_modifier = KoM_kami_pact_stewardship_modifier }
+				1 = { add_artifact_modifier = KoM_kami_pact_intrigue_modifier }
+				1 = { add_artifact_modifier = KoM_kami_pact_learning_modifier }
+			}
+		}
 	}
 }

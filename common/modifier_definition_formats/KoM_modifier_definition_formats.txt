@@ -17,3 +17,8 @@ KoM_terrain_type_rite_speed_advantage = {
 	color = good
 	percent = yes
 }
+
+KoM_terrain_type_onmyodo_yin_yang_harmony_advantage = {
+	decimals = 0
+	color = bad
+}

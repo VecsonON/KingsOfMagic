@@ -84,10 +84,48 @@
  KoM_terrain_type_alchemy_the_philosophers_stone_cancel_negative_supply: "Unlock $KoM_rite_the_philosophers_stone$"
  KoM_terrain_type_alchemy_the_philosophers_stone_effect_cancel_negative_supply: "$KoM_rite_the_philosophers_stone_effect$"
  ####################################################################################################################
-
  KoM_terrain_type_taoism_the_neidan_meditation_cancel_negative_supply: "Unlock $KoM_rite_the_neidan_meditation$"
  KoM_terrain_type_taoism_qingqiu_huifu_yishi_cancel_negative_supply: "Unlock $KoM_rite_qingqiu_huifu_yishi$"
  KoM_terrain_type_taoism_qiqiu_pingjing_xinling_de_yishi_cancel_negative_supply: "Unlock $KoM_rite_qiqiu_pingjing_xinling_de_yishi$"
  KoM_terrain_type_taoism_qifu_yishi_cancel_negative_supply: "Unlock $KoM_rite_qifu_yishi$"
  KoM_terrain_type_taoism_qiqiu_mingri_zhishi_de_yishi_cancel_negative_supply: "Unlock $KoM_rite_qiqiu_mingri_zhishi_de_yishi$"
  KoM_terrain_type_taoism_qingqiu_kuaisu_luxing_de_yishi_cancel_negative_supply: "Unlock $KoM_rite_qingqiu_kuaisu_luxing_de_yishi$"
+ ####################################################################################################################
+ KoM_terrain_type_onmyodo_dust_cleansing_cancel_negative_supply: "Unlock $KoM_rite_dust_cleansing$"
+ KoM_terrain_type_onmyodo_breath_calming_cancel_negative_supply: "Unlock $KoM_rite_breath_calming$"
+ KoM_terrain_type_onmyodo_shadow_protection_cancel_negative_supply: "Unlock $KoM_rite_shadow_protection$"
+
+ KoM_terrain_type_onmyodo_yin_accumulation_cancel_negative_supply: "Unlock $KoM_rite_yin_accumulation$"
+ KoM_terrain_type_onmyodo_yang_accumulation_cancel_negative_supply: "Unlock $KoM_rite_yang_accumulation$"
+
+ KoM_terrain_type_onmyodo_seimeis_star_cancel_negative_supply: "Unlock $KoM_rite_seimeis_star$"
+ KoM_terrain_type_onmyodo_yin_yang_balance_cancel_negative_supply: "Unlock $KoM_rite_yin_yang_balance$"
+ KoM_terrain_type_onmyodo_luck_of_heaven_cancel_negative_supply: "Unlock $KoM_rite_luck_of_heaven$"
+
+ KoM_terrain_type_onmyodo_kami_guidance_cancel_negative_supply: "Unlock $KoM_rite_kami_guidance$"
+ KoM_terrain_type_onmyodo_kami_pact_cancel_negative_supply: "Unlock $KoM_rite_kami_pact$"
+
+ KoM_terrain_type_onmyodo_heaven_earth_purification_cancel_negative_supply: "Unlock $KoM_rite_heaven_earth_purification$"
+ KoM_terrain_type_onmyodo_five_element_harmony_cancel_negative_supply: "Unlock $KoM_rite_five_element_harmony$"
+ KoM_terrain_type_onmyodo_yin_yang_harmony_cancel_negative_supply: "Unlock $KoM_rite_yin_yang_harmony$"
+ KoM_terrain_type_onmyodo_yin_yang_harmony_advantage: "[stress|E] lost every year"
+ ####################################################################################################################
+ KoM_terrain_type_hideout_building_defense_goetia_1_cancel_negative_supply: "Unlock $KoM_hideout_building$ $KoM_hideout_building_defense_goetia$ level 1"
+ KoM_terrain_type_hideout_building_defense_goetia_2_cancel_negative_supply: "Unlock $KoM_hideout_building$ $KoM_hideout_building_defense_goetia$ level 2"
+ KoM_terrain_type_hideout_building_defense_goetia_3_cancel_negative_supply: "Unlock $KoM_hideout_building$ $KoM_hideout_building_defense_goetia$ level 3"
+ KoM_terrain_type_hideout_building_defense_thaumaturgy_1_cancel_negative_supply: "Unlock $KoM_hideout_building$ $KoM_hideout_building_defense_thaumaturgy$ level 1"
+ KoM_terrain_type_hideout_building_defense_thaumaturgy_2_cancel_negative_supply: "Unlock $KoM_hideout_building$ $KoM_hideout_building_defense_thaumaturgy$ level 2"
+ KoM_terrain_type_hideout_building_defense_thaumaturgy_3_cancel_negative_supply: "Unlock $KoM_hideout_building$ $KoM_hideout_building_defense_thaumaturgy$ level 3"
+ KoM_terrain_type_hideout_building_defense_alchemy_1_cancel_negative_supply: "Unlock $KoM_hideout_building$ $KoM_hideout_building_defense_alchemy$ level 1"
+ KoM_terrain_type_hideout_building_defense_alchemy_2_cancel_negative_supply: "Unlock $KoM_hideout_building$ $KoM_hideout_building_defense_alchemy$ level 2"
+ KoM_terrain_type_hideout_building_defense_alchemy_3_cancel_negative_supply: "Unlock $KoM_hideout_building$ $KoM_hideout_building_defense_alchemy$ level 3"
+ KoM_terrain_type_hideout_building_defense_onmyodo_1_cancel_negative_supply: "Unlock $KoM_hideout_building$ $KoM_hideout_building_defense_onmyodo$ level 1"
+ KoM_terrain_type_hideout_building_defense_onmyodo_2_cancel_negative_supply: "Unlock $KoM_hideout_building$ $KoM_hideout_building_defense_onmyodo$ level 2"
+ KoM_terrain_type_hideout_building_defense_onmyodo_3_cancel_negative_supply: "Unlock $KoM_hideout_building$ $KoM_hideout_building_defense_onmyodo$ level 3"
+
+ KoM_terrain_type_hideout_building_thaumaturgic_laboratory_cancel_negative_supply: "Unlock $KoM_hideout_building$ $KoM_hideout_building_thaumaturgic_laboratory$"
+ KoM_terrain_type_hideout_building_shrine_cancel_negative_supply: "Unlock $KoM_hideout_building$ $KoM_hideout_building_shrine$"
+ KoM_terrain_type_hideout_building_alchemic_garden_cancel_negative_supply: "Unlock $KoM_hideout_building$ $KoM_hideout_building_alchemic_garden$"
+ KoM_terrain_type_hideout_building_meditation_spot_cancel_negative_supply: "Unlock $KoM_hideout_building$ $KoM_hideout_building_meditation_spot$"
+ KoM_terrain_type_hideout_building_talisman_of_protection_cancel_negative_supply: "Unlock $KoM_hideout_building$ $KoM_hideout_building_talisman_of_protection$"
+ KoM_terrain_type_hideout_building_talisman_of_fortune_cancel_negative_supply: "Unlock $KoM_hideout_building$ $KoM_hideout_building_talisman_of_fortune$"

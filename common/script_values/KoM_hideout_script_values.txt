@@ -126,10 +126,3 @@ KoM_hideout_building_talisman_of_fortune_level = {
 		value = scope:building.var:building_level
 	}
 }
-KoM_hideout_building_talisman_of_peace_level = {
-	value = 0
-	if = {
-		limit = { KoM_hideout_has_building_trigger = { HIDEOUT = THIS ID = hideout_building_talisman_of_peace } }
-		value = scope:building.var:building_level
-	}
-}

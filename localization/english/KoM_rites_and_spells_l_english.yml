@@ -292,3 +292,56 @@
 
  KoM_rite_qingqiu_kuaisu_luxing_de_yishi: "#underline;TOOLTIP:KoM_rite_qingqiu_kuaisu_luxing_de_yishi_desc Qingqiu Kuaisu Luxing De Yishi#!"
  KoM_rite_qingqiu_kuaisu_luxing_de_yishi_desc: "Peak of [KoM_taoistic|E] [KoM_rites|E] used to achieve near instantaneous travel at higher levels. Efficiency of this [KoM_rite|E] is directly proportional to one's stage of #underline;TOOLTIP:KoM_rite_the_neidan_meditation_tt Neidan#!"
+
+ #Onmyodo
+ KoM_rite_dust_cleansing: "[Concept('KoM_spell', 'Ofuda')|E] for $KoM_rite_dust_cleansing_name$"
+ KoM_rite_dust_cleansing_name: "#underline;TOOLTIP:KoM_rite_dust_cleansing_tt Dust-Cleansing#!"
+ KoM_rite_dust_cleansing_tt: "A simple Ofuda which 'cleanses' any impurities in general area around itself, giving it nice 'polish'"
+
+ KoM_rite_breath_calming: "[Concept('KoM_spell', 'Ofuda')|E] for $KoM_rite_breath_calming_name$"
+ KoM_rite_breath_calming_name: "#underline;TOOLTIP:KoM_rite_breath_calming_tt Breath Calming#!"
+ KoM_rite_breath_calming_tt: "A simple Ofuda which calms 'breath' of it's owner, lowering overall stress in their life"
+
+ KoM_rite_shadow_protection: "[Concept('KoM_spell', 'Ofuda')|E] for $KoM_rite_shadow_protection_name$"
+ KoM_rite_shadow_protection_name: "#underline;TOOLTIP:KoM_rite_shadow_protection_tt Shadow Protection#!"
+ KoM_rite_shadow_protection_tt: "A simple Ofuda which protects it's owner from dangerous 'shadows', making it harder to scheme against them"
+
+ KoM_rite_yin_accumulation: "[Concept('KoM_spell', 'Ofuda')|E] for $KoM_rite_yin_accumulation_name$"
+ KoM_rite_yin_accumulation_name: "#underline;TOOLTIP:KoM_rite_yin_accumulation_tt Yin-Accumulation#!"
+ KoM_rite_yin_accumulation_tt: "Ofuda created to 'infuse' it's holder with Yin while not overdoing it. The effect of this ofuda culminates in making it's holder more dreadful"
+
+ KoM_rite_yang_accumulation: "[Concept('KoM_spell', 'Ofuda')|E] for $KoM_rite_yang_accumulation_name$"
+ KoM_rite_yang_accumulation_name: "#underline;TOOLTIP:KoM_rite_yang_accumulation_tt Yang-Accumulation#!"
+ KoM_rite_yang_accumulation_tt: "Ofuda created to 'infuse' it's holder with Yang while not overdoing it. The effect of this ofuda culminates in making it's holder more alive and fertile"
+
+ KoM_rite_seimeis_star: "[Concept('KoM_spell', 'Ofuda')|E] of $KoM_rite_seimeis_star_name$"
+ KoM_rite_seimeis_star_name: "#underline;TOOLTIP:KoM_rite_seimeis_star_tt Seimei's Star#!"
+ KoM_rite_seimeis_star_tt: "Ofuda made by Legendary [KoMGetTrait('KoM_onmyoji')] Abe no Seimei to protect against hostile spirits"
+
+ KoM_rite_yin_yang_balance: "[Concept('KoM_spell', 'Ofuda')|E] for $KoM_rite_yin_yang_balance_name$"
+ KoM_rite_yin_yang_balance_name: "#underline;TOOLTIP:KoM_rite_yin_yang_balance_tt Yin-Yang Balance#!"
+ KoM_rite_yin_yang_balance_tt: "Ofuda designed and written in goal of balancing Yin-Yang in it's owner"
+
+ KoM_rite_luck_of_heaven: "[Concept('KoM_spell', 'Ofuda')|E] for $KoM_rite_luck_of_heaven_name$"
+ KoM_rite_luck_of_heaven_name: "#underline;TOOLTIP:KoM_rite_luck_of_heaven_tt Luck of Heaven#!"
+ KoM_rite_luck_of_heaven_tt: "Complex Ofuda increasing luck of it's holder"
+
+ KoM_rite_kami_guidance: "[Concept('KoM_spell', 'Ofuda')|E] for $KoM_rite_kami_guidance_name$"
+ KoM_rite_kami_guidance_name: "#underline;TOOLTIP:KoM_rite_kami_guidance_tt Kami's Guidance#!"
+ KoM_rite_kami_guidance_tt: "Complex Ofuda which to be complete requires acceptance and support from Kami. It guidances it's owner accordingly what Kami left in it"
+
+ KoM_rite_kami_pact: "[Concept('KoM_spell', 'Ofuda')|E] for $KoM_rite_kami_pact_name$"
+ KoM_rite_kami_pact_name: "#underline;TOOLTIP:KoM_rite_kami_pact_tt Pact of Kami#!"
+ KoM_rite_kami_pact_tt: "Complex Ofuda which to be complete requires acceptance and support from Kami. It is infused with power of Kami, it guides it's owner exactly the same way Kami would"
+
+ KoM_rite_heaven_earth_purification: "[Concept('KoM_rite', 'Kokyu Ofuda')|E] for $KoM_rite_heaven_earth_purification_name$"
+ KoM_rite_heaven_earth_purification_name: "#underline;TOOLTIP:KoM_rite_heaven_earth_purification_tt Heaven-Earth Purification#!"
+ KoM_rite_heaven_earth_purification_tt: "A legendary Ofuda requiring massive amount of work to set-up correctly. It purifies large area from illnesses and impurities by power of Heaven and Earth"
+
+ KoM_rite_five_element_harmony: "[Concept('KoM_rite', 'Kokyu Ofuda')|E] for $KoM_rite_five_element_harmony_name$"
+ KoM_rite_five_element_harmony_name: "#underline;TOOLTIP:KoM_rite_five_element_harmony_tt Five-Element Harmony#!"
+ KoM_rite_five_element_harmony_tt: "A legendary Ofuda requiring massive amount of work to set-up correctly. It harmonizes five elements over large area granting peace and prosperity"
+
+ KoM_rite_yin_yang_harmony: "[Concept('KoM_spell', 'Ofuda')|E] for $KoM_rite_yin_yang_harmony_name$"
+ KoM_rite_yin_yang_harmony_name: "#underline;TOOLTIP:KoM_rite_yin_yang_harmony_tt Yin-Yang Harmony#!"
+ KoM_rite_yin_yang_harmony_tt: "A legendary Ofuda designed to harmonize Yin and Yang in it's owner, granting them true peace of mind"

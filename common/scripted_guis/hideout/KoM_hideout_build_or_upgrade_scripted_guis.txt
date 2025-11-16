@@ -108,7 +108,7 @@ KoM_build_or_upgrade_hideout_building_hideout_building_thaumaturgic_laboratory =
 	is_valid = {
 		KoM_hideout_has_building_has_not_level_trigger = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_thaumaturgic_laboratory LEVEL = 4 }
 		KoM_hideout_has_enough_resources_trigger = { HIDEOUT = location.var:KoM_local_hideout GOLD_COST = 250 PRESTIGE_COST = 200 PIETY_COST = 0 }
-		KoM_hideout_has_enough_school_xp_tier_4_trigger = { HIDEOUT = location.var:KoM_local_hideout SCHOOL = thaumaturgy ID = hideout_building_thaumaturgic_laboratory }
+		KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 25 AT_LEAST = yes }
 	}
 	effect = {
 		location.var:KoM_local_hideout = {
@@ -124,7 +124,7 @@ KoM_build_or_upgrade_hideout_building_hideout_building_shrine = {
 	is_valid = {
 		KoM_hideout_has_building_has_not_level_trigger = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_shrine LEVEL = 5 }
 		KoM_hideout_has_enough_resources_trigger = { HIDEOUT = location.var:KoM_local_hideout GOLD_COST = 250 PRESTIGE_COST = 200 PIETY_COST = 0 }
-		KoM_hideout_has_enough_school_xp_tier_5_trigger = { HIDEOUT = location.var:KoM_local_hideout SCHOOL = theurgy ID = hideout_building_shrine }
+		KoM_has_magic_school_xp_trigger = { SCHOOL = flag:theurgy VALUE = 25 AT_LEAST = yes }
 	}
 	effect = {
 		location.var:KoM_local_hideout = {
@@ -140,7 +140,7 @@ KoM_build_or_upgrade_hideout_building_hideout_building_alchemic_garden = {
 	is_valid = {
 		KoM_hideout_has_building_has_not_level_trigger = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_alchemic_garden LEVEL = 5 }
 		KoM_hideout_has_enough_resources_trigger = { HIDEOUT = location.var:KoM_local_hideout GOLD_COST = 250 PRESTIGE_COST = 200 PIETY_COST = 0 }
-		KoM_hideout_has_enough_school_xp_tier_5_trigger = { HIDEOUT = location.var:KoM_local_hideout SCHOOL = alchemy ID = hideout_building_alchemic_garden }
+		KoM_has_magic_school_xp_trigger = { SCHOOL = flag:alchemy VALUE = 50 AT_LEAST = yes }
 	}
 	effect = {
 		location.var:KoM_local_hideout = {
@@ -156,7 +156,7 @@ KoM_build_or_upgrade_hideout_building_hideout_building_meditation_spot = {
 	is_valid = {
 		KoM_hideout_has_building_has_not_level_trigger = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_meditation_spot LEVEL = 3 }
 		KoM_hideout_has_enough_resources_trigger = { HIDEOUT = location.var:KoM_local_hideout GOLD_COST = 250 PRESTIGE_COST = 200 PIETY_COST = 0 }
-		KoM_hideout_has_enough_school_xp_tier_3_trigger = { HIDEOUT = location.var:KoM_local_hideout SCHOOL = taoism ID = hideout_building_meditation_spot }
+		KoM_has_magic_school_xp_trigger = { SCHOOL = flag:taoism VALUE = 10 AT_LEAST = yes }
 	}
 	effect = {
 		location.var:KoM_local_hideout = {
@@ -172,7 +172,7 @@ KoM_build_or_upgrade_hideout_building_hideout_building_talisman_of_protection = 
 	is_valid = {
 		KoM_hideout_has_building_has_not_level_trigger = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_talisman_of_protection LEVEL = 5 }
 		KoM_hideout_has_enough_resources_trigger = { HIDEOUT = location.var:KoM_local_hideout GOLD_COST = 250 PRESTIGE_COST = 200 PIETY_COST = 0 }
-		KoM_hideout_has_enough_school_xp_tier_5_trigger = { HIDEOUT = location.var:KoM_local_hideout SCHOOL = onmyodo ID = hideout_building_defense_onmyodo }
+		KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 30 AT_LEAST = yes }
 	}
 	effect = {
 		location.var:KoM_local_hideout = {
@@ -188,27 +188,11 @@ KoM_build_or_upgrade_hideout_building_hideout_building_talisman_of_fortune = {
 	is_valid = {
 		KoM_hideout_has_building_has_not_level_trigger = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_talisman_of_fortune LEVEL = 5 }
 		KoM_hideout_has_enough_resources_trigger = { HIDEOUT = location.var:KoM_local_hideout GOLD_COST = 250 PRESTIGE_COST = 200 PIETY_COST = 0 }
-		KoM_hideout_has_enough_school_xp_tier_5_trigger = { HIDEOUT = location.var:KoM_local_hideout SCHOOL = onmyodo ID = hideout_building_defense_onmyodo }
+		KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 75 AT_LEAST = yes }
 	}
 	effect = {
 		location.var:KoM_local_hideout = {
 			KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_talisman_of_fortune }
-		}
-		KoM_hideout_building_cost_effect = { HIDEOUT = location.var:KoM_local_hideout GOLD_COST = 250 PRESTIGE_COST = 200 PIETY_COST = 0 }
-	}
-}
-KoM_build_or_upgrade_hideout_building_hideout_building_talisman_of_peace = {
-	is_shown = {
-		KoM_hideout_has_building_or_school_trigger = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_defense_onmyodo SCHOOL = onmyodo }
-	}
-	is_valid = {
-		KoM_hideout_has_building_has_not_level_trigger = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_talisman_of_peace LEVEL = 5 }
-		KoM_hideout_has_enough_resources_trigger = { HIDEOUT = location.var:KoM_local_hideout GOLD_COST = 250 PRESTIGE_COST = 200 PIETY_COST = 0 }
-		KoM_hideout_has_enough_school_xp_tier_5_trigger = { HIDEOUT = location.var:KoM_local_hideout SCHOOL = onmyodo ID = hideout_building_defense_onmyodo }
-	}
-	effect = {
-		location.var:KoM_local_hideout = {
-			KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_talisman_of_peace }
 		}
 		KoM_hideout_building_cost_effect = { HIDEOUT = location.var:KoM_local_hideout GOLD_COST = 250 PRESTIGE_COST = 200 PIETY_COST = 0 }
 	}

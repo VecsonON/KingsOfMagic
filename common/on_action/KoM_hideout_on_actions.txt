@@ -15,7 +15,6 @@
 		KoM_hideout_create_building_template_effect = { ID = hideout_building_meditation_spot MAX_LEVEL = 3 ACTIVE = no } #Taoism
 		KoM_hideout_create_building_template_effect = { ID = hideout_building_talisman_of_protection MAX_LEVEL = 5 ACTIVE = yes } #Onmyodo
 		KoM_hideout_create_building_template_effect = { ID = hideout_building_talisman_of_fortune MAX_LEVEL = 5 ACTIVE = yes } #Onmyodo
-		KoM_hideout_create_building_template_effect = { ID = hideout_building_talisman_of_peace MAX_LEVEL = 5 ACTIVE = yes } #Onmyodo
 
 	}
 }
@@ -125,7 +124,6 @@ KoM_hideout_generate_random = {
 					KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_defense_onmyodo }
 					KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_talisman_of_protection }
 					KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_talisman_of_fortune }
-					KoM_build_or_upgrade_hideout_building_effect = { ID = hideout_building_talisman_of_peace }
 				}
 			}
 		}
@@ -148,7 +146,6 @@ KoM_hideout_raid = {
 		random = { chance = 25 KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = THIS ID = hideout_building_meditation_spot VALUE = -1 } }
 		random = { chance = 25 KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = THIS ID = hideout_building_talisman_of_protection VALUE = -1 } }
 		random = { chance = 25 KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = THIS ID = hideout_building_talisman_of_fortune VALUE = -1 } }
-		random = { chance = 25 KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = THIS ID = hideout_building_talisman_of_peace VALUE = -1 } }
 	}
 }
 KoM_hideout_deletion = {

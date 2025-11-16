@@ -41,6 +41,13 @@ KoM_extra_rite_speed_mult = {
 		limit = { has_character_modifier = KoM_aurum_astralis_potion_modifier }
 		add = 0.5
 	}
+	if = {
+		limit = { any_character_artifact = { has_artifact_modifier = KoM_yin_yang_harmony_modifier } }
+		every_character_artifact = {
+			limit = { has_artifact_modifier = KoM_yin_yang_harmony_modifier }
+			add = 0.2
+		}
+	}
 }
 
 KoM_rite_time_6_months = 16.68

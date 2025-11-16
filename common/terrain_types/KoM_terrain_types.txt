@@ -76,7 +76,47 @@ KoM_terrain_type_alchemy_the_philosophers_stone_effect = { }
 #########################################
 KoM_terrain_type_taoism_the_neidan_meditation = { }
 KoM_terrain_type_taoism_qingqiu_huifu_yishi = { }
+KoM_terrain_type_taoism_meditation_spot = { }
 KoM_terrain_type_taoism_qiqiu_pingjing_xinling_de_yishi = { }
 KoM_terrain_type_taoism_qifu_yishi = { }
 KoM_terrain_type_taoism_qiqiu_mingri_zhishi_de_yishi = { }
 KoM_terrain_type_taoism_qingqiu_kuaisu_luxing_de_yishi = { }
+#########################################
+KoM_terrain_type_onmyodo_dust_cleansing = {}
+KoM_terrain_type_onmyodo_breath_calming = {}
+KoM_terrain_type_onmyodo_shadow_protection = {}
+##########################
+KoM_terrain_type_onmyodo_yin_accumulation = {}
+KoM_terrain_type_onmyodo_yang_accumulation = {}
+##########################
+KoM_terrain_type_onmyodo_seimeis_star = {}
+KoM_terrain_type_onmyodo_yin_yang_balance = {}
+KoM_terrain_type_onmyodo_luck_of_heaven = {}
+##########################
+KoM_terrain_type_onmyodo_kami_guidance = {}
+KoM_terrain_type_onmyodo_kami_pact = {}
+##########################
+KoM_terrain_type_onmyodo_heaven_earth_purification = {}
+KoM_terrain_type_onmyodo_five_element_harmony = {}
+KoM_terrain_type_onmyodo_yin_yang_harmony = {}
+
+#########################################Hideout Buildings
+KoM_terrain_type_hideout_building_defense_goetia_1 = { }
+KoM_terrain_type_hideout_building_defense_goetia_2 = { }
+KoM_terrain_type_hideout_building_defense_goetia_3 = { }
+KoM_terrain_type_hideout_building_defense_thaumaturgy_1 = { }
+KoM_terrain_type_hideout_building_defense_thaumaturgy_2 = { }
+KoM_terrain_type_hideout_building_defense_thaumaturgy_3 = { }
+KoM_terrain_type_hideout_building_defense_alchemy_1 = { }
+KoM_terrain_type_hideout_building_defense_alchemy_2 = { }
+KoM_terrain_type_hideout_building_defense_alchemy_3 = { }
+KoM_terrain_type_hideout_building_defense_onmyodo_1 = { }
+KoM_terrain_type_hideout_building_defense_onmyodo_2 = { }
+KoM_terrain_type_hideout_building_defense_onmyodo_3 = { }
+
+KoM_terrain_type_hideout_building_thaumaturgic_laboratory = { }
+KoM_terrain_type_hideout_building_shrine = { }
+KoM_terrain_type_hideout_building_alchemic_garden = { }
+KoM_terrain_type_hideout_building_meditation_spot = { }
+KoM_terrain_type_hideout_building_talisman_of_protection = {}
+KoM_terrain_type_hideout_building_talisman_of_fortune = {}

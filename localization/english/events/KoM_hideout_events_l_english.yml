@@ -46,7 +46,6 @@
  KoM_hideout_events.1002.hideout_building_meditation_spot: "$KoM_hideout_building_meditation_spot$ level [GetPlayer.GetCurrentLocation.MakeScope.Var('KoM_local_hideout').Story.MakeScope.ScriptValue('KoM_hideout_building_meditation_spot_level')|V0]/[Scope.Var('building_max_level').GetValue|0V]"
  KoM_hideout_events.1002.hideout_building_talisman_of_protection: "$KoM_hideout_building_talisman_of_protection$ level [GetPlayer.GetCurrentLocation.MakeScope.Var('KoM_local_hideout').Story.MakeScope.ScriptValue('KoM_hideout_building_talisman_of_protection_level')|V0]/[Scope.Var('building_max_level').GetValue|0V]"
  KoM_hideout_events.1002.hideout_building_talisman_of_fortune: "$KoM_hideout_building_talisman_of_fortune$ level [GetPlayer.GetCurrentLocation.MakeScope.Var('KoM_local_hideout').Story.MakeScope.ScriptValue('KoM_hideout_building_talisman_of_fortune_level')|V0]/[Scope.Var('building_max_level').GetValue|0V]"
- KoM_hideout_events.1002.hideout_building_talisman_of_peace: "$KoM_hideout_building_talisman_of_peace$ level [GetPlayer.GetCurrentLocation.MakeScope.Var('KoM_local_hideout').Story.MakeScope.ScriptValue('KoM_hideout_building_talisman_of_peace_level')|V0]/[Scope.Var('building_max_level').GetValue|0V]"
 
  KoM_hideout_events.1003.t: "Using $KoM_hideout_buildings$"
  KoM_hideout_events.1003.desc: "After some thinking, checking on my rooms in search of anything interesting is worth the time"
@@ -130,7 +129,6 @@
  KoM_hideout_events.3003.hideout_building_talisman_of_fortune: "A array of talismans... Giving feeling of confidence?"
  KoM_hideout_events.3003.hideout_building_talisman_of_fortune.tt: "Scavenging this $KoM_hideout_building$ won't affect this [KoM_hideout|E] negatively"
  KoM_hideout_events.3003.hideout_building_talisman_of_peace: "A array of talismans... Giving feeling of peace?"
- KoM_hideout_events.3003.hideout_building_talisman_of_peace.tt: "Scavenging this $KoM_hideout_building$ won't affect this [KoM_hideout|E] negatively"
 
  KoM_hideout_events.3004.t: "A bit too much"
  KoM_hideout_events.3004.desc: "As I were scavenging what I could from... everything? I suddenly heard a loud crack, that and very obvious sings that if I won't evacuate right now I will be buried underneath kilograms of dirt."

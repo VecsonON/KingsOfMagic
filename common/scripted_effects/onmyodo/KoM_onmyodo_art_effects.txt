@@ -1,0 +1,19 @@
+﻿KoM_create_ofuda_effect = {
+	save_scope_as = owner
+	set_artifact_rarity_$RARITY$ = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = KoM_rite_$NAME$
+		description = KoM_rite_$NAME$_tt
+		type = miscellaneous
+		visuals = artifact_scroll
+		modifier = KoM_$NAME$_modifier
+		wealth = scope:wealth
+		quality = scope:quality
+		save_scope_as = newly_created_artifact
+	}
+	KoM_save_tooltip = { LOC = $NAME$ }
+	custom_tooltip = KoM_create_ofuda_effect
+	scope:newly_created_artifact = { trigger_event = { on_action = KoM_onmyodo_extra_effects } }
+}

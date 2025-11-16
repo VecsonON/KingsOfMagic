@@ -62,9 +62,18 @@ KoM_magus = {
 
 	track = {
 		10 = { KoM_terrain_type_goetia_novice_cancel_negative_supply = yes }
-		25 = { KoM_terrain_type_goetia_apprentice_cancel_negative_supply = yes }
-		50 = { KoM_terrain_type_goetia_adept_cancel_negative_supply = yes }
-		75 = { KoM_terrain_type_goetia_expert_cancel_negative_supply = yes }
+		25 = { 
+			KoM_terrain_type_goetia_apprentice_cancel_negative_supply = yes 
+			KoM_terrain_type_hideout_building_defense_goetia_1_cancel_negative_supply = yes 
+		}
+		50 = { 
+			KoM_terrain_type_goetia_adept_cancel_negative_supply = yes 
+			KoM_terrain_type_hideout_building_defense_goetia_2_cancel_negative_supply = yes 
+		}
+		75 = { 
+			KoM_terrain_type_goetia_expert_cancel_negative_supply = yes 
+			KoM_terrain_type_hideout_building_defense_goetia_3_cancel_negative_supply = yes 
+		}
 		100 = { KoM_terrain_type_goetia_master_cancel_negative_supply = yes }
 	}
 
@@ -132,17 +141,21 @@ KoM_thaumaturge = {
 			KoM_terrain_type_thaumaturgy_action_sarcio_cancel_negative_supply = yes
 			KoM_terrain_type_thaumaturgy_action_damnum_cancel_negative_supply = yes
 			KoM_terrain_type_thaumaturgy_action_celeritas_cancel_negative_supply = yes
+			KoM_terrain_type_hideout_building_thaumaturgic_laboratory_cancel_negative_supply = yes 
+			KoM_terrain_type_hideout_building_defense_thaumaturgy_1_cancel_negative_supply = yes 
 		}
 		50 =  {
 			KoM_terrain_type_thaumaturgy_confirmation_angelus_cancel_negative_supply = yes
 			KoM_terrain_type_thaumaturgy_action_duo_cancel_negative_supply = yes
 			KoM_terrain_type_thaumaturgy_action_fortitudo_cancel_negative_supply = yes
 			KoM_terrain_type_thaumaturgy_action_stabilitas_cancel_negative_supply = yes
+			KoM_terrain_type_hideout_building_defense_thaumaturgy_2_cancel_negative_supply = yes 
 		}
 		75 =  {
 			KoM_terrain_type_thaumaturgy_declaration_locus_cancel_negative_supply = yes
 			KoM_terrain_type_thaumaturgy_action_opinio_cancel_negative_supply = yes
 			KoM_terrain_type_thaumaturgy_action_anima_cancel_negative_supply = yes
+			KoM_terrain_type_hideout_building_defense_thaumaturgy_3_cancel_negative_supply = yes 
 		}
 		100 =  {
 			KoM_terrain_type_thaumaturgy_confirmation_deus_cancel_negative_supply = yes
@@ -160,7 +173,10 @@ KoM_theurgist = {
 
 	track = {
 		10 = { KoM_terrain_type_theurgy_novice_cancel_negative_supply = yes }
-		25 = { KoM_terrain_type_theurgy_apprentice_cancel_negative_supply = yes }
+		25 = { 
+			KoM_terrain_type_theurgy_apprentice_cancel_negative_supply = yes 
+			KoM_terrain_type_hideout_building_shrine_cancel_negative_supply = yes 
+		}
 		50 = { KoM_terrain_type_theurgy_adept_cancel_negative_supply = yes }
 		75 = { KoM_terrain_type_theurgy_expert_cancel_negative_supply = yes }
 		100 = { KoM_terrain_type_theurgy_master_cancel_negative_supply = yes }
@@ -227,16 +243,20 @@ KoM_alchemist = {
 			KoM_terrain_type_alchemy_elixir_of_ash_and_salt_cancel_negative_supply = yes
 			KoM_terrain_type_alchemy_dew_of_morning_stars_cancel_negative_supply = yes
 			KoM_terrain_type_alchemy_aqua_sapientiae_cancel_negative_supply = yes
+			KoM_terrain_type_hideout_building_defense_alchemy_1_cancel_negative_supply = yes
 		}
 		50 =  {
 			KoM_terrain_type_alchemy_elixir_of_the_solar_mind_cancel_negative_supply = yes
 			KoM_terrain_type_alchemy_draught_of_the_inner_flame_cancel_negative_supply = yes
 			KoM_terrain_type_alchemy_tears_of_the_red_king_cancel_negative_supply = yes
+			KoM_terrain_type_hideout_building_alchemic_garden_cancel_negative_supply = yes
+			KoM_terrain_type_hideout_building_defense_alchemy_2_cancel_negative_supply = yes
 		}
 		75 =  {
 			KoM_terrain_type_alchemy_blood_of_the_phoenix_cancel_negative_supply = yes
 			KoM_terrain_type_alchemy_elixir_rubedo_cancel_negative_supply = yes
 			KoM_terrain_type_alchemy_homunculi_cancel_negative_supply = yes
+			KoM_terrain_type_hideout_building_defense_alchemy_3_cancel_negative_supply = yes
 		}
 		100 =  {
 			KoM_terrain_type_alchemy_elixir_vitae_cancel_negative_supply = yes
@@ -253,7 +273,10 @@ KoM_daoshi = {
 	KoM_terrain_type_taoism_the_neidan_meditation_cancel_negative_supply = yes
 
 	track = {
-		10 = { KoM_terrain_type_taoism_qingqiu_huifu_yishi_cancel_negative_supply = yes }
+		10 = { 
+			KoM_terrain_type_taoism_qingqiu_huifu_yishi_cancel_negative_supply = yes
+			KoM_terrain_type_hideout_building_meditation_spot_cancel_negative_supply = yes
+		}
 		25 = { KoM_terrain_type_taoism_qiqiu_pingjing_xinling_de_yishi_cancel_negative_supply = yes }
 		50 = { KoM_terrain_type_taoism_qifu_yishi_cancel_negative_supply = yes }
 		75 = { KoM_terrain_type_taoism_qiqiu_mingri_zhishi_de_yishi_cancel_negative_supply = yes }
@@ -266,11 +289,34 @@ KoM_onmyoji = {
 	flag = mage
 
 	track = {
-		10 = { }
-		25 = { }
-		50 = { }
-		75 = { }
-		100 = { }
+		10 = {
+			KoM_terrain_type_onmyodo_dust_cleansing_cancel_negative_supply = yes
+			KoM_terrain_type_onmyodo_breath_calming_cancel_negative_supply = yes
+			KoM_terrain_type_onmyodo_shadow_protection_cancel_negative_supply = yes
+		}
+		25 = {
+			KoM_terrain_type_onmyodo_yin_accumulation_cancel_negative_supply = yes
+			KoM_terrain_type_onmyodo_yang_accumulation_cancel_negative_supply = yes
+			KoM_terrain_type_hideout_building_talisman_of_protection_cancel_negative_supply = yes
+			KoM_terrain_type_hideout_building_defense_onmyodo_1_cancel_negative_supply = yes
+		}
+		50 = {
+			KoM_terrain_type_onmyodo_seimeis_star_cancel_negative_supply = yes
+			KoM_terrain_type_onmyodo_yin_yang_balance_cancel_negative_supply = yes
+			KoM_terrain_type_onmyodo_luck_of_heaven_cancel_negative_supply = yes
+			KoM_terrain_type_hideout_building_defense_onmyodo_2_cancel_negative_supply = yes
+		}
+		75 = {
+			KoM_terrain_type_onmyodo_kami_guidance_cancel_negative_supply = yes
+			KoM_terrain_type_onmyodo_kami_pact_cancel_negative_supply = yes
+			KoM_terrain_type_hideout_building_talisman_of_fortune_cancel_negative_supply = yes
+			KoM_terrain_type_hideout_building_defense_onmyodo_3_cancel_negative_supply = yes
+		}
+		100 = {
+			KoM_terrain_type_onmyodo_heaven_earth_purification_cancel_negative_supply = yes
+			KoM_terrain_type_onmyodo_five_element_harmony_cancel_negative_supply = yes
+			KoM_terrain_type_onmyodo_yin_yang_harmony_cancel_negative_supply = yes
+		}
 	}
 
 	icon = onmyoji.dds

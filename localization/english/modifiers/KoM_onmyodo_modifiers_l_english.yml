@@ -1,0 +1,24 @@
+﻿l_english:
+ KoM_dust_cleansing_modifier: "Dust-Cleansing"
+ KoM_breath_calming_modifier: "Breath Calming"
+ KoM_shadow_protection_modifier: "Shadow Protection"
+
+ KoM_yin_accumulation_modifier: "Yin-Accumulation"
+ KoM_yang_accumulation_modifier: "Yang-Accumulation"
+
+ KoM_seimeis_star_modifier: "Seimei's Star"
+ KoM_yin_yang_balance_modifier: "Yin-Yang Balance"
+ KoM_luck_of_heaven_modifier: "Luck of Heavens"
+
+ KoM_kami_guidance_modifier: "Kami Guidance"
+ KoM_kami_pact_modifier: "Kami Pact"
+ KoM_kami_pact_modifier_desc: "Become one of these [modifiers|E]: [GetModifier('KoM_kami_pact_diplomacy_modifier').GetNameWithTooltip], [GetModifier('KoM_kami_pact_martial_modifier').GetNameWithTooltip], [GetModifier('KoM_kami_pact_stewardship_modifier').GetNameWithTooltip], [GetModifier('KoM_kami_pact_intrigue_modifier').GetNameWithTooltip], [GetModifier('KoM_kami_pact_learning_modifier').GetNameWithTooltip]"
+ KoM_kami_pact_diplomacy_modifier: "Kami Pact: [diplomacy|E]"
+ KoM_kami_pact_martial_modifier: "Kami Pact: [martial|E]"
+ KoM_kami_pact_stewardship_modifier: "Kami Pact: [stewardship|E]"
+ KoM_kami_pact_intrigue_modifier: "Kami Pact: [intrigue|E]"
+ KoM_kami_pact_learning_modifier: "Kami Pact: [learning|E]"
+
+ KoM_heaven_earth_purification_modifier: "Heaven-Earth Purification"
+ KoM_five_element_harmony_modifier: "Five-Element Harmony"
+ KoM_yin_yang_harmony_modifier: "Yin-Yang Harmony"

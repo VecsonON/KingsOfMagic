@@ -68,10 +68,6 @@
  KoM_hideout_building_talisman_of_fortune_tt: "Array of talismans of many sizes, all focused on inducing balance of Yin and Yang with goal of pushing away any misfortune from [KoM_hideout|E]'s owner\n\nEffects:\n$KoM_hideout_building_talisman_of_fortune_effect$"
  KoM_hideout_building_talisman_of_fortune_effect: "$BULLET_WITH_TAB$Level 1: [KoMGetPerk('KoM_hideout_building_talisman_of_fortune_level_1_perk')]\n$BULLET_WITH_TAB$Level 2: [KoMGetPerk('KoM_hideout_building_talisman_of_fortune_level_2_perk')]\n$BULLET_WITH_TAB$Level 3: [KoMGetPerk('KoM_hideout_building_talisman_of_fortune_level_3_perk')]\n$BULLET_WITH_TAB$Level 4: [KoMGetPerk('KoM_hideout_building_talisman_of_fortune_level_4_perk')]\n$BULLET_WITH_TAB$Level 5: [KoMGetPerk('KoM_hideout_building_talisman_of_fortune_level_5_perk')]"
 
- KoM_hideout_building_talisman_of_peace: "#underline;TOOLTIP:KoM_hideout_building_talisman_of_peace_tt Talismans of Peace#!"
- KoM_hideout_building_talisman_of_peace_tt: "A complex 'circle' of talismans, all designed to perfectly manipulate Yin and Yang in area, inducing Peace upon world.\n\nEffects:\n$KoM_hideout_building_talisman_of_peace_effect$"
- KoM_hideout_building_talisman_of_peace_effect: "$BULLET_WITH_TAB$Level 1: [KoMGetPerk('KoM_hideout_building_talisman_of_peace_level_1_perk')]\n$BULLET_WITH_TAB$Level 2: [KoMGetPerk('KoM_hideout_building_talisman_of_peace_level_2_perk')]\n$BULLET_WITH_TAB$Level 3: [KoMGetPerk('KoM_hideout_building_talisman_of_peace_level_3_perk')]\n$BULLET_WITH_TAB$Level 4: [KoMGetPerk('KoM_hideout_building_talisman_of_peace_level_4_perk')]\n$BULLET_WITH_TAB$Level 5: [KoMGetPerk('KoM_hideout_building_talisman_of_peace_level_5_perk')]"
-
  ### Perks
  KoM_hideout_building_shrine_level_1_perk_name: "$KoM_hideout_building_shrine$ Level 1"
  KoM_hideout_building_shrine_level_2_perk_name: "$KoM_hideout_building_shrine$ Level 2"
@@ -90,12 +86,6 @@
  KoM_hideout_building_talisman_of_fortune_level_3_perk_name: "$KoM_hideout_building_talisman_of_fortune$ Level 3"
  KoM_hideout_building_talisman_of_fortune_level_4_perk_name: "$KoM_hideout_building_talisman_of_fortune$ Level 4"
  KoM_hideout_building_talisman_of_fortune_level_5_perk_name: "$KoM_hideout_building_talisman_of_fortune$ Level 5"
-
- KoM_hideout_building_talisman_of_peace_level_1_perk_name: "$KoM_hideout_building_talisman_of_peace$ Level 1"
- KoM_hideout_building_talisman_of_peace_level_2_perk_name: "$KoM_hideout_building_talisman_of_peace$ Level 2"
- KoM_hideout_building_talisman_of_peace_level_3_perk_name: "$KoM_hideout_building_talisman_of_peace$ Level 3"
- KoM_hideout_building_talisman_of_peace_level_4_perk_name: "$KoM_hideout_building_talisman_of_peace$ Level 4"
- KoM_hideout_building_talisman_of_peace_level_5_perk_name: "$KoM_hideout_building_talisman_of_peace$ Level 5"
 
  ### RANDOM NAMES
 

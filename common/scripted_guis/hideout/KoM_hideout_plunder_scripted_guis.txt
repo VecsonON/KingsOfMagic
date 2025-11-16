@@ -214,14 +214,3 @@ KoM_scavenge_hideout_building_hideout_building_talisman_of_fortune = {
 		KoM_study_magic_school_effect = { SCHOOL = flag:onmyodo COUNT = scope:random_num }
 	}
 }
-KoM_scavenge_hideout_building_hideout_building_talisman_of_peace = {
-	effect = {
-		custom_tooltip = KoM_hideout_events.3003.hideout_building_talisman_of_peace.tt
-		KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_talisman_of_peace VALUE = -1 }
-		save_scope_value_as = {
-			name = random_num
-			value = { 3 7 }
-		}
-		KoM_study_magic_school_effect = { SCHOOL = flag:onmyodo COUNT = scope:random_num }
-	}
-}

@@ -70,3 +70,5 @@
 
  KoM_hideout_ai_read_effect_success: "$KoM_hideout_raid$ succeeded at [KoM_hideout.MakeScope.Var('hideout_character').Char.GetFirstNameNoTooltip|V]"
  KoM_hideout_ai_read_effect_success_tt: "$KoM_hideout_raid$ succeeded at [KoM_hideout.MakeScope.Var('hideout_character').Char.GetFirstNameNoTooltip|V] #weak [KoM_hideout_temp.MakeScope.Var('hideout_location').GetName]#!!"
+
+ KoM_create_ofuda_effect: "Newly created [Concept('KoM_spell', 'Ofuda')|E] will have [GetModifier(Concatenate(Concatenate('KoM_',SCOPE.GetFlagName('saved_tooltip')), '_modifier')).GetNameWithTooltip] [modifier|E]"

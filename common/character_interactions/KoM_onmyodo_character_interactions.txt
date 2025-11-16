@@ -1,0 +1,211 @@
+﻿KoM_onmyodo_interaction = {
+	category = interaction_category_religion
+	icon = KoM_onmyodo_interaction
+	desc = KoM_onmyodo_interaction_desc
+
+	use_diplomatic_range = no
+
+	is_shown = {
+		scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:onmyodo } }
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 10 AT_LEAST = yes } }
+		KoM_must_self_cast_trigger = yes
+	}
+
+	send_option = {
+		is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 10 AT_LEAST = yes } } }
+		flag = dust_cleansing
+		localization = KoM_rite_dust_cleansing
+	}
+	send_option = {
+		is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 10 AT_LEAST = yes } } }
+		flag = breath_calming
+		localization = KoM_rite_breath_calming
+	}
+	send_option = {
+		is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 10 AT_LEAST = yes } } }
+		flag = shadow_protection
+		localization = KoM_rite_shadow_protection
+	}
+
+	send_option = {
+		is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 30 AT_LEAST = yes } } }
+		flag = yin_accumulation
+		localization = KoM_rite_yin_accumulation
+	}
+	send_option = {
+		is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 30 AT_LEAST = yes } } }
+		flag = yang_accumulation
+		localization = KoM_rite_yang_accumulation
+	}
+
+	send_option = {
+		is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 50 AT_LEAST = yes } } }
+		flag = seimeis_star
+		localization = KoM_rite_seimeis_star
+	}
+	send_option = {
+		is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 50 AT_LEAST = yes } } }
+		flag = yin_yang_balance
+		localization = KoM_rite_yin_yang_balance
+	}
+	send_option = {
+		is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 50 AT_LEAST = yes } } }
+		flag = luck_of_heaven
+		localization = KoM_rite_luck_of_heaven
+	}
+
+	send_option = {
+		is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 75 AT_LEAST = yes } } }
+		flag = kami_guidance
+		localization = KoM_rite_kami_guidance
+	}
+	send_option = {
+		is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 75 AT_LEAST = yes } } }
+		flag = kami_pact
+		localization = KoM_rite_kami_pact
+	}
+
+	# send_option = {
+	# 	is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 100 AT_LEAST = yes } } }
+	# 	flag = heaven_earth_purification
+	# 	localization = KoM_rite_heaven_earth_purification
+	# }
+	# send_option = {
+	# 	is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 100 AT_LEAST = yes } } }
+	# 	flag = five_element_harmony
+	# 	localization = KoM_rite_five_element_harmony
+	# }
+	send_option = {
+		is_valid = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 100 AT_LEAST = yes } } }
+		flag = yin_yang_harmony
+		localization = KoM_rite_yin_yang_harmony
+	}
+
+	can_send = {
+		custom_tooltip = {
+			text = KoM_select_art
+			OR = {
+				scope:dust_cleansing ?= yes
+				scope:breath_calming ?= yes
+				scope:shadow_protection ?= yes
+				scope:yin_accumulation ?= yes
+				scope:yang_accumulation ?= yes
+				scope:seimeis_star ?= yes
+				scope:yin_yang_balance ?= yes
+				scope:luck_of_heaven ?= yes
+				scope:kami_guidance ?= yes
+				scope:kami_pact ?= yes
+				scope:yin_yang_harmony ?= yes
+			}
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			remove_short_term_gold = 100
+			add_stress = 40
+			switch = {
+				trigger = yes
+				scope:dust_cleansing = { KoM_create_ofuda_effect = { RARITY = common NAME = dust_cleansing } }
+				scope:breath_calming = { KoM_create_ofuda_effect = { RARITY = common NAME = breath_calming } }
+				scope:shadow_protection = { KoM_create_ofuda_effect = { RARITY = common NAME = shadow_protection } }
+
+				scope:yin_accumulation = { KoM_create_ofuda_effect = { RARITY = common NAME = yin_accumulation } }
+				scope:yang_accumulation = { KoM_create_ofuda_effect = { RARITY = common NAME = yang_accumulation } }
+
+				scope:seimeis_star = { KoM_create_ofuda_effect = { RARITY = masterwork NAME = seimeis_star } }
+				scope:yin_yang_balance = { KoM_create_ofuda_effect = { RARITY = masterwork NAME = yin_yang_balance } }
+				scope:luck_of_heaven = { KoM_create_ofuda_effect = { RARITY = masterwork NAME = luck_of_heaven } }
+
+				scope:kami_guidance = { KoM_create_ofuda_effect = { RARITY = famed NAME = kami_guidance } }
+				scope:kami_pact = { KoM_create_ofuda_effect = { RARITY = famed NAME = kami_pact } }
+
+				scope:yin_yang_harmony = { KoM_create_ofuda_effect = { RARITY = illustrious NAME = yin_yang_harmony } }
+			}
+		}
+	}
+
+	auto_accept = yes
+
+	ai_will_do = { base = 0 }
+}
+KoM_onmyodo_title_interaction = {
+	category = interaction_category_religion
+	icon = KoM_onmyodo_interaction
+	desc = KoM_onmyodo_interaction_desc
+
+	use_diplomatic_range = no
+
+	target_type = title
+	target_filter = recipient_domain_titles
+
+	is_shown = {
+		scope:recipient = { is_landed = yes }
+		scope:actor = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = flag:onmyodo } }
+		scope:actor = { scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:onmyodo VALUE = 100 AT_LEAST = yes } } }
+	}
+
+	has_valid_target = { exists = scope:target }
+
+	send_option = {
+		flag = heaven_earth_purification
+		localization = KoM_rite_heaven_earth_purification
+	}
+	send_option = {
+		flag = five_element_harmony
+		localization = KoM_rite_five_element_harmony
+	}
+
+	can_send = {
+		custom_tooltip = {
+			text = KoM_select_art
+			OR = {
+				scope:heaven_earth_purification ?= yes
+				scope:five_element_harmony ?= yes
+			}
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			switch = {
+				trigger = scope:target.tier
+				tier_hegemony = { remove_short_term_gold = 500 add_stress = 100 }
+				tier_empire = { remove_short_term_gold = 400 add_stress = 80 }
+				tier_kingdom = { remove_short_term_gold = 300 add_stress = 60 }
+				tier_duchy = { remove_short_term_gold = 100 add_stress = 40 }
+				tier_county = { remove_short_term_gold = 50 add_stress = 20 }
+			}
+			switch = {
+				trigger = yes
+				scope:heaven_earth_purification = { 
+					scope:target = {
+						every_de_jure_county = {
+							add_county_modifier = {
+								modifier = KoM_heaven_earth_purification_modifier
+								years = 25
+							}
+						}
+					}
+				}
+				scope:five_element_harmony = { 
+					scope:target = {
+						every_de_jure_county = {
+							add_county_modifier = {
+								modifier = KoM_five_element_harmony_modifier
+								years = 25
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	auto_accept = yes
+
+	ai_will_do = { base = 0 }
+}
