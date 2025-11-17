@@ -20,7 +20,7 @@
  game_concept_KoM_thaumaturgy: "Thaumaturgy"
  game_concept_KoM_thaumaturgic: "Thaumaturgic"
  game_concept_KoM_thaumaturge: "Thaumaturge"
- game_concept_KoM_thaumaturgy_desc: "#bold Thaumaturgy#! is an [KoM_magick|E] school of wonder-working.\n\nBeyond material world, there exist something larger, something primordial. Thaumaturge's want to influence it to change world around them as they fit. They cast spells and conduct rites to manipulate it to do their biding.\n\n$KoM_witchcraft_info$\n\n$KoM_magic_ai_info$"
+ game_concept_KoM_thaumaturgy_desc: "#bold Thaumaturgy#! is an [KoM_magick|E] school of wonder-working.\n\nBeyond material world, there exist something larger, something primordial. Thaumaturge's want to influence it to change world around them as they fit. They cast spells and conduct rites to manipulate it to do their biding.\n\n$KoM_witchcraft_info$"
 
  game_concept_KoM_theurgy: "Theurgy"
  game_concept_KoM_theurgic: "Theurgic"

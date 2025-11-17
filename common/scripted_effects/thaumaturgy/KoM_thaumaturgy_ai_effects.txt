@@ -1,0 +1,30 @@
+﻿KoM_ai_thaumaturgy_interaction_effect = {
+	if = {
+		limit = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 100 AT_LEAST = yes } }
+		scope:recipient = { KoM_add_confirmation_modifier_character_effect = { MODIFIER = $MODIFIER$_tier_4_modifier YEARS = 5 } }
+	}
+	else_if = {
+		limit = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 50 AT_LEAST = yes } }
+		scope:recipient = { KoM_add_confirmation_modifier_character_effect = { MODIFIER = $MODIFIER$_tier_3_modifier YEARS = 5 } }
+	}
+	else_if = {
+		limit = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 30 AT_LEAST = yes } }
+		scope:recipient = { KoM_add_confirmation_modifier_character_effect = { MODIFIER = $MODIFIER$_tier_2_modifier YEARS = 5 } }
+	}
+	else= { scope:recipient = { KoM_add_confirmation_modifier_character_effect = { MODIFIER = $MODIFIER$_tier_1_modifier YEARS = 5 } } }
+}
+KoM_ai_thaumaturgy_interaction_save_confirmation_effect = {
+	if = {
+		limit = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 100 AT_LEAST = yes } }
+		save_scope_value_as = { name = scaling value = 4 }
+	}
+	else_if = {
+		limit = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 50 AT_LEAST = yes } }
+		save_scope_value_as = { name = scaling value = 3 }
+	}
+	else_if = {
+		limit = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 30 AT_LEAST = yes } }
+		save_scope_value_as = { name = scaling value = 2 }
+	}
+	else= { save_scope_value_as = { name = scaling value = 1 } }
+}
