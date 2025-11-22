@@ -1,4 +1,4 @@
-version="0.8"
+version="1.0"
 tags={
 	"Alternative History"
 	"Total Conversion"
