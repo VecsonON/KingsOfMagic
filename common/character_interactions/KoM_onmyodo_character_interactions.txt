@@ -182,24 +182,24 @@ KoM_onmyodo_title_interaction = {
 			switch = {
 				trigger = yes
 				scope:heaven_earth_purification = { 
-					scope:target = {
-						every_de_jure_county = {
-							add_county_modifier = {
-								modifier = KoM_heaven_earth_purification_modifier
-								years = 25
-							}
-						}
+					KoM_start_rite_effect = {
+						ID = heaven_earth_purification
+						MONTHLY_PROGRESS = KoM_rite_time_1_year
+						TARGET = scope:target
+						SCHOOL = onmyodo
 					}
+					custom_tooltip = KoM_rite_showcase
+					show_as_tooltip = { KoM_heaven_earth_purification_effect = { TARGET = scope:target } }
 				}
 				scope:five_element_harmony = { 
-					scope:target = {
-						every_de_jure_county = {
-							add_county_modifier = {
-								modifier = KoM_five_element_harmony_modifier
-								years = 25
-							}
-						}
+					KoM_start_rite_effect = {
+						ID = five_element_harmony
+						MONTHLY_PROGRESS = KoM_rite_time_1_year
+						TARGET = scope:target
+						SCHOOL = onmyodo
 					}
+					custom_tooltip = KoM_rite_showcase
+					show_as_tooltip = { KoM_five_element_harmony_effect = { TARGET = scope:target } }
 				}
 			}
 		}

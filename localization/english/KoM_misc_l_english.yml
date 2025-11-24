@@ -54,6 +54,7 @@
  NOT_HAS_TRAIT_WITH_FLAG_TAOISM_STAGE_TRIGGER: "You must have any of these [traits|E]: [KoMGetTrait('KoM_lianjing_huaqi')], [KoMGetTrait('KoM_lianqi_huashen')], [KoMGetTrait('KoM_lianshen_huanxu')] or [KoMGetTrait('KoM_xian')]"
 
  KoM_rumors_of_hideout_modifier: "Rumors about Hideout"
+ KoM_rumors_of_hideout_modifier_desc: "#flavor In this [province|E], there are rumors about unusual activity in nearby wilderness. Some suspect [KoM_hideout|E], other suspect 'normal' activity of local wildlife#!\n\nMaybe visiting this [province|E] using #V $activity_KoM_visit_hideout$ [activity|E]#! will bring some new information?"
  KoM_home_advantage_modifier: "Home Advantage"
 
  KoM_hideout_create_empty_hideout_effect: "A new [KoM_hideout|E] will be built in [SCOPE.sProvince('KoM_location').GetName]"

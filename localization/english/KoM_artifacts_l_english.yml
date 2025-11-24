@@ -13,43 +13,43 @@
  KoM_artifact_grimoire_of_onmyodo_vecson_desc: "Written by being from outside of the world, it contains every [KoM_onmyodo|E] teaching."
 
  KoM_artifact_ars_goetia_name: "Ars Goetia"
- KoM_artifact_ars_goetia_desc: "Ars Goetia"
+ KoM_artifact_ars_goetia_desc: "Many claim the author-ship of Ars Goetia, some speculate that Solomon himself wrote this [KoM_grimoire|E]. Nevertheless, this books contains many secrets some would like to uncover"
 
  KoM_artifact_ars_theurgia_goetia_name: "Ars Theurgia Goetia"
- KoM_artifact_ars_theurgia_goetia_desc: "Ars Theurgia Goetia"
+ KoM_artifact_ars_theurgia_goetia_desc: "Obviously much newer from Ars Goetia, Ars Theurgia Goetia still is very useful book for any [KoM_magus|E] willing to read it"
 
  KoM_artifact_magical_treatise_name: "Magical Treatise"
- KoM_artifact_magical_treatise_desc: "Magical Treatise"
+ KoM_artifact_magical_treatise_desc: "Mostly destroyed, this [KoM_grimoire|E] is consider the source for Ars Goetia and other books in The Key of Solomon. Even destroyed, one can learn very much from it"
 
 
  KoM_artifact_corpus_hermeticum_name: "Corpus Hermeticum"
- KoM_artifact_corpus_hermeticum_desc: "Corpus Hermeticum"
+ KoM_artifact_corpus_hermeticum_desc: "A collection of 17 Greek writings, attributed to legendary Hermes Trismegistus. It is the most influential [KoM_thaumaturgic|E] [KoM_grimoire|E]"
 
  KoM_artifact_liber_hermetis_name: "Liber Hermetis"
- KoM_artifact_liber_hermetis_desc: "Liber Hermetis"
+ KoM_artifact_liber_hermetis_desc: "One of writings that makes Corpus Hermeticum, Liber Hermetis contains important teaching of Astrology"
 
  KoM_artifact_asclepius_name: "Asclepius"
- KoM_artifact_asclepius_desc: "Asclepius"
+ KoM_artifact_asclepius_desc: "Nearly lost, Asclepius contains 'introduction' ot works of [KoM_thaumaturgy|E]"
 
 
  KoM_artifact_theurgia_name: "Theurgia"
- KoM_artifact_theurgia_desc: "Theurgia"
+ KoM_artifact_theurgia_desc: "[KoM_grimoire|E] considered the corner stone of whole [KoM_theurgy|E], it contains the best introduction to work of God"
 
  KoM_artifact_liber_de_causis_name: "Liber de Causis"
- KoM_artifact_liber_de_causis_desc: "Liber de Causis"
+ KoM_artifact_liber_de_causis_desc: "Famous [KoM_theurgic|E] [KoM_grimoire|E] of unknown origins, though it was translated to Latin from Arabic. There are rumors about different book with the same name used by heretical [KoM_alchemists|E]"
 
  KoM_artifact_chaldean_oracles_name: "Chaldean Oracles"
- KoM_artifact_chaldean_oracles_desc: "Chaldean Oracles"
+ KoM_artifact_chaldean_oracles_desc: "A set of spiritual texts often used as [KoM_theurgic|E] [KoM_grimoire|E]"
 
 
  KoM_artifact_tabula_smaragdina_name: "Tabula Smaragdina"
- KoM_artifact_tabula_smaragdina_desc: "Tabula Smaragdina"
+ KoM_artifact_tabula_smaragdina_desc: "The most important [KoM_alchemic|E] [KoM_grimoire|E] containing everything aspiring or already proficient [KoM_alchemist|E] need"
 
  KoM_artifact_isis_the_prophetess_to_her_son_horus_name: "Isis the Prophetess to her son Horus"
- KoM_artifact_isis_the_prophetess_to_her_son_horus_desc: "Isis the Prophetess to her son Horus"
+ KoM_artifact_isis_the_prophetess_to_her_son_horus_desc: "Lesser known [KoM_grimoire|E] containing Egyptian approach to [KoM_alchemy|E]"
 
  KoM_artifact_the_book_of_causes_name: "The Book of Causes"
- KoM_artifact_the_book_of_causes_desc: "The Book of Causes"
+ KoM_artifact_the_book_of_causes_desc: "Famous [KoM_theurgic|E] [KoM_grimoire|E] of unknown origins, though it was translated to Latin from Arabic. There are rumors about different book with the same name used by fanatical [KoM_theurgists|E]"
 
 
  ################

@@ -17,3 +17,26 @@
 	custom_tooltip = KoM_create_ofuda_effect
 	scope:newly_created_artifact = { trigger_event = { on_action = KoM_onmyodo_extra_effects } }
 }
+
+KoM_heaven_earth_purification_effect = {
+	$TARGET$ = { 
+		every_de_jure_county = {
+			add_county_modifier = {
+				modifier = KoM_heaven_earth_purification_modifier
+				years = 25
+			}
+		}
+	}
+	trigger_event = { on_action = KoM_after_rite }
+}
+KoM_five_element_harmony_effect = {
+	$TARGET$ = { 
+		every_de_jure_county = {
+			add_county_modifier = {
+				modifier = KoM_five_element_harmony_modifier
+				years = 25
+			}
+		}
+	}
+	trigger_event = { on_action = KoM_after_rite }
+}

@@ -343,6 +343,9 @@ KoM_completed_rite = {
 			flag:qifu_yishi = { KoM_qifu_yishi_effect = { TARGET = var:current_rite.var:target } }
 			flag:qiqiu_mingri_zhishi_de_yishi = { KoM_qiqiu_mingri_zhishi_de_yishi_effect = { TARGET = var:current_rite.var:target } }
 			flag:qingqiu_kuaisu_luxing_de_yishi = { KoM_qingqiu_kuaisu_luxing_de_yishi_effect = yes }
+
+			flag:heaven_earth_purification = { KoM_heaven_earth_purification_effect = { TARGET = var:current_rite.var:target } }
+			flag:five_element_harmony = { KoM_five_element_harmony_effect = { TARGET = var:current_rite.var:target } }
 		}
 	}
 }

@@ -25,11 +25,13 @@
  game_concept_KoM_theurgy: "Theurgy"
  game_concept_KoM_theurgic: "Theurgic"
  game_concept_KoM_theurgist: "Theurgist"
+ game_concept_KoM_theurgists: "Theurgists"
  game_concept_KoM_theurgy_desc: "#bold Theurgy#! is an [KoM_magick|E] school of divine.\n\nThere is God, and they are all-powerful. Normally God watches over creation without interfering, but especially faithful can prey for their glance, and even beg for world to change. Theurgists call upon God and their Angels to hopefully get change they want."
 
  game_concept_KoM_alchemy: "Alchemy"
  game_concept_KoM_alchemic: "Alchemic"
  game_concept_KoM_alchemist: "Alchemist"
+ game_concept_KoM_alchemists: "Alchemists"
  game_concept_KoM_alchemy_desc: "#bold Alchemy#! is an [KoM_magick|E] school of mattery.\n\nWhatever god exists, or not. One that we can be sure exist is our material world and it is full of tools of power, one just has to know where to look. Alchemists seek to understand material world to perfection, and to use it's power to achieve what they want.\n\n$KoM_witchcraft_info$"
 
  game_concept_KoM_taoism: "Taoism"
@@ -47,7 +49,7 @@
 
  game_concept_KoM_rite: "Rite"
  game_concept_KoM_rites: "Rites"
- game_concept_KoM_rite_desc: "A #bold Rite#! is a formalized, symbolic action that embodies a spiritual or cosmic truth. It is less about direct manipulation and more about participation in a sacred order, but they can affect world.\n\nIn [KingsOfMagic|E] Rites are one of two magical actions you can do, other one are [KoM_spells|E]. Rites are not instantaneous, and require time to complete and often are default way [Concept('KoM_magick', 'Schools of Magick')|E] do magic."
+ game_concept_KoM_rite_desc: "A #bold Rite#! is a formalized, symbolic action that embodies a spiritual or cosmic truth. It is less about direct manipulation and more about participation in a sacred order, but it can affect the world nevertheless.\n\nIn [KingsOfMagic|E] Rites are one of two magical actions you can do, other one are [KoM_spells|E]. Rites are not instantaneous, and require time to complete and often are default way [Concept('KoM_magick', 'Schools of Magick')|E] do magic."
 
  game_concept_KoM_spell: "Spell"
  game_concept_KoM_spells: "Spells"
