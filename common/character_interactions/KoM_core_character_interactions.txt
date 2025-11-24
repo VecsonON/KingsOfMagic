@@ -743,3 +743,42 @@ KoM_build_hideout_interaction = {
 
 	ai_will_do = { base = 0 }
 }
+
+KoM_expose_your_own_secret_interaction = {
+	category = interaction_category_hostile
+	icon = secret
+	common_interaction = yes
+	interface = blackmail
+
+	desc = KoM_expose_your_own_secret_interaction_desc
+	use_diplomatic_range = no
+
+	is_shown = {
+		scope:actor = scope:recipient
+		scope:recipient = {
+			any_secret = {
+				count > 0
+			}
+		}
+	}
+
+	on_accept = {
+		if = {
+			limit = {
+				exists = scope:target
+			}
+			scope:target = {
+				expose_secret = scope:actor
+			}
+		}
+		else = {
+			every_secret = {
+				expose_secret = scope:actor
+			}
+		}
+	}
+
+	ai_frequency = 0
+	
+	auto_accept = yes
+}

@@ -25,3 +25,6 @@
 
  KoM_build_hideout_interaction: "Build a [KoM_hideout|E]"
  KoM_build_hideout_interaction_desc: "[KoM_hideouts|E] are vital for any [KoM_practitioner|E] wanting to focus on their study of [KoM_magick|E], it should be worth creating one for myself."
+
+ KoM_expose_your_own_secret_interaction: "$expose_secret_interaction$"
+ KoM_expose_your_own_secret_interaction_desc: "Expose one of your own [secrets|E]"
