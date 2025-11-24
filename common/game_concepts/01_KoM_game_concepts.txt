@@ -15,11 +15,11 @@ KoM_thaumaturgy = {
 }
 KoM_theurgy = {
 	parent = KoM_magick
-	alias = { KoM_theurgic KoM_theurgist }
+	alias = { KoM_theurgic KoM_theurgist KoM_theurgists }
 }
 KoM_alchemy = {
 	parent = KoM_magick
-	alias = { KoM_alchemic KoM_alchemist }
+	alias = { KoM_alchemic KoM_alchemist KoM_alchemists }
 }
 KoM_taoism = {
 	parent = KoM_magick
