@@ -1,5 +1,6 @@
 ﻿KingsOfMagic = {
 	alias = { KoM }
+	texture = "gfx/interface/icons/KingsOfMagic.dds"
 }
 KoM_magick = {
 	parent = KingsOfMagic

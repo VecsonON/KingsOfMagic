@@ -24,6 +24,15 @@
  WINDOW_KOM_TT: "#high;bold [Localize(Concatenate('KoM_rite_', GetPlayer.MakeScope.Var('current_rite').Var('id').GetFlagName))]#!\n[GetScriptedGui('KoM_window_script').BuildTooltip( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]\n\n#I Click to cancel [KoM_rite|E]#!"
  WINDOW_KOM_TT_TIME: "It will be completed in around #V [SCOPE.GetValue('temp_years_calc')|0] years [SCOPE.GetValue('temp_months_calc')|0] months#!"
 
+ WINDOW_KOM_INFO_TT: "#high;bold Masteries of [KoM_magick|E]#![KoMGetSchoolXpLoca('KoM_goetia')][KoMGetSchoolXpLoca('KoM_thaumaturgy')][KoMGetSchoolXpLoca('KoM_theurgy')][KoMGetSchoolXpLoca('KoM_alchemy')][KoMGetSchoolXpLoca('KoM_taoism')][KoMGetSchoolXpLoca('KoM_onmyodo')]\n\n#I Click to open '$KoM_study_grimoire_interaction$' [character_interaction|E]#![AddTextIf(Not(GetPlayer.IsPlayerInteractionValid('KoM_study_grimoire_interaction')), Localize('WINDOW_KOM_INFO_TT_warning'))]"
+ WINDOW_KOM_INFO_TT_warning: "\n#X $KoM_study_grimoire_interaction$ [character_interaction|E] is on cooldown!#!"
+ WINDOW_KOM_INFO_TT_KoM_goetia: "\n[KoM_goetia|E] Mastery: [GetPlayer.MakeScope.ScriptValue('KoM_goetia_xp')|V0]"
+ WINDOW_KOM_INFO_TT_KoM_thaumaturgy: "\n[KoM_thaumaturgy|E] Mastery: [GetPlayer.MakeScope.ScriptValue('KoM_thaumaturgy_xp')|V0]"
+ WINDOW_KOM_INFO_TT_KoM_theurgy: "\n[KoM_theurgy|E] Mastery: [GetPlayer.MakeScope.ScriptValue('KoM_theurgy_xp')|V0]"
+ WINDOW_KOM_INFO_TT_KoM_alchemy: "\n[KoM_alchemy|E] Mastery: [GetPlayer.MakeScope.ScriptValue('KoM_alchemy_xp')|V0]"
+ WINDOW_KOM_INFO_TT_KoM_taoism: "\n[KoM_taoism|E] Mastery: [GetPlayer.MakeScope.ScriptValue('KoM_taoism_xp')|V0]"
+ WINDOW_KOM_INFO_TT_KoM_onmyodo: "\n[KoM_onmyodo|E] Mastery: [GetPlayer.MakeScope.ScriptValue('KoM_onmyodo_xp')|V0]"
+
  CANCEL_RITE_CONFIRM_TITLE: "Cancelling [KoM_rite|E]"
  CANCEL_RITE_CONFIRM_DESC: "Are you sure you want to cancel [Localize(Concatenate('KoM_rite_', GetPlayer.MakeScope.Var('current_rite').Var('id').GetFlagName))]?\n#weak [GetScriptedGui('KoM_window_script').BuildTooltip( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]#!\n\n#X Doing so will remove any progress you had!#!"
  CANCEL_RITE_CONFIRM_BACK: "Nevermind"

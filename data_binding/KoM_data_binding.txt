@@ -1,10 +1,15 @@
 ﻿macro = {
+	description = "Triple Concatenate"
+	definition = "KoMConcatenate3(a,b,c)"
+	replace_with = "Concatenate(a,Concatenate(b,c))"
+}
+macro = {
 	description = "Returns Trait"
 	definition = "KoMGetTrait(Type)"
 	replace_with = "GetTrait(Type).GetName(GetNullCharacter)"
 }
 macro = {
-	description = "Returns Trait"
+	description = "Returns Spell Name"
 	definition = "KoMGetSpellName(Type)"
 	replace_with = "Type.Story.MakeScope.Var('assigned_character').Char.GetFirstNameNoTooltip"
 }
@@ -12,4 +17,9 @@ macro = {
 	description = "Returns Perk"
 	definition = "KoMGetPerk(Type)"
 	replace_with = "GetPerk(Type).GetName(GetNullCharacter)"
+}
+macro = {
+	description = "Returns Localization for School"
+	definition = "KoMGetSchoolXpLoca(Type)"
+	replace_with = "AddTextIf(Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.ScriptValue(Concatenate(Type,'_xp')), '(CFixedPoint)-1')), Localize(Concatenate('WINDOW_KOM_INFO_TT_',Type)))"
 }

@@ -9,6 +9,11 @@ KoM_window_cancel = {
 		ALT_delete_rite_effect = { RITE = var:current_rite }
 	}
 }
+KoM_window_is_practitioner = {
+	is_valid = {
+		KoM_is_a_mage_trigger = yes
+	}
+}
 
 
 ###

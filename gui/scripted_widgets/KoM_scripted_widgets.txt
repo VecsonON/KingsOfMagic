@@ -1,3 +1,4 @@
 ﻿gui/KoM.gui = window_KoM_button
+gui/KoM.gui = window_KoM_info_button
 gui/KoM.gui = cancel_rite_confirm
 gui/KoM_thaumaturgy.gui = KoM_thaumaturgy_spell_creator
