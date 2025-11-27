@@ -63,8 +63,8 @@
 		trigger_if = {
 			limit = { exists = scope:target scope:target ?= { has_variable = KoM_grimoire } }
 			scope:actor = {
-				KoM_has_magic_school_xp_trigger = { SCHOOL = scope:target.var:KoM_grimoire VALUE = scope:target.var:max_mastery AT_LEAST = no }
-				KoM_has_magic_school_xp_trigger = { SCHOOL = scope:target.var:KoM_grimoire VALUE = scope:target.var:min_mastery AT_LEAST = yes }
+				KoM_has_magic_school_xp_trigger = { SCHOOL = scope:target.var:KoM_grimoire VALUE = scope:target.KoM_grimoire_max AT_LEAST = no }
+				KoM_has_magic_school_xp_trigger = { SCHOOL = scope:target.var:KoM_grimoire VALUE = scope:target.KoM_grimoire_min AT_LEAST = yes }
 				learning >= 8
 			}
 		}
@@ -80,7 +80,7 @@
 						value = scope:duel_value
 						multiplier = high_positive_duel_skill_multiplier
 					}
-					KoM_study_magic_school_effect = { SCHOOL = scope:target.var:KoM_grimoire COUNT = scope:target.var:mastery_gain }
+					KoM_study_magic_school_effect = { SCHOOL = scope:target.var:KoM_grimoire COUNT = scope:target.KoM_grimoire_gain }
 				}
 				50 = {
 					compare_modifier = {

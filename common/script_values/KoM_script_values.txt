@@ -1,38 +1,60 @@
-﻿KoM_goetia_xp = {
+﻿KoM_goetia_xp_gui = {
 	value = -1
 	if = { limit = { has_trait = KoM_magus } value = "this.has_trait_xp(KoM_magus)" }
 	if = { limit = { has_variable = KoM_goetia_xp } value = var:KoM_goetia_xp }
 	max = 100
 }
-KoM_thaumaturgy_xp = {
+KoM_goetia_xp = { value = KoM_goetia_xp_gui min = 0 }
+KoM_thaumaturgy_xp_gui = {
 	value = -1
 	if = { limit = { has_trait = KoM_thaumaturge } value = "this.has_trait_xp(KoM_thaumaturge)" }
 	if = { limit = { has_variable = KoM_thaumaturgy_xp } value = var:KoM_thaumaturgy_xp }
 	max = 100
 }
-KoM_theurgy_xp = {
+KoM_thaumaturgy_xp = { value = KoM_thaumaturgy_xp_gui min = 0 }
+KoM_theurgy_xp_gui = {
 	value = -1
 	if = { limit = { has_trait = KoM_theurgist } value = "this.has_trait_xp(KoM_theurgist)" }
 	if = { limit = { has_variable = KoM_theurgy_xp } value = var:KoM_theurgy_xp }
 	max = 100
 }
-KoM_alchemy_xp = {
+KoM_theurgy_xp = { value = KoM_theurgy_xp_gui min = 0 }
+KoM_alchemy_xp_gui = {
 	value = -1
 	if = { limit = { has_trait = KoM_alchemist } value = "this.has_trait_xp(KoM_alchemist)" }
 	if = { limit = { has_variable = KoM_alchemy_xp } value = var:KoM_alchemy_xp }
 	max = 100
 }
-KoM_taoism_xp = {
+KoM_alchemy_xp = { value = KoM_alchemy_xp_gui min = 0 }
+KoM_taoism_xp_gui = {
 	value = -1
 	if = { limit = { has_trait = KoM_daoshi } value = "this.has_trait_xp(KoM_daoshi)" }
 	if = { limit = { has_variable = KoM_taoism_xp } value = var:KoM_taoism_xp }
 	max = 100
 }
-KoM_onmyodo_xp = {
+KoM_taoism_xp = { value = KoM_taoism_xp_gui min = 0 }
+KoM_onmyodo_xp_gui = {
 	value = -1
 	if = { limit = { has_trait = KoM_onmyoji } value = "this.has_trait_xp(KoM_onmyoji)" }
 	if = { limit = { has_variable = KoM_onmyodo_xp } value = var:KoM_onmyodo_xp }
 	max = 100
+}
+KoM_onmyodo_xp = { value = KoM_onmyodo_xp_gui min = 0 }
+
+KoM_grimoire_min = {
+	value = 0
+	if = { limit = { has_variable = min_mastery } value = var:min_mastery }
+	floor = yes
+}
+KoM_grimoire_max = {
+	value = 0
+	if = { limit = { has_variable = max_mastery } value = var:max_mastery }
+	floor = yes
+}
+KoM_grimoire_gain = {
+	value = 0
+	if = { limit = { has_variable = mastery_gain } value = var:mastery_gain }
+	floor = yes
 }
 
 KoM_extra_rite_speed_mult = {

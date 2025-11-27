@@ -21,5 +21,5 @@ macro = {
 macro = {
 	description = "Returns Localization for School"
 	definition = "KoMGetSchoolXpLoca(Type)"
-	replace_with = "AddTextIf(Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.ScriptValue(Concatenate(Type,'_xp')), '(CFixedPoint)-1')), Localize(Concatenate('WINDOW_KOM_INFO_TT_',Type)))"
+	replace_with = "AddTextIf(Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.ScriptValue(Concatenate(Type,'_xp_gui')), '(CFixedPoint)-1')), Localize(Concatenate('WINDOW_KOM_INFO_TT_',Type)))"
 }
