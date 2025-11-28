@@ -1,5 +1,6 @@
 version="1.0.2"
 tags={
+	"1.18 'Crane'"
 	"Alternative History"
 	"Total Conversion"
 	"Character Interactions"
