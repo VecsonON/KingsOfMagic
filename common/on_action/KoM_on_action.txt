@@ -385,8 +385,8 @@ KoM_thaumaturgy_calculate_difficulty = {
 						flag:opinio = { add = 5 }
 						flag:anima = { add = 5 }
 						flag:scientia = { add = 5 }
-						flag:melius = { add = 10 }
-						flag:peius = { add = 10 }
+						flag:melius = { add = 15 }
+						flag:peius = { add = 15 }
 
 						flag:duo = { add = 5 }
 						flag:tres = { add = 15 }

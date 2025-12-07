@@ -79,11 +79,22 @@ KoM_cleanup_spell_actions_effect = {
 
 # TARGET, SPELL. SCOPE = CASTER
 KoM_execute_spell_effect = {
-	$SPELL$ = { save_scope_as = spell }
+	$SPELL$ = { 
+		save_scope_as = spell 
+		trigger_event = { on_action = KoM_thaumaturgy_calculate_difficulty }
+	}
 	$TARGET$ = { save_scope_as = spell_target }
 	save_scope_as = caster
 	KoM_save_tooltip_custom = { NAME = spell_difficulty_loc LOC = KoM_thaumaturgy_spell_difficulty }
 	custom_tooltip = KoM_execute_spell_effect_difficulty
+	save_scope_value_as = {
+		name = stress_cost
+		value = {
+			value = scope:spell.var:spell_difficulty
+			multiply = 5
+		}
+	}
+	add_stress = scope:stress_cost
 	duel = {
 		skill = learning
 		value = KoM_thaumaturgy_spell_difficulty
@@ -122,7 +133,14 @@ KoM_execute_spell_effect = {
 		}
 		100 = {
 			compare_modifier = { value = scope:duel_value multiplier = low_negative_duel_skill_multiplier }
-			send_interface_message = { title = KoM_execute_spell_failure_effect }
+			send_interface_message = { 
+				title = KoM_execute_spell_failure_effect 
+				save_scope_value_as = {
+					name = stress_cost2
+					value = { value = scope:stress_cost multiply = 2 }
+				}
+				add_stress = scope:stress_cost2
+			}
 		}
 	}
 }

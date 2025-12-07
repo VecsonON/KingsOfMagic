@@ -13,6 +13,7 @@
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 6
 	ai_will_do = { base = 50 }
+	auto_accept = yes
 }
 KoM_ai_taoism_qingqiu_huifu_yishi_interaction = {
 	category = interaction_category_religion
@@ -36,6 +37,7 @@ KoM_ai_taoism_qingqiu_huifu_yishi_interaction = {
 			add = 50
 		}
 	}
+	auto_accept = yes
 }
 KoM_ai_taoism_qiqiu_pingjing_xinling_de_yishi_interaction = {
 	category = interaction_category_religion
@@ -59,6 +61,7 @@ KoM_ai_taoism_qiqiu_pingjing_xinling_de_yishi_interaction = {
 			add = 50
 		}
 	}
+	auto_accept = yes
 }
 KoM_ai_taoism_qifu_yishi_interaction = {
 	category = interaction_category_religion
@@ -76,6 +79,7 @@ KoM_ai_taoism_qifu_yishi_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 25
 	ai_will_do = { base = 50 }
+	auto_accept = yes
 }
 KoM_ai_taoism_qiqiu_mingri_zhishi_de_yishi_interaction = {
 	category = interaction_category_religion
@@ -102,6 +106,7 @@ KoM_ai_taoism_qiqiu_mingri_zhishi_de_yishi_interaction = {
 			add  = 75
 		} 
 	}
+	auto_accept = yes
 }
 KoM_ai_taoism_qingqiu_kuaisu_luxing_de_yishi_interaction = {
 	category = interaction_category_religion
@@ -125,4 +130,5 @@ KoM_ai_taoism_qingqiu_kuaisu_luxing_de_yishi_interaction = {
 			add = 50
 		}
 	}
+	auto_accept = yes
 }

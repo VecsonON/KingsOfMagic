@@ -14,6 +14,7 @@
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 12
 	ai_will_do = { base = 50 }
+	auto_accept = yes
 }
 
 KoM_ai_goetia_the_lesser_conjurations_bael_interaction = {
@@ -50,6 +51,7 @@ KoM_ai_goetia_the_lesser_conjurations_bael_interaction = {
 			add = 20
 		}
 	}
+	auto_accept = yes
 }
 KoM_ai_goetia_the_lesser_conjurations_amon_interaction = {
 	category = interaction_category_religion
@@ -74,6 +76,7 @@ KoM_ai_goetia_the_lesser_conjurations_amon_interaction = {
 	ai_will_do = { 
 		base = 20
 	}
+	auto_accept = yes
 }
 KoM_ai_goetia_the_lesser_conjurations_vapula_interaction = {
 	category = interaction_category_religion
@@ -98,6 +101,7 @@ KoM_ai_goetia_the_lesser_conjurations_vapula_interaction = {
 	ai_will_do = { 
 		base = 20
 	}
+	auto_accept = yes
 }
 KoM_ai_goetia_the_lesser_conjurations_gamigin_interaction = {
 	category = interaction_category_religion
@@ -133,6 +137,7 @@ KoM_ai_goetia_the_lesser_conjurations_gamigin_interaction = {
 			add = 20
 		}
 	}
+	auto_accept = yes
 }
 KoM_ai_goetia_the_lesser_conjurations_beleth_interaction = {
 	category = interaction_category_religion
@@ -155,6 +160,7 @@ KoM_ai_goetia_the_lesser_conjurations_beleth_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 12
 	ai_will_do = { base = 20 }
+	auto_accept = yes
 }
 KoM_ai_goetia_the_lesser_conjurations_astaroth_interaction = {
 	category = interaction_category_religion
@@ -177,6 +183,7 @@ KoM_ai_goetia_the_lesser_conjurations_astaroth_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 12
 	ai_will_do = { base = 20 }
+	auto_accept = yes
 }
 KoM_ai_goetia_the_lesser_conjurations_marchosias_interaction = {
 	category = interaction_category_religion
@@ -199,6 +206,7 @@ KoM_ai_goetia_the_lesser_conjurations_marchosias_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 12
 	ai_will_do = { base = 20 }
+	auto_accept = yes
 }
 KoM_ai_goetia_the_lesser_conjurations_belial_interaction = {
 	category = interaction_category_religion
@@ -221,6 +229,7 @@ KoM_ai_goetia_the_lesser_conjurations_belial_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 12
 	ai_will_do = { base = 20 }
+	auto_accept = yes
 }
 KoM_ai_goetia_the_lesser_conjurations_paimon_interaction = {
 	category = interaction_category_religion
@@ -243,6 +252,7 @@ KoM_ai_goetia_the_lesser_conjurations_paimon_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 12
 	ai_will_do = { base = 20 }
+	auto_accept = yes
 }
 
 KoM_ai_goetia_the_seventy_two_gates_bael_interaction = {
@@ -266,6 +276,7 @@ KoM_ai_goetia_the_seventy_two_gates_bael_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 25
 	ai_will_do = { base = 20 }
+	auto_accept = yes
 }
 KoM_ai_goetia_the_seventy_two_gates_amon_interaction = {
 	category = interaction_category_religion
@@ -291,6 +302,7 @@ KoM_ai_goetia_the_seventy_two_gates_amon_interaction = {
 		base = 20
 		modifier = { add = { value = "scope:actor.opinion(scope:recipient)" multiply = 0.5 } }
 	}
+	auto_accept = yes
 }
 KoM_ai_goetia_the_seventy_two_gates_vapula_interaction = {
 	category = interaction_category_religion
@@ -321,6 +333,7 @@ KoM_ai_goetia_the_seventy_two_gates_vapula_interaction = {
 		modifier = { add = 5 stress >= 250 }
 		modifier = { add = 5 stress >= 300 }
 	}
+	auto_accept = yes
 }
 KoM_ai_goetia_the_seventy_two_gates_barbatos_interaction = {
 	category = interaction_category_religion
@@ -343,6 +356,7 @@ KoM_ai_goetia_the_seventy_two_gates_barbatos_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 25
 	ai_will_do = { base = 20 }
+	auto_accept = yes
 }
 KoM_ai_goetia_the_seventy_two_gates_gamigin_interaction = {
 	category = interaction_category_religion
@@ -365,6 +379,7 @@ KoM_ai_goetia_the_seventy_two_gates_gamigin_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 25
 	ai_will_do = { base = 20 }
+	auto_accept = yes
 }
 KoM_ai_goetia_the_seventy_two_gates_beleth_interaction = {
 	category = interaction_category_religion
@@ -387,6 +402,7 @@ KoM_ai_goetia_the_seventy_two_gates_beleth_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 25
 	ai_will_do = { base = 20 }
+	auto_accept = yes
 }
 KoM_ai_goetia_the_seventy_two_gates_astaroth_interaction = {
 	category = interaction_category_religion
@@ -409,6 +425,7 @@ KoM_ai_goetia_the_seventy_two_gates_astaroth_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 25
 	ai_will_do = { base = 20 }
+	auto_accept = yes
 }
 KoM_ai_goetia_the_seventy_two_gates_marchosias_interaction = {
 	category = interaction_category_religion
@@ -431,6 +448,7 @@ KoM_ai_goetia_the_seventy_two_gates_marchosias_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 25
 	ai_will_do = { base = 20 }
+	auto_accept = yes
 }
 KoM_ai_goetia_the_seventy_two_gates_belial_interaction = {
 	category = interaction_category_religion
@@ -453,6 +471,7 @@ KoM_ai_goetia_the_seventy_two_gates_belial_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 25
 	ai_will_do = { base = 20 }
+	auto_accept = yes
 }
 KoM_ai_goetia_the_seventy_two_gates_paimon_interaction = {
 	category = interaction_category_religion
@@ -475,6 +494,7 @@ KoM_ai_goetia_the_seventy_two_gates_paimon_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 25
 	ai_will_do = { base = 20 }
+	auto_accept = yes
 }
 
 KoM_ai_goetia_the_royal_theurgy_of_solomon_bael_interaction = {
@@ -504,6 +524,7 @@ KoM_ai_goetia_the_royal_theurgy_of_solomon_bael_interaction = {
 			add = 25
 		}
 	}
+	auto_accept = yes
 }
 KoM_ai_goetia_the_royal_theurgy_of_solomon_vapula_interaction = {
 	category = interaction_category_religion
@@ -526,6 +547,7 @@ KoM_ai_goetia_the_royal_theurgy_of_solomon_vapula_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 50
 	ai_will_do = { base = 20 }
+	auto_accept = yes
 }
 KoM_ai_goetia_the_royal_theurgy_of_solomon_barbatos_interaction = {
 	category = interaction_category_religion
@@ -548,6 +570,7 @@ KoM_ai_goetia_the_royal_theurgy_of_solomon_barbatos_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 50
 	ai_will_do = { base = 20 }
+	auto_accept = yes
 }
 KoM_ai_goetia_the_royal_theurgy_of_solomon_astaroth_interaction = {
 	category = interaction_category_religion
@@ -570,6 +593,7 @@ KoM_ai_goetia_the_royal_theurgy_of_solomon_astaroth_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 50
 	ai_will_do = { base = 20 }
+	auto_accept = yes
 }
 KoM_ai_goetia_the_royal_theurgy_of_solomon_belial_interaction = {
 	category = interaction_category_religion
@@ -592,6 +616,7 @@ KoM_ai_goetia_the_royal_theurgy_of_solomon_belial_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 50
 	ai_will_do = { base = 20 }
+	auto_accept = yes
 }
 KoM_ai_goetia_the_royal_theurgy_of_solomon_paimon_interaction = {
 	category = interaction_category_religion
@@ -614,4 +639,5 @@ KoM_ai_goetia_the_royal_theurgy_of_solomon_paimon_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 50
 	ai_will_do = { base = 20 }
+	auto_accept = yes
 }

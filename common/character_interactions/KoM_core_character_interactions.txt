@@ -62,6 +62,14 @@
 	is_valid_showing_failures_only = {
 		trigger_if = {
 			limit = { exists = scope:target scope:target ?= { has_variable = KoM_grimoire } }
+			custom_tooltip = {
+				text = KoM_study_grimoire_interaction_useless
+				NOR = {
+					scope:target.KoM_grimoire_min >= scope:target.KoM_grimoire_max
+					scope:target.KoM_grimoire_max <= 0
+					scope:target.KoM_grimoire_gain <= 0
+				}
+			}
 			scope:actor = {
 				KoM_has_magic_school_xp_trigger = { SCHOOL = scope:target.var:KoM_grimoire VALUE = scope:target.KoM_grimoire_max AT_LEAST = no }
 				KoM_has_magic_school_xp_trigger = { SCHOOL = scope:target.var:KoM_grimoire VALUE = scope:target.KoM_grimoire_min AT_LEAST = yes }
@@ -163,6 +171,8 @@ KoM_teach_magic_interaction = {
 	category = interaction_category_friendly
 	icon = icon_scheme_crypto_religion
 	desc = KoM_teach_magic_interaction_desc
+
+	cooldown = { years = 4 }
 
 	is_shown = {
 		NOT = { scope:actor = scope:recipient }
@@ -403,6 +413,8 @@ KoM_request_teaching_interaction = {
 	category = interaction_category_friendly
 	icon = icon_scheme_crypto_religion
 	desc = KoM_teach_magic_interaction_desc
+
+	cooldown = { years = 3 }
 
 	is_shown = {
 		NOT = { scope:actor = scope:recipient }

@@ -10,7 +10,10 @@
 	}
 
 	is_valid_showing_failures_only = {
-		scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 10 AT_LEAST = yes } }
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 10 AT_LEAST = yes }
+			stress_level < 3
+		}
 	}
 
 	send_options_exclusive = no
@@ -183,7 +186,10 @@ KoM_thaumaturgy_res_interaction = {
 	}
 
 	is_valid_showing_failures_only = {
-		scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 30 AT_LEAST = yes } }
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 30 AT_LEAST = yes }
+			stress_level < 3
+		}
 	}
 
 	has_valid_target = { exists = scope:target }
@@ -358,7 +364,10 @@ KoM_thaumaturgy_locus_interaction = {
 	}
 
 	is_valid_showing_failures_only = {
-		scope:actor = { KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 75 AT_LEAST = yes } }
+		scope:actor = { 
+			KoM_has_magic_school_xp_trigger = { SCHOOL = flag:thaumaturgy VALUE = 75 AT_LEAST = yes } 
+			stress_level < 3
+		}
 	}
 
 	has_valid_target = { exists = scope:target }

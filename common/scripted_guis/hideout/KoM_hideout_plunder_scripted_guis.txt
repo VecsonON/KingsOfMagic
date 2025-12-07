@@ -18,7 +18,7 @@ KoM_scavenge_hideout_building_hideout_building_library = {
 		KoM_hideout_change_building_level_from_id_effect = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_library VALUE = -1 }
 		KoM_hideout_get_building_from_id = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_library }
 		save_scope_value_as = { name = random_max value = { 0 15 } }
-		save_scope_value_as = { name = random_min value = { 0 15 } }
+		save_scope_value_as = { name = random_min value = { 0 10 } }
 		save_scope_value_as = { name = random_gain value = { 1 4 } }
 
 		save_scope_value_as = {

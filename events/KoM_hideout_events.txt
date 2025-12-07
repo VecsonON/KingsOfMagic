@@ -310,7 +310,7 @@ scripted_effect KoM_hideout_events2002_effect = {
 		5 = {
 			trigger = { scope:KoM_hideout_owner.KoM_$SCHOOL$_xp >= 10 }
 			save_scope_value_as = { name = random_max value = { 0 20 } }
-			save_scope_value_as = { name = random_min value = { 0 20 } }
+			save_scope_value_as = { name = random_min value = { 0 10 } }
 			save_scope_value_as = { name = random_gain value = { 4 8 } }
 			KoM_create_grimoire_effect = {
 				OWNER = THIS
@@ -325,7 +325,7 @@ scripted_effect KoM_hideout_events2002_effect = {
 		50 = {
 			trigger = { scope:KoM_hideout_owner.KoM_$SCHOOL$_xp >= 30 }
 			save_scope_value_as = { name = random_max value = { 20 50 } }
-			save_scope_value_as = { name = random_min value = { 0 50 } }
+			save_scope_value_as = { name = random_min value = { 0 25 } }
 			save_scope_value_as = { name = random_gain value = { 6 10 } }
 			KoM_create_grimoire_effect = {
 				OWNER = THIS
@@ -340,7 +340,7 @@ scripted_effect KoM_hideout_events2002_effect = {
 		20 = {
 			trigger = { scope:KoM_hideout_owner.KoM_$SCHOOL$_xp >= 50 }
 			save_scope_value_as = { name = random_max value = { 40 70 } }
-			save_scope_value_as = { name = random_min value = { 0 70 } }
+			save_scope_value_as = { name = random_min value = { 0 50 } }
 			save_scope_value_as = { name = random_gain value = { 8 15 } }
 			KoM_create_grimoire_effect = {
 				OWNER = THIS
@@ -354,8 +354,8 @@ scripted_effect KoM_hideout_events2002_effect = {
 		}
 		5 = {
 			trigger = { scope:KoM_hideout_owner.KoM_$SCHOOL$_xp >= 70 }
-			save_scope_value_as = { name = random_max value = { 50 90 } }
-			save_scope_value_as = { name = random_min value = { 0 90 } }
+			save_scope_value_as = { name = random_max value = { 60 90 } }
+			save_scope_value_as = { name = random_min value = { 0 70 } }
 			save_scope_value_as = { name = random_gain value = { 10 20 } }
 			KoM_create_grimoire_effect = {
 				OWNER = THIS

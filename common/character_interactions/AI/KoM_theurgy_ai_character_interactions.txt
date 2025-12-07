@@ -14,6 +14,7 @@
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 12
 	ai_will_do = { base = 50 }
+	auto_accept = yes
 }
 KoM_ai_theurgy_the_invoker_of_powers_interaction = {
 	category = interaction_category_religion
@@ -31,6 +32,7 @@ KoM_ai_theurgy_the_invoker_of_powers_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 12
 	ai_will_do = { base = 50 }
+	auto_accept = yes
 }
 KoM_ai_theurgy_the_walker_between_spheres_interaction = {
 	category = interaction_category_religion
@@ -48,6 +50,7 @@ KoM_ai_theurgy_the_walker_between_spheres_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 25
 	ai_will_do = { base = 50 }
+	auto_accept = yes
 }
 KoM_ai_theurgy_the_hierophant_of_fire_interaction = {
 	category = interaction_category_religion
@@ -65,6 +68,7 @@ KoM_ai_theurgy_the_hierophant_of_fire_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 60
 	ai_will_do = { base = 50 }
+	auto_accept = yes
 }
 KoM_ai_theurgy_the_theios_anthropos_interaction = {
 	category = interaction_category_religion
@@ -82,4 +86,5 @@ KoM_ai_theurgy_the_theios_anthropos_interaction = {
 	ai_targets = { ai_recipients = self }
 	ai_frequency = 75
 	ai_will_do = { base = 50 }
+	auto_accept = yes
 }

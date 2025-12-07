@@ -137,9 +137,9 @@
  KoM_thaumaturgy_scientia: "#underline;TOOLTIP:KoM_thaumaturgy_scientia_tt Scientia#!"
  KoM_thaumaturgy_scientia_tt: "Scientia, from latin meaning 'Knowledge' or 'Science', is a $KoM_thaumaturgy_action$ of imprinting or helping in gaining knowledge.\n\n$KoM_thaumaturgy_spell_difficulty$: +5"
  KoM_thaumaturgy_melius: "#underline;TOOLTIP:KoM_thaumaturgy_melius_tt Melius#!"
- KoM_thaumaturgy_melius_tt: "Melius, from latin meaning 'To be Better', is a $KoM_thaumaturgy_action$ of general concept of 'improvement'.\n\n$KoM_thaumaturgy_spell_difficulty$: +10"
+ KoM_thaumaturgy_melius_tt: "Melius, from latin meaning 'To be Better', is a $KoM_thaumaturgy_action$ of general concept of 'improvement'.\n\n$KoM_thaumaturgy_spell_difficulty$: +20"
  KoM_thaumaturgy_peius: "#underline;TOOLTIP:KoM_thaumaturgy_peius_tt Peius#!"
- KoM_thaumaturgy_peius_tt: "Peius, from latin meaning 'To be Worse' , is a $KoM_thaumaturgy_action$ of general concept of 'worsening'.\n\n$KoM_thaumaturgy_spell_difficulty$: +10"
+ KoM_thaumaturgy_peius_tt: "Peius, from latin meaning 'To be Worse' , is a $KoM_thaumaturgy_action$ of general concept of 'worsening'.\n\n$KoM_thaumaturgy_spell_difficulty$: +20"
  KoM_thaumaturgy_peius_effect_overload: "[spell_target.GetFirstName] will lose random [commander_trait|E]"
  #Theurgy
  KoM_theurgy_level: "Per [piety_level|E]"
