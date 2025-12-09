@@ -159,18 +159,21 @@ KoM_hideout_yearly_pulse = {
 			switch = {
 				trigger = var:building_template.var:building_id
 				flag:hideout_building_alchemic_garden = {
-					random_list = {
-						pick = 1
-						unique = yes
-						10 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = salt COUNT = 1 } }
-						10 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = charcoal COUNT = 1 } }
-						6 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = honey COUNT = 1 } }
-						6 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = lead COUNT = 1 } }
-						6 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = silver COUNT = 1 } }
-						4 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = crushed_crystals COUNT = 1 } }
-						2 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = human_blood COUNT = 1 } }
-						2 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = vulcanic_ash COUNT = 1 } }
-						1 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = fireflower COUNT = 1 } }
+					while = {
+						count = var:building_level
+						random_list = {
+							pick = 1
+							unique = yes
+							10 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = salt COUNT = 1 } }
+							10 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = charcoal COUNT = 1 } }
+							6 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = honey COUNT = 1 } }
+							6 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = lead COUNT = 1 } }
+							6 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = silver COUNT = 1 } }
+							4 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = crushed_crystals COUNT = 1 } }
+							2 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = human_blood COUNT = 1 } }
+							2 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = vulcanic_ash COUNT = 1 } }
+							1 = { KoM_hideout_change_alchemical_material_effect = { MATERIAL = fireflower COUNT = 1 } }
+						}
 					}
 				}
 			}
