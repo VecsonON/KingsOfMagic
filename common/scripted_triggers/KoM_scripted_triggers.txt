@@ -59,29 +59,23 @@ KoM_is_practitioner_of_magic_school_trait_trigger = {
 		has_trait = $TRAIT$
 		switch = {
 			trigger = $TRAIT$
-			trait:KoM_magus = { has_variable = KoM_goetia_xp }
-			trait:KoM_thaumaturge = { has_variable = KoM_thaumaturgy_xp }
-			trait:KoM_theurgist = { has_variable = KoM_theurgy_xp }
-			trait:KoM_alchemist = { has_variable = KoM_alchemy_xp }
-			trait:KoM_daoshi = { has_variable = KoM_taoism_xp }
-			trait:KoM_onmyoji = { has_variable = KoM_onmyodo_xp }
+			trait:KoM_magus = { KoM_goetia_xp_gui >= 0 }
+			trait:KoM_thaumaturge = { KoM_thaumaturgy_xp_gui >= 0 }
+			trait:KoM_theurgist = { KoM_theurgy_xp_gui >= 0 }
+			trait:KoM_alchemist = { KoM_alchemy_xp_gui >= 0 }
+			trait:KoM_daoshi = { KoM_taoism_xp_gui >= 0 }
+			trait:KoM_onmyoji = { KoM_onmyodo_xp_gui >= 0 }
 		}
 	}
 }
 KoM_is_a_mage_trigger = {
 	OR = {
-		has_trait = KoM_magus
-		has_variable = KoM_goetia_xp
-		has_trait = KoM_thaumaturge
-		has_variable = KoM_thaumaturgy_xp
-		has_trait = KoM_theurgist
-		has_variable = KoM_theurgy_xp
-		has_trait = KoM_alchemist
-		has_variable = KoM_alchemy_xp
-		has_trait = KoM_daoshi
-		has_variable = KoM_taoism_xp
-		has_trait = KoM_onmyoji
-		has_variable = KoM_onmyodo_xp
+		KoM_goetia_xp_gui >= 0
+		KoM_thaumaturgy_xp_gui >= 0
+		KoM_theurgy_xp_gui >= 0
+		KoM_alchemy_xp_gui >= 0
+		KoM_taoism_xp_gui >= 0
+		KoM_onmyodo_xp_gui >= 0
 	}
 }
 

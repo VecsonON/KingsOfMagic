@@ -101,16 +101,7 @@
 			if = {
 				limit = {
 					scope:target = { has_variable = gained_via_decision }
-					switch = {
-						trigger = scope:target.var:KoM_grimoire
-						flag:goetia = { has_variable = KoM_goetia_xp }
-						flag:thaumaturgy = { has_variable = KoM_thaumaturgy_xp }
-						flag:theurgy = { has_variable = KoM_theurgy_xp }
-						flag:alchemy = { has_variable = KoM_alchemy_xp }
-						flag:taoism = { has_variable = KoM_taoism_xp }
-						flag:onmyodo = { has_variable = KoM_onmyodo_xp }
-					}
-					KoM_is_a_mage_trigger = yes
+					KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = scope:target.var:KoM_grimoire }
 				}
 				custom_tooltip = KoM_study_grimoire_interaction_warning
 				hidden_effect = {
