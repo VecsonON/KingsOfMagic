@@ -257,23 +257,19 @@ KoM_quaterly_playable_pulse = {
 }
 KoM_monthly_playable_pulse = {
 	effect = {
-		if = { limit = { has_variable = current_rite }
-			var:current_rite = {
-				change_variable = {
-					name = total_progress
-					add = {
-						value = var:monthly_progress
-						multiply = PREV.KoM_extra_rite_speed_mult
-					}
-				}
-				if = { limit = { var:total_progress >= 100 }
-					PREV = {
-						trigger_event = { on_action = KoM_completed_rite }
-					}
+		var:current_rite ?= {
+			change_variable = {
+				name = total_progress
+				add = {
+					value = var:monthly_progress
+					multiply = PREV.KoM_extra_rite_speed_mult
+					min = 0.01
 				}
 			}
+			if = { limit = { var:total_progress >= 100 }
+				PREV = { trigger_event = { on_action = KoM_completed_rite } }
+			}
 		}
-
 	}
 }
 

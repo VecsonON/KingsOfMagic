@@ -88,34 +88,36 @@ container = {
 	layer = bottom
 	visible = "[And(And( Not( IsPauseMenuShown ), And(And(IsDefaultGUIMode, Character.IsValid), Not(GetVariableSystem.Exists( 'hide_bottom_left_HUD')))), Not( GreaterThan_CFixedPoint( GetPlayer.MakeScope.Var('hide_ui_bottom_left_bar').GetValue, '(CFixedPoint)0' ) ))]"
 
+	container =  {
+		visible = "[GetPlayer.IsValid]"
+		button_hud_character_bar = {
+			visible = "[GetScriptedGui('KoM_window_is_practitioner').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			enabled = "[GetPlayer.IsPlayerInteractionValid('KoM_study_grimoire_interaction')]"
+			onclick = "[GetPlayer.OpenPlayerInteraction('KoM_study_grimoire_interaction')]"
+			parentanchor = left
 
-	button_hud_character_bar = {
-		name = "house_button"
-		visible = "[GetScriptedGui('KoM_window_is_practitioner').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-		enabled = "[GetPlayer.IsPlayerInteractionValid('KoM_study_grimoire_interaction')]"
-		onclick = "[GetPlayer.OpenPlayerInteraction('KoM_study_grimoire_interaction')]"
-		parentanchor = left
+			using = Animation_ShowHide_Standard
 
-		using = Animation_ShowHide_Standard
+			using = tooltip_es
+			tooltip_offset = { 20 0 }
 
-		using = tooltip_es
-		tooltip_offset = { 20 0 }
+			tooltip = WINDOW_KOM_INFO_TT
 
-		tooltip = WINDOW_KOM_INFO_TT
+			highlight_icon = {
+				texture = "gfx/interface/icons/KingsOfMagic.dds"
+				size = { 40 40 }
+				position = { 0 1 }
+				parentanchor = center
 
-		highlight_icon = {
-			texture = "gfx/interface/icons/KingsOfMagic.dds"
-			size = { 40 40 }
-			position = { 0 1 }
-			parentanchor = center
-
-			glow = {
-				color = { 0 0 0 0.8 }
-				glow_radius = 3
-				using = Glow_Standard
+				glow = {
+					color = { 0 0 0 0.8 }
+					glow_radius = 3
+					using = Glow_Standard
+				}
 			}
 		}
 	}
+
 }
 window = {
 	name = "cancel_rite_confirm"
@@ -267,5 +269,15 @@ types KoMTypes
 				fontsize_min = 12
 			}
 		}
+	}
+}
+
+texticon = {
+	icon = KoM_icon
+	iconsize = {
+		texture = "gfx/interface/icons/KingsOfMagic.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
 	}
 }

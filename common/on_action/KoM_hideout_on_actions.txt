@@ -25,6 +25,18 @@ KoM_hideout_generation = {
 			name = KoM_hideout_amount
 			value = 0
 		}
+		save_scope_value_as = {
+			name = KoM_hideout_generated_fake
+			value = {
+				value = 0
+				switch = {
+					trigger = has_game_rule
+					KoM_hideout_generation_default = { value = 3 }
+					KoM_hideout_generation_halved = { value = 2 }
+					KoM_hideout_generation_always = { value = 0 }
+				}
+			}
+		}
 		every_empire = {
 			while = {
 				count = 2
@@ -40,7 +52,7 @@ KoM_hideout_generation = {
 				}
 			}
 			while = {
-				count = 3
+				count = scope:KoM_hideout_generated_fake
 				random_de_jure_county = {
 					random_county_province = {
 						limit = { NOT = { has_province_modifier = KoM_rumors_of_hideout_modifier } }

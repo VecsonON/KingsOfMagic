@@ -24,7 +24,7 @@
 
  KoM_hideout_building_library: "#underline;TOOLTIP:KoM_hideout_building_library_tt Library#!"
  KoM_hideout_building_library_tt: "A simple bookshelf, sometimes entire room dedicated to storing [KoM_grimoires|E]. It is here were most [KoM_practitioners|E] of [KoM_magick|E] start writing their own [KoM_grimoires|E] or studying existing ones.\n\nEffects:\n$KoM_hideout_building_library_effect$"
- KoM_hideout_building_library_effect: "$BULLET_WITH_TAB$Each level of $KoM_hideout_building_secrecy$ improves #V KoM_write_grimoire_interaction#! by increasing Mastery gain by #P +10%#! and reducing Minimal Mastery by #P -5%#!"
+ KoM_hideout_building_library_effect: "$BULLET_WITH_TAB$Each level of $KoM_hideout_building_library$ improves #V $KoM_write_grimoire_interaction$#! by increasing Mastery gain by #P +10%#! and reducing Minimal Mastery by #P -5%#!"
 
  KoM_hideout_building_defense_goetia: "#underline;TOOLTIP:KoM_hideout_building_defense_goetia_tt [KoM_goetic|E] Summoning Circles#!"
  KoM_hideout_building_defense_goetia_tt: "Created by [KoMGetTrait('KoM_magus')], these circles summon number of smaller demons to protect their master's lair.\n\nEffects:\n$KoM_hideout_building_defense_goetia_effect$"

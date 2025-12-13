@@ -282,12 +282,21 @@ KoM_create_grimoire_effect = {
 				MODIFIER = KoM_max_mastery_modifier
 				VAR = max_mastery
 			}
-			add_artifact_modifier = KoM_min_mastery_null_modifier
-			KoM_give_modifier_times_keep_count_effect = {
-				COUNT = $MIN_MASTERY$
-				TYPE = artifact
-				MODIFIER = KoM_min_mastery_modifier
-				VAR = min_mastery
+			if = {
+				limit = { has_game_rule = KoM_grimoire_minimal_xp_required_default }
+				add_artifact_modifier = KoM_min_mastery_null_modifier
+				KoM_give_modifier_times_keep_count_effect = {
+					COUNT = $MIN_MASTERY$
+					TYPE = artifact
+					MODIFIER = KoM_min_mastery_modifier
+					VAR = min_mastery
+				}
+			}
+			else = {
+				set_variable = {
+					name = min_mastery
+					value = 0
+				}
 			}
 			add_artifact_modifier = KoM_mastery_gain_null_modifier
 			KoM_give_modifier_times_keep_count_effect = {

@@ -1,0 +1,16 @@
+﻿l_english:
+ KOM_gamerule: "[Concept('KingsOfMagic','@KoM_icon!')]"
+
+ rule_KoM_grimoire_minimal_xp_required: "$KOM_gamerule$ Minimal xp required for study of [KoM_grimoires|E]"
+ setting_KoM_grimoire_minimal_xp_required_default: "Default"
+ setting_KoM_grimoire_minimal_xp_required_default_desc: "Some [KoM_grimoires|E] require mastery xp in their [KoM_magick|E] school"
+ setting_KoM_grimoire_minimal_xp_required_removed: "#high Removed#!"
+ setting_KoM_grimoire_minimal_xp_required_removed_desc: "[KoM_grimoires|E] no longer require any mastery xp to study."
+
+ rule_KoM_hideout_generation: "$KOM_gamerule$ [KoM_hideout|E] generation"
+ setting_KoM_hideout_generation_default: "Default"
+ setting_KoM_hideout_generation_default_desc: "About 2 in 5 [provinces|E] with [GetModifier('KoM_rumors_of_hideout_modifier').GetNameWithTooltip|E] will be #N fake#!"
+ setting_KoM_hideout_generation_halved: "#high Twice True#!"
+ setting_KoM_hideout_generation_halved_desc: "About 1 in 2 [provinces|E] with [GetModifier('KoM_rumors_of_hideout_modifier').GetNameWithTooltip|E] will be #N fake#!"
+ setting_KoM_hideout_generation_always: "#high Always True#!"
+ setting_KoM_hideout_generation_always_desc: "[GetModifier('KoM_rumors_of_hideout_modifier').GetNameWithTooltip|E] will always be #P true#!"

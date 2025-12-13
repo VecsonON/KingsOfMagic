@@ -1,0 +1,22 @@
+﻿KoM_grimoire_minimal_xp_required = {
+	default = KoM_grimoire_minimal_xp_required_default
+	
+	categories = {
+		difficulty
+		historicity
+	}
+
+	KoM_grimoire_minimal_xp_required_default = { }
+	KoM_grimoire_minimal_xp_required_removed = { }
+}
+KoM_hideout_generation = {
+	default = KoM_hideout_generation_default
+	
+	categories = {
+		historicity
+	}
+
+	KoM_hideout_generation_default = { }
+	KoM_hideout_generation_halved = { }
+	KoM_hideout_generation_always = { }
+}

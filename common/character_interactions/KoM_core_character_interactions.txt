@@ -72,7 +72,10 @@
 			}
 			scope:actor = {
 				KoM_has_magic_school_xp_trigger = { SCHOOL = scope:target.var:KoM_grimoire VALUE = scope:target.KoM_grimoire_max AT_LEAST = no }
-				KoM_has_magic_school_xp_trigger = { SCHOOL = scope:target.var:KoM_grimoire VALUE = scope:target.KoM_grimoire_min AT_LEAST = yes }
+				trigger_if = {
+					limit = { has_game_rule = KoM_grimoire_minimal_xp_required_default }
+					KoM_has_magic_school_xp_trigger = { SCHOOL = scope:target.var:KoM_grimoire VALUE = scope:target.KoM_grimoire_min AT_LEAST = yes }
+				}
 				learning >= 8
 			}
 		}
@@ -683,7 +686,10 @@ KoM_write_grimoire_interaction = {
 				}
 			}
 			custom_tooltip = KoM_write_grimoire_interaction_max
-			custom_tooltip = KoM_write_grimoire_interaction_min
+			if = {
+				limit = { has_game_rule = KoM_grimoire_minimal_xp_required_default }
+				custom_tooltip = KoM_write_grimoire_interaction_min
+			}
 			custom_tooltip = KoM_write_grimoire_interaction_gain
 			switch = {
 				trigger = yes
