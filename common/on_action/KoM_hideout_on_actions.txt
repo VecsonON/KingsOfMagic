@@ -31,9 +31,9 @@ KoM_hideout_generation = {
 				value = 0
 				switch = {
 					trigger = has_game_rule
-					KoM_hideout_generation_default = { value = 3 }
 					KoM_hideout_generation_halved = { value = 2 }
 					KoM_hideout_generation_always = { value = 0 }
+					fallback = { value = 3 }
 				}
 			}
 		}

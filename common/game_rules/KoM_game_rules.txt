@@ -20,3 +20,15 @@ KoM_hideout_generation = {
 	KoM_hideout_generation_halved = { }
 	KoM_hideout_generation_always = { }
 }
+KoM_fake_grimoires = {
+	default = KoM_fake_grimoires_default
+	
+	categories = {
+		historicity
+	}
+
+	KoM_fake_grimoires_75 = { }
+	KoM_fake_grimoires_default = { }
+	KoM_fake_grimoires_25 = { }
+	KoM_fake_grimoires_0 = { }
+}

@@ -78,9 +78,9 @@ KoM_core_events.1 = { # Spawn Artifacts
 				RARITY = illustrious
 				NAME = theurgia
 				SCHOOL = theurgy
-				MAX_MASTERY = 10
-				MIN_MASTERY = 0
-				MASTERY_GAIN = 25
+				MAX_MASTERY = 100
+				MIN_MASTERY = 20
+				MASTERY_GAIN = 15
 			}
 		}
 		random_ruler = {
@@ -89,9 +89,9 @@ KoM_core_events.1 = { # Spawn Artifacts
 				RARITY = famed
 				NAME = liber_de_causis
 				SCHOOL = theurgy
-				MAX_MASTERY = 10
-				MIN_MASTERY = 0
-				MASTERY_GAIN = 20
+				MAX_MASTERY = 60
+				MIN_MASTERY = 10
+				MASTERY_GAIN = 10
 			}
 		}
 		random_ruler = {
@@ -100,9 +100,9 @@ KoM_core_events.1 = { # Spawn Artifacts
 				RARITY = masterwork
 				NAME = chaldean_oracles
 				SCHOOL = theurgy
-				MAX_MASTERY = 10
+				MAX_MASTERY = 30
 				MIN_MASTERY = 0
-				MASTERY_GAIN = 15
+				MASTERY_GAIN = 5
 			}
 		}
 
@@ -253,8 +253,20 @@ KoM_core_events.10 = { # Random Grimoire Spawn
 				trigger_event = KoM_core_events.11
 			}
 		}
+		save_scope_value_as = {
+			name = fake_grimoire_chance 
+			value = {
+				switch = {
+					trigger = has_game_rule
+					KoM_fake_grimoires_75 = { value = 75 }
+					KoM_fake_grimoires_25 = { value = 25 }
+					KoM_fake_grimoires_0 = { value = 0 }
+					fallback = { value = 50 }
+				}
+			}
+		}
 		random = {
-			chance = 50
+			chance = scope:fake_grimoire_chance
 			set_variable = { name = fake value = yes }
 		}
 	}
