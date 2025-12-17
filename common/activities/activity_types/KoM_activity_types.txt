@@ -2,16 +2,25 @@
 	is_shown = {
 		is_adult = yes
 		is_ai = no
-		OR = {
-			KoM_is_a_mage_trigger = yes
-			has_trait = scholar
-			learning >= 25
-		}
 	}
 
 	can_start_showing_failures_only = {
 		NOT = { is_activity_type_on_cooldown = activity_KoM_visit_hideout }
 		is_available_adult = yes
+	}
+
+	can_start = {
+		OR = {
+			KoM_is_a_mage_trigger = yes
+			has_trait = scholar
+			trigger_if = { limit = { has_game_rule = KoM_visit_hideout_accessability_always } }
+			trigger_else_if = {
+				limit = { has_game_rule = KoM_visit_hideout_accessability_easier }
+				learning >= 15
+			}
+			trigger_else = { learning >= 25 }
+		}
+
 	}
 
 	is_valid = {

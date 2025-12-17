@@ -69,13 +69,16 @@ KoM_is_practitioner_of_magic_school_trait_trigger = {
 	}
 }
 KoM_is_a_mage_trigger = {
-	OR = {
-		KoM_goetia_xp_gui >= 0
-		KoM_thaumaturgy_xp_gui >= 0
-		KoM_theurgy_xp_gui >= 0
-		KoM_alchemy_xp_gui >= 0
-		KoM_taoism_xp_gui >= 0
-		KoM_onmyodo_xp_gui >= 0
+	custom_tooltip = {
+		text = KoM_is_a_mage_trigger
+		OR = {
+			KoM_goetia_xp_gui >= 0
+			KoM_thaumaturgy_xp_gui >= 0
+			KoM_theurgy_xp_gui >= 0
+			KoM_alchemy_xp_gui >= 0
+			KoM_taoism_xp_gui >= 0
+			KoM_onmyodo_xp_gui >= 0
+		}
 	}
 }
 

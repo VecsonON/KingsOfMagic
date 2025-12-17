@@ -19,6 +19,8 @@
  KoM_study_magic_school_effect: "Studying [Concept('KoM_magick','Magic School')|E]"
  KoM_learn_magic_school_from_trait_effect: "Learning a new [Concept('KoM_magick','Magic School')|E]"
 
+ KoM_is_a_mage_trigger: "You practice [KoM_magick|E]"
+
  KoM_start_rite_effect: "You will start [Localize(Concatenate('KoM_rite_',SCOPE.GetFlagName('saved_tooltip')))] that will be completed roughly in: ~#V [SCOPE.GetValue('temp_years_calc')|0] years [SCOPE.GetValue('temp_months_calc')|0] months#!"
 
  WINDOW_KOM_TT: "#high;bold [Localize(Concatenate('KoM_rite_', GetPlayer.MakeScope.Var('current_rite').Var('id').GetFlagName))]#!\n[GetScriptedGui('KoM_window_script').BuildTooltip( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]\n\n#I Click to cancel [KoM_rite|E]#!"

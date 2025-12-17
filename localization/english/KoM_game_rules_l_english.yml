@@ -24,3 +24,11 @@
  setting_KoM_fake_grimoires_25_desc: "[KoM_grimoires|E] bought by #high $KoM_seek_magic_decision$#! have #medium 25%#! to be #N fake#!"
  setting_KoM_fake_grimoires_0: "#high 0%#!"
  setting_KoM_fake_grimoires_0_desc: "[KoM_grimoires|E] bought by #high $KoM_seek_magic_decision$#! have #medium 0%#! to be #N fake#!"
+
+ rule_KoM_visit_hideout_accessability: "$KOM_gamerule$ Accessability of $activity_KoM_visit_hideout$ [activity|E]"
+ setting_KoM_visit_hideout_accessability_default: "Default"
+ setting_KoM_visit_hideout_accessability_default_desc: "#high $activity_KoM_visit_hideout$#! requires +25 [learning|E], [GetTrait('scholar').GetName(GetNullCharacter)] or Practising [KoM_magick|E]"
+ setting_KoM_visit_hideout_accessability_easier: "#high Easier#!"
+ setting_KoM_visit_hideout_accessability_easier_desc: "#high $activity_KoM_visit_hideout$#! requires +15 [learning|E], [GetTrait('scholar').GetName(GetNullCharacter)] or Practising [KoM_magick|E]"
+ setting_KoM_visit_hideout_accessability_always: "#high Always#!"
+ setting_KoM_visit_hideout_accessability_always_desc: "#high $activity_KoM_visit_hideout$#! is always accessible"

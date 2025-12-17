@@ -13,6 +13,7 @@ KoM_hideout_generation = {
 	default = KoM_hideout_generation_default
 	
 	categories = {
+		difficulty
 		historicity
 	}
 
@@ -24,6 +25,7 @@ KoM_fake_grimoires = {
 	default = KoM_fake_grimoires_default
 	
 	categories = {
+		difficulty
 		historicity
 	}
 
@@ -31,4 +33,16 @@ KoM_fake_grimoires = {
 	KoM_fake_grimoires_default = { }
 	KoM_fake_grimoires_25 = { }
 	KoM_fake_grimoires_0 = { }
+}
+KoM_visit_hideout_accessability = {
+	default = KoM_visit_hideout_accessability_default
+	
+	categories = {
+		difficulty
+		historicity
+	}
+
+	KoM_visit_hideout_accessability_default = { }
+	KoM_visit_hideout_accessability_easier = { }
+	KoM_visit_hideout_accessability_always = { }
 }
