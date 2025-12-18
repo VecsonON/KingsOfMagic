@@ -10,21 +10,22 @@
 	}
 
 	can_start = {
-		OR = {
-			trigger_if = { limit = { has_game_rule = KoM_visit_hideout_accessability_always } }
-			trigger_else_if = {
-				limit = { has_game_rule = KoM_visit_hideout_accessability_easier }
+		trigger_if = { limit = { has_game_rule = KoM_visit_hideout_accessability_always } }
+		trigger_else_if = {
+			limit = { has_game_rule = KoM_visit_hideout_accessability_easier }
+			OR = {
 				learning >= 15
 				KoM_is_a_mage_trigger = yes
 				has_trait = scholar
 			}
-			trigger_else = { 
+		}
+		trigger_else = { 
+			OR = {
 				learning >= 25 
 				KoM_is_a_mage_trigger = yes
 				has_trait = scholar
 			}
 		}
-
 	}
 
 	is_valid = {
