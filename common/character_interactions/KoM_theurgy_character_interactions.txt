@@ -79,7 +79,7 @@
 						TARGET = scope:recipient
 						SCHOOL = theurgy
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_the_initiate_of_purification_effect = yes }
 				}
 				scope:the_invoker_of_powers = {
@@ -89,7 +89,7 @@
 						TARGET = scope:recipient
 						SCHOOL = theurgy
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_the_invoker_of_powers_effect = yes }
 				}
 				scope:the_walker_between_spheres = {
@@ -99,7 +99,7 @@
 						TARGET = scope:recipient
 						SCHOOL = theurgy
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_the_walker_between_spheres_effect = yes }
 				}
 				scope:the_hierophant_of_fire = {
@@ -109,7 +109,7 @@
 						TARGET = scope:recipient
 						SCHOOL = theurgy
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_the_hierophant_of_fire_effect = yes }
 				}
 				scope:the_theios_anthropos = {
@@ -119,7 +119,7 @@
 						TARGET = scope:recipient
 						SCHOOL = theurgy
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_the_theios_anthropos_effect = yes }
 				}
 			}

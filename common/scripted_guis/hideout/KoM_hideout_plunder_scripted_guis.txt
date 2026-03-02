@@ -42,6 +42,34 @@ KoM_scavenge_hideout_building_hideout_building_library = {
 				add = scope:building.var:building_level
 			}
 		}
+
+		if = {
+			limit = { scope:random_min >= scope:random_max }
+			save_scope_value_as = {
+				name = random_min
+				value = {
+					value = scope:random_min
+					divide = 2
+				}
+			}
+		}
+
+		if = {
+			limit = { scope:random_max <= 0 }
+			save_scope_value_as = {
+				name = random_max
+				value = 10
+			}
+		}
+
+		if = {
+			limit = { scope:random_gain <= 0 }
+			save_scope_value_as = {
+				name = random_gain
+				value = 1
+			}
+		}
+
 		random_list = {
 			1 = {
 				modifier = {

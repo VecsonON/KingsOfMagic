@@ -3,6 +3,7 @@
 	trigger_event = KoM_goetia_events.1
 	show_as_tooltip = {
 		KoM_learn_random_true_name_demon_effect = yes
+		KoM_study_magic_school_effect = { SCHOOL = flag:goetia COUNT = 2 }
 	}
 }
 KoM_learn_random_true_name_demon_effect = {

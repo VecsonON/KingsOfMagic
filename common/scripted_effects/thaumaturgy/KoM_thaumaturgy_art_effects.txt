@@ -94,6 +94,13 @@ KoM_execute_spell_effect = {
 			multiply = 5
 		}
 	}
+	save_scope_value_as = {
+		name = xp_gain
+		value = {
+			value = scope:spell.var:spell_difficulty
+			divide = 5
+		}
+	}
 	add_stress = scope:stress_cost
 	duel = {
 		skill = learning
@@ -129,6 +136,7 @@ KoM_execute_spell_effect = {
 						}
 					}
 				}
+				KoM_study_magic_school_effect = { SCHOOL = flag:thaumaturgy COUNT = scope:xp_gain }
 			}
 		}
 		100 = {

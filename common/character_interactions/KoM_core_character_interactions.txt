@@ -1,165 +1,165 @@
-﻿KoM_study_grimoire_interaction = {
-	category = interaction_category_friendly
-	icon = icon_scheme_crypto_religion
-	desc = KoM_study_grimoire_interaction_desc
+﻿# KoM_study_grimoire_interaction = {
+# 	category = interaction_category_friendly
+# 	icon = icon_scheme_crypto_religion
+# 	desc = KoM_study_grimoire_interaction_desc
 
-	target_type = artifact
-	target_filter = actor_artifacts
+# 	target_type = artifact
+# 	target_filter = actor_artifacts
 
-	ai_frequency = 60
-	ai_will_do = {
-		base = 1
+# 	ai_frequency = 60
+# 	ai_will_do = {
+# 		base = 1
 
-		modifier = {
-			add = 10
-			scope:actor = { has_trait = scholar }
-		}
-		modifier = {
-			add = 20
-			scope:actor = { has_trait = witch }
-		}
-		modifier = {
-			add = scope:actor.age
-		}
+# 		modifier = {
+# 			add = 10
+# 			scope:actor = { has_trait = scholar }
+# 		}
+# 		modifier = {
+# 			add = 20
+# 			scope:actor = { has_trait = witch }
+# 		}
+# 		modifier = {
+# 			add = scope:actor.age
+# 		}
 
-		modifier = {
-			add = -20
-			scope:actor = {
-				faith = { has_doctrine_parameter = witchcraft_illegal }
-				NOT = { has_trait = cynical }
-			}
-		}
-		modifier = {
-			add = -10
-			scope:actor = {
-				faith = { has_doctrine_parameter = witchcraft_shunned }
-				NOT = { has_trait = cynical }
-			}
-		}
-	}
-	ai_targets = { ai_recipients = self }
+# 		modifier = {
+# 			add = -20
+# 			scope:actor = {
+# 				faith = { has_doctrine_parameter = witchcraft_illegal }
+# 				NOT = { has_trait = cynical }
+# 			}
+# 		}
+# 		modifier = {
+# 			add = -10
+# 			scope:actor = {
+# 				faith = { has_doctrine_parameter = witchcraft_shunned }
+# 				NOT = { has_trait = cynical }
+# 			}
+# 		}
+# 	}
+# 	ai_targets = { ai_recipients = self }
 
-	cooldown = { years = 2 }
+# 	cooldown = { years = 2 }
 
-	is_shown = {
-		scope:actor = scope:recipient
-		scope:actor = {
-			any_character_artifact = {
-				has_variable = KoM_grimoire
-			}
-		}
-	}
+# 	is_shown = {
+# 		scope:actor = scope:recipient
+# 		scope:actor = {
+# 			any_character_artifact = {
+# 				has_variable = KoM_grimoire
+# 			}
+# 		}
+# 	}
 
-	can_be_picked_artifact = {
-		scope:target = {
-			custom_tooltip = {
-				text = KoM_study_grimoire_interaction_tt
-				has_variable = KoM_grimoire
-			}
-		}
-	}
+# 	can_be_picked_artifact = {
+# 		scope:target = {
+# 			custom_tooltip = {
+# 				text = KoM_study_grimoire_interaction_tt
+# 				has_variable = KoM_grimoire
+# 			}
+# 		}
+# 	}
 
-	is_valid_showing_failures_only = {
-		trigger_if = {
-			limit = { exists = scope:target scope:target ?= { has_variable = KoM_grimoire } }
-			custom_tooltip = {
-				text = KoM_study_grimoire_interaction_useless
-				NOR = {
-					scope:target.KoM_grimoire_min >= scope:target.KoM_grimoire_max
-					scope:target.KoM_grimoire_max <= 0
-					scope:target.KoM_grimoire_gain <= 0
-				}
-			}
-			scope:actor = {
-				KoM_has_magic_school_xp_trigger = { SCHOOL = scope:target.var:KoM_grimoire VALUE = scope:target.KoM_grimoire_max AT_LEAST = no }
-				trigger_if = {
-					limit = { has_game_rule = KoM_grimoire_minimal_xp_required_default }
-					KoM_has_magic_school_xp_trigger = { SCHOOL = scope:target.var:KoM_grimoire VALUE = scope:target.KoM_grimoire_min AT_LEAST = yes }
-				}
-				learning >= 8
-			}
-		}
-	}
+# 	is_valid_showing_failures_only = {
+# 		trigger_if = {
+# 			limit = { exists = scope:target scope:target ?= { has_variable = KoM_grimoire } }
+# 			custom_tooltip = {
+# 				text = KoM_study_grimoire_interaction_useless
+# 				NOR = {
+# 					scope:target.KoM_grimoire_min >= scope:target.KoM_grimoire_max
+# 					scope:target.KoM_grimoire_max <= 0
+# 					scope:target.KoM_grimoire_gain <= 0
+# 				}
+# 			}
+# 			scope:actor = {
+# 				KoM_has_magic_school_xp_trigger = { SCHOOL = scope:target.var:KoM_grimoire VALUE = scope:target.KoM_grimoire_max AT_LEAST = no }
+# 				trigger_if = {
+# 					limit = { has_game_rule = KoM_grimoire_minimal_xp_required_default }
+# 					KoM_has_magic_school_xp_trigger = { SCHOOL = scope:target.var:KoM_grimoire VALUE = scope:target.KoM_grimoire_min AT_LEAST = yes }
+# 				}
+# 				learning >= 8
+# 			}
+# 		}
+# 	}
 
-	on_accept = {
-		scope:actor = {
-			duel = {
-				skill = learning
-				value = 10
-				50 = {
-					compare_modifier = {
-						value = scope:duel_value
-						multiplier = high_positive_duel_skill_multiplier
-					}
-					KoM_study_magic_school_effect = { SCHOOL = scope:target.var:KoM_grimoire COUNT = scope:target.KoM_grimoire_gain }
-				}
-				50 = {
-					compare_modifier = {
-						value = scope:duel_value
-						multiplier = low_negative_duel_skill_multiplier
-					}
-					add_stress = 25
-				}
-			}
-			if = {
-				limit = {
-					scope:target = { has_variable = gained_via_decision }
-					KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = scope:target.var:KoM_grimoire }
-				}
-				custom_tooltip = KoM_study_grimoire_interaction_warning
-				hidden_effect = {
-					random = {
-						chance = 20
-						send_interface_message = {
-							title = KoM_study_grimoire_interaction
-							switch = {
-								trigger = scope:target.var:KoM_grimoire
-								flag:goetia = {
-									random_secret = {
-										limit = { secret_type = KoM_secret_magus }
-										expose_secret = scope:actor
-									}
-								}
-								flag:thaumaturgy = {
-									random_secret = {
-										limit = { secret_type = KoM_secret_thaumaturge }
-										expose_secret = scope:actor
-									}
-								}
-								flag:theurgy = {
-									random_secret = {
-										limit = { secret_type = KoM_secret_theurgist }
-										expose_secret = scope:actor
-									}
-								}
-								flag:alchemy = {
-									random_secret = {
-										limit = { secret_type = KoM_secret_alchemist }
-										expose_secret = scope:actor
-									}
-								}
-								flag:taoism = {
-									random_secret = {
-										limit = { secret_type = KoM_secret_daoshi }
-										expose_secret = scope:actor
-									}
-								}
-								flag:onmyodo = {
-									random_secret = {
-										limit = { secret_type = KoM_secret_onmyoji }
-										expose_secret = scope:actor
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+# 	on_accept = {
+# 		scope:actor = {
+# 			duel = {
+# 				skill = learning
+# 				value = 10
+# 				50 = {
+# 					compare_modifier = {
+# 						value = scope:duel_value
+# 						multiplier = high_positive_duel_skill_multiplier
+# 					}
+# 					KoM_study_magic_school_effect = { SCHOOL = scope:target.var:KoM_grimoire COUNT = scope:target.KoM_grimoire_gain }
+# 				}
+# 				50 = {
+# 					compare_modifier = {
+# 						value = scope:duel_value
+# 						multiplier = low_negative_duel_skill_multiplier
+# 					}
+# 					add_stress = 25
+# 				}
+# 			}
+# 			if = {
+# 				limit = {
+# 					scope:target = { has_variable = gained_via_decision }
+# 					KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = scope:target.var:KoM_grimoire }
+# 				}
+# 				custom_tooltip = KoM_study_grimoire_interaction_warning
+# 				hidden_effect = {
+# 					random = {
+# 						chance = 20
+# 						send_interface_message = {
+# 							title = KoM_study_grimoire_interaction
+# 							switch = {
+# 								trigger = scope:target.var:KoM_grimoire
+# 								flag:goetia = {
+# 									random_secret = {
+# 										limit = { secret_type = KoM_secret_magus }
+# 										expose_secret = scope:actor
+# 									}
+# 								}
+# 								flag:thaumaturgy = {
+# 									random_secret = {
+# 										limit = { secret_type = KoM_secret_thaumaturge }
+# 										expose_secret = scope:actor
+# 									}
+# 								}
+# 								flag:theurgy = {
+# 									random_secret = {
+# 										limit = { secret_type = KoM_secret_theurgist }
+# 										expose_secret = scope:actor
+# 									}
+# 								}
+# 								flag:alchemy = {
+# 									random_secret = {
+# 										limit = { secret_type = KoM_secret_alchemist }
+# 										expose_secret = scope:actor
+# 									}
+# 								}
+# 								flag:taoism = {
+# 									random_secret = {
+# 										limit = { secret_type = KoM_secret_daoshi }
+# 										expose_secret = scope:actor
+# 									}
+# 								}
+# 								flag:onmyodo = {
+# 									random_secret = {
+# 										limit = { secret_type = KoM_secret_onmyoji }
+# 										expose_secret = scope:actor
+# 									}
+# 								}
+# 							}
+# 						}
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
 
-	auto_accept = yes
-}
+# 	auto_accept = yes
+# }
 
 KoM_teach_magic_interaction = {
 	category = interaction_category_friendly
@@ -222,7 +222,7 @@ KoM_teach_magic_interaction = {
 		scope:recipient = {
 			duel = {
 				skill = learning
-				value = 15
+				value = 10
 				50 = {
 					compare_modifier = {
 						value = scope:duel_value
@@ -482,7 +482,7 @@ KoM_request_teaching_interaction = {
 		scope:actor = {
 			duel = {
 				skill = learning
-				value = 15
+				value = 10
 				50 = {
 					compare_modifier = {
 						value = scope:duel_value

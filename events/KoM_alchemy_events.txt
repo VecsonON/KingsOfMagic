@@ -285,6 +285,48 @@ KoM_alchemy_events.2 = { #
 		name = KoM_alchemy_events.2.a
 	}
 
+	option = {
+		name = KoM_alchemy_events.2.b
+		trigger = { 
+			gold >= 200
+			NOT = { location ?= { has_variable = KoM_alchemic_materials_refresh } }
+		}
+
+		add_internal_flag = special
+
+		hidden_effect = {
+			location ?= {
+				random_list = {
+					4 = {
+						trigger = { NOT = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_crushed_crystals } } }
+						add_to_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_crushed_crystals }
+						set_variable = { name = KoM_alchemic_materials_crushed_crystals_num value = { value = { 3 5 } floor = yes } }
+					}
+					2 = {
+						trigger = { NOT = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_human_blood } } }
+						add_to_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_human_blood }
+						set_variable = { name = KoM_alchemic_materials_human_blood_num value = { value = { 3 4 } floor = yes } }
+					}
+					2 = {
+						trigger = { NOT = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_vulcanic_ash } } }
+						add_to_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_vulcanic_ash }
+						set_variable = { name = KoM_alchemic_materials_vulcanic_ash_num value = { value = { 2 3 } floor = yes } }
+					}
+					1 = {
+						trigger = { NOT = { is_target_in_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_fireflower } } }
+						add_to_variable_list = { name = KoM_alchemic_materials target = flag:KoM_alchemy_fireflower }
+						set_variable = { name = KoM_alchemic_materials_fireflower_num value = { value = { 1 2 } floor = yes } }
+					}
+				}
+			}
+		}
+
+		remove_short_term_gold = 200
+		custom_tooltip = KoM_alchemy_events.2.b.tt
+
+		trigger_event = KoM_alchemy_events.2
+	}
+
 	after = {
 		if = {
 			limit = { NOT = { location ?= { has_variable = KoM_alchemic_materials_refresh } } }

@@ -188,7 +188,7 @@ KoM_onmyodo_title_interaction = {
 						TARGET = scope:target
 						SCHOOL = onmyodo
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_heaven_earth_purification_effect = { TARGET = scope:target } }
 				}
 				scope:five_element_harmony = { 
@@ -198,7 +198,7 @@ KoM_onmyodo_title_interaction = {
 						TARGET = scope:target
 						SCHOOL = onmyodo
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_five_element_harmony_effect = { TARGET = scope:target } }
 				}
 			}

@@ -246,6 +246,30 @@ KoM_yearly_playable_pulse = {
 				PREV = { add_stress = -1 }
 			}
 		}
+
+		if = {
+			limit = { 
+				any_equipped_character_artifact = { has_variable = KoM_grimoire save_temporary_scope_as = grimoire } 
+				
+			}
+			if = {
+				limit = {
+					KoM_has_magic_school_xp_trigger = { SCHOOL = scope:grimoire.var:KoM_grimoire VALUE = scope:grimoire.KoM_grimoire_max AT_LEAST = no }
+					trigger_if = {
+						limit = { has_game_rule = KoM_grimoire_minimal_xp_required_default }
+						KoM_has_magic_school_xp_trigger = { SCHOOL = scope:grimoire.var:KoM_grimoire VALUE = scope:grimoire.KoM_grimoire_min AT_LEAST = yes }
+					}
+				}
+				KoM_study_magic_school_effect = { SCHOOL = scope:grimoire.var:KoM_grimoire COUNT = scope:grimoire.KoM_grimoire_gain }
+			}
+			else = {
+				send_interface_message = {
+					type = event_toast_effect_neutral
+					title = KoM_study_magic_school_effect
+					custom_tooltip = KoM_study_magic_school_no_effect
+				}
+			}
+		}
 	}
 }
 KoM_quaterly_playable_pulse = {
@@ -349,15 +373,6 @@ KoM_completed_rite = {
 KoM_after_rite = {
 	effect = {
 		ALT_delete_rite_effect = { RITE = var:current_rite }
-	}
-}
-
-KoM_on_artifact_changed_owner = {
-	effect = {
-		if = {
-			limit = { NOT = { var:gained_via_decision ?= scope:owner } }
-			remove_variable = gained_via_decision
-		}
 	}
 }
 

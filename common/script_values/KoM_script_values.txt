@@ -169,3 +169,13 @@ KoM_taoism_lianshen_huanxu_xp = {
 	value = 0
 	if = { limit = { has_trait = KoM_lianshen_huanxu } value = "this.has_trait_xp(KoM_lianshen_huanxu)" }
 }
+
+KoM_fake_grimoire_chance = {
+	switch = {
+		trigger = has_game_rule
+		KoM_fake_grimoires_75 = { value = 75 }
+		KoM_fake_grimoires_25 = { value = 25 }
+		KoM_fake_grimoires_0 = { value = 0 }
+		fallback = { value = 50 }
+	}
+}

@@ -58,6 +58,7 @@ KoM_the_neidan_meditation_effect = {
 	send_interface_message = {
 		title = KoM_rite_the_neidan_meditation
 		KoM_taoism_gain_progress_effect = { VALUE = scope:xp_gained }
+		KoM_study_magic_school_effect = { SCHOOL = flag:taoism COUNT = 0.5 }
 	}
 	var:current_rite ?= {
 		set_variable = {

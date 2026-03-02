@@ -253,20 +253,8 @@ KoM_core_events.10 = { # Random Grimoire Spawn
 				trigger_event = KoM_core_events.11
 			}
 		}
-		save_scope_value_as = {
-			name = fake_grimoire_chance 
-			value = {
-				switch = {
-					trigger = has_game_rule
-					KoM_fake_grimoires_75 = { value = 75 }
-					KoM_fake_grimoires_25 = { value = 25 }
-					KoM_fake_grimoires_0 = { value = 0 }
-					fallback = { value = 50 }
-				}
-			}
-		}
 		random = {
-			chance = scope:fake_grimoire_chance
+			chance = KoM_fake_grimoire_chance
 			set_variable = { name = fake value = yes }
 		}
 	}
@@ -433,12 +421,6 @@ KoM_core_events.11 = {
 						}
 					}
 				}
-				scope:newly_created_artifact ?= {
-					set_variable = {
-						name = gained_via_decision
-						value = PREV
-					}
-				}
 			}
 		}
 	}
@@ -447,10 +429,99 @@ KoM_core_events.11 = {
 		name = KoM_core_events.11.b
 	}
 
+	option = {
+		name = KoM_core_events.11.c
+		trigger = { gold >= 200 prestige >= 500 }
+		show_as_unavailable = { gold < 200 prestige < 500 }
+
+		remove_short_term_gold = 200
+		add_prestige = -500
+
+		custom_tooltip = KoM_core_events.11.c.tt
+		trigger_event = KoM_core_events.12
+
+		add_internal_flag = special
+	}
+
 	after  = {
 		hidden_effect = {
 			scope:merchant = { death = { death_reason = death_mysterious } }
 			remove_variable = fake
+		}
+	}
+}
+
+KoM_core_events.12 = {
+	type = character_event
+	title = KoM_core_events.12.t
+	desc = KoM_core_events.12.desc
+	theme = witchcraft
+	override_background = { reference = market }
+
+	option = {
+		name = KoM_core_events.12.a
+		remove_short_term_gold = medium_gold_value
+		KoM_give_random_grimoire_effect = {
+			SCHOOL = goetia
+			COMMON_MIN = 0 COMMON_MAX = 20 COMMON_GAIN = 6
+			MASTERWORK_MIN = 10 MASTERWORK_MAX = 40 MASTERWORK_GAIN = 8
+			FAMED_MIN = 20 FAMED_MAX = 80 FAMED_GAIN = 10
+			ILLUSTRIOUS_MIN = 30 ILLUSTRIOUS_MAX = 100 ILLUSTRIOUS_GAIN = 12
+		}
+	}
+	option = {
+		name = KoM_core_events.12.b
+		remove_short_term_gold = medium_gold_value
+		KoM_give_random_grimoire_effect = {
+			SCHOOL = thaumaturgy
+			COMMON_MIN = 0 COMMON_MAX = 20 COMMON_GAIN = 2
+			MASTERWORK_MIN = 10 MASTERWORK_MAX = 40 MASTERWORK_GAIN = 4
+			FAMED_MIN = 20 FAMED_MAX = 80 FAMED_GAIN = 6
+			ILLUSTRIOUS_MIN = 30 ILLUSTRIOUS_MAX = 100 ILLUSTRIOUS_GAIN = 8
+		}
+	}
+	option = {
+		name = KoM_core_events.12.c
+		remove_short_term_gold = medium_gold_value
+		KoM_give_random_grimoire_effect = {
+			SCHOOL = theurgy
+			COMMON_MIN = 0 COMMON_MAX = 10 COMMON_GAIN = 5
+			MASTERWORK_MIN = 0 MASTERWORK_MAX = 10 MASTERWORK_GAIN = 10
+			FAMED_MIN = 0 FAMED_MAX = 10 FAMED_GAIN = 15
+			ILLUSTRIOUS_MIN = 0 ILLUSTRIOUS_MAX = 10 ILLUSTRIOUS_GAIN = 20
+		}		
+	}
+	option = {
+		name = KoM_core_events.12.d
+		remove_short_term_gold = medium_gold_value
+		KoM_give_random_grimoire_effect = {
+			SCHOOL = alchemy
+			COMMON_MIN = 0 COMMON_MAX = 20 COMMON_GAIN = 4
+			MASTERWORK_MIN = 10 MASTERWORK_MAX = 40 MASTERWORK_GAIN = 6
+			FAMED_MIN = 20 FAMED_MAX = 80 FAMED_GAIN = 8
+			ILLUSTRIOUS_MIN = 30 ILLUSTRIOUS_MAX = 100 ILLUSTRIOUS_GAIN = 10
+		}
+	}
+	option = {
+		name = KoM_core_events.12.e
+		remove_short_term_gold = medium_gold_value
+		KoM_give_random_grimoire_effect = {
+			SCHOOL = taoism
+			COMMON_MIN = 0 COMMON_MAX = 20 COMMON_GAIN = 4
+			MASTERWORK_MIN = 10 MASTERWORK_MAX = 40 MASTERWORK_GAIN = 6
+			FAMED_MIN = 20 FAMED_MAX = 80 FAMED_GAIN = 8
+			ILLUSTRIOUS_MIN = 30 ILLUSTRIOUS_MAX = 100 ILLUSTRIOUS_GAIN = 10
+		}
+	}
+	option = {
+		name = KoM_core_events.12.f
+		remove_short_term_gold = medium_gold_value
+		KoM_give_random_grimoire_effect = {
+			SCHOOL = onmyodo
+			COMMON_MIN = 0 COMMON_MAX = 20 COMMON_GAIN = 4
+			MASTERWORK_MIN = 10 MASTERWORK_MAX = 40 MASTERWORK_GAIN = 6
+			FAMED_MIN = 20 FAMED_MAX = 80 FAMED_GAIN = 8
+			ILLUSTRIOUS_MIN = 30 ILLUSTRIOUS_MAX = 100 ILLUSTRIOUS_GAIN = 10
 		}
 	}
 }

@@ -10,6 +10,7 @@ KoM_goetia_events.1 = { # the_gate_of_invocation
 	option = {
 		name = KoM_goetia_events.1.a
 		KoM_learn_random_true_name_demon_effect = yes
+		KoM_study_magic_school_effect = { SCHOOL = flag:goetia COUNT = 2 }
 	}
 
 	after = {

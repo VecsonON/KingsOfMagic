@@ -318,6 +318,7 @@ KoM_alchemy_interaction = {
 
 	on_accept = {
 		scope:actor = {
+			custom_tooltip = KoM_alchemy_interaction_ingredients
 			switch = {
 				trigger = yes
 				scope:elixir_of_the_white_rose = {
@@ -328,7 +329,7 @@ KoM_alchemy_interaction = {
 						TARGET = scope:recipient
 						SCHOOL = alchemy
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_elixir_of_the_white_rose_effect = yes }
 					custom_tooltip = KoM_potion_showcase
 					show_as_tooltip = { KoM_elixir_of_the_white_rose_potion_effect = yes }
@@ -341,7 +342,7 @@ KoM_alchemy_interaction = {
 						TARGET = scope:recipient
 						SCHOOL = alchemy
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_draught_of_still_waters_effect = yes }
 					custom_tooltip = KoM_potion_showcase
 					show_as_tooltip = { KoM_draught_of_still_waters_potion_effect = yes }
@@ -354,7 +355,7 @@ KoM_alchemy_interaction = {
 						TARGET = scope:recipient
 						SCHOOL = alchemy
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_infusion_of_lead_effect = yes }
 					custom_tooltip = KoM_potion_showcase
 					show_as_tooltip = { KoM_infusion_of_lead_potion_effect = yes }
@@ -369,7 +370,7 @@ KoM_alchemy_interaction = {
 						TARGET = scope:recipient
 						SCHOOL = alchemy
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_elixir_of_ash_and_salt_effect = yes }
 					custom_tooltip = KoM_potion_showcase
 					show_as_tooltip = { KoM_elixir_of_ash_and_salt_potion_effect = yes }
@@ -383,7 +384,7 @@ KoM_alchemy_interaction = {
 						TARGET = scope:recipient
 						SCHOOL = alchemy
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_dew_of_morning_stars_effect = yes }
 					custom_tooltip = KoM_potion_showcase
 					show_as_tooltip = { KoM_dew_of_morning_stars_potion_effect = yes }
@@ -397,7 +398,7 @@ KoM_alchemy_interaction = {
 						TARGET = scope:recipient
 						SCHOOL = alchemy
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_aqua_sapientiae_effect = yes }
 					custom_tooltip = KoM_potion_showcase
 					show_as_tooltip = { KoM_aqua_sapientiae_potion_effect = yes }
@@ -412,7 +413,7 @@ KoM_alchemy_interaction = {
 						TARGET = scope:recipient
 						SCHOOL = alchemy
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_elixir_of_the_solar_mind_effect = yes }
 					custom_tooltip = KoM_potion_showcase
 					show_as_tooltip = { KoM_elixir_of_the_solar_mind_potion_effect = yes }
@@ -426,7 +427,7 @@ KoM_alchemy_interaction = {
 						TARGET = scope:recipient
 						SCHOOL = alchemy
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_draught_of_the_inner_flame_effect = yes }
 					custom_tooltip = KoM_potion_showcase
 					show_as_tooltip = { KoM_draught_of_the_inner_flame_potion_effect = yes }
@@ -440,7 +441,7 @@ KoM_alchemy_interaction = {
 						TARGET = scope:recipient
 						SCHOOL = alchemy
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_tears_of_the_red_king_effect = yes }
 					custom_tooltip = KoM_potion_showcase
 					show_as_tooltip = { KoM_tears_of_the_red_king_potion_effect = yes }
@@ -455,7 +456,7 @@ KoM_alchemy_interaction = {
 						TARGET = scope:recipient
 						SCHOOL = alchemy
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_blood_of_the_phoenix_effect = yes }
 					custom_tooltip = KoM_potion_showcase
 					show_as_tooltip = { KoM_blood_of_the_phoenix_potion_effect = yes }
@@ -470,7 +471,7 @@ KoM_alchemy_interaction = {
 						TARGET = scope:recipient
 						SCHOOL = alchemy
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_elixir_rubedo_effect = yes }
 					custom_tooltip = KoM_potion_showcase
 					show_as_tooltip = { KoM_elixir_rubedo_potion_effect = yes }
@@ -485,7 +486,7 @@ KoM_alchemy_interaction = {
 						TARGET = scope:recipient
 						SCHOOL = alchemy
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_homunculi_effect = yes }
 					custom_tooltip = KoM_potion_showcase
 					show_as_tooltip = { KoM_homunculi_potion_effect = yes }
@@ -501,7 +502,7 @@ KoM_alchemy_interaction = {
 						TARGET = scope:recipient
 						SCHOOL = alchemy
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_elixir_vitae_effect = yes }
 					custom_tooltip = KoM_potion_showcase
 					show_as_tooltip = { KoM_elixir_vitae_potion_effect = yes }
@@ -516,7 +517,7 @@ KoM_alchemy_interaction = {
 						TARGET = scope:recipient
 						SCHOOL = alchemy
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_aurum_astralis_effect = yes }
 					custom_tooltip = KoM_potion_showcase
 					show_as_tooltip = { KoM_aurum_astralis_potion_effect = yes }
@@ -542,7 +543,7 @@ KoM_alchemy_interaction = {
 						TARGET = scope:recipient
 						SCHOOL = alchemy
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_the_philosophers_stone_effect = yes }
 					custom_tooltip = KoM_potion_showcase
 					show_as_tooltip = { KoM_the_philosophers_stone_potion_effect = yes }

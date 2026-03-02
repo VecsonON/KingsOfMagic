@@ -23,4 +23,6 @@
  KoM_alchemy_events.2.vulcanic_ash: "#V $KoM_alchemy_vulcanic_ash$#!? Was there an eruption lately?"
  KoM_alchemy_events.2.fireflower: "#V $KoM_alchemy_fireflower$#!!? I thought they were extinct!"
  KoM_alchemy_events.2.a: "I will return later."
+ KoM_alchemy_events.2.b: "I am willing to #italic pay extra#!"
+ KoM_alchemy_events.2.b.tt: "One of more exotic goods will appear in this location"
  KoM_alchemy_events.2.after: "Market in each [province|E] is different, and each refreshes year after previous visit."

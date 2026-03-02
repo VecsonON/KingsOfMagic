@@ -92,8 +92,6 @@ container = {
 		visible = "[GetPlayer.IsValid]"
 		button_hud_character_bar = {
 			visible = "[GetScriptedGui('KoM_window_is_practitioner').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-			enabled = "[GetPlayer.IsPlayerInteractionValid('KoM_study_grimoire_interaction')]"
-			onclick = "[GetPlayer.OpenPlayerInteraction('KoM_study_grimoire_interaction')]"
 			parentanchor = left
 
 			using = Animation_ShowHide_Standard

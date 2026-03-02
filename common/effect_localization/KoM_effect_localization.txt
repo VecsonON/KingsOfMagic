@@ -6,6 +6,15 @@
 	third       = KoM_add_magic_school_xp_third
 	third_past  = KoM_add_magic_school_xp_third_past
 }
+KoM_add_magic_school_xp_open = {
+	global      = KoM_add_magic_school_xp_open_global
+	global_past = KoM_add_magic_school_xp_open_global_past
+	first       = KoM_add_magic_school_xp_open_first
+	first_past  = KoM_add_magic_school_xp_open_first_past
+	third       = KoM_add_magic_school_xp_open_third
+	third_past  = KoM_add_magic_school_xp_open_third_past
+
+}
 KoM_increase_durability_effect = {
 	global      	= KoM_increase_durability_effect
 	global_past     = KoM_increase_durability_effect
@@ -13,4 +22,8 @@ KoM_increase_durability_effect = {
 	first_past   	= KoM_increase_durability_effect
 	third      	= KoM_increase_durability_effect
 	third_past      = KoM_increase_durability_effect
+}
+
+KoM_rite_showcase = {
+	global = KoM_rite_showcase
 }

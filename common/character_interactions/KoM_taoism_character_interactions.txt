@@ -91,7 +91,7 @@
 						TARGET = scope:recipient
 						SCHOOL = taoism
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_the_neidan_meditation_effect = yes }
 				}
 				scope:qingqiu_huifu_yishi = {
@@ -101,7 +101,7 @@
 						TARGET = scope:recipient
 						SCHOOL = taoism
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_qingqiu_huifu_yishi_effect = { TARGET = scope:recipient } }
 				}
 				scope:qiqiu_pingjing_xinling_de_yishi = {
@@ -111,7 +111,7 @@
 						TARGET = scope:recipient
 						SCHOOL = taoism
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_qiqiu_pingjing_xinling_de_yishi_effect = { TARGET = scope:recipient } }
 				}
 				scope:qifu_yishi = {
@@ -121,7 +121,7 @@
 						TARGET = scope:recipient
 						SCHOOL = taoism
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_qifu_yishi_effect = { TARGET = scope:recipient } }
 				}
 				scope:qiqiu_mingri_zhishi_de_yishi = {
@@ -131,7 +131,7 @@
 						TARGET = scope:recipient
 						SCHOOL = taoism
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_qiqiu_mingri_zhishi_de_yishi_effect = { TARGET = scope:recipient } }
 				}
 				scope:qingqiu_kuaisu_luxing_de_yishi = {
@@ -141,7 +141,7 @@
 						TARGET = scope:recipient
 						SCHOOL = taoism
 					}
-					custom_tooltip = KoM_rite_showcase
+					custom_description_no_bullet = { text = KoM_rite_showcase }
 					show_as_tooltip = { KoM_qingqiu_kuaisu_luxing_de_yishi_effect = yes }
 				}
 			}

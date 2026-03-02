@@ -1,7 +1,10 @@
 ﻿l_english:
- KoM_terrain_type_grimoire_advantage: "[Artifact.Custom('KoMMagicSchoolNameArtifact')] Mastery Gained"
- KoM_terrain_type_grimoire_min_combat_roll: "Maximal [Artifact.Custom('KoMMagicSchoolNameArtifact')] Mastery"
- KoM_terrain_type_grimoire_max_combat_roll: "Minimal [Artifact.Custom('KoMMagicSchoolNameArtifact')] Mastery"
+ KoM_terrain_type_grimoire_advantage: "#underline;TOOLTIP:KoM_terrain_type_grimoire_advantage_tt Yearly#! [Artifact.Custom('KoMMagicSchoolNameArtifact')] Mastery Gained"
+ KoM_terrain_type_grimoire_advantage_tt: "Every year your character will study their equipped [KoM_grimoire|E] gaining xp in this [Concept('KoM_magick', 'School of Magick')|E]"
+ KoM_terrain_type_grimoire_min_combat_roll: "#underline;TOOLTIP:KoM_terrain_type_grimoire_min_combat_roll_tt Maximal#! [Artifact.Custom('KoMMagicSchoolNameArtifact')] Mastery"
+ KoM_terrain_type_grimoire_min_combat_roll_tt: "The maximal experience this [KoM_grimoire|E] is useful for"
+ KoM_terrain_type_grimoire_max_combat_roll: "#underline;TOOLTIP:KoM_terrain_type_grimoire_max_combat_roll_tt Minimal#! [Artifact.Custom('KoMMagicSchoolNameArtifact')] Mastery"
+ KoM_terrain_type_grimoire_max_combat_roll_tt: "The minimal amount of experience in this [Artifact.Custom('KoMMagicSchoolNameArtifact')] required for this [KoM_grimoire|E] to be useful"
  KoM_terrain_type_rite_speed_advantage: "Speed of [KoM_rites|E]"
  ####################################################################################################################
  KoM_goetia: "[KoM_goetia|E]"

@@ -331,9 +331,14 @@ KoM_study_magic_school_effect = {
 		send_interface_toast = {
 			type = event_toast_effect_neutral
 			title = KoM_study_magic_school_effect
-			add_trait_xp = {
-				trait = scope:trait
+			custom_description = {
+				text = KoM_add_magic_school_xp_open
+				object = scope:trait
 				value = $COUNT$
+				add_trait_xp = {
+					trait = scope:trait
+					value = $COUNT$
+				}
 			}
 		}
 	}

@@ -1,6 +1,24 @@
 ﻿KoM_create_ofuda_effect = {
 	save_scope_as = owner
 	set_artifact_rarity_$RARITY$ = yes
+	save_scope_value_as = {
+		name = xp_gain
+		value = {
+			if = {
+				limit = { scope:wealth >= 100 }
+				value = 4
+			}
+			if = {
+				limit = { scope:wealth >= 70 }
+				value = 3
+			}
+			if = {
+				limit = { scope:wealth >= 30 }
+				value = 2
+			}
+			else = { value = 1 }
+		}
+	}
 
 	# Create the artifact
 	create_artifact = {
@@ -15,6 +33,7 @@
 	}
 	KoM_save_tooltip = { LOC = $NAME$ }
 	custom_tooltip = KoM_create_ofuda_effect
+	KoM_study_magic_school_effect = { SCHOOL = flag:onmyodo COUNT = scope:xp_gain }
 	scope:newly_created_artifact = { trigger_event = { on_action = KoM_onmyodo_extra_effects } }
 }
 
