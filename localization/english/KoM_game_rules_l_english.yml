@@ -32,3 +32,11 @@
  setting_KoM_visit_hideout_accessability_easier_desc: "#high $activity_KoM_visit_hideout$#! requires +15 [learning|E], [GetTrait('scholar').GetName(GetNullCharacter)] or Practising [KoM_magick|E]"
  setting_KoM_visit_hideout_accessability_always: "#high Always#!"
  setting_KoM_visit_hideout_accessability_always_desc: "#high $activity_KoM_visit_hideout$#! is always accessible"
+
+ rule_KoM_grimoire_study_visibility: "$KOM_gamerule$ [KoM_grimoire|E] Study Notifications"
+ setting_KoM_grimoire_study_visibility_default: "Default"
+ setting_KoM_grimoire_study_visibility_default_desc: "Studying [KoM_grimoires|E] will always notify you about the results"
+ setting_KoM_grimoire_study_visibility_limited: "#high Limited#!"
+ setting_KoM_grimoire_study_visibility_limited_desc: "Studying [KoM_grimoires|E] will only notify you when it no longer gives any experience"
+ setting_KoM_grimoire_study_visibility_none: "#high None#!"
+ setting_KoM_grimoire_study_visibility_none_desc: "Studying [KoM_grimoires|E] will never send any notification, even if it no longer gives experience"

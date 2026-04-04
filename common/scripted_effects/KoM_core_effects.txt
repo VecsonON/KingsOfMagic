@@ -324,13 +324,37 @@ KoM_study_magic_school_effect = {
 		limit = {
 			NOT = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = $SCHOOL$ } }
 		}
-		KoM_learn_magic_school_from_trait_effect = { TRAIT = scope:trait }
+		if = {
+			limit = { has_game_rule = KoM_grimoire_study_visibility_default }
+			send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = KoM_learn_magic_school_from_trait_effect
+				KoM_learn_magic_school_from_trait_effect = { TRAIT = scope:trait }
+			}
+		}
+		else = {
+			KoM_learn_magic_school_from_trait_effect = { TRAIT = scope:trait }
+		}
 	}
 	else_if = {
 		limit = { has_trait = scope:trait }
-		send_interface_toast = {
-			type = event_toast_effect_neutral
-			title = KoM_study_magic_school_effect
+		if = {
+			limit = { has_game_rule = KoM_grimoire_study_visibility_default }
+			send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = KoM_study_magic_school_effect
+				custom_description = {
+					text = KoM_add_magic_school_xp_open
+					object = scope:trait
+					value = $COUNT$
+					add_trait_xp = {
+						trait = scope:trait
+						value = $COUNT$
+					}
+				}
+			}
+		}
+		else = {
 			custom_description = {
 				text = KoM_add_magic_school_xp_open
 				object = scope:trait
@@ -343,9 +367,15 @@ KoM_study_magic_school_effect = {
 		}
 	}
 	else = {
-		send_interface_toast = {
-			type = event_toast_effect_neutral
-			title = KoM_study_magic_school_effect
+		if = {
+			limit = { has_game_rule = KoM_grimoire_study_visibility_default }
+			send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = KoM_study_magic_school_effect
+				KoM_add_hidden_magic_school_xp_effect = { TRAIT = scope:trait COUNT = $COUNT$ }
+			}
+		}
+		else = {
 			KoM_add_hidden_magic_school_xp_effect = { TRAIT = scope:trait COUNT = $COUNT$ }
 		}
 	}
@@ -385,35 +415,31 @@ KoM_add_hidden_magic_school_xp_effect = {
 	}
 }
 KoM_learn_magic_school_from_trait_effect = {
-	send_interface_toast = {
-		type = event_toast_effect_neutral
-		title = KoM_learn_magic_school_from_trait_effect
-		switch = {
-			trigger = $TRAIT$
-			trait:KoM_magus = {
-				set_variable = { name = KoM_goetia_xp value = 0 }
-				add_secret = { TYPE = KoM_secret_magus }
-			}
-			trait:KoM_thaumaturge = {
-				set_variable = { name = KoM_thaumaturgy_xp value = 0 }
-				add_secret = { TYPE = KoM_secret_thaumaturge }
-			}
-			trait:KoM_theurgist = {
-				set_variable = { name = KoM_theurgy_xp value = 0 }
-				add_secret = { TYPE = KoM_secret_theurgist }
-			}
-			trait:KoM_alchemist = {
-				set_variable = { name = KoM_alchemy_xp value = 0 }
-				add_secret = { TYPE = KoM_secret_alchemist }
-			}
-			trait:KoM_daoshi = {
-				set_variable = { name = KoM_taoism_xp value = 0 }
-				add_secret = { TYPE = KoM_secret_daoshi }
-			}
-			trait:KoM_onmyoji = {
-				set_variable = { name = KoM_onmyodo_xp value = 0 }
-				add_secret = { TYPE = KoM_secret_onmyoji }
-			}
+	switch = {
+		trigger = $TRAIT$
+		trait:KoM_magus = {
+			set_variable = { name = KoM_goetia_xp value = 0 }
+			add_secret = { TYPE = KoM_secret_magus }
+		}
+		trait:KoM_thaumaturge = {
+			set_variable = { name = KoM_thaumaturgy_xp value = 0 }
+			add_secret = { TYPE = KoM_secret_thaumaturge }
+		}
+		trait:KoM_theurgist = {
+			set_variable = { name = KoM_theurgy_xp value = 0 }
+			add_secret = { TYPE = KoM_secret_theurgist }
+		}
+		trait:KoM_alchemist = {
+			set_variable = { name = KoM_alchemy_xp value = 0 }
+			add_secret = { TYPE = KoM_secret_alchemist }
+		}
+		trait:KoM_daoshi = {
+			set_variable = { name = KoM_taoism_xp value = 0 }
+			add_secret = { TYPE = KoM_secret_daoshi }
+		}
+		trait:KoM_onmyoji = {
+			set_variable = { name = KoM_onmyodo_xp value = 0 }
+			add_secret = { TYPE = KoM_secret_onmyoji }
 		}
 	}
 }

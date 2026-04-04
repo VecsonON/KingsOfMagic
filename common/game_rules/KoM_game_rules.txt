@@ -29,10 +29,10 @@ KoM_fake_grimoires = {
 		historicity
 	}
 
-	KoM_fake_grimoires_75 = { }
-	KoM_fake_grimoires_default = { }
-	KoM_fake_grimoires_25 = { }
-	KoM_fake_grimoires_0 = { }
+	KoM_fake_grimoires_75 = { flag = GG_can_change_rule }
+	KoM_fake_grimoires_default = { flag = GG_can_change_rule }
+	KoM_fake_grimoires_25 = { flag = GG_can_change_rule }
+	KoM_fake_grimoires_0 = { flag = GG_can_change_rule }
 }
 KoM_visit_hideout_accessability = {
 	default = KoM_visit_hideout_accessability_default
@@ -42,7 +42,18 @@ KoM_visit_hideout_accessability = {
 		historicity
 	}
 
-	KoM_visit_hideout_accessability_default = { }
-	KoM_visit_hideout_accessability_easier = { }
-	KoM_visit_hideout_accessability_always = { }
+	KoM_visit_hideout_accessability_default = { flag = GG_can_change_rule }
+	KoM_visit_hideout_accessability_easier = { flag = GG_can_change_rule }
+	KoM_visit_hideout_accessability_always = { flag = GG_can_change_rule }
+}
+KoM_grimoire_study_visibility = {
+	default = KoM_grimoire_study_visibility_default
+	
+	categories = {
+		tweaks
+	}
+
+	KoM_grimoire_study_visibility_default = { flag = GG_can_change_rule }
+	KoM_grimoire_study_visibility_limited = { flag = GG_can_change_rule }
+	KoM_grimoire_study_visibility_none = { flag = GG_can_change_rule }
 }
