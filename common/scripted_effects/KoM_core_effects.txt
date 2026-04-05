@@ -309,6 +309,11 @@ KoM_create_grimoire_effect = {
 	}
 }
 
+KoM_study_magic_school_hidden_effect = {
+	save_scope_as = KoM_hide_inferface_message
+	KoM_study_magic_school_effect = { SCHOOL = $SCHOOL$ COUNT = $COUNT$ }
+	clear_saved_scope = KoM_hide_inferface_message
+}
 
 KoM_study_magic_school_effect = {
 	switch = {
@@ -325,7 +330,10 @@ KoM_study_magic_school_effect = {
 			NOT = { KoM_is_practitioner_of_magic_school_trigger = { SCHOOL = $SCHOOL$ } }
 		}
 		if = {
-			limit = { has_game_rule = KoM_grimoire_study_visibility_default }
+			limit = { 
+				has_game_rule = KoM_grimoire_study_visibility_default
+				NOT = { exists = scope:KoM_hide_inferface_message }
+			}
 			send_interface_toast = {
 				type = event_toast_effect_neutral
 				title = KoM_learn_magic_school_from_trait_effect
@@ -339,7 +347,10 @@ KoM_study_magic_school_effect = {
 	else_if = {
 		limit = { has_trait = scope:trait }
 		if = {
-			limit = { has_game_rule = KoM_grimoire_study_visibility_default }
+			limit = { 
+				has_game_rule = KoM_grimoire_study_visibility_default
+				NOT = { exists = scope:KoM_hide_inferface_message }
+			}
 			send_interface_toast = {
 				type = event_toast_effect_neutral
 				title = KoM_study_magic_school_effect
@@ -368,7 +379,10 @@ KoM_study_magic_school_effect = {
 	}
 	else = {
 		if = {
-			limit = { has_game_rule = KoM_grimoire_study_visibility_default }
+			limit = { 
+				has_game_rule = KoM_grimoire_study_visibility_default
+				NOT = { exists = scope:KoM_hide_inferface_message }
+			}
 			send_interface_toast = {
 				type = event_toast_effect_neutral
 				title = KoM_study_magic_school_effect

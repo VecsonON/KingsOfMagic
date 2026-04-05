@@ -136,7 +136,7 @@ KoM_execute_spell_effect = {
 						}
 					}
 				}
-				KoM_study_magic_school_effect = { SCHOOL = flag:thaumaturgy COUNT = scope:xp_gain }
+				KoM_study_magic_school_hidden_effect = { SCHOOL = flag:thaumaturgy COUNT = scope:xp_gain }
 			}
 		}
 		100 = {

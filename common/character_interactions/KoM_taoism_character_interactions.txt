@@ -10,6 +10,7 @@
 	}
 
 	send_option = {
+		is_shown = { scope:actor = { NOT = { has_trait = KoM_xian } } }
 		flag = the_neidan_meditation
 		localization = KoM_rite_the_neidan_meditation
 	}

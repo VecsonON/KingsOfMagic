@@ -267,6 +267,8 @@
  KoM_rite_the_neidan_meditation: "#underline;TOOLTIP:KoM_rite_the_neidan_meditation_tt The Neidan Meditation#!"
  KoM_rite_the_neidan_meditation_tt: "Neidan, also known as internal alchemy, is process in which [KoM_daoshi|E] 'cultivate' themselves in goal of achieving [KoMGetTrait('KoM_xian')]."
  KoM_the_neidan_meditation_effect: "Amount of xp gained is equal to your [KoMGetTrait('KoM_daoshi')] xp divided by #bold 50#!. #I This [KoM_rite|E] will repeat itself!#!"
+ KoM_rite_the_neidan_meditation_lianqi_huashen_slowdown: "#N Because you are [KoMGetTrait('KoM_lianqi_huashen')], the amount of experience you gain is further #bold divided by 2#!#!"
+ KoM_rite_the_neidan_meditation_lianshen_huanxu_slowdown: "#N Because you are [KoMGetTrait('KoM_lianshen_huanxu')], the amount of experience you gain is further #bold divided by 4#!#!"
 
  KoM_rite_qingqiu_huifu_yishi: "#underline;TOOLTIP:KoM_rite_qingqiu_huifu_yishi_desc Qingqiu Huifu Yishi#!"
  KoM_rite_qingqiu_huifu_yishi_desc: "Very Simple [KoM_rite|E] of [KoM_taoism|E] to heal ailments. Efficiency of this [KoM_rite|E] is directly proportional to one's stage of #underline;TOOLTIP:KoM_rite_the_neidan_meditation_tt Neidan#!"

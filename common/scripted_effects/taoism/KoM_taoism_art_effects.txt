@@ -53,12 +53,23 @@ KoM_the_neidan_meditation_effect = {
 			if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_meditation_spot } scope:building.var:building_level = 1 } multiply = 1.15 }
 			if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_meditation_spot } scope:building.var:building_level = 2 } multiply = 1.3 }
 			if = { limit = { KoM_has_hideout_building_trigger = { ID = hideout_building_meditation_spot } scope:building.var:building_level = 3 } multiply = 1.45 }
+
+			if = { limit = { has_trait = KoM_lianqi_huashen } multiply = 0.5 }
+			if = { limit = { has_trait = KoM_lianshen_huanxu } multiply = 0.25 }
 		}
 	}
 	send_interface_message = {
 		title = KoM_rite_the_neidan_meditation
+		if = {
+			limit = { has_trait = KoM_lianqi_huashen }
+			custom_tooltip = KoM_rite_the_neidan_meditation_lianqi_huashen_slowdown
+		}
+		if = {
+			limit = { has_trait = KoM_lianshen_huanxu }
+			custom_tooltip = KoM_rite_the_neidan_meditation_lianshen_huanxu_slowdown
+		}
 		KoM_taoism_gain_progress_effect = { VALUE = scope:xp_gained }
-		KoM_study_magic_school_effect = { SCHOOL = flag:taoism COUNT = 0.5 }
+		KoM_study_magic_school_hidden_effect = { SCHOOL = flag:taoism COUNT = 0.5 }
 	}
 	var:current_rite ?= {
 		set_variable = {
