@@ -1,4 +1,5 @@
 ﻿KoM_the_initiate_of_purification_effect = {
+	custom_tooltip = KoM_the_initiate_of_purification_effect
 	save_scope_value_as = {
 		name = xp_gained
 		value = {
@@ -7,7 +8,13 @@
 		}
 	}
 	KoM_study_magic_school_effect = { SCHOOL = flag:theurgy COUNT = scope:xp_gained }
-	trigger_event = { on_action = KoM_after_rite }
+	var:current_rite ?= {
+		set_variable = {
+			name = total_progress
+			value = 0
+		}
+	}
+	# trigger_event = { on_action = KoM_after_rite }
 }
 KoM_the_invoker_of_powers_effect = {
 	send_interface_message = {

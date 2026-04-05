@@ -25,7 +25,7 @@ KoM_build_or_upgrade_hideout_building_hideout_building_secrecy = {
 }
 KoM_build_or_upgrade_hideout_building_hideout_building_library = {
 	is_valid = {
-		KoM_hideout_has_building_has_not_level_trigger = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_library LEVEL = 5 }
+		KoM_hideout_has_building_has_not_level_trigger = { HIDEOUT = location.var:KoM_local_hideout ID = hideout_building_library LEVEL = 6 }
 		KoM_hideout_has_enough_resources_trigger = { HIDEOUT = location.var:KoM_local_hideout GOLD_COST = 250 PRESTIGE_COST = 200 PIETY_COST = 0 }
 	}
 	effect = {

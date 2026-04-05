@@ -13,8 +13,8 @@
 		KoM_hideout_create_building_template_effect = { ID = hideout_building_shrine MAX_LEVEL = 5 ACTIVE = no } #Theurgy
 		KoM_hideout_create_building_template_effect = { ID = hideout_building_alchemic_garden MAX_LEVEL = 5 ACTIVE = yes } #Alchemy
 		KoM_hideout_create_building_template_effect = { ID = hideout_building_meditation_spot MAX_LEVEL = 3 ACTIVE = no } #Taoism
-		KoM_hideout_create_building_template_effect = { ID = hideout_building_talisman_of_protection MAX_LEVEL = 5 ACTIVE = yes } #Onmyodo
-		KoM_hideout_create_building_template_effect = { ID = hideout_building_talisman_of_fortune MAX_LEVEL = 5 ACTIVE = yes } #Onmyodo
+		KoM_hideout_create_building_template_effect = { ID = hideout_building_talisman_of_protection MAX_LEVEL = 5 ACTIVE = no } #Onmyodo
+		KoM_hideout_create_building_template_effect = { ID = hideout_building_talisman_of_fortune MAX_LEVEL = 5 ACTIVE = no } #Onmyodo
 
 	}
 }

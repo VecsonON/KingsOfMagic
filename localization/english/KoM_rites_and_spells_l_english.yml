@@ -146,6 +146,7 @@
 
  KoM_rite_the_initiate_of_purification: "[KoM_rite|E] of #underline;TOOLTIP:KoM_rite_the_initiate_of_purification_tt The Initiate of Purification#!"
  KoM_rite_the_initiate_of_purification_tt: "By completing this [KoM_rite|E], One attunes their soul to The One giving Mastery over [KoM_theurgy|E]."
+ KoM_the_initiate_of_purification_effect: "Mastery gained is based on your [piety_level|E]. #I This [KoM_rite|E] will repeat itself!#!"
 
  KoM_rite_the_invoker_of_powers: "[KoM_rite|E] of #underline;TOOLTIP:KoM_rite_the_invoker_of_powers_tt The Invoker of Powers#!"
  KoM_rite_the_invoker_of_powers_tt: "By completing this [KoM_rite|E], One establishes contact with Divine Messengers giving [GetModifier('KoM_theurgy_the_invoker_of_powers_modifier').GetNameWithTooltip] [modifier|E]."
