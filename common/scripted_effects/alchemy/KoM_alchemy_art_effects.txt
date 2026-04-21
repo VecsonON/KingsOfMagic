@@ -300,6 +300,16 @@ KoM_elixir_rubedo_potion_effect = {
 	KoM_remove_trait_effect = { TRAIT = ergotism }
 	KoM_remove_trait_effect = { TRAIT = dull }
 	KoM_remove_trait_effect = { TRAIT = lisping }
+	if = {
+		limit = { has_trait_xp = { trait = withering_mind value <= 25 } }
+		remove_trait = withering_mind
+	}
+	else = {
+		add_trait_xp = {
+			trait = withering_mind
+			value = -25
+		}
+	}
 }
 
 KoM_homunculi_effect = {
@@ -352,6 +362,38 @@ KoM_elixir_vitae_effect = {
 }
 KoM_elixir_vitae_potion_effect = {
 	add_character_modifier = { modifier = KoM_elixir_vitae_potion_modifier years = 25 }
+	if = {
+		limit = { has_trait_xp = { trait = clouded_eyes value <= 25 } }
+		remove_trait = clouded_eyes
+	}
+	else = {
+		add_trait_xp = {
+			trait = clouded_eyes
+			value = -25
+		}
+	}
+
+	if = {
+		limit = { has_trait_xp = { trait = faltering_heart value <= 25 } }
+		remove_trait = faltering_heart
+	}
+	else = {
+		add_trait_xp = {
+			trait = faltering_heart
+			value = -25
+		}
+	}
+
+	if = {
+		limit = { has_trait_xp = { trait = fragile_bones value <= 25 } }
+		remove_trait = fragile_bones
+	}
+	else = {
+		add_trait_xp = {
+			trait = fragile_bones
+			value = -25
+		}
+	}
 }
 
 KoM_aurum_astralis_effect = {

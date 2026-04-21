@@ -110,6 +110,7 @@ KoM_qingqiu_huifu_yishi_effect = {
 		if = { limit = { has_trait = disfigured scope:scaling >= 2 } remove_trait = disfigured }
 		if = { limit = { has_trait = pneumonic scope:scaling >= 2 } recover_from_disease_effect = { DISEASE = pneumonic } }
 		if = { limit = { has_trait = early_great_pox scope:scaling >= 2 } recover_from_disease_effect = { DISEASE = early_great_pox } }
+		
 
 		if = { limit = { has_trait = wounded_3 scope:scaling >= 3 } remove_trait = wounded_3 add_trait = wounded_2 }
 		if = { limit = { has_trait = infirm scope:scaling >= 3 } remove_trait = infirm }
@@ -120,6 +121,9 @@ KoM_qingqiu_huifu_yishi_effect = {
 		if = { limit = { has_trait = leper scope:scaling >= 3 } recover_from_disease_effect = { DISEASE = leper } }
 		if = { limit = { has_trait = lovers_pox scope:scaling >= 3 } recover_from_disease_effect = { DISEASE = lovers_pox } }
 		if = { limit = { has_trait = ergotism scope:scaling >= 3 } recover_from_disease_effect = { DISEASE = ergotism } }
+		if = { limit = { has_trait = clouded_eyes scope:scaling >= 3 } remove_trait = clouded_eyes }
+		if = { limit = { has_trait = faltering_heart scope:scaling >= 3 } remove_trait = faltering_heart }
+		if = { limit = { has_trait = fragile_bones scope:scaling >= 3 } remove_trait = fragile_bones }
 
 		if = { limit = { has_trait = maimed scope:scaling >= 4 } remove_trait = maimed }
 		if = { limit = { has_trait = one_legged scope:scaling >= 4 } remove_trait = one_legged }
@@ -172,10 +176,12 @@ KoM_qiqiu_pingjing_xinling_de_yishi_effect = {
 		if = { limit = { has_trait = inappetetic scope:scaling >= 2 } remove_trait = inappetetic }
 		if = { limit = { has_trait = comfort_eater scope:scaling >= 2 } remove_trait = comfort_eater }
 
+
 		if = { limit = { has_trait = irritable scope:scaling >= 3 } remove_trait = irritable }
 		if = { limit = { has_trait = flagellant scope:scaling >= 3 } remove_trait = flagellant }
 		if = { limit = { has_trait = profligate scope:scaling >= 3 } remove_trait = profligate }
 		if = { limit = { has_trait = improvident scope:scaling >= 3 } remove_trait = improvident }
+		if = { limit = { has_trait = withering_mind scope:scaling >= 3 } remove_trait = withering_mind }
 
 		if = { limit = { has_trait = reclusive scope:scaling >= 4 } remove_trait = reclusive }
 		if = { limit = { has_trait = contrite scope:scaling >= 4 } remove_trait = contrite }
