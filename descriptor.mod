@@ -1,5 +1,7 @@
 version="1.0.4"
 tags={
+	"1.20 'Crozier'"
+	"1.19 'Scribe'"
 	"1.18 'Crane'"
 	"Alternative History"
 	"Total Conversion"
