@@ -394,12 +394,6 @@ KoM_teach_magic_interaction = {
 			desc = ai_acceptance_trait_cynical
 			scope:recipient = { has_trait = cynical }
 		}
-
-		modifier = {
-			add = 10
-			desc = ai_acceptance_trait_scholar
-			scope:recipient = { has_trait = scholar }
-		}
 	}
 }
 
@@ -531,7 +525,7 @@ KoM_request_teaching_interaction = {
 			add = 10
 		}
 		modifier = {
-			has_trait = scholar
+			has_trait = lifestyle_scholar
 			add = 10
 		}
 		modifier = {
@@ -786,8 +780,6 @@ KoM_expose_your_own_secret_interaction = {
 			}
 		}
 	}
-
-	ai_frequency = 0
 	
 	auto_accept = yes
 }

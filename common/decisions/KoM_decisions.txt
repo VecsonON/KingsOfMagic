@@ -43,7 +43,7 @@
 
 		modifier = {
 			add = 10
-			has_trait = scholar
+			has_trait = lifestyle_scholar
 		}
 		modifier = {
 			add = 20
