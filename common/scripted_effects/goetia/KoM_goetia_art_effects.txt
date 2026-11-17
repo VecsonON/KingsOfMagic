@@ -125,7 +125,7 @@ KoM_hunt_sighting_county_province_effect = {
 			modifier = {
 				add = {
 					value = 0
-					subtract = development_level
+					subtract = prosperity_level
 					divide = 4
 				}
 			}

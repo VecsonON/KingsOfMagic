@@ -27,9 +27,9 @@
 
  rule_KoM_visit_hideout_accessability: "$KOM_gamerule$ Accessability of $activity_KoM_visit_hideout$ [activity|E]"
  setting_KoM_visit_hideout_accessability_default: "Default"
- setting_KoM_visit_hideout_accessability_default_desc: "#high $activity_KoM_visit_hideout$#! requires +25 [learning|E], [GetTrait('scholar').GetName(GetNullCharacter)] or Practising [KoM_magick|E]"
+ setting_KoM_visit_hideout_accessability_default_desc: "#high $activity_KoM_visit_hideout$#! requires +25 [learning|E], [GetTrait('erudite').GetName(GetNullCharacter)] or Practising [KoM_magick|E]"
  setting_KoM_visit_hideout_accessability_easier: "#high Easier#!"
- setting_KoM_visit_hideout_accessability_easier_desc: "#high $activity_KoM_visit_hideout$#! requires +15 [learning|E], [GetTrait('scholar').GetName(GetNullCharacter)] or Practising [KoM_magick|E]"
+ setting_KoM_visit_hideout_accessability_easier_desc: "#high $activity_KoM_visit_hideout$#! requires +15 [learning|E], [GetTrait('erudite').GetName(GetNullCharacter)] or Practising [KoM_magick|E]"
  setting_KoM_visit_hideout_accessability_always: "#high Always#!"
  setting_KoM_visit_hideout_accessability_always_desc: "#high $activity_KoM_visit_hideout$#! is always accessible"
 

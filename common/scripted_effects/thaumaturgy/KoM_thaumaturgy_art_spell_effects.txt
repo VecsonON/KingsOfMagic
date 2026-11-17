@@ -282,13 +282,13 @@ KoM_spell_action_scientia_effect = {
 			limit = { scope:spell.var:declaration = flag:locus }
 			KoM_spell_save_scale_effect = yes
 			save_scope_value_as = {
-				name = development_add
+				name = prosperity_add
 				value = {
 					value = scope:scaling
 					multiply = 2
 				}
 			}
-			every_de_jure_county = { change_development_progress_with_overflow = scope:development_add }
+			every_de_jure_county = { change_prosperity_progress_with_overflow = scope:prosperity_add }
 		}
 	}
 }
@@ -542,13 +542,13 @@ KoM_spell_action_peius_effect = {
 		if = {
 			limit = { scope:spell.var:declaration = flag:locus }
 			save_scope_value_as = {
-				name = development_add
+				name = prosperity_add
 				value = {
 					value = scope:scaling
 					multiply = -4
 				}
 			}
-			every_de_jure_county = { change_development_progress_with_overflow = scope:development_add }
+			every_de_jure_county = { change_prosperity_progress_with_overflow = scope:prosperity_add }
 		}
 	}
 }

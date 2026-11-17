@@ -62,11 +62,11 @@ KoM_astaroth_command_modifier = {
 }
 KoM_belial_command_modifier = {
 	icon = magic_negative
-	monthly_county_control_decline_add = -0.5
-	monthly_county_control_decline_factor = 1
+	monthly_control_change_when_above_baseline_add = -0.5
+	monthly_control_change_when_above_baseline_mult = 1
 }
 KoM_paimon_command_modifier = {
 	icon = magic_positive
-	monthly_county_control_growth_add = 0.5
-	monthly_county_control_growth_factor = 1
+	monthly_control_change_when_below_baseline_add = 0.5
+	monthly_control_change_when_below_baseline_mult = 1
 }

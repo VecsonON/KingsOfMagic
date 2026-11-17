@@ -12,5 +12,5 @@ tags={
 	"Gameplay"
 }
 name="Kings of Magic"
-supported_version="1.20.*"
+supported_version="1.21.*"
 remote_file_id="3606114370"

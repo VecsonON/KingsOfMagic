@@ -12,7 +12,7 @@
 
 # 		modifier = {
 # 			add = 10
-# 			scope:actor = { has_trait = scholar }
+# 			scope:actor = { has_trait = erudite }
 # 		}
 # 		modifier = {
 # 			add = 20

@@ -86,12 +86,12 @@ KoM_kami_pact_learning_modifier = {
 KoM_heaven_earth_purification_modifier = {
 	icon = magic_positive
 	epidemic_resistance = 200
-	development_decline_factor = -2
+	prosperity_decline_factor = -2
 }
 KoM_five_element_harmony_modifier = {
 	icon = magic_positive
-	development_growth_factor = 2
-	development_growth = 5
+	prosperity_growth_factor = 2
+	prosperity_growth = 5
 }
 KoM_yin_yang_harmony_modifier = { 
 	icon = magic_positive 
