@@ -64,10 +64,10 @@ KoM_stabilitas_res_tier_1_modifier = { icon = stress_positive stacking = yes str
 KoM_stabilitas_res_tier_2_modifier = { icon = stress_positive stacking = yes stress_gain_mult = -0.02 }
 KoM_stabilitas_res_tier_3_modifier = { icon = stress_positive stacking = yes stress_gain_mult = -0.03 }
 KoM_stabilitas_res_tier_4_modifier = { icon = stress_positive stacking = yes stress_gain_mult = -0.04 }
-KoM_stabilitas_locus_tier_1_modifier = { icon = county_modifier_prosperity_positive stacking = yes monthly_county_control_growth_add = 0.05 }
-KoM_stabilitas_locus_tier_2_modifier = { icon = county_modifier_prosperity_positive stacking = yes monthly_county_control_growth_add = 0.1 }
-KoM_stabilitas_locus_tier_3_modifier = { icon = county_modifier_prosperity_positive stacking = yes monthly_county_control_growth_add = 0.15 }
-KoM_stabilitas_locus_tier_4_modifier = { icon = county_modifier_prosperity_positive stacking = yes monthly_county_control_growth_add = 0.2 }
+KoM_stabilitas_locus_tier_1_modifier = { icon = county_modifier_prosperity_positive stacking = yes monthly_control_change_when_below_baseline_add = 0.05 }
+KoM_stabilitas_locus_tier_2_modifier = { icon = county_modifier_prosperity_positive stacking = yes monthly_control_change_when_below_baseline_add = 0.1 }
+KoM_stabilitas_locus_tier_3_modifier = { icon = county_modifier_prosperity_positive stacking = yes monthly_control_change_when_below_baseline_add = 0.15 }
+KoM_stabilitas_locus_tier_4_modifier = { icon = county_modifier_prosperity_positive stacking = yes monthly_control_change_when_below_baseline_add = 0.2 }
 
 KoM_opinio_persona_tier_1_modifier = { icon = social_positive stacking = yes general_opinion = 2 }
 KoM_opinio_persona_tier_2_modifier = { icon = social_positive stacking = yes general_opinion = 4 }

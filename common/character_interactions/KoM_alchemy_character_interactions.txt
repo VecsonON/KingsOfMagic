@@ -5,6 +5,7 @@
 
 	target_type = artifact
 	target_filter = actor_artifacts
+	show_all_targets = no
 
 	is_shown = {
 		scope:actor = scope:recipient
@@ -47,6 +48,7 @@ KoM_offer_alchemical_consumable_interaction = {
 
 	target_type = artifact
 	target_filter = actor_artifacts
+	show_all_targets = no
 
 	is_shown = {
 		NOT = { scope:actor = scope:recipient }
